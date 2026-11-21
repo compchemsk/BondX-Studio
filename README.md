@@ -59,7 +59,7 @@ flowchart LR
 
 ## 🚀 Quick start
 
-Open 👉 [compchemsk.github.io/BondX](https://compchemsk.github.io/BondX), or download `index.html` and double-click it.
+Open 👉 [compchemsk.github.io/BondX](https://compchemsk.github.io/BondX-Studio), or download `index.html` and double-click it.
 
 Load a structure: type a PDB ID (e.g. `1US0`), drop a file, or press Load built-in demo complex.
 
