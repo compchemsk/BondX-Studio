@@ -6,7 +6,7 @@
 
 **Structure → Geometry → Dynamics → NBO → ALMO-EDA → BXQI**
 
-[![Open BondX Studio](https://img.shields.io/badge/▶_Launch-BondX_Studio-0e7c86?style=for-the-badge)](https://github.com/compchemsk/BondX-Studio/blob/main/index.html)
+[![Open BondX Studio](https://img.shields.io/badge/▶_Launch-BondX_Studio-0e7c86?style=for-the-badge)](https://compchemsk.github.io/BondX-Studio/)
 
 ![No Installation](https://img.shields.io/badge/Installation-Not_Required-1baf7a?style=for-the-badge)
 ![Browser Based](https://img.shields.io/badge/Platform-Browser_Based-2a78d6?style=for-the-badge)
