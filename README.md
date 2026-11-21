@@ -8,9 +8,8 @@
 
 [![Open BondX Studio](https://img.shields.io/badge/▶https://compchemsk.github.io/BondX-Studio/)](https://compchemsk.github.io/BondX-Studio/)
 
-![No Installation](https://img.shields.io/badge/Installation-Not_Required-1baf7a?style=for-the-badge)
-![Browser Based](https://img.shields.io/badge/Platform-Browser_Based-2a78d6?style=for-the-badge)
-
+![No Installation]
+![Browser Based]
 </div>
 
 ---
