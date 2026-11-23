@@ -265,6 +265,8 @@ END
 })(typeof self !== 'undefined' ? self : this, function (FFDATA) {
   'use strict';
   const VERSION = '2.0.0';
+  const ORCA_NBO_CAUTION = 'ORCA has no built-in NBO. The ORCA NBO job needs NBO 7, a licensed program, set through the NBOEXE variable. Users with NBO 7 can use this route. It is not tested in this version of BondX; Gaussian (pop=nbo) or Q-Chem (NBO 1) is recommended.';
+  const G16_NBO7_CAUTION = 'pop=nbo7 needs NBO 7, a licensed program linked to Gaussian. This option is not tested in this version of BondX; the default pop=nbo uses the NBO built into Gaussian.';
 
   /* ------------------------------------------------------------------ */
   /*  Element data (not user parameters)                                 */
@@ -362,14 +364,14 @@ END
     S_('qm.forceH', 'T3', 'Re-protonate even if H are present', '', 'bool', ''),
     S_('qm.linkScheme', 'T3', 'Link-atom position', '', 'select', '', { options: [['fixed', 'fixed X–H bond length along the cut bond'], ['scaled', 'scaled: r_H = r_Q + g (r_M − r_Q), g = r₀(Q–H)/r₀(Q–M)']] }),
     S_('qm.xh', 'T3', 'X–H bond lengths', 'Å', 'xh', 'Used for added and link hydrogens.'),
-    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', '', { options: [['auto', 'MOL2 total if loaded, else group rules'], ['rules', 'group rules (COO⁻, phosphate, sulfonate, R₄N⁺)'], ['zero', 'zero']] }),
+    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', '', { options: [['auto', 'MOL2 total if loaded, else group rules'], ['rules', 'group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'], ['zero', 'zero']] }),
     S_('qm.env', 'T3', 'Environment', '', 'select', 'How the protein around the QM region is represented.', { options: [['cluster', 'QM cluster (optionally in a dielectric)'], ['qmmm', 'QM/MM single point (electrostatic embedding)']] }),
     S_('qm.pcm', 'T3', 'Cluster: implicit dielectric', '', 'bool', 'CPCM (Gaussian/ORCA) or PCM (Q-Chem) around the cluster.'),
     S_('qm.eps', 'T3', 'Dielectric constant ε', '', 'number', 'Typical protein interior: 4.', { step: 0.5 }),
-    S_('qm.program', 'T3', 'QM program (NBO job)', '', 'select', '', { options: [['gaussian', 'Gaussian 16'], ['orca', 'ORCA 5/6 (NBO 7)'], ['qchem', 'Q-Chem 6']] }),
+    S_('qm.program', 'T3', 'QM program (NBO job)', '', 'select', '', { options: [['gaussian', 'Gaussian 16'], ['orca', 'ORCA 5/6 (needs licensed NBO 7; untested)'], ['qchem', 'Q-Chem 6']] }),
     S_('qm.method', 'T3', 'Method', '', 'text', 'Exactly as the program expects it.'), S_('qm.basis', 'T3', 'Basis set', '', 'text', 'def2 bases add def2-ECP for I automatically in Q-Chem; Gaussian/ORCA handle it internally.'),
     S_('qm.nproc', 'T3', 'Cores', '', 'number', ''), S_('qm.mem', 'T3', 'Memory', '', 'text', 'e.g. 32GB'),
-    S_('qm.nbo7', 'T3', 'Gaussian: pop=nbo7', '', 'bool', 'Requires a linked NBO 7 installation.'),
+    S_('qm.nbo7', 'T3', 'Gaussian: pop=nbo7 (licensed NBO 7; untested)', '', 'bool', 'Off (default): Gaussian uses its built-in NBO (pop=nbo). On: Gaussian calls NBO 7, a licensed program that must be linked to Gaussian. This option is not tested in this version of BondX.'),
     S_('mm.radius', 'T3', 'Embedding radius', 'Å', 'number', 'MM point charges within this distance of any QM atom.'),
     S_('mm.selection', 'T3', 'Embedding selection', '', 'select', '', { options: [['residue', 'whole residues (keeps residue charges integral)'], ['atom', 'individual atoms']] }),
     S_('mm.boundary', 'T3', 'QM/MM boundary charges', '', 'select', 'M1 = MM atom bonded to the QM region.', { options: [['RC', 'RC: move q(M1) to M1–M2 bond midpoints (Lin & Truhlar)'], ['Z1', 'Z1: delete q(M1)'], ['Z2', 'Z2: delete q(M1), q(M2)'], ['Z3', 'Z3: delete q(M1)–q(M3)'], ['none', 'keep all charges']] }),
@@ -426,8 +428,10 @@ END
         A.push(f.foldH ? 'Where the file has no hydrogens, each hydrogen charge is folded onto its heavy atom (residue charges stay exact; local dipoles are approximated).' : 'Hydrogen charges are used only for hydrogens present in the file.');
         A.push({ RC: 'Boundary: the charge of each M1 atom is moved to the midpoints of its M1–M2 bonds (redistributed charge, RC).', Z1: 'Boundary: charges of M1 atoms are deleted (Z1).', Z2: 'Boundary: charges of M1 and M2 atoms are deleted (Z2).', Z3: 'Boundary: charges of M1–M3 atoms are deleted (Z3).', none: 'Boundary: all MM charges are kept (no correction).' }[m.boundary]);
         A.push('Electrostatic embedding only: QM–MM van der Waals terms are not included (they do not enter the NBO analysis of a single point).');
-        A.push('Ligands and cofactors in the MM region carry MOL2 charges if loaded, otherwise zero (flagged).');
+        A.push('Ligands and cofactors in the MM region carry MOL2 charges if loaded. Without MOL2, a charged group (carboxylate, phosphate, sulfate, R₄N⁺) carries its formal charge spread evenly over its heavy atoms; neutral ones are set to zero. Both cases are flagged.');
       } else A.push(q.pcm ? `QM cluster in an implicit dielectric ε = ${q.eps} (CPCM/PCM) representing the protein.` : 'QM cluster in the gas phase.');
+      if (q.program === 'orca') A.push(ORCA_NBO_CAUTION);
+      if (q.program === 'gaussian' && q.nbo7) A.push(G16_NBO7_CAUTION);
     } else if (stage === 'T3b') {
       A.push(`An interaction is verified when ΣE(2) ≥ ${P.nbo.threshold} kcal/mol, summing n(Y)→σ*(A–X)${P.nbo.includeRY ? ' and n(Y)→RY*(X)' : ''} for lone-pair acceptors, or π(ring)→σ*(A–X) for aromatic acceptors.`);
       A.push(`The output geometry must match the manifest atom by atom (same elements, deviation < ${P.nbo.geomTol} Å); otherwise the gate is not applied.`);
@@ -928,6 +932,7 @@ END
         const cur = mol[q];
         at.forEach((b, bi) => { if (seen.has(bi)) return;
           for (const t of imgs) { const pb = add(b.c, shift(t)); const d = dist(cur.p, pb);
+            if ((cur.i === hit.X && bi === hit.Y) || (cur.i === hit.Y && bi === hit.X)) continue; // the halogen bond itself is never a covalent bond
             if (d > 0.4 && d < (COV[at[cur.i].el] || 0.8) + (COV[b.el] || 0.8) + P.struct.bondTol) { seen.set(bi, pb); mol.push({ i: bi, p: pb }); break; } } });
       }
       return mol;
@@ -1040,7 +1045,13 @@ END
           R.atoms.forEach(i => { const a = S.atoms[i]; if (m[a.name] !== undefined) q[i] = m[a.name]; else { q[i] = 0; if (a.el !== 'H') missing++; } });
           info.source = 'MOL2'; info.net = R.atoms.reduce((s, i) => s + q[i], 0); info.formal = Math.round(m._total ?? info.net); info.why = 'charges from MOL2';
           if (missing) warnings.push(`${R.resName} ${info.id}: ${missing} atom(s) not found in the MOL2 file (charge 0).`);
-        } else { info.source = 'none'; info.why = info.why || 'no force-field template; charges set to 0'; info.formal = null; }
+        } else {
+          // no template and no MOL2: the formal charge from group rules is spread evenly over the heavy atoms
+          // (e.g. sulfate -2 -> -0.4 on S and each O); neutral groups stay at 0
+          const g = ligandChargeGuess(S, S.frames[0], R); const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H');
+          if (g !== 0 && heavy.length) { R.atoms.forEach(i => { q[i] = S.atoms[i].el === 'H' ? 0 : g / heavy.length; }); info.source = 'formal'; info.net = g; info.formal = g; info.why = `no template or MOL2: formal charge ${g > 0 ? '+' : ''}${g} (group rules) spread over ${heavy.length} heavy atoms`; }
+          else { info.source = 'none'; info.why = info.why || 'no force-field template; charges set to 0'; info.formal = g === 0 && heavy.length ? 0 : null; }
+        }
         res.push(info); continue;
       }
       // template matching (heavy atoms by name, hydrogens by parent)
@@ -1163,7 +1174,7 @@ END
     return 0;
   }
   // Group rules for a ligand's net charge. Without hydrogens: carboxylate (two terminal O, C–O < 1.32 Å) −1,
-  // phosphate −1/−2 (two/three terminal O), sulfonate −1, quaternary N +1. With hydrogens present, an O carrying H
+  // phosphate −1/−2 (two/three terminal O), sulfonate −1, sulfate −2, quaternary N +1. With hydrogens present, an O carrying H
   // is not terminal and any N with four neighbours (incl. H) is ammonium (+1).
   function ligandChargeGuess(S, frame, R) {
     let q = 0; const hasH = R.atoms.some(i => S.atoms[i].el === 'H');
@@ -1173,7 +1184,7 @@ END
       const termO = nb.filter(j => term(j) && dist(coordOf(frame, j), coordOf(frame, i)) < 1.32);
       if (a.el === 'C' && termO.length === 2) q -= 1;
       if (a.el === 'P') { const t = nb.filter(term); if (t.length >= 3) q -= 2; else if (t.length === 2) q -= 1; }
-      if (a.el === 'S') { const t = nb.filter(term); if (t.length >= 3) q -= 1; }
+      if (a.el === 'S') { const t = nb.filter(term); if (t.length >= 4) q -= 2; else if (t.length === 3) q -= 1; }
       if (a.el === 'N' && (hasH ? S.bonds[i].length === 4 : nb.length === 4)) q += 1;
     }
     return q;
@@ -1215,13 +1226,16 @@ END
     const order = [...include].sort((a, b) => (fragOf.get(a) - fragOf.get(b)) || a - b);
     for (const i of order) { indexOf.set(i, qm.length); const a = S.atoms[i]; const p = coordOf(frame, i);
       qm.push({ el: a.el, x: p[0], y: p[1], z: p[2], frag: fragOf.get(i), src: { i, chain: a.chain, resName: a.resName, resSeq: a.resSeq, iCode: a.iCode, name: a.name, serial: a.serial } }); }
-    let addedH = 0, linkH = 0; const keptH = [];
+    let addedH = 0, linkH = 0, completedH = 0; const keptH = [];
     for (const i of order) {
       const a = S.atoms[i]; if (a.el === 'H') continue; const R = S.residues[a.res]; const info = ffa.residues[R.idx];
       const pc = coordOf(frame, i); const nbAll = S.bonds[i].filter(j => S.atoms[j].el !== 'H');
       const protonate = P.qm.forceH || !resHasH(R);
       if (!protonate && !keptH.includes(R.idx)) keptH.push(R.idx);
-      if (protonate) {
+      // Residues that already carry H: N/O/S hydrogens are taken as given; carbons that lack their H
+      // (polar-hydrogen-only files) are completed so that the QM model is never under-protonated.
+      const existingH = S.bonds[i].filter(j => S.atoms[j].el === 'H');
+      if (protonate || a.el === 'C') {
         let nH = 0, hyb = 'sp3'; const tpl = info && info.tpl && FF.residues[info.tpl];
         if (R.cls === 'water') { nH = 2; hyb = 'sp3'; }
         else if (R.cls === 'ion') nH = 0;
@@ -1236,10 +1250,11 @@ END
           const nbPos = nbAll.map(j => coordOf(frame, j)); const nbEl = nbAll.map(j => S.atoms[j].el);
           hyb = guessHyb(a.el, pc, nbPos, nbEl); nH = heuristicHCount(a.el, hyb, nbAll.length, pc, nbPos);
         }
+        if (!protonate) nH -= existingH.filter(j => include.has(j)).length;
         if (nH > 0) {
-          const nbPos = nbAll.map(j => coordOf(frame, j));
-          let ref = null; if (nbAll.length === 1) { const k = S.bonds[nbAll[0]].find(j => j !== i && S.atoms[j].el !== 'H'); if (k !== undefined) ref = coordOf(frame, k); }
-          placeH(pc, nbPos, nH, hyb, ref, P.qm.xh[a.el] || 1.0).forEach(h => { qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), added: true, parent: indexOf.get(i) }); addedH++; });
+          const nbPos = nbAll.map(j => coordOf(frame, j)).concat(protonate ? [] : existingH.filter(j => include.has(j)).map(j => coordOf(frame, j)));
+          let ref = null; if (nbPos.length === 1 && nbAll.length === 1) { const k = S.bonds[nbAll[0]].find(j => j !== i && S.atoms[j].el !== 'H'); if (k !== undefined) ref = coordOf(frame, k); }
+          placeH(pc, nbPos, nH, hyb, ref, P.qm.xh[a.el] || 1.0).forEach(h => { qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), added: true, parent: indexOf.get(i) }); addedH++; if (!protonate) completedH++; });
         }
       }
       for (const j of nbAll) if (!include.has(j)) {
@@ -1247,7 +1262,7 @@ END
         qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), link: true, parent: indexOf.get(i), replaces: { i: j, label: atomLabel(S, j) } }); linkH++;
       }
     }
-    if (keptH.length) warnings.push(`${keptH.length} residue(s) already contain hydrogens (${keptH.slice(0, 5).map(r => S.residues[r].resName + ' ' + resId(S.residues[r])).join(', ')}${keptH.length > 5 ? '…' : ''}): their hydrogens are kept and no H is added to them.`);
+    if (keptH.length) warnings.push(`${keptH.length} residue(s) already contain hydrogens (${keptH.slice(0, 5).map(r => S.residues[r].resName + ' ' + resId(S.residues[r])).join(', ')}${keptH.length > 5 ? '…' : ''}): their N/O/S hydrogens are kept as given${completedH ? `; ${completedH} missing C–H hydrogen(s) were added` : ' and no H is added'}.`);
     // ---- fragment charges from force-field formal charges
     const fragCharge = { 1: 0, 2: 0 }; const chargeLog = []; const qmResCharge = {};
     const seenRes = [...new Set(order.map(i => S.atoms[i].res))];
@@ -1259,7 +1274,7 @@ END
         if (P.qm.ligandCharge === 'zero') { c = 0; how = 'set to zero'; }
         else if (P.qm.ligandCharge === 'auto' && m) { c = Math.round(m._total); how = 'MOL2 total charge'; }
         else if (info && info.source === 'PQR') { c = info.formal; how = 'PQR charges'; }
-        else { c = ligandChargeGuess(S, frame, R); how = 'group rules (carboxylate, phosphate, sulfonate, R₄N⁺)'; }
+        else { c = ligandChargeGuess(S, frame, R); how = 'group rules (carboxylate, phosphate, sulfonate/sulfate, R₄N⁺)'; }
       } else if (info && info.formal !== null && info.formal !== undefined) {
         c = info.formal; how = `${info.tpl || info.resName} template`;
         if (partial.has(r)) { // side chain only: remove terminal backbone charges
@@ -1325,6 +1340,8 @@ END
     extraPts.forEach(e => out.push(e));
     const unknown = [...new Set([...mmSet].map(i => S.atoms[i].res))].map(r => ffa.residues[r]).filter(x => x && x.source === 'none');
     if (unknown.length) notes.push(`${unknown.length} MM residue(s) without charges (set to 0): ${[...new Set(unknown.map(u => u.resName))].join(', ')}. Load a MOL2/PQR file to include them.`);
+    const formal = [...new Set([...mmSet].map(i => S.atoms[i].res))].map(r => ffa.residues[r]).filter(x => x && x.source === 'formal');
+    if (formal.length) notes.push(`${formal.length} MM residue(s) without template or MOL2 carry their formal charge spread over heavy atoms: ${[...new Set(formal.map(u => u.resName + ' ' + (u.formal > 0 ? '+' : '') + u.formal))].join(', ')}. Load a MOL2 file for proper partial charges.`);
     const missingH = P.ff.foldH && !ffa.usedPQR && [...mmSet].some(i => (ffa.residues[S.atoms[i].res] || {}).foldedH > 0);
     return { charges: out, source: ffa.usedPQR ? 'PQR' : ffa.ff, water: ffa.water, net: out.reduce((s, c) => s + c.q, 0), nMM: mmSet.size, M1: M1.size, M2: M2.size, cut: cut.length,
       boundary: sch, radius: R, selection: P.mm.selection, notes, foldedH: missingH };
@@ -1334,9 +1351,16 @@ END
   const asc = s => String(s).replace(/···/g, '...').replace(/[—–]/g, '-').replace(/→/g, '->').replace(/π/g, 'pi').replace(/[^\x20-\x7E]/g, '?');
   const fmtXYZ = a => `${a.el.charAt(0) + a.el.slice(1).toLowerCase()}`.padEnd(3) + a.x.toFixed(6).padStart(13) + a.y.toFixed(6).padStart(13) + a.z.toFixed(6).padStart(13);
   function heavyECP(qm) { return qm.some(a => (Z[a.el] || 0) > 36); }
+  // Dispersion correction to add for a method: built-in (wB97X-D, -V, D3/D4 names), none (HF, MP2, CC, Minnesota),
+  // D3(BJ) for other hybrids. o.disp ('none' | 'bj' | 'zero') overrides the automatic choice.
+  function dispKind(method, explicit) {
+    if (explicit) return explicit;
+    if (/XD|-D3|-D4|D3BJ|-V$|^HF$|MP2|CCSD|DLPNO|^M0[5-8]|^M11|^MN1|^SOGGA|^B97-?D$/i.test(method)) return 'none';
+    return 'bj';
+  }
   function writeGaussian(model, o, pcs) {
     const m = model.manifest; const q = m.totalCharge, mult = m.multiplicity;
-    const disp = /XD|D3|D4|-V$/i.test(o.method) ? '' : ' empiricaldispersion=gd3bj';
+    const dk = dispKind(o.method, o.disp); const disp = dk === 'bj' ? ' empiricaldispersion=gd3bj' : dk === 'zero' ? ' empiricaldispersion=gd3' : '';
     const solv = (!pcs && o.solvent) ? ' scrf=(cpcm,solvent=water,read)' : '';
     const L = [`%nprocshared=${o.nproc}`, `%mem=${o.mem}`, `%chk=${o.job}.chk`,
       `#p ${o.method}/${o.basis}${disp} pop=(nbo${o.nbo7 ? '7' : ''}) nosymm scf=(tight,xqc) int=ultrafine${pcs ? ' charge' : ''}${solv}`, '',
@@ -1348,8 +1372,12 @@ END
     return L.join('\n');
   }
   function writeORCA(model, o, pcs) {
-    const m = model.manifest; const L = [`# BondX ${m.id} - NBO XB gate`, asc(`# ${m.xbs.map(x => x.label).join(' ; ')}`)];
-    const disp = /D3|D4|-V$/i.test(o.method) ? '' : ' D3BJ';
+    const m = model.manifest; const L = [`# BondX ${m.id} - NBO XB gate`, asc(`# ${m.xbs.map(x => x.label).join(' ; ')}`),
+      '# CAUTION: ORCA has no built-in NBO. The NBO keyword calls NBO 7, a licensed program.',
+      '# Set the NBOEXE environment variable to the NBO 7 executable before running ORCA.',
+      '# Without NBO 7 the SCF runs but no NBO analysis is printed.',
+      '# The ORCA + NBO 7 route is not tested in this version of BondX.'];
+    const dk = dispKind(o.method, o.disp); const disp = dk === 'bj' ? ' D3BJ' : dk === 'zero' ? ' D3ZERO' : '';
     L.push(`! ${o.method} ${o.basis}${disp} RIJCOSX def2/J TightSCF NBO${(!pcs && o.solvent) ? ' CPCM(Water)' : ''}`);
     L.push(`%pal nprocs ${o.nproc} end`, `%maxcore ${o.maxcore}`);
     if (!pcs && o.solvent) L.push('%cpcm', `  epsilon ${o.eps}`, 'end');
@@ -1360,6 +1388,7 @@ END
   }
   function qchemRem(o, extra, qm) {
     const r = [`   METHOD          ${o.method}`, `   BASIS           ${o.basis}`];
+    if (o.disp === 'bj') r.push('   DFT_D           D3_BJ'); else if (o.disp === 'zero') r.push('   DFT_D           D3_ZERO');
     if (heavyECP(qm) && /def2/i.test(o.basis)) r.push('   ECP             def2-ECP');
     r.push('   SCF_CONVERGENCE 8', '   THRESH          14', '   SYM_IGNORE      TRUE', '   XC_GRID         000099000590', '   MEM_TOTAL       ' + (o.memMB || 16000));
     if (/-V$/i.test(o.method)) r.push('   NL_GRID         1');
@@ -1550,7 +1579,7 @@ END
     detectXB, prepareDetection, detectFrame, decorate, geometricScore, parseXYZFrames, parseDCD, analyzeTrajectory, trajAccumulator, Dscore,
     parseCIF, parseXYZ, detectMaterialXB, buildMaterialQM,
     ffVariant, assignForceField, titratableResidues, parseMOL2, mol2ForStructure,
-    buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV,
+    ORCA_NBO_CAUTION, G16_NBO7_CAUTION, buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV,
     parseNBO, nboGate, verifyGeometry, fragmentNPA, parseEDA, edaDescriptors, computeBXQI,
     hashString, toCSV, angle, dist
   };
@@ -2195,6 +2224,12 @@ END
   const QM_FF = ['ff.name', 'ff.water', 'ff.hisDefault', 'ff.termini', 'ff.chainBreaks', 'ff.ssCut', 'ff.chargeSource', 'ff.foldH', 'ff.missing', 'qm.ligandCharge'];
   const QM_CLUSTER = ['qm.pcm', 'qm.eps'];
   const QM_MM = ['mm.radius', 'mm.selection', 'mm.boundary', 'mm.neutralizeCut'];
+  function progNote() {
+    const q = ST.P.qm; const t = [];
+    if (q.program === 'orca') t.push(B.ORCA_NBO_CAUTION);
+    if (q.program === 'gaussian' && q.nbo7) t.push(B.G16_NBO7_CAUTION);
+    return t.map(x => `<div class="note warn" style="margin-top:8px"><b>Caution.</b> ${esc(x)}</div>`).join('');
+  }
   const QM_PROG = ['qm.program', 'qm.method', 'qm.basis', 'qm.nproc', 'qm.mem', 'qm.nbo7'];
   const METHODS = { gaussian: { method: 'wB97XD', basis: 'def2TZVP' }, orca: { method: 'wB97X-D3', basis: 'def2-TZVP' }, qchem: { method: 'wB97X-D', basis: 'def2-TZVP' } };
   R.qm = {
@@ -2215,6 +2250,7 @@ END
         <div class="card"><h2>4 · QM region & program</h2>
           ${pblock('qmreg', 'QM region', QM_REGION)}
           <div style="margin-top:8px">${pblock('qmprog', 'Program & level of theory (NBO single point)', QM_PROG, true)}</div>
+          <div id="qProgNote">${progNote()}</div>
           <h3>Manual overrides (optional)</h3>
           <div class="row"><label class="f">Donor fragment charge<input type="text" id="qQ1" placeholder="auto" style="width:70px"></label><label class="f">Acceptor fragment charge<input type="text" id="qQ2" placeholder="auto" style="width:70px"></label><label class="f">Multiplicity<input type="text" id="qMult" placeholder="auto" style="width:70px"></label></div>
           <div class="row" style="margin-top:14px"><button class="btn primary" id="btnBuild">Build QM model for selected</button></div>
@@ -2293,6 +2329,8 @@ END
         if (prog === 'gaussian') files[`${job}_nbo.com`] = B.writeGaussian(model, Object.assign({}, o, { job: job + '_nbo' }), pcs);
         if (prog === 'orca') { const w = B.writeORCA(model, Object.assign({}, o, { job: job + '_nbo' }), pcs); files[`${job}_nbo.inp`] = w.inp; if (w.pc) files[`${job}_nbo.pc`] = w.pc; }
         if (prog === 'qchem') files[`${job}_nbo.in`] = B.writeQChemNBO(model, o, pcs);
+        if (prog === 'orca') mf.warnings.push(B.ORCA_NBO_CAUTION);
+        if (prog === 'gaussian' && o.nbo7) mf.warnings.push(B.G16_NBO7_CAUTION);
         files[`${job}_cluster.xyz`] = B.writeXYZ(model);
         if (pcs) files[`${job}_mm_charges.csv`] = B.chargesCSV(pcs);
         files[`${job}_manifest.json`] = JSON.stringify(mf, null, 1);
@@ -2318,7 +2356,8 @@ END
     }
   };
   // program change: update method/basis defaults for that program
-  document.addEventListener('change', e => { if (e.target.dataset && e.target.dataset.p === 'qm.program') { const m = METHODS[ST.P.qm.program]; ST.P.qm.method = m.method; ST.P.qm.basis = m.basis; log('param', `qm.method/basis → ${m.method}/${m.basis} (defaults for ${ST.P.qm.program})`); } });
+  document.addEventListener('change', e => { if (e.target.dataset && e.target.dataset.p === 'qm.program') { const m = METHODS[ST.P.qm.program]; ST.P.qm.method = m.method; ST.P.qm.basis = m.basis; log('param', `qm.method/basis → ${m.method}/${m.basis} (defaults for ${ST.P.qm.program})`); }
+    if (e.target.dataset && /^qm\.(program|nbo7)$/.test(e.target.dataset.p || '')) setTimeout(() => { const n = $('#qProgNote'); if (n) n.innerHTML = progNote(); }, 0); });
 
   /* ====================== 5 NBO GATE ====================== */
   R.nbo = {
@@ -2351,7 +2390,7 @@ END
       const ver = B.verifyGeometry(m.manifest, nbo.geometry, NP.geomTol); const gate = B.nboGate(m.manifest, nbo, { threshold: NP.threshold, includeRY: NP.includeRY }); const fq = B.fragmentNPA(m.manifest, nbo);
       m.nbo = { file: file.name, sha256: h, program: nbo.program, terminated: nbo.terminated, verification: ver, gate, fragNPA: fq, nEntries: nbo.entries.length, settings: NP };
       const blocked = ver.checked && ver.ok === false && ver.elMis;
-      $('#nMsg').innerHTML = `<div class="note ${blocked ? 'bad' : ver.ok ? 'ok' : 'warn'}" style="margin-top:8px">${esc(nbo.program)} output · ${nbo.entries.length} E(2) entries · ${nbo.terminated ? 'normal termination' : '<b>no normal-termination marker</b>'}${nbo.threshold != null ? ` · NBO print threshold ${nbo.threshold} kcal/mol` : ''}<br>${esc(ver.note)}</div>`;
+      $('#nMsg').innerHTML = `<div class="note ${blocked ? 'bad' : ver.ok ? 'ok' : 'warn'}" style="margin-top:8px">${esc(nbo.program)} output · ${nbo.entries.length} E(2) entries · ${nbo.terminated ? 'normal termination' : '<b>no normal-termination marker</b>'}${nbo.threshold != null ? ` · NBO print threshold ${nbo.threshold} kcal/mol` : ''}<br>${esc(ver.note)}</div>${nbo.program === 'ORCA' ? `<div class="note warn" style="margin-top:6px">${esc(B.ORCA_NBO_CAUTION)} Check the parsed E(2) entries against the output by hand.</div>` : ''}`;
       if (blocked) { $('#nRes').innerHTML = '<div class="note bad">The output does not match this manifest — gate not applied.</div>'; log('T3.nbo', `${id}: ${file.name} REFUSED (${ver.note})`); return; }
       gate.forEach(g => { const c = ST.cands.find(c => c.cid === g.id) || ST.cands.find(c => c.modelId === id && c.label === g.label); if (!c) return; c.E2 = g.E2_core; c.nbo = { contrib: g.contrib, npaX: g.npaX }; c.verified = g.verified; c.state = g.verified ? 'NBO-VERIFIED' : 'NBO-REJECTED'; });
       log('T3.nbo', `${id}: ${file.name} (${nbo.program}, sha256=${h}); ${ver.note}; threshold ${NP.threshold}, RY* ${NP.includeRY}; ${gate.map(g => `${g.id}=${g.E2_core.toFixed(2)} ${g.verified ? 'PASS' : 'FAIL'}`).join(', ')}`);
