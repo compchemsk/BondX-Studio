@@ -1,0 +1,21 @@
+{
+ "files": 47,
+ "ligand_residues": 242,
+ "metal": 5,
+ "no_formul": 2,
+ "incomplete": 21,
+ "complete": 214,
+ "H_matches": 191,
+ "mismatches": [
+  "1aku FMN",
+  "1het NAD",
+  "1vsn NFT",
+  "2pvb FMT",
+  "2w0s BVP",
+  "2zoz ET",
+  "3r0t FU9",
+  "4cum WS7",
+  "4kya FOL",
+  "4rao 3L7"
+ ]
+}

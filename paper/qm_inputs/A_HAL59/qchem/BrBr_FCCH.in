@@ -1,0 +1,27 @@
+! BondX BX-05cb2819d4 - NBO XB gate
+! BR1 ... F3' [0 0 0]
+$molecule
+0 1
+Br      0.000000     0.000000     0.179380
+Br      0.000000     0.000000     2.456257
+F       0.000000     0.000000    -3.011826
+C       0.000000     0.000000    -4.289350
+C       0.000000     0.000000    -5.477561
+H       0.000000     0.000000    -6.539389
+$end
+
+$rem
+   JOBTYPE         sp
+   METHOD          wB97X-D
+   BASIS           def2-TZVP
+   SCF_CONVERGENCE 8
+   THRESH          14
+   SYM_IGNORE      TRUE
+   XC_GRID         000099000590
+   MEM_TOTAL       50000
+   NBO             1
+$end
+
+$nbo
+   E2PERT
+$end

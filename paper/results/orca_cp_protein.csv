@@ -1,0 +1,9 @@
+model,system,ligand,n_atoms,charge_donor,charge_acceptor,n_xb,xbs,Eint_kJ,Eint_kcal
+1p5e__TBSA__cluster_pcm4,1p5e,TBS:A:301,93,0,-1,4,TBS301:A@BR11 ··· LEU83:A@O ; TBS301:A@BR12 ··· GLU81:A@O ; TBS301:A@BR13 ··· PHE80:A@π(ring) ; TBS301:A@BR10 ··· ILE10:A@O,-47.8,-11.42
+1p5e__TBSC__cluster_pcm4,1p5e,TBS:C:302,72,0,-1,3,TBS302:C@BR11 ··· LEU83:C@O ; TBS302:C@BR12 ··· GLU81:C@O ; TBS302:C@BR13 ··· PHE80:C@π(ring),-43.74,-10.46
+1us0_idd594__LDTA__cluster_pcm4,1us0_idd594,LDT:A:320,51,-1,0,1,LDT320:A@BR8 ··· THR113:A@OG1,14.12,3.38
+2w0s__BVPA__cluster_pcm4,2w0s,BVP:A:1207,51,-2,0,1,BVP1207:A@BR ··· ASN65:A@OD1,14.21,3.4
+2w0s__BVPB__cluster_pcm4,2w0s,BVP:B:1207,51,-2,0,1,BVP1207:B@BR ··· ASN65:B@OD1,12.85,3.07
+4agl__P84A__cluster_pcm4,4agl,P84:A:400,45,0,0,1,P84400:A@I15 ··· LEU145:A@O,-13.94,-3.33
+4agl__P84B__cluster_pcm4,4agl,P84:B:400,45,0,0,1,P84400:B@I15 ··· LEU145:B@O,-13.18,-3.15
+4dst__9LIA__cluster_pcm4,4dst,9LI:A:201,36,0,0,1,9LI201:A@CL2 ··· GLY75:A@N,-1.34,-0.32

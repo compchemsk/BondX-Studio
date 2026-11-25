@@ -1,0 +1,415 @@
+set,name,program,finished,xb,label,E2_core,E2_total,lp_sigma,lp_ry,pi_sigma,verified,ionicX,npaX,npaY,ct_NPA,print_threshold,geometry_ok,geometry_note
+A_HAL59,PCH_PhBr,gaussian,True,XB1,BR4 ··· P1' [0 0 0],1.33,1.33,1.33,0,0,True,False,0.05625,0.52477,0.0011699999999999766,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_PhBr,gaussian,True,XB1,BR4 ··· N1' [0 0 0],1.71,1.76,1.71,0,0,True,False,0.08674,-0.3143,0.003500000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_PhBr,gaussian,True,XB1,BR5 ··· N1' [0 0 0],4.13,4.13,4.03,0.1,0,True,False,0.08885,-1.05222,0.013609999999999928,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_PCH,gaussian,True,XB1,I2 ··· P6' [0 0 0],1.75,1.75,1.67,0.08,0,True,False,0.07756,0.51966,0.0007900000000000684,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_NCH,gaussian,True,XB1,I2 ··· N6' [0 0 0],2.32,2.43,2.32,0,0,True,False,0.10648,-0.32103,0.003120000000000067,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_NH3,gaussian,True,XB1,I2 ··· N9' [0 0 0],6,6.27,5.57,0.43,0,True,False,0.10728,-1.05509,0.01915,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_PhI,gaussian,True,XB1,I4 ··· P1' [0 0 0],1.8,1.8,1.8,0,0,True,False,0.14619,0.51727,0.0023199999999999055,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_PhI,gaussian,True,XB1,I4 ··· N1' [0 0 0],2.67,2.79,2.61,0.06,0,True,False,0.17957,-0.3244,0.005769999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_PhI,gaussian,True,XB1,I5 ··· N1' [0 0 0],6.46,6.76,6.11,0.35,0,True,False,0.17897,-1.05492,0.02285999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_F3CI,gaussian,True,XB1,I4 ··· P1' [0 0 0],2.27,2.27,2.18,0.09,0,True,False,0.08484,0.50193,0.004610000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_F3CI,gaussian,True,XB1,I4 ··· N1' [0 0 0],4.7,4.88,4.57,0.13,0,True,False,0.12846,-0.3424,0.009029999999999871,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_F3CI,gaussian,True,XB1,I5 ··· N1' [0 0 0],11.85,12.45,11.17,0.68,0,True,False,0.12487,-1.05688,0.038759999999999906,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_PCH,gaussian,True,XB1,BR2 ··· P3' [0 0 0],3.16,3.16,2.93,0.23,0,True,False,-0.00275,0.51203,0.010409999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_NCH,gaussian,True,XB1,BR2 ··· N3' [0 0 0],6.46,6.67,6.14,0.32,0,True,False,0.02927,-0.33288,0.018559999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_NH3,gaussian,True,XB1,BR2 ··· N3' [0 0 0],23.18,24.08,21.34,1.84,0,True,False,0.02117,-1.0192,0.08993000000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_NBS,gaussian,True,XB1,BR13 ··· P1' [0 0 0],3.48,3.48,3.37,0.11,0,True,False,0.29148,0.51022,0.009679999999999939,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_NBS,gaussian,True,XB1,BR13 ··· N1' [0 0 0],7.68,8.01,7.3,0.38,0,True,False,0.31936,-0.33746,0.019320000000000115,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_NBS,gaussian,True,XB1,BR5 ··· N1' [0 0 0],21.52,22.48,20.09,1.43,0,True,False,0.29712,-1.03235,0.07463999999999987,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_FCl,gaussian,True,XB1,CL4 ··· P1' [0 0 0],4.55,4.61,4.12,0.43,0,True,False,0.32426,0.50991,0.01690999999999998,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_FCl,gaussian,True,XB1,CL4 ··· N1' [0 0 0],9.6,9.79,8.64,0.96,0,True,False,0.33915,-0.33574,0.027359999999999995,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_FCl,gaussian,True,XB1,CL5 ··· N1' [0 0 0],42.51,43.97,37.11,5.4,0,True,False,0.26682,-0.97368,0.15465,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_NIS,gaussian,True,XB1,I13 ··· P1' [0 0 0],5.47,5.47,5.14,0.33,0,True,False,0.40122,0.50151,0.014779999999999793,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_NIS,gaussian,True,XB1,I13 ··· N1' [0 0 0],12.12,12.72,11.16,0.96,0,True,False,0.43035,-0.35204,0.028059999999999946,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_NIS,gaussian,True,XB1,I5 ··· N1' [0 0 0],31.12,33,27.71,3.41,0,True,False,0.39606,-1.03034,0.09920999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,PCH_FBr,gaussian,True,XB1,BR4 ··· P1' [0 0 0],10,10.06,9.29,0.71,0,True,False,0.40669,0.50981,0.03200999999999998,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NCH_FBr,gaussian,True,XB1,BR4 ··· N1' [0 0 0],20.17,20.65,18.24,1.93,0,True,False,0.42523,-0.34851,0.04754999999999998,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,NH3_FBr,gaussian,True,XB1,BR5 ··· N1' [0 0 0],56.43,58.88,49.98,6.45,0,True,False,0.34927,-0.97501,0.17329,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_PCH,gaussian,True,XB1,I2 ··· P3' [0 0 0],13.69,13.69,12.65,1.04,0,True,False,0.51902,0.49934,0.03466999999999998,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_NCH,gaussian,True,XB1,I2 ··· N3' [0 0 0],24.65,25.73,22.09,2.56,0,True,False,0.53767,-0.36886,0.04757,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_NH3,gaussian,True,XB1,I2 ··· N3' [0 0 0],50.2,52.95,43.15,7.05,0,True,False,0.46767,-1.00739,0.14979000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_FCCH,gaussian,True,XB1,I1 ··· F6' [0 0 0],0.41,0.41,0.41,0,0,False,False,0.07758,-0.24793,-0.0007199999999999984,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_FCCH,gaussian,True,XB1,BR1 ··· F3' [0 0 0],0.48,0.48,0.48,0,0,False,False,0.00455,-0.25296,-0.0011300000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_FCCH,gaussian,True,XB1,I2 ··· F3' [0 0 0],0,0,0,0,0,False,False,0.52598,-0.23844,-0.0013600000000000279,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_FMe,gaussian,True,XB1,I2 ··· F8' [0 0 0],1.85,1.85,1.74,0.11,0,True,False,0.09117,-0.35752,0.0020399999999999863,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_FMe,gaussian,True,XB1,BR2 ··· F3' [0 0 0],4.68,4.68,4.17,0.51,0,True,False,0.02128,-0.35967,0.009399999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_FMe,gaussian,True,XB1,I2 ··· F3' [0 0 0],12.62,12.67,11.37,1.25,0,True,False,0.52918,-0.36315,0.02846000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_OCH2,gaussian,True,XB1,I2 ··· O6' [0 0 0],3.08,3.08,2.68,0.4,0,True,False,0.09538,-0.49672,0.006169999999999981,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_OCH2,gaussian,True,XB1,BR2 ··· O3' [0 0 0],9.57,9.74,8.7,0.87,0,True,False,0.01715,-0.49475,0.031170000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_OCH2,gaussian,True,XB1,I2 ··· O3' [0 0 0],25.95,26.54,23.08,2.87,0,True,False,0.51508,-0.50983,0.06535000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_OPH3,gaussian,True,XB1,I2 ··· O6' [0 0 0],3.62,3.72,2.92,0.7,0,True,False,0.1067,-1.0544,0.003249999999999975,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_OPH3,gaussian,True,XB1,BR2 ··· O3' [0 0 0],13,13.33,11.5,1.5,0,True,False,0.03096,-1.04883,0.038110000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_OPH3,gaussian,True,XB1,I2 ··· O3' [0 0 0],33.54,34.41,28.69,4.85,0,True,False,0.51861,-1.05741,0.07714999999999994,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,MeI_pyr,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.06,6.18,5.58,0.48,0,True,False,0.11184,-0.43089,0.01695000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,BrBr_pyr,gaussian,True,XB1,BR2 ··· N8' [0 0 0],26.93,27.47,23.89,3.04,0,True,False,0.0273,-0.41809,0.09782999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,FI_pyr,gaussian,True,XB1,I2 ··· N8' [0 0 0],80.36,82.64,72.2,8.16,0,True,True,0.47844,-0.44582,0.14902000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,11_benF3-ben,gaussian,True,XB1,"F1 ··· ring(C17,C16,C15,C20,C19,C18)",0,0,0,0,0,False,False,-0.30485,,0.0005600000000000604,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,12_benF6-ben,gaussian,True,XB1,"F10 ··· ring(C19,C18,C17,C16,C15,C20)",0.05,0.05,0,0,0.05,False,False,-0.26987,,-0.0011699999999998378,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,19_benCl-acetone,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.18,1.18,1.18,0,0,True,False,0.02409,-0.54134,0.00388000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,20_benBr-acetone,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.64,2.64,2.54,0.1,0,True,False,0.08709,-0.54646,0.007829999999999893,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,21_benI-acetone,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.39,4.39,4.08,0.31,0,True,False,0.1845,-0.5545,0.012969999999999982,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,22_benCl-Nm3,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.36,2.36,1.97,0.39,0,True,False,0.02423,-0.41744,0.009850000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,23_benBr-Nm3,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.42,5.42,4.65,0.77,0,True,False,0.09203,-0.421,0.020169999999999938,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,24_benI-Nm3,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.25,9.43,7.48,1.77,0,True,False,0.18229,-0.42617,0.0349300000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,25_benBr-mSH,gaussian,True,XB1,BR7 ··· S13' [0 0 0],3.06,3.13,2.82,0.24,0,True,False,0.06557,-0.03993,0.011570000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,26_benI-mSH,gaussian,True,XB1,I7 ··· S13' [0 0 0],5.56,5.61,5.16,0.4,0,True,False,0.15872,-0.03592,0.021960000000000063,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,27_CH3Br-ben,gaussian,True,XB1,"BR13 ··· ring(C2,C3,C4,C5,C6,C7)",0.73,1.29,0,0,0.73,True,False,-0.00566,,0.003910000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,28_CH3I-ben,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.12,1.45,0,0,1.12,True,False,0.0931,,0.0033400000000001207,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,29_CF3Br-ben,gaussian,True,XB1,"BR13 ··· ring(C7,C2,C3,C4,C5,C6)",1.43,1.67,0,0,1.43,True,False,0.027,,0.005370000000000041,0.5,True,Atom order verified (max deviation 0.0000 Å).
+A_HAL59,30_CF3I-ben,gaussian,True,XB1,"I13 ··· ring(C2,C3,C4,C5,C6,C7)",2.27,2.65,0,0,2.27,True,False,0.10999,,0.008770000000000056,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d090,gaussian,True,XB1,CL12 ··· O13' [0 0 0],3.21,3.21,3.13,0.08,0,True,False,0.0298,-0.54247,0.008269999999999916,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d095,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.98,1.98,1.93,0.05,0,True,False,0.02669,-0.54207,0.005589999999999956,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d100,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.18,1.18,1.18,0,0,True,False,0.02409,-0.54134,0.00388000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d105,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.72,0.72,0.72,0,0,True,False,0.02204,-0.54061,0.0027499999999999747,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d110,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.43,0.43,0.43,0,0,False,False,0.02037,-0.53993,0.0019900000000001306,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d120,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.17,0.17,0.12,0.05,0,False,False,0.01773,-0.53883,0.0011099999999999444,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d135,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0,0,0,0,0,False,False,0.01479,-0.53791,0.0005099999999999549,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,19_benCl-acetone_d150,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0,0,0,0,0,False,False,0.01276,-0.53752,0.00019999999999997797,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d090,gaussian,True,XB1,BR12 ··· O13' [0 0 0],6.77,6.93,6.26,0.51,0,True,False,0.09657,-0.54895,0.015320000000000084,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d095,gaussian,True,XB1,BR12 ··· O13' [0 0 0],4.22,4.22,3.99,0.23,0,True,False,0.09144,-0.54782,0.010859999999999953,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d100,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.64,2.64,2.54,0.1,0,True,False,0.08709,-0.54646,0.007829999999999893,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d105,gaussian,True,XB1,BR12 ··· O13' [0 0 0],1.62,1.62,1.62,0,0,True,False,0.08371,-0.54521,0.005750000000000116,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d110,gaussian,True,XB1,BR12 ··· O13' [0 0 0],1.03,1.03,1.03,0,0,True,False,0.08094,-0.54398,0.004300000000000026,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d120,gaussian,True,XB1,BR12 ··· O13' [0 0 0],0.39,0.39,0.39,0,0,False,False,0.07696,-0.54194,0.002460000000000101,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d135,gaussian,True,XB1,BR12 ··· O13' [0 0 0],0.07,0.07,0.07,0,0,False,False,0.07298,-0.5399,0.0011700000000000044,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,20_benBr-acetone_d150,gaussian,True,XB1,BR12 ··· O13' [0 0 0],0,0,0,0,0,False,False,0.07021,-0.53882,0.0005800000000000527,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d090,gaussian,True,XB1,I12 ··· O13' [0 0 0],10.8,11.12,9.64,1.16,0,True,False,0.19654,-0.55974,0.02387000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d095,gaussian,True,XB1,I12 ··· O13' [0 0 0],6.93,7.08,6.26,0.67,0,True,False,0.18994,-0.55695,0.017540000000000056,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d100,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.39,4.39,4.08,0.31,0,True,False,0.1845,-0.5545,0.012969999999999982,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d105,gaussian,True,XB1,I12 ··· O13' [0 0 0],2.81,2.81,2.65,0.16,0,True,False,0.18002,-0.55217,0.00963000000000011,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d110,gaussian,True,XB1,I12 ··· O13' [0 0 0],1.82,1.82,1.72,0.1,0,True,False,0.17649,-0.55021,0.007210000000000022,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d120,gaussian,True,XB1,I12 ··· O13' [0 0 0],0.71,0.71,0.71,0,0,True,False,0.17108,-0.54673,0.004110000000000058,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d135,gaussian,True,XB1,I12 ··· O13' [0 0 0],0.18,0.18,0.18,0,0,False,False,0.16592,-0.54316,0.0019200000000000605,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,21_benI-acetone_d150,gaussian,True,XB1,I12 ··· O13' [0 0 0],0,0,0,0,0,False,False,0.16251,-0.54116,0.001010000000000122,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d090,gaussian,True,XB1,CL7 ··· N13' [0 0 0],5.67,5.67,5.03,0.64,0,True,False,0.02827,-0.41627,0.0207699999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d095,gaussian,True,XB1,CL7 ··· N13' [0 0 0],3.62,3.62,3.18,0.44,0,True,False,0.02637,-0.41722,0.014110000000000067,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d100,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.36,2.36,1.97,0.39,0,True,False,0.02423,-0.41744,0.009850000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d105,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.61,1.61,1.21,0.4,0,True,False,0.02233,-0.41737,0.007060000000000011,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d110,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.14,1.14,0.73,0.41,0,True,False,0.02059,-0.41708,0.005160000000000109,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d120,gaussian,True,XB1,CL7 ··· N13' [0 0 0],0.65,0.65,0.25,0.4,0,True,False,0.01788,-0.41652,0.002900000000000097,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d135,gaussian,True,XB1,CL7 ··· N13' [0 0 0],0.26,0.26,0,0.26,0,False,False,0.01492,-0.41601,0.0013000000000000234,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,22_benCl-Nm3_d150,gaussian,True,XB1,CL7 ··· N13' [0 0 0],0.11,0.11,0,0.11,0,False,False,0.01277,-0.41592,0.0005499999999999117,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d090,gaussian,True,XB1,BR7 ··· N13' [0 0 0],12.05,12.35,10.41,1.64,0,True,False,0.09921,-0.42017,0.03922999999999996,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d095,gaussian,True,XB1,BR7 ··· N13' [0 0 0],8.05,8.05,6.98,1.07,0,True,False,0.09494,-0.42078,0.02788999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d100,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.42,5.42,4.65,0.77,0,True,False,0.09203,-0.421,0.020169999999999938,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d105,gaussian,True,XB1,BR7 ··· N13' [0 0 0],3.67,3.67,3.06,0.61,0,True,False,0.08895,-0.42061,0.014830000000000093,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d110,gaussian,True,XB1,BR7 ··· N13' [0 0 0],2.56,2.56,1.99,0.57,0,True,False,0.08629,-0.42016,0.011089999999999989,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d120,gaussian,True,XB1,BR7 ··· N13' [0 0 0],1.24,1.24,0.8,0.44,0,True,False,0.08194,-0.41902,0.006459999999999938,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d135,gaussian,True,XB1,BR7 ··· N13' [0 0 0],0.55,0.55,0.18,0.37,0,True,False,0.07781,-0.41777,0.003079999999999805,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,23_benBr-Nm3_d150,gaussian,True,XB1,BR7 ··· N13' [0 0 0],0.22,0.22,0,0.22,0,False,False,0.07507,-0.41705,0.0014800000000000368,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d090,gaussian,True,XB1,I7 ··· N13' [0 0 0],20.97,21.75,15.11,5.86,0,True,False,0.18968,-0.42844,0.060370000000000035,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d095,gaussian,True,XB1,I7 ··· N13' [0 0 0],14.09,14.48,10.62,3.47,0,True,False,0.1859,-0.42744,0.04600000000000021,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d100,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.25,9.43,7.48,1.77,0,True,False,0.18229,-0.42617,0.0349300000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d105,gaussian,True,XB1,I7 ··· N13' [0 0 0],6.38,6.38,5.19,1.19,0,True,False,0.17916,-0.42537,0.026559999999999945,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d110,gaussian,True,XB1,I7 ··· N13' [0 0 0],4.38,4.38,3.59,0.79,0,True,False,0.17408,-0.4244,0.020060000000000078,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d120,gaussian,True,XB1,I7 ··· N13' [0 0 0],2.16,2.16,1.62,0.54,0,True,False,0.16891,-0.42259,0.011830000000000007,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d135,gaussian,True,XB1,I7 ··· N13' [0 0 0],0.75,0.75,0.43,0.32,0,True,False,0.16346,-0.42024,0.005610000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,24_benI-Nm3_d150,gaussian,True,XB1,I7 ··· N13' [0 0 0],0.28,0.28,0.1,0.18,0,False,False,0.1601,-0.41871,0.0027600000000000124,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d090,gaussian,True,XB1,I7 ··· S13' [0 0 0],13.29,13.76,12.12,1.17,0,True,False,0.15962,-0.01952,0.04523000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d095,gaussian,True,XB1,I7 ··· S13' [0 0 0],8.6,8.9,7.94,0.66,0,True,False,0.15982,-0.02943,0.03157999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d100,gaussian,True,XB1,I7 ··· S13' [0 0 0],5.56,5.61,5.16,0.4,0,True,False,0.15872,-0.03592,0.021960000000000063,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d105,gaussian,True,XB1,I7 ··· S13' [0 0 0],3.56,3.56,3.31,0.25,0,True,False,0.15842,-0.04014,0.015330000000000177,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d110,gaussian,True,XB1,I7 ··· S13' [0 0 0],2.23,2.23,2.09,0.14,0,True,False,0.15776,-0.04268,0.010679999999999995,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d120,gaussian,True,XB1,I7 ··· S13' [0 0 0],0.93,0.93,0.8,0.13,0,True,False,0.15666,-0.04504,0.005209999999999909,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d135,gaussian,True,XB1,I7 ··· S13' [0 0 0],0.23,0.23,0.16,0.07,0,False,False,0.15532,-0.04557,0.0018499999999999073,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,26_benI-mSH_d150,gaussian,True,XB1,I7 ··· S13' [0 0 0],0,0,0,0,0,False,False,0.15403,-0.04524,0.0007200000000000539,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d090,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",2.7,3.37,0,0,2.7,True,False,0.09463,,0.009969999999999979,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d095,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.78,2.33,0,0,1.78,True,False,0.09666,,0.005150000000000071,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d100,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.12,1.45,0,0,1.12,True,False,0.0931,,0.0033400000000001207,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d105,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.72,0.96,0,0,0.72,True,False,0.09036,,0.002140000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d110,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.45,0.61,0,0,0.45,False,False,0.08818,,0.0013500000000000179,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d120,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.15,0.26,0,0,0.15,False,False,0.0853,,0.0005399999999999572,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d135,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0,0,0,0,0,False,False,0.08258,,0.00016999999999994797,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,28_CH3I-ben_d150,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0,0,0,0,0,False,False,0.08079,,9.00000000000345e-05,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d090,gaussian,True,XB1,I5 ··· N1' [0 0 0],14.25,15.19,12.74,1.51,0,True,False,0.18672,-1.04908,0.04330999999999996,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d095,gaussian,True,XB1,I5 ··· N1' [0 0 0],9.45,9.97,8.79,0.66,0,True,False,0.18395,-1.05283,0.03149999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d100,gaussian,True,XB1,I5 ··· N1' [0 0 0],6.46,6.76,6.11,0.35,0,True,False,0.17897,-1.05492,0.02285999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d105,gaussian,True,XB1,I5 ··· N1' [0 0 0],4.39,4.55,4.19,0.2,0,True,False,0.17619,-1.05595,0.016629999999999895,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d110,gaussian,True,XB1,I5 ··· N1' [0 0 0],3.01,3.01,2.85,0.16,0,True,False,0.17344,-1.05612,0.012110000000000037,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d120,gaussian,True,XB1,I5 ··· N1' [0 0 0],1.46,1.46,1.27,0.19,0,True,False,0.16873,-1.05552,0.006530000000000036,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d135,gaussian,True,XB1,I5 ··· N1' [0 0 0],0.53,0.53,0.34,0.19,0,True,False,0.16341,-1.05397,0.002710000000000101,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_PhI_d150,gaussian,True,XB1,I5 ··· N1' [0 0 0],0.24,0.24,0.08,0.16,0,False,False,0.15946,-1.0528,0.0013200000000000156,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d090,gaussian,True,XB1,I2 ··· N8' [0 0 0],14.09,14.58,11.91,2.18,0,True,False,0.11727,-0.43507,0.03730000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d095,gaussian,True,XB1,I2 ··· N8' [0 0 0],9.26,9.5,8.25,1.01,0,True,False,0.11744,-0.433,0.02418999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d100,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.06,6.18,5.58,0.48,0,True,False,0.11184,-0.43089,0.01695000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d105,gaussian,True,XB1,I2 ··· N8' [0 0 0],4.01,4.01,3.73,0.28,0,True,False,0.10683,-0.42872,0.011749999999999983,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d110,gaussian,True,XB1,I2 ··· N8' [0 0 0],2.66,2.66,2.49,0.17,0,True,False,0.10256,-0.42682,0.008199999999999985,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d120,gaussian,True,XB1,I2 ··· N8' [0 0 0],1.07,1.07,1.07,0,0,True,False,0.09581,-0.42326,0.003999999999999948,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d135,gaussian,True,XB1,I2 ··· N8' [0 0 0],0.27,0.27,0.27,0,0,False,False,0.09069,-0.41922,0.0015599999999999503,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,MeI_pyr_d150,gaussian,True,XB1,I2 ··· N8' [0 0 0],0.07,0.07,0.07,0,0,False,False,0.08661,-0.41692,0.0006999999999999784,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d090,gaussian,True,XB1,I2 ··· N8' [0 0 0],150.87,156.76,135.29,15.58,0,True,True,0.48716,-0.46219,0.17944,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d095,gaussian,True,XB1,I2 ··· N8' [0 0 0],110.58,114.28,98.87,11.71,0,True,True,0.47879,-0.45129,0.16704000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d100,gaussian,True,XB1,I2 ··· N8' [0 0 0],80.36,82.64,72.2,8.16,0,True,True,0.47844,-0.44582,0.14902000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d105,gaussian,True,XB1,I2 ··· N8' [0 0 0],57.65,58.98,52.76,4.89,0,True,True,0.48225,-0.4435,0.12903000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d110,gaussian,True,XB1,I2 ··· N8' [0 0 0],41.5,42.33,38.6,2.9,0,True,True,0.49069,-0.44347,0.10822000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d120,gaussian,True,XB1,I2 ··· N8' [0 0 0],17.42,17.64,15.77,1.65,0,True,False,0.50232,-0.44376,0.07530999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d135,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.96,6.96,6.5,0.46,0,True,False,0.51567,-0.44394,0.039059999999999984,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,FI_pyr_d150,gaussian,True,XB1,I2 ··· N8' [0 0 0],2.61,2.61,2.47,0.14,0,True,False,0.52254,-0.44112,0.018240000000000034,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d090,gaussian,True,XB1,BR5 ··· N1' [0 0 0],104.89,110.46,88.92,15.97,0,True,False,0.32503,-0.93085,0.24330999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d095,gaussian,True,XB1,BR5 ··· N1' [0 0 0],76.8,80.46,66.63,10.17,0,True,False,0.33685,-0.95371,0.20693000000000006,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d100,gaussian,True,XB1,BR5 ··· N1' [0 0 0],56.43,58.88,49.98,6.45,0,True,False,0.34927,-0.97501,0.17329,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d105,gaussian,True,XB1,BR5 ··· N1' [0 0 0],39.76,41.23,35.78,3.98,0,True,False,0.36639,-0.99612,0.14095999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d110,gaussian,True,XB1,BR5 ··· N1' [0 0 0],29.4,30.33,27.06,2.34,0,True,False,0.37778,-1.01113,0.11623,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d120,gaussian,True,XB1,BR5 ··· N1' [0 0 0],16.43,16.79,15.28,1.15,0,True,False,0.39413,-1.03577,0.07580000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d135,gaussian,True,XB1,BR5 ··· N1' [0 0 0],6.9,6.9,6.35,0.55,0,True,False,0.4085,-1.05618,0.037780000000000036,0.5,True,Atom order verified (max deviation 0.0000 Å).
+B_scan_distance,NH3_FBr_d150,gaussian,True,XB1,BR5 ··· N1' [0 0 0],2.95,2.95,2.46,0.49,0,True,False,0.4148,-1.06405,0.017589999999999995,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a180,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.18,1.18,1.18,0,0,True,False,0.0241,-0.54133,0.0038699999999999846,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a170,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.15,1.15,1.15,0,0,True,False,0.02411,-0.54117,0.003730000000000039,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a160,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.03,1.03,1.03,0,0,True,False,0.02413,-0.54062,0.003299999999999942,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a150,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.85,0.85,0.85,0,0,True,False,0.02412,-0.53973,0.002600000000000019,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a140,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.65,0.65,0.65,0,0,True,False,0.02406,-0.53871,0.001779999999999976,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a130,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.44,0.44,0.44,0,0,False,False,0.02385,-0.53772,0.0009899999999999354,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,19_benCl-acetone_a120,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.25,0.25,0.25,0,0,False,False,0.02331,-0.53687,0.000290000000000068,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a180,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.64,2.64,2.54,0.1,0,True,False,0.08712,-0.54646,0.007799999999999918,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a170,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.52,2.52,2.47,0.05,0,True,False,0.08704,-0.54627,0.007609999999999839,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a160,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.23,2.23,2.23,0,0,True,False,0.08693,-0.54558,0.006800000000000084,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a150,gaussian,True,XB1,BR12 ··· O13' [0 0 0],1.85,1.85,1.85,0,0,True,False,0.0867,-0.54447,0.005479999999999902,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a140,gaussian,True,XB1,BR12 ··· O13' [0 0 0],1.5,1.5,1.38,0.12,0,True,False,0.08633,-0.54308,0.003859999999999947,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a130,gaussian,True,XB1,BR12 ··· O13' [0 0 0],1.09,1.09,0.93,0.16,0,True,False,0.08578,-0.54164,0.0021600000000001895,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,20_benBr-acetone_a120,gaussian,True,XB1,BR12 ··· O13' [0 0 0],0.61,0.61,0.52,0.09,0,True,False,0.08495,-0.54041,0.0006499999999999839,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a180,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.4,4.4,4.08,0.32,0,True,False,0.1845,-0.5545,0.012969999999999982,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a170,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.27,4.27,3.95,0.32,0,True,False,0.18439,-0.55423,0.012540000000000162,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a160,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.86,3.86,3.54,0.32,0,True,False,0.18404,-0.55341,0.011160000000000142,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a150,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.26,3.26,2.91,0.35,0,True,False,0.18351,-0.55214,0.009009999999999962,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a140,gaussian,True,XB1,I12 ··· O13' [0 0 0],2.51,2.51,2.15,0.36,0,True,False,0.18289,-0.55063,0.00634000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a130,gaussian,True,XB1,I12 ··· O13' [0 0 0],1.71,1.71,1.38,0.33,0,True,False,0.18213,-0.54908,0.0034500000000001196,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,21_benI-acetone_a120,gaussian,True,XB1,I12 ··· O13' [0 0 0],1.12,1.12,0.72,0.4,0,True,False,0.18114,-0.54773,0.0007900000000000129,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a180,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.36,2.36,1.97,0.39,0,True,False,0.02423,-0.41744,0.009850000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a170,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.27,2.27,1.91,0.36,0,True,False,0.02435,-0.41723,0.00949999999999998,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a160,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.1,2.1,1.7,0.4,0,True,False,0.02464,-0.41659,0.008509999999999934,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a150,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.81,1.81,1.4,0.41,0,True,False,0.02504,-0.41561,0.006929999999999936,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a140,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.53,1.53,1.03,0.5,0,True,False,0.02541,-0.41448,0.00509999999999991,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a130,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.27,1.27,0.66,0.61,0,True,False,0.0256,-0.41345,0.003299999999999942,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,22_benCl-Nm3_a120,gaussian,True,XB1,CL7 ··· N13' [0 0 0],0.92,0.92,0.35,0.57,0,True,False,0.02543,-0.41281,0.001740000000000047,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a180,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.41,5.41,4.65,0.76,0,True,False,0.09203,-0.421,0.020169999999999938,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a170,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.25,5.25,4.5,0.75,0,True,False,0.09208,-0.42074,0.019519999999999926,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a160,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.82,4.82,4.04,0.78,0,True,False,0.09225,-0.42001,0.017610000000000153,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a150,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.17,4.17,3.33,0.84,0,True,False,0.09258,-0.41895,0.01458000000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a140,gaussian,True,XB1,BR7 ··· N13' [0 0 0],3.4,3.4,2.47,0.93,0,True,False,0.09297,-0.41775,0.010839999999999989,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a130,gaussian,True,XB1,BR7 ··· N13' [0 0 0],2.65,2.65,1.57,1.08,0,True,False,0.09329,-0.41665,0.006890000000000118,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,23_benBr-Nm3_a120,gaussian,True,XB1,BR7 ··· N13' [0 0 0],2,2,0.8,1.2,0,True,False,0.09327,-0.41596,0.003389999999999893,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a180,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.25,9.43,7.48,1.77,0,True,False,0.18229,-0.42617,0.0349300000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a170,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.06,9.23,7.27,1.79,0,True,False,0.18221,-0.42594,0.03403000000000009,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a160,gaussian,True,XB1,I7 ··· N13' [0 0 0],8.5,8.61,6.62,1.88,0,True,False,0.18208,-0.42531,0.031230000000000036,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a150,gaussian,True,XB1,I7 ··· N13' [0 0 0],7.45,7.51,5.58,1.87,0,True,False,0.18215,-0.4245,0.026570000000000066,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a140,gaussian,True,XB1,I7 ··· N13' [0 0 0],6.18,6.18,4.23,1.95,0,True,False,0.18263,-0.42383,0.020299999999999957,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a130,gaussian,True,XB1,I7 ··· N13' [0 0 0],4.83,4.83,2.74,2.09,0,True,False,0.18347,-0.42348,0.013110000000000094,0.5,True,Atom order verified (max deviation 0.0000 Å).
+C_scan_angle,24_benI-Nm3_a120,gaussian,True,XB1,I7 ··· N13' [0 0 0],3.48,3.48,1.36,2.12,0,True,False,0.18423,-0.42355,0.0062199999999999755,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__wB97X-D__def2-TZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.18,1.18,1.18,0,0,True,False,0.02409,-0.54134,0.00388000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__M06-2X__def2-TZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.03,1.03,1.03,0,0,True,False,0.02789,-0.54451,0.003379999999999911,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.95,0.95,0.95,0,0,True,False,0.02911,-0.53541,0.004589999999999983,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.95,0.95,0.95,0,0,True,False,0.03176,-0.53304,0.004369999999999874,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__HF__def2-TZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],0.96,0.96,0.96,0,0,True,False,0.01195,-0.63534,0.0016099999999999448,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__wB97X-D__def2-SVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.05,1.05,0.8,0.25,0,True,False,-0.00152,-0.57476,0.0022300000000000375,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,19_benCl-acetone__wB97X-D__def2-QZVP,gaussian,True,XB1,CL12 ··· O13' [0 0 0],1.21,1.21,0.99,0.22,0,True,False,0.03407,-0.55462,0.0034900000000000486,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__wB97X-D__def2-TZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.64,2.64,2.54,0.1,0,True,False,0.08709,-0.54646,0.007829999999999893,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__M06-2X__def2-TZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.14,2.14,2.14,0,0,True,False,0.08971,-0.54969,0.006549999999999945,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.09,2.09,2.09,0,0,True,False,0.08967,-0.53953,0.00944000000000006,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.05,2.05,2.05,0,0,True,False,0.0896,-0.53687,0.008809999999999957,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__HF__def2-TZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.05,2.11,2.05,0,0,True,False,0.08128,-0.64127,0.003409999999999941,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__wB97X-D__def2-SVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.77,2.77,2.33,0.44,0,True,False,0.07943,-0.58108,0.009599999999999942,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,20_benBr-acetone__wB97X-D__def2-QZVP,gaussian,True,XB1,BR12 ··· O13' [0 0 0],2.65,2.65,2.38,0.27,0,True,False,0.10204,-0.5588,0.007620000000000043,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__wB97X-D__def2-TZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.39,4.39,4.08,0.31,0,True,False,0.1845,-0.5545,0.012969999999999982,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__M06-2X__def2-TZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.45,3.45,3.27,0.18,0,True,False,0.17517,-0.55787,0.010410000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.53,3.63,3.27,0.26,0,True,False,0.18148,-0.54555,0.015249999999999986,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.5,3.55,3.22,0.28,0,True,False,0.17934,-0.54386,0.014679999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__HF__def2-TZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],3.63,3.69,3.36,0.27,0,True,False,0.18928,-0.65119,0.00607000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__wB97X-D__def2-SVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],5.25,5.25,4.71,0.54,0,True,False,0.18768,-0.58711,0.0191400000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,21_benI-acetone__wB97X-D__def2-QZVP,gaussian,True,XB1,I12 ··· O13' [0 0 0],4.61,4.67,4.06,0.55,0,True,False,0.19628,-0.56523,0.013709999999999917,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-TZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.36,2.36,1.97,0.39,0,True,False,0.02423,-0.41744,0.009850000000000025,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__M06-2X__def2-TZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.9,1.9,1.64,0.26,0,True,False,0.02886,-0.42838,0.008749999999999841,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.72,1.72,1.47,0.25,0,True,False,0.02797,-0.4063,0.0124999999999999,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.74,1.74,1.47,0.27,0,True,False,0.03107,-0.40409,0.01166999999999993,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__HF__def2-TZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],2.37,2.37,1.52,0.85,0,True,False,0.01302,-0.47839,0.005200000000000038,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-SVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],1.9,1.9,1.6,0.3,0,True,False,0.00096,-0.55929,0.0070800000000000585,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-QZVP,gaussian,True,XB1,CL7 ··· N13' [0 0 0],6.38,6.84,1.73,4.65,0,True,False,0.02663,-0.52675,0.01891999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-TZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.42,5.42,4.65,0.77,0,True,False,0.09203,-0.421,0.020169999999999938,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__M06-2X__def2-TZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.2,4.2,3.76,0.44,0,True,False,0.09548,-0.4316,0.017629999999999812,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.19,4.19,3.56,0.63,0,True,False,0.0918,-0.40837,0.02574000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.24,4.24,3.61,0.63,0,True,False,0.09339,-0.40659,0.02451999999999996,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__HF__def2-TZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],5.16,5.16,3.78,1.38,0,True,False,0.08882,-0.48375,0.010989999999999972,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-SVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],4.91,4.91,4.36,0.55,0,True,False,0.08281,-0.5657,0.02167000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-QZVP,gaussian,True,XB1,BR7 ··· N13' [0 0 0],8.9,9.74,4.49,4.41,0,True,False,0.09885,-0.52879,0.029909999999999964,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__wB97X-D__def2-TZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.25,9.43,7.48,1.77,0,True,False,0.18229,-0.42617,0.0349300000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__M06-2X__def2-TZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],7.15,7.33,5.9,1.25,0,True,False,0.17501,-0.43709,0.03041999999999989,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],6.99,7.2,5.56,1.43,0,True,False,0.1719,-0.41159,0.043610000000000065,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],7.31,7.49,5.71,1.6,0,True,False,0.17024,-0.41004,0.04233999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__HF__def2-TZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.06,9.29,6.5,2.56,0,True,False,0.19068,-0.49189,0.02080000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__wB97X-D__def2-SVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],9.17,9.17,8.11,1.06,0,True,False,0.18213,-0.57038,0.04121,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,24_benI-Nm3__wB97X-D__def2-QZVP,gaussian,True,XB1,I7 ··· N13' [0 0 0],12.59,14.38,8.02,4.57,0,True,False,0.18194,-0.52898,0.04788000000000006,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__wB97X-D__def2-TZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],5.56,5.61,5.16,0.4,0,True,False,0.15872,-0.03592,0.021960000000000063,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__M06-2X__def2-TZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],4.43,4.51,4.15,0.28,0,True,False,0.14971,-0.03394,0.020509999999999973,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],4.31,4.39,4.04,0.27,0,True,False,0.15324,-0.02348,0.028049999999999964,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],4.38,4.46,4.06,0.32,0,True,False,0.1517,-0.03651,0.026899999999999757,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__HF__def2-TZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],4.91,5.01,4.61,0.3,0,True,False,0.16054,-0.00562,0.015040000000000026,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__wB97X-D__def2-SVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],5.44,5.57,5.11,0.33,0,True,False,0.16557,-0.09476,0.024319999999999925,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,26_benI-mSH__wB97X-D__def2-QZVP,gaussian,True,XB1,I7 ··· S13' [0 0 0],5.77,5.93,5.24,0.53,0,True,False,0.16965,-0.02614,0.0236900000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__wB97X-D__def2-TZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.12,1.45,0,0,1.12,True,False,0.0931,,0.0033400000000001207,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__M06-2X__def2-TZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.99,1.27,0,0,0.99,True,False,0.07782,,0.003170000000000034,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.95,1.09,0,0,0.95,True,False,0.08847,,0.0041700000000000625,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",0.96,1.18,0,0,0.96,True,False,0.08469,,0.004149999999999987,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__HF__def2-TZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.11,1.31,0,0,1.11,True,False,0.08365,,0.002300000000000052,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__wB97X-D__def2-SVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.04,1.11,0,0,1.04,True,False,0.09224,,0.0033499999999999364,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,28_CH3I-ben__wB97X-D__def2-QZVP,gaussian,True,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",1.31,1.57,0,0,1.31,True,False,0.10283,,0.003120000000000067,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__wB97X-D__def2-TZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],6.46,6.76,6.11,0.35,0,True,False,0.17897,-1.05492,0.02285999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__M06-2X__def2-TZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],5.01,5.31,4.77,0.24,0,True,False,0.17316,-1.06166,0.01922999999999997,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],4.89,5.22,4.65,0.24,0,True,False,0.1735,-1.04195,0.02745000000000014,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],4.97,5.27,4.71,0.26,0,True,False,0.17182,-1.05591,0.026540000000000064,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__HF__def2-TZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],5.49,5.85,5.18,0.31,0,True,False,0.18446,-1.03473,0.012769999999999865,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__wB97X-D__def2-SVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],7.06,7.06,6.53,0.53,0,True,False,0.18488,-1.0661,0.02945999999999996,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_PhI__wB97X-D__def2-QZVP,gaussian,True,XB1,I5 ··· N1' [0 0 0],6.49,6.82,6.13,0.36,0,True,False,0.18891,-1.07072,0.023380000000000067,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__wB97X-D__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.06,6.18,5.58,0.48,0,True,False,0.11184,-0.43089,0.01695000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__M06-2X__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],4.67,4.79,4.38,0.29,0,True,False,0.10055,-0.43172,0.01376000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],4.69,4.83,4.33,0.36,0,True,False,0.10356,-0.42133,0.02203000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],4.75,4.89,4.35,0.4,0,True,False,0.09923,-0.41983,0.020769999999999955,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__HF__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],4.94,5.12,4.53,0.41,0,True,False,0.10889,-0.49763,0.007259999999999933,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__wB97X-D__def2-SVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.88,6.88,6.05,0.83,0,True,False,0.10287,-0.5102,0.025430000000000008,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,MeI_pyr__wB97X-D__def2-QZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],6.59,6.74,5.96,0.63,0,True,False,0.11971,-0.44828,0.018459999999999976,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__wB97X-D__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],80.36,82.64,72.2,8.16,0,True,True,0.47844,-0.44582,0.14902000000000004,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__M06-2X__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],71.63,74.01,63.96,7.67,0,True,True,0.50266,-0.45296,0.13981,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],65.67,68.13,59.49,6.18,0,True,True,0.45943,-0.43107,0.15846000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],69.11,71.51,61.61,7.5,0,True,True,0.45505,-0.43147,0.15828000000000003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__HF__def2-TZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],76.57,79.62,68.67,7.9,0,True,True,0.56762,-0.5457,0.11741000000000001,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__wB97X-D__def2-SVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],60.85,63.47,54.02,6.83,0,True,False,0.4357,-0.53339,0.14778000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,FI_pyr__wB97X-D__def2-QZVP,gaussian,True,XB1,I2 ··· N8' [0 0 0],80.59,83.03,75,5.59,0,True,True,0.47134,-0.45868,0.15414000000000005,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__wB97X-D__def2-TZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],56.43,58.88,49.98,6.45,0,True,False,0.34927,-0.97501,0.17329,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__M06-2X__def2-TZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],50,52.78,43.39,6.61,0,True,False,0.3617,-0.98532,0.16664999999999996,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__B3LYP-D3BJ__def2-TZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],41.62,44.34,36.82,4.8,0,True,False,0.32868,-0.9527,0.18849999999999995,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__PBE0-D3BJ__def2-TZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],43.55,46.18,38.43,5.12,0,True,False,0.32584,-0.96856,0.18716,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__HF__def2-TZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],55.8,58.91,47.59,8.21,0,True,False,0.44999,-0.99377,0.12707000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__wB97X-D__def2-SVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],59.2,61.11,55.05,4.15,0,True,False,0.32036,-1.01176,0.17241,0.5,True,Atom order verified (max deviation 0.0000 Å).
+D_method_basis,NH3_FBr__wB97X-D__def2-QZVP,gaussian,True,XB1,BR5 ··· N1' [0 0 0],57.26,59.47,51.5,5.76,0,True,False,0.3418,-0.99182,0.17559000000000002,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__cluster_pcm4,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.49,2.4,0.33,0.16,0,False,False,0.04449,-0.71634,-0.006720000000000614,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__cluster_gas,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.46,2.4,0.31,0.15,0,False,False,0.03205,-0.69813,-0.008630000000000138,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_ff14SB,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.63,2.87,0.37,0.26,0,True,False,0.06304,-0.70552,-0.0024599999999996847,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_charmm36,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.63,2.83,0.37,0.26,0,True,False,0.05845,-0.70637,-0.0020999999999997687,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_Z1,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.71,3.13,0.41,0.3,0,True,False,0.08046,-0.70071,0.0016000000000002679,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_Z2,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.62,2.89,0.37,0.25,0,True,False,0.06581,-0.70309,-0.002100000000000657,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_Z3,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.72,3.06,0.42,0.3,0,True,False,0.0737,-0.70403,0.0005199999999996319,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_r10,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.62,2.85,0.37,0.25,0,True,False,0.06048,-0.70375,-0.0025500000000007184,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_r20,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.64,2.83,0.38,0.26,0,True,False,0.065,-0.70658,-0.00214999999999943,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_r25,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.65,2.85,0.38,0.27,0,True,False,0.06479,-0.70586,-0.001960000000000184,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_full,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.64,2.83,0.38,0.26,0,True,False,0.06456,-0.70606,-0.002069999999999572,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__shell3,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.49,2.4,0.33,0.16,0,False,False,0.04449,-0.71634,-0.006720000000000614,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__shell4,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.38,2.34,0.32,0.06,0,False,False,0.04856,-0.71784,-0.018689999999999762,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__shell5,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.38,2.44,0.32,0.06,0,False,False,0.04857,-0.717,-0.017870000000000275,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__cluster_pcm4,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.32,5.77,3.86,0.46,0,True,False,0.11854,-0.6672,0.00837000000000021,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__cluster_gas,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.02,5.33,3.61,0.41,0,True,False,0.10125,-0.6191,0.003959999999997965,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_ff14SB,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.62,6.13,4.11,0.51,0,True,False,0.09952,-0.66984,0.010960000000000303,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_charmm36,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.62,6.13,4.11,0.51,0,True,False,0.09223,-0.67663,0.010900000000001242,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_Z1,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.72,6.15,4.17,0.55,0,True,False,0.12174,-0.66692,0.012429999999999275,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_Z2,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.65,6.15,4.13,0.52,0,True,False,0.10371,-0.66638,0.01136999999999988,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_Z3,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.71,6.2,4.17,0.54,0,True,False,0.11863,-0.66826,0.012549999999999617,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_r10,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.47,5.91,3.98,0.49,0,True,False,0.08599,-0.6582,0.00901999999999914,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_r20,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.57,6.05,4.07,0.5,0,True,False,0.09326,-0.67068,0.010290000000000799,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_r25,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.49,5.93,4,0.49,0,True,False,0.08018,-0.66729,0.009110000000000174,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__qmmm_full,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.48,5.92,3.99,0.49,0,True,False,0.07843,-0.66648,0.008970000000000589,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__shell3,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.32,5.77,3.86,0.46,0,True,False,0.11854,-0.6672,0.00837000000000021,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__shell4,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.52,6.07,4.09,0.43,0,True,False,0.10721,-0.69304,-0.030790000000000983,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPA__shell5,gaussian,True,XB1,BVP1207:A@BR ··· ASN65:A@OD1,4.49,6.07,4.11,0.38,0,True,False,0.10545,-0.69134,-0.02660000000000129,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_pcm4,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.07,3.4,3.07,0,0,True,False,0.15827,-0.57011,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_pcm4,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.08,2.26,2.08,0,0,True,False,0.15195,-0.56812,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_pcm4,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.55,1.42,0,0,0.55,True,False,0.13828,,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_pcm4,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.33,0.58,0.33,0,0,False,False,0.12687,-0.56212,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_gas,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.07,3.34,3.07,0,0,True,False,0.17173,-0.54891,0.002469999999999861,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_gas,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.11,2.29,2.11,0,0,True,False,0.17409,-0.55472,0.002469999999999861,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_gas,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.53,1.31,0,0,0.53,True,False,0.14877,,0.002469999999999861,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__cluster_gas,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.32,0.55,0.32,0,0,False,False,0.13039,-0.52838,0.002469999999999861,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_ff14SB,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.31,3.59,3.24,0.07,0,True,False,0.16948,-0.57362,0.0010299999999999199,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_ff14SB,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.24,2.44,2.24,0,0,True,False,0.17245,-0.58727,0.0010299999999999199,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_ff14SB,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.58,1.42,0,0,0.58,True,False,0.16681,,0.0010299999999999199,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_ff14SB,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.31,0.53,0.31,0,0,False,False,0.1229,-0.51765,0.0010299999999999199,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_charmm36,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.18,3.51,3.18,0,0,True,False,0.16519,-0.56972,0.0023900000000000587,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_charmm36,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.25,2.44,2.25,0,0,True,False,0.17045,-0.5886,0.0023900000000000587,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_charmm36,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.59,1.44,0,0,0.59,True,False,0.16924,,0.0023900000000000587,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_charmm36,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.32,0.55,0.32,0,0,False,False,0.12283,-0.52558,0.0023900000000000587,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z1,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.14,3.41,3.14,0,0,True,False,0.18076,-0.56364,0.007989999999999886,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z1,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.28,2.46,2.28,0,0,True,False,0.1911,-0.57892,0.007989999999999886,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z1,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.64,1.5,0,0,0.64,True,False,0.16973,,0.007989999999999886,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z1,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.32,0.55,0.32,0,0,False,False,0.12112,-0.54736,0.007989999999999886,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z2,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.16,3.43,3.1,0.06,0,True,False,0.16897,-0.55581,0.0006000000000002115,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z2,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.18,2.38,2.18,0,0,True,False,0.17426,-0.57125,0.0006000000000002115,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z2,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.58,1.39,0,0,0.58,True,False,0.16627,,0.0006000000000002115,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z2,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.31,0.53,0.31,0,0,False,False,0.12184,-0.51702,0.0006000000000002115,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z3,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.56,3.85,3.47,0.09,0,True,False,0.18519,-0.54703,0.0017899999999999583,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z3,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.09,2.27,2.09,0,0,True,False,0.16467,-0.56252,0.0017899999999999583,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z3,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.52,1.23,0,0,0.52,True,False,0.14116,,0.0017899999999999583,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_Z3,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.32,0.56,0.32,0,0,False,False,0.14059,-0.53274,0.0017899999999999583,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r10,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.08,3.4,3.08,0,0,True,False,0.15761,-0.56264,0.0014700000000000268,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r10,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.21,2.4,2.21,0,0,True,False,0.16277,-0.5868,0.0014700000000000268,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r10,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.59,1.48,0,0,0.59,True,False,0.16378,,0.0014700000000000268,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r10,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.32,0.55,0.32,0,0,False,False,0.12587,-0.52884,0.0014700000000000268,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r20,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.11,3.43,3.11,0,0,True,False,0.15545,-0.56815,-0.0009200000000001429,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r20,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.17,2.36,2.17,0,0,True,False,0.15967,-0.58038,-0.0009200000000001429,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r20,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.57,1.36,0,0,0.57,True,False,0.1698,,-0.0009200000000001429,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r20,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.31,0.53,0.31,0,0,False,False,0.11864,-0.51709,-0.0009200000000001429,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r25,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.1,3.42,3.1,0,0,True,False,0.15183,-0.56878,-0.0019100000000003003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r25,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.15,2.34,2.15,0,0,True,False,0.15725,-0.57777,-0.0019100000000003003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r25,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.57,1.35,0,0,0.57,True,False,0.17249,,-0.0019100000000003003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_r25,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.31,0.53,0.31,0,0,False,False,0.11579,-0.51481,-0.0019100000000003003,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_full,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.17,3.44,3.11,0.06,0,True,False,0.1537,-0.57105,-0.0028200000000000447,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_full,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.16,2.37,2.16,0,0,True,False,0.15927,-0.57782,-0.0028200000000000447,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_full,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.57,1.36,0,0,0.57,True,False,0.1734,,-0.0028200000000000447,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__qmmm_full,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.31,0.53,0.31,0,0,False,False,0.11407,-0.51455,-0.0028200000000000447,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell3,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.07,3.4,3.07,0,0,True,False,0.15827,-0.57011,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell3,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.08,2.26,2.08,0,0,True,False,0.15195,-0.56812,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell3,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.55,1.42,0,0,0.55,True,False,0.13828,,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell3,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.33,0.58,0.33,0,0,False,False,0.12687,-0.56212,0.0037599999999998746,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell4,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.16,3.44,3.1,0.06,0,True,False,0.15923,-0.5701,-0.0034199999999998676,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell4,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.14,2.41,2.14,0,0,True,False,0.1606,-0.5678,-0.0034199999999998676,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell4,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.57,1.31,0,0,0.57,True,False,0.14197,,-0.0034199999999998676,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell4,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.33,0.58,0.33,0,0,False,False,0.12737,-0.56202,-0.0034199999999998676,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell5,gaussian,True,XB1,TBS301:A@BR11 ··· LEU83:A@O,3.18,3.51,3.11,0.07,0,True,False,0.16421,-0.65455,-0.0046199999999998465,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell5,gaussian,True,XB2,TBS301:A@BR12 ··· GLU81:A@O,2.33,2.62,2.33,0,0,True,False,0.16328,-0.69146,-0.0046199999999998465,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell5,gaussian,True,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),0.58,1.46,0,0,0.58,True,False,0.14286,,-0.0046199999999998465,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSA__shell5,gaussian,True,XB4,TBS301:A@BR10 ··· ILE10:A@O,0.36,0.7,0.36,0,0,False,False,0.13885,-0.69053,-0.0046199999999998465,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__cluster_pcm4,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.2,3.78,2.07,0.13,0,True,False,0.18343,-0.58414,0.010279999999999956,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__cluster_gas,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.13,3.66,2.05,0.08,0,True,False,0.18351,-0.55402,0.009410000000000335,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_ff14SB,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.12,3.68,2.05,0.07,0,True,False,0.16275,-0.57569,0.008840000000000209,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_charmm36,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.12,3.7,2.05,0.07,0,True,False,0.16869,-0.57516,0.009060000000000429,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_Z1,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.19,3.88,2.11,0.08,0,True,False,0.18196,-0.58895,0.011840000000000767,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_Z2,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.1,3.67,2.03,0.07,0,True,False,0.16506,-0.56538,0.009000000000000036,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_Z3,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.17,3.78,2.09,0.08,0,True,False,0.19885,-0.58128,0.010339999999999322,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_r10,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.1,3.67,2.03,0.07,0,True,False,0.15941,-0.57275,0.008529999999999593,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_r20,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.08,3.61,2.01,0.07,0,True,False,0.15434,-0.57143,0.00794999999999979,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_r25,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.08,3.61,2.01,0.07,0,True,False,0.15409,-0.57162,0.007929999999999743,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__qmmm_full,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.02,3.47,1.96,0.06,0,True,False,0.13894,-0.56262,0.006400000000000461,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__shell3,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.2,3.78,2.07,0.13,0,True,False,0.18343,-0.58414,0.010279999999999956,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__shell4,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.28,3.94,2.13,0.15,0,True,False,0.2007,-0.6031,-0.007839999999999653,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84A__shell5,gaussian,True,XB1,P84400:A@I15 ··· LEU145:A@O,2.3,4.32,2.24,0.06,0,True,False,0.20417,-0.73306,-0.010620000000000213,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__cluster_pcm4,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.93,3.08,1.87,0.06,0,True,False,0.04068,-0.567,0.004609999999998227,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__cluster_gas,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.84,2.81,1.77,0.07,0,True,False,0.04132,-0.52436,0.0031500000000010964,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_ff14SB,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.95,3.1,1.87,0.08,0,True,False,0.02736,-0.61669,0.004250000000001641,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_charmm36,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.94,3.1,1.86,0.08,0,True,False,0.02654,-0.62368,0.004070000000000462,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_Z1,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.89,3.01,1.82,0.07,0,True,False,0.0245,-0.59625,0.00376000000000154,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_Z2,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.87,2.95,1.8,0.07,0,True,False,0.00414,-0.58988,0.002409999999999357,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_Z3,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.83,2.91,1.75,0.08,0,True,False,0.03382,-0.58686,0.003109999999999946,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_r10,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.94,3.09,1.86,0.08,0,True,False,0.02509,-0.62151,0.004100000000001103,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_r20,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.96,3.12,1.89,0.07,0,True,False,0.03038,-0.61751,0.004449999999998955,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_r25,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.97,3.14,1.9,0.07,0,True,False,0.03305,-0.61853,0.004679999999999129,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__qmmm_full,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,1.97,3.14,1.9,0.07,0,True,False,0.033,-0.61851,0.00470999999999977,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__shell3,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,2.02,3.31,1.95,0.07,0,True,False,0.0379,-0.67732,0.0027100000000004343,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__shell4,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,2.04,3.4,1.96,0.08,0,True,False,0.03095,-0.684,0.010479999999998935,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4gql__R47A__shell5,gaussian,True,XB1,R47306:A@CL1 ··· PRO232:A@O,2.04,3.44,1.96,0.08,0,True,False,0.03879,-0.69381,0.0135000000000014,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__cluster_pcm4,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.13,0.13,0.07,0.06,0,False,False,-0.00098,-0.87359,0.003889999999999505,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__cluster_gas,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.12,0.12,0.07,0.05,0,False,False,0.00553,-0.86098,0.0037100000000001576,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_ff14SB,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.03677,-0.81156,0.0011699999999997268,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_charmm36,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.03827,-0.81855,0.000710000000000266,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_Z1,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.01391,-0.89653,0.0027999999999999137,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_Z2,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.03776,-0.87313,0.0009200000000000874,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_Z3,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.01781,-0.87845,0.0023499999999995747,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_r10,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.03593,-0.81227,0.0004899999999994353,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_r20,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.0305,-0.8119,0.0011799999999996258,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_r25,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.04053,-0.8109,0.0003400000000006176,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__qmmm_full,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.06,0.06,0.06,0,0,False,False,-0.0413,-0.81081,0.00030000000000002247,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__shell3,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0.13,0.13,0.07,0.06,0,False,False,-0.00098,-0.87359,0.003889999999999505,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__shell4,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0,0,0,0,0,False,False,0.01179,-0.57236,-0.005680000000000185,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4dst__9LIA__shell5,gaussian,True,XB1,9LI201:A@CL2 ··· GLY75:A@N,0,0,0,0,0,False,False,0.01922,-0.58638,-0.007559999999999456,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,2w0s__BVPB__cluster_pcm4,gaussian,True,XB1,BVP1207:B@BR ··· ASN65:B@OD1,2.28,3.14,2.05,0.23,0,True,False,0.10762,-0.66259,0.005209999999999493,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSC__cluster_pcm4,gaussian,True,XB1,TBS302:C@BR11 ··· LEU83:C@O,3.08,3.94,3.02,0.06,0,True,False,0.14831,-0.57119,0.01662000000000008,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSC__cluster_pcm4,gaussian,True,XB2,TBS302:C@BR12 ··· GLU81:C@O,1.87,2.03,1.87,0,0,True,False,0.15035,-0.56705,0.01662000000000008,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1p5e__TBSC__cluster_pcm4,gaussian,True,XB3,TBS302:C@BR13 ··· PHE80:C@π(ring),1.31,2.04,0,0,1.31,True,False,0.12975,,0.01662000000000008,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,4agl__P84B__cluster_pcm4,gaussian,True,XB1,P84400:B@I15 ··· LEU145:B@O,2.4,4.08,2.3,0.1,0,True,False,0.18563,-0.58094,0.010679999999999717,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_HIS110_HID,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.61,2.83,0.37,0.24,0,True,False,0.05998,-0.7061,-0.0028100000000010894,0.5,True,Atom order verified (max deviation 0.0000 Å).
+F_protein,1us0_idd594__LDTA__qmmm_HIS110_HIP,gaussian,True,XB1,LDT320:A@BR8 ··· THR113:A@OG1,0.64,2.87,0.38,0.26,0,True,False,0.07041,-0.71022,-0.001380000000000381,0.5,True,Atom order verified (max deviation 0.0000 Å).

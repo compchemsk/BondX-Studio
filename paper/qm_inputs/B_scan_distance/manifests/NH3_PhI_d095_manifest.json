@@ -1,0 +1,185 @@
+{
+ "tool": "BondX",
+ "version": "2.0.0",
+ "created": "2026-11-25T15:16:10.903Z",
+ "source": "NH3_PhI_d095.xyz",
+ "frame": 0,
+ "mode": "crystal-dimer",
+ "shell": 0,
+ "nAtoms": 16,
+ "addedH": 0,
+ "linkH": 0,
+ "fragCharge": {
+  "1": 0,
+  "2": 0
+ },
+ "totalCharge": 0,
+ "multiplicity": 1,
+ "xbs": [
+  {
+   "id": "XB1",
+   "type": "atom",
+   "X": 1,
+   "A": 2,
+   "Y": 13,
+   "ring": null,
+   "label": "I5 ··· N1' [0 0 0]",
+   "d": 3.017933448022804,
+   "theta1": 179.80593139527315,
+   "halogen": "I"
+  }
+ ],
+ "atoms": [
+  {
+   "n": 1,
+   "el": "I",
+   "frag": 1,
+   "x": 0.00259,
+   "y": 1.08211,
+   "z": 0,
+   "src": "I5"
+  },
+  {
+   "n": 2,
+   "el": "C",
+   "frag": 1,
+   "x": 0,
+   "y": -1.01701,
+   "z": 0,
+   "src": "C6"
+  },
+  {
+   "n": 3,
+   "el": "C",
+   "frag": 1,
+   "x": 1.20178,
+   "y": -1.71169,
+   "z": 0,
+   "src": "C7"
+  },
+  {
+   "n": 4,
+   "el": "C",
+   "frag": 1,
+   "x": -1.20372,
+   "y": -1.70833,
+   "z": 0,
+   "src": "C11"
+  },
+  {
+   "n": 5,
+   "el": "C",
+   "frag": 1,
+   "x": 1.19558,
+   "y": -3.09898,
+   "z": 0,
+   "src": "C8"
+  },
+  {
+   "n": 6,
+   "el": "H",
+   "frag": 1,
+   "x": 2.14075,
+   "y": -1.17376,
+   "z": 0,
+   "src": "H12"
+  },
+  {
+   "n": 7,
+   "el": "C",
+   "frag": 1,
+   "x": -1.20144,
+   "y": -3.09562,
+   "z": 0,
+   "src": "C10"
+  },
+  {
+   "n": 8,
+   "el": "H",
+   "frag": 1,
+   "x": -2.14118,
+   "y": -1.16778,
+   "z": 0,
+   "src": "H16"
+  },
+  {
+   "n": 9,
+   "el": "C",
+   "frag": 1,
+   "x": -0.0039,
+   "y": -3.79411,
+   "z": 0,
+   "src": "C9"
+  },
+  {
+   "n": 10,
+   "el": "H",
+   "frag": 1,
+   "x": 2.1357,
+   "y": -3.636,
+   "z": 0,
+   "src": "H13"
+  },
+  {
+   "n": 11,
+   "el": "H",
+   "frag": 1,
+   "x": -2.14305,
+   "y": -3.63001,
+   "z": 0,
+   "src": "H15"
+  },
+  {
+   "n": 12,
+   "el": "H",
+   "frag": 1,
+   "x": -0.00543,
+   "y": -4.87649,
+   "z": 0,
+   "src": "H14"
+  },
+  {
+   "n": 13,
+   "el": "N",
+   "frag": 2,
+   "x": -0.00391,
+   "y": 4.10004,
+   "z": 0,
+   "src": "N1'"
+  },
+  {
+   "n": 14,
+   "el": "H",
+   "frag": 2,
+   "x": 0.46325,
+   "y": 4.47063,
+   "z": 0.81613,
+   "src": "H2'"
+  },
+  {
+   "n": 15,
+   "el": "H",
+   "frag": 2,
+   "x": 0.46325,
+   "y": 4.47063,
+   "z": -0.81613,
+   "src": "H3'"
+  },
+  {
+   "n": 16,
+   "el": "H",
+   "frag": 2,
+   "x": -0.94972,
+   "y": 4.45655,
+   "z": 0,
+   "src": "H4'"
+  }
+ ],
+ "warnings": [],
+ "assumptions": [
+  "Crystal dimer: the two molecules forming the contact are grown from covalent connectivity across periodic images.",
+  "Both fragments are neutral unless overridden."
+ ],
+ "id": "BX-61423ad6c2",
+ "level": "wB97X-D/def2-TZVP"
+}

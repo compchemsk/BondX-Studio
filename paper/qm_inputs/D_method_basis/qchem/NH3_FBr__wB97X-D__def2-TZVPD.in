@@ -1,0 +1,27 @@
+! BondX BX-3722540ba1 - NBO XB gate
+! BR5 ... N1' [0 0 0]
+$molecule
+0 1
+Br      0.000000     0.000000     0.152975
+F       0.000000     0.000000     1.970104
+N       0.000000     0.000000    -2.203939
+H       0.000000     0.948700    -2.552491
+H       0.821598    -0.474350    -2.552491
+H      -0.821598    -0.474350    -2.552491
+$end
+
+$rem
+   JOBTYPE         sp
+   METHOD          wB97X-D
+   BASIS           def2-TZVPD
+   SCF_CONVERGENCE 8
+   THRESH          14
+   SYM_IGNORE      TRUE
+   XC_GRID         000099000590
+   MEM_TOTAL       50000
+   NBO             1
+$end
+
+$nbo
+   E2PERT
+$end

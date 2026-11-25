@@ -1,0 +1,16 @@
+# BondX BX-d9c5d0ba3d - counterpoise job A (fragment 1, fragment 2 as ghost atoms) (E_int = E_AB - E_A(AB basis) - E_B(AB basis))
+! wB97X-V def2-TZVPD RIJCOSX def2/J TightSCF
+%pal nprocs 40 end
+%maxcore 937
+
+* xyz 0 1
+I                  0.000000     0.000000     0.550268
+C                  0.000000     0.000000    -1.592898
+F                  0.000000     1.244973    -2.079072
+F                 -1.078178    -0.622486    -2.079072
+F                  1.078178    -0.622486    -2.079072
+N:                 0.000000     0.000000     3.542567
+H:                 0.815876    -0.471046     3.910056
+H:                 0.000000     0.942092     3.910056
+H:                -0.815876    -0.471046     3.910056
+*

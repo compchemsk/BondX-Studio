@@ -1,0 +1,346 @@
+{
+ "windows": 108,
+ "frames_total": 11361,
+ "frames_per_window_min": 101,
+ "frames_per_window_max": 118,
+ "stride_values": [
+  5,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "pub_lines_total": 3483,
+ "check": {
+  "framesCompared": 4793,
+  "publishedLinesNoWater": 209,
+  "waterLinesSkipped": 5,
+  "matched": 209,
+  "missing": 0,
+  "extra": 0,
+  "maxAbsDeltaD_A": 0.0049,
+  "maxAbsDeltaTheta_deg": 0.005
+ },
+ "occ_A": {
+  "windows_with_T1": 20,
+  "windows_with_strict": 20,
+  "mean_T1_xi_le_8_8": 0.01,
+  "mean_T1_xi_ge_9_8": 0.138,
+  "mean_strict_xi_le_8_8": 0.01,
+  "mean_strict_xi_ge_9_8": 0.085,
+  "max_T1": 0.41,
+  "xi_max_T1": 16.8,
+  "max_strict": 0.267,
+  "xi_max_strict": 16.8,
+  "first_xi_strict_ge_0_1": 16.8,
+  "contacts_T1": 186,
+  "contacts_strict": 117,
+  "frames": 3791,
+  "residues_T1": 20,
+  "residues_strict": 15,
+  "top_strict": [
+   [
+    "Y211*",
+    37
+   ],
+   [
+    "L259",
+    27
+   ],
+   [
+    "N160",
+    13
+   ],
+   [
+    "H210*",
+    8
+   ],
+   [
+    "R164",
+    7
+   ],
+   [
+    "N242",
+    6
+   ]
+  ]
+ },
+ "occ_B": {
+  "windows_with_T1": 12,
+  "windows_with_strict": 9,
+  "mean_T1_xi_le_8_8": 0.008,
+  "mean_T1_xi_ge_9_8": 0.147,
+  "mean_strict_xi_le_8_8": 0.0,
+  "mean_strict_xi_ge_9_8": 0.104,
+  "max_T1": 0.267,
+  "xi_max_T1": 10.8,
+  "max_strict": 0.229,
+  "xi_max_strict": 15.8,
+  "first_xi_strict_ge_0_1": 10.8,
+  "contacts_T1": 180,
+  "contacts_strict": 110,
+  "frames": 3783,
+  "residues_T1": 16,
+  "residues_strict": 11,
+  "top_strict": [
+   [
+    "Y211*",
+    31
+   ],
+   [
+    "V209*",
+    28
+   ],
+   [
+    "K207*",
+    14
+   ],
+   [
+    "D172",
+    11
+   ],
+   [
+    "T132*",
+    10
+   ],
+   [
+    "H210*",
+    8
+   ]
+  ]
+ },
+ "occ_C": {
+  "windows_with_T1": 10,
+  "windows_with_strict": 9,
+  "mean_T1_xi_le_8_8": 0.004,
+  "mean_T1_xi_ge_9_8": 0.116,
+  "mean_strict_xi_le_8_8": 0.002,
+  "mean_strict_xi_ge_9_8": 0.081,
+  "max_T1": 0.324,
+  "xi_max_T1": 15.8,
+  "max_strict": 0.229,
+  "xi_max_strict": 14.8,
+  "first_xi_strict_ge_0_1": 9.8,
+  "contacts_T1": 143,
+  "contacts_strict": 90,
+  "frames": 3787,
+  "residues_T1": 13,
+  "residues_strict": 10,
+  "top_strict": [
+   [
+    "T178",
+    34
+   ],
+   [
+    "Y211*",
+    20
+   ],
+   [
+    "K174",
+    14
+   ],
+   [
+    "L173",
+    12
+   ],
+   [
+    "W169",
+    3
+   ],
+   [
+    "R177",
+    2
+   ]
+  ]
+ },
+ "classes": {
+  "backbone C=O": [
+   202,
+   202
+  ],
+  "backbone N-H": [
+   154,
+   0
+  ],
+  "side-chain O": [
+   58,
+   58
+  ],
+  "aromatic ring": [
+   45,
+   45
+  ],
+  "side-chain N-H (no lone pair)": [
+   38,
+   0
+  ],
+  "side-chain N (lone pair)": [
+   10,
+   10
+  ],
+  "FMN N": [
+   1,
+   1
+  ],
+  "thioether S": [
+   1,
+   1
+  ]
+ },
+ "contacts_total": 509,
+ "contacts_strict_total": 317,
+ "G_median_all": 0.38,
+ "G_median_strict": 0.415,
+ "frac_contacts_no_lone_pair": 0.377,
+ "nbo": {
+  "clusters": 56,
+  "per_pathway": {
+   "A": 23,
+   "B": 18,
+   "C": 15
+  },
+  "all_terminated": true,
+  "pub_equals_max_line": 56,
+  "pub_source_intra": 43,
+  "pub_source_inter": 12,
+  "pub_source_none": 1,
+  "pub_ge_0_5": 55,
+  "bondx_verified": 19,
+  "bondx_verified_lewis": 11,
+  "acceptor_weak": 22,
+  "acceptor_backbone_NH": 18,
+  "verified_weak": 8,
+  "intra_min": 0.52,
+  "intra_max": 1.77,
+  "pair_E2_range_verified_lewis": [
+   0.57,
+   2.63
+  ],
+  "verified_lewis_list": [
+   [
+    "A",
+    "N160",
+    "OD1",
+    1.18
+   ],
+   [
+    "A",
+    "FMN",
+    "N5",
+    1.95
+   ],
+   [
+    "A",
+    "H210*",
+    "O",
+    0.57
+   ],
+   [
+    "A",
+    "L259",
+    "O",
+    0.94
+   ],
+   [
+    "A",
+    "Y211*",
+    "OH",
+    0.97
+   ],
+   [
+    "A",
+    "V198*",
+    "O",
+    0.73
+   ],
+   [
+    "B",
+    "K207*",
+    "O",
+    1.27
+   ],
+   [
+    "B",
+    "Y211*",
+    "OH",
+    2.63
+   ],
+   [
+    "B",
+    "V209*",
+    "O",
+    1.14
+   ],
+   [
+    "C",
+    "M165",
+    "SD",
+    1.05
+   ],
+   [
+    "C",
+    "W180",
+    "ring",
+    0.74
+   ]
+  ],
+  "verified_weak_list": [
+   [
+    "A",
+    "N242",
+    "ND2",
+    0.76
+   ],
+   [
+    "A",
+    "M165",
+    "N",
+    0.5
+   ],
+   [
+    "A",
+    "W169",
+    "N",
+    1.63
+   ],
+   [
+    "B",
+    "H167",
+    "N",
+    0.92
+   ],
+   [
+    "B",
+    "L173",
+    "N",
+    0.51
+   ],
+   [
+    "B",
+    "F201*",
+    "N",
+    0.81
+   ],
+   [
+    "C",
+    "A130*",
+    "N",
+    1.02
+   ],
+   [
+    "C",
+    "T178",
+    "N",
+    1.55
+   ]
+  ],
+  "intra_O_clusters": 54,
+  "intra_O_min": 0.52,
+  "intra_O_max": 0.83,
+  "intra_O_median": 0.65,
+  "intra_O_all_ortho_phenolate": true,
+  "intra_O_ge_0_5": 54
+ }
+}

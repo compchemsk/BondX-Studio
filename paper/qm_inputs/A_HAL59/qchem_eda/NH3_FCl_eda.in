@@ -1,0 +1,31 @@
+! BondX BX-1c0c24f266 - ALMO-EDA (EDA2) on NBO-verified XB(s)
+! CL5 ... N1' [0 0 0]
+! Fragment 1 = halogen-bond donor (CL5, F6)
+! Fragment 2 = halogen-bond acceptor environment
+$molecule
+0 1
+--
+0 1
+Cl      0.000000     0.000000     0.261044
+F       0.000000     0.000000     1.941351
+--
+0 1
+N       0.000000     0.000000    -2.087128
+H       0.000000     0.948984    -2.433334
+H       0.821844    -0.474492    -2.433334
+H      -0.821844    -0.474492    -2.433334
+$end
+
+$rem
+   JOBTYPE         eda
+   METHOD          wB97X-V
+   BASIS           def2-TZVPD
+   SCF_CONVERGENCE 8
+   THRESH          14
+   SYM_IGNORE      TRUE
+   XC_GRID         000099000590
+   MEM_TOTAL       50000
+   NL_GRID         1
+   EDA2            1
+   EDA_BSSE        TRUE
+$end

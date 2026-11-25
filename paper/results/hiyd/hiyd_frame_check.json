@@ -1,0 +1,12 @@
+{
+ "framesCompared": 4793,
+ "publishedLinesNoWater": 209,
+ "waterLinesSkipped": 5,
+ "matched": 209,
+ "missing": 0,
+ "extra": 0,
+ "maxAbsDeltaD_A": 0.0049,
+ "maxAbsDeltaTheta_deg": 0.005,
+ "missingList": [],
+ "extraList": []
+}

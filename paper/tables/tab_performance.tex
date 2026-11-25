@@ -1,0 +1,16 @@
+\begin{table}[!htbp]\centering\footnotesize
+\caption{Run time of the \BX{} engine (Node.js 22, one core of an Intel Xeon at 2.3 GHz, median of five runs). Times include file parsing.}\label{tab:perf}
+\begin{tabular}{lrl}\toprule Task & Atoms & Time (ms)\\\midrule
+T1 detection, 56 test structures & 643--33072 & 15--325 (median 50)\\
+T1 detection, 1P5E $\times$ 2 & 18424 & 168\\
+T1 detection, 1P5E $\times$ 4 & 36848 & 354\\
+T1 detection, 1P5E $\times$ 8 & 73696 & 780\\
+T2, 200 frames, 1US0 & 2526 & 13 (15082 frames/s)\\
+T2, 200 frames, 1P5E & 9212 & 192 (1039 frames/s)\\
+cluster model, 1US0 &  & 46\\
+QM/MM model, 1US0 &  & 64\\
+cluster model, 1P5E &  & 125\\
+QM/MM model, 1P5E &  & 206\\
+cluster model, 4GQL &  & 52\\
+QM/MM model, 4GQL &  & 72\\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,30 @@
+! BondX BX-606a90a22d - ALMO-EDA (EDA2) on NBO-verified XB(s)
+! BR2 ... N3' [0 0 0]
+! Fragment 1 = halogen-bond donor (BR2, BR1)
+! Fragment 2 = halogen-bond acceptor environment
+$molecule
+0 1
+--
+0 1
+Br      0.000000     0.000000    -0.367147
+Br      0.000000     0.000000     1.919978
+--
+0 1
+N       0.000000     0.000000    -3.235006
+C       0.000000     0.000000    -4.376626
+H       0.000000     0.000000    -5.444275
+$end
+
+$rem
+   JOBTYPE         eda
+   METHOD          wB97X-V
+   BASIS           def2-TZVPD
+   SCF_CONVERGENCE 8
+   THRESH          14
+   SYM_IGNORE      TRUE
+   XC_GRID         000099000590
+   MEM_TOTAL       50000
+   NL_GRID         1
+   EDA2            1
+   EDA_BSSE        TRUE
+$end

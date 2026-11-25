@@ -1,0 +1,111 @@
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{rp{14.5cm}}
+\caption{The 96 automated engine tests (\texttt{node tests/engine.test.js}). The last test runs the independent force-field comparison listed in Table~\ref{tab:ffref}.}\label{tab:tests}\\
+\toprule
+\# & Automated test (all passed)\\
+\midrule
+\endfirsthead
+\toprule
+\# & Automated test (all passed)\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 & every documented parameter exists in DEFAULTS\\
+2 & assumptions listed for T0\\
+3 & assumptions listed for T1\\
+4 & assumptions listed for T2\\
+5 & assumptions listed for T3\\
+6 & assumptions listed for T3b\\
+7 & assumptions listed for T4\\
+8 & assumptions listed for T5\\
+9 & QM/MM assumptions mention boundary scheme\\
+10 & deep merge changes one value only\\
+11 & ff14SB: atom charges of all 110 residue templates sum to the template net charge\\
+12 & ff19SB: atom charges of all 110 residue templates sum to the template net charge\\
+13 & charmm36: atom charges of all 105 residue templates sum to the template net charge\\
+14 & ff14SB: net charges of titratable variants and termini\\
+15 & charmm36: net charges of titratable variants and termini\\
+16 & ff14SB backbone charges (Cornell et al.)\\
+17 & CHARMM36 backbone charges\\
+18 & TIP3P water\\
+19 & I$\cdots$O=C backbone XB found\\
+20 & Br$\cdots\pi$(Phe) XB found\\
+21 & G worked example = 0.859 (ESI S4)\\
+22 & changing a cut-off changes detection\\
+23 & cut-off above 4.6 \AA{} is honoured (search radius follows cut-offs)\\
+24 & D worked example = 0.586\\
+25 & chain termini detected\\
+26 & terminal templates NALA / CGLY used\\
+27 & demo peptide net charge $-$1 (NH3+, Asp$-$, COO$-$) with folded H: -1.000000\\
+28 & water without H is neutral (H folded)\\
+29 & CHARMM36 gives the same net charge\\
+30 & neutral termini option runs\\
+31 & per-residue override ASP$\to$ASH\\
+32 & fragment charges from templates (ligand 0, N-terminal Ala +1): \{"1":0,"2":1\}\\
+33 & Ala: 3 H on N-terminal N, 1 on CA, 3 on CB (from NALA template)\\
+34 & even electron count\\
+35 & no atoms closer than 0.9 \AA{} in the QM model: 1.010\\
+36 & manifest records residue charges, assumptions and force field\\
+37 & scaled link-atom scheme builds the same topology\\
+38 & IDD594 Br$\cdots$OG1 Thr113 detected at 2.97 \AA{}\\
+39 & 1US0 protein: summed atom charges (0.0000) equal the sum of template charges (0)\\
+40 & 1US0 net charge = Arg+Lys$-$Asp$-$Glu+termini (0)\\
+41 & Thr113 cluster: fragment charges \{"1":-1,"2":0\}, even electrons\\
+42 & Thr: H on N, CA, CB, OG1 and 3 on CG2 (from THR template)\\
+43 & RC boundary conserves the MM charge exactly (-3.000000)\\
+44 & whole-residue embedding carries an integer net charge\\
+45 & Z1 deletes the 2 M1 charges\\
+46 & side-chain QM: cut-residue correction gives integer MM charge (-4.0000 vs -4.1144 uncorrected)\\
+47 & Gaussian input: charge keyword and point-charge block\\
+48 & ORCA .pc file: count line\\
+49 & Q-Chem \$external\_charges block\\
+50 & charges CSV export\\
+51 & auto charge source uses PQR charges when a PQR is loaded\\
+52 & MOL2 without charges is rejected with an explanation\\
+53 & MOL2 charges read (PRODRG acetate: CAB 0.72, total 0)\\
+54 & manifest geometry verified against output\\
+55 & $\Sigma$E(2) with RY* = 3.68\\
+56 & $\Sigma$E(2) without RY* = 3.47 (option)\\
+57 & raising the gate threshold rejects\\
+58 & output with different atom count is refused\\
+59 & EDA summary parsed\\
+60 & kcal/mol converted\\
+61 & $\chi$\_CT = 0.66 $\to$ CT driven\\
+62 & changing $\chi$\_CT threshold changes the label\\
+63 & BXQI worked example = 64.65, grade B\\
+64 & failed gate $\to$ rejected grade\\
+65 & grade thresholds are adjustable\\
+66 & DCD and multi-model PDB give the same persistence\\
+67 & D uses the documented formula\\
+68 & CIF I$\cdots$N found\\
+69 & unsafe CIF symmetry operator refused\\
+70 & altloc: first conformer kept by default\\
+71 & altloc: highest-occupancy option\\
+72 & cryo-EM 1 \AA{} dummy cell is ignored (no false periodic contacts)\\
+73 & Gaussian: D3(BJ) only for hybrids without built-in dispersion\\
+74 & ORCA: dispersion keyword chosen per functional\\
+75 & ORCA NBO caution in input comments and T3 assumptions\\
+76 & Q-Chem: DFT\_D D3\_BJ written when requested\\
+77 & strong XB contact is never used to join the two fragments\\
+78 & polar-H-only input: C--H completed, same 36-atom model as from the H-free file\\
+79 & 1P5E TBS: C6HBr4N3 with one N-H (got BR4C6H1N3, 1 N-H)\\
+80 & 2W0S BVP: phosphate dianion C11H12BrN2O8P, charge -2 (got BR1C11H12N2O8P1, -2)\\
+81 & 4GQL R47: incomplete file H rebuilt to 32 H at charge -3 (got 32, -3)\\
+82 & 4AGL P84: incomplete ligand (13 of 21 heavy atoms) is reported\\
+83 & PDB FORMUL records parsed (formula and charge)\\
+84 & replaced file H never become MM charges (4GQL: 1780,2 vs re-protonated 1780,2)\\
+85 & added ligand H atoms have no clashes (H-H $>$= 1.2 A, H-X $>$= 1.5 A; 0 found)\\
+86 & extra point EP of I-Tyr removed on reading (1 site, 2644 of 2645 atoms kept)\\
+87 & iodine partner is the ring carbon C6, not the extra point\\
+88 & DCD/XYZ frames written with the extra point are mapped to the kept atoms\\
+89 & frames with a wrong atom count are refused\\
+90 & NBO lines with an orbital index above 999 (printed ***) are read\\
+91 & Q-Chem NBO input requests the E(2) table and uses the Q-Chem 6 PCM keyword Dielectric\\
+92 & Q-Chem NBO input with def2-QZVP carries the pure-g caution\\
+93 & Q-Chem NBO caution in the T3 assumptions\\
+94 & ionic NBO structure (vacant LP* on the halogen, no sigma*(A-X)) counts n -$>$ LP*(X)\\
+95 & LP*(X) is ignored when the sigma*(A-X) orbital exists\\
+96 & force-field charges agree with PDB2PQR reference PQR files\\
+\end{longtable}}

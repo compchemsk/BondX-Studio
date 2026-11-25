@@ -1,0 +1,6315 @@
+[
+ {
+  "C": "C1",
+  "residue": "ARG93",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.5546958970406095,
+    "t1": 156.47450223285892,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "N",
+    "n": 14,
+    "d": 7.254024843205185,
+    "t1": 121.56148872728991,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 9.328060721210278,
+    "t1": 116.79418353475263,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y20",
+    "el": "N",
+    "n": 20,
+    "d": 8.479617845675653,
+    "t1": 108.75782224348755,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 3.5490840433401973,
+    "t1": 178.32194086541244,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y20",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0.41000000000000003,
+    "E2_total": 0.53,
+    "contrib": {
+     "lp_sigma": 0.41000000000000003,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.12
+    }
+   }
+  ],
+  "lpIntra": 0.7,
+  "lpInter": 0.41000000000000003,
+  "lpRows": [
+   {
+    "donor": "O24",
+    "frag": 2,
+    "e2": 0.31,
+    "bondsToC": -1,
+    "dToC": 5.669
+   },
+   {
+    "donor": "O24",
+    "frag": 2,
+    "e2": 0.1,
+    "bondsToC": -1,
+    "dToC": 5.669
+   },
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.7,
+    "bondsToC": 2,
+    "dToC": 2.317
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "ARG97",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.487693595952202,
+    "t1": 161.5237059504377,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "N",
+    "n": 14,
+    "d": 7.701333438230421,
+    "t1": 142.96899506907937,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 9.272782423821234,
+    "t1": 144.29755727489754,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y20",
+    "el": "N",
+    "n": 20,
+    "d": 9.91187040634052,
+    "t1": 139.87285161423785,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 5.718344421679845,
+    "t1": 160.61184193528632,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.49,
+    "E2_total": 1.3900000000000001,
+    "contrib": {
+     "lp_sigma": 0.49,
+     "lp_ry": 0.11,
+     "pi_sigma": 0,
+     "other": 0.79
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y20",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.59,
+  "lpInter": 0.49,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.49,
+    "bondsToC": -1,
+    "dToC": 5.535
+   },
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.59,
+    "bondsToC": 2,
+    "dToC": 2.339
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "ASN171",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.938498126549609,
+    "t1": 132.31591142644683,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "O",
+    "n": 9,
+    "d": 3.8983749518036355,
+    "t1": 143.68084589744245,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y10",
+    "el": "N",
+    "n": 10,
+    "d": 3.5129941453767044,
+    "t1": 173.11904751926548,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 7.753361443731422,
+    "t1": 152.44118727775165,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0.76,
+    "E2_total": 1.04,
+    "contrib": {
+     "lp_sigma": 0.76,
+     "lp_ry": 0.08,
+     "pi_sigma": 0,
+     "other": 0.2
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.83,
+  "lpInter": 0.76,
+  "lpRows": [
+   {
+    "donor": "N10",
+    "frag": 2,
+    "e2": 0.76,
+    "bondsToC": -1,
+    "dToC": 5.587
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.83,
+    "bondsToC": 2,
+    "dToC": 2.301
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "ASN362",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.307748299075042,
+    "t1": 142.6024283252784,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "O",
+    "n": 9,
+    "d": 5.656392588605745,
+    "t1": 157.09754978246644,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y10",
+    "el": "N",
+    "n": 10,
+    "d": 3.941879313504537,
+    "t1": 170.0029578212488,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 8.125659633247077,
+    "t1": 154.6390145619591,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0.19,
+    "E2_total": 0.27,
+    "contrib": {
+     "lp_sigma": 0.19,
+     "lp_ry": 0.08,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.63,
+  "lpInter": 0.19,
+  "lpRows": [
+   {
+    "donor": "N10",
+    "frag": 2,
+    "e2": 0.19,
+    "bondsToC": -1,
+    "dToC": 6.024
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.63,
+    "bondsToC": 2,
+    "dToC": 2.389
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "ASN89",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.930409373575634,
+    "t1": 149.2941680841494,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "O",
+    "n": 9,
+    "d": 3.3492818524506114,
+    "t1": 174.8606363624996,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y10",
+    "el": "N",
+    "n": 10,
+    "d": 5.295530384402397,
+    "t1": 163.41512189475017,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 6.003156567373951,
+    "t1": 125.47649967211773,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 1.18,
+    "E2_total": 1.3699999999999999,
+    "contrib": {
+     "lp_sigma": 1.18,
+     "lp_ry": 0.05,
+     "pi_sigma": 0,
+     "other": 0.14
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.61,
+  "lpInter": 1.18,
+  "lpRows": [
+   {
+    "donor": "O9",
+    "frag": 2,
+    "e2": 0.77,
+    "bondsToC": -1,
+    "dToC": 5.486
+   },
+   {
+    "donor": "O9",
+    "frag": 2,
+    "e2": 0.41,
+    "bondsToC": -1,
+    "dToC": 5.486
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.61,
+    "bondsToC": 2,
+    "dToC": 2.336
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "FRA440",
+  "terminated": true,
+  "nAtoms": 74,
+  "nFrag1": 22,
+  "I": 74,
+  "Cx": 60,
+  "geo": [
+   {
+    "id": "Y2",
+    "el": "O",
+    "n": 2,
+    "d": 11.575835959870284,
+    "t1": 136.363232804325,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y3",
+    "el": "O",
+    "n": 3,
+    "d": 10.78115947740177,
+    "t1": 129.84059147718267,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y4",
+    "el": "O",
+    "n": 4,
+    "d": 10.957730769460117,
+    "t1": 142.9100048906734,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y6",
+    "el": "O",
+    "n": 6,
+    "d": 9.068878798540975,
+    "t1": 136.67399014249327,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y8",
+    "el": "O",
+    "n": 8,
+    "d": 9.966970900706043,
+    "t1": 117.99228672389931,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y10",
+    "el": "O",
+    "n": 10,
+    "d": 8.747906207987429,
+    "t1": 121.44132981292293,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y12",
+    "el": "O",
+    "n": 12,
+    "d": 5.964502852744729,
+    "t1": 113.82760442808008,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "N",
+    "n": 14,
+    "d": 6.269227228148059,
+    "t1": 125.81863593933534,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y16",
+    "el": "O",
+    "n": 16,
+    "d": 7.695165692239121,
+    "t1": 113.11284646505787,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 5.890289589930277,
+    "t1": 111.47904333242303,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y20",
+    "el": "O",
+    "n": 20,
+    "d": 4.541040391134393,
+    "t1": 106.30824282430784,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "N",
+    "n": 22,
+    "d": 3.189426418981632,
+    "t1": 143.13482755358362,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y31",
+    "el": "N",
+    "n": 31,
+    "d": 5.1891892563502635,
+    "t1": 143.10992344873176,
+    "nH": 0,
+    "nHeavy": 3,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "R14-15-17-18-19-30",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 5.347325087692664,
+    "t1": 121.81005347476675,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R19-21-22-29-30-31",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 4.178459518013952,
+    "t1": 146.272577454051,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "R21-23-24-26-28-29",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 4.641632145008612,
+    "t1": 175.98566072002112,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y2",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y3",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y4",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y6",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y8",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y16",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y20",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 1.95,
+    "E2_total": 10.86,
+    "contrib": {
+     "lp_sigma": 1.95,
+     "lp_ry": 0.49,
+     "pi_sigma": 0,
+     "other": 8.42
+    }
+   },
+   {
+    "id": "Y31",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R14-15-17-18-19-30",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R19-21-22-29-30-31",
+    "E2_core": 0.14,
+    "E2_total": 0.19,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.14,
+     "other": 0.05
+    }
+   },
+   {
+    "id": "R21-23-24-26-28-29",
+    "E2_core": 0.5900000000000001,
+    "E2_total": 0.7600000000000001,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.5900000000000001,
+     "other": 0.17
+    }
+   }
+  ],
+  "lpIntra": 1.77,
+  "lpInter": 1.95,
+  "lpRows": [
+   {
+    "donor": "N22",
+    "frag": 2,
+    "e2": 1.95,
+    "bondsToC": -1,
+    "dToC": 5.029
+   },
+   {
+    "donor": "C64",
+    "frag": 1,
+    "e2": 1.77,
+    "bondsToC": 1,
+    "dToC": 1.412
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "GLU363",
+  "terminated": true,
+  "nAtoms": 40,
+  "nFrag1": 23,
+  "I": 38,
+  "Cx": 23,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.8375332873352384,
+    "t1": 161.9089300986832,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y12",
+    "el": "O",
+    "n": 12,
+    "d": 5.299678959883513,
+    "t1": 140.877913816486,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y13",
+    "el": "O",
+    "n": 13,
+    "d": 6.250508041753247,
+    "t1": 132.6579033720368,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y15",
+    "el": "O",
+    "n": 15,
+    "d": 6.841895744094177,
+    "t1": 171.60732141945996,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.08,
+    "E2_total": 0.51,
+    "contrib": {
+     "lp_sigma": 0.08,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.43
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y13",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y15",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 1.28,
+  "lpInter": 0.08,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.08,
+    "bondsToC": -1,
+    "dToC": 5.881
+   },
+   {
+    "donor": "C23",
+    "frag": 1,
+    "e2": 0.53,
+    "bondsToC": 0,
+    "dToC": 0
+   },
+   {
+    "donor": "O37",
+    "frag": 1,
+    "e2": 0.75,
+    "bondsToC": 2,
+    "dToC": 2.346
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "GLY173",
+  "terminated": true,
+  "nAtoms": 32,
+  "nFrag1": 23,
+  "I": 30,
+  "Cx": 15,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.470837816790205,
+    "t1": 164.8274231440615,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y7",
+    "el": "O",
+    "n": 7,
+    "d": 6.129433757394643,
+    "t1": 149.056830218482,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 1.2000000000000002,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0.09,
+     "pi_sigma": 0,
+     "other": 1.11
+    }
+   },
+   {
+    "id": "Y7",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.65,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O29",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 2,
+    "dToC": 2.339
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "GLY95",
+  "terminated": true,
+  "nAtoms": 32,
+  "nFrag1": 23,
+  "I": 30,
+  "Cx": 15,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.6218239363108196,
+    "t1": 169.90201497338037,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y7",
+    "el": "O",
+    "n": 7,
+    "d": 4.495844252448922,
+    "t1": 142.5387517353207,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.33,
+    "E2_total": 1.1900000000000002,
+    "contrib": {
+     "lp_sigma": 0.33,
+     "lp_ry": 0.07,
+     "pi_sigma": 0,
+     "other": 0.79
+    }
+   },
+   {
+    "id": "Y7",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.62,
+  "lpInter": 0.33,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.33,
+    "bondsToC": -1,
+    "dToC": 5.683
+   },
+   {
+    "donor": "O29",
+    "frag": 1,
+    "e2": 0.62,
+    "bondsToC": 2,
+    "dToC": 2.339
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "HIS348",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.848616268291245,
+    "t1": 117.55496049933721,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 3.7791013006303498,
+    "t1": 145.8310349817747,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y12",
+    "el": "N",
+    "n": 12,
+    "d": 4.885748871743308,
+    "t1": 171.10157602211757,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 6.577424056241926,
+    "t1": 131.43604323257068,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 4.149999430148926,
+    "t1": 159.54594907415049,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0.07,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.07
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "E2_core": 0.2,
+    "E2_total": 0.2,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.2,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.67,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.67,
+    "bondsToC": 2,
+    "dToC": 2.358
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "HIS359",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.4157208549900435,
+    "t1": 130.4692516695511,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 7.839738952485217,
+    "t1": 147.32638248361263,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y13",
+    "el": "N",
+    "n": 13,
+    "d": 8.591717457429393,
+    "t1": 137.86483373818535,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 3.2634317277353913,
+    "t1": 178.4978842138078,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "R8-9-11-13-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 7.820108592999311,
+    "t1": 143.1569874727736,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y13",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0.57,
+    "E2_total": 1.3399999999999999,
+    "contrib": {
+     "lp_sigma": 0.57,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.77
+    }
+   },
+   {
+    "id": "R8-9-11-13-14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.58,
+  "lpInter": 0.57,
+  "lpRows": [
+   {
+    "donor": "O17",
+    "frag": 2,
+    "e2": 0.57,
+    "bondsToC": -1,
+    "dToC": 5.394
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.58,
+    "bondsToC": 2,
+    "dToC": 2.387
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "HIS96",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.686790002210324,
+    "t1": 104.2178038331654,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 3.669064117530927,
+    "t1": 150.2870669464366,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y12",
+    "el": "N",
+    "n": 12,
+    "d": 5.516807593770242,
+    "t1": 137.0897775745193,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 5.5809164706120615,
+    "t1": 114.92884432075194,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 4.520361858275269,
+    "t1": 142.5808304843553,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0.09,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0.09,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0.47,
+    "E2_total": 0.6699999999999999,
+    "contrib": {
+     "lp_sigma": 0.47,
+     "lp_ry": 0.2,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.58,
+  "lpInter": 0.47,
+  "lpRows": [
+   {
+    "donor": "N9",
+    "frag": 2,
+    "e2": 0.47,
+    "bondsToC": -1,
+    "dToC": 5.618
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.58,
+    "bondsToC": 2,
+    "dToC": 2.367
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "LEU188",
+  "terminated": true,
+  "nAtoms": 44,
+  "nFrag1": 23,
+  "I": 42,
+  "Cx": 27,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.187514831424123,
+    "t1": 141.3935594055763,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y19",
+    "el": "O",
+    "n": 19,
+    "d": 3.454070604496816,
+    "t1": 173.325697059413,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.1,
+    "E2_total": 0.1,
+    "contrib": {
+     "lp_sigma": 0.1,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y19",
+    "E2_core": 0.94,
+    "E2_total": 0.94,
+    "contrib": {
+     "lp_sigma": 0.94,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.7,
+  "lpInter": 1.04,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.1,
+    "bondsToC": -1,
+    "dToC": 6.013
+   },
+   {
+    "donor": "O19",
+    "frag": 2,
+    "e2": 0.5,
+    "bondsToC": -1,
+    "dToC": 5.588
+   },
+   {
+    "donor": "O19",
+    "frag": 2,
+    "e2": 0.44,
+    "bondsToC": -1,
+    "dToC": 5.588
+   },
+   {
+    "donor": "O41",
+    "frag": 1,
+    "e2": 0.7,
+    "bondsToC": 2,
+    "dToC": 2.293
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "LYS356",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.212996875470082,
+    "t1": 166.29200595729029,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 8.364730115727644,
+    "t1": 117.35847265732643,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 3.7206917276955367,
+    "t1": 178.67795514653656,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0.27,
+    "E2_total": 0.33,
+    "contrib": {
+     "lp_sigma": 0.27,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.06
+    }
+   }
+  ],
+  "lpIntra": 0.66,
+  "lpInter": 0.27,
+  "lpRows": [
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.18,
+    "bondsToC": -1,
+    "dToC": 5.829
+   },
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.09,
+    "bondsToC": -1,
+    "dToC": 5.829
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.66,
+    "bondsToC": 2,
+    "dToC": 2.366
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "LYS357",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.8159036067159766,
+    "t1": 150.10389963412317,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 8.72110138628264,
+    "t1": 112.74239109844717,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 4.604252175373,
+    "t1": 133.63817946677133,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.37,
+    "E2_total": 0.51,
+    "contrib": {
+     "lp_sigma": 0.37,
+     "lp_ry": 0.08,
+     "pi_sigma": 0,
+     "other": 0.06
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.64,
+  "lpInter": 0.37,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.37,
+    "bondsToC": -1,
+    "dToC": 5.775
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.64,
+    "bondsToC": 2,
+    "dToC": 2.285
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "LYS92",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.716394400834572,
+    "t1": 145.73244962516725,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 10.456006096604238,
+    "t1": 169.89443360202577,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 3.7604054661961652,
+    "t1": 156.8383848048823,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0.25,
+    "E2_total": 0.25,
+    "contrib": {
+     "lp_sigma": 0.25,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.64,
+  "lpInter": 0.25,
+  "lpRows": [
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.13,
+    "bondsToC": -1,
+    "dToC": 5.763
+   },
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.12,
+    "bondsToC": -1,
+    "dToC": 5.763
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.64,
+    "bondsToC": 2,
+    "dToC": 2.351
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "MET94",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.8449822823440933,
+    "t1": 177.6266977964166,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y11",
+    "el": "S",
+    "n": 11,
+    "d": 5.667556039698416,
+    "t1": 122.8116381985846,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 6.1713498674616565,
+    "t1": 157.659390848247,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.5,
+    "E2_total": 0.72,
+    "contrib": {
+     "lp_sigma": 0.5,
+     "lp_ry": 0.14,
+     "pi_sigma": 0,
+     "other": 0.08
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.74,
+  "lpInter": 0.5,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.5,
+    "bondsToC": -1,
+    "dToC": 5.965
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.74,
+    "bondsToC": 2,
+    "dToC": 2.271
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "THR168",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.518600672115622,
+    "t1": 119.19332967688634,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "O",
+    "n": 11,
+    "d": 3.512766346114839,
+    "t1": 148.98565275870567,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 5.977149851908767,
+    "t1": 103.5579167249818,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0.49,
+    "E2_total": 0.7,
+    "contrib": {
+     "lp_sigma": 0.49,
+     "lp_ry": 0.13,
+     "pi_sigma": 0,
+     "other": 0.08
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.68,
+  "lpInter": 0.49,
+  "lpRows": [
+   {
+    "donor": "O11",
+    "frag": 2,
+    "e2": 0.49,
+    "bondsToC": -1,
+    "dToC": 5.429
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.68,
+    "bondsToC": 2,
+    "dToC": 2.346
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "TRP98",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.3393855165277033,
+    "t1": 171.39708608256925,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y11",
+    "el": "N",
+    "n": 11,
+    "d": 5.3602200941938944,
+    "t1": 92.10100143696246,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 5.682600653355381,
+    "t1": 144.55643678728532,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 5.060518095049056,
+    "t1": 103.91708293307221,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 7.05488581123518,
+    "t1": 111.68297231837086,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 1.63,
+    "E2_total": 2.02,
+    "contrib": {
+     "lp_sigma": 1.63,
+     "lp_ry": 0.14,
+     "pi_sigma": 0,
+     "other": 0.25
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.64,
+  "lpInter": 1.63,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 1.63,
+    "bondsToC": -1,
+    "dToC": 5.412
+   },
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.64,
+    "bondsToC": 2,
+    "dToC": 2.345
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "TYR360",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 8.149583689743054,
+    "t1": 130.04580373743389,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 3.4021682958855815,
+    "t1": 176.34308940823726,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 10.596249809948329,
+    "t1": 130.49955898733637,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 5.1246388091238,
+    "t1": 145.5792523962659,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0.97,
+    "E2_total": 1.04,
+    "contrib": {
+     "lp_sigma": 0.97,
+     "lp_ry": 0.07,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.68,
+  "lpInter": 0.97,
+  "lpRows": [
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.85,
+    "bondsToC": -1,
+    "dToC": 5.51
+   },
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.12,
+    "bondsToC": -1,
+    "dToC": 5.51
+   },
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.68,
+    "bondsToC": 2,
+    "dToC": 2.393
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "TYR361",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.6527335251846664,
+    "t1": 160.8667635399243,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 7.496084080260373,
+    "t1": 116.67425568525847,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 6.655003075991625,
+    "t1": 145.4294616814765,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 6.149028106697886,
+    "t1": 131.22366286406415,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.34,
+    "E2_total": 1.18,
+    "contrib": {
+     "lp_sigma": 0.34,
+     "lp_ry": 0.19,
+     "pi_sigma": 0,
+     "other": 0.65
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.61,
+  "lpInter": 0.34,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.34,
+    "bondsToC": -1,
+    "dToC": 5.726
+   },
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.61,
+    "bondsToC": 2,
+    "dToC": 2.337
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "VAL347",
+  "terminated": true,
+  "nAtoms": 41,
+  "nFrag1": 23,
+  "I": 39,
+  "Cx": 24,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.2678584686660725,
+    "t1": 144.39770668201595,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y16",
+    "el": "O",
+    "n": 16,
+    "d": 3.5106425596230957,
+    "t1": 172.61007724507073,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y16",
+    "E2_core": 0.73,
+    "E2_total": 0.79,
+    "contrib": {
+     "lp_sigma": 0.73,
+     "lp_ry": 0.06,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.65,
+  "lpInter": 0.73,
+  "lpRows": [
+   {
+    "donor": "O16",
+    "frag": 2,
+    "e2": 0.47,
+    "bondsToC": -1,
+    "dToC": 5.675
+   },
+   {
+    "donor": "O16",
+    "frag": 2,
+    "e2": 0.26,
+    "bondsToC": -1,
+    "dToC": 5.675
+   },
+   {
+    "donor": "O38",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 2,
+    "dToC": 2.356
+   }
+  ]
+ },
+ {
+  "C": "C1",
+  "residue": "VAL358",
+  "terminated": true,
+  "nAtoms": 41,
+  "nFrag1": 23,
+  "I": 39,
+  "Cx": 24,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.7624392035133276,
+    "t1": 166.2511019533901,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y16",
+    "el": "O",
+    "n": 16,
+    "d": 5.485769900791775,
+    "t1": 152.71141929572372,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0.71,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.71
+    }
+   },
+   {
+    "id": "Y16",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.62,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O38",
+    "frag": 1,
+    "e2": 0.62,
+    "bondsToC": 2,
+    "dToC": 2.294
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "ALA279",
+  "terminated": true,
+  "nAtoms": 35,
+  "nFrag1": 23,
+  "I": 33,
+  "Cx": 18,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.9335984770210093,
+    "t1": 173.1523350797768,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y10",
+    "el": "O",
+    "n": 10,
+    "d": 7.002075091671254,
+    "t1": 156.28762262765164,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.39,
+    "E2_total": 0.76,
+    "contrib": {
+     "lp_sigma": 0.39,
+     "lp_ry": 0.21000000000000002,
+     "pi_sigma": 0,
+     "other": 0.16
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 1.29,
+  "lpInter": 0.39,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.39,
+    "bondsToC": -1,
+    "dToC": 6.034
+   },
+   {
+    "donor": "C18",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 0,
+    "dToC": 0
+   },
+   {
+    "donor": "O32",
+    "frag": 1,
+    "e2": 0.64,
+    "bondsToC": 2,
+    "dToC": 2.329
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "ALA352",
+  "terminated": true,
+  "nAtoms": 35,
+  "nFrag1": 23,
+  "I": 33,
+  "Cx": 18,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.7912386894214403,
+    "t1": 148.49920192308034,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y10",
+    "el": "O",
+    "n": 10,
+    "d": 5.840254165417375,
+    "t1": 133.4836342565804,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.05,
+    "E2_total": 0.5700000000000001,
+    "contrib": {
+     "lp_sigma": 0.05,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.52
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.66,
+  "lpInter": 0.05,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.05,
+    "bondsToC": -1,
+    "dToC": 5.721
+   },
+   {
+    "donor": "O32",
+    "frag": 1,
+    "e2": 0.66,
+    "bondsToC": 2,
+    "dToC": 2.383
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "ASP101",
+  "terminated": true,
+  "nAtoms": 37,
+  "nFrag1": 23,
+  "I": 35,
+  "Cx": 20,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.188803404070056,
+    "t1": 153.81165201367358,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "O",
+    "n": 9,
+    "d": 6.0463380361310435,
+    "t1": 142.08079639583957,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y10",
+    "el": "O",
+    "n": 10,
+    "d": 5.297209102655284,
+    "t1": 121.41961199360259,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y12",
+    "el": "O",
+    "n": 12,
+    "d": 3.6906538639810154,
+    "t1": 160.44372035115157,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0.54,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.54
+    }
+   }
+  ],
+  "lpIntra": 0.6,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O34",
+    "frag": 1,
+    "e2": 0.6,
+    "bondsToC": 2,
+    "dToC": 2.341
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "GLY278",
+  "terminated": true,
+  "nAtoms": 32,
+  "nFrag1": 23,
+  "I": 30,
+  "Cx": 15,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.352436080988731,
+    "t1": 138.7587911673522,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y7",
+    "el": "O",
+    "n": 7,
+    "d": 3.5688779474425854,
+    "t1": 153.97298891349425,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y7",
+    "E2_core": 0.09,
+    "E2_total": 0.47,
+    "contrib": {
+     "lp_sigma": 0.09,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.38
+    }
+   }
+  ],
+  "lpIntra": 0.65,
+  "lpInter": 0.09,
+  "lpRows": [
+   {
+    "donor": "O7",
+    "frag": 2,
+    "e2": 0.09,
+    "bondsToC": -1,
+    "dToC": 5.539
+   },
+   {
+    "donor": "O29",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 2,
+    "dToC": 2.387
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "GLY95",
+  "terminated": true,
+  "nAtoms": 32,
+  "nFrag1": 23,
+  "I": 30,
+  "Cx": 15,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.6829030120991506,
+    "t1": 178.45438970835136,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y7",
+    "el": "O",
+    "n": 7,
+    "d": 3.954170537930047,
+    "t1": 137.94372529105365,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.15,
+    "E2_total": 0.31999999999999995,
+    "contrib": {
+     "lp_sigma": 0.15,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.16999999999999998
+    }
+   },
+   {
+    "id": "Y7",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.63,
+  "lpInter": 0.15,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.15,
+    "bondsToC": -1,
+    "dToC": 5.761
+   },
+   {
+    "donor": "O29",
+    "frag": 1,
+    "e2": 0.63,
+    "bondsToC": 2,
+    "dToC": 2.353
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "HIS359",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.5305902804800136,
+    "t1": 129.8711214529679,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 5.740500099290567,
+    "t1": 166.8031714513811,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y13",
+    "el": "N",
+    "n": 13,
+    "d": 3.8698349082123644,
+    "t1": 177.95741838127103,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 7.741887067180263,
+    "t1": 124.64090579926552,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 4.592088243602943,
+    "t1": 168.64996190231054,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y13",
+    "E2_core": 0.13,
+    "E2_total": 0.18,
+    "contrib": {
+     "lp_sigma": 0.13,
+     "lp_ry": 0.05,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.62,
+  "lpInter": 0.13,
+  "lpRows": [
+   {
+    "donor": "N13",
+    "frag": 2,
+    "e2": 0.13,
+    "bondsToC": -1,
+    "dToC": 6.001
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.62,
+    "bondsToC": 2,
+    "dToC": 2.402
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "HIS96",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.5797368131410163,
+    "t1": 156.47808145708876,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 4.433781713875075,
+    "t1": 109.80854554309673,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y12",
+    "el": "N",
+    "n": 12,
+    "d": 3.9621946122366327,
+    "t1": 107.01489247167656,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 5.690727971927141,
+    "t1": 120.16366903918747,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 3.9686367300948926,
+    "t1": 114.34693822733277,
+    "t1ok": false,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.92,
+    "E2_total": 1.25,
+    "contrib": {
+     "lp_sigma": 0.92,
+     "lp_ry": 0.16,
+     "pi_sigma": 0,
+     "other": 0.16999999999999998
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "E2_core": 0.19,
+    "E2_total": 0.25,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.19,
+     "other": 0.06
+    }
+   }
+  ],
+  "lpIntra": 0.7,
+  "lpInter": 0.92,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.92,
+    "bondsToC": -1,
+    "dToC": 5.616
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.7,
+    "bondsToC": 2,
+    "dToC": 2.406
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "LEU102",
+  "terminated": true,
+  "nAtoms": 44,
+  "nFrag1": 23,
+  "I": 42,
+  "Cx": 27,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.693224380968479,
+    "t1": 144.07321542853728,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y19",
+    "el": "O",
+    "n": 19,
+    "d": 5.800557156481954,
+    "t1": 127.94215616831713,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.51,
+    "E2_total": 0.8,
+    "contrib": {
+     "lp_sigma": 0.51,
+     "lp_ry": 0.18,
+     "pi_sigma": 0,
+     "other": 0.11
+    }
+   },
+   {
+    "id": "Y19",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.59,
+  "lpInter": 0.51,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.51,
+    "bondsToC": -1,
+    "dToC": 5.563
+   },
+   {
+    "donor": "O41",
+    "frag": 1,
+    "e2": 0.59,
+    "bondsToC": 2,
+    "dToC": 2.341
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "LYS355",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 8.313714771611606,
+    "t1": 138.8757135368327,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 3.8009292333171634,
+    "t1": 157.66944999077194,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 7.022619621363598,
+    "t1": 126.22920446574295,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0.1,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.1
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.72,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.72,
+    "bondsToC": 2,
+    "dToC": 2.284
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "LYS356",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.26539829061715,
+    "t1": 150.71348736825314,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 10.076615417461063,
+    "t1": 139.8463593700028,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 3.1952356483699287,
+    "t1": 178.3436998604842,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 1.27,
+    "E2_total": 1.79,
+    "contrib": {
+     "lp_sigma": 1.27,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.52
+    }
+   }
+  ],
+  "lpIntra": 0.65,
+  "lpInter": 1.27,
+  "lpRows": [
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.8,
+    "bondsToC": -1,
+    "dToC": 5.27
+   },
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.47,
+    "bondsToC": -1,
+    "dToC": 5.27
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 2,
+    "dToC": 2.402
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "LYS357",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.904858132091101,
+    "t1": 153.86317875969476,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 6.916298157450559,
+    "t1": 75.03209146678542,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 5.957860859583161,
+    "t1": 140.47275508241515,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.14,
+    "E2_total": 0.26,
+    "contrib": {
+     "lp_sigma": 0.14,
+     "lp_ry": 0.12,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.62,
+  "lpInter": 0.14,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.14,
+    "bondsToC": -1,
+    "dToC": 5.948
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.62,
+    "bondsToC": 2,
+    "dToC": 2.328
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "MET94",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 7.128191653064612,
+    "t1": 163.55650694091798,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "S",
+    "n": 11,
+    "d": 8.805452510965806,
+    "t1": 136.39518947726853,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 3.70103290768307,
+    "t1": 166.99738238544302,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0.35,
+    "E2_total": 0.35,
+    "contrib": {
+     "lp_sigma": 0.35,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.68,
+  "lpInter": 0.35,
+  "lpRows": [
+   {
+    "donor": "O17",
+    "frag": 2,
+    "e2": 0.24,
+    "bondsToC": -1,
+    "dToC": 5.763
+   },
+   {
+    "donor": "O17",
+    "frag": 2,
+    "e2": 0.11,
+    "bondsToC": -1,
+    "dToC": 5.763
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.68,
+    "bondsToC": 2,
+    "dToC": 2.384
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "PHE350",
+  "terminated": true,
+  "nAtoms": 45,
+  "nFrag1": 23,
+  "I": 43,
+  "Cx": 28,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.64815322832608,
+    "t1": 159.0954608209366,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y20",
+    "el": "O",
+    "n": 20,
+    "d": 4.337180322673476,
+    "t1": 119.65430483648466,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-15-17",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 7.86681120861317,
+    "t1": 166.17023337935794,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.81,
+    "E2_total": 1.17,
+    "contrib": {
+     "lp_sigma": 0.81,
+     "lp_ry": 0.28,
+     "pi_sigma": 0,
+     "other": 0.08
+    }
+   },
+   {
+    "id": "Y20",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-15-17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.6,
+  "lpInter": 0.81,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.81,
+    "bondsToC": -1,
+    "dToC": 5.693
+   },
+   {
+    "donor": "O42",
+    "frag": 1,
+    "e2": 0.6,
+    "bondsToC": 2,
+    "dToC": 2.366
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "THR281",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.616443152643316,
+    "t1": 135.64364960058185,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "O",
+    "n": 11,
+    "d": 3.758262742858328,
+    "t1": 162.1980453400835,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 7.370790055498596,
+    "t1": 153.10793285178252,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0.32,
+    "E2_total": 0.49,
+    "contrib": {
+     "lp_sigma": 0.32,
+     "lp_ry": 0.09,
+     "pi_sigma": 0,
+     "other": 0.08
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.71,
+  "lpInter": 0.32,
+  "lpRows": [
+   {
+    "donor": "O11",
+    "frag": 2,
+    "e2": 0.32,
+    "bondsToC": -1,
+    "dToC": 5.81
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.71,
+    "bondsToC": 2,
+    "dToC": 2.269
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "TRP98",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.37014809865808,
+    "t1": 63.54401304224781,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "N",
+    "n": 11,
+    "d": 4.365507265511765,
+    "t1": 118.89717047377984,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 6.575868710597179,
+    "t1": 83.40895459883674,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 3.738549829757057,
+    "t1": 119.42747482155555,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 3.906890379998743,
+    "t1": 151.5467168189497,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "E2_core": 0.22,
+    "E2_total": 0.22,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.22,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0,
+  "lpInter": 0.21,
+  "lpRows": [
+   {
+    "donor": "C22",
+    "frag": 2,
+    "e2": 0.21,
+    "bondsToC": -1,
+    "dToC": 5.159
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "TYR360",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 7.236360565010149,
+    "t1": 116.12028912409218,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 3.1319039504255235,
+    "t1": 176.9995109192364,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 9.724524849962798,
+    "t1": 116.59225307258082,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 4.712709789716658,
+    "t1": 142.5633721194358,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 2.63,
+    "E2_total": 3.05,
+    "contrib": {
+     "lp_sigma": 2.63,
+     "lp_ry": 0.15000000000000002,
+     "pi_sigma": 0,
+     "other": 0.27
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0.06,
+    "E2_total": 0.06,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.06,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.58,
+  "lpInter": 2.63,
+  "lpRows": [
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.1,
+    "bondsToC": -1,
+    "dToC": 5.311
+   },
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 2.53,
+    "bondsToC": -1,
+    "dToC": 5.311
+   },
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.58,
+    "bondsToC": 2,
+    "dToC": 2.373
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "TYR361",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.2291096850774705,
+    "t1": 161.4216320459807,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 5.547127216331081,
+    "t1": 116.51262494911927,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 6.837725764209471,
+    "t1": 153.66825973134334,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 3.9273718584165658,
+    "t1": 142.59179669323441,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0.36,
+    "E2_total": 0.36,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.36,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.59,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.59,
+    "bondsToC": 2,
+    "dToC": 2.406
+   }
+  ]
+ },
+ {
+  "C": "C2",
+  "residue": "VAL358",
+  "terminated": true,
+  "nAtoms": 41,
+  "nFrag1": 23,
+  "I": 39,
+  "Cx": 24,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.7602742373728546,
+    "t1": 128.39186995286684,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "Y16",
+    "el": "O",
+    "n": 16,
+    "d": 3.2152867609440374,
+    "t1": 177.62139907706307,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0.15,
+    "E2_total": 0.29000000000000004,
+    "contrib": {
+     "lp_sigma": 0.15,
+     "lp_ry": 0.09,
+     "pi_sigma": 0,
+     "other": 0.05
+    }
+   },
+   {
+    "id": "Y16",
+    "E2_core": 1.1400000000000001,
+    "E2_total": 1.6900000000000002,
+    "contrib": {
+     "lp_sigma": 1.1400000000000001,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.55
+    }
+   }
+  ],
+  "lpIntra": 0.65,
+  "lpInter": 1.29,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 0.15,
+    "bondsToC": -1,
+    "dToC": 5.387
+   },
+   {
+    "donor": "O16",
+    "frag": 2,
+    "e2": 0.89,
+    "bondsToC": -1,
+    "dToC": 5.388
+   },
+   {
+    "donor": "O16",
+    "frag": 2,
+    "e2": 0.25,
+    "bondsToC": -1,
+    "dToC": 5.388
+   },
+   {
+    "donor": "O38",
+    "frag": 1,
+    "e2": 0.65,
+    "bondsToC": 2,
+    "dToC": 2.389
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "ALA279",
+  "terminated": true,
+  "nAtoms": 35,
+  "nFrag1": 23,
+  "I": 33,
+  "Cx": 18,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.412851653273549,
+    "t1": 175.84139028135533,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y10",
+    "el": "O",
+    "n": 10,
+    "d": 6.297761587626353,
+    "t1": 153.07163352248617,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 1.02,
+    "E2_total": 1.7799999999999998,
+    "contrib": {
+     "lp_sigma": 1.02,
+     "lp_ry": 0.13,
+     "pi_sigma": 0,
+     "other": 0.63
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.76,
+  "lpInter": 1.02,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 1.02,
+    "bondsToC": -1,
+    "dToC": 5.528
+   },
+   {
+    "donor": "O32",
+    "frag": 1,
+    "e2": 0.76,
+    "bondsToC": 2,
+    "dToC": 2.33
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "ARG106",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.970382624523489,
+    "t1": 135.95662625972477,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "N",
+    "n": 14,
+    "d": 4.943630168615872,
+    "t1": 102.2231916400535,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 5.135872584372592,
+    "t1": 75.61565314403902,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y20",
+    "el": "N",
+    "n": 20,
+    "d": 6.8158143050295905,
+    "t1": 89.62977064620608,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 3.655700610291412,
+    "t1": 178.66824261170137,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y20",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0.07,
+    "E2_total": 0.36,
+    "contrib": {
+     "lp_sigma": 0.07,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.29
+    }
+   }
+  ],
+  "lpIntra": 0.53,
+  "lpInter": 0.07,
+  "lpRows": [
+   {
+    "donor": "O24",
+    "frag": 2,
+    "e2": 0.07,
+    "bondsToC": -1,
+    "dToC": 5.808
+   },
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.53,
+    "bondsToC": 2,
+    "dToC": 2.276
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "ASN108",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.339047372190121,
+    "t1": 96.66248825793066,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "O",
+    "n": 9,
+    "d": 4.018117912454163,
+    "t1": 138.6049805083546,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y10",
+    "el": "N",
+    "n": 10,
+    "d": 3.6828303437131065,
+    "t1": 169.08062630921427,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 6.148812929286595,
+    "t1": 110.5654905237196,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y10",
+    "E2_core": 0.35,
+    "E2_total": 0.41,
+    "contrib": {
+     "lp_sigma": 0.35,
+     "lp_ry": 0.06,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.59,
+  "lpInter": 0.35,
+  "lpRows": [
+   {
+    "donor": "N10",
+    "frag": 2,
+    "e2": 0.35,
+    "bondsToC": -1,
+    "dToC": 5.77
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.59,
+    "bondsToC": 2,
+    "dToC": 2.367
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "GLY278",
+  "terminated": true,
+  "nAtoms": 32,
+  "nFrag1": 23,
+  "I": 30,
+  "Cx": 15,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.983901450410611,
+    "t1": 151.96734616713513,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y7",
+    "el": "O",
+    "n": 7,
+    "d": 3.7307296956237663,
+    "t1": 170.1055656907789,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y7",
+    "E2_core": 0,
+    "E2_total": 0.51,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.51
+    }
+   }
+  ],
+  "lpIntra": 0.76,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O29",
+    "frag": 1,
+    "e2": 0.76,
+    "bondsToC": 2,
+    "dToC": 2.36
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "HIS222",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.667660351997318,
+    "t1": 108.04824918556778,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y9",
+    "el": "N",
+    "n": 9,
+    "d": 4.5911138021524796,
+    "t1": 140.09756428826503,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y12",
+    "el": "N",
+    "n": 12,
+    "d": 3.6540055418076474,
+    "t1": 167.88129385942148,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 5.642800568526323,
+    "t1": 120.28698938971272,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 3.821354192533206,
+    "t1": 150.6596035829544,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y9",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y12",
+    "E2_core": 0.14,
+    "E2_total": 0.14,
+    "contrib": {
+     "lp_sigma": 0.14,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-10-12-14",
+    "E2_core": 0.89,
+    "E2_total": 1.04,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.89,
+     "other": 0.15
+    }
+   }
+  ],
+  "lpIntra": 0.63,
+  "lpInter": 0.14,
+  "lpRows": [
+   {
+    "donor": "N12",
+    "frag": 2,
+    "e2": 0.14,
+    "bondsToC": -1,
+    "dToC": 5.815
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.63,
+    "bondsToC": 2,
+    "dToC": 2.344
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "LEU102",
+  "terminated": true,
+  "nAtoms": 44,
+  "nFrag1": 23,
+  "I": 42,
+  "Cx": 27,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.379070695410499,
+    "t1": 148.58488995080785,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y19",
+    "el": "O",
+    "n": 19,
+    "d": 3.5656561787342866,
+    "t1": 170.50322800788427,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y19",
+    "E2_core": 0.31,
+    "E2_total": 0.54,
+    "contrib": {
+     "lp_sigma": 0.31,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.23
+    }
+   }
+  ],
+  "lpIntra": 0.74,
+  "lpInter": 0.31,
+  "lpRows": [
+   {
+    "donor": "O19",
+    "frag": 2,
+    "e2": 0.18,
+    "bondsToC": -1,
+    "dToC": 5.705
+   },
+   {
+    "donor": "O19",
+    "frag": 2,
+    "e2": 0.13,
+    "bondsToC": -1,
+    "dToC": 5.705
+   },
+   {
+    "donor": "O41",
+    "frag": 1,
+    "e2": 0.74,
+    "bondsToC": 2,
+    "dToC": 2.334
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "LYS103",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.63969414097773,
+    "t1": 161.10765494498273,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 6.947558622932304,
+    "t1": 100.14639278302485,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 3.6430506457729903,
+    "t1": 176.77682665398547,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0.22,
+    "E2_total": 0.44,
+    "contrib": {
+     "lp_sigma": 0.22,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.22
+    }
+   }
+  ],
+  "lpIntra": 0.67,
+  "lpInter": 0.22,
+  "lpRows": [
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.22,
+    "bondsToC": -1,
+    "dToC": 5.808
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.67,
+    "bondsToC": 2,
+    "dToC": 2.254
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "LYS104",
+  "terminated": true,
+  "nAtoms": 47,
+  "nFrag1": 23,
+  "I": 45,
+  "Cx": 30,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 4.936415931570091,
+    "t1": 129.174321639939,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y17",
+    "el": "N",
+    "n": 17,
+    "d": 6.197122996617543,
+    "t1": 92.92832932682802,
+    "nH": 3,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y22",
+    "el": "O",
+    "n": 22,
+    "d": 3.7083238298720618,
+    "t1": 174.66288855247785,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y22",
+    "E2_core": 0.36,
+    "E2_total": 0.43,
+    "contrib": {
+     "lp_sigma": 0.36,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.07
+    }
+   }
+  ],
+  "lpIntra": 0.55,
+  "lpInter": 0.36,
+  "lpRows": [
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.13,
+    "bondsToC": -1,
+    "dToC": 5.879
+   },
+   {
+    "donor": "O22",
+    "frag": 2,
+    "e2": 0.23,
+    "bondsToC": -1,
+    "dToC": 5.879
+   },
+   {
+    "donor": "O44",
+    "frag": 1,
+    "e2": 0.55,
+    "bondsToC": 2,
+    "dToC": 2.443
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "MET94",
+  "terminated": true,
+  "nAtoms": 42,
+  "nFrag1": 23,
+  "I": 40,
+  "Cx": 25,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 7.82708224770674,
+    "t1": 158.96971260864248,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "S",
+    "n": 11,
+    "d": 3.6980626246062953,
+    "t1": 169.31480929669684,
+    "nH": 0,
+    "nHeavy": 2,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y17",
+    "el": "O",
+    "n": 17,
+    "d": 8.550782665233692,
+    "t1": 171.52429791040922,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 1.05,
+    "E2_total": 1.4500000000000002,
+    "contrib": {
+     "lp_sigma": 1.05,
+     "lp_ry": 0.35000000000000003,
+     "pi_sigma": 0,
+     "other": 0.05
+    }
+   },
+   {
+    "id": "Y17",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.67,
+  "lpInter": 1.05,
+  "lpRows": [
+   {
+    "donor": "S11",
+    "frag": 2,
+    "e2": 0.99,
+    "bondsToC": -1,
+    "dToC": 5.791
+   },
+   {
+    "donor": "S11",
+    "frag": 2,
+    "e2": 0.06,
+    "bondsToC": -1,
+    "dToC": 5.791
+   },
+   {
+    "donor": "O39",
+    "frag": 1,
+    "e2": 0.67,
+    "bondsToC": 2,
+    "dToC": 2.379
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "THR107",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 3.5308787400682573,
+    "t1": 178.1412631999591,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y11",
+    "el": "O",
+    "n": 11,
+    "d": 5.581125446920719,
+    "t1": 157.9640361493296,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 3.6108467952084315,
+    "t1": 132.60704733846617,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 1.55,
+    "E2_total": 1.9000000000000001,
+    "contrib": {
+     "lp_sigma": 1.55,
+     "lp_ry": 0.2,
+     "pi_sigma": 0,
+     "other": 0.15000000000000002
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0.15000000000000002,
+    "E2_total": 0.21000000000000002,
+    "contrib": {
+     "lp_sigma": 0.15000000000000002,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.06
+    }
+   }
+  ],
+  "lpIntra": 0.67,
+  "lpInter": 1.7000000000000002,
+  "lpRows": [
+   {
+    "donor": "N1",
+    "frag": 2,
+    "e2": 1.55,
+    "bondsToC": -1,
+    "dToC": 5.69
+   },
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.08,
+    "bondsToC": -1,
+    "dToC": 5.316
+   },
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.07,
+    "bondsToC": -1,
+    "dToC": 5.316
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.67,
+    "bondsToC": 2,
+    "dToC": 2.332
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "THR281",
+  "terminated": true,
+  "nAtoms": 39,
+  "nFrag1": 23,
+  "I": 37,
+  "Cx": 22,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.661369384495769,
+    "t1": 134.9382974826439,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "O",
+    "n": 11,
+    "d": 3.8054331970526034,
+    "t1": 161.4391822211187,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 7.502487857183442,
+    "t1": 162.58752592994838,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0.24,
+    "E2_total": 0.37,
+    "contrib": {
+     "lp_sigma": 0.24,
+     "lp_ry": 0.06,
+     "pi_sigma": 0,
+     "other": 0.07
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 1.47,
+  "lpInter": 0.24,
+  "lpRows": [
+   {
+    "donor": "O11",
+    "frag": 2,
+    "e2": 0.24,
+    "bondsToC": -1,
+    "dToC": 5.858
+   },
+   {
+    "donor": "C22",
+    "frag": 1,
+    "e2": 0.75,
+    "bondsToC": 0,
+    "dToC": 0
+   },
+   {
+    "donor": "O36",
+    "frag": 1,
+    "e2": 0.72,
+    "bondsToC": 2,
+    "dToC": 2.312
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "TRP109",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.717214514737638,
+    "t1": 125.35150739374362,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "N",
+    "n": 11,
+    "d": 4.529119303656397,
+    "t1": 133.35579190339013,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 8.834486166167844,
+    "t1": 115.08461068970657,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 4.364387551503614,
+    "t1": 132.07751361770985,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 3.6232996333455656,
+    "t1": 154.27275126963258,
+    "t1ok": true,
+    "dok": true
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "E2_core": 0.74,
+    "E2_total": 0.74,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.74,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.52,
+  "lpInter": 0,
+  "lpRows": [
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.52,
+    "bondsToC": 2,
+    "dToC": 2.398
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "TRP98",
+  "terminated": true,
+  "nAtoms": 49,
+  "nFrag1": 23,
+  "I": 47,
+  "Cx": 32,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 6.26694803882472,
+    "t1": 157.8834300652544,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y11",
+    "el": "N",
+    "n": 11,
+    "d": 3.6212869776260486,
+    "t1": 108.27755763528532,
+    "nH": 1,
+    "nHeavy": 2,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "Y24",
+    "el": "O",
+    "n": 24,
+    "d": 3.817103803392043,
+    "t1": 175.30502304008164,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "el": "AR",
+    "n": null,
+    "size": 5,
+    "d": 3.9586973577411855,
+    "t1": 117.72542026457144,
+    "t1ok": false,
+    "dok": true
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 4.996439086214732,
+    "t1": 98.40681894023558,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y11",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y24",
+    "E2_core": 0.36,
+    "E2_total": 0.36,
+    "contrib": {
+     "lp_sigma": 0.36,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-22",
+    "E2_core": 0.11,
+    "E2_total": 0.11,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0.11,
+     "other": 0
+    }
+   },
+   {
+    "id": "R13-14-16-18-20-22",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.57,
+  "lpInter": 0.36,
+  "lpRows": [
+   {
+    "donor": "O24",
+    "frag": 2,
+    "e2": 0.19,
+    "bondsToC": -1,
+    "dToC": 5.937
+   },
+   {
+    "donor": "O24",
+    "frag": 2,
+    "e2": 0.17,
+    "bondsToC": -1,
+    "dToC": 5.937
+   },
+   {
+    "donor": "O46",
+    "frag": 1,
+    "e2": 0.57,
+    "bondsToC": 2,
+    "dToC": 2.343
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "TYR360",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 5.087925595154276,
+    "t1": 145.61126627790944,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 7.043088568323275,
+    "t1": 98.18932570211577,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 3.5132209228242397,
+    "t1": 178.23814204973215,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 5.049001066875795,
+    "t1": 109.48485641036677,
+    "t1ok": false,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0.22,
+    "E2_total": 0.61,
+    "contrib": {
+     "lp_sigma": 0.22,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0.39
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.7,
+  "lpInter": 0.22,
+  "lpRows": [
+   {
+    "donor": "O21",
+    "frag": 2,
+    "e2": 0.22,
+    "bondsToC": -1,
+    "dToC": 5.665
+   },
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.7,
+    "bondsToC": 2,
+    "dToC": 2.293
+   }
+  ]
+ },
+ {
+  "C": "C3",
+  "residue": "TYR361",
+  "terminated": true,
+  "nAtoms": 46,
+  "nFrag1": 23,
+  "I": 44,
+  "Cx": 29,
+  "geo": [
+   {
+    "id": "Y1",
+    "el": "N",
+    "n": 1,
+    "d": 7.197733278118673,
+    "t1": 131.79648501631675,
+    "nH": 2,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "Y14",
+    "el": "O",
+    "n": 14,
+    "d": 3.4787860771810903,
+    "t1": 167.39598906580042,
+    "nH": 1,
+    "nHeavy": 1,
+    "t1ok": true,
+    "dok": true
+   },
+   {
+    "id": "Y21",
+    "el": "O",
+    "n": 21,
+    "d": 9.849824682591818,
+    "t1": 132.02708301446935,
+    "nH": 0,
+    "nHeavy": 1,
+    "t1ok": false,
+    "dok": false
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "el": "AR",
+    "n": null,
+    "size": 6,
+    "d": 4.920503926071343,
+    "t1": 156.48852187038946,
+    "t1ok": true,
+    "dok": false
+   }
+  ],
+  "gate": [
+   {
+    "id": "Y1",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "Y14",
+    "E2_core": 0.25,
+    "E2_total": 1.11,
+    "contrib": {
+     "lp_sigma": 0.25,
+     "lp_ry": 0.11,
+     "pi_sigma": 0,
+     "other": 0.75
+    }
+   },
+   {
+    "id": "Y21",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   },
+   {
+    "id": "R8-9-11-13-16-18",
+    "E2_core": 0,
+    "E2_total": 0,
+    "contrib": {
+     "lp_sigma": 0,
+     "lp_ry": 0,
+     "pi_sigma": 0,
+     "other": 0
+    }
+   }
+  ],
+  "lpIntra": 0.66,
+  "lpInter": 0.25,
+  "lpRows": [
+   {
+    "donor": "O14",
+    "frag": 2,
+    "e2": 0.25,
+    "bondsToC": -1,
+    "dToC": 5.583
+   },
+   {
+    "donor": "O43",
+    "frag": 1,
+    "e2": 0.66,
+    "bondsToC": 2,
+    "dToC": 2.314
+   }
+  ]
+ }
+]

@@ -1,201 +1,188 @@
 <div align="center">
 
-# 🔷 BondX Studio
+# BondX Studio
 
-### Halogen-Bond Analysis from Geometry to Electronic Structure
+### Is that halogen bond real? From geometric contacts to verified halogen bonds, in your browser.
 
-**Structure → Geometry → Dynamics → NBO → ALMO-EDA → BXQI**
+**Geometry → Dynamics → QM model → NBO gate → ALMO-EDA → BXQI**
 
-[![Open BondX Studio](https://img.shields.io/badge/▶https://compchemsk.github.io/BondX-Studio/)](https://compchemsk.github.io/BondX-Studio/)
+[![Open BondX Studio](https://img.shields.io/badge/Open-BondX_Studio-0d6f78?style=for-the-badge)](https://compchemsk.github.io/BondX-Studio/)
+&nbsp;
+![No install](https://img.shields.io/badge/install-none-1baf7a?style=for-the-badge)
+&nbsp;
+![Data stay local](https://img.shields.io/badge/data-stay_on_your_computer-2a78d6?style=for-the-badge)
+&nbsp;
+![License MIT](https://img.shields.io/badge/license-MIT-c9a45c?style=for-the-badge)
 
-[No Installation & Browser Based]
 </div>
 
 ---
 
-## ✨ About BondX Studio
+## What is BondX Studio?
 
-**BondX Studio** is a browser-based tool for identifying and characterising halogen bonds (C–X···Y, where X = Cl, Br, I).
+BondX Studio checks halogen bonds (C–X···Y, X = Cl, Br, I) in proteins, ligands, trajectories and crystals.
+Most tools stop at distances and angles. BondX Studio goes further.
+It builds a quantum-chemical model of each contact with force-field protonation and charges.
+It writes the input files for Gaussian 16, ORCA and Q-Chem.
+It reads the NBO and ALMO-EDA outputs.
+It keeps a contact only with real donation from the acceptor into the σ*(C–X) orbital.
+It combines all the evidence into one transparent score, the BondX quality index (BXQI).
 
-It analyses halogen bonds in:
+The whole program is one HTML file (`index.html`).
+It needs no installation, no server and no account.
+Every assumption is shown on screen. Every default value is editable. Every change is logged.
 
-- Protein–ligand complexes
-- Molecular dynamics (MD) trajectories
-- Crystal structures
-
-Unlike tools that rely only on distances and angles, BondX examines the electronic nature of each interaction.
-
-It combines geometric analysis, molecular dynamics, Natural Bond Orbital (NBO) analysis, and ALMO Energy Decomposition Analysis (ALMO-EDA).
-
-The final result is a transparent **BondX Quality Index (BXQI)**.
-
-BondX runs directly in your browser. No installation, server, or user account is required.
+**Online version:** <https://compchemsk.github.io/BondX-Studio/>
 
 ---
 
-## 🧭 Analysis Workflow
+## Workflow
 
 ```mermaid
-flowchart TD
-    A["Load Structure"] --> B["Geometric Analysis"]
-    B --> C["Dynamics Analysis"]
-    C --> D["QM Model Preparation"]
-    D --> E["NBO Verification"]
-    E --> F["ALMO-EDA"]
-    F --> G["BXQI Score and Report"]
-
-    E -->|Rejected| H["Geometric False Positive"]
-
-    style E fill:#fff4e0,stroke:#a86200
-    style H fill:#fdecec,stroke:#b4232a
-    style G fill:#e5f5ed,stroke:#1baf7a
+flowchart LR
+    A["1 · Load structure<br/>PDB / PQR / RCSB ID"] --> B["2 · Geometry (T1)<br/>score G"]
+    B --> C["3 · Dynamics (T2)<br/>occupancy, D"]
+    C --> D["4 · QM model (T3a)<br/>force-field charges<br/>cluster or QM/MM"]
+    D --> E{"5 · NBO gate (T3b)<br/>ΣE(2) ≥ 0.5 kcal/mol"}
+    E -- verified --> F["6 · ALMO-EDA (T4)<br/>POL vs CT"]
+    E -- rejected --> X["close contact only"]
+    F --> G["7 · BXQI (T5)<br/>score and report"]
 ```
 
-### Main Analysis Steps
+| Step | Tier | What it does | Result |
+|:---:|:---:|---|---|
+| 1 | T0 | Reads PDB or PQR files. Fetches PDB entries from RCSB. Removes virtual sites (EP, LP, TIP4P M). | Clean structure |
+| 2 | T1 | Tests every C–X bond against N, O, S and aromatic acceptors. | Contacts with a geometric score G |
+| 3 | T2 | Repeats the test in every frame of a DCD, multi-model PDB or XYZ trajectory. | Occupancy, residence time, best frame |
+| 4 | T3a | Cuts the QM region, adds hydrogens and force-field charges, caps cut bonds, writes inputs. | Job bundle with an atom-by-atom manifest |
+| 5 | T3b | Reads the NBO second-order table. Adds the donation from the T1 acceptor into σ*(C–X). | Verified or rejected |
+| 6 | T4 | Writes the Q-Chem ALMO-EDA input. Reads the frozen, polarization and CT energies. | χ_CT and mechanism |
+| 7 | T5 | Combines the tiers by a weighted geometric mean. | BXQI (0–100), grade A–D, HTML report |
 
-| Step | Analysis | Description |
-|:---:|---|---|
-| 1 | Structure | Load PDB/PQR files or retrieve structures using a PDB ID. |
-| 2 | Geometry | Identify potential halogen bonds using distance and angular criteria. |
-| 3 | Dynamics | Analyse contacts across trajectories. Calculate occupancy and residence time. |
-| 4 | QM Model | Prepare QM clusters and generate Gaussian, ORCA, or Q-Chem input files. |
-| 5 | NBO | Check orbital donation into the antibonding σ*(C–X) orbital. |
-| 6 | ALMO-EDA | Analyse polarization and charge-transfer contributions. |
-| 7 | BXQI | Combine the evidence into a final score and report. |
-
-Two additional tools are available:
-
-- **Batch PDB:** Screen multiple protein structures.
-- **Materials:** Analyse CIF and XYZ crystal structures, including periodic images.
+Two further pages screen many PDB entries (**Batch PDB**) and analyse crystals with periodic images (**Materials**).
+A five-page **Tutorial** inside the program explains every step. Its text is also in [`TUTORIAL.md`](TUTORIAL.md).
 
 ---
 
-## 🚀 Getting Started
+## What it can and cannot do
 
-You can use BondX Studio in two ways.
-
-**Option 1: Use online**
-
-Open:
-
-[https://compchemsk.github.io/BondX-Studio](https://compchemsk.github.io/BondX-Studio)
-
-**Option 2: Run locally**
-
-1. Download `index.html`.
-2. Open it in a modern web browser.
-3. Load your structure or use the built-in demo.
-4. Select the analysis steps from the sidebar.
-5. Explore the results and export your reports.
-
-You can load a PDB file, a PQR file, or enter a PDB ID (for example, `1US0`).
-
-BondX also supports trajectory analysis using DCD, multi-model PDB, and XYZ files.
-
-### What can you export?
-
-- Interactive HTML reports
-- JSON run records
-- CSV analysis data
-- Quantum chemistry input files
-
-You can also save your session and reuse your analysis settings.
-
----
-
-## ⚛️ Force Fields and Protonation
-
-BondX uses established force-field parameters for molecular modelling.
-
-| Force Field | Application |
+| It can | It cannot |
 |---|---|
-| AMBER ff14SB / ff19SB | Protein |
-| AMBER OL15 / OL3 | DNA / RNA |
-| CHARMM36 | Protein |
-| TIP3P / SPC/E / OPC3 | Water |
-| Joung–Cheatham / Li–Merz | Ions |
+| Read PDB, PQR, CIF, XYZ, DCD and multi-model PDB files | Run quantum-chemistry jobs (you run them on your computer or cluster) |
+| Find Cl, Br and I halogen bonds to O, N, S and aromatic rings | Read GROMACS `.xtc` or AMBER `.nc` files directly (convert them once) |
+| Screen many PDB entries in one batch | Give a tested result for fluorine (fluorine is off by default) |
+| Build cluster and QM/MM models with ff14SB, ff19SB or CHARMM36 charges | Replace a free-energy study of binding |
+| Write Gaussian, ORCA and Q-Chem inputs | Decide on a weak contact without the NBO tier |
+| Read Gaussian NBO output and Q-Chem ALMO-EDA output | |
+| Save and reload a session; write an HTML report and CSV tables | |
 
-### Key Features
+### Tested routes
 
-- AMBER charges are checked against independent PDB2PQR reference data.
-- Automatic protonation using pH-7 rules.
-- Support for HID, HIE, HIP, ASH, GLH, LYN, and CYX residues.
-- Automatic disulfide detection.
-- Individual residue protonation overrides.
-- Handling of missing hydrogen charges.
-- Ligand charges from MOL2 or PQR files.
-- QM/MM boundary options: RC, Z1, Z2, Z3, or none.
+| Task | Program | Status |
+|---|---|---|
+| NBO gate | Gaussian 16 with NBO 3.1 (`pop=nbo`) | Tested on 59 benchmark dimers and 9 protein contacts |
+| ALMO-EDA | Q-Chem 6.2 | Tested |
+| Counterpoise binding energy | ORCA 5 or Gaussian 16 | Used in the paper; not read by the program |
+| NBO gate | ORCA with NBO 7 | Input written; not tested |
+| NBO gate | Q-Chem with NBO 5 (`$nbo E2PERT $end`) | Input written; not tested |
 
----
-
-## 🔬 Quantum Chemical Analysis
-
-BondX connects structural observations with electronic structure analysis.
-
-**NBO Analysis**
-
-Checks second-order perturbation energies associated with donation into σ*(C–X). This provides an electronic verification step for potential halogen bonds.
-
-**ALMO-EDA**
-
-Separates the interaction into frozen, polarization, and charge-transfer contributions. This helps identify the physical origin of the interaction.
-
-**BXQI**
-
-Combines geometric, dynamical, and electronic evidence into a single score ranging from 0 to 100.
+The program shows a caution for every untested route.
 
 ---
 
-## 🔒 Privacy
+## Quick start
 
-BondX is designed to run locally in your browser.
-
-- Your molecular structures and trajectories stay on your computer.
-- No account or server is required for local analysis.
-- Network requests are used only for PDB retrieval and the 3D viewer library.
-- The hosted website records an anonymous visit count. It does not record the molecular data you load.
-
----
-
-## 📖 Citation
-
-If BondX Studio contributes to your research, please cite:
-
-> Karmakar, S.; Mishra, S. *BondX Studio: Tiered Geometric, Dynamic and Electronic Characterisation of Halogen Bonds.* Manuscript in preparation.
+1. Open <https://compchemsk.github.io/BondX-Studio/>. Alternatively, download `index.html` and open it in a browser.
+2. Press **Tutorial** in the top bar. Read the five pages once.
+3. Open **1 Load structure**. Type a PDB ID (for example `1US0`), drop a file, or press **Load demo**.
+4. Press the button at the bottom right of each page. Every page shows its assumptions and its settings.
+5. Run the generated QM inputs on your cluster. Drop the output files back into the program.
+6. Press **Report**. The HTML report and the JSON run record hold every parameter, assumption and result.
 
 ---
 
-## 📁 Repository
+## Force-field charges and protonation
 
-The repository contains three files:
-
-| File | Purpose |
+| Force field | Coverage |
 |---|---|
-| `index.html` | Complete BondX Studio application |
-| `README.md` | Project description and user guide |
-| `LICENSE` | Licensing information |
+| AMBER ff14SB and ff19SB | Protein, OL15 DNA, OL3 RNA |
+| CHARMM36 | Protein with standard terminal and protonation patches |
+| Water | TIP3P, SPC/E, OPC3 |
+| Ions | Joung–Cheatham and Li–Merz (AMBER), CHARMM ion set |
 
-No additional source files or installation scripts are required.
+- The AMBER charges match the PDB2PQR reference charges exactly (5855 heavy atoms).
+- The default protonation follows pH 7. Residue names in the file (HID, HIE, HIP, ASH, GLH, LYN, CYX) override the default.
+- Missing hydrogens add their charge to the parent heavy atom. Every residue keeps an integer charge.
+- Ligand charges come from a MOL2 or PQR file. Without such a file, one Kekulé structure gives the hydrogens and the charge. The PDB formula (FORMUL) checks the hydrogen count.
+- QM/MM boundary schemes: RC (charge conserving), Z1, Z2, Z3 or none.
+
+---
+
+## Privacy
+
+BondX Studio runs entirely in your browser. No structure, trajectory or output file leaves your computer.
+The only network requests are PDB downloads from RCSB and the 3Dmol.js viewer library.
+The hosted website counts anonymous page visits. The count never includes any data you load.
+
+---
+
+## Repository contents
+
+```
+index.html               the complete application (open it in any browser)
+TUTORIAL.md              the five-page tutorial
+LICENSE                  MIT license
+app/
+  src/engine.js          science engine: parsing, detection, charges, QM writers, parsers, scoring
+  src/ff_data.js         force-field charge tables (written by app/tools/extract_ff.py)
+  src/ui.js              user interface
+  src/template.html      page layout and styles
+  build.js               builds index.html from src/
+  tests/                 96 engine tests, force-field reference test, browser test
+  examples/              demo complex
+paper/
+  Scripts/               every script of the paper (see paper/README_paper.md)
+  data/                  HAL59 dimers, rigid scans, protein test set
+  results/               parsed QM results and analysis tables (CSV, JSON)
+  qm_inputs/             all 2200 QM input files with their manifests
+  tables/                generated LaTeX tables of the ESI
+  checks/                independent re-implementations used for verification
+```
+
+### For developers
+
+```bash
+cd app
+node build.js                    # writes index.html and dist/BondX_Studio.html
+node tests/engine.test.js        # 96 engine tests
+node tests/ff_reference.test.js  # force-field charges against PDB2PQR
+python3 tests/e2e.py             # browser test (Playwright with Chromium)
+```
+
+Copy `app/index.html` to the top folder after a rebuild.
+
+---
+
+## Reproducing the paper
+
+The folder `paper/` holds every script, data set and parsed result of the paper.
+`paper/README_paper.md` lists the scripts in order.
+The QM outputs are large (about 400 MB). The repository therefore holds the inputs and the parsed results.
+The parsed results are enough to rebuild every figure and table.
+
+---
+
+## Citation
+
+If BondX Studio helps your work, please cite:
+
+> Karmakar, S.; Mishra, S. BondX Studio: From Geometric Contacts to Verified Halogen Bonds with Force-Field-Consistent QM Models, NBO and ALMO-EDA. *J. Chem. Inf. Model.* (submitted).
 
 ---
 
 <div align="center">
 
-### Developed by
-
-**Soumyajit Karmakar**
-
-Department of Chemistry  
-Indian Institute of Technology Kharagpur
-
-📧 soumyajitkarmakar.iit@gmail.com
-
-🐙 GitHub: [@compchemsk](https://github.com/compchemsk)
-
----
-
-**From Molecular Geometry to Electronic Evidence.**
-
-🌿 Have a Good Day. Thank You.
+**Authors:** Soumyajit Karmakar and Sabyashachi Mishra · Department of Chemistry, IIT Kharagpur, India
+Contact: [soumyajitkarmakar.iit@gmail.com](mailto:soumyajitkarmakar.iit@gmail.com) · [@compchemsk](https://github.com/compchemsk)
 
 </div>

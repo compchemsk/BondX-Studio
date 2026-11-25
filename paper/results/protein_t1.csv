@@ -1,0 +1,186 @@
+pdb,includeF,atoms,ms,donor,status,A,G,R,X,accAtom,accChain,accClass,accEl,accResName,accResSeq,acceptor,d,donorRes,donorResName,g2,gd,gt,halogen,key,lewis,sumVdw,theta1,theta2,type
+1acj,False,4192,62.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1acj,True,4192,61.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1aku,False,1297,30.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1aku,True,1297,31.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1ay8,False,6310,65.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1ay8,True,6310,61.4,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1bju,False,1756,29.6,GP6:A:910,none,,,,,,,,,,,,,,,,,,,,,,,,
+1bju,True,1756,25.3,GP6:A:910,none,,,,,,,,,,,,,,,,,,,,,,,,
+1bma,False,1999,27.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1bma,True,1999,34.4,0QH256:A,near-miss,C2,0,0.9737,F2,O,A,backbone C=O,O,CYS,199,CYS199:A,2.9114,242,0QH,0.9177,0.5059,0,F,1832>1397,strong,2.99,133.9584,108.2793,atom
+1bma,True,1999,34.4,0QH256:A,near-miss,C2,0,1.0265,F2,OG,A,hydroxyl O,O,SER,203,SER203:A,3.0693,242,0QH,0.9669,0.2948,0,F,1832>1426,strong,2.99,85.6942,112.6596,atom
+1bma,True,1999,34.4,0QH256:A,near-miss,C2,0,1.0305,F2,N,A,backbone N–H,N,SER,203,SER203:A,3.1121,242,0QH,0.7358,0.276,0,F,1832>1421,weak,3.02,134.2109,97.8425,atom
+1bma,True,1999,34.4,0QH256:A,near-miss,C2,0,1.0413,F1,OG,A,hydroxyl O,O,SER,203,SER203:A,3.1134,242,0QH,0.9846,0.236,0,F,1831>1426,strong,2.99,83.6765,115.0164,atom
+1bma,True,1999,34.4,0QH256:A,near-miss,C2,0,1.0462,F1,O,A,backbone C=O,O,SER,222,SER222:A,3.1283,242,0QH,0.4531,0.2161,0,F,1831>1557,strong,2.99,123.4533,84.4115,atom
+1eve,False,4748,57.2,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1eve,True,4748,72.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1h2t,False,7356,109.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1h2t,True,7356,71.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1het,False,7120,96.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1het,True,7120,87.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hii,False,1755,25.4,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hii,True,1755,24.5,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hpx,False,1609,30.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hpx,True,1609,23.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hvi,False,1965,26.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hvi,True,1965,26.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hwu,False,4431,49.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1hwu,True,4431,60.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1n7g,False,11034,135.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1n7g,True,11034,114.4,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1osn,False,10038,91.3,BVP1500:B,near-miss,C5B,0,1.0647,BR,N,B,backbone N–H,N,SER,135,SER135:B,3.62,1271,BVP,0.6755,0.2348,0,BR,9930>3437,weak,3.4,100.8333,94.9452,atom
+1osn,False,10038,91.3,BVP2500:C,near-miss,C5B,0,1.0748,BR,N,C,backbone N–H,N,SER,135,SER135:C,3.6544,1273,BVP,0.6691,0.1988,0,BR,9980>5870,weak,3.4,99.0869,94.6446,atom
+1osn,False,10038,91.3,BVP3500:D,near-miss,C5B,0,1.0793,BR,N,D,backbone N–H,N,SER,135,SER135:D,3.6695,1275,BVP,0.6705,0.1829,0,BR,10030>8332,weak,3.4,100.347,94.7087,atom
+1osn,False,10038,91.3,BVP500:A,near-miss,C5B,0,1.0813,BR,N,A,backbone N–H,N,SER,135,SER135:A,3.6763,1269,BVP,0.6787,0.1758,0,BR,9880>991,weak,3.4,99.0662,95.0995,atom
+1osn,True,10038,106.0,BVP1500:B,near-miss,C5B,0,1.0647,BR,N,B,backbone N–H,N,SER,135,SER135:B,3.62,1271,BVP,0.6755,0.2348,0,BR,9930>3437,weak,3.4,100.8333,94.9452,atom
+1osn,True,10038,106.0,BVP2500:C,near-miss,C5B,0,1.0748,BR,N,C,backbone N–H,N,SER,135,SER135:C,3.6544,1273,BVP,0.6691,0.1988,0,BR,9980>5870,weak,3.4,99.0869,94.6446,atom
+1osn,True,10038,106.0,BVP3500:D,near-miss,C5B,0,1.0793,BR,N,D,backbone N–H,N,SER,135,SER135:D,3.6695,1275,BVP,0.6705,0.1829,0,BR,10030>8332,weak,3.4,100.347,94.7087,atom
+1osn,True,10038,106.0,BVP500:A,near-miss,C5B,0,1.0813,BR,N,A,backbone N–H,N,SER,135,SER135:A,3.6763,1269,BVP,0.6787,0.1758,0,BR,9880>991,weak,3.4,99.0662,95.0995,atom
+1p5e,False,9212,87.9,TBS302:C,XB,C1,0.9692,0.8533,BR11,O,C,backbone C=O,O,LEU,83,LEU83:C,2.8756,1111,TBS,0.9991,0.9864,0.9235,BR,8967>5141,strong,3.37,176.9405,121.1802,atom
+1p5e,False,9212,87.9,TBS301:A,XB,C1,0.8255,0.8616,BR11,O,A,backbone C=O,O,LEU,83,LEU83:A,2.9036,1110,TBS,0.9142,0.9522,0.6174,BR,8954>669,strong,3.37,164.6961,131.982,atom
+1p5e,False,9212,87.9,TBS302:C,XB,C2,0.7793,0.9043,BR12,O,C,backbone C=O,O,GLU,81,GLU81:C,3.0476,1111,TBS,0.5381,0.7758,0.793,BR,8968>5121,strong,3.37,171.7219,151.4877,atom
+1p5e,False,9212,87.9,TBS301:A,XB,C2,0.7562,0.8923,BR12,O,A,backbone C=O,O,GLU,81,GLU81:A,3.0069,1110,TBS,0.4677,0.8257,0.7136,BR,8955>649,strong,3.37,168.5458,154.8675,atom
+1p5e,False,9212,87.9,TBS302:C,XB,C3,0.5381,1.0165,BR13,π(ring),C,aromatic π,π,PHE,80,PHE80:C,3.6798,1111,TBS,0.4931,0.2399,0.8701,BR,8969>R5112,strong,3.62,174.8022,30.4138,pi
+1p5e,False,9212,87.9,TBS301:A,XB,C3,0.5114,0.9644,BR13,π(ring),A,aromatic π,π,PHE,80,PHE80:A,3.491,1110,TBS,0.6239,0.478,0.3446,BR,8956>R640,strong,3.62,153.785,22.5687,pi
+1p5e,False,9212,87.9,TBS301:A,XB,C4,0.3771,0.9609,BR10,O,A,backbone C=O,O,ILE,10,ILE10:A,3.2383,1110,TBS,0.9401,0.5423,0.1019,BR,8953>88,strong,3.37,144.0778,110.0548,atom
+1p5e,False,9212,87.9,TBS302:C,near-miss,C1,0,1.0777,BR11,N,C,backbone N–H,N,LEU,83,LEU83:C,3.6641,1111,TBS,0.64,0.1886,0,BR,8967>5138,weak,3.4,131.3332,93.2791,atom
+1p5e,False,9212,87.9,TBS301:A,near-miss,C1,0,1.119,BR11,N,A,backbone N–H,N,LEU,83,LEU83:A,3.8045,1110,TBS,0.6762,0.0414,0,BR,8954>666,weak,3.4,131.4201,94.9818,atom
+1p5e,True,9212,108.1,TBS302:C,XB,C1,0.9692,0.8533,BR11,O,C,backbone C=O,O,LEU,83,LEU83:C,2.8756,1111,TBS,0.9991,0.9864,0.9235,BR,8967>5141,strong,3.37,176.9405,121.1802,atom
+1p5e,True,9212,108.1,TBS301:A,XB,C1,0.8255,0.8616,BR11,O,A,backbone C=O,O,LEU,83,LEU83:A,2.9036,1110,TBS,0.9142,0.9522,0.6174,BR,8954>669,strong,3.37,164.6961,131.982,atom
+1p5e,True,9212,108.1,TBS302:C,XB,C2,0.7793,0.9043,BR12,O,C,backbone C=O,O,GLU,81,GLU81:C,3.0476,1111,TBS,0.5381,0.7758,0.793,BR,8968>5121,strong,3.37,171.7219,151.4877,atom
+1p5e,True,9212,108.1,TBS301:A,XB,C2,0.7562,0.8923,BR12,O,A,backbone C=O,O,GLU,81,GLU81:A,3.0069,1110,TBS,0.4677,0.8257,0.7136,BR,8955>649,strong,3.37,168.5458,154.8675,atom
+1p5e,True,9212,108.1,TBS302:C,XB,C3,0.5381,1.0165,BR13,π(ring),C,aromatic π,π,PHE,80,PHE80:C,3.6798,1111,TBS,0.4931,0.2399,0.8701,BR,8969>R5112,strong,3.62,174.8022,30.4138,pi
+1p5e,True,9212,108.1,TBS301:A,XB,C3,0.5114,0.9644,BR13,π(ring),A,aromatic π,π,PHE,80,PHE80:A,3.491,1110,TBS,0.6239,0.478,0.3446,BR,8956>R640,strong,3.62,153.785,22.5687,pi
+1p5e,True,9212,108.1,TBS301:A,XB,C4,0.3771,0.9609,BR10,O,A,backbone C=O,O,ILE,10,ILE10:A,3.2383,1110,TBS,0.9401,0.5423,0.1019,BR,8953>88,strong,3.37,144.0778,110.0548,atom
+1p5e,True,9212,108.1,TBS302:C,near-miss,C1,0,1.0777,BR11,N,C,backbone N–H,N,LEU,83,LEU83:C,3.6641,1111,TBS,0.64,0.1886,0,BR,8967>5138,weak,3.4,131.3332,93.2791,atom
+1p5e,True,9212,108.1,TBS301:A,near-miss,C1,0,1.119,BR11,N,A,backbone N–H,N,LEU,83,LEU83:A,3.8045,1110,TBS,0.6762,0.0414,0,BR,8954>666,weak,3.4,131.4201,94.9818,atom
+1rla,False,8947,119.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1rla,True,8947,109.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1rmd,False,967,23.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1rmd,True,967,24.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1tf6,False,5495,75.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1tf6,True,5495,56.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1us0_idd594,False,2526,31.1,LDT320:A,XB,C25,0.6415,0.8823,BR8,OG1,A,hydroxyl O,O,THR,113,THR113:A,2.9733,313,LDT,0.91,0.8668,0.3189,BR,2497>908,strong,3.37,152.7577,132.2869,atom
+1us0_idd594,True,2526,27.8,LDT320:A,XB,C25,0.6415,0.8823,BR8,OG1,A,hydroxyl O,O,THR,113,THR113:A,2.9733,313,LDT,0.91,0.8668,0.3189,BR,2497>908,strong,3.37,152.7577,132.2869,atom
+1us0_idd594,True,2526,27.8,LDT320:A,XB,C5,0.3357,1.0066,F9,O,A,backbone C=O,O,VAL,47,VAL47:A,3.0098,313,LDT,0.8886,0.3743,0.107,F,2498>354,strong,2.99,144.2816,106.2533,atom
+1us0_idd594,True,2526,27.8,LDT320:A,XB,C27,0.3077,1.0804,F14,N,A,backbone N–H,N,ALA,299,ALA299:A,3.2628,313,LDT,0.1973,0.0759,0.6411,F,2501>2382,weak,3.02,165.6455,69.0407,atom
+1us0_idd594,True,2526,27.8,LDT320:A,near-miss,C27,0,1.09,F14,N,A,backbone N–H,N,LEU,300,LEU300:A,3.2918,313,LDT,0.1551,0.0375,0,F,2501>2387,weak,3.02,116.6965,65.398,atom
+1vfy,False,643,17.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1vfy,True,643,11.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1vsn,False,1917,25.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1vsn,True,1917,24.6,NFT283:A,XB,C16,0.1325,1.0822,F37,O,A,backbone C=O,O,LEU,157,LEU157:A,3.2357,215,NFT,0.9492,0.0725,0.0329,F,1626>1190,strong,2.99,141.3168,129.1343,atom
+1x0n_state_1,False,1720,23.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1x0n_state_1,True,1720,21.5,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1xdn,False,2591,41.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+1xdn,True,2591,32.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2efj,False,2904,30.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2efj,True,2904,33.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2iuz,False,7133,76.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2iuz,True,7133,76.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2ndo,False,2984,89.2,SFQ201:A,near-miss,C3,0,0.8846,I1,O,A,backbone C=O,O,THR,168,THR168:A,3.0962,189,SFQ,0.9546,0.8566,0,I,2972>2598,strong,3.5,98.1452,128.623,atom
+2ndo,True,2984,97.9,SFQ201:A,near-miss,C3,0,0.8846,I1,O,A,backbone C=O,O,THR,168,THR168:A,3.0962,189,SFQ,0.9546,0.8566,0,I,2972>2598,strong,3.5,98.1452,128.623,atom
+2pvb,False,1025,16.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2pvb,True,1025,18.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2q8q,False,2365,28.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2q8q,True,2365,30.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2reg,False,4667,48.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2reg,True,4667,63.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2w0s,False,3319,47.4,BVP1207:A,XB,C5B,0.8722,0.7974,BR,OD1,A,amide C=O,O,ASN,65,ASN65:A,2.6873,408,BVP,0.8767,1,0.7072,BR,3249>501,strong,3.37,168.2883,134.5102,atom
+2w0s,False,3319,47.4,BVP1207:B,XB,C5B,0.7235,0.838,BR,OD1,B,amide C=O,O,ASN,65,ASN65:B,2.8239,412,BVP,0.9022,1,0.3982,BR,3279>2116,strong,3.37,155.9285,132.8295,atom
+2w0s,False,3319,47.4,BVP1207:B,near-miss,C5B,0,0.9169,BR,NZ,B,side-chain N,N,LYS,105,LYS105:B,3.1173,412,BVP,0.9999,0.7617,0,BR,3279>2438,weak,3.4,130.5126,120.3966,atom
+2w0s,False,3319,47.4,BVP1207:A,near-miss,C5B,0,0.9349,BR,NZ,A,side-chain N,N,LYS,105,LYS105:A,3.1786,408,BVP,1.0,0.6975,0,BR,3249>823,weak,3.4,123.4521,119.7345,atom
+2w0s,False,3319,47.4,BVP1207:A,near-miss,C5B,0,1.0488,BR,OH,A,hydroxyl O,O,TYR,144,TYR144:A,3.5345,408,BVP,0.9192,0.1797,0,BR,3249>1116,strong,3.37,62.6894,131.6116,atom
+2w0s,False,3319,47.4,BVP1207:B,near-miss,C5B,0,1.0681,BR,N,B,backbone N–H,N,ALA,102,ALA102:B,3.6315,412,BVP,0.2533,0.2228,0,BR,3279>2415,weak,3.4,90.1617,73.1302,atom
+2w0s,False,3319,47.4,BVP1207:B,near-miss,C5B,0,1.0802,BR,OH,B,hydroxyl O,O,TYR,144,TYR144:B,3.6404,412,BVP,0.9949,0.05,0,BR,3279>2731,strong,3.37,67.5687,122.8674,atom
+2w0s,True,3319,41.2,BVP1207:A,XB,C5B,0.8722,0.7974,BR,OD1,A,amide C=O,O,ASN,65,ASN65:A,2.6873,408,BVP,0.8767,1,0.7072,BR,3249>501,strong,3.37,168.2883,134.5102,atom
+2w0s,True,3319,41.2,BVP1207:B,XB,C5B,0.7235,0.838,BR,OD1,B,amide C=O,O,ASN,65,ASN65:B,2.8239,412,BVP,0.9022,1,0.3982,BR,3279>2116,strong,3.37,155.9285,132.8295,atom
+2w0s,True,3319,41.2,BVP1207:B,near-miss,C5B,0,0.9169,BR,NZ,B,side-chain N,N,LYS,105,LYS105:B,3.1173,412,BVP,0.9999,0.7617,0,BR,3279>2438,weak,3.4,130.5126,120.3966,atom
+2w0s,True,3319,41.2,BVP1207:A,near-miss,C5B,0,0.9349,BR,NZ,A,side-chain N,N,LYS,105,LYS105:A,3.1786,408,BVP,1.0,0.6975,0,BR,3249>823,weak,3.4,123.4521,119.7345,atom
+2w0s,True,3319,41.2,BVP1207:A,near-miss,C5B,0,1.0488,BR,OH,A,hydroxyl O,O,TYR,144,TYR144:A,3.5345,408,BVP,0.9192,0.1797,0,BR,3249>1116,strong,3.37,62.6894,131.6116,atom
+2w0s,True,3319,41.2,BVP1207:B,near-miss,C5B,0,1.0681,BR,N,B,backbone N–H,N,ALA,102,ALA102:B,3.6315,412,BVP,0.2533,0.2228,0,BR,3279>2415,weak,3.4,90.1617,73.1302,atom
+2w0s,True,3319,41.2,BVP1207:B,near-miss,C5B,0,1.0802,BR,OH,B,hydroxyl O,O,TYR,144,TYR144:B,3.6404,412,BVP,0.9949,0.05,0,BR,3279>2731,strong,3.37,67.5687,122.8674,atom
+2zoz,False,3286,38.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+2zoz,True,3286,49.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3ems,False,1164,19.4,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3ems,True,1164,21.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3o1h,False,4593,78.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3o1h,True,4593,52.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3og7,False,4100,44.5,032:A:1,none,,,,,,,,,,,,,,,,,,,,,,,,
+3og7,True,4100,48.6,032:A:1,none,,,,,,,,,,,,,,,,,,,,,,,,
+3pxf,False,2685,32.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3pxf,True,2685,29.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3r0t,False,3194,35.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3r0t,True,3194,58.2,FU9338:A,XB,CBF,0.3636,1.0698,FAC,O,A,backbone C=O,O,GLY,46,GLY46:A,3.1987,327,FU9,0.1896,0.122,0.6621,F,2773>374,strong,2.99,166.4847,68.4166,atom
+3r0t,True,3194,58.2,FU9338:A,near-miss,CBF,0,1.068,FAC,N,A,backbone N–H,N,ARG,47,ARG47:A,3.2252,327,FU9,0.1754,0.1259,0,F,2773>375,weak,3.02,136.1967,67.2261,atom
+3shy,False,2324,34.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3shy,True,2324,25.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3tah,False,4557,44.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3tah,True,4557,48.2,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3thy,False,14628,163.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+3thy,True,14628,153.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4agl,False,3738,56.3,P84400:B,XB,C3,0.9263,0.8513,I15,O,B,backbone C=O,O,LEU,145,LEU145:B,2.9797,394,P84,0.9998,0.9944,0.7994,I,3095>1917,strong,3.5,171.9764,119.5029,atom
+4agl,False,3738,56.3,P84400:A,XB,C3,0.9107,0.8601,I15,O,A,backbone C=O,O,LEU,145,LEU145:A,3.0105,392,P84,0.999,0.958,0.7889,I,3081>375,strong,3.5,171.5566,118.7205,atom
+4agl,False,3738,56.3,P84400:B,near-miss,C10,0,1.0545,I17,N,B,backbone N–H,N,PRO,222,PRO222:B,3.7224,394,P84,0.4804,0.2554,0,I,3097>2534,weak,3.53,83.2951,85.7519,atom
+4agl,False,3738,56.3,P84400:B,near-miss,C3,0,1.0779,I15,OG1,B,hydroxyl O,O,THR,230,THR230:B,3.7727,394,P84,0.5902,0.056,0,I,3095>2593,strong,3.5,83.9059,90.9538,atom
+4agl,False,3738,56.3,P84400:A,near-miss,C10,0,1.0772,I17,N,A,backbone N–H,N,PRO,222,PRO222:A,3.8025,392,P84,0.486,0.1728,0,I,3083>992,weak,3.53,79.247,86.0202,atom
+4agl,False,3738,56.3,P84400:B,near-miss,C3,0,1.0793,I15,N,B,backbone N–H,N,THR,230,THR230:B,3.8099,394,P84,0.9646,0.1651,0,I,3095>2588,weak,3.53,120.5065,112.4037,atom
+4agl,False,3738,56.3,P84400:A,near-miss,C3,0,1.0916,I15,N,A,backbone N–H,N,THR,230,THR230:A,3.8533,392,P84,0.9625,0.1204,0,I,3081>1046,weak,3.53,123.1177,112.1777,atom
+4agl,False,3738,56.3,P84400:A,near-miss,C10,0,1.0833,I17,SG,A,thiol S,S,CYS,220,CYS220:A,4.095,392,P84,0.8003,0.0587,0,I,3083>982,strong,3.78,87.4903,101.1185,atom
+4agl,True,3738,45.2,P84400:B,XB,C3,0.9263,0.8513,I15,O,B,backbone C=O,O,LEU,145,LEU145:B,2.9797,394,P84,0.9998,0.9944,0.7994,I,3095>1917,strong,3.5,171.9764,119.5029,atom
+4agl,True,3738,45.2,P84400:A,XB,C3,0.9107,0.8601,I15,O,A,backbone C=O,O,LEU,145,LEU145:A,3.0105,392,P84,0.999,0.958,0.7889,I,3081>375,strong,3.5,171.5566,118.7205,atom
+4agl,True,3738,45.2,P84400:B,near-miss,C10,0,1.0545,I17,N,B,backbone N–H,N,PRO,222,PRO222:B,3.7224,394,P84,0.4804,0.2554,0,I,3097>2534,weak,3.53,83.2951,85.7519,atom
+4agl,True,3738,45.2,P84400:B,near-miss,C3,0,1.0779,I15,OG1,B,hydroxyl O,O,THR,230,THR230:B,3.7727,394,P84,0.5902,0.056,0,I,3095>2593,strong,3.5,83.9059,90.9538,atom
+4agl,True,3738,45.2,P84400:A,near-miss,C10,0,1.0772,I17,N,A,backbone N–H,N,PRO,222,PRO222:A,3.8025,392,P84,0.486,0.1728,0,I,3083>992,weak,3.53,79.247,86.0202,atom
+4agl,True,3738,45.2,P84400:B,near-miss,C3,0,1.0793,I15,N,B,backbone N–H,N,THR,230,THR230:B,3.8099,394,P84,0.9646,0.1651,0,I,3095>2588,weak,3.53,120.5065,112.4037,atom
+4agl,True,3738,45.2,P84400:A,near-miss,C3,0,1.0916,I15,N,A,backbone N–H,N,THR,230,THR230:A,3.8533,392,P84,0.9625,0.1204,0,I,3081>1046,weak,3.53,123.1177,112.1777,atom
+4agl,True,3738,45.2,P84400:A,near-miss,C10,0,1.0833,I17,SG,A,thiol S,S,CYS,220,CYS220:A,4.095,392,P84,0.8003,0.0587,0,I,3083>982,strong,3.78,87.4903,101.1185,atom
+4alw,False,2593,33.6,HY7:A:1308,none,,,,,,,,,,,,,,,,,,,,,,,,
+4alw,True,2593,31.6,HY7:A:1308,none,,,,,,,,,,,,,,,,,,,,,,,,
+4cum,False,6829,62.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4cum,True,6829,66.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4day,False,2098,27.6,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4day,True,2098,26.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4dst,False,1574,21.7,9LI201:A,XB,C9,0.1242,1.0667,CL2,N,A,backbone N–H,N,GLY,75,GLY75:A,3.5202,180,9LI,0.2523,0.2604,0.0118,CL,1420>584,weak,3.3,140.4705,73.0567,atom
+4dst,True,1574,22.1,9LI201:A,XB,C9,0.1242,1.0667,CL2,N,A,backbone N–H,N,GLY,75,GLY75:A,3.5202,180,9LI,0.2523,0.2604,0.0118,CL,1420>584,weak,3.3,140.4705,73.0567,atom
+4dst_protonated,False,2120,48.8,9LI201:A,XB,C9,0.1242,1.0667,CL2,N,A,backbone N–H,N,GLY,75,GLY75:A,3.5202,180,9LI,0.2523,0.2604,0.0118,CL,1435>599,weak,3.3,140.4705,73.0567,atom
+4dst_protonated,True,2120,43.8,9LI201:A,XB,C9,0.1242,1.0667,CL2,N,A,backbone N–H,N,GLY,75,GLY75:A,3.5202,180,9LI,0.2523,0.2604,0.0118,CL,1435>599,weak,3.3,140.4705,73.0567,atom
+4gql,False,2809,52.1,R47306:A,XB,C1,0.8742,0.822,CL1,O,A,backbone C=O,O,PRO,232,PRO232:A,2.688,164,R47,0.9998,1,0.6683,CL,2441>1905,strong,3.27,166.7303,119.3742,atom
+4gql,False,2809,52.1,R47306:A,near-miss,C1,0,1.0639,CL1,O,A,backbone C=O,O,ALA,234,ALA234:A,3.479,164,R47,0.9989,0.1569,0,CL,2441>1941,strong,3.27,72.6766,118.6708,atom
+4gql,True,2809,59.0,R47306:A,XB,C1,0.8742,0.822,CL1,O,A,backbone C=O,O,PRO,232,PRO232:A,2.688,164,R47,0.9998,1,0.6683,CL,2441>1905,strong,3.27,166.7303,119.3742,atom
+4gql,True,2809,59.0,R47306:A,near-miss,C1,0,1.0639,CL1,O,A,backbone C=O,O,ALA,234,ALA234:A,3.479,164,R47,0.9989,0.1569,0,CL,2441>1941,strong,3.27,72.6766,118.6708,atom
+4kya,False,33072,291.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4kya,True,33072,303.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4pjt,False,10694,141.0,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4pjt,True,10694,119.0,2YQ1104:D,near-miss,C14,0,0.8946,F2,NE2,D,side-chain N,N,GLN,759,GLN759:D,2.7018,1363,2YQ,0.8994,0.8209,0,F,10361>8323,weak,3.02,127.3327,106.9759,atom
+4pjt,True,10694,119.0,2YQ1105:B,near-miss,C14,0,0.9595,F2,O,B,backbone C=O,O,GLY,888,GLY888:B,2.8689,1353,2YQ,0.5895,0.5625,0,F,10264>4211,strong,2.99,98.2934,90.9191,atom
+4pjt,True,10694,119.0,2YQ1104:D,near-miss,C14,0,0.9763,F2,O,D,backbone C=O,O,GLY,888,GLY888:D,2.9191,1363,2YQ,0.5772,0.4956,0,F,10361>9258,strong,2.99,88.7602,90.3469,atom
+4pjt,True,10694,119.0,2YQ1105:A,near-miss,C14,0,0.9937,F2,O,A,backbone C=O,O,GLY,888,GLY888:A,2.971,1346,2YQ,0.4742,0.4262,0,F,10204>1666,strong,2.99,84.7215,85.4499,atom
+4pjt,True,10694,119.0,2YQ1104:C,near-miss,C14,0,0.9995,F2,O,C,backbone C=O,O,GLY,888,GLY888:C,2.9885,1358,2YQ,0.4677,0.4028,0,F,10312>6811,strong,2.99,95.8524,85.1293,atom
+4pjt,True,10694,119.0,2YQ1104:C,near-miss,C14,0,1.0439,F2,NE2,C,side-chain N,N,GLN,759,GLN759:C,3.1525,1358,2YQ,0.9192,0.2224,0,F,10312>5828,weak,3.02,133.8649,108.3874,atom
+4pjt,True,10694,119.0,2YQ1105:B,near-miss,C9,0,1.0998,F1,O,B,backbone C=O,O,PHE,897,PHE897:B,3.2884,1353,2YQ,0.6138,0.0021,0,F,10277>4283,strong,2.99,111.8051,92.0553,atom
+4qnb,False,1821,34.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4qnb,True,1821,26.2,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4rao,False,6682,80.9,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4rao,True,6682,74.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4rdl,False,5507,81.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4rdl,True,5507,85.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4yb0,False,3757,75.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+4yb0,True,3757,64.4,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+5ddr,False,4419,64.1,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+5ddr,True,4419,69.8,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+6g99,False,756,60.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+6g99,True,756,43.3,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+6nhb,False,7298,97.5,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+6nhb,True,7298,121.2,KNS803:A,XB,C12,0.5169,0.8199,F12,NE2,A,side-chain N,N,GLN,483,GLN483:A,2.4762,832,KNS,0.6446,1,0.168,F,6849>1446,weak,3.02,146.7198,93.4917,atom
+6nhb,True,7298,121.2,KNS804:B,near-miss,C13,0,0.9003,F13,OH,B,hydroxyl O,O,TYR,593,TYR593:B,2.6918,838,KNS,0.973,0.7992,0,F,6952>5703,strong,2.99,121.5512,113.3824,atom
+6nhb,True,7298,121.2,KNS803:A,near-miss,C12,0,0.9388,F12,OE1,A,amide C=O,O,GLN,483,GLN483:A,2.8071,832,KNS,0.3845,0.6451,0,F,6849>1445,strong,2.99,97.1755,80.893,atom
+6nhb,True,7298,121.2,KNS804:B,near-miss,C12,0,0.9468,F12,OE1,B,amide C=O,O,GLN,483,GLN483:B,2.831,838,KNS,0.5886,0.6132,0,F,6951>4819,strong,2.99,129.0906,90.8811,atom
+6nhb,True,7298,121.2,KNS803:A,near-miss,C13,0,0.9654,F13,OD2,A,carboxylate O,O,ASP,602,ASP602:A,2.8865,832,KNS,0.8364,0.539,0,F,6850>2395,strong,2.99,109.2869,103.0959,atom
+6nhb,True,7298,121.2,KNS804:B,near-miss,C13,0,0.9748,F13,OD2,B,carboxylate O,O,ASP,602,ASP602:B,2.9148,838,KNS,0.9258,0.5013,0,F,6952>5769,strong,2.99,113.0474,108.8971,atom
+6nhb,True,7298,121.2,KNS803:A,near-miss,C13,0,0.9769,F13,OH,A,hydroxyl O,O,TYR,593,TYR593:A,2.9208,832,KNS,0.9947,0.4932,0,F,6850>2329,strong,2.99,114.561,117.0795,atom
+6nhb,True,7298,121.2,KNS804:B,near-miss,C12,0,1.0419,F12,NE2,B,side-chain N,N,GLN,483,GLN483:B,3.1467,838,KNS,0.2985,0.2302,0,F,6951>4820,weak,3.02,88.7329,76.0161,atom
+6nhb,True,7298,121.2,KNS803:A,near-miss,C13,0,1.074,F13,OD1,A,carboxylate O,O,ASP,602,ASP602:A,3.2112,832,KNS,0.5198,0.1052,0,F,6850>2394,strong,2.99,101.565,87.6466,atom
+6nhb,True,7298,121.2,KNS804:B,near-miss,C12,0,1.0777,F12,OH,B,hydroxyl O,O,TYR,593,TYR593:B,3.2224,838,KNS,0.8348,0.0904,0,F,6951>5703,strong,2.99,104.6879,103.0051,atom
+6r79,False,7764,90.7,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,
+6r79,True,7764,105.2,no halogenated ligand,none,,,,,,,,,,,,,,,,,,,,,,,,

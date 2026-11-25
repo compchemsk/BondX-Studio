@@ -1,0 +1,28 @@
+! BondX BX-8204a3883d - NBO XB gate
+! BR2 ... O3' [0 0 0]
+$molecule
+0 1
+Br      0.054271     0.332665     0.000072
+Br      2.281613    -0.225049    -0.000038
+O      -2.585759     0.806393    -0.000177
+P      -3.340098    -0.479120     0.000002
+H      -3.112183    -1.336431     1.096206
+H      -3.111992    -1.336851    -1.095836
+H      -4.744209    -0.357636    -0.000145
+$end
+
+$rem
+   JOBTYPE         sp
+   METHOD          wB97X-D
+   BASIS           def2-TZVP
+   SCF_CONVERGENCE 8
+   THRESH          14
+   SYM_IGNORE      TRUE
+   XC_GRID         000099000590
+   MEM_TOTAL       50000
+   NBO             1
+$end
+
+$nbo
+   E2PERT
+$end

@@ -1,0 +1,240 @@
+set,name,finished,units,frz,elec,pauli,elec_pauli,disp,pol,ct,total,chi_CT,ct_pol_ratio,mechanism
+A_HAL59,PCH_PhBr,True,kJ/mol,-0.0401,-11.0621,17.5883,6.5262,-6.5663,-0.453,-1.7321,-2.2252,0.7926868335545284,3.8236203090507725,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_PhBr,True,kJ/mol,-0.2176,-19.6089,26.2054,6.5964,-6.814,-1.6392,-1.5319,-3.3887,0.4830815805241084,0.9345412396290874,Mixed polarization / charge transfer
+A_HAL59,NH3_PhBr,True,kJ/mol,-0.7551,-34.0664,42.4936,8.4273,-9.1824,-2.6054,-3.3279,-6.6884,0.5608851735122108,1.277308666615491,Mixed polarization / charge transfer
+A_HAL59,MeI_PCH,True,kJ/mol,0.1572,,,8.0364,-7.8793,-0.6081,-2.3957,-2.8467,0.7975564285238698,3.9396480841966786,Charge-transfer driven (n→σ* dominant)
+A_HAL59,MeI_NCH,True,kJ/mol,-1.6244,,,6.4432,-8.0676,-2.1751,-2.1323,-5.9317,0.49503180572967453,0.980322743781895,Mixed polarization / charge transfer
+A_HAL59,MeI_NH3,True,kJ/mol,-3.0655,,,8.3782,-11.4437,-3.677,-5.0279,-11.7704,0.5775942285379498,1.3673918955670383,Mixed polarization / charge transfer
+A_HAL59,PCH_PhI,True,kJ/mol,0.1609,,,8.1759,-8.015,-0.7325,-2.3671,-2.9387,0.7636791844108918,3.2315358361774744,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_PhI,True,kJ/mol,-2.651,,,5.8149,-8.4659,-2.641,-2.3896,-7.6816,0.47501292092394554,0.9048087845513064,Mixed polarization / charge transfer
+A_HAL59,NH3_PhI,True,kJ/mol,-3.9912,,,8.0418,-12.033,-4.3858,-5.6952,-14.0721,0.5649439539728202,1.2985544256464043,Mixed polarization / charge transfer
+A_HAL59,PCH_F3CI,True,kJ/mol,1.4554,,,9.2654,-7.81,-1.3701,-2.943,-2.8577,0.6823398483689226,2.1480183928180425,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_F3CI,True,kJ/mol,-6.2684,,,3.6717,-9.9402,-4.3798,-4.6652,-15.3135,0.5157766721945826,1.0651627928215899,Mixed polarization / charge transfer
+A_HAL59,NH3_F3CI,True,kJ/mol,-5.5605,,,9.181,-14.7415,-7.9487,-12.0924,-25.6016,0.6033800539890525,1.5213053706895467,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_PCH,True,kJ/mol,3.2743,-13.6833,24.7895,11.1062,-7.8319,-1.3831,-4.8025,-2.9113,0.7764000258665288,3.4722724314944693,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_NCH,True,kJ/mol,-0.7535,-46.2897,55.617,9.3273,-10.0807,-4.45,-7.7429,-12.9463,0.6350335031042655,1.7399775280898875,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_NH3,True,kJ/mol,11.7223,-97.4351,125.3204,27.8853,-16.163,-11.2785,-28.9294,-28.4856,0.7194954225413414,2.565004211552955,Charge-transfer driven (n→σ* dominant)
+A_HAL59,PCH_NBS,True,kJ/mol,3.4491,-13.8025,25.5021,11.6996,-8.2505,-1.6151,-4.827,-2.993,0.7492898278511666,2.9886694322332983,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_NBS,True,kJ/mol,-1.871,-52.4002,61.4275,9.0274,-10.8984,-5.1035,-8.5838,-15.5583,0.6271361042718432,1.681943764083472,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NH3_NBS,True,kJ/mol,5.7189,-102.0112,124.1874,22.1762,-16.4573,-11.4477,-25.2893,-31.0182,0.6883877289925688,2.2091162416904706,Charge-transfer driven (n→σ* dominant)
+A_HAL59,PCH_FCl,True,kJ/mol,7.6554,-18.2608,34.7022,16.4415,-8.7861,-2.1541,-9.4758,-3.9744,0.8147791468542293,4.398960122556984,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_FCl,True,kJ/mol,1.7097,-65.0472,78.0678,13.0206,-11.3109,-4.9754,-16.5244,-19.7902,0.7685838938036633,3.321220404389597,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NH3_FCl,True,kJ/mol,40.2688,-154.5326,215.0457,60.5131,-20.2444,-19.3177,-70.3541,-49.403,0.7845732995211426,3.641950128638503,Charge-transfer driven (n→σ* dominant)
+A_HAL59,PCH_NIS,True,kJ/mol,4.7263,,,15.2536,-10.5272,-2.9988,-7.112,-5.3845,0.7034062586541123,2.3716153127917834,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_NIS,True,kJ/mol,-4.0504,,,9.9071,-13.9575,-8.7272,-12.8974,-25.675,0.5964225927878434,1.4778393986616554,Mixed polarization / charge transfer
+A_HAL59,NH3_NIS,True,kJ/mol,5.4774,,,27.7058,-22.2284,-20.3332,-35.0462,-49.9019,0.6328382033752622,1.723594908819074,Charge-transfer driven (n→σ* dominant)
+A_HAL59,PCH_FBr,True,kJ/mol,16.1861,-27.0339,55.2141,28.1802,-11.9941,-5.0092,-18.2057,-7.0288,0.7842247866671835,3.634452607202747,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NCH_FBr,True,kJ/mol,11.8065,-100.1064,127.4564,27.35,-15.5435,-11.8241,-29.9105,-29.9282,0.716683519190312,2.5296217048232,Charge-transfer driven (n→σ* dominant)
+A_HAL59,NH3_FBr,True,kJ/mol,45.115,-188.2465,256.6819,68.4353,-23.3204,-32.7635,-78.8537,-66.5023,0.7064654909816767,2.406754467624033,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_PCH,True,kJ/mol,19.259,,,34.5072,-15.2482,-8.211,-22.7471,-11.6991,0.7347705447039709,2.770320302033857,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_NCH,True,kJ/mol,9.1974,,,27.7722,-18.5748,-16.9294,-34.161,-41.893,0.668638335186258,2.0178506030928443,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_NH3,True,kJ/mol,23.6567,,,50.0361,-26.3793,-36.6748,-65.4523,-78.4704,0.6408906157131653,1.784666855715641,Charge-transfer driven (n→σ* dominant)
+A_HAL59,MeI_FCCH,True,kJ/mol,-1.2277,,,2.777,-4.0047,-0.1622,-0.3681,-1.7579,0.6941353950594004,2.2694204685573363,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_FCCH,True,kJ/mol,-1.3458,-5.8084,8.2564,2.448,-3.7939,-0.375,-0.3908,-2.1117,0.5103160094019326,1.0421333333333334,Mixed polarization / charge transfer
+A_HAL59,FI_FCCH,True,kJ/mol,-0.8877,,,0.8714,-1.7591,-0.0904,-0.07,-1.0481,0.4364089775561098,0.7743362831858408,Mixed polarization / charge transfer
+A_HAL59,MeI_FMe,True,kJ/mol,-3.7304,,,5.6126,-9.3429,-1.3531,-2.0914,-7.1748,0.6071708520830309,1.545635947084473,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_FMe,True,kJ/mol,-3.4379,-37.7998,44.8173,7.0174,-10.4553,-2.724,-4.3096,-10.4715,0.6127161055505004,1.5820851688693096,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_FMe,True,kJ/mol,-4.9593,,,8.0828,-13.042,-10.6885,-10.9828,-26.6306,0.5067900864276716,1.0275342657996913,Mixed polarization / charge transfer
+A_HAL59,MeI_OCH2,True,kJ/mol,-3.8751,,,7.4527,-11.3278,-2.3259,-3.5785,-9.7795,0.6060734367590271,1.5385442194419365,Charge-transfer driven (n→σ* dominant)
+A_HAL59,BrBr_OCH2,True,kJ/mol,-0.2412,-56.7722,69.4635,12.6913,-12.9325,-5.0488,-10.9267,-16.2167,0.6839660730493569,2.1642172397401365,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_OCH2,True,kJ/mol,5.093,,,23.7667,-18.6737,-20.2698,-29.3309,-44.5077,0.5913404447921098,1.4470246376382598,Mixed polarization / charge transfer
+A_HAL59,MeI_OPH3,True,kJ/mol,-3.6262,,,11.1219,-14.7481,-4.3689,-5.8065,-13.8016,0.5706409576036323,1.3290530797225846,Mixed polarization / charge transfer
+A_HAL59,BrBr_OPH3,True,kJ/mol,2.0596,-77.0709,95.1079,18.037,-15.9774,-9.3786,-15.2302,-22.5493,0.6188924287246838,1.6239310771330475,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_OPH3,True,kJ/mol,10.0876,,,35.0084,-24.9207,-35.1559,-37.2548,-62.3231,0.5144930238210651,1.059702638817382,Mixed polarization / charge transfer
+A_HAL59,MeI_pyr,True,kJ/mol,-2.6447,,,12.8282,-15.4728,-4.9311,-6.7709,-14.3466,0.5786104939326611,1.37310133641581,Mixed polarization / charge transfer
+A_HAL59,BrBr_pyr,True,kJ/mol,20.0306,-110.8419,152.2014,41.3595,-21.3289,-16.7542,-36.6285,-33.3521,0.6861492580929778,2.186227930906877,Charge-transfer driven (n→σ* dominant)
+A_HAL59,FI_pyr,True,kJ/mol,42.5888,,,77.6758,-35.087,-56.4246,-77.0868,-90.9226,0.5773799091313552,1.3661913420742016,Mixed polarization / charge transfer
+A_HAL59,11_benF3-ben,True,kJ/mol,-14.5181,-35.376,53.9363,18.5603,-33.0784,-1.5357,-2.2602,-18.314,0.595431913380226,1.471771830435632,Mixed polarization / charge transfer
+A_HAL59,12_benF6-ben,True,kJ/mol,-20.2013,-45.1528,62.8784,17.7256,-37.9269,-2.8866,-2.5457,-25.6336,0.46862286692561167,0.8819025843552969,Mixed polarization / charge transfer
+A_HAL59,19_benCl-acetone,True,kJ/mol,-2.276,-21.81,29.4857,7.6757,-9.9518,-1.4734,-1.5937,-5.3431,0.5196113592644518,1.081647889235781,Mixed polarization / charge transfer
+A_HAL59,20_benBr-acetone,True,kJ/mol,-2.9906,-33.5293,42.8707,9.3413,-12.3319,-2.6313,-2.7251,-8.3469,0.5087558808154731,1.0356477786645384,Mixed polarization / charge transfer
+A_HAL59,21_benI-acetone,True,kJ/mol,-5.3012,,,8.8687,-14.1699,-4.6745,-4.2736,-14.2493,0.47759859635006313,0.9142368167718472,Mixed polarization / charge transfer
+A_HAL59,22_benCl-Nm3,True,kJ/mol,-1.7519,-31.9581,43.1218,11.1638,-12.9157,-1.8072,-3.9352,-7.4943,0.6852883811646698,2.1775121735281098,Charge-transfer driven (n→σ* dominant)
+A_HAL59,23_benBr-Nm3,True,kJ/mol,-0.7458,-52.8976,69.9969,17.0993,-17.8451,-3.9316,-7.7658,-12.4433,0.663891121103835,1.9752263709431275,Charge-transfer driven (n→σ* dominant)
+A_HAL59,24_benI-Nm3,True,kJ/mol,-0.3276,,,24.2954,-24.6229,-8.5754,-13.6429,-22.5459,0.6140388778619427,1.5909345336660679,Charge-transfer driven (n→σ* dominant)
+A_HAL59,25_benBr-mSH,True,kJ/mol,-3.3272,-25.7638,34.5818,8.818,-12.1452,-1.1507,-3.3178,-7.7957,0.7424862929394651,2.883288433127661,Charge-transfer driven (n→σ* dominant)
+A_HAL59,26_benI-mSH,True,kJ/mol,-3.811,,,11.9417,-15.7526,-2.2535,-5.8778,-11.9423,0.7228610431296348,2.6082982027956514,Charge-transfer driven (n→σ* dominant)
+A_HAL59,27_CH3Br-ben,True,kJ/mol,-4.1517,-16.8887,26.9953,10.1066,-14.2583,-0.6831,-1.4586,-6.2934,0.6810477657935284,2.1352657004830915,Charge-transfer driven (n→σ* dominant)
+A_HAL59,28_CH3I-ben,True,kJ/mol,-6.4271,,,11.6399,-18.067,-1.2115,-2.1233,-9.7619,0.6367098476670265,1.7526207181180353,Charge-transfer driven (n→σ* dominant)
+A_HAL59,29_CF3Br-ben,True,kJ/mol,-7.2487,-25.6539,34.5865,8.9326,-16.1813,-1.7524,-2.4577,-11.4589,0.583762855989169,1.4024766035151792,Mixed polarization / charge transfer
+A_HAL59,30_CF3I-ben,True,kJ/mol,-8.6432,,,11.918,-20.5612,-3.0931,-3.8449,-15.5812,0.5541798789276448,1.2430571271539879,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d090,True,kJ/mol,5.4526,-47.3012,67.8331,20.532,-15.0794,-3.0815,-4.2852,-1.9141,0.5816987253451341,1.3906214505922438,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d095,True,kJ/mol,0.2121,-32.3397,44.8154,12.4757,-12.2636,-2.0886,-2.5846,-4.4611,0.553068561157237,1.2374796514411568,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d100,True,kJ/mol,-2.276,-21.81,29.4857,7.6757,-9.9518,-1.4734,-1.5937,-5.3431,0.5196113592644518,1.081647889235781,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d105,True,kJ/mol,-3.252,-14.4952,19.3079,4.8127,-8.0648,-1.0767,-1.0006,-5.3294,0.4816829538343041,0.9293210736509705,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d110,True,kJ/mol,-3.416,-9.4776,12.5826,3.105,-6.521,-0.8134,-0.6355,-4.865,0.4386085996273034,0.7812884189820506,Mixed polarization / charge transfer
+B_scan_distance,19_benCl-acetone_d120,True,kJ/mol,-2.7769,-3.7942,5.2792,1.485,-4.2619,-0.493,-0.2608,-3.5307,0.345980366144866,0.5290060851926978,Polarization driven (induction dominant)
+B_scan_distance,19_benCl-acetone_d135,True,kJ/mol,-1.4631,-0.6197,1.4104,0.7907,-2.2537,-0.2562,-0.0681,-1.7874,0.20999074930619796,0.265807962529274,Polarization driven (induction dominant)
+B_scan_distance,19_benCl-acetone_d150,True,kJ/mol,-0.5935,0.2557,0.3765,0.6322,-1.2258,-0.144,-0.0166,-0.7541,0.10336239103362392,0.11527777777777778,Polarization driven (induction dominant)
+B_scan_distance,20_benBr-acetone_d090,True,kJ/mol,9.6962,-67.7575,95.8523,28.0948,-18.3985,-5.8644,-7.1271,-3.2953,0.5485971596813302,1.215316144874156,Mixed polarization / charge transfer
+B_scan_distance,20_benBr-acetone_d095,True,kJ/mol,1.2442,-47.8889,64.218,16.3291,-15.0849,-3.8514,-4.383,-6.9901,0.5322792188866219,1.13802773017604,Mixed polarization / charge transfer
+B_scan_distance,20_benBr-acetone_d100,True,kJ/mol,-2.9906,-33.5293,42.8707,9.3413,-12.3319,-2.6313,-2.7251,-8.3469,0.5087558808154731,1.0356477786645384,Mixed polarization / charge transfer
+B_scan_distance,20_benBr-acetone_d105,True,kJ/mol,-4.8191,-23.2845,28.5104,5.2259,-10.045,-1.8672,-1.7103,-8.3966,0.4780712788259958,0.9159704370179949,Mixed polarization / charge transfer
+B_scan_distance,20_benBr-acetone_d110,True,kJ/mol,-5.3497,-16.0526,18.886,2.8335,-8.1832,-1.3656,-1.0811,-7.7965,0.4418604651162791,0.7916666666666666,Mixed polarization / charge transfer
+B_scan_distance,20_benBr-acetone_d120,True,kJ/mol,-4.6831,-7.4738,8.1935,0.7197,-5.4029,-0.7914,-0.4367,-5.9113,0.3555899356729908,0.5518069244377053,Polarization driven (induction dominant)
+B_scan_distance,20_benBr-acetone_d135,True,kJ/mol,-2.8095,-2.2128,2.2845,0.0718,-2.8813,-0.3951,-0.1117,-3.3163,0.2204025256511444,0.28271323715515057,Polarization driven (induction dominant)
+B_scan_distance,20_benBr-acetone_d150,True,kJ/mol,-1.4554,-0.4996,0.6247,0.1251,-1.5805,-0.2148,-0.0279,-1.6981,0.11495673671199012,0.1298882681564246,Polarization driven (induction dominant)
+B_scan_distance,21_benI-acetone_d090,True,kJ/mol,11.7943,,,33.8185,-22.0241,-10.9652,-10.5231,-9.694,0.48971300661290096,0.9596815379564441,Mixed polarization / charge transfer
+B_scan_distance,21_benI-acetone_d095,True,kJ/mol,0.4054,,,18.0335,-17.6281,-7.0326,-6.6833,-13.3105,0.4872666029936059,0.9503313141654579,Mixed polarization / charge transfer
+B_scan_distance,21_benI-acetone_d100,True,kJ/mol,-5.3012,,,8.8687,-14.1699,-4.6745,-4.2736,-14.2493,0.47759859635006313,0.9142368167718472,Mixed polarization / charge transfer
+B_scan_distance,21_benI-acetone_d105,True,kJ/mol,-7.7722,,,3.6702,-11.4425,-3.2027,-2.7526,-13.7275,0.46221013215119305,0.859462328660193,Mixed polarization / charge transfer
+B_scan_distance,21_benI-acetone_d110,True,kJ/mol,-8.4433,,,0.8216,-9.2649,-2.2821,-1.7797,-12.5051,0.438155497562657,0.7798518908023313,Mixed polarization / charge transfer
+B_scan_distance,21_benI-acetone_d120,True,kJ/mol,-7.4474,,,-1.3393,-6.1081,-1.2559,-0.7459,-9.4492,0.3726146468178639,0.5939167131141014,Polarization driven (induction dominant)
+B_scan_distance,21_benI-acetone_d135,True,kJ/mol,-4.7621,,,-1.4744,-3.2877,-0.5949,-0.1938,-5.5507,0.24572080639026248,0.32576903681290975,Polarization driven (induction dominant)
+B_scan_distance,21_benI-acetone_d150,True,kJ/mol,-2.7583,,,-0.9495,-1.8088,-0.3144,-0.0418,-3.1145,0.11734980348119033,0.13295165394402034,Polarization driven (induction dominant)
+B_scan_distance,22_benCl-Nm3_d090,True,kJ/mol,11.8114,-64.8937,96.1832,31.2895,-19.4781,-4.745,-10.1075,-3.0411,0.6805251641137856,2.1301369863013697,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,22_benCl-Nm3_d095,True,kJ/mol,2.8231,-45.8326,64.536,18.7034,-15.8803,-2.8557,-6.2957,-6.3284,0.6879493847935835,2.2046083272052384,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,22_benCl-Nm3_d100,True,kJ/mol,-1.7519,-31.9581,43.1218,11.1638,-12.9157,-1.8072,-3.9352,-7.4943,0.6852883811646698,2.1775121735281098,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,22_benCl-Nm3_d105,True,kJ/mol,-3.8262,-21.9908,28.6665,6.6757,-10.502,-1.2024,-2.466,-7.4947,0.6722276741903828,2.0508982035928147,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,22_benCl-Nm3_d110,True,kJ/mol,-4.5139,-14.9205,18.9426,4.0221,-8.536,-0.8465,-1.5428,-6.9032,0.6457121332607877,1.822563496751329,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,22_benCl-Nm3_d120,True,kJ/mol,-4.0509,-6.5406,8.1077,1.5671,-5.618,-0.4747,-0.5988,-5.1243,0.5578015836050302,1.261428270486623,Mixed polarization / charge transfer
+B_scan_distance,22_benCl-Nm3_d135,True,kJ/mol,-2.415,-1.5478,2.1652,0.6174,-3.0324,-0.2343,-0.1438,-2.7931,0.3803226659613859,0.6137430644472899,Polarization driven (induction dominant)
+B_scan_distance,22_benCl-Nm3_d150,True,kJ/mol,-1.2118,-0.0769,0.5482,0.4713,-1.6832,-0.1261,-0.033,-1.371,0.20741671904462605,0.2616970658207772,Polarization driven (induction dominant)
+B_scan_distance,23_benBr-Nm3_d090,True,kJ/mol,23.8279,-98.8811,148.8801,49.9989,-26.171,-10.6313,-18.205,-5.0084,0.6313223263733558,1.7123964143613668,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,23_benBr-Nm3_d095,True,kJ/mol,7.9336,-72.7058,102.2796,29.5738,-21.6402,-6.3738,-11.9091,-10.3492,0.6513791575734703,1.8684458250964888,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,23_benBr-Nm3_d100,True,kJ/mol,-0.7458,-52.8976,69.9969,17.0993,-17.8451,-3.9316,-7.7658,-12.4433,0.663891121103835,1.9752263709431275,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,23_benBr-Nm3_d105,True,kJ/mol,-5.0968,-38.1417,47.7138,9.572,-14.6689,-2.5477,-5.0326,-12.6771,0.6639051224885559,1.9753503159712684,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,23_benBr-Nm3_d110,True,kJ/mol,-6.9513,-27.2863,32.3845,5.0982,-12.0495,-1.722,-3.2447,-11.9179,0.6532909175106207,1.8842624854819976,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,23_benBr-Nm3_d120,True,kJ/mol,-7.0658,-13.6815,14.7034,1.0219,-8.0877,-0.8956,-1.3296,-9.291,0.5975193241056983,1.484591335417597,Mixed polarization / charge transfer
+B_scan_distance,23_benBr-Nm3_d135,True,kJ/mol,-4.789,-4.6468,4.3215,-0.3253,-4.4637,-0.4075,-0.3497,-5.5462,0.46183306920232436,0.8581595092024541,Mixed polarization / charge transfer
+B_scan_distance,23_benBr-Nm3_d150,True,kJ/mol,-2.7634,-1.4813,1.2023,-0.279,-2.4845,-0.2009,-0.0923,-3.0567,0.3148021828103683,0.45943255350920853,Polarization driven (induction dominant)
+B_scan_distance,24_benI-Nm3_d090,True,kJ/mol,37.3909,,,75.18,-37.7891,-23.9056,-28.2445,-14.7591,0.5416001119844449,1.1815014055284117,Mixed polarization / charge transfer
+B_scan_distance,24_benI-Nm3_d095,True,kJ/mol,13.2339,,,43.6846,-30.4507,-14.1946,-19.748,-20.7086,0.5818057544206985,1.391233285897454,Mixed polarization / charge transfer
+B_scan_distance,24_benI-Nm3_d100,True,kJ/mol,-0.3276,,,24.2954,-24.6229,-8.5754,-13.6429,-22.5459,0.6140388778619427,1.5909345336660679,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,24_benI-Nm3_d105,True,kJ/mol,-7.4172,,,12.5634,-19.9806,-5.3445,-9.2879,-22.0496,0.6347489133703289,1.7378426419683788,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,24_benI-Nm3_d110,True,kJ/mol,-10.6591,,,5.6256,-16.2847,-3.4967,-6.2165,-20.3723,0.6400053535395132,1.777819086567335,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,24_benI-Nm3_d120,True,kJ/mol,-11.41,,,-0.5143,-10.8958,-1.7203,-2.6693,-15.7997,0.6080964096956443,1.5516479683776085,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,24_benI-Nm3_d135,True,kJ/mol,-8.19,,,-2.158,-6.032,-0.7405,-0.7231,-9.6536,0.49405575293796117,0.9765023632680621,Mixed polarization / charge transfer
+B_scan_distance,24_benI-Nm3_d150,True,kJ/mol,-5.0655,,,-1.6728,-3.3927,-0.3422,-0.2007,-5.6085,0.36968134094676736,0.586499123319696,Polarization driven (induction dominant)
+B_scan_distance,26_benI-mSH_d090,True,kJ/mol,16.4256,,,42.418,-25.9925,-6.0156,-16.2803,-5.8703,0.730192546611709,2.7063468315712482,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d095,True,kJ/mol,2.8848,,,23.088,-20.2032,-3.6062,-9.8054,-10.5268,0.731113364550091,2.71903943208918,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d100,True,kJ/mol,-3.811,,,11.9417,-15.7526,-2.2535,-5.8778,-11.9423,0.7228610431296348,2.6082982027956514,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d105,True,kJ/mol,-6.6392,,,5.6507,-12.29,-1.4654,-3.5254,-11.63,0.7063797387192433,2.405759519585096,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d110,True,kJ/mol,-7.4146,,,2.1999,-9.6145,-0.9774,-2.1235,-10.5154,0.6848011867522331,2.172600777573153,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d120,True,kJ/mol,-6.3896,,,-0.5103,-5.8793,-0.472,-0.7882,-7.6498,0.6254562767814633,1.6699152542372881,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,26_benI-mSH_d135,True,kJ/mol,-3.8297,,,-0.989,-2.8407,-0.1771,-0.1912,-4.198,0.519142003801249,1.0796160361377753,Mixed polarization / charge transfer
+B_scan_distance,26_benI-mSH_d150,True,kJ/mol,-2.0992,,,-0.6892,-1.41,-0.0713,-0.0504,-2.2209,0.4141331142152835,0.7068723702664796,Mixed polarization / charge transfer
+B_scan_distance,28_CH3I-ben_d090,True,kJ/mol,5.6896,,,35.8203,-30.1307,-2.9501,-6.3784,-3.639,0.6837540869378785,2.162096200128809,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,28_CH3I-ben_d095,True,kJ/mol,-2.7295,,,20.5768,-23.3064,-1.8636,-3.7026,-8.2957,0.6651934892745499,1.9867997424339987,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,28_CH3I-ben_d100,True,kJ/mol,-6.4271,,,11.6399,-18.067,-1.2115,-2.1233,-9.7619,0.6367098476670265,1.7526207181180353,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,28_CH3I-ben_d105,True,kJ/mol,-7.5682,,,6.4772,-14.0455,-0.8127,-1.2062,-9.5872,0.5974540591411165,1.4841885074443213,Mixed polarization / charge transfer
+B_scan_distance,28_CH3I-ben_d110,True,kJ/mol,-7.3901,,,3.5416,-10.9317,-0.555,-0.6833,-8.6284,0.5518048938060244,1.231171171171171,Mixed polarization / charge transfer
+B_scan_distance,28_CH3I-ben_d120,True,kJ/mol,-5.6526,,,1.0045,-6.6571,-0.2695,-0.2251,-6.1472,0.455115244642135,0.8352504638218923,Mixed polarization / charge transfer
+B_scan_distance,28_CH3I-ben_d135,True,kJ/mol,-3.0728,,,0.1664,-3.2391,-0.1043,-0.0555,-3.2326,0.3473091364205257,0.5321188878235859,Polarization driven (induction dominant)
+B_scan_distance,28_CH3I-ben_d150,True,kJ/mol,-1.5382,,,0.101,-1.6392,-0.0461,-0.0209,-1.6052,0.31194029850746263,0.4533622559652928,Polarization driven (induction dominant)
+B_scan_distance,NH3_PhI_d090,True,kJ/mol,14.9206,,,34.6278,-19.7072,-9.967,-14.8281,-9.8745,0.5980254163120939,1.4877194742650746,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d095,True,kJ/mol,2.3611,,,17.7321,-15.371,-6.4695,-9.1816,-13.29,0.5866424724140795,1.4192132313161758,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d100,True,kJ/mol,-3.9912,,,8.0418,-12.033,-4.3858,-5.6952,-14.0721,0.5649439539728202,1.2985544256464043,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d105,True,kJ/mol,-6.8068,,,2.6628,-9.4696,-3.0712,-3.5699,-13.448,0.5375464907921881,1.162379525918208,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d110,True,kJ/mol,-7.6421,,,-0.179,-7.4631,-2.2295,-2.2727,-12.1443,0.504797654480032,1.0193765418255214,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d120,True,kJ/mol,-6.7637,,,-2.1142,-4.6496,-1.2489,-0.9961,-9.0086,0.4436971046770601,0.7975818720474017,Mixed polarization / charge transfer
+B_scan_distance,NH3_PhI_d135,True,kJ/mol,-4.1755,,,-1.8948,-2.2807,-0.5801,-0.3644,-5.1199,0.3858125992588672,0.6281675573177039,Polarization driven (induction dominant)
+B_scan_distance,NH3_PhI_d150,True,kJ/mol,-2.2743,,,-1.1627,-1.1116,-0.2996,-0.1667,-2.7406,0.35749517478018444,0.5564085447263017,Polarization driven (induction dominant)
+B_scan_distance,MeI_pyr_d090,True,kJ/mol,19.4547,,,44.2627,-24.808,-12.3512,-16.7346,-9.631,0.5753529213568134,1.3548966902001425,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d095,True,kJ/mol,4.947,,,24.4855,-19.5385,-7.6777,-10.6703,-13.401,0.5815511227381731,1.389778188780494,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d100,True,kJ/mol,-2.6447,,,12.8282,-15.4728,-4.9311,-6.7709,-14.3466,0.5786104939326611,1.37310133641581,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d105,True,kJ/mol,-6.1939,,,6.1169,-12.3107,-3.3085,-4.2704,-13.7727,0.5634590771747879,1.2907359830739007,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d110,True,kJ/mol,-7.4599,,,2.3773,-9.8372,-2.3013,-2.6807,-12.4419,0.5380770774789242,1.1648633381132403,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d120,True,kJ/mol,-6.9039,,,-0.5735,-6.3303,-1.224,-1.0552,-9.183,0.46296946296946295,0.8620915032679738,Mixed polarization / charge transfer
+B_scan_distance,MeI_pyr_d135,True,kJ/mol,-4.3166,,,-0.9825,-3.3341,-0.5511,-0.2712,-5.1389,0.3298066399124407,0.49210669569951004,Polarization driven (induction dominant)
+B_scan_distance,MeI_pyr_d150,True,kJ/mol,-2.2914,,,-0.5145,-1.7769,-0.2762,-0.0777,-2.6453,0.2195535461994914,0.2813178855901521,Polarization driven (induction dominant)
+B_scan_distance,FI_pyr_d090,True,kJ/mol,172.5956,,,223.7334,-51.1377,-113.8788,-135.5526,-76.8358,0.5434464145251962,1.1903233964530713,Mixed polarization / charge transfer
+B_scan_distance,FI_pyr_d095,True,kJ/mol,93.5108,,,135.8525,-42.3417,-80.1172,-102.1742,-88.7806,0.5604992885018163,1.275309172062928,Mixed polarization / charge transfer
+B_scan_distance,FI_pyr_d100,True,kJ/mol,42.5888,,,77.6758,-35.087,-56.4246,-77.0868,-90.9226,0.5773799091313552,1.3661913420742016,Mixed polarization / charge transfer
+B_scan_distance,FI_pyr_d105,True,kJ/mol,10.6094,,,39.7204,-29.111,-39.8805,-58.1691,-87.4402,0.5932619816908993,1.4585850227554822,Mixed polarization / charge transfer
+B_scan_distance,FI_pyr_d110,True,kJ/mol,-8.7657,,,15.4465,-24.2122,-28.4562,-43.7502,-80.9721,0.6059047397460613,1.5374575663651506,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,FI_pyr_d120,True,kJ/mol,-25.5543,,,-8.6496,-16.9048,-15.1691,-24.2891,-65.0125,0.6155653324277336,1.6012222214897391,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,FI_pyr_d135,True,kJ/mol,-27.0073,,,-16.9572,-10.0501,-6.7619,-9.5058,-43.275,0.5843358311254818,1.4057883139354326,Mixed polarization / charge transfer
+B_scan_distance,FI_pyr_d150,True,kJ/mol,-21.1972,,,-15.1401,-6.0571,-3.3895,-3.5449,-28.1315,0.511205006922012,1.0458474701283376,Mixed polarization / charge transfer
+B_scan_distance,NH3_FBr_d090,True,kJ/mol,160.754,-274.9159,466.7966,191.8806,-31.1266,-73.424,-140.7278,-53.3978,0.6571404022753953,1.916645783395075,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d095,True,kJ/mol,90.6846,-229.1276,346.8467,117.7191,-27.0345,-48.5764,-105.8739,-63.7657,0.6854884710486157,2.179533683023032,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d100,True,kJ/mol,45.115,-188.2465,256.6819,68.4353,-23.3204,-32.7635,-78.8537,-66.5023,0.7064654909816767,2.406754467624033,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d105,True,kJ/mol,16.1403,-153.0278,189.1798,36.1519,-20.0116,-22.5698,-58.2963,-64.7258,0.7208991159459898,2.5829338319347093,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d110,True,kJ/mol,-1.7183,-123.4519,138.8218,15.3699,-17.0882,-15.9345,-42.8114,-60.4641,0.7287555386844018,2.686711224073551,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d120,True,kJ/mol,-17.9002,-79.2936,73.7231,-5.5704,-12.3297,-8.5077,-22.7755,-49.1834,0.728042527618658,2.677045499958861,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d135,True,kJ/mol,-20.6953,-40.7647,27.4557,-13.3089,-7.3864,-3.8422,-8.7282,-33.2657,0.6943454464456182,2.271667273957628,Charge-transfer driven (n→σ* dominant)
+B_scan_distance,NH3_FBr_d150,True,kJ/mol,-16.5486,-21.9195,9.701,-12.2184,-4.3302,-1.9414,-3.4184,-21.9084,0.6377849919773126,1.7607911816215103,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,19_benCl-acetone_a180,True,kJ/mol,-2.2697,-21.8123,29.4951,7.6828,-9.9525,-1.4736,-1.5932,-5.3365,0.5194991522107735,1.0811617806731812,Mixed polarization / charge transfer
+C_scan_angle,19_benCl-acetone_a170,True,kJ/mol,-1.9906,-21.931,29.9432,8.0122,-10.0028,-1.4814,-1.5685,-5.0406,0.5142791566936621,1.058795733765357,Mixed polarization / charge transfer
+C_scan_angle,19_benCl-acetone_a160,True,kJ/mol,-1.0181,-22.3415,31.5064,9.1649,-10.1831,-1.5087,-1.4832,-4.01,0.49573849393362074,0.983098031417777,Mixed polarization / charge transfer
+C_scan_angle,19_benCl-acetone_a150,True,kJ/mol,0.4766,-22.9728,33.9303,10.9575,-10.4809,-1.5508,-1.3575,-2.4317,0.4667675274215178,0.875354655661594,Mixed polarization / charge transfer
+C_scan_angle,19_benCl-acetone_a140,True,kJ/mol,2.2091,-23.7134,36.8152,13.1018,-10.8927,-1.602,-1.2182,-0.6111,0.43195518048365367,0.7604244694132334,Mixed polarization / charge transfer
+C_scan_angle,19_benCl-acetone_a130,True,kJ/mol,3.8378,-24.4316,39.6796,15.248,-11.4102,-1.6621,-1.0863,1.0895,0.395248144374909,0.6535707839480176,Polarization driven (induction dominant)
+C_scan_angle,19_benCl-acetone_a120,True,kJ/mol,5.0085,-25.0172,42.0926,17.0754,-12.0669,-1.7338,-0.9917,2.2831,0.3638598422307833,0.5719806206021456,Polarization driven (induction dominant)
+C_scan_angle,20_benBr-acetone_a180,True,kJ/mol,-2.9803,-33.5391,42.8925,9.3534,-12.3336,-2.6316,-2.7246,-8.3365,0.508681527948919,1.0353397172822618,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a170,True,kJ/mol,-2.4919,-33.6698,43.565,9.8952,-12.3871,-2.6406,-2.6867,-7.8193,0.5043267696581758,1.0174581534499736,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a160,True,kJ/mol,-0.7941,-34.238,46.0435,11.8055,-12.5996,-2.6712,-2.5599,-6.0253,0.48936170212765956,0.9583333333333334,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a150,True,kJ/mol,1.842,-35.1446,49.9364,14.7917,-12.9497,-2.7114,-2.3696,-3.2389,0.46636488880141713,0.8739396621671462,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a140,True,kJ/mol,4.97,-36.2253,54.6192,18.394,-13.424,-2.7486,-2.1502,0.0712,0.43892381807789665,0.7822891653932911,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a130,True,kJ/mol,8.0661,-37.2734,59.3285,22.0551,-13.989,-2.7788,-1.942,3.3453,0.41137095407558044,0.6988628184827983,Mixed polarization / charge transfer
+C_scan_angle,20_benBr-acetone_a120,True,kJ/mol,10.5702,-38.0828,63.3071,25.2242,-14.654,-2.8113,-1.7844,5.9745,0.38827599712774985,0.6347241489702272,Polarization driven (induction dominant)
+C_scan_angle,21_benI-acetone_a180,True,kJ/mol,-5.2995,,,8.8706,-14.1701,-4.6745,-4.2736,-14.2476,0.47759859635006313,0.9142368167718472,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a170,True,kJ/mol,-4.3727,,,9.9298,-14.3025,-4.6996,-4.2332,-13.3055,0.47389396381873544,0.9007575112775555,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a160,True,kJ/mol,-1.5837,,,13.1326,-14.7163,-4.7637,-4.0846,-10.432,0.4616253969689093,0.8574427440854797,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a150,True,kJ/mol,2.6419,,,17.9884,-15.3465,-4.8216,-3.8542,-6.0339,0.44424721639502984,0.7993612078977933,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a140,True,kJ/mol,7.6334,,,23.7546,-16.1211,-4.8409,-3.5566,-0.7641,0.4235308127418874,0.7346980933297527,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a130,True,kJ/mol,12.597,,,29.5516,-16.9546,-4.8063,-3.2472,4.5435,0.403203576084932,0.6756132575994007,Mixed polarization / charge transfer
+C_scan_angle,21_benI-acetone_a120,True,kJ/mol,16.7282,,,34.5051,-17.7769,-4.7452,-2.9993,8.9836,0.3872812964038995,0.6320703026215966,Polarization driven (induction dominant)
+C_scan_angle,22_benCl-Nm3_a180,True,kJ/mol,-1.7513,-31.9579,43.1225,11.1646,-12.9159,-1.8072,-3.9353,-7.4938,0.6852938615585547,2.1775675077467906,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,22_benCl-Nm3_a170,True,kJ/mol,-1.2038,-32.1633,43.9542,11.7909,-12.9947,-1.826,-3.8476,-6.8775,0.6781584884376762,2.107119386637459,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,22_benCl-Nm3_a160,True,kJ/mol,0.395,-32.7361,46.3638,13.6277,-13.2326,-1.8747,-3.5712,-5.0509,0.655759378615105,1.9049447911665867,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,22_benCl-Nm3_a150,True,kJ/mol,2.7698,-33.5836,49.9704,16.3868,-13.617,-1.937,-3.174,-2.3412,0.6210135002934847,1.638616417139907,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,22_benCl-Nm3_a140,True,kJ/mol,5.464,-34.5596,54.1714,19.6117,-14.1477,-1.9945,-2.731,0.7385,0.5779282615596233,1.369265480070193,Mixed polarization / charge transfer
+C_scan_angle,22_benCl-Nm3_a130,True,kJ/mol,7.9179,-35.4935,58.2441,22.7506,-14.8327,-2.0375,-2.309,3.5714,0.5312320257678591,1.1332515337423312,Mixed polarization / charge transfer
+C_scan_angle,22_benCl-Nm3_a120,True,kJ/mol,9.5475,-36.2709,61.582,25.3111,-15.7636,-2.0699,-1.9911,5.4865,0.49029795616843147,0.9619305280448331,Mixed polarization / charge transfer
+C_scan_angle,23_benBr-Nm3_a180,True,kJ/mol,-0.7448,-52.8972,69.9977,17.1005,-17.8453,-3.9317,-7.7658,-12.4423,0.6638854456080359,1.9751761324617847,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,23_benBr-Nm3_a170,True,kJ/mol,0.2247,-53.2091,71.3822,18.1731,-17.9484,-3.9635,-7.6036,-11.3424,0.657347131087308,1.9184054497287752,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,23_benBr-Nm3_a160,True,kJ/mol,3.0946,-54.0808,75.4251,21.3443,-18.2497,-4.0426,-7.1066,-8.0546,0.6374089620779966,1.7579280660960768,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,23_benBr-Nm3_a150,True,kJ/mol,7.3972,-55.3707,81.5004,26.1297,-18.7324,-4.1233,-6.3658,-3.0919,0.6068966832235368,1.5438605000848833,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,23_benBr-Nm3_a140,True,kJ/mol,12.4035,-56.8532,88.6303,31.7771,-19.3736,-4.1584,-5.5058,2.7393,0.56971089174479,1.3240188534051556,Mixed polarization / charge transfer
+C_scan_angle,23_benBr-Nm3_a130,True,kJ/mol,17.207,-58.2568,95.6322,37.3754,-20.1684,-4.1296,-4.6661,8.4114,0.5304978569073525,1.1299157303370786,Mixed polarization / charge transfer
+C_scan_angle,23_benBr-Nm3_a120,True,kJ/mol,20.8749,-59.3623,101.4253,42.0631,-21.1882,-4.0683,-4.0118,12.7947,0.49650375614163195,0.9861121352899246,Mixed polarization / charge transfer
+C_scan_angle,24_benI-Nm3_a180,True,kJ/mol,-0.3275,,,24.2954,-24.6229,-8.5754,-13.6428,-22.5457,0.6140371407224707,1.5909228724024533,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,24_benI-Nm3_a170,True,kJ/mol,1.308,,,26.1538,-24.8458,-8.6753,-13.4035,-20.7708,0.6070755657010344,1.5450186160709138,Charge-transfer driven (n→σ* dominant)
+C_scan_angle,24_benI-Nm3_a160,True,kJ/mol,5.9739,,,31.4968,-25.5229,-8.9133,-12.6546,-15.594,0.5867330616332606,1.4197435293325706,Mixed polarization / charge transfer
+C_scan_angle,24_benI-Nm3_a150,True,kJ/mol,12.9624,,,39.5189,-26.5565,-9.1423,-11.517,-7.6969,0.557472905664761,1.2597486409328067,Mixed polarization / charge transfer
+C_scan_angle,24_benI-Nm3_a140,True,kJ/mol,21.1656,,,48.9952,-27.8297,-9.2044,-10.1034,1.8577,0.5232807466412538,1.0976706792403634,Mixed polarization / charge transfer
+C_scan_angle,24_benI-Nm3_a130,True,kJ/mol,29.228,,,58.456,-29.228,-9.0348,-8.6377,11.5555,0.4887650304144858,0.95604772656838,Mixed polarization / charge transfer
+C_scan_angle,24_benI-Nm3_a120,True,kJ/mol,35.7549,,,66.4324,-30.6775,-8.7137,-7.4039,19.6373,0.4593673996128456,0.8496849788264458,Mixed polarization / charge transfer
+E_eda_settings,19_benCl-acetone__EDA__def2-SVPD,True,kJ/mol,-1.768,-20.4233,28.3772,7.9539,-9.722,-1.5056,-1.9248,-5.1984,0.5611007462686567,1.2784272051009564,Mixed polarization / charge transfer
+E_eda_settings,19_benCl-acetone__EDA__def2-QZVP,True,kJ/mol,-2.35,-20.9023,28.4173,7.515,-9.865,-1.303,-1.6645,-5.3175,0.5609098567818028,1.27743668457406,Mixed polarization / charge transfer
+E_eda_settings,19_benCl-acetone__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-2.276,-21.81,29.4857,7.6757,-9.9518,-1.4734,-1.9268,-5.6762,0.5666725486736075,1.307723632414823,Mixed polarization / charge transfer
+E_eda_settings,20_benBr-acetone__EDA__def2-SVPD,True,kJ/mol,-3.3555,-33.8049,42.892,9.0871,-12.4425,-2.5938,-3.2039,-9.1531,0.5526156924297566,1.2352147428483307,Mixed polarization / charge transfer
+E_eda_settings,20_benBr-acetone__EDA__def2-QZVP,True,kJ/mol,-3.1226,-32.9048,42.088,9.1831,-12.3057,-2.2221,-3.0485,-8.3932,0.578397146434941,1.3719004545249989,Mixed polarization / charge transfer
+E_eda_settings,20_benBr-acetone__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-2.9906,-33.5293,42.8707,9.3413,-12.3319,-2.6313,-3.1757,-8.7975,0.5468744618563802,1.2068939307566602,Mixed polarization / charge transfer
+E_eda_settings,21_benI-acetone__EDA__def2-SVPD,True,kJ/mol,-5.8286,,,8.6017,-14.4303,-4.5254,-4.8177,-15.1717,0.515642559749976,1.0645909753833915,Mixed polarization / charge transfer
+E_eda_settings,21_benI-acetone__EDA__def2-QZVP,True,kJ/mol,-5.6209,,,8.6553,-14.2761,-3.9284,-4.8096,-14.3588,0.5504234378576334,1.2243152428469606,Mixed polarization / charge transfer
+E_eda_settings,21_benI-acetone__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-5.3012,,,8.8687,-14.1699,-4.6745,-4.5779,-14.5536,0.4947797328260775,0.9793346882019466,Mixed polarization / charge transfer
+E_eda_settings,22_benCl-Nm3__EDA__def2-SVPD,True,kJ/mol,-2.1592,-29.3388,40.129,10.7902,-12.9494,-1.9389,-3.2216,-7.3197,0.6242805929657979,1.6615606787353654,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,22_benCl-Nm3__EDA__def2-QZVP,True,kJ/mol,-2.1329,-30.7519,41.4659,10.7139,-12.8469,-1.5767,-3.8348,-7.5445,0.7086390095167698,2.4321684530982433,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,22_benCl-Nm3__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-1.7519,-31.9581,43.1218,11.1638,-12.9157,-1.8072,-4.4354,-7.9945,0.7105052382020312,2.4542939353696323,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,23_benBr-Nm3__EDA__def2-SVPD,True,kJ/mol,-2.4094,-53.7574,69.5011,15.7437,-18.1531,-3.9025,-7.5067,-13.8186,0.6579514777547943,1.9235618193465729,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,23_benBr-Nm3__EDA__def2-QZVP,True,kJ/mol,-1.2959,-52.2059,68.7246,16.5186,-17.8145,-3.3002,-7.987,-12.583,0.7076157062867673,2.420156354160354,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,23_benBr-Nm3__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-0.7458,-52.8976,69.9969,17.0993,-17.8451,-3.9316,-8.5007,-13.1782,0.6837592400440787,2.162147726116594,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,24_benI-Nm3__EDA__def2-SVPD,True,kJ/mol,-3.3071,,,22.0724,-25.3795,-8.1367,-12.8914,-24.3352,0.6130558633447625,1.5843523787284775,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,24_benI-Nm3__EDA__def2-QZVP,True,kJ/mol,-1.3455,,,23.3844,-24.7299,-6.92,-14.5538,-22.8192,0.6777468356788272,2.103150289017341,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,24_benI-Nm3__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-0.3276,,,24.2954,-24.6229,-8.5754,-14.1343,-23.0372,0.6223904322822407,1.648237983067845,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,26_benI-mSH__EDA__def2-SVPD,True,kJ/mol,-4.9989,,,11.1425,-16.1414,-2.0753,-6.078,-13.1523,0.7454650264310158,2.928733195200694,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,26_benI-mSH__EDA__def2-QZVP,True,kJ/mol,-3.8375,,,11.8576,-15.6951,-1.8249,-6.4246,-12.0871,0.7787865931268562,3.5205216724204065,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,26_benI-mSH__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-3.811,,,11.9417,-15.7526,-2.2535,-6.2161,-12.2806,0.7339307641447058,2.758420235189705,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,28_CH3I-ben__EDA__def2-SVPD,True,kJ/mol,-8.7317,,,9.8839,-18.6156,-1.1052,-1.2911,-11.128,0.5387889663230814,1.168204849800941,Mixed polarization / charge transfer
+E_eda_settings,28_CH3I-ben__EDA__def2-QZVP,True,kJ/mol,-6.4142,,,11.8114,-18.2256,-1.0717,-2.4361,-9.9219,0.6944808712013227,2.2731174769058504,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,28_CH3I-ben__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-6.4271,,,11.6399,-18.067,-1.2115,-2.5633,-10.202,0.6790558440182262,2.115806851011143,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,NH3_PhI__EDA__def2-SVPD,True,kJ/mol,-5.5604,,,6.7799,-12.3403,-4.1086,-5.6896,-15.3587,0.5806780837296646,1.3848026091612715,Mixed polarization / charge transfer
+E_eda_settings,NH3_PhI__EDA__def2-QZVP,True,kJ/mol,-4.1241,,,7.8613,-11.9854,-4.1295,-5.9248,-14.1783,0.5892802084680187,1.4347499697299915,Mixed polarization / charge transfer
+E_eda_settings,NH3_PhI__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-3.9912,,,8.0418,-12.033,-4.3858,-6.3844,-14.7614,0.5927837923158346,1.4556979342423277,Mixed polarization / charge transfer
+E_eda_settings,MeI_pyr__EDA__def2-SVPD,True,kJ/mol,-4.0892,,,11.6621,-15.7514,-4.7011,-6.6366,-15.4269,0.5853568184023215,1.4117121524749525,Mixed polarization / charge transfer
+E_eda_settings,MeI_pyr__EDA__def2-QZVP,True,kJ/mol,-3.1023,,,12.4861,-15.5884,-4.4428,-6.9927,-14.5378,0.611490533863845,1.5739398577473664,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,MeI_pyr__EDA__def2-TZVPD__noBSSE,True,kJ/mol,-2.6447,,,12.8282,-15.4728,-4.9311,-7.1365,-14.7122,0.5913769100732541,1.4472430086593255,Mixed polarization / charge transfer
+E_eda_settings,FI_pyr__EDA__def2-SVPD,True,kJ/mol,36.0063,,,70.9591,-34.9528,-60.9716,-68.5953,-93.5606,0.5294199367276673,1.1250369024267035,Mixed polarization / charge transfer
+E_eda_settings,FI_pyr__EDA__def2-QZVP,True,kJ/mol,40.2773,,,75.2586,-34.9813,-46.2265,-85.755,-91.7042,0.6497501543776969,1.85510475593004,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,FI_pyr__EDA__def2-TZVPD__noBSSE,True,kJ/mol,42.5888,,,77.6758,-35.087,-56.4246,-77.8883,-91.7241,0.5799018560391443,1.3803961392725868,Mixed polarization / charge transfer
+E_eda_settings,NH3_FBr__EDA__def2-SVPD,True,kJ/mol,38.6469,-195.0766,256.73,61.6534,-23.0065,-33.4752,-74.8021,-69.6304,0.6908382458742506,2.2345527435235635,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,NH3_FBr__EDA__def2-QZVP,True,kJ/mol,45.5956,-186.819,255.3959,68.5769,-22.9813,-27.9663,-84.2693,-66.6399,0.750825050162337,3.0132445121449747,Charge-transfer driven (n→σ* dominant)
+E_eda_settings,NH3_FBr__EDA__def2-TZVPD__noBSSE,True,kJ/mol,45.115,-188.2465,256.6819,68.4353,-23.3204,-32.7635,-80.368,-68.0166,0.7103945408661602,2.4529735834083657,Charge-transfer driven (n→σ* dominant)
+F_protein,1us0_idd594__LDTA__cluster_pcm4,True,kJ/mol,29.1947,-30.4988,75.2184,44.7196,-15.5249,-5.328,-9.8621,14.0046,0.6492452320919546,1.8509947447447446,Charge-transfer driven (n→σ* dominant)
+F_protein,4agl__P84A__cluster_pcm4,True,kJ/mol,-4.9088,,,12.7965,-17.7054,-4.954,-4.1658,-14.0286,0.45678633303361915,0.8408962454582156,Mixed polarization / charge transfer
+F_protein,4dst__9LIA__cluster_pcm4,True,kJ/mol,1.7488,-17.9916,30.4652,12.4735,-10.7248,-0.733,-2.4032,-1.3874,0.7662776608634653,3.278581173260573,Charge-transfer driven (n→σ* dominant)
+F_protein,2w0s__BVPB__cluster_pcm4,True,kJ/mol,21.7247,-33.1074,72.6705,39.5631,-17.8384,-5.1999,-3.7938,12.731,0.4218286133626872,0.729590953672186,Mixed polarization / charge transfer
+F_protein,1p5e__TBSC__cluster_pcm4,True,kJ/mol,-21.6792,-114.3301,152.8223,38.4922,-60.1715,-11.7478,-10.7949,-44.2219,0.4788645548226255,0.9188869405335467,Mixed polarization / charge transfer
+F_protein,4agl__P84B__cluster_pcm4,True,kJ/mol,-3.4655,,,15.0112,-18.4767,-5.2732,-4.5327,-13.2714,0.4622421195402767,0.8595729348403247,Mixed polarization / charge transfer
