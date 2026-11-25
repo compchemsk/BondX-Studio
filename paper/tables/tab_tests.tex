@@ -1,7 +1,7 @@
 {\scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{rp{14.5cm}}
-\caption{The 96 automated engine tests (\texttt{node tests/engine.test.js}). The last test runs the independent force-field comparison listed in Table~\ref{tab:ffref}.}\label{tab:tests}\\
+\caption{The 97 automated engine tests (\texttt{node tests/engine.test.js}). The last test runs the independent force-field comparison listed in Table~\ref{tab:ffref}.}\label{tab:tests}\\
 \toprule
 \# & Automated test (all passed)\\
 \midrule
@@ -80,32 +80,33 @@
 66 & DCD and multi-model PDB give the same persistence\\
 67 & D uses the documented formula\\
 68 & CIF I$\cdots$N found\\
-69 & unsafe CIF symmetry operator refused\\
-70 & altloc: first conformer kept by default\\
-71 & altloc: highest-occupancy option\\
-72 & cryo-EM 1 \AA{} dummy cell is ignored (no false periodic contacts)\\
-73 & Gaussian: D3(BJ) only for hybrids without built-in dispersion\\
-74 & ORCA: dispersion keyword chosen per functional\\
-75 & ORCA NBO caution in input comments and T3 assumptions\\
-76 & Q-Chem: DFT\_D D3\_BJ written when requested\\
-77 & strong XB contact is never used to join the two fragments\\
-78 & polar-H-only input: C--H completed, same 36-atom model as from the H-free file\\
-79 & 1P5E TBS: C6HBr4N3 with one N-H (got BR4C6H1N3, 1 N-H)\\
-80 & 2W0S BVP: phosphate dianion C11H12BrN2O8P, charge -2 (got BR1C11H12N2O8P1, -2)\\
-81 & 4GQL R47: incomplete file H rebuilt to 32 H at charge -3 (got 32, -3)\\
-82 & 4AGL P84: incomplete ligand (13 of 21 heavy atoms) is reported\\
-83 & PDB FORMUL records parsed (formula and charge)\\
-84 & replaced file H never become MM charges (4GQL: 1780,2 vs re-protonated 1780,2)\\
-85 & added ligand H atoms have no clashes (H-H $>$= 1.2 A, H-X $>$= 1.5 A; 0 found)\\
-86 & extra point EP of I-Tyr removed on reading (1 site, 2644 of 2645 atoms kept)\\
-87 & iodine partner is the ring carbon C6, not the extra point\\
-88 & DCD/XYZ frames written with the extra point are mapped to the kept atoms\\
-89 & frames with a wrong atom count are refused\\
-90 & NBO lines with an orbital index above 999 (printed ***) are read\\
-91 & Q-Chem NBO input requests the E(2) table and uses the Q-Chem 6 PCM keyword Dielectric\\
-92 & Q-Chem NBO input with def2-QZVP carries the pure-g caution\\
-93 & Q-Chem NBO caution in the T3 assumptions\\
-94 & ionic NBO structure (vacant LP* on the halogen, no sigma*(A-X)) counts n -$>$ LP*(X)\\
-95 & LP*(X) is ignored when the sigma*(A-X) orbital exists\\
-96 & force-field charges agree with PDB2PQR reference PQR files\\
+69 & symmetry-equivalent CIF contacts reported once (2 copies)\\
+70 & unsafe CIF symmetry operator refused\\
+71 & altloc: first conformer kept by default\\
+72 & altloc: highest-occupancy option\\
+73 & cryo-EM 1 \AA{} dummy cell is ignored (no false periodic contacts)\\
+74 & Gaussian: D3(BJ) only for hybrids without built-in dispersion\\
+75 & ORCA: dispersion keyword chosen per functional\\
+76 & ORCA NBO caution in input comments and T3 assumptions\\
+77 & Q-Chem: DFT\_D D3\_BJ written when requested\\
+78 & strong XB contact is never used to join the two fragments\\
+79 & polar-H-only input: C--H completed, same 36-atom model as from the H-free file\\
+80 & 1P5E TBS: C6HBr4N3 with one N-H (got BR4C6H1N3, 1 N-H)\\
+81 & 2W0S BVP: phosphate dianion C11H12BrN2O8P, charge -2 (got BR1C11H12N2O8P1, -2)\\
+82 & 4GQL R47: incomplete file H rebuilt to 32 H at charge -3 (got 32, -3)\\
+83 & 4AGL P84: incomplete ligand (13 of 21 heavy atoms) is reported\\
+84 & PDB FORMUL records parsed (formula and charge)\\
+85 & replaced file H never become MM charges (4GQL: 1780,2 vs re-protonated 1780,2)\\
+86 & added ligand H atoms have no clashes (H-H $>$= 1.2 A, H-X $>$= 1.5 A; 0 found)\\
+87 & extra point EP of I-Tyr removed on reading (1 site, 2644 of 2645 atoms kept)\\
+88 & iodine partner is the ring carbon C6, not the extra point\\
+89 & DCD/XYZ frames written with the extra point are mapped to the kept atoms\\
+90 & frames with a wrong atom count are refused\\
+91 & NBO lines with an orbital index above 999 (printed ***) are read\\
+92 & Q-Chem NBO input requests the E(2) table and uses the Q-Chem 6 PCM keyword Dielectric\\
+93 & Q-Chem NBO input with def2-QZVP carries the pure-g caution\\
+94 & Q-Chem NBO caution in the T3 assumptions\\
+95 & ionic NBO structure (vacant LP* on the halogen, no sigma*(A-X)) counts n -$>$ LP*(X)\\
+96 & LP*(X) is ignored when the sigma*(A-X) orbital exists\\
+97 & force-field charges agree with PDB2PQR reference PQR files\\
 \end{longtable}}

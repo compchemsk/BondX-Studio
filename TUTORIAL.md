@@ -115,6 +115,8 @@ All cut-offs are on the page **All parameters**. A changed value is marked in or
 |---|---|---|
 | NBO gate | Gaussian 16 with NBO 3.1 | tested on 59 dimers and 9 protein contacts |
 | ALMO-EDA | Q-Chem 6.2 | tested |
+| Batch screening | local PDB files or PDB IDs | tested on three test-set proteins |
+| Crystal contacts and QM model | CIF with symmetry operators | tested on a small test CIF |
 | Counterpoise binding | ORCA 5 or Gaussian 16 | used in the paper; not read by the app |
 | NBO gate | ORCA with NBO | input written; not tested |
 | NBO gate | Q-Chem with NBO 5 | input written; not tested |

@@ -449,6 +449,8 @@
       <table class="t tut"><thead><tr><th>Task</th><th>Program</th><th>Status</th></tr></thead><tbody>
         <tr><td>NBO gate</td><td>Gaussian 16 with NBO 3.1</td><td><span class="pill ok">tested on 59 dimers and 9 protein contacts</span></td></tr>
         <tr><td>ALMO-EDA</td><td>Q-Chem 6.2</td><td><span class="pill ok">tested</span></td></tr>
+        <tr><td>Batch screening</td><td>local PDB files or PDB IDs</td><td><span class="pill ok">tested on three test-set proteins</span></td></tr>
+        <tr><td>Crystal contacts and QM model</td><td>CIF with symmetry operators</td><td><span class="pill ok">tested on a small test CIF</span></td></tr>
         <tr><td>Counterpoise binding</td><td>ORCA 5 or Gaussian 16</td><td><span class="pill mute">used in the paper; not read by the app</span></td></tr>
         <tr><td>NBO gate</td><td>ORCA with NBO</td><td><span class="pill warn">input written; not tested</span></td></tr>
         <tr><td>NBO gate</td><td>Q-Chem with NBO 5</td><td><span class="pill warn">input written; not tested</span></td></tr>
@@ -737,7 +739,7 @@
       $('#btnMat').onclick = () => {
         const hits = B.detectMaterialXB(ST.mat.M, ST.P); ST.mat.hits = hits; log('T1.material', `${hits.length} contacts`);
         $('#btnMReg').disabled = !hits.length;
-        $('#mTable').innerHTML = hits.length ? `<table class="t"><thead><tr><th><input type="checkbox" class="selAll"></th><th>A–X</th><th>Y (image)</th><th>d (Å)</th><th>R</th><th>θ₁</th><th>G</th><th>Status</th></tr></thead><tbody>${hits.map((h, k) => `<tr data-k="${k}"><td><input type="checkbox" class="selm" value="${k}" ${h.status === 'XB' ? 'checked' : ''}></td><td>${elTag(h.halogen)} ${esc(h.Alabel)}–${esc(h.Xlabel)}</td><td>${esc(h.Ylabel)} <span class="muted mono">[${esc(h.image)}]</span></td><td class="n">${f2(h.d, 3)}</td><td class="n">${f2(h.R, 3)}</td><td class="n">${f2(h.theta1, 1)}</td><td class="n">${f2(h.G)}</td><td>${h.status === 'XB' ? '<span class="pill ok">XB</span>' : '<span class="pill mute">near-miss</span>'}</td></tr>`).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No halogen bonds found.</p>';
+        $('#mTable').innerHTML = hits.length ? `<table class="t"><thead><tr><th><input type="checkbox" class="selAll"></th><th>A–X</th><th>Y (image)</th><th>d (Å)</th><th>R</th><th>θ₁</th><th>G</th><th title="Symmetry-equivalent copies in the unit cell">Copies</th><th>Status</th></tr></thead><tbody>${hits.map((h, k) => `<tr data-k="${k}"><td><input type="checkbox" class="selm" value="${k}" ${h.status === 'XB' ? 'checked' : ''}></td><td>${elTag(h.halogen)} ${esc(h.Alabel)}–${esc(h.Xlabel)}</td><td>${esc(h.Ylabel)} <span class="muted mono">[${esc(h.image)}]</span></td><td class="n">${f2(h.d, 3)}</td><td class="n">${f2(h.R, 3)}</td><td class="n">${f2(h.theta1, 1)}</td><td class="n">${f2(h.G)}</td><td class="n">${h.mult || 1}</td><td>${h.status === 'XB' ? '<span class="pill ok">XB</span>' : '<span class="pill mute">near-miss</span>'}</td></tr>`).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No halogen bonds found.</p>';
         bindSelectAll($('#mTable')); $$('#mTable tbody tr').forEach(tr => tr.addEventListener('click', e => { if (e.target.tagName !== 'INPUT') V.material(ST.mat.M, hits[+tr.dataset.k]); }));
         setDone('material');
       };

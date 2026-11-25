@@ -712,7 +712,11 @@
         });
       });
     });
-    return out.sort((a, b) => b.G - a.G);
+    // Symmetry copies of one contact share their atom labels and geometry. They are reported once with a multiplicity.
+    const uniq = new Map();
+    out.forEach(h => { const k = [h.Alabel, h.Xlabel, h.Ylabel, h.d.toFixed(3), h.theta1.toFixed(1), h.status].join('|');
+      if (uniq.has(k)) uniq.get(k).mult++; else { h.mult = 1; uniq.set(k, h); } });
+    return [...uniq.values()].sort((a, b) => b.G - a.G);
   }
   function buildMaterialQM(model, hit, opts = {}) {
     const P = fullParams(opts.P); const at = model.atoms; const imgs = imageList(model, P.mat.images);

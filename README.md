@@ -82,6 +82,8 @@ A five-page **Tutorial** inside the program explains every step. Its text is als
 |---|---|---|
 | NBO gate | Gaussian 16 with NBO 3.1 (`pop=nbo`) | Tested on 59 benchmark dimers and 9 protein contacts |
 | ALMO-EDA | Q-Chem 6.2 | Tested |
+| Batch screening | Local PDB files or PDB IDs | Tested on three test-set proteins (7, 2 and 2 halogen bonds) |
+| Crystal contacts and QM model | CIF with symmetry operators | Tested on a small test CIF |
 | Counterpoise binding energy | ORCA 5 or Gaussian 16 | Used in the paper; not read by the program |
 | NBO gate | ORCA with NBO 7 | Input written; not tested |
 | NBO gate | Q-Chem with NBO 5 (`$nbo E2PERT $end`) | Input written; not tested |
@@ -138,7 +140,7 @@ app/
   src/ui.js              user interface
   src/template.html      page layout and styles
   build.js               builds index.html from src/
-  tests/                 96 engine tests, force-field reference test, browser test
+  tests/                 97 engine tests, force-field reference test, browser test
   examples/              demo complex
 paper/
   Scripts/               every script of the paper (see paper/README_paper.md)
@@ -154,7 +156,7 @@ paper/
 ```bash
 cd app
 node build.js                    # writes index.html and dist/BondX_Studio.html
-node tests/engine.test.js        # 96 engine tests
+node tests/engine.test.js        # 97 engine tests
 node tests/ff_reference.test.js  # force-field charges against PDB2PQR
 python3 tests/e2e.py             # browser test (Playwright with Chromium)
 ```
