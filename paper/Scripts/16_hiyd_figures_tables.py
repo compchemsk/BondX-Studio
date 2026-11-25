@@ -2,8 +2,8 @@
 """16_hiyd_figures_tables.py
 Figures and LaTeX tables of the hIYD case study from the CSV/JSON files of 15_hiyd_analysis.py.
   Figures_V2_MS/Fig10_hIYD.pdf          occupancy along the pathways, acceptor classes, NBO re-analysis
-  Figures_V2_ESI/FigS10_hiyd_residues.pdf  residues with T1 contacts per pathway (all vs strict)
-  Figures_V2_ESI/FigS11_hiyd_nbo.pdf       per-cluster NBO terms (intramolecular vs the T1 pair)
+  Figures_V2_ESI/FigS7_hiyd_residues.pdf  residues with T1 contacts per pathway (all vs strict)
+  Figures_V2_ESI/FigS8_hiyd_nbo.pdf       per-cluster NBO terms (intramolecular vs the T1 pair)
   tables/tab_hiyd_classes.tex, tab_hiyd_nbo.tex, tab_hiyd_residues.tex
 Usage: python3 16_hiyd_figures_tables.py ..
 """
@@ -93,7 +93,7 @@ for ax, P in zip(axs, 'ABC'):
     ax.barh(y[m], rem[m], left=d.frames_strict.values[m], color='white', edgecolor=C[7], hatch='////', lw=0.7, height=0.65)
     ax.set_yticks(y); ax.set_yticklabels(d.residue, fontsize=9.6); ax.grid(axis='y', visible=False); ax.set_ylim(-0.6, len(d) - 0.4)
     ax.set_title(f'({"abc"["ABC".index(P)]}) Pathway {P}'); ax.set_xlabel('Frames'); ax.set_xlim(0, 55)
-fig.tight_layout(rect=(0, 0, 1, 0.93)); fig.legend(handles=[Patch(color=C[0], label='Lewis-base acceptor'), Patch(facecolor='white', edgecolor=C[7], hatch='////', label='No lone pair')], loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.0)); save(fig, ESI, 'FigS10_hiyd_residues')
+fig.tight_layout(rect=(0, 0, 1, 0.93)); fig.legend(handles=[Patch(color=C[0], label='Lewis-base acceptor'), Patch(facecolor='white', edgecolor=C[7], hatch='////', label='No lone pair')], loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.0)); save(fig, ESI, 'FigS7_hiyd_residues')
 
 # ------------------------------------------------------------------ ESI Fig S11: per-cluster terms
 d = nbo.copy(); d['lab'] = d.pathway + ': ' + d.residue + ' ' + d.acceptor_atom
@@ -109,7 +109,7 @@ for ax, P in zip(axs, 'ABC'):
 hh = [Patch(color=C[1], label='LP(phenolate O of I-Tyr) → σ*(C–I)'), Patch(color=C[0], label='T1 pair, Lewis-base acceptor'),
       Patch(facecolor='white', edgecolor=C[0], label='T1 pair, acceptor without lone pair'), Line2D([], [], ls='none', marker='|', ms=7, mew=1.4, color=INK, label='Published value')]
 fig.tight_layout(rect=(0, 0, 1, 0.915)); fig.legend(handles=hh, loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.0), columnspacing=1.0)
-save(fig, ESI, 'FigS11_hiyd_nbo')
+save(fig, ESI, 'FigS8_hiyd_nbo')
 
 # ------------------------------------------------------------------ tables
 def tex(s): return str(s).replace('*', '$^{*}$').replace('_', r'\_')

@@ -3,7 +3,3 @@ __pycache__/
 app/dist/
 app/index.html
 app/shots/
-__pycache__/
-*.pyc
-*.pyo
-.ipynb_checkpoints/

@@ -4,7 +4,7 @@ Analysis of the Gaussian 16 NBO, Gaussian counterpoise and Q-Chem ALMO-EDA outpu
 Inputs : results/qm_nbo.csv, qm_eda.csv, qm_cp.csv, qm_status.csv, t1_hal59.csv, t1_scans.csv, orca_cp_hal59.csv, orca_cp_scans.csv,
          orca_cp_protein.csv, protein_t1.csv
 Outputs: results/qm_hal59.csv, qm_scans.csv, qm_method_basis.csv, qm_eda_settings.csv, qm_protein.csv, qm_summary.json
-         Figures_V2_MS/Fig8_NBO_benchmark, Fig9_protein_QM; Figures_V2_ESI/FigS7_angle_scan_QM, FigS8_method_basis
+         Figures_V2_MS/Fig8_NBO_benchmark, Fig9_protein_QM; Figures_V2_ESI/FigS5_angle_scan_QM, FigS6_method_basis
          tables/tab_qm_hal59.tex, tab_qm_eda.tex, tab_qm_prot.tex
 Usage: python3 17_qm_nbo_eda_analysis.py ..
 Energies: NBO E(2) in kcal/mol; EDA terms in kJ/mol in the tables (1 kcal = 4.184 kJ).
@@ -319,7 +319,7 @@ for ax, col, lab in zip(axs, ('E2_rel', 'CT_rel', 'BE_rel'), ('Value relative to
     if lab: ax.set_ylabel(lab)
 axs[0].set_title(r'(a) NBO $\Sigma E^{(2)}$'); axs[1].set_title('(b) EDA CT'); axs[2].set_title('(c) ORCA binding')
 fig.legend(handles=[Line2D([], [], color=HALC[h], marker='o', ms=4, lw=1.5, label=h.title()) for h in HALC if h in set(ang.halogen)], loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.0))
-save(fig, ESI, 'FigS7_angle_scan_QM')
+save(fig, ESI, 'FigS5_angle_scan_QM')
 
 # Fig S8: method / basis
 LV = [('wB97X-D__def2-SVP', 'ωB97X-D/SVP'), ('wB97X-D__def2-TZVP', 'ωB97X-D/TZVP'), ('wB97X-D__def2-QZVP', 'ωB97X-D/QZVP'), ('M06-2X__def2-TZVP', 'M06-2X'),
@@ -332,7 +332,7 @@ for k, (lv, lab) in enumerate(LV):
     ax.plot(np.arange(len(order)) + (k - 3) * 0.1, pv.loc[order, lv], ls='none', marker='o^sDvP<'[k], ms=3.8, color=[C[6], C[0], '#163f73', C[1], C[3], C[2], INK2][k], label=lab)
 ax.axhline(GATE, color=C[7], ls='--', lw=0.9); ax.set_yscale('log'); ax.set_xticks(range(len(order))); ax.set_xticklabels(order, rotation=50, ha='right', fontsize=9.2)
 ax.set_ylabel(r'$\Sigma E^{(2)}$ (kcal/mol)'); ax.legend(ncol=4, loc='lower center', bbox_to_anchor=(0.5, 1.0), columnspacing=1.0, handletextpad=0.2); ax.grid(axis='x', visible=False)
-save(fig, ESI, 'FigS8_method_basis')
+save(fig, ESI, 'FigS6_method_basis')
 
 # ================================================================== tables
 def tex(s): return str(s).replace('_', r'\_').replace('···', r'$\cdots$').replace('π', r'$\pi$').replace('#', r'\#')
