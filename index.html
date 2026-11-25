@@ -4,26 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Visitor counter: put your GoatCounter address here, e.g. https://bondx.goatcounter.com/count (leave empty to disable) -->
-<meta name="bondx-counter" content="https://bondx.goatcounter.com/count">
+<meta name="bondx-counter" content="">
 <title>BondX Studio — Tiered Halogen-Bond Characterisation Engine</title>
 <style>
 :root{
   --ink:#14181f; --ink-2:#4a5160; --ink-3:#7c8494; --line:#e3e6ec; --line-2:#cfd4dd;
-  --bg:#f4f5f7; --panel:#ffffff; --deep:#0f1b2d; --deep-2:#16263d; --accent:#0e7c86; --accent-2:#e3f3f4;
+  --bg:#f6f4ef; --panel:#ffffff; --deep:#0c1626; --deep-2:#14233a; --accent:#0d6f78; --accent-2:#e2f1f2; --gold:#c9a45c;
   --cl:#1baf7a; --br:#eb6834; --io:#2a78d6;
   --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s7:#6250d6; --neutral:#9aa1ad;
   --ok:#0f8a4b; --ok-bg:#e6f5ec; --warn:#a86200; --warn-bg:#fff4e0; --bad:#b4232a; --bad-bg:#fdecec;
   --mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
   --sans: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --shadow: 0 1px 2px rgba(16,24,40,.04), 0 4px 14px rgba(16,24,40,.05);
   --side: 248px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans)}
 a{color:var(--accent)}
-header.top{position:sticky;top:0;z-index:30;background:linear-gradient(120deg,var(--deep),var(--deep-2));color:#e9eef6;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header.top{position:sticky;top:0;z-index:30;background:linear-gradient(120deg,var(--deep),var(--deep-2));color:#e9eef6;padding:10px 18px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:11px}
 .logo{width:34px;height:34px;border-radius:8px;background:#0b1422;display:grid;place-items:center;border:1px solid #2b3d58}
-.brand h1{font-size:18px;margin:0;letter-spacing:.2px}.brand h1 b{color:#5fd1d9}
+.brand h1{font:600 21px var(--serif);margin:0;letter-spacing:.3px}.brand h1 b{color:var(--gold)}
 .brand small{display:block;color:#9fb0c8;font-size:11.5px}
 .top .spacer{flex:1}
 .top .runid{font:12px var(--mono);color:#9fb0c8;background:#0b1422;border:1px solid #2b3d58;padding:4px 8px;border-radius:6px}
@@ -38,7 +40,7 @@ nav.side{background:#fff;border-right:1px solid var(--line);padding:14px 10px;po
 nav.side h6{margin:14px 10px 6px;font:700 10.5px var(--sans);letter-spacing:.9px;text-transform:uppercase;color:var(--ink-3)}
 nav.side button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;padding:8px 10px;border-radius:8px;cursor:pointer;text-align:left;color:var(--ink-2);font:600 13px var(--sans)}
 nav.side button:hover{background:#f1f4f7}
-nav.side button.on{background:var(--accent-2);color:var(--ink)}
+nav.side button.on{background:var(--accent-2);color:var(--ink);box-shadow:inset 3px 0 0 var(--gold)}
 nav.side .num{flex:0 0 24px;height:24px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;font:700 11.5px var(--mono);color:var(--ink-3);background:#fff}
 nav.side button.on .num{border-color:var(--accent);color:var(--accent)}
 nav.side button.done .num{background:var(--ok);border-color:var(--ok);color:#fff}
@@ -47,16 +49,16 @@ nav.side .lbl small{font:500 11px var(--sans);color:var(--ink-3)}
 main{padding:20px 26px 70px;max-width:1480px;width:100%}
 .page{display:none}.page.on{display:block}
 .pagehead{margin:0 0 14px}
-.pagehead .kicker{font:700 11px var(--mono);color:var(--accent);letter-spacing:.6px;text-transform:uppercase}
-.pagehead h2{margin:2px 0 4px;font-size:21px}
+.pagehead .kicker{font:700 11px var(--mono);color:#a07d35;letter-spacing:.6px;text-transform:uppercase}
+.pagehead h2{margin:2px 0 6px;font:600 27px/1.2 var(--serif);letter-spacing:.2px}
 .pagehead p{margin:0;color:var(--ink-2);max-width:980px}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:minmax(380px,460px) minmax(0,1fr)}
 .g2e{grid-template-columns:1fr 1fr}
 .grid>*{min-width:0}
 @media (max-width:1100px){.g2,.g2e{grid-template-columns:1fr}.layout{grid-template-columns:1fr}nav.side{position:static;height:auto;display:flex;flex-wrap:wrap;gap:4px}nav.side h6{width:100%}nav.side button{width:auto}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-.card h2{font-size:15px;margin:0 0 4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.card h2{font:600 17px var(--serif);margin:0 0 6px}
 .card h3{font-size:12px;margin:14px 0 6px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.6px}
 .card .sub{color:var(--ink-3);font-size:12.5px;margin:0 0 12px}
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row+.row{margin-top:8px}
@@ -142,7 +144,24 @@ details summary{cursor:pointer}
 .flow .box.gate{border-color:var(--warn);background:var(--warn-bg)}
 .stepbox{display:flex;gap:12px;flex-wrap:wrap}.stepbox .card{flex:1;min-width:230px}
 .search{width:280px}
-footer{color:var(--ink-3);font-size:11.5px;text-align:center;padding:20px}
+footer{color:var(--ink-3);font-size:11.5px;text-align:center;padding:20px;border-top:1px solid var(--line)}
+/* tutorial */
+.tutwrap{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:1100px){.tutwrap{grid-template-columns:1fr}}
+.tutnav{display:flex;flex-direction:column;gap:6px;position:sticky;top:76px}
+.tutnav button{text-align:left;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;font:600 13px var(--sans);color:var(--ink-2);cursor:pointer}
+.tutnav button:hover{border-color:var(--gold)}
+.tutnav button.on{background:var(--deep);color:#fff;border-color:var(--deep);box-shadow:inset 3px 0 0 var(--gold)}
+.tutcard{padding:26px 30px;max-width:900px}
+.tuth{font:600 24px var(--serif)!important;margin:0 0 12px!important;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.tutpage{font-size:14.5px;line-height:1.65;color:var(--ink)}
+.tutpage h4{font:600 17px var(--serif);margin:18px 0 6px;color:var(--deep)}
+.tutpage ul{padding-left:20px;margin:4px 0}.tutpage li{margin:4px 0}
+.tutpage table.t{font-size:13.5px;margin-top:8px}
+.tutpage .ok-card{border-top:3px solid var(--ok)}.tutpage .no-card{border-top:3px solid var(--bad)}
+.tutfoot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.tutdots{display:flex;gap:7px}.tutdots i{width:9px;height:9px;border-radius:50%;background:var(--line-2);cursor:pointer}.tutdots i.on{background:var(--gold);transform:scale(1.2)}
+.tutpg{font-size:12px;margin:14px 0 0}
 </style>
 </head>
 <body>
@@ -153,6 +172,7 @@ footer{color:var(--ink-3);font-size:11.5px;text-align:center;padding:20px}
   </div>
   <div class="spacer"></div>
   <span class="runid" id="runId">run —</span>
+  <button class="btn ghost sm" id="btnTutorial">Tutorial</button>
   <button class="btn ghost sm" id="btnParams">All parameters</button>
   <button class="btn ghost sm" id="btnSaveSession">Save session</button>
   <label class="btn ghost sm" style="margin:0">Load session<input type="file" id="inSession" accept=".json" hidden></label>
@@ -160,7 +180,7 @@ footer{color:var(--ink-3);font-size:11.5px;text-align:center;padding:20px}
 </header>
 <div class="layout"><nav class="side" id="side"></nav><main id="main"></main></div>
 <div id="tip"></div><div class="toast" id="toast"></div>
-<footer>BondX Studio · Inventor: Soumyajit Karmakar, Department of Chemistry, IIT Kharagpur · Contact: <a href="mailto:soumyajitkarmakar.iit@gmail.com">soumyajitkarmakar.iit@gmail.com</a><br>Runs entirely in your browser; no structure or output file leaves this computer except PDB-ID downloads from RCSB. On the hosted website an anonymous visit count is recorded (no data you load).<br>Have a Good Day. Thank You.</footer>
+<footer>BondX Studio · Soumyajit Karmakar and Sabyashachi Mishra, Department of Chemistry, IIT Kharagpur · Contact: <a href="mailto:soumyajitkarmakar.iit@gmail.com">soumyajitkarmakar.iit@gmail.com</a> · Source: <a href="https://github.com/compchemsk/BondX-Studio" target="_blank" rel="noopener">github.com/compchemsk/BondX-Studio</a><br>Runs entirely in your browser; no structure or output file leaves this computer except PDB-ID downloads from RCSB. On the hosted website an anonymous visit count is recorded (no data you load).<br>Have a Good Day. Thank You.</footer>
 <script id="demoPdb" type="text/plain">HEADER    TEST COMPLEX                            18-NOV-26   TEST
 TITLE     BONDX SYNTHETIC XB TEST
 COMPND    MOL_ID: 1;
@@ -241,7 +261,7 @@ END
 </script>
 <script>/* =====================================================================
  * BondX Engine v2.0  —  Tiered halogen-bond (XB) characterisation core
- * Author/inventor: Soumyajit Karmakar (IIT Kharagpur)
+ * Authors: Soumyajit Karmakar and Sabyashachi Mishra (IIT Kharagpur)
  * Pure functions, no DOM. Runs in the browser and in Node (for testing).
  *
  * Tiers:
@@ -265,8 +285,11 @@ END
 })(typeof self !== 'undefined' ? self : this, function (FFDATA) {
   'use strict';
   const VERSION = '2.0.0';
-  const ORCA_NBO_CAUTION = 'ORCA has no built-in NBO. The ORCA NBO job needs NBO 7, a licensed program, set through the NBOEXE variable. Users with NBO 7 can use this route. It is not tested in this version of BondX; Gaussian (pop=nbo) or Q-Chem (NBO 1) is recommended.';
-  const G16_NBO7_CAUTION = 'pop=nbo7 needs NBO 7, a licensed program linked to Gaussian. This option is not tested in this version of BondX; the default pop=nbo uses the NBO built into Gaussian.';
+  const QCHEM_G_BASIS = /QZV|cc-pVQZ|cc-pV5Z/i;
+  const QCHEM_NBO_G_CAUTION = 'CAUTION: the built-in NBO 5 of Q-Chem stops for basis sets with pure g functions (e.g. def2-QZVP). Use def2-TZVP(D) or Gaussian for the NBO job.';
+  const ORCA_NBO_CAUTION = 'ORCA has no built-in NBO. The ORCA NBO job needs NBO 7, a licensed program, set through the NBOEXE variable. Users with NBO 7 can use this route. This route is not tested in this version of BondX. Gaussian (pop=nbo) is recommended.';
+  const QCHEM_NBO_CAUTION = 'In our tests, Q-Chem 6.2 with NBO 1 printed the natural bond orbitals without a second-order perturbation table. The NBO gate needs this table. BondX now adds a $nbo section with E2PERT. This addition is not yet tested. Gaussian (pop=nbo) is the tested NBO route. Q-Chem remains the program for ALMO-EDA.';
+  const G16_NBO7_CAUTION = 'pop=nbo7 needs NBO 7, a licensed program linked to Gaussian. This option is not tested in this version of BondX. The default pop=nbo uses the NBO program built into Gaussian.';
 
   /* ------------------------------------------------------------------ */
   /*  Element data (not user parameters)                                 */
@@ -355,16 +378,16 @@ END
     S_('ff.termini', 'T3', 'Chain termini', '', 'select', 'Charge state of the first and last residue of each protein chain.', { options: [['charged', 'charged (NH₃⁺ / COO⁻)'], ['neutral', 'uncharged (internal templates)']] }),
     S_('ff.chainBreaks', 'T3', 'Chain breaks (missing residues)', '', 'select', 'Residues next to a gap inside a chain.', { options: [['internal', 'treat as internal (no extra charge)'], ['charged', 'charged termini']] }),
     S_('ff.ssCut', 'T3', 'Disulfide S–S cut-off', 'Å', 'number', 'Cys pairs closer than this become CYX.', { step: 0.1 }),
-    S_('ff.chargeSource', 'T3', 'MM charge source', '', 'select', '', { options: [['auto', 'PQR charges if a PQR was loaded, else force field'], ['ff', 'force field always'], ['pqr', 'PQR file only']] }),
+    S_('ff.chargeSource', 'T3', 'MM charge source', '', 'select', '', { options: [['auto', 'PQR charges from a loaded PQR file, otherwise force field'], ['ff', 'force field always'], ['pqr', 'PQR file only']] }),
     S_('ff.foldH', 'T3', 'Missing hydrogens: fold charge onto parent atom', '', 'bool', 'If the file has no H, each H charge is added to its heavy atom, so residue charges stay exact.'),
     S_('ff.missing', 'T3', 'Missing heavy atoms', '', 'select', '', { options: [['redistribute', 'spread their charge over the residue (keeps net charge)'], ['ignore', 'ignore (net charge changes)']] }),
     S_('qm.mode', 'T3', 'Acceptor residue in QM region', '', 'select', '', { options: [['full', 'whole residue'], ['sidechain', 'side chain + Cα (backbone N, C, O removed; Cα capped with H)']] }),
     S_('qm.shell', 'T3', 'Extra QM shell around X', 'Å', 'number', 'Whole residues with any atom this close to a halogen join fragment 2 (0 = off).', { step: 0.5 }),
     S_('qm.shellWater', 'T3', 'Shell includes waters', '', 'bool', ''), S_('qm.shellIons', 'T3', 'Shell includes ions', '', 'bool', ''),
-    S_('qm.forceH', 'T3', 'Re-protonate even if H are present', '', 'bool', ''),
+    S_('qm.forceH', 'T3', 'Re-protonate files with hydrogens', '', 'bool', ''),
     S_('qm.linkScheme', 'T3', 'Link-atom position', '', 'select', '', { options: [['fixed', 'fixed X–H bond length along the cut bond'], ['scaled', 'scaled: r_H = r_Q + g (r_M − r_Q), g = r₀(Q–H)/r₀(Q–M)']] }),
     S_('qm.xh', 'T3', 'X–H bond lengths', 'Å', 'xh', 'Used for added and link hydrogens.'),
-    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', '', { options: [['auto', 'MOL2 total if loaded, else group rules'], ['rules', 'group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'], ['zero', 'zero']] }),
+    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', '', { options: [['auto', 'MOL2 total from a loaded file, otherwise the ligand structure with pH-7 rules'], ['rules', 'heavy-atom structure + pH-7 group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'], ['zero', 'zero']] }),
     S_('qm.env', 'T3', 'Environment', '', 'select', 'How the protein around the QM region is represented.', { options: [['cluster', 'QM cluster (optionally in a dielectric)'], ['qmmm', 'QM/MM single point (electrostatic embedding)']] }),
     S_('qm.pcm', 'T3', 'Cluster: implicit dielectric', '', 'bool', 'CPCM (Gaussian/ORCA) or PCM (Q-Chem) around the cluster.'),
     S_('qm.eps', 'T3', 'Dielectric constant ε', '', 'number', 'Typical protein interior: 4.', { step: 0.5 }),
@@ -398,54 +421,57 @@ END
   function assumptions(stage, P) {
     P = P || DEFAULTS; const g = P.geom, sc = P.score, f = P.ff, q = P.qm, m = P.mm; const ffl = (FFDATA[f.name] || {}).label || f.name; const A = [];
     if (stage === 'T0') {
-      A.push('Only the first MODEL of a multi-model file defines the atoms; later models are used as trajectory frames.');
-      A.push(P.struct.altloc === 'occupancy' ? 'For residues with alternate locations, the conformer with the highest total occupancy is kept.' : 'For residues with alternate locations, the first conformer (A, 1 or blank) is kept.');
-      A.push(`Bonds are assigned from distances: d < r_cov(1) + r_cov(2) + ${P.struct.bondTol} Å. Between residues only peptide, disulfide and phosphodiester links are allowed.`);
-      A.push('Element symbols are read from columns 77–78; if missing they are inferred from atom names.');
-      A.push('Residues are classified as protein, nucleic acid, water, ion (single atom) or ligand (everything else).');
+      A.push('The first MODEL of a multi-model file defines the atoms. Later models serve as trajectory frames.');
+      A.push(P.struct.altloc === 'occupancy' ? 'For alternate locations, the conformer with the highest total occupancy is kept.' : 'For alternate locations, the first conformer (A, 1 or blank) is kept.');
+      A.push('Virtual sites are removed on reading. Examples are the σ-hole extra point (EP) of a halogen, LP sites and TIP4P M sites. DCD and XYZ frames with these sites are mapped onto the remaining atoms.');
+      A.push(`Bonds come from distances: d < r_cov(1) + r_cov(2) + ${P.struct.bondTol} Å. Links between residues are limited to peptide, disulfide and phosphodiester bonds.`);
+      A.push('Element symbols come from columns 77–78. Atom names supply missing element symbols.');
+      A.push('Residues are classed as protein, nucleic acid, water, ion (single atom) or ligand (all other residues).');
     } else if (stage === 'T1') {
-      A.push(`Donors: C-bound ${g.includeF ? 'F, ' : ''}Cl, Br and I in ligands and modified residues.`);
-      A.push(`A halogen bond needs d(X···Y) ≤ the cut-off for that pair and ${g.theta1Min}° ≤ θ₁ ≤ ${g.theta1Max}°${g.theta2Use ? ` and ${g.theta2Min}° ≤ θ₂ ≤ ${g.theta2Max}°` : ''}.`);
+      A.push(`Donors: C-bound ${g.includeF ? 'F, ' : ''}Cl, Br and I atoms of ligands and modified residues.`);
+      A.push(`A halogen bond needs d(X···Y) ≤ the pair cut-off and ${g.theta1Min}° ≤ θ₁ ≤ ${g.theta1Max}°${g.theta2Use ? ` and ${g.theta2Min}° ≤ θ₂ ≤ ${g.theta2Max}°` : ''}.`);
       A.push(`Acceptors: ${[g.acceptorScope.protein && 'protein N/O/S', g.acceptorScope.nucleic && 'nucleic-acid N/O', g.acceptorScope.water && 'water O', g.acceptorScope.otherLigand && 'other ligands', g.includePi && `aromatic rings (Phe, Tyr, Trp${g.includeHisPi ? ', His' : ''}) with α ≤ ${g.piNormalMax}°`].filter(Boolean).join(', ')}.`);
-      A.push(`R = d / (r_X + r_Y) with Bondi radii; an aromatic centroid counts as r = ${sc.ringRadius} Å.`);
-      A.push(`G = [g_d · g_θ · (½ + ½ g₂)]^⅓ with g_d = 1 at R ≤ ${sc.Rbest}, g₂ a Gaussian around θ₂ = ${sc.th2Opt}° (width ${sc.th2Width}°).`);
-      A.push(g.excludeNonLewis ? 'Poor Lewis bases (amide N–H, Lys NZ, Arg N, Trp NE1) are excluded.' : 'Poor Lewis bases are kept but flagged “weak”; the NBO gate decides.');
-      A.push('Hydrogens are not required. Periodic images are used only for MD boxes (orthorhombic, edges ≥ 10 Å).');
+      A.push(`R = d / (r_X + r_Y) with Bondi radii. An aromatic centroid has r = ${sc.ringRadius} Å.`);
+      A.push(`G = [g_d · g_θ · (½ + ½ g₂)]^⅓. g_d = 1 at R ≤ ${sc.Rbest}. g₂ is a Gaussian around θ₂ = ${sc.th2Opt}° (width ${sc.th2Width}°).`);
+      A.push(g.excludeNonLewis ? 'Poor Lewis bases (amide N–H, Lys NZ, Arg N, Trp NE1) are excluded.' : 'Poor Lewis bases are kept with the flag “weak”. The NBO gate decides their fate.');
+      A.push('Hydrogens are not required. Periodic images apply only to MD boxes (orthorhombic, edges ≥ 10 Å).');
     } else if (stage === 'T2') {
-      A.push('Frames must have the same atoms in the same order as the topology.');
-      A.push(`Every ${P.dyn.stride === 1 ? '' : P.dyn.stride + '-th '}frame is tested with the T1 criteria; contacts present in < ${P.dyn.occCut}% of frames are not reported.`);
+      A.push('Frames must have the atoms of the topology in the same order.');
+      A.push(`The T1 test runs on every ${P.dyn.stride === 1 ? '' : P.dyn.stride + '-th '}frame. Contacts in fewer than ${P.dyn.occCut}% of the frames are not reported.`);
       A.push(`Residence time τ = mean length of unbroken runs. D = f·(1 − e^(−τ/${P.dyn.tauScale}))^${P.dyn.dExp}.`);
-      A.push('The representative frame has the shortest d; ties go to the largest θ₁.');
-      A.push('Orthorhombic boxes (DCD unit cell or CRYST1) are handled by minimum image; the ligand should be imaged/centred.');
+      A.push('The representative frame has the shortest d. Ties go to the largest θ₁.');
+      A.push('Orthorhombic boxes (DCD unit cell or CRYST1) use the minimum-image convention. The ligand should be imaged and centred.');
     } else if (stage === 'T3') {
-      A.push(`Protonation states and partial charges come from ${ffl}: ASP⁻, GLU⁻, LYS⁺, ARG⁺, CYS neutral, TYR neutral, HIS = ${f.hisDefault} unless the file names the tautomer (HID/HIE/HIP, HSD/HSE/HSP) or contains its hydrogens. Per-residue changes override this.`);
-      A.push(`Cys pairs with S–S < ${f.ssCut} Å are disulfides (CYX). Chain termini are ${f.termini === 'charged' ? 'charged (NH₃⁺, COO⁻)' : 'uncharged'}; residues next to a chain break are ${f.chainBreaks === 'charged' ? 'charged termini' : 'treated as internal'}.`);
-      A.push('QM region: the whole halogenated ligand (fragment 1) and ' + (q.mode === 'sidechain' ? 'the acceptor side chains with Cα (backbone N, C, O removed unless they are the acceptor)' : 'the whole acceptor residues') + ` (fragment 2)${q.shell > 0 ? `, plus residues within ${q.shell} Å of the halogen` : ''}.`);
-      A.push(`Missing hydrogens are added from the force-field template of each residue (number of H per atom) with VSEPR geometry; ligands use bond-length/angle rules. Cut bonds are capped with H (${q.linkScheme === 'scaled' ? 'scaled link-atom position' : 'fixed X–H length'}).`);
-      A.push('Fragment charges: residue formal charges from the force-field template; ligand charge from ' + (q.ligandCharge === 'zero' ? 'zero' : q.ligandCharge === 'rules' ? 'group rules' : 'the MOL2 file if loaded, else group rules') + '. Every value can be overridden.');
+      A.push(`Protonation states and partial charges come from ${ffl}. ASP and GLU are anionic. LYS and ARG are cationic. CYS and TYR are neutral. HIS is ${f.hisDefault} by default. A tautomer name in the file (HID/HIE/HIP, HSD/HSE/HSP) or its hydrogens override this default. Changes for single residues override everything.`);
+      A.push(`Cys pairs with S–S < ${f.ssCut} Å are disulfides (CYX). Chain termini are ${f.termini === 'charged' ? 'charged (NH₃⁺, COO⁻)' : 'uncharged'}. Residues next to a chain break are ${f.chainBreaks === 'charged' ? 'charged termini' : 'treated as internal'}.`);
+      A.push('Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds ' + (q.mode === 'sidechain' ? 'the acceptor side chains with Cα. Backbone N, C and O atoms leave fragment 2 except as acceptors' : 'the whole acceptor residues') + `.${q.shell > 0 ? ` Residues within ${q.shell} Å of the halogen are added.` : ''}`);
+      A.push(`Missing hydrogens follow the force-field template of each residue (number of H per atom) with VSEPR geometry. Cut bonds get H caps (${q.linkScheme === 'scaled' ? 'scaled link-atom position' : 'fixed X–H length'}).`);
+      A.push(`Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp² carbon gets one double bond. The keto form is preferred. An sp² ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. ${q.ligandCharge === 'zero' ? 'All acids stay neutral.' : 'At pH 7, COOH, phosphate, phosphonate, sulfonate and sulfate groups lose their O–H hydrogen. Amines stay neutral.'} Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count.`);
+      A.push('Fragment charges: residue formal charges come from the force-field template. The ligand charge comes from ' + (q.ligandCharge === 'zero' ? 'zero' : q.ligandCharge === 'rules' ? 'the ligand structure above' : 'a loaded MOL2 file or from the ligand structure above') + '. Every value can be overridden.');
       if (q.env === 'qmmm') {
-        A.push(`QM/MM: MM point charges within ${m.radius} Å (${m.selection === 'residue' ? 'whole residues' : 'single atoms'}), from ${f.chargeSource === 'pqr' ? 'the PQR file' : f.chargeSource === 'ff' ? ffl : 'the PQR file if loaded, otherwise ' + ffl}; water = ${f.water}.`);
-        A.push(f.foldH ? 'Where the file has no hydrogens, each hydrogen charge is folded onto its heavy atom (residue charges stay exact; local dipoles are approximated).' : 'Hydrogen charges are used only for hydrogens present in the file.');
-        A.push({ RC: 'Boundary: the charge of each M1 atom is moved to the midpoints of its M1–M2 bonds (redistributed charge, RC).', Z1: 'Boundary: charges of M1 atoms are deleted (Z1).', Z2: 'Boundary: charges of M1 and M2 atoms are deleted (Z2).', Z3: 'Boundary: charges of M1–M3 atoms are deleted (Z3).', none: 'Boundary: all MM charges are kept (no correction).' }[m.boundary]);
-        A.push('Electrostatic embedding only: QM–MM van der Waals terms are not included (they do not enter the NBO analysis of a single point).');
-        A.push('Ligands and cofactors in the MM region carry MOL2 charges if loaded. Without MOL2, a charged group (carboxylate, phosphate, sulfate, R₄N⁺) carries its formal charge spread evenly over its heavy atoms; neutral ones are set to zero. Both cases are flagged.');
-      } else A.push(q.pcm ? `QM cluster in an implicit dielectric ε = ${q.eps} (CPCM/PCM) representing the protein.` : 'QM cluster in the gas phase.');
+        A.push(`QM/MM: MM point charges within ${m.radius} Å (${m.selection === 'residue' ? 'whole residues' : 'single atoms'}) come from ${f.chargeSource === 'pqr' ? 'the PQR file' : f.chargeSource === 'ff' ? ffl : 'a loaded PQR file or from ' + ffl}. Water model: ${f.water}.`);
+        A.push(f.foldH ? 'For atoms without hydrogens in the file, each hydrogen charge moves onto its heavy atom. Residue charges stay exact. Local dipoles are approximate.' : 'Hydrogen charges apply only to hydrogens in the file.');
+        A.push({ RC: 'Boundary: the charge of each M1 atom moves to the midpoints of its M1–M2 bonds (redistributed charge, RC).', Z1: 'Boundary: the charges of the M1 atoms are deleted (Z1).', Z2: 'Boundary: the charges of the M1 and M2 atoms are deleted (Z2).', Z3: 'Boundary: the charges of the M1–M3 atoms are deleted (Z3).', none: 'Boundary: all MM charges are kept (no correction).' }[m.boundary]);
+        A.push('The embedding is electrostatic only. QM–MM van der Waals terms are not included. They do not enter the NBO analysis of a single point.');
+        A.push('Ligands and cofactors in the MM region carry MOL2 charges from a loaded file. Without a MOL2 file, a charged group (carboxylate, phosphate, sulfate, R₄N⁺) carries its formal charge on its heavy atoms. Neutral groups get zero charges. Both cases are flagged.');
+      } else A.push(q.pcm ? `The QM cluster sits in an implicit dielectric ε = ${q.eps} (CPCM/PCM). The dielectric represents the protein.` : 'The QM cluster is in the gas phase.');
       if (q.program === 'orca') A.push(ORCA_NBO_CAUTION);
+      if (q.program === 'qchem') A.push(QCHEM_NBO_CAUTION);
       if (q.program === 'gaussian' && q.nbo7) A.push(G16_NBO7_CAUTION);
     } else if (stage === 'T3b') {
-      A.push(`An interaction is verified when ΣE(2) ≥ ${P.nbo.threshold} kcal/mol, summing n(Y)→σ*(A–X)${P.nbo.includeRY ? ' and n(Y)→RY*(X)' : ''} for lone-pair acceptors, or π(ring)→σ*(A–X) for aromatic acceptors.`);
-      A.push(`The output geometry must match the manifest atom by atom (same elements, deviation < ${P.nbo.geomTol} Å); otherwise the gate is not applied.`);
+      A.push(`A contact is verified at ΣE(2) ≥ ${P.nbo.threshold} kcal/mol. The sum covers n(Y)→σ*(A–X)${P.nbo.includeRY ? ' and n(Y)→RY*(X)' : ''} for lone-pair acceptors. It covers π(ring)→σ*(A–X) for aromatic acceptors.`);
+      A.push(`The output geometry must match the manifest atom by atom (same elements, deviation < ${P.nbo.geomTol} Å). A mismatch blocks the gate.`);
       A.push('NBO prints only couplings above its own print threshold (0.50 kcal/mol by default). Open-shell α and β tables are summed.');
     } else if (stage === 'T4') {
-      A.push('Fragment 1 = the halogenated ligand, fragment 2 = the acceptor environment, with the charges and multiplicities of the QM model.');
-      A.push(`χ_CT = E_CT / (E_POL + E_CT): ≥ ${P.eda.chiHigh} charge-transfer driven, ≤ ${P.eda.chiLow} polarization driven, otherwise mixed.`);
-      A.push('Energies are converted to kJ/mol (1 kcal = 4.184 kJ).');
+      A.push('Fragment 1 is the halogenated ligand. Fragment 2 is the acceptor environment. Both keep the charges and multiplicities of the QM model.');
+      A.push(`χ_CT = E_CT / (E_POL + E_CT). Values ≥ ${P.eda.chiHigh} mean charge-transfer driven. Values ≤ ${P.eda.chiLow} mean polarization driven. Values in between mean mixed.`);
+      A.push('Energies are given in kJ/mol (1 kcal = 4.184 kJ).');
     } else if (stage === 'T5') {
       const w = P.bxqi.weights;
-      A.push(`BXQI = 100 · Π s_k^(w_k/Σw) over the tiers that were run; weights G ${w.G}, D ${w.D}, E ${w.E}, C ${w.C}.`);
-      A.push(`s_E = 1 − e^(−ΣE(2)/${P.bxqi.E0}), s_C = 1 − e^(−|ΔE_int|/${P.bxqi.C0}). Grades A ≥ ${P.bxqi.gradeA}, B ≥ ${P.bxqi.gradeB}, C ≥ ${P.bxqi.gradeC}, else D.`);
-      if (P.bxqi.requireGateForA) A.push('Grade A requires a passed NBO gate; a contact that failed the gate is graded C or D.');
-      A.push(`NBO/ALMO consistency is flagged when E(2) (converted to kJ/mol) > ${P.bxqi.consE2hi} kJ/mol but −E_CT < ${P.bxqi.consCTlo} kJ/mol, or E(2) < ${P.bxqi.consE2lo} kJ/mol but −E_CT > ${P.bxqi.consCThi} kJ/mol.`);
+      A.push(`BXQI = 100 · Π s_k^(w_k/Σw) over all completed tiers. Weights: G ${w.G}, D ${w.D}, E ${w.E}, C ${w.C}.`);
+      A.push(`s_E = 1 − e^(−ΣE(2)/${P.bxqi.E0}). s_C = 1 − e^(−|ΔE_int|/${P.bxqi.C0}). Grades: A ≥ ${P.bxqi.gradeA}, B ≥ ${P.bxqi.gradeB}, C ≥ ${P.bxqi.gradeC}, else D.`);
+      if (P.bxqi.requireGateForA) A.push('Grade A requires a passed NBO gate. A contact with a failed gate receives grade C or D.');
+      A.push(`An NBO/ALMO inconsistency is flagged in two cases: E(2) > ${P.bxqi.consE2hi} kJ/mol with −E_CT < ${P.bxqi.consCTlo} kJ/mol, and E(2) < ${P.bxqi.consE2lo} kJ/mol with −E_CT > ${P.bxqi.consCThi} kJ/mol.`);
     }
     return A;
   }
@@ -498,7 +524,7 @@ END
     }
     const altOK = (alt, L) => { if (!alt || alt === ' ') return true; if (keepAlt) return keepAlt.get(L.slice(17, 27)) === alt; return alt === 'A' || alt === '1'; };
     const atoms = []; const frames = []; let cur = null; let modelCount = 0; let firstModelDone = false;
-    const header = { title: '', compound: {}, idCode: '', resolution: null, method: '' };
+    const header = { title: '', compound: {}, idCode: '', resolution: null, method: '', formul: {} }; const formulTxt = {};
     const boxes = []; let box = null; let isPQR = !!opts.pqr; let molId = null; const molNames = {};
     for (const L of lines) {
       const rec = L.slice(0, 6).trim().toUpperCase();
@@ -511,6 +537,8 @@ END
         if ((m = /MOL_ID:\s*(\d+)/.exec(t))) molId = m[1];
         if ((m = /MOLECULE:\s*([^;]+)/.exec(t))) molNames[molId] = m[1].trim();
         if ((m = /CHAIN:\s*([^;]+)/.exec(t))) m[1].split(',').forEach(c => { header.compound[c.trim()] = molNames[molId] || ''; });
+      } else if (rec === 'FORMUL') {
+        const rn = L.slice(12, 15).trim(); if (rn) formulTxt[rn] = (formulTxt[rn] || '') + ' ' + L.slice(19, 70);
       } else if (rec === 'CRYST1') {
         box = [parseFloat(L.slice(6, 15)), parseFloat(L.slice(15, 24)), parseFloat(L.slice(24, 33)), parseFloat(L.slice(33, 40)), parseFloat(L.slice(40, 47)), parseFloat(L.slice(47, 54))];
       } else if (rec === 'MODEL') { modelCount++; cur = []; }
@@ -549,7 +577,25 @@ END
     const nA = atoms.length; const good = []; const goodBoxes = [];
     frames.forEach((f, k) => { if (f.length === nA * 3) { good.push(f); goodBoxes.push(boxes[k] || null); } });
     header.title = header.title.trim();
-    const S = { atoms, frames: good, boxes: goodBoxes, header, isPQR, hasH: atoms.some(a => a.el === 'H'), bondTol, altloc: altPolicy };
+    // FORMUL: formula of one molecule of each HET group (water and ions included), e.g. "2(C6 H BR4 N3)" -> {C:6,H:1,BR:4,N:3}
+    for (const [rn, t] of Object.entries(formulTxt)) {
+      const body = (/\(([^)]*)\)/.exec(t) || [null, t])[1]; const f = {};
+      body.replace(/\b([A-Z]{1,2})(\d*)\b/g, (_, e, n) => { if (/^\d/.test(e)) return; f[e] = (f[e] || 0) + (n ? parseInt(n) : 1); return ''; });
+      const qm = /(\d+)([+-])\s*$/.exec(body.trim()); if (qm) f._charge = (qm[2] === '-' ? -1 : 1) * parseInt(qm[1]);
+      if (Object.keys(f).length) header.formul[rn] = f;
+    }
+    // Virtual sites (sigma-hole extra points EP, lone-pair sites LP, TIP4P/TIP4P-Ew M sites) carry charge but no electrons or nucleus.
+    // They are removed here; S.vsites keeps the file atom count and the kept indices so trajectories with the sites can be mapped.
+    const isV = a => /^(EP|LP)\d*$/i.test(a.name) || ['EP', 'LP', 'XX'].includes(a.el) || ((a.name === 'EPW' || a.name === 'MW') && /^(WAT|HOH|TIP4|TP4|T4E|SOL)$/.test(a.resName));
+    let vsites = null;
+    if (atoms.some(isV)) {
+      const keepIdx = atoms.filter(a => !isV(a)).map(a => a.i); const names = [...new Set(atoms.filter(isV).map(a => a.resName + ':' + a.name))];
+      vsites = { count: atoms.length - keepIdx.length, fileAtoms: atoms.length, keep: keepIdx, names };
+      const sub = f => { const o = new Float32Array(keepIdx.length * 3); keepIdx.forEach((k, n) => { o[3 * n] = f[3 * k]; o[3 * n + 1] = f[3 * k + 1]; o[3 * n + 2] = f[3 * k + 2]; }); return o; };
+      for (let k = 0; k < good.length; k++) good[k] = sub(good[k]);
+      const kept = keepIdx.map((k, n) => Object.assign(atoms[k], { i: n })); atoms.length = 0; kept.forEach(a => atoms.push(a));
+    }
+    const S = { atoms, frames: good, boxes: goodBoxes, header, isPQR, hasH: atoms.some(a => a.el === 'H'), bondTol, altloc: altPolicy, vsites };
     buildTopology(S);
     return S;
   }
@@ -820,6 +866,12 @@ END
     }
     return { frames, boxes, natom };
   }
+  function dropVsites(S, frames) {
+    // frames read from a DCD/XYZ written with the virtual sites present -> frames in the atom order of S
+    const v = S.vsites; if (!v) return frames;
+    return frames.map(f => { if (f.length === S.atoms.length * 3) return f; if (f.length !== v.fileAtoms * 3) throw new Error(`frame has ${f.length / 3} atoms, topology ${S.atoms.length} (${v.fileAtoms} with virtual sites)`);
+      const o = new Float32Array(v.keep.length * 3); v.keep.forEach((k, n) => { o[3 * n] = f[3 * k]; o[3 * n + 1] = f[3 * k + 1]; o[3 * n + 2] = f[3 * k + 2]; }); return o; });
+  }
   function trajAccumulator(S, P, opts = {}) {
     P = fullParams(P); const prep = prepareDetection(S, P); const stride = opts.stride || P.dyn.stride || 1; const occCut = opts.occupancyCutoff ?? P.dyn.occCut;
     const stats = new Map(); let used = 0;
@@ -1048,7 +1100,8 @@ END
         } else {
           // no template and no MOL2: the formal charge from group rules is spread evenly over the heavy atoms
           // (e.g. sulfate -2 -> -0.4 on S and each O); neutral groups stay at 0
-          const g = ligandChargeGuess(S, S.frames[0], R); const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H');
+          const lpq = R.atoms.some(i => S.atoms[i].el === 'H') ? null : ligandProtonation(S, S.frames[0], R, 'rules');
+          const g = lpq && !lpq.metal ? lpq.charge : ligandChargeGuess(S, S.frames[0], R); const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H');
           if (g !== 0 && heavy.length) { R.atoms.forEach(i => { q[i] = S.atoms[i].el === 'H' ? 0 : g / heavy.length; }); info.source = 'formal'; info.net = g; info.formal = g; info.why = `no template or MOL2: formal charge ${g > 0 ? '+' : ''}${g} (group rules) spread over ${heavy.length} heavy atoms`; }
           else { info.source = 'none'; info.why = info.why || 'no force-field template; charges set to 0'; info.formal = g === 0 && heavy.length ? 0 : null; }
         }
@@ -1173,6 +1226,148 @@ END
     if (el === 'SE') return nHeavy >= 2 ? 0 : 1;
     return 0;
   }
+  // ---------------------------------------------------------------------------------------------
+  // Ligand protonation from heavy atoms (one consistent structure for H count and charge).
+  // 1. sp2 candidates: C/N in planar unsaturated rings, planar 3-coordinate C, 2-coordinate C/N with
+  //    sp2 geometry, terminal C=O/C=S/C=N by bond length. 3-coordinate N and 2-coordinate O/S never
+  //    take a double bond (amide/pyrrole N, furan O).
+  // 2. Kekule structure: every sp2 C gets exactly one double bond; among such structures the one with
+  //    the most C=O/C=S (keto form) and then the shortest double bonds is chosen.
+  // 3. H count = valence - heavy neighbours - double bond (C 4, N 3, O/S 2): an sp2 N left without a
+  //    double bond is pyrrole-type and gets one H.
+  // 4. P keeps one =O, S keeps up to two =O (the shortest bonds); other terminal O are acid OH.
+  // 5. pH-7 group rules (mode 'rules'): COOH -> COO-, phosphate/phosphonate/phosphinate -1 or -2,
+  //    sulfonate -1, sulfate -2 (the matching O-H are removed); R4N+ +1. Mode 'zero': neutral.
+  function ligandProtonation(S, frame, R, mode) {
+    const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H'); const inR = new Set(heavy);
+    const EL = i => S.atoms[i].el; const pos = i => coordOf(frame, i);
+    const metal = heavy.find(i => !['C', 'N', 'O', 'S', 'P', 'F', 'CL', 'BR', 'I', 'B', 'SE', 'SI', 'AS'].includes(EL(i)));
+    if (metal !== undefined) return { nH: null, charge: null, nHtotal: null, deprot: [], notes: [`contains ${EL(metal)}: metal complexes are not protonated by rules (load a MOL2 file)`], doubleBonds: [], metal: true };
+    const nbOf = i => S.bonds[i].filter(j => S.atoms[j].el !== 'H');
+    const bl = (i, j) => dist(pos(i), pos(j));
+    const term = j => nbOf(j).length === 1;
+    // planar unsaturated rings (5-7 atoms) inside the residue
+    const ringSp2 = new Set();
+    const adj = i => nbOf(i).filter(j => inR.has(j));
+    const rings = []; const seen = new Set();
+    for (const s0 of heavy) {
+      const stack = [[s0, [s0]]];
+      while (stack.length) {
+        const [v, path] = stack.pop();
+        if (path.length > 7) continue;
+        for (const w of adj(v)) {
+          if (w === s0 && path.length >= 5) { const key = [...path].sort((a, b) => a - b).join(','); if (!seen.has(key)) { seen.add(key); rings.push([...path]); } }
+          else if (!path.includes(w) && w > s0) stack.push([w, path.concat(w)]);
+        }
+      }
+    }
+    for (const rg of rings) {
+      const P0 = rg.map(pos); const c = P0.reduce((a, p) => add(a, p), [0, 0, 0]).map(x => x / P0.length);
+      let nrm = [0, 0, 0]; for (let k = 0; k < P0.length; k++) nrm = add(nrm, cross(sub(P0[k], c), sub(P0[(k + 1) % P0.length], c)));
+      if (norm(nrm) < 1e-6) continue; nrm = unit(nrm);
+      const dev = Math.max(...P0.map(p => Math.abs(dot(sub(p, c), nrm))));
+      let lsum = 0; for (let k = 0; k < rg.length; k++) lsum += bl(rg[k], rg[(k + 1) % rg.length]);
+      if (dev < 0.12 && lsum / rg.length < 1.46) rg.forEach(i => ringSp2.add(i));
+    }
+    const cand = new Set(); const sp = new Set();
+    // chain C with two heavy neighbours and trigonal angles (> 114 deg); used in pairs (C=C with poor deposited bond length)
+    const trig2 = new Set(heavy.filter(i => EL(i) === 'C' && nbOf(i).length === 2 && !ringSp2.has(i) && angle(pos(nbOf(i)[0]), pos(i), pos(nbOf(i)[1])) > 114 && angle(pos(nbOf(i)[0]), pos(i), pos(nbOf(i)[1])) < 165));
+    for (const i of heavy) {
+      const e = EL(i), nb = nbOf(i), n = nb.length;
+      const hyb = guessHyb(e, pos(i), nb.map(pos), nb.map(EL));
+      if (hyb === 'sp' && (e === 'C' || e === 'N')) { sp.add(i); continue; }
+      if (e === 'C') {
+        const dmin = n ? Math.min(...nb.map(j => bl(i, j))) : 9;
+        // chain C with two heavy neighbours: sp2 only with a double-bond length (a wide CH2 angle is not enough)
+        const pair = trig2.has(i) && nb.some(j => trig2.has(j));
+        if (ringSp2.has(i) || (n === 3 && hyb === 'sp2') || (n === 2 && hyb === 'sp2' && (dmin < 1.40 || pair)) || (n === 1 && hyb === 'sp2')) cand.add(i);
+      }
+      else if (e === 'N') { if (n === 2 && (ringSp2.has(i) || hyb === 'sp2')) cand.add(i); else if (n === 1 && EL(nb[0]) === 'C' && bl(i, nb[0]) < 1.32) cand.add(i); }
+      else if ((e === 'O' || e === 'S') && n === 1 && EL(nb[0]) === 'C') { if (bl(i, nb[0]) < (e === 'O' ? 1.32 : 1.72)) cand.add(i); }
+    }
+    // Kekule structure by depth-first search over the sp2 carbons, one conjugated block at a time
+    const partners = i => nbOf(i).filter(j => cand.has(j));
+    const M = new Map(); let unmatchedC = 0, nodes = 0; const nodeCap = 200000;
+    const comps = []; const vis = new Set();
+    for (const s0 of cand) { if (vis.has(s0)) continue; const c = []; const st = [s0]; vis.add(s0); while (st.length) { const v = st.pop(); c.push(v); for (const w of partners(v)) if (!vis.has(w)) { vis.add(w); st.push(w); } } comps.push(c); }
+    for (const comp of comps) {
+      const mustC = comp.filter(i => EL(i) === 'C').sort((a, b) => partners(a).length - partners(b).length);
+      let best = null; const mate = new Map(); let cn = 0;
+      const score = () => { let o = 0, len = 0; for (const [i, j] of mate) if (i < j) { if (['O', 'S'].includes(EL(i)) || ['O', 'S'].includes(EL(j))) o++; len += bl(i, j); } return [mustC.filter(i => mate.has(i)).length, o, -len]; };
+      const better = (a, b) => !b || a[0] > b[0] || (a[0] === b[0] && (a[1] > b[1] || (a[1] === b[1] && a[2] > b[2] + 1e-9)));
+      const dfs = k => {
+        if (++cn > nodeCap) return;
+        if (k === mustC.length) {
+          const extra = []; for (const i of comp) if (!mate.has(i) && EL(i) === 'N') for (const j of partners(i)) if (!mate.has(j) && !mate.has(i) && EL(j) !== 'C') { mate.set(i, j); mate.set(j, i); extra.push(i, j); }
+          const sc = score(); if (better(sc, best && best.sc)) best = { sc, m: new Map(mate) };
+          extra.forEach(i => mate.delete(i)); return;
+        }
+        const i = mustC[k];
+        if (mate.has(i)) { dfs(k + 1); return; }
+        for (const j of partners(i)) if (!mate.has(j)) { mate.set(i, j); mate.set(j, i); dfs(k + 1); mate.delete(i); mate.delete(j); }
+        if (!best || best.sc[0] < mustC.length) dfs(k + 1); // leave i unmatched only while no full structure exists
+      };
+      dfs(0); nodes = Math.max(nodes, cn);
+      if (best) { for (const [i, j] of best.m) M.set(i, j); unmatchedC += mustC.length - best.sc[0]; }
+    }
+    const nH = new Map(); const notes = [];
+    for (const i of heavy) {
+      const e = EL(i), n = nbOf(i).length, d = M.has(i) ? 1 : 0;
+      let h = 0;
+      if (e === 'C') h = sp.has(i) ? Math.max(0, 2 - n) : Math.max(0, 4 - n - d);
+      else if (e === 'N') h = sp.has(i) ? 0 : (n >= 3 ? 0 : Math.max(0, 3 - n - d));
+      else if (e === 'O' || e === 'S' || e === 'SE') {
+        const nb = nbOf(i); const p = n === 1 ? nb[0] : -1;
+        if (n >= 2 || (e === 'S' && n >= 2)) h = 0;
+        else if (n === 1 && ['P', 'S', 'N', 'B', 'AS', 'SE'].includes(EL(p)) && e !== 'S') h = -1; // decided below
+        else h = Math.max(0, 2 - n - d);
+      }
+      nH.set(i, h);
+    }
+    // terminal O on P / S / N
+    const acidO = []; const deprot = [];
+    for (const i of heavy) {
+      const e = EL(i); if (!['P', 'S', 'N', 'AS', 'SE', 'B'].includes(e)) continue;
+      const tO = nbOf(i).filter(j => EL(j) === 'O' && term(j)).sort((a, b) => bl(i, a) - bl(i, b));
+      if (!tO.length) continue;
+      if (e === 'N' || e === 'B') { tO.forEach(j => nH.set(j, e === 'B' ? 1 : 0)); continue; } // nitro / N-oxide: no H
+      const nDouble = e === 'P' || e === 'AS' ? 1 : (nbOf(i).length >= 3 ? Math.min(2, tO.length) : 0);
+      tO.forEach((j, k) => { if (k < nDouble) nH.set(j, 0); else { nH.set(j, 1); acidO.push({ c: i, o: j }); } });
+    }
+    for (const [i, h] of nH) if (h < 0) nH.set(i, 0);
+    let charge = 0;
+    if (mode !== 'zero') {
+      for (const i of heavy) {
+        const e = EL(i); const nb = nbOf(i);
+        if (e === 'C' && nb.length >= 2 && nb.length <= 3) {
+          const tO = nb.filter(j => EL(j) === 'O' && term(j));
+          if (tO.length === 2) { const oh = tO.find(j => nH.get(j) === 1 && !M.has(j)); if (oh !== undefined) { nH.set(oh, 0); charge -= 1; deprot.push(oh); } }
+        }
+        if (e === 'P' || e === 'S') {
+          const t = nb.filter(j => EL(j) === 'O' && term(j)).length;
+          const want = e === 'P' ? (t >= 3 ? 2 : t === 2 ? 1 : 0) : (t >= 4 ? 2 : t === 3 ? 1 : 0);
+          const ohs = acidO.filter(a => a.c === i).map(a => a.o).filter(j => nH.get(j) === 1);
+          for (let k = 0; k < Math.min(want, ohs.length); k++) { nH.set(ohs[k], 0); charge -= 1; deprot.push(ohs[k]); }
+        }
+        if (e === 'N' && nb.length === 4 && !nb.some(j => EL(j) === 'O' && term(j))) charge += 1;
+      }
+    }
+    if (unmatchedC) notes.push(`${unmatchedC} sp2 carbon(s) without a double-bond partner (unusual valence; check the ligand)`);
+    if (nodes > nodeCap) notes.push('Kekule search stopped at the node limit');
+    const total = [...nH.values()].reduce((a, b) => a + b, 0);
+    return { nH, charge, nHtotal: total, deprot, notes, doubleBonds: [...M].filter(([i, j]) => i < j), sp2: new Set([...M.keys(), ...[...ringSp2].filter(i => cand.has(i))]) };
+  }
+  // FORMUL check: heavy-atom completeness and H count (expected H = FORMUL H + model charge - FORMUL charge)
+  function formulCheck(S, R, nHmodel, charge) {
+    const f = S.header && S.header.formul && S.header.formul[R.resName]; if (!f) return null;
+    const cnt = {}; R.atoms.forEach(i => { const e = S.atoms[i].el; if (e !== 'H') cnt[e] = (cnt[e] || 0) + 1; });
+    const heavyF = Object.entries(f).filter(([e]) => e !== 'H' && e !== '_charge').reduce((a, [, n]) => a + n, 0);
+    const heavyM = Object.values(cnt).reduce((a, b) => a + b, 0);
+    const complete = Object.entries(f).every(([e, n]) => e === 'H' || e === '_charge' || (cnt[e] || 0) === n);
+    const inR = new Set(R.atoms); let links = 0; R.atoms.forEach(i => { if (S.atoms[i].el !== 'H') links += S.bonds[i].filter(j => !inR.has(j) && S.atoms[j].el !== 'H').length; });
+    const expH = complete ? (f.H || 0) + charge - (f._charge || 0) - links : null;
+    return { heavyF, heavyM, complete, links, expH, hOK: complete ? expH === nHmodel : null };
+  }
   // Group rules for a ligand's net charge. Without hydrogens: carboxylate (two terminal O, C–O < 1.32 Å) −1,
   // phosphate −1/−2 (two/three terminal O), sulfonate −1, sulfate −2, quaternary N +1. With hydrogens present, an O carrying H
   // is not terminal and any N with four neighbours (incl. H) is ammonium (+1).
@@ -1222,7 +1417,28 @@ END
       }
     }
     const qm = []; const indexOf = new Map(); const qmRes = new Set([...include].map(i => S.atoms[i].res)); const warnings = ffa.warnings.filter(w => [...qmRes].some(r => w.includes(' ' + resId(S.residues[r]) + ':')));
-    if (P.qm.forceH) [...include].forEach(i => { if (S.atoms[i].el === 'H') { include.delete(i); fragOf.delete(i); } }); // re-protonate: drop existing H
+    const droppedH = new Set(); // file H replaced by rebuilt H: still QM atoms for the embedding (never MM charges)
+    if (P.qm.forceH) [...include].forEach(i => { if (S.atoms[i].el === 'H') { include.delete(i); fragOf.delete(i); droppedH.add(i); } }); // re-protonate: drop existing H
+    // ligands: one heavy-atom structure gives both the hydrogens and the charge (ligandProtonation);
+    // hydrogens present in the file are kept only when their number matches that structure
+    const ligInfo = {}; const ligRebuild = new Set();
+    [...new Set([...include].map(i => S.atoms[i].res))].forEach(r => {
+      const R = S.residues[r]; if (R.cls !== 'ligand') return;
+      const lp = ligandProtonation(S, frame, R, P.qm.ligandCharge === 'zero' ? 'zero' : 'rules');
+      const fileH = R.atoms.filter(i => S.atoms[i].el === 'H').length; const id = `${R.resName} ${resId(R)}`;
+      const L = { res: resId(R), resName: R.resName, fileH, rebuilt: false, notes: lp.notes.slice() };
+      if (lp.metal) { L.notes.forEach(n => warnings.push(`${id}: ${n}; old per-atom rules used.`)); ligInfo[r] = { lp: null, L }; return; }
+      if (fileH && !P.qm.forceH && fileH !== lp.nHtotal) {
+        R.atoms.forEach(i => { if (S.atoms[i].el === 'H') { include.delete(i); fragOf.delete(i); droppedH.add(i); } }); ligRebuild.add(r); L.rebuilt = true;
+        warnings.push(`${id}: the file has ${fileH} H, but its heavy-atom structure needs ${lp.nHtotal} H at charge ${lp.charge}; its hydrogens were rebuilt.`);
+      }
+      L.modelH = (fileH && !P.qm.forceH && !L.rebuilt) ? fileH : lp.nHtotal; L.charge = lp.charge;
+      const fc = formulCheck(S, R, L.modelH, lp.charge); L.formul = fc;
+      if (fc && !fc.complete) warnings.push(`${id}: ${fc.heavyM} of ${fc.heavyF} heavy atoms of its PDB formula (FORMUL) are present; the missing atoms are not modelled.`);
+      else if (fc && !fc.hOK) warnings.push(`${id}: ${L.modelH} H at charge ${lp.charge}, but the PDB formula implies ${fc.expH} H; check the ligand protonation or load a MOL2 file.`);
+      lp.notes.forEach(n => warnings.push(`${id}: ${n}.`));
+      ligInfo[r] = { lp, L };
+    });
     const order = [...include].sort((a, b) => (fragOf.get(a) - fragOf.get(b)) || a - b);
     for (const i of order) { indexOf.set(i, qm.length); const a = S.atoms[i]; const p = coordOf(frame, i);
       qm.push({ el: a.el, x: p[0], y: p[1], z: p[2], frag: fragOf.get(i), src: { i, chain: a.chain, resName: a.resName, resSeq: a.resSeq, iCode: a.iCode, name: a.name, serial: a.serial } }); }
@@ -1230,7 +1446,7 @@ END
     for (const i of order) {
       const a = S.atoms[i]; if (a.el === 'H') continue; const R = S.residues[a.res]; const info = ffa.residues[R.idx];
       const pc = coordOf(frame, i); const nbAll = S.bonds[i].filter(j => S.atoms[j].el !== 'H');
-      const protonate = P.qm.forceH || !resHasH(R);
+      const protonate = P.qm.forceH || ligRebuild.has(R.idx) || !resHasH(R); const LP = ligInfo[R.idx] && ligInfo[R.idx].lp;
       if (!protonate && !keptH.includes(R.idx)) keptH.push(R.idx);
       // Residues that already carry H: N/O/S hydrogens are taken as given; carbons that lack their H
       // (polar-hydrogen-only files) are completed so that the QM model is never under-protonated.
@@ -1246,6 +1462,10 @@ END
           hyb = R.cls === 'nucleic' ? guessHyb(a.el, pc, nbAll.map(j => coordOf(frame, j)), nbAll.map(j => S.atoms[j].el)) : (sp2 ? 'sp2' : 'sp3');
           if (a.name === 'N' && nH >= 2) hyb = 'sp3';
           if (rn === 'TYR' && a.name === 'OH') hyb = 'sp2';
+        } else if (LP) {
+          const nbPos = nbAll.map(j => coordOf(frame, j)); const nbEl = nbAll.map(j => S.atoms[j].el);
+          nH = LP.nH.get(i) || 0; hyb = LP.sp2.has(i) ? 'sp2' : guessHyb(a.el, pc, nbPos, nbEl);
+          if (a.el === 'C' && nH + nbAll.length >= 4) hyb = 'sp3'; // saturated carbon: tetrahedral H
         } else {
           const nbPos = nbAll.map(j => coordOf(frame, j)); const nbEl = nbAll.map(j => S.atoms[j].el);
           hyb = guessHyb(a.el, pc, nbPos, nbEl); nH = heuristicHCount(a.el, hyb, nbAll.length, pc, nbPos);
@@ -1273,7 +1493,8 @@ END
         const m = opts.mol2 && opts.mol2[R.resName];
         if (P.qm.ligandCharge === 'zero') { c = 0; how = 'set to zero'; }
         else if (P.qm.ligandCharge === 'auto' && m) { c = Math.round(m._total); how = 'MOL2 total charge'; }
-        else if (info && info.source === 'PQR') { c = info.formal; how = 'PQR charges'; }
+        else if (info && info.source === 'PQR' && !(ligInfo[r] && ligInfo[r].L.rebuilt)) { c = info.formal; how = 'PQR charges'; }
+        else if (ligInfo[r] && ligInfo[r].lp) { c = ligInfo[r].lp.charge; how = 'heavy-atom structure + group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'; }
         else { c = ligandChargeGuess(S, frame, R); how = 'group rules (carboxylate, phosphate, sulfonate/sulfate, R₄N⁺)'; }
       } else if (info && info.formal !== null && info.formal !== undefined) {
         c = info.formal; how = `${info.tpl || info.resName} template`;
@@ -1295,12 +1516,13 @@ END
       label: `${h.donorLabel}@${h.Xname} ··· ${h.accLabel}@${h.accName}`, d: h.d, theta1: h.theta1, halogen: h.halogen }));
     const manifest = { tool: 'BondX', version: VERSION, created: new Date().toISOString(), source: S.header.idCode || opts.sourceName || '', frame: frameIdx || 0, mode,
       shell: P.qm.shell, nAtoms: qm.length, addedH, linkH, forceField: P.ff.name, fragCharge, totalCharge: totalQ, multiplicity: opts.multiplicity || (electrons % 2 ? 2 : 1),
-      residueCharges: chargeLog, xbs,
+      residueCharges: chargeLog, ligands: Object.values(ligInfo).map(x => x.L), xbs,
       atoms: qm.map((a, k) => ({ n: k + 1, el: a.el, frag: a.frag, x: +a.x.toFixed(5), y: +a.y.toFixed(5), z: +a.z.toFixed(5),
         src: a.src ? `${a.src.resName}${a.src.resSeq}${a.src.iCode || ''}:${a.src.chain}@${a.src.name}` : (a.link ? `link-H(${a.parent + 1})→${a.replaces.label}` : `H(${a.parent + 1})`) })),
       warnings, parameters: { qm: P.qm, ff: Object.assign({}, P.ff, { overrides: P.ff.overrides }) }, assumptions: assumptions('T3', Object.assign({}, P, { qm: Object.assign({}, P.qm, { env: 'cluster' }) })) };
     manifest.id = 'BX-' + hashString(JSON.stringify(manifest.atoms) + JSON.stringify(xbs)).slice(0, 10);
-    return { qm, manifest, include, indexOf, fragOf, qmResCharge, ffa };
+    // include = structure atoms of the QM region (used by the embedding); replaced file H stay in it
+    return { qm, manifest, include: new Set([...include, ...droppedH]), indexOf, fragOf, qmResCharge, ffa };
   }
   function hashString(s) { let h1 = 0x811c9dc5, h2 = 0x01000193; for (let i = 0; i < s.length; i++) { const c = s.charCodeAt(i); h1 = Math.imul(h1 ^ c, 16777619) >>> 0; h2 = Math.imul(h2 ^ c, 2246822519) >>> 0; } return h1.toString(16).padStart(8, '0') + h2.toString(16).padStart(8, '0'); }
 
@@ -1395,13 +1617,17 @@ END
     return r.concat(extra);
   }
   function writeQChemNBO(model, o, pcs) {
-    const m = model.manifest; const L = [`! BondX ${m.id} - NBO XB gate`, asc(`! ${m.xbs.map(x => x.label).join(' ; ')}`), '$molecule', `${m.totalCharge} ${m.multiplicity}`];
+    const m = model.manifest; const L = [`! BondX ${m.id} - NBO XB gate`, asc(`! ${m.xbs.map(x => x.label).join(' ; ')}`)];
+    if (QCHEM_G_BASIS.test(o.basis)) L.push('! ' + QCHEM_NBO_G_CAUTION);
+    L.push('$molecule', `${m.totalCharge} ${m.multiplicity}`);
     model.qm.forEach(a => L.push(fmtXYZ(a))); L.push('$end', '');
     const rem = ['$rem', '   JOBTYPE         sp', ...qchemRem(o, ['   NBO             1'], model.qm)];
     if (!pcs && o.solvent) rem.push('   SOLVENT_METHOD  PCM');
     rem.push('$end'); L.push(...rem);
+    // NBO 1 alone prints the NBOs but not the second-order table in Q-Chem 6.2 (NBO 5.0): request it explicitly
+    L.push('', '$nbo', '   E2PERT', '$end');
     if (pcs) { L.push('', '$external_charges'); pcs.charges.forEach(c => L.push(`${c.x.toFixed(6)} ${c.y.toFixed(6)} ${c.z.toFixed(6)} ${c.q.toFixed(6)}`)); L.push('$end'); }
-    else if (o.solvent) L.push('', '$solvent', `   SolventDielectric ${o.eps}`, '$end');
+    else if (o.solvent) L.push('', '$solvent', `   Dielectric ${o.eps}`, '$end');
     return L.join('\n') + '\n';
   }
   function writeQChemEDA(model, o) {
@@ -1425,15 +1651,15 @@ END
   /* ------------------------------------------------------------------ */
   /*  T3b: NBO output parsing and the XB gate                            */
   /* ------------------------------------------------------------------ */
-  const NBO_SIDE = String.raw`(\d+)\.\s*(BD\*?|LP\*?|CR|RY\*?|LV|3C\*?)\s*\(\s*(\d+)\s*\)\s*([A-Z][a-z]?)\s*(\d+)(?:\s*-\s*([A-Z][a-z]?)\s*(\d+))?(?:\s*-\s*([A-Z][a-z]?)\s*(\d+))?`;
+  const NBO_SIDE = String.raw`(\d+|\*+)\.\s*(BD\*?|LP\*?|CR|RY\*?|LV|3C\*?)\s*\(\s*(\d+)\s*\)\s*([A-Z][a-z]?)\s*(\d+)(?:\s*-\s*([A-Z][a-z]?)\s*(\d+))?(?:\s*-\s*([A-Z][a-z]?)\s*(\d+))?`;
   const NBO_LINE = new RegExp('^\\s*' + NBO_SIDE + '\\s*\\/\\s*' + NBO_SIDE + '\\s+(\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)');
-  function parseNBOSide(m, o) { const atoms = []; for (let k = 0; k < 3; k++) { if (m[o + 3 + 2 * k]) atoms.push({ el: m[o + 3 + 2 * k].toUpperCase(), n: parseInt(m[o + 4 + 2 * k]) }); } return { nbo: parseInt(m[o]), type: m[o + 1].replace(/\s/g, ''), idx: parseInt(m[o + 2]), atoms }; }
+  function parseNBOSide(m, o) { const atoms = []; for (let k = 0; k < 3; k++) { if (m[o + 3 + 2 * k]) atoms.push({ el: m[o + 3 + 2 * k].toUpperCase(), n: parseInt(m[o + 4 + 2 * k]) }); } return { nbo: /^\*+$/.test(m[o]) ? null : parseInt(m[o]), type: m[o + 1].replace(/\s/g, ''), idx: parseInt(m[o + 2]), atoms }; }
   function parseNBO(text) {
     const lines = text.split(/\r?\n/);
     const program = /Entering Gaussian System|Gaussian, Inc/.test(text) ? 'Gaussian' : /O\s+R\s+C\s+A/.test(text) || /ORCA TERMINATED|\* O   R   C   A \*/.test(text) ? 'ORCA' : /Q-Chem/.test(text) ? 'Q-Chem' : 'NBO';
     const terminated = /Normal termination of Gaussian|ORCA TERMINATED NORMALLY|Thank you very much for using Q-Chem|Total job time/.test(text);
     const secStarts = []; lines.forEach((l, i) => { if (/SECOND ORDER PERTURBATION THEORY ANALYSIS OF FOCK MATRIX IN NBO BASIS/i.test(l)) secStarts.push(i); });
-    if (!secStarts.length) return { program, terminated, entries: [], error: 'No "SECOND ORDER PERTURBATION THEORY ANALYSIS" section found. Ensure NBO was requested (Gaussian pop=nbo, ORCA ! NBO, Q-Chem NBO 1).' };
+    if (!secStarts.length) return { program, terminated, entries: [], error: 'No "SECOND ORDER PERTURBATION THEORY ANALYSIS" section found. Ensure NBO was requested (Gaussian pop=nbo, ORCA ! NBO with NBO 7, Q-Chem NBO 1 with $nbo E2PERT).' };
     const spinOf = i => { for (let k = i; k >= Math.max(0, i - 40); k--) { if (/Alpha spin orbitals/i.test(lines[k])) return 'alpha'; if (/Beta\s+spin orbitals/i.test(lines[k])) return 'beta'; } return 'closed'; };
     let use = [secStarts[secStarts.length - 1]];
     if (spinOf(use[0]) === 'beta' && secStarts.length >= 2 && spinOf(secStarts[secStarts.length - 2]) === 'alpha') use = secStarts.slice(-2);
@@ -1478,9 +1704,13 @@ END
       const isA = s => s.atoms.length === 2 && s.atoms.some(a => a.n === xb.X) && s.atoms.some(a => a.n === xb.A);
       const ringSet = new Set(xb.ring || []);
       const contrib = { lp_sigma: 0, lp_ry: 0, pi_sigma: 0, other: 0 }; const rows = [];
+      // Ionic Lewis structure: NBO may describe A-X as A(-) + X(+) with a vacant lone pair LP*(X) instead of sigma*(A-X).
+      // Then the donation into LP*(X) takes the role of the n -> sigma* term.
+      const hasSigmaStar = nbo.entries.some(e => e.acceptor.type === 'BD*' && isA(e.acceptor));
+      const isLPstarX = s => !hasSigmaStar && s.type === 'LP*' && s.atoms.length === 1 && s.atoms[0].n === xb.X;
       for (const e of nbo.entries) {
         const d = e.donor, a = e.acceptor;
-        const toSigma = a.type === 'BD*' && isA(a); const toRyX = a.type.startsWith('RY') && a.atoms.length === 1 && a.atoms[0].n === xb.X;
+        const toSigma = (a.type === 'BD*' && isA(a)) || isLPstarX(a); const toRyX = a.type.startsWith('RY') && a.atoms.length === 1 && a.atoms[0].n === xb.X;
         if (!toSigma && !toRyX) continue;
         let tag = null;
         if (xb.type === 'atom' && d.type === 'LP' && d.atoms[0].n === xb.Y) tag = toSigma ? 'lp_sigma' : 'lp_ry';
@@ -1490,7 +1720,7 @@ END
         contrib[tag] += e.e2; rows.push(Object.assign({ tag }, e));
       }
       const core = xb.type === 'atom' ? contrib.lp_sigma + (useRY ? contrib.lp_ry : 0) : contrib.pi_sigma;
-      return { id: xb.id, label: xb.label, E2_core: core, E2_total: core + contrib.other + (useRY ? 0 : contrib.lp_ry), contrib, rows, verified: core >= thr, threshold: thr, includeRY: useRY,
+      return { id: xb.id, label: xb.label, ionicX: !hasSigmaStar && rows.some(r => r.acceptor.type === 'LP*'), E2_core: core, E2_total: core + contrib.other + (useRY ? 0 : contrib.lp_ry), contrib, rows, verified: core >= thr, threshold: thr, includeRY: useRY,
         npaX: nbo.npa && nbo.npa[xb.X] !== undefined ? nbo.npa[xb.X] : null, npaY: xb.Y && nbo.npa ? nbo.npa[xb.Y] ?? null : null };
     });
   }
@@ -1512,6 +1742,9 @@ END
       for (let i = iS + 1; i < Math.min(lines.length, iS + 30); i++) {
         const m = /^\s*\[?\s*(PREPARATION|SOLVATION|FROZEN|PAULI|ELEC|DISP|POLARIZATION|CHARGE TRANSFER|TOTAL)\s+(-?\d+\.\d+)/i.exec(lines[i]);
         if (m) { const k = { PREPARATION: 'prep', SOLVATION: 'sol', FROZEN: 'frz', PAULI: 'pauli', ELEC: 'elec', DISP: 'disp', POLARIZATION: 'pol', 'CHARGE TRANSFER': 'ct', TOTAL: 'total' }[m[1].toUpperCase()]; put(k, parseFloat(m[2])); if (k === 'total') break; }
+        // with ECPs Q-Chem cannot split ELEC and PAULI: "[ELEC + PAULI = 8.0364, DISP = -7.8793]"
+        const mb = /\[\s*ELEC\s*\+\s*PAULI\s*=\s*(-?\d+\.\d+)\s*,\s*DISP\s*=\s*(-?\d+\.\d+)\s*\]/i.exec(lines[i]);
+        if (mb) { put('elecPauli', parseFloat(mb[1])); put('disp', parseFloat(mb[2])); }
       }
     }
     const grab = (re, k) => { let v = null; lines.forEach(l => { const m = re.exec(l); if (m) { v = parseFloat(m[2]); if (/kcal/i.test(m[1])) res.units = 'kcal/mol'; } }); if (v !== null && res[k] === undefined) res[k] = v; };
@@ -1519,11 +1752,12 @@ END
     grab(/E_vct\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'ct'); grab(/E_ct\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'ct'); grab(/E_int\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'total');
     grab(/E_elec\s*\(ELEC\)\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'elec'); grab(/E_pauli\s*\(PAULI\)\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'pauli'); grab(/E_disp\s*\(DISP\)\s*\((k\w+\/mol)\)\s*=\s*(-?\d+\.\d+)/, 'disp');
     if (res.frz === undefined && res.pol === undefined && res.ct === undefined) return { error: 'No EDA2 energy terms found (expected "Simplified EDA Summary" or E_frz/E_pol/E_vct lines).' };
+    if (res.elecPauli === undefined && res.elec !== undefined && res.pauli !== undefined) res.elecPauli = res.elec + res.pauli;
     if (res.total === undefined) res.total = (res.prep || 0) + (res.sol || 0) + (res.frz || 0) + (res.pol || 0) + (res.ct || 0);
     res.terminated = /Thank you very much for using Q-Chem/.test(text);
     return toKJ(res);
   }
-  function toKJ(r) { if (r.units === 'kcal/mol') { ['prep', 'sol', 'frz', 'pauli', 'elec', 'disp', 'pol', 'ct', 'total'].forEach(k => { if (r[k] !== undefined) r[k] *= 4.184; }); r.units = 'kJ/mol'; } return r; }
+  function toKJ(r) { if (r.units === 'kcal/mol') { ['prep', 'sol', 'frz', 'pauli', 'elec', 'elecPauli', 'disp', 'pol', 'ct', 'total'].forEach(k => { if (r[k] !== undefined) r[k] *= 4.184; }); r.units = 'kJ/mol'; } return r; }
 
   /* ------------------------------------------------------------------ */
   /*  T5: BondX Quality Index (BXQI) and mechanistic classification      */
@@ -1576,10 +1810,10 @@ END
   return {
     VERSION, Z, COV, DEFAULTS, PARAM_SPEC, FF: FFDATA, defaults, mergeParams, fullParams, getPath, setPath, assumptions,
     parsePDB, structureReport, filterChains, writePDB, coordOf, atomLabel, resLabel, resId,
-    detectXB, prepareDetection, detectFrame, decorate, geometricScore, parseXYZFrames, parseDCD, analyzeTrajectory, trajAccumulator, Dscore,
+    detectXB, prepareDetection, detectFrame, decorate, geometricScore, parseXYZFrames, parseDCD, dropVsites, analyzeTrajectory, trajAccumulator, Dscore,
     parseCIF, parseXYZ, detectMaterialXB, buildMaterialQM,
     ffVariant, assignForceField, titratableResidues, parseMOL2, mol2ForStructure,
-    ORCA_NBO_CAUTION, G16_NBO7_CAUTION, buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV,
+    ligandProtonation, formulCheck, ORCA_NBO_CAUTION, QCHEM_NBO_CAUTION, QCHEM_NBO_G_CAUTION, G16_NBO7_CAUTION, buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV,
     parseNBO, nboGate, verifyGeometry, fragmentNPA, parseEDA, edaDescriptors, computeBXQI,
     hashString, toCSV, angle, dist
   };
@@ -1918,6 +2152,7 @@ END
     { id: 'quality', n: '7', label: 'Score & report', sub: 'BXQI', group: 'Workflow' },
     { id: 'batch', n: 'B', label: 'Batch PDB', sub: 'many entries', group: 'Tools' },
     { id: 'material', n: 'M', label: 'Materials', sub: 'CIF / XYZ crystals', group: 'Tools' },
+    { id: 'guide', n: 'T', label: 'Tutorial', sub: 'five pages · scope', group: 'Reference' },
     { id: 'params', n: 'P', label: 'All parameters', sub: 'defaults & changes', group: 'Reference' },
     { id: 'method', n: 'i', label: 'Method', sub: 'equations & data', group: 'Reference' }
   ];
@@ -1941,6 +2176,121 @@ END
   document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
   const head = (kicker, title, text) => `<div class="pagehead"><div class="kicker">${esc(kicker)}</div><h2>${esc(title)}</h2><p>${text}</p></div>`;
   const R = {};
+
+
+  /* ====================== TUTORIAL (five pages) ====================== */
+  const TUT = [
+    { t: '1 · What BondX Studio does', b: `
+      <p>BondX Studio checks halogen bonds (XBs) in proteins, ligands and crystals. It runs in your browser. No file leaves your computer. The only network call is the download of a PDB entry from RCSB.</p>
+      <p>The analysis is split into tiers. Each tier adds one kind of evidence.</p>
+      <table class="t tut"><thead><tr><th>Tier</th><th>Step</th><th>Evidence</th></tr></thead><tbody>
+        <tr><td class="mono">T0</td><td>1 Load structure</td><td>Atoms, chains, hydrogens, charges, virtual sites</td></tr>
+        <tr><td class="mono">T1</td><td>2 Find halogen bonds</td><td>Geometry: distance, two angles, geometric score <i>G</i></td></tr>
+        <tr><td class="mono">T2</td><td>3 Dynamics</td><td>Occupancy of each contact over a trajectory</td></tr>
+        <tr><td class="mono">T3</td><td>4–5 QM model, NBO gate</td><td>Cluster or QM/MM input files; NBO donor–acceptor energy Σ<i>E</i><sup>(2)</sup></td></tr>
+        <tr><td class="mono">T4</td><td>6 ALMO-EDA</td><td>Frozen, polarisation and charge-transfer energies</td></tr>
+        <tr><td class="mono">T5</td><td>7 Score &amp; report</td><td>Quality index BXQI and grade A–D</td></tr>
+      </tbody></table>
+      <div class="note ok" style="margin-top:12px"><b>Quick start.</b> Open <b>1 Load structure</b>. Press <b>Load demo</b>. Then press the button at the bottom right of each page. The demo takes less than one minute.</div>
+      <p class="muted">You can stop after any tier. A result from T1 alone is valid. It is then marked as geometry only.</p>` },
+    { t: '2 · Load a structure and find contacts', b: `
+      <h4>Step 1 · Load structure (T0)</h4>
+      <ul>
+        <li>Type a four-letter PDB ID and press <b>Fetch</b>. Or drop a local <span class="mono">.pdb</span>, <span class="mono">.ent</span> or <span class="mono">.pqr</span> file.</li>
+        <li>A PQR file brings its own partial charges. A PDB file uses the force-field charges of the program.</li>
+        <li>Pick the chains to keep. Check the composition table.</li>
+        <li>Extra-point atoms (EP, LP, XX) of σ-hole force fields are removed on load. The message says how many were removed.</li>
+      </ul>
+      <h4>Step 2 · Find halogen bonds (T1)</h4>
+      <ul>
+        <li>The program finds every C–X···Y contact with X = Cl, Br or I.</li>
+        <li>It measures the X···Y distance <i>d</i>, the C–X···Y angle θ<sub>1</sub> and the X···Y–R angle θ<sub>2</sub>.</li>
+        <li>It reports the score <i>G</i> between 0 and 1. A larger <i>G</i> means a better geometry.</li>
+        <li>Each acceptor is classed as a Lewis base or not. A backbone N–H has no lone pair. Such a contact is flagged as weak.</li>
+        <li>Sort or filter the table. Click a row to see the contact in the 3D viewer.</li>
+      </ul>
+      <div class="note">All cut-offs are on the page <b>All parameters</b>. A changed value is marked in orange. It is also written to the report.</div>` },
+    { t: '3 · Dynamics and the QM model', b: `
+      <h4>Step 3 · Dynamics (T2, optional)</h4>
+      <ul>
+        <li>Drop a topology <span class="mono">.pdb</span>. Its atom order must match the trajectory.</li>
+        <li>Drop a <span class="mono">.dcd</span>, a multi-model <span class="mono">.pdb</span> or a multi-frame <span class="mono">.xyz</span> file.</li>
+        <li>Convert GROMACS or AMBER files once with <span class="mono">gmx trjconv</span> or <span class="mono">cpptraj</span>.</li>
+        <li>The program applies the T1 test to every frame. It reports the occupancy of each contact.</li>
+      </ul>
+      <h4>Step 4 · QM model and charges (T3)</h4>
+      <ul>
+        <li>Choose a <b>cluster</b> model or a <b>QM/MM</b> model with point charges.</li>
+        <li>Cut bonds are capped with hydrogen atoms. Ligand charges can come from a <span class="mono">.mol2</span> file.</li>
+        <li>Pick the program: Gaussian, ORCA or Q-Chem. Pick the method, the basis set and the solvent model.</li>
+        <li>Download the input files. Each file carries a manifest ID. The ID links the output back to the contact.</li>
+        <li>Run the jobs on your own computer or cluster. BondX Studio does not run QM jobs.</li>
+      </ul>` },
+    { t: '4 · NBO gate, ALMO-EDA and the score', b: `
+      <h4>Step 5 · NBO gate (T3)</h4>
+      <ul>
+        <li>Drop the QM output (<span class="mono">.log</span> or <span class="mono">.out</span>). The program reads the second-order perturbation table.</li>
+        <li>It adds the terms LP(Y) → σ*(C–X) and LP(Y) → RY*(X). For a π acceptor it adds the ring bonds.</li>
+        <li>Intramolecular terms are excluded. Only the T1 acceptor counts.</li>
+        <li>A contact passes the gate if Σ<i>E</i><sup>(2)</sup> ≥ 0.5 kcal/mol.</li>
+        <li>For an ionic NBO structure the halogen has a vacant LP*. Donation into LP*(X) is then counted.</li>
+      </ul>
+      <h4>Step 6 · ALMO-EDA (T4)</h4>
+      <ul>
+        <li>Drop the Q-Chem EDA output. The program reads FRZ, POL, CT and the total energy.</li>
+        <li>It reports χ<sub>CT</sub> = CT / (POL + CT).</li>
+      </ul>
+      <h4>Step 7 · Score and report (T5)</h4>
+      <ul>
+        <li>BXQI is a weighted geometric mean of the tier scores. It runs from 0 to 100.</li>
+        <li>Grades: A ≥ 75, B ≥ 50, C ≥ 25, else D. Grade A needs a passed NBO gate.</li>
+        <li>Press <b>Report</b> for a single HTML file. It lists every input, parameter and result.</li>
+      </ul>` },
+    { t: '5 · What it can and cannot do', b: `
+      <div class="grid g2e">
+        <div class="card ok-card"><h2>It can</h2><ul>
+          <li>Read PDB, PQR, CIF, XYZ, DCD and multi-model PDB files.</li>
+          <li>Find Cl, Br and I halogen bonds to O, N, S and aromatic rings.</li>
+          <li>Screen many PDB entries in one batch.</li>
+          <li>Build cluster and QM/MM models with ff14SB, ff19SB or CHARMM36 charges.</li>
+          <li>Write Gaussian, ORCA and Q-Chem inputs.</li>
+          <li>Read Gaussian NBO output and Q-Chem ALMO-EDA output.</li>
+          <li>Save and reload a full session as JSON.</li>
+          <li>Write a complete HTML report and CSV tables.</li>
+        </ul></div>
+        <div class="card no-card"><h2>It cannot</h2><ul>
+          <li>Run quantum-chemistry jobs. You run them yourself.</li>
+          <li>Read GROMACS <span class="mono">.xtc</span> or AMBER <span class="mono">.nc</span> files directly.</li>
+          <li>Give a tested result for fluorine. Fluorine is off by default.</li>
+          <li>Replace a full free-energy study of binding.</li>
+          <li>Decide on a weak contact without the NBO tier.</li>
+        </ul></div>
+      </div>
+      <h4>Tested routes</h4>
+      <table class="t tut"><thead><tr><th>Task</th><th>Program</th><th>Status</th></tr></thead><tbody>
+        <tr><td>NBO gate</td><td>Gaussian 16 with NBO 3.1</td><td><span class="pill ok">tested on 59 dimers and 9 protein contacts</span></td></tr>
+        <tr><td>ALMO-EDA</td><td>Q-Chem 6.2</td><td><span class="pill ok">tested</span></td></tr>
+        <tr><td>Counterpoise binding</td><td>ORCA 5 or Gaussian 16</td><td><span class="pill mute">used in the paper; not read by the app</span></td></tr>
+        <tr><td>NBO gate</td><td>ORCA with NBO</td><td><span class="pill warn">input written; not tested</span></td></tr>
+        <tr><td>NBO gate</td><td>Q-Chem with NBO 5</td><td><span class="pill warn">input written; not tested</span></td></tr>
+      </tbody></table>
+      <p class="muted" style="margin-top:10px">Source code, tests and paper scripts: <a href="https://github.com/compchemsk/BondX-Studio" target="_blank" rel="noopener">github.com/compchemsk/BondX-Studio</a>.</p>` }
+  ];
+  R.guide = {
+    html: () => `${head('Reference', 'Tutorial', 'Five short pages. Read them once before your first run.')}
+      <div class="tutwrap"><div class="tutnav" id="tutNav">${TUT.map((p, i) => `<button data-t="${i}">${esc(p.t)}</button>`).join('')}</div>
+      <div class="card tutcard"><div id="tutBody"></div>
+      <div class="tutfoot"><button class="btn" id="tutPrev">← Previous</button><span class="tutdots" id="tutDots">${TUT.map((_, i) => `<i data-t="${i}"></i>`).join('')}</span><button class="btn primary" id="tutNext">Next →</button></div></div></div>`,
+    init() {
+      let k = 0;
+      const show = i => { k = Math.max(0, Math.min(TUT.length - 1, i)); $('#tutBody').innerHTML = `<h2 class="tuth">${esc(TUT[k].t)}</h2><div class="tutpage">${TUT[k].b}</div><p class="muted tutpg">Page ${k + 1} of ${TUT.length}</p>`;
+        $$('#tutNav button').forEach((b, j) => b.classList.toggle('on', j === k)); $$('#tutDots i').forEach((d, j) => d.classList.toggle('on', j === k));
+        $('#tutPrev').disabled = k === 0; $('#tutNext').textContent = k === TUT.length - 1 ? 'Start: load a structure →' : 'Next →'; };
+      $$('#tutNav button, #tutDots i').forEach(b => b.onclick = () => show(+b.dataset.t));
+      $('#tutPrev').onclick = () => show(k - 1); $('#tutNext').onclick = () => { if (k === TUT.length - 1) go('structure'); else show(k + 1); };
+      show(0);
+    }
+  };
 
   /* ====================== 1 STRUCTURE ====================== */
   R.structure = {
@@ -1985,7 +2335,7 @@ END
       const S = B.parsePDB(text, { pqr, altloc: ST.P.struct.altloc, bondTol: ST.P.struct.bondTol }); if (!S.atoms.length) throw new Error('no ATOM/HETATM records found');
       ST.S0 = S; ST.S = S; ST.name = name; ST.srcText = text; ST.srcPQR = !!pqr; ST.hits = [];
       const h = await sha256(text); log('structure.load', `${name} from ${origin}; ${S.atoms.length} atoms; ${S.frames.length} model(s); sha256=${h}; altloc=${ST.P.struct.altloc}, bondTol=${ST.P.struct.bondTol}`); ST.srcHash = h;
-      $('#loadMsg').innerHTML = `<div class="note ok">Loaded <b>${esc(name)}</b> — ${S.atoms.length.toLocaleString()} atoms, ${S.residues.length.toLocaleString()} residues${S.frames.length > 1 ? `, ${S.frames.length} models (also usable as a trajectory)` : ''}${S.isPQR ? ', <b>PQR charges present</b>' : ''}${S.hasH ? ', hydrogens present' : ', no hydrogens (they will be added where needed)'}.<br><span class="mono" style="font-size:11px">SHA-256 ${h.slice(0, 32)}…</span></div>`;
+      $('#loadMsg').innerHTML = `<div class="note ok">Loaded <b>${esc(name)}</b> — ${S.atoms.length.toLocaleString()} atoms, ${S.residues.length.toLocaleString()} residues${S.frames.length > 1 ? `, ${S.frames.length} models (also usable as a trajectory)` : ''}${S.isPQR ? ', <b>PQR charges present</b>' : ''}${S.vsites ? `, <b>${S.vsites.count} virtual site(s) removed</b> (${esc(S.vsites.names.join(', '))}; extra-point or lone-pair charges of the force field, not atoms)` : ''}${S.hasH ? ', hydrogens present' : ', no hydrogens (they will be added where needed)'}.<br><span class="mono" style="font-size:11px">SHA-256 ${h.slice(0, 32)}…</span></div>`;
       $('#chainList').innerHTML = [...new Set(S.atoms.map(a => a.chain))].map(c => `<label class="chk" style="border:1px solid var(--line);border-radius:7px;padding:4px 8px"><input type="checkbox" value="${esc(c)}" checked> Chain ${esc(c === '_' ? '(blank)' : c)}</label>`).join('');
       $('#chainCard').style.display = ''; $('#btnReparse').disabled = false; renderReport(); setDone('structure'); V.structure(S);
     } catch (e) { $('#loadMsg').innerHTML = `<div class="note bad">Could not read the file: ${esc(e.message)}</div>`; }
@@ -2140,8 +2490,8 @@ END
           let frames, boxes, tname;
           if (trajFile) {
             tname = trajFile.name; const h = await sha256(await readBuf(trajFile));
-            if (/\.dcd$/i.test(trajFile.name)) { const d = B.parseDCD(await readBuf(trajFile), T.atoms.length); frames = d.frames; boxes = d.boxes; }
-            else if (/\.xyz$/i.test(trajFile.name)) { frames = B.parseXYZFrames(await readText(trajFile), T.atoms.length).map(x => x.f); boxes = null; }
+            if (/\.dcd$/i.test(trajFile.name)) { const d = B.parseDCD(await readBuf(trajFile)); frames = B.dropVsites(T, d.frames); boxes = d.boxes; }
+            else if (/\.xyz$/i.test(trajFile.name)) { frames = B.dropVsites(T, B.parseXYZFrames(await readText(trajFile), T.vsites ? T.vsites.fileAtoms : T.atoms.length).map(x => x.f)); boxes = null; }
             else { const M = B.parsePDB(await readText(trajFile), { altloc: ST.P.struct.altloc }); if (M.atoms.length !== T.atoms.length) throw new Error(`trajectory has ${M.atoms.length} atoms, topology ${T.atoms.length}`); frames = M.frames; boxes = M.boxes; }
             log('T2.load', `${tname}: ${frames.length} frames; sha256=${h}`);
           } else if (ST.demoTraj && T === ST.S) { frames = ST.demoTraj; boxes = null; tname = 'synthetic demo trajectory'; log('T2.load', 'SYNTHETIC demo trajectory (120 frames)'); }
@@ -2227,13 +2577,14 @@ END
   function progNote() {
     const q = ST.P.qm; const t = [];
     if (q.program === 'orca') t.push(B.ORCA_NBO_CAUTION);
+    if (q.program === 'qchem') t.push(B.QCHEM_NBO_CAUTION);
     if (q.program === 'gaussian' && q.nbo7) t.push(B.G16_NBO7_CAUTION);
     return t.map(x => `<div class="note warn" style="margin-top:8px"><b>Caution.</b> ${esc(x)}</div>`).join('');
   }
   const QM_PROG = ['qm.program', 'qm.method', 'qm.basis', 'qm.nproc', 'qm.mem', 'qm.nbo7'];
   const METHODS = { gaussian: { method: 'wB97XD', basis: 'def2TZVP' }, orca: { method: 'wB97X-D3', basis: 'def2-TZVP' }, qchem: { method: 'wB97X-D', basis: 'def2-TZVP' } };
   R.qm = {
-    html: () => `${head('Step 4 · T3a', 'Build the QM model with force-field protonation and charges', 'Cuts the halogenated ligand and its partners out of the structure, protonates them from force-field residue templates, caps cut bonds and writes Gaussian, ORCA or Q-Chem inputs. In QM/MM mode the rest of the protein enters as force-field point charges. Every QM atom is traced back to the PDB in a manifest.')}
+    html: () => `${head('Step 4 · T3a', 'Build the QM model with force-field protonation and charges', 'Cuts the halogenated ligand and its partners out of the structure, protonates residues from force-field templates and ligands from one Kekulé structure (checked against the PDB formula), caps cut bonds and writes Gaussian, ORCA or Q-Chem inputs. In QM/MM mode the rest of the protein enters as force-field point charges. Every QM atom is traced back to the PDB in a manifest.')}
     ${assumeBox('T3')}
     <div class="card" style="margin-bottom:16px"><div class="row" style="justify-content:space-between"><h2>1 · Choose candidates</h2><span class="muted" style="font-size:12px">Candidates sharing one donor ligand and frame are modelled together.</span></div><div id="qmReg" style="margin-top:8px"></div></div>
     <div class="grid g2">
@@ -2638,6 +2989,7 @@ END
     $('#btnSaveSession').onclick = saveSession; $('#inSession').onchange = e => { if (e.target.files[0]) loadSession(e.target.files[0]); e.target.value = ''; };
     $('#btnReport').onclick = () => { download(`BondX_report_${ST.runId}.html`, buildReport(), 'text/html'); log('report', 'HTML report generated'); };
     $('#btnParams').onclick = () => go('params');
+    $('#btnTutorial').onclick = () => go('guide');
     log('session.start', `BondX Studio; ${navigator.userAgent}`);
     startVisitorCounter();
     go('structure');
