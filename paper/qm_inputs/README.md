@@ -112,3 +112,7 @@ python3 Scripts/08_make_figures.py .
 - Do not change atom order. Do not let the programs reorient the molecule: `nosymm` and `SYM_IGNORE` are set. The NBO gate checks the output geometry against the manifest.
 - The NBO print threshold is the program default. Each output prints it. BondX records it. With a threshold of 0.5 kcal/mol (the gate value) the gate decision is not affected. On the long-distance scan points, E(2) values below the print threshold are not printed. The tables report them as below the threshold.
 - Memory: 50 GB and 40 threads per job (Gaussian `%mem=50GB`, ORCA `%maxcore 937` × 40, Q-Chem `MEM_TOTAL 50000`). This matches a 60 GB node.
+
+## Additional job sets G, J, and K
+
+`G_hard_negatives/`, `J_4dst_amide/`, and `K_hiyd_amide/` hold the Gaussian inputs of the additional sets discussed in the Supporting Information (contacts that pass T1 with poor Lewis bases and their controls, 4DST with the intact Gly75 amide, and the acetyl-capped published hIYD poses). `jobs_extra.csv` lists the jobs. The parsed results are in `../results/extra/`.

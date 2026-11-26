@@ -1,0 +1,10 @@
+\begin{table}[!htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{Field component $E_{AX}$ (V\,\AA$^{-1}$) along the A$\to$X bond at the halogen from the MM point charges of the QM/MM models (no QM job), with the QM regions of the computed models. The hydrogen-bond shell of version 3.0 moves Lys105 of 2W0S into the QM region, which changes $E_{AX}$ from the MM charges of the whole structure from $-0.44$ to $+0.22$~V\,\AA$^{-1}$; the field values therefore refer to a given QM region. Positive values point from A to X and should deepen the $\sigma$-hole. Folded: hydrogen charges moved onto their heavy atoms everywhere (the setting of the QM/MM models of this work, built with BondX Studio 2.0). Explicit H: MM residues within 6~\AA{} of X carry explicit hydrogens with their template charges (default of version 3.0). $n_\mathrm{H}$: explicit MM hydrogens. Zero: MM atoms with zero charge after folding (ff14SB/CHARMM36); CHARMM36 gives zero net charge to many aliphatic CH$_n$ groups, so after folding these atoms carry no charge and are not written, which explains the smaller CHARMM36 point-charge counts at the same radius. $N_q$: written point charges (ff14SB/CHARMM36, \SI{15}{\angstrom}). $Q$: MM net charge (e) at \SI{15}{\angstrom} and for the whole structure.}\label{tab:field}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrrrr}\toprule PDB & folded & explicit H & RCD & CHARMM36 & 25~\AA & whole & $n_\mathrm{H}$ & Zero & $N_q$ & $Q_{15}$ & $Q_\mathrm{whole}$\\\midrule
+1US0 & 0.22 & 0.14 & 0.13 & 0.12 & 0.16 & 0.16 & 72 & 2/309 & 1302/995 & -3 & 0\\
+2W0S & -0.20 & -0.33 & -0.36 & -0.38 & -0.43 & -0.44 & 61 & 3/313 & 1224/914 & +5 & -12\\
+1P5E & 0.00 & 0.10 & 0.07 & 0.08 & -0.03 & -0.02 & 93 & 36/363 & 1209/882 & +6 & -3\\
+4AGL & -0.17 & -0.31 & -0.31 & -0.27 & -0.35 & -0.43 & 80 & 116/304 & 840/652 & -3 & +10\\
+4GQL & -0.19 & -0.19 & -0.16 & -0.22 & -0.15 & -0.15 & 0 & 153/168 & 1780/1765 & +2 & +6\\
+4DST & -0.19 & -0.02 & -0.05 & -0.03 & -0.06 & -0.07 & 98 & 35/226 & 885/694 & +4 & -2\\
+\bottomrule\end{tabular}}\end{table}

@@ -34,7 +34,7 @@ const hI = hits.find(h => h.halogen === 'I');
 const gs = B.geometricScore('I', 'O', 3.10, 170, 125, P0, false); ok(near(gs.G, 0.8591, 2e-4), 'G worked example = 0.859 (ESI S4)');
 const tight = B.detectXB(S, P({ geom: { cutoffs: { I: { O: 2.9 } } } })).hits; ok(!tight.some(h => h.halogen === 'I' && h.accName === 'O'), 'changing a cut-off changes detection');
 const wide = B.detectXB(S, P({ geom: { cutoffs: { I: { O: 5.0 } } } })).hits; ok(wide.length >= hits.length, 'cut-off above 4.6 Å is honoured (search radius follows cut-offs)');
-ok(near(B.Dscore(0.62, 8, P0), 0.5860, 2e-4), 'D worked example = 0.586');
+ok(near(B.Dscore(0.62, 160, P0), 0.5860, 2e-4), 'D worked example = 0.586 (τ = 160 ps, τ0 = 100 ps)');
 
 /* ---------------- termini, variants, charges on the demo ---------------- */
 const A0 = B.assignForceField(S, P0);
@@ -53,7 +53,9 @@ const Aash = B.assignForceField(S, P({ ff: { overrides: { [B.resId(asp)]: 'ASH' 
 
 /* ---------------- QM cluster model (demo) ---------------- */
 const xb = hits.filter(h => h.halogen === 'I' && h.accName === 'O');
-const model = B.buildQMModel(S, 0, xb, { P: P0 });
+const model = B.buildQMModel(S, 0, xb, { P: P({ qm: { hbShell: 0 } }) });
+const modelHB = B.buildQMModel(S, 0, xb, { P: P0 });
+ok(modelHB.qm.length >= model.qm.length && (modelHB.qm.length === model.qm.length || (modelHB.manifest.warnings || []).some(w => /N–H or O–H group lies within/.test(w))), `hbShell: residues with N–H/O–H near X join fragment 2 and are reported (${model.qm.length} → ${modelHB.qm.length} atoms)`);
 const mf = model.manifest;
 const el = {}; model.qm.forEach(a => { el[a.el] = (el[a.el] || 0) + 1; });
 ok(mf.fragCharge[1] === 0 && mf.fragCharge[2] === 1, `fragment charges from templates (ligand 0, N-terminal Ala +1): ${JSON.stringify(mf.fragCharge)}`);
@@ -61,8 +63,8 @@ ok(model.qm.filter(a => a.frag === 2 && a.added).length === 3 + 1 + 3, 'Ala: 3 H
 ok((model.qm.reduce((s, a) => s + B.Z[a.el], 0) - mf.totalCharge) % 2 === 0, 'even electron count');
 let minD = 9; model.qm.forEach((a, i) => model.qm.forEach((b, j) => { if (j > i) minD = Math.min(minD, Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z)); }));
 ok(minD > 0.9, 'no atoms closer than 0.9 Å in the QM model: ' + minD.toFixed(3));
-ok(mf.residueCharges.length === 2 && mf.assumptions.length > 3 && mf.forceField === 'ff14SB', 'manifest records residue charges, assumptions and force field');
-const scaled = B.buildQMModel(S, 0, xb, { P: P({ qm: { linkScheme: 'scaled' } }) }); ok(scaled.manifest.linkH === model.manifest.linkH, 'scaled link-atom scheme builds the same topology');
+ok(mf.residueCharges.length === 2 && mf.assumptions.length > 3 && mf.forceField === 'ff14SB', 'manifest records residue charges, assumptions, and force field');
+const scaled = B.buildQMModel(S, 0, xb, { P: P({ qm: { linkScheme: 'scaled', hbShell: 0 } }) }); ok(scaled.manifest.linkH === model.manifest.linkH, 'scaled link-atom scheme builds the same topology');
 
 /* ---------------- 1US0 + IDD594 (real protein, Br···O Thr113) ---------------- */
 const U = B.parsePDB(fs.readFileSync(path.join(__dirname, 'ref/1US0_IDD594.pdb'), 'utf8'));
@@ -77,7 +79,27 @@ const expected = (counts.ARG || 0) + (counts.LYS || 0) + (counts.HIP || 0) - (co
 ok(formal === expected, `1US0 net charge = Arg+Lys−Asp−Glu+termini (${expected})`);
 const um = B.buildQMModel(U, 0, [thr], { P: P0 });
 ok(um.manifest.fragCharge[2] === 0 && (um.qm.reduce((s, a) => s + B.Z[a.el], 0) - um.manifest.totalCharge) % 2 === 0, `Thr113 cluster: fragment charges ${JSON.stringify(um.manifest.fragCharge)}, even electrons`);
-ok(um.qm.filter(a => a.frag === 2 && a.added).length === 1 + 1 + 1 + 1 + 3, 'Thr: H on N, CA, CB, OG1 and 3 on CG2 (from THR template)');
+ok(um.qm.filter(a => a.frag === 2 && a.added).length === 1 + 1 + 1 + 1 + 3, 'Thr: H on N, CA, CB, and OG1 and 3 on CG2 (from THR template)');
+// hydroxyl rotamer near a halogen: all acceptors scored alike; the rotamer can be forced either way
+{ const hOf = m => { const q = m.qm; const og = q.findIndex(a => a.src && a.src.name === 'OG1' && a.src.resSeq === 113); const br = q.findIndex(a => a.el === 'BR');
+    const H = q.filter(a => a.el === 'H').sort((x, y) => Math.hypot(x.x - q[og].x, x.y - q[og].y, x.z - q[og].z) - Math.hypot(y.x - q[og].x, y.y - q[og].y, y.z - q[og].z))[0];
+    return Math.hypot(H.x - q[br].x, H.y - q[br].y, H.z - q[br].z); };
+  const dBest = hOf(B.buildQMModel(U, 0, [thr], { P: P0 })), dTo = hOf(B.buildQMModel(U, 0, [thr], { P: P({ qm: { polarHRotamer: 'toHalogen' } }) })), dAway = hOf(B.buildQMModel(U, 0, [thr], { P: P({ qm: { polarHRotamer: 'awayFromHalogen' } }) }));
+  ok(dTo < 2.9 && dAway > 2.9 && Math.abs(dBest - dAway) < 1e-6, `Thr113 OG1-H rotamer: best ${dBest.toFixed(2)} Å, toward Br ${dTo.toFixed(2)} Å, away ${dAway.toFixed(2)} Å from Br`); }
+// flags of the NBO screen: competing H-bond, ring acceptor, poor Lewis base
+{ const at = (n, el) => ({ n, el }); const e = (dt, da, dAt, aAt, v) => ({ donor: { type: dt, atoms: dAt }, acceptor: { type: da, atoms: aAt }, e2: v });
+  const man = { atoms: [{ el: 'C', frag: 1 }, { el: 'BR', frag: 1 }, { el: 'O', frag: 2 }, { el: 'H', frag: 2 }], xbs: [{ id: 'XB1', type: 'atom', X: 2, A: 1, Y: 3, label: 't', lewis: 'strong' }] };
+  const nbo = { entries: [e('LP', 'BD*', [at(3, 'O')], [at(1, 'C'), at(2, 'BR')], 1.0), e('LP', 'BD*', [at(2, 'BR')], [at(3, 'O'), at(4, 'H')], 2.0)], npa: {} };
+  const g = B.nboGate(man, nbo)[0];
+  ok(g.verdict === 'supported' && g.flags.includes('hbond') && !g.flags.includes('poorBase'), `competing H-bond flag when X→σ*(O–H) (2.00) exceeds ΣE(2) (1.00): ${g.flags}`);
+  const man2 = JSON.parse(JSON.stringify(man)); man2.xbs[0].lewis = 'weak'; nbo.entries[1].e2 = 0.2;
+  const g2 = B.nboGate(man2, nbo)[0]; ok(g2.flags.join() === 'poorBase', `poor Lewis base flag kept, no H-bond flag below ΣE(2): ${g2.flags}`);
+  const r1 = B.computeBXQI({ G: 0.8, E2: 1.0, flags: ['hbond'] }), r2 = B.computeBXQI({ G: 0.5, E2: 0.9 });
+  ok(B.rankCandidates([{ s: r1 }, { s: r2 }])[0].s === r2, 'a supported contact with a dominant competing H-bond ranks after a clean supported contact'); }
+// persistence score at coarse sampling: D is practically f, and the accumulator says so
+{ const acc = B.trajAccumulator(S, P({ dyn: { dt: 160 } }), {}); acc.add(S.frames[0], null, 0); const r = acc.finish();
+  ok(r.frameSpacingPs === 160 && /practically equal to the occupancy/.test(r.resolutionWarning || ''), 'warning when the frame spacing is not shorter than τ0');
+  ok(B.Dscore(0.257, 160, B.defaults()) > 0.94 * 0.257, `D(f = 0.257, τ = 160 ps) = ${B.Dscore(0.257, 160, B.defaults()).toFixed(3)} ≈ f`); }
 // QM/MM embedding
 const base = { P: P0, ffa: um.ffa, qmResidueCharges: um.qmResCharge };
 const eNone = B.embeddingCharges(U, 0, um.include, Object.assign({}, base, { P: P({ mm: { boundary: 'none' } }) }));
@@ -91,6 +113,32 @@ const Psc = P({ qm: { mode: 'sidechain' } }); const usc = B.buildQMModel(U, 0, [
 const esc = B.embeddingCharges(U, 0, usc.include, { P: Psc, ffa: usc.ffa, qmResidueCharges: usc.qmResCharge });
 const escRaw = B.embeddingCharges(U, 0, usc.include, { P: B.mergeParams(Psc, { mm: { neutralizeCut: false } }), ffa: usc.ffa, qmResidueCharges: usc.qmResCharge });
 ok(esc.cut === 1 && near(esc.net, Math.round(esc.net), 1e-6) && !near(escRaw.net, Math.round(escRaw.net), 1e-3), `side-chain QM: cut-residue correction gives integer MM charge (${esc.net.toFixed(4)} vs ${escRaw.net.toFixed(4)} uncorrected)`);
+// V3: RCD boundary, explicit MM hydrogens near X, zero-charge count
+const eRCD = B.embeddingCharges(U, 0, um.include, Object.assign({}, base, { P: P({ mm: { boundary: 'RCD' } }) }));
+ok(near(eRCD.net, eNone.net, 1e-9) && eRCD.charges.length === eRC.charges.length, `RCD boundary conserves the MM charge (${eRCD.net.toFixed(6)})`);
+const eFold = B.embeddingCharges(U, 0, um.include, Object.assign({}, base, { P: P({ mm: { explicitH: 0 } }) }));
+ok(eRC.nExplicitH > 0 && eFold.nExplicitH === 0 && near(eRC.net, eFold.net, 1e-9), `explicit MM hydrogens near X (${eRC.nExplicitH}) keep the net charge`);
+ok(eFold.nZero >= 0 && eFold.charges.length + eFold.nZero === eFold.nMM + eFold.charges.filter(c => c.i === undefined).length, 'zero-charge MM atoms are counted');
+// V3: amide kept for backbone N acceptors; His near X listed
+const D4 = B.parsePDB(fs.readFileSync(path.join(__dirname, 'ref/4dst.pdb'), 'utf8'));
+const gN = B.detectXB(D4, P0).hits.find(h => h.status === 'XB' && D4.atoms[h.Y] && D4.atoms[h.Y].name === 'N');
+if (gN) {
+  const mA = B.buildQMModel(D4, 0, [gN], { P: P0 }); const mOff = B.buildQMModel(D4, 0, [gN], { P: P({ qm: { keepAmide: 'off' } }) });
+  ok(mA.qm.length > mOff.qm.length && mA.manifest.warnings.some(w => /keeps its amide/.test(w)), `backbone N acceptor keeps its amide (${mOff.qm.length} → ${mA.qm.length} atoms)`);
+  ok(gN.lewis === 'weak' && /delocalized/.test(gN.lewisWhy), 'amide N flagged as a poor Lewis base (delocalized)');
+} else ok(false, '4DST Cl···N contact found');
+// V3: ligand pKa flags, pyridinium, nucleobase rings, short flag, basis caution
+const amine = B.parsePDB(['HETATM    1  N1  AMN A   1       0.000   0.000   0.000  1.00  0.00           N', 'HETATM    2  C1  AMN A   1       1.470   0.000   0.000  1.00  0.00           C', 'HETATM    3  C2  AMN A   1       2.000   1.420   0.000  1.00  0.00           C', 'END'].join('\n'));
+const la = B.ligandProtonation(amine, amine.frames[0], amine.residues[0], 'rules'); const lb = B.ligandProtonation(amine, amine.frames[0], amine.residues[0], 'rules', { basicAmines: 'protonate' });
+ok(la.charge === 0 && la.flags.some(f => /aliphatic amine/.test(f)) && lb.charge === 1 && lb.nHtotal === la.nHtotal + 1, 'aliphatic amine flagged, or protonated on request');
+const py = B.parsePDB(['N1', 'C2', 'C3', 'C4', 'C5', 'C6'].map((n, k) => { const a = k * Math.PI / 3; return `HETATM${String(k + 1).padStart(5)}  ${n.padEnd(3)} MPY A   1    ${(1.39 * Math.cos(a)).toFixed(3).padStart(8)}${(1.39 * Math.sin(a)).toFixed(3).padStart(8)}   0.000  1.00  0.00           ${n[0]}`; }).concat(['HETATM    7  C7  MPY A   1       2.870   0.000   0.000  1.00  0.00           C', 'END']).join('\n'));
+const lp = B.ligandProtonation(py, py.frames[0], py.residues[0], 'rules'); ok(lp.charge === 1 && lp.nHtotal === 8, 'N-methylpyridinium: +1 and 8 H');
+ok(B.geometricScore('I', 'N', 2.43, 180, 120, P0, false).short === true && B.geometricScore('I', 'O', 3.10, 170, 125, P0, false).short === false, 'short contacts (R < 0.80) flagged');
+const gpen = B.geometricScore('I', 'N', 2.43, 180, 120, P({ score: { Rshort: 0.80, Rmin: 0.60 } }), false); ok(gpen.gd < 1 && near(gpen.gd, (2.43 / 3.53 - 0.60) / 0.20, 1e-6), 'optional short-contact penalty');
+ok(/diffuse/.test(B.basisCaution(um, 'def2TZVP')) && B.basisCaution(um, 'def2-TZVPD') === null, 'anionic model without diffuse functions gets a caution');
+// V3: added hydroxyl hydrogens are rotated to their best hydrogen bond (Thr113 OG1 H pointed at Br with the fixed rule)
+{ const hd = o => { const m = B.buildQMModel(U, 0, [thr], { P: P({ qm: { orientPolarH: o } }) }); const br = m.qm.find(a => a.el === 'BR'); const og = m.qm.find(a => a.src && a.src.name === 'OG1'); const h = m.qm.find(a => a.el === 'H' && Math.hypot(a.x - og.x, a.y - og.y, a.z - og.z) < 1.1); return Math.hypot(h.x - br.x, h.y - br.y, h.z - br.z); };
+  ok(hd(false) < 2.3 && hd(true) > 3.0, `Thr113 hydroxyl H: ${hd(false).toFixed(2)} Å from Br with the fixed rule, ${hd(true).toFixed(2)} Å after orientation`); }
 // writers with point charges
 const o = { nproc: 8, mem: '16GB', job: 'xb1', method: 'wB97XD', basis: 'def2TZVP', solvent: false, eps: 4, maxcore: 3000, memMB: 16000 };
 const g = B.writeGaussian(um, o, eRC); const gl = g.split('\n'); const iq = gl.findIndex(l => /^0 1$|^0 2$|^-?\d+ \d+$/.test(l));
@@ -120,19 +168,25 @@ out += '\n NATURAL BOND ORBITALS (Summary):\n Normal termination of Gaussian 16\
 const nbo = B.parseNBO(out); const ver = B.verifyGeometry(mf, nbo.geometry, 0.05); ok(ver.ok, 'manifest geometry verified against output');
 const gate = B.nboGate(mf, nbo, { threshold: 0.5, includeRY: true }); ok(near(gate[0].E2_core, 3.68), 'ΣE(2) with RY* = 3.68');
 const gate2 = B.nboGate(mf, nbo, { threshold: 0.5, includeRY: false }); ok(near(gate2[0].E2_core, 3.47), 'ΣE(2) without RY* = 3.47 (option)');
-const gate3 = B.nboGate(mf, nbo, { threshold: 4.0 }); ok(!gate3[0].verified, 'raising the gate threshold rejects');
+const gate3 = B.nboGate(mf, nbo, { greyHigh: 4.0 }); ok(gate3[0].verdict === 'inconclusive', 'raising the upper grey-zone limit makes 3.47 inconclusive');
+ok(gate2[0].verdict === 'supported' && near(gate2[0].E2_RY, 0.21) && near(gate2[0].E2_valence, 3.47), 'valence decision value with the Rydberg part reported beside it');
+ok(B.gateVerdict(0.29) === 'not supported' && B.gateVerdict(0.3) === 'inconclusive' && B.gateVerdict(0.79) === 'inconclusive' && B.gateVerdict(0.8) === 'supported', 'grey zone 0.3–0.8 kcal/mol');
+ok(B.nboGate(mf, nbo)[0].includeRY === false, 'Rydberg terms are off in the default decision');
 const wrong = Object.assign({}, mf, { atoms: mf.atoms.slice(1) }); ok(B.verifyGeometry(wrong, nbo.geometry).ok === false && B.verifyGeometry(wrong, nbo.geometry).elMis > 0, 'output with different atom count is refused');
 
 /* ---------------- EDA, BXQI ---------------- */
 const E = B.parseEDA('Simplified EDA Summary (kJ/mol)\n PREPARATION 0.0000\n FROZEN -8.4128\n [PAULI 38.4431]\n [ELEC -35.1227]\n [DISP -11.7332]\n POLARIZATION -4.1651\n CHARGE TRANSFER -8.2513\n TOTAL -20.8292\n Thank you very much for using Q-Chem.');
-ok(near(E.ct, -8.2513) && near(E.total, -20.8292), 'EDA summary parsed');
-const E2 = B.parseEDA('  E_frz (kcal/mol) = -2.0\n  E_pol (kcal/mol) = -1.0\n  E_vct (kcal/mol) = -1.5\n'); ok(near(E2.pol, -4.184), 'kcal/mol converted');
+ok(near(E.ct, -8.2513 / 4.184) && near(E.total, -20.8292 / 4.184) && E.units === 'kcal/mol', 'EDA summary parsed and converted to kcal/mol');
+const E2 = B.parseEDA('  E_frz (kcal/mol) = -2.0\n  E_pol (kcal/mol) = -1.0\n  E_vct (kcal/mol) = -1.5\n'); ok(near(E2.pol, -1.0) && E2.units === 'kcal/mol', 'kcal/mol output kept');
 const d1 = B.edaDescriptors(E, P0); ok(d1.mechanism.startsWith('Charge-transfer'), 'χ_CT = 0.66 → CT driven');
 const d2 = B.edaDescriptors(E, P({ eda: { chiHigh: 0.7 } })); ok(d2.mechanism.startsWith('Mixed'), 'changing χ_CT threshold changes the label');
-const q = B.computeBXQI({ G: 0.8591, occupancy: 0.62, Dscore: 0.5860, E2: 1.40, eda: { total: -12.4, ct: -5.6, pol: -3.2 } }, P0);
-ok(near(q.score, 64.65, 0.01) && q.grade.startsWith('B'), 'BXQI worked example = 64.65, grade B');
-const q2 = B.computeBXQI({ G: 0.8591, E2: 0.2 }, P0); ok(q2.grade.includes('rejected at NBO gate'), 'failed gate → rejected grade');
-const q3 = B.computeBXQI({ G: 0.8591, occupancy: 0.62, Dscore: 0.5860, E2: 1.40, eda: { total: -12.4, ct: -5.6, pol: -3.2 } }, P({ bxqi: { gradeB: 70 } })); ok(q3.grade.startsWith('C'), 'grade thresholds are adjustable');
+const q = B.computeBXQI({ G: 0.8591, occupancy: 0.62, Dscore: 0.5860, E2: 1.40, eda: { total: -2.96, ct: -1.34, pol: -0.76 } }, P0);
+const qExp = 100 * Math.exp((0.25 * Math.log(0.8591) + 0.20 * Math.log(0.5860) + 0.30 * Math.log(1 - Math.exp(-1.40 / 2)) + 0.25 * Math.log(1 - Math.exp(-2.96 / 2.4))));
+ok(near(q.score, qExp, 1e-9) && near(q.score, 64.6, 0.1) && q.verdict === 'supported' && q.grade === undefined, 'BXQI worked example = 64.6, no grades');
+const q2 = B.computeBXQI({ G: null, E2: 13.7 }, P0); ok(q2.provenance === 'E' && near(q2.score, 100 * (1 - Math.exp(-13.7 / 2))) && q2.skipped.includes('G'), 'unevaluable tier is dropped, not floored');
+const q3 = B.computeBXQI({ G: 0.64, E2: 1.0, eda: { total: 3.35 } }, P0); ok(q3.score === 0 && q3.repulsiveEDA, 'repulsive EDA total gives s_C = 0');
+const q4 = B.computeBXQI({ G: 0.64, E2: 1.0, eda: { total: 3.35 } }, P({ bxqi: { useC: false } })); ok(q4.score > 0 && q4.provenance === 'G·E', 'EDA tier can be switched off');
+const rk = B.rankCandidates([{ s: B.computeBXQI({ G: 0.64, E2: 0.49 }, P0) }, { s: B.computeBXQI({ G: 0.45, E2: 0.85 }, P0) }]); ok(rk[0].s.verdict === 'supported', 'ranking follows the NBO decision first');
 
 /* ---------------- trajectory, DCD, CIF, altloc, cryo-EM box ---------------- */
 const T = B.parsePDB(fs.readFileSync(path.join(__dirname, 'data/demo_traj.pdb'), 'utf8'));
@@ -140,7 +194,7 @@ const tr = B.analyzeTrajectory(T, T.frames, T.boxes, P({ dyn: { occCut: 5 } }));
 const dcd = B.parseDCD(fs.readFileSync(path.join(__dirname, 'data/demo_traj.dcd')).buffer.slice(0), S.atoms.length);
 const tr2 = B.analyzeTrajectory(S, dcd.frames, dcd.boxes, P({ dyn: { occCut: 5 } }));
 ok(dcd.frames.length === 60 && tr2.results.length === tr.results.length && near(tr2.results[0].occupancy, tr.results[0].occupancy), 'DCD and multi-model PDB give the same persistence');
-ok(tr.results.every(r => near(r.D, B.Dscore(r.occupancy, r.meanResidence, P0))), 'D uses the documented formula');
+ok(tr.results.every(r => near(r.D, B.Dscore(r.occupancy, r.meanResidence * P0.dyn.dt, P0)) && near(r.meanResidencePs, r.meanResidence * P0.dyn.dt)), 'D uses the documented formula with τ in ps');
 const cif = 'data_t\n_cell_length_a 8.0\n_cell_length_b 9.0\n_cell_length_c 10.0\n_cell_angle_alpha 90\n_cell_angle_beta 90\n_cell_angle_gamma 90\nloop_\n_symmetry_equiv_pos_as_xyz\n\'x,y,z\'\n\'-x+1/2,-y,z+1/2\'\nloop_\n_atom_site_label\n_atom_site_type_symbol\n_atom_site_fract_x\n_atom_site_fract_y\n_atom_site_fract_z\nI1 I 0.10 0.10 0.10\nC1 C 0.10 0.10 -0.11\nN1 N 0.10 0.10 0.40\nC2 C 0.10 0.10 0.54\n';
 const M = B.parseCIF(cif); const mx = B.detectMaterialXB(M, P0); ok(mx.some(h => h.Xlabel === 'I1' && h.Ylabel === 'N1' && near(h.d, 3.0, 0.01)), 'CIF I···N found'); ok(mx.filter(h => h.Xlabel === 'I1' && h.Ylabel === 'N1' && h.status === 'XB').length === 1 && mx.find(h => h.Ylabel === 'N1').mult === 2, 'symmetry-equivalent CIF contacts reported once (2 copies)');
 let bad = false; try { B.parseCIF(cif.replace("'x,y,z'", "'x,y,alert(1)'")); } catch (e) { bad = /Unsupported/.test(e.message); } ok(bad, 'unsafe CIF symmetry operator refused');
@@ -193,7 +247,7 @@ const emHits = B.detectXB(B.parsePDB(em), P0).hits; ok(emHits.length === hits.le
   // placed H: no clash with any other atom of the model
   let clash = 0; for (const M of [t.m, v.m, r.m]) M.qm.forEach((a, i) => { if (a.el !== 'H') return; M.qm.forEach((b, j) => { if (j === i || j === a.parent) return; const d = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z); if (b.el !== 'H' && d < 1.15) return; // its own X-H bond (hydrogens from the file carry no parent index)
       if (d < (b.el === 'H' ? 1.2 : 1.5) && !(b.el === 'H' && b.parent === a.parent && d > 1.4)) clash++; }); });
-  { const S = r.S; const emb = forceH => { const P = B.fullParams({ qm: { env: 'qmmm', forceH } }); const ffa = B.assignForceField(S, P, {});
+  { const S = r.S; const emb = forceH => { const P = B.fullParams({ qm: { env: 'qmmm', forceH }, mm: { radius: 15 } }); const ffa = B.assignForceField(S, P, {});
       const hh = B.detectXB(S, P).hits.filter(h => S.residues[h.donorRes].resName === 'R47').sort((a, b) => b.G - a.G); const m = B.buildQMModel(S, 0, [hh[0]], { P, ffa });
       const pc = B.embeddingCharges(S, 0, m.include, { P, ffa, qmResidueCharges: m.qmResCharge }); return [pc.charges.length, +pc.net.toFixed(4)]; };
     const a1 = emb(false), a2 = emb(true); ok(a1[0] === a2[0] && a1[1] === a2[1] && a1[1] === 2, `replaced file H never become MM charges (4GQL: ${a1} vs re-protonated ${a2})`); }

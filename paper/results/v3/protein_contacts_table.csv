@@ -1,0 +1,15 @@
+contact,sys,n,G,val_default,val_min,val_max,RY_default,withRY_min,withRY_max,hbY_max,hbFrag2_max,verdicts,verdicts_withRY_vs_05
+9LI201:A@CL2···GLY75:A@N,4dst,14,0.12,0.07,0.0,0.07,0.06,0.0,0.13,0.0,0.0,['not supported'],['fail']
+BVP1207:A@BR···ASN65:A@OD1,2w0s,14,0.87,3.86,3.61,4.17,0.46,4.02,4.72,0.0,10.79,['supported'],['pass']
+BVP1207:B@BR···ASN65:B@OD1,2w0s,1,0.72,2.05,2.05,2.05,0.23,2.28,2.28,0.0,0.0,['supported'],['pass']
+LDT320:A@BR8···THR113:A@OG1,1us0_idd594,16,0.64,0.33,0.31,0.42,0.16,0.38,0.72,6.67,6.67,['inconclusive'],"['fail', 'pass']"
+P84400:A@I15···LEU145:A@O,4agl,14,0.91,2.07,1.96,2.24,0.13,2.02,2.3,0.0,0.44,['supported'],['pass']
+P84400:B@I15···LEU145:B@O,4agl,1,0.93,2.3,2.3,2.3,0.1,2.4,2.4,0.0,0.0,['supported'],['pass']
+R47306:A@CL1···PRO232:A@O,4gql,14,0.87,1.87,1.75,1.96,0.06,1.83,2.04,0.0,0.0,['supported'],['pass']
+TBS301:A@BR10···ILE10:A@O,1p5e,14,0.38,0.33,0.31,0.36,0.0,0.31,0.36,0.0,0.0,['inconclusive'],['fail']
+TBS301:A@BR11···LEU83:A@O,1p5e,14,0.83,3.07,3.07,3.47,0.0,3.07,3.56,0.0,1.15,['supported'],['pass']
+TBS301:A@BR12···GLU81:A@O,1p5e,14,0.76,2.08,2.08,2.33,0.0,2.08,2.33,0.0,0.46,['supported'],['pass']
+TBS301:A@BR13···PHE80:A@π(ring),1p5e,14,0.51,0.55,0.52,0.64,0.0,0.52,0.64,0.0,0.0,['inconclusive'],['pass']
+TBS302:C@BR11···LEU83:C@O,1p5e,1,0.97,3.02,3.02,3.02,0.06,3.08,3.08,0.0,1.39,['supported'],['pass']
+TBS302:C@BR12···GLU81:C@O,1p5e,1,0.78,1.87,1.87,1.87,0.0,1.87,1.87,0.0,0.28,['supported'],['pass']
+TBS302:C@BR13···PHE80:C@π(ring),1p5e,1,0.54,1.31,1.31,1.31,0.0,1.31,1.31,0.0,0.0,['supported'],['pass']

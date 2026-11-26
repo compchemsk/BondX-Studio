@@ -1,64 +1,73 @@
-\paragraph{Step 1 (T0) structure.}
+\paragraph{Tier T0, structure input.}
 \begin{itemize}[nosep,leftmargin=*]
 \item The first MODEL of a multi-model file defines the atoms. Later models serve as trajectory frames.
-\item For alternate locations, the first conformer (A, 1 or blank) is kept.
-\item Virtual sites are removed on reading. Examples are the $\sigma$-hole extra point (EP) of a halogen, LP sites and TIP4P M sites. DCD and XYZ frames with these sites are mapped onto the remaining atoms.
-\item Bonds come from distances: d $<$ r\_cov(1) + r\_cov(2) + 0.45 \AA{}. Links between residues are limited to peptide, disulfide and phosphodiester bonds.
+\item For alternate locations, the first conformer (A, 1, or blank) is kept.
+\item Virtual sites are removed on reading. Examples are the $\sigma$-hole extra point (EP) of a halogen, LP sites, and TIP4P M sites. DCD and XYZ frames with these sites are mapped onto the remaining atoms.
+\item Bonds come from distances: d $<$ r\_cov(1) + r\_cov(2) + 0.45 \AA{}. Links between residues are limited to peptide, disulfide, and phosphodiester bonds.
 \item Element symbols come from columns 77--78. Atom names supply missing element symbols.
-\item Residues are classed as protein, nucleic acid, water, ion (single atom) or ligand (all other residues).
+\item Residues are classed as protein, nucleic acid, water, ion (single atom), or ligand (all other residues).
 \end{itemize}
-\paragraph{Step 2 (T1) geometry.}
+\paragraph{Tier T1, geometry.}
 \begin{itemize}[nosep,leftmargin=*]
-\item Donors: C-bound Cl, Br and I atoms of ligands and modified residues.
+\item Donors: C-bound Cl, Br, and I atoms of ligands and modified residues.
 \item A halogen bond needs d(X$\cdots$Y) $\le$ the pair cut-off and 140$^\circ$ $\le$ $\theta_1$ $\le$ 180$^\circ$.
-\item Acceptors: protein N/O/S, nucleic-acid N/O, aromatic rings (Phe, Tyr, Trp) with $\alpha$ $\le$ 60$^\circ$.
+\item Acceptors: protein N/O/S, nucleic-acid N/O, and aromatic rings (Phe, Tyr, Trp, and nucleobases) with $\alpha$ $\le$ 60$^\circ$.
 \item R = d / (r\_X + r\_Y) with Bondi radii. An aromatic centroid has r = 1.77 \AA{}.
-\item G = [g\_d $\cdot$ g\_$\theta$ $\cdot$ ($\frac12$ + $\frac12$ g$_2$)]\^{}$\frac13$. g\_d = 1 at R $\le$ 0.85. g$_2$ is a Gaussian around $\theta_2$ = 120$^\circ$ (width 40$^\circ$).
-\item Poor Lewis bases are kept with the flag ``weak''. The NBO gate decides their fate.
+\item G = [g\_d $\cdot$ g\_$\theta$ $\cdot$ ($\frac12$ + $\frac12$ g$_2$)]\^{}$\frac13$. g\_d = 1 at R $\le$ 0.85. g$_2$ is a Gaussian around $\theta_2$ = 120$^\circ$ (width 40$^\circ$). Contacts with R $<$ 0.8 are flagged as short.
+\item Poor Lewis bases are kept with a flag: N atoms with a delocalized lone pair (backbone amide N, Asn ND2, Gln NE2, and Trp NE1) and protonated N atoms (Lys NZ, Arg NE/NH1/NH2). Such contacts need the NBO step and a check for N--H$\cdots$X hydrogen bonds.
+\item The distance cut-offs of iodine come from an earlier hIYD study. The Br and Cl values follow from them by the shift in halogen radius. All cut-offs are editable.
 \item Hydrogens are not required. Periodic images apply only to MD boxes (orthorhombic, edges $\ge$ 10 \AA{}).
 \end{itemize}
-\paragraph{Step 3 (T2) dynamics.}
+\paragraph{Tier T2, persistence in dynamics.}
 \begin{itemize}[nosep,leftmargin=*]
 \item Frames must have the atoms of the topology in the same order.
 \item The T1 test runs on every frame. Contacts in fewer than 10\% of the frames are not reported.
-\item Residence time $\tau$ = mean length of unbroken runs. D = f$\cdot$(1 $-$ e\^{}($-\tau$/5))\^{}0.25.
+\item Residence time $\tau$ = mean length of unbroken runs $\times$ 1 ps per saved frame. D = f $\cdot$ [1 $-$ exp($-\tau$/100 ps)]\^{}0.25. When the analysed frames are $\tau$0 or more apart, D is practically equal to f, and the program says so.
+\item Frames of biased simulations (e.g. umbrella windows) are counted without reweighting. Occupancies then describe each window, not the unbiased ensemble.
 \item The representative frame has the shortest d. Ties go to the largest $\theta_1$.
 \item Orthorhombic boxes (DCD unit cell or CRYST1) use the minimum-image convention. The ligand should be imaged and centred.
 \end{itemize}
-\paragraph{Step 4 (T3a) QM cluster model.}
+\paragraph{Tier T3a, QM cluster model.}
 \begin{itemize}[nosep,leftmargin=*]
 \item Protonation states and partial charges come from AMBER ff14SB (+ OL15 DNA, OL3 RNA). ASP and GLU are anionic. LYS and ARG are cationic. CYS and TYR are neutral. HIS is HIE by default. A tautomer name in the file (HID/HIE/HIP, HSD/HSE/HSP) or its hydrogens override this default. Changes for single residues override everything.
 \item Cys pairs with S--S $<$ 2.5 \AA{} are disulfides (CYX). Chain termini are charged (NH$_3^+$, COO$^-$). Residues next to a chain break are treated as internal.
 \item Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds the whole acceptor residues.
+\item Residues with an N--H or O--H group within 3.6 \AA{} of a halogen join fragment 2, so a competing hydrogen bond to X is inside the QM region. Added O--H and S--H hydrogens take the rotamer with the best hydrogen bond (N, O, and halogen acceptors alike); a near tie between a halogen-directed and another rotamer is reported.
 \item Missing hydrogens follow the force-field template of each residue (number of H per atom) with VSEPR geometry. Cut bonds get H caps (fixed X--H length).
-\item Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp$^2$ carbon gets one double bond. The keto form is preferred. An sp$^2$ ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. At pH 7, COOH, phosphate, phosphonate, sulfonate and sulfate groups lose their O--H hydrogen. Amines stay neutral. Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count.
+\item Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp$^2$ carbon gets one double bond. The keto form is preferred. An sp$^2$ ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. At pH 7, COOH, phosphate, phosphonate, sulfonate, and sulfate groups lose their O--H hydrogen. Aliphatic amines stay neutral and are flagged, because most of them are protonated at pH 7. Tetrazoles and acyl sulfonamides stay neutral and are flagged, because most of them are anionic at pH 7. Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count. A MOL2 or PQR file with a pKa-based state (e.g. from Epik or PROPKA) is the recommended source of the ligand charge.
 \item Fragment charges: residue formal charges come from the force-field template. The ligand charge comes from a loaded MOL2 file or from the ligand structure above. Every value can be overridden.
 \item The QM cluster sits in an implicit dielectric $\varepsilon$ = 4 (CPCM/PCM). The dielectric represents the protein.
+\item Histidine without hydrogens in the file is HIE. BondX lists every His near the halogen. Its state should be checked with a pKa tool (e.g. PROPKA through PDB2PQR).
+\item Anionic fragments need diffuse functions for reliable energies (e.g. def2-TZVPD or ma-def2-TZVP). BondX warns when an anionic model is written with a basis set without them.
 \end{itemize}
-\paragraph{Step 4 (T3a) QM/MM model (extra lines).}
+\paragraph{Tier T3a, QM/MM model (additional lines).}
 \begin{itemize}[nosep,leftmargin=*]
-\item QM/MM: MM point charges within 15 \AA{} (whole residues) come from a loaded PQR file or from AMBER ff14SB (+ OL15 DNA, OL3 RNA). Water model: TIP3P.
-\item For atoms without hydrogens in the file, each hydrogen charge moves onto its heavy atom. Residue charges stay exact. Local dipoles are approximate.
+\item QM/MM: MM point charges of the whole structure come from a loaded PQR file or from AMBER ff14SB (+ OL15 DNA, OL3 RNA). Water model: TIP3P.
+\item MM residues with an atom within 6 \AA{} of a halogen receive explicit hydrogens with their template charges. Farther away, each hydrogen charge moves onto its heavy atom. Residue charges stay exact.
 \item Boundary: the charge of each M1 atom moves to the midpoints of its M1--M2 bonds (redistributed charge, RC).
-\item The embedding is electrostatic only. QM--MM van der Waals terms are not included. They do not enter the NBO analysis of a single point.
+\item The embedding is electrostatic only. QM--MM van der Waals terms are not included. They do not enter the NBO analysis of a single point. The MM region is not neutralized and has no solvent; its net charge is reported.
 \item Ligands and cofactors in the MM region carry MOL2 charges from a loaded file. Without a MOL2 file, a charged group (carboxylate, phosphate, sulfate, R$_4$N$^+$) carries its formal charge on its heavy atoms. Neutral groups get zero charges. Both cases are flagged.
 \end{itemize}
-\paragraph{Step 5 (T3b) NBO gate.}
+\paragraph{Tier T3b, NBO screen.}
 \begin{itemize}[nosep,leftmargin=*]
-\item A contact is verified at $\Sigma$E(2) $\ge$ 0.5 kcal/mol. The sum covers n(Y)$\to\sigma$*(A--X) and n(Y)$\to$RY*(X) for lone-pair acceptors. It covers $\pi$(ring)$\to\sigma$*(A--X) for aromatic acceptors.
-\item The output geometry must match the manifest atom by atom (same elements, deviation $<$ 0.05 \AA{}). A mismatch blocks the gate.
-\item NBO prints only couplings above its own print threshold (0.50 kcal/mol by default). Open-shell $\alpha$ and $\beta$ tables are summed.
+\item $\Sigma$E(2) sums n(Y)$\to\sigma$*(A--X) (valence part; n(Y)$\to$RY*(X) is reported beside it) for lone-pair acceptors and $\pi$(ring)$\to\sigma$*(A--X) for aromatic acceptors. $\Sigma$E(2) $\ge$ 0.8 kcal/mol: orbital-supported. 0.3--0.8 kcal/mol: inconclusive. Below 0.3 kcal/mol: not supported.
+\item $\Sigma$E(2) is a second-order estimate for one localization scheme and level of theory, not an observable or a binding energy. It does not detect bent geometries that are repulsive or compressed contacts that are losing binding, so the T1 limits stay part of the decision.
+\item Donation from the halogen lone pairs into N--H or O--H antibonds of the acceptor side is reported beside $\Sigma$E(2). When it exceeds $\Sigma$E(2) (and is at least 0.5 kcal/mol), the contact is flagged: a competing N--H$\cdots$X or O--H$\cdots$X hydrogen bond dominates, and such a contact ranks after the unflagged supported contacts.
+\item Ring acceptors give about a quarter of the $\Sigma$E(2) per unit binding energy of N acceptors in HAL59 (O acceptors about two thirds), so an inconclusive ring contact can be a real, weak halogen--$\pi$ bond; ring contacts carry a flag. Poor Lewis bases keep their T1 flag, because NBO can place a lone pair on them in its Lewis structure.
+\item The output geometry must match the manifest atom by atom (same elements, deviation $<$ 0.05 \AA{}). A mismatch blocks the NBO screen.
+\item NBO prints couplings between two units (here the ligand and a protein residue) above 0.05 kcal/mol and couplings within one unit above 0.50 kcal/mol. Open-shell $\alpha$ and $\beta$ tables are summed.
 \end{itemize}
-\paragraph{Step 6 (T4) ALMO-EDA.}
+\paragraph{Tier T4, ALMO-EDA.}
 \begin{itemize}[nosep,leftmargin=*]
 \item Fragment 1 is the halogenated ligand. Fragment 2 is the acceptor environment. Both keep the charges and multiplicities of the QM model.
 \item $\chi$\_CT = E\_CT / (E\_POL + E\_CT). Values $\ge$ 0.6 mean charge-transfer driven. Values $\le$ 0.4 mean polarization driven. Values in between mean mixed.
-\item Energies are given in kJ/mol (1 kcal = 4.184 kJ).
+\item Energies are given in kcal/mol (1 kcal = 4.184 kJ).
+\item In a protein cluster the EDA terms cover every contact between the two fragments, not the halogen bond alone. COVP analysis or a minimal acceptor fragment isolates the n$\to\sigma$* channel.
 \end{itemize}
-\paragraph{Step 7 (T5) BXQI.}
+\paragraph{Tier T5, ranking index (BXQI).}
 \begin{itemize}[nosep,leftmargin=*]
-\item BXQI = 100 $\cdot$ $\Pi$ s\_k\^{}(w\_k/$\Sigma$w) over all completed tiers. Weights: G 0.25, D 0.2, E 0.3, C 0.25.
-\item s\_E = 1 $-$ e\^{}($-\Sigma$E(2)/2). s\_C = 1 $-$ e\^{}($-$|$\Delta$E\_int|/10). Grades: A $\ge$ 75, B $\ge$ 50, C $\ge$ 25, else D.
-\item Grade A requires a passed NBO gate. A contact with a failed gate receives grade C or D.
-\item An NBO/ALMO inconsistency is flagged in two cases: E(2) $>$ 4 kJ/mol with $-$E\_CT $<$ 0.5 kJ/mol, and E(2) $<$ 1 kJ/mol with $-$E\_CT $>$ 4 kJ/mol.
+\item BXQI = 100 $\cdot$ $\Pi$ s\_k\^{}(w\_k/$\Sigma$w) over the tiers that could be evaluated. A tier that cannot be evaluated (e.g. G for an acceptor without a cut-off) is left out, not set to zero. Weights: G 0.25, D 0.2, E 0.3, C 0.25.
+\item s\_E = 1 $-$ exp($-\Sigma$E(2)/2 kcal/mol). s\_C = 1 $-$ exp($-$max(0, $-\Delta$E\_int)/2.4 kcal/mol), so a repulsive interaction gives s\_C = 0.
+\item BXQI ranks candidates; it has no grades and is not a binding energy. The ranking first follows the NBO decision (orbital-supported, inconclusive, not supported, or not run) and then the index.
+\item An NBO/ALMO inconsistency is flagged in two cases: $\Sigma$E(2) $>$ 1 kcal/mol with $-$E\_CT $<$ 0.1 kcal/mol, and $\Sigma$E(2) $<$ 0.25 kcal/mol with $-$E\_CT $>$ 1 kcal/mol.
 \end{itemize}

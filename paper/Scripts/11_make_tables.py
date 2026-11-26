@@ -8,7 +8,7 @@ import os, sys, csv, json, re, subprocess
 import pandas as pd
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '..'
-APP = sys.argv[2] if len(sys.argv) > 2 else '/home/claude/bx2'
+APP = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'app')  # the app folder of the repository
 RES = os.path.join(ROOT, 'results'); TAB = os.path.join(ROOT, 'tables'); os.makedirs(TAB, exist_ok=True)
 ENG = os.path.join(ROOT, 'Scripts', 'engine.js')
 
@@ -46,7 +46,7 @@ def longtable(spec, head, rows, caption, label, size=r'\scriptsize'):
 
 def t_params():
     spec = node("const B=require('%s');const D=B.defaults();console.log(JSON.stringify(B.PARAM_SPEC.map(s=>({p:s.path,st:s.stage,l:s.label,u:s.unit,t:s.type,d:B.getPath(D,s.path),o:s.options||null}))))" % ENG)
-    names = {'T0': 'Structure', 'T1': 'Geometry', 'T2': 'Dynamics', 'T3': 'QM model', 'T3b': 'NBO gate', 'T4': 'ALMO-EDA', 'T5': 'BXQI'}
+    names = {'T0': 'Structure', 'T1': 'Geometry', 'T2': 'Dynamics', 'T3': 'QM model', 'T3b': 'NBO screen', 'T4': 'ALMO-EDA', 'T5': 'BXQI'}
     rows = []
     for s in spec:
         d = s['d']
@@ -56,13 +56,13 @@ def t_params():
         elif isinstance(d, bool): d = 'on' if d else 'off'
         elif s['o']: d = next((lab for k, lab in s['o'] if str(k) == str(d)), d)
         rows.append([names[s['st']], r'\texttt{%s}' % tex(s['p']), tex(s['l']) + (' (%s)' % tex(s['u']) if s['u'] else ''), r'\parbox[t]{5.0cm}{\raggedright %s}' % tex(d)])
-    write('tab_params', longtable('llp{4.2cm}l', r'Step & Parameter & Meaning (unit) & Default', rows, 'Every adjustable parameter of \\BX{} with its default value (%d parameters). All can be changed in the program, on each step page and on the \\emph{All parameters} page.' % len(spec), 'tab:params'))
+    write('tab_params', longtable('llp{4.2cm}l', r'Tier & Parameter & Meaning (unit) & Default', rows, 'Every adjustable parameter of \\BX{} with its default value (%d parameters). All can be changed in the program, on each tier page, and on the \\emph{All parameters} page.' % len(spec), 'tab:params'))
 
 
 def t_assumptions():
     A = node("const B=require('%s');const P=B.defaults();const o={};['T0','T1','T2','T3','T3b','T4','T5'].forEach(s=>o[s]=B.assumptions(s,P));o.QMMM=B.assumptions('T3',B.mergeParams(P,{qm:{env:'qmmm'}}));console.log(JSON.stringify(o))" % ENG)
-    names = {'T0': 'Step 1 (T0) structure', 'T1': 'Step 2 (T1) geometry', 'T2': 'Step 3 (T2) dynamics', 'T3': 'Step 4 (T3a) QM cluster model', 'QMMM': 'Step 4 (T3a) QM/MM model (extra lines)',
-             'T3b': 'Step 5 (T3b) NBO gate', 'T4': 'Step 6 (T4) ALMO-EDA', 'T5': 'Step 7 (T5) BXQI'}
+    names = {'T0': 'Tier T0, structure input', 'T1': 'Tier T1, geometry', 'T2': 'Tier T2, persistence in dynamics', 'T3': 'Tier T3a, QM cluster model', 'QMMM': 'Tier T3a, QM/MM model (additional lines)',
+             'T3b': 'Tier T3b, NBO screen', 'T4': 'Tier T4, ALMO-EDA', 'T5': 'Tier T5, ranking index (BXQI)'}
     out = []
     for k in ('T0', 'T1', 'T2', 'T3', 'QMMM', 'T3b', 'T4', 'T5'):
         items = A[k] if k != 'QMMM' else [a for a in A['QMMM'] if a not in A['T3']]
@@ -145,7 +145,7 @@ def t_jobs():
     rows = [[tex(s), desc[s]] + [str(int(c.loc[s].get(p, 0))) for p in P] for s in c.index]
     rows.append([r'\textbf{Total}', ''] + [r'\textbf{%d}' % c[p].sum() for p in P])
     body = r'''\begin{table}[!htbp]\centering\footnotesize
-\caption{QM jobs written by \BX{} for this work (%d input files). NBO jobs exist for Gaussian~16, ORCA and Q-Chem. ALMO-EDA runs in Q-Chem. Each EDA job of sets A--C and F has a counterpoise interaction-energy partner in Gaussian (one job) and ORCA (three single points).}\label{tab:jobs}
+\caption{QM jobs written by \BX{} for this work (%d input files). NBO jobs exist for Gaussian~16, ORCA, and Q-Chem. ALMO-EDA runs in Q-Chem. Each EDA job of sets A--C and F has a counterpoise interaction-energy partner in Gaussian (one job) and ORCA (three single points).}\label{tab:jobs}
 \begin{tabular}{llrrrrrr}\toprule Set & Content & G16 NBO & ORCA NBO & Q-Chem NBO & Q-Chem EDA & G16 CP & ORCA CP\\\midrule
 ''' % len(j) + '\n'.join(' & '.join(r) + r'\\' for r in rows) + r'''
 \bottomrule\end{tabular}\end{table}
@@ -220,7 +220,7 @@ def t_cp_protein():
     head = ('\\begin{table}[!htbp]\\centering\\footnotesize\n'
             '\\caption{ORCA counterpoise interaction energies of the protein clusters ($\\omega$B97X-V/def2-TZVPD, gas phase, DefGrid3, Sthresh $10^{-6}$). '
             'Fragment 1 is the ligand. Fragment 2 holds the acceptor environment. XB: halogen bonds in the model. XB acceptors: their acceptor residues. $q_1$, $q_2$: fragment charges. $N_\\mathrm{bf}$: basis functions. '
-            '$E_\\mathrm{int}$ covers all contacts between the fragments (kcal\\,mol$^{-1}$). Time: wall time of the AB, A and B jobs on 40 cores (min).}\\label{tab:cpprot}\n'
+            '$E_\\mathrm{int}$ covers all contacts between the fragments (kcal\\,mol$^{-1}$). Time: wall time of the AB, A, and B jobs on 40 cores (min).}\\label{tab:cpprot}\n'
             '\\begin{tabular}{lllrrrrrrr}\\toprule System & Ligand & XB acceptors & XB & Atoms & $N_\\mathrm{bf}$ & $q_1$ & $q_2$ & $E_\\mathrm{int}$ & Time\\\\\\midrule\n')
     write('tab_cp_protein', head + '\n'.join(' & '.join(r) + '\\\\' for r in rows) + '\n\\bottomrule\\end{tabular}\\end{table}\n')
 

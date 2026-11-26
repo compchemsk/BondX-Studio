@@ -1,20 +1,20 @@
 {\scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{llp{4.2cm}l}
-\caption{Every adjustable parameter of \BX{} with its default value (84 parameters). All can be changed in the program, on each step page and on the \emph{All parameters} page.}\label{tab:params}\\
+\caption{Every adjustable parameter of \BX{} with its default value (97 parameters). All can be changed in the program, on each tier page, and on the \emph{All parameters} page.}\label{tab:params}\\
 \toprule
-Step & Parameter & Meaning (unit) & Default\\
+Tier & Parameter & Meaning (unit) & Default\\
 \midrule
 \endfirsthead
 \toprule
-Step & Parameter & Meaning (unit) & Default\\
+Tier & Parameter & Meaning (unit) & Default\\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
 Structure & \texttt{struct.altloc} & Alternate locations & \parbox[t]{5.0cm}{\raggedright first listed (A / 1 / blank)}\\
 Structure & \texttt{struct.bondTol} & Bond tolerance (\AA{}) & \parbox[t]{5.0cm}{\raggedright 0.45}\\
-Geometry & \texttt{geom.cutoffs} & X$\cdots$Y distance cut-offs (\AA{}) & \parbox[t]{5.0cm}{\raggedright I: N 3.97, O 3.82, S 4.15, AR 4; BR: N 3.844, O 3.6812, S 4.02, AR 3.87; CL: N 3.772, O 3.6092, S 3.948, AR 3.798; F: N 3.32, O 3.29, S 3.57, AR 3.4}\\
+Geometry & \texttt{geom.cutoffs} & X$\cdots$Y distance cut-offs (\AA{}) & \parbox[t]{5.0cm}{\raggedright I: N 3.97, O 3.82, S 4.15, AR 4; BR: N 3.84, O 3.68, S 4.02, AR 3.87; CL: N 3.77, O 3.61, S 3.95, AR 3.8; F: N 3.32, O 3.29, S 3.57, AR 3.4}\\
 Geometry & \texttt{geom.theta1Min} & $\theta_1$ minimum (A--X$\cdots$Y) ($^\circ$) & \parbox[t]{5.0cm}{\raggedright 140}\\
 Geometry & \texttt{geom.theta1Max} & $\theta_1$ maximum ($^\circ$) & \parbox[t]{5.0cm}{\raggedright 180}\\
 Geometry & \texttt{geom.theta2Use} & Filter on $\theta_2$ (X$\cdots$Y--R) & \parbox[t]{5.0cm}{\raggedright off}\\
@@ -23,6 +23,8 @@ Geometry & \texttt{geom.theta2Max} & $\theta_2$ maximum ($^\circ$) & \parbox[t]{
 Geometry & \texttt{geom.piNormalMax} & $\pi$ acceptor: max angle to ring normal ($^\circ$) & \parbox[t]{5.0cm}{\raggedright 60}\\
 Geometry & \texttt{geom.includePi} & Aromatic $\pi$ acceptors (Phe/Tyr/Trp) & \parbox[t]{5.0cm}{\raggedright on}\\
 Geometry & \texttt{geom.includeHisPi} & His ring as $\pi$ acceptor & \parbox[t]{5.0cm}{\raggedright off}\\
+Geometry & \texttt{geom.includeNucleicPi} & Nucleobase rings as $\pi$ acceptors & \parbox[t]{5.0cm}{\raggedright on}\\
+Geometry & \texttt{geom.includeLigandPi} & Ligand and cofactor rings as $\pi$ acceptors & \parbox[t]{5.0cm}{\raggedright off}\\
 Geometry & \texttt{geom.acceptorScope.protein} & Protein N/O/S acceptors & \parbox[t]{5.0cm}{\raggedright on}\\
 Geometry & \texttt{geom.acceptorScope.nucleic} & Nucleic-acid acceptors & \parbox[t]{5.0cm}{\raggedright on}\\
 Geometry & \texttt{geom.acceptorScope.water} & Water O acceptors & \parbox[t]{5.0cm}{\raggedright off}\\
@@ -33,13 +35,16 @@ Geometry & \texttt{geom.includeF} & Include C--F donors & \parbox[t]{5.0cm}{\rag
 Geometry & \texttt{score.vdw} & van der Waals radii (Bondi) (\AA{}) & \parbox[t]{5.0cm}{\raggedright H 1.2, C 1.7, N 1.55, O 1.52, F 1.47, P 1.8, S 1.8, CL 1.75, BR 1.85, I 1.98, SE 1.9, B 1.92, SI 2.1}\\
 Geometry & \texttt{score.ringRadius} & Ring pseudo-radius (\AA{}) & \parbox[t]{5.0cm}{\raggedright 1.77}\\
 Geometry & \texttt{score.Rbest} & R for full distance score & \parbox[t]{5.0cm}{\raggedright 0.85}\\
+Geometry & \texttt{score.Rflag} & Flag short contacts below R & \parbox[t]{5.0cm}{\raggedright 0.8}\\
+Geometry & \texttt{score.Rshort} & Short-contact penalty starts at R & \parbox[t]{5.0cm}{\raggedright 0}\\
+Geometry & \texttt{score.Rmin} & Short-contact penalty: g\_d = 0 at R & \parbox[t]{5.0cm}{\raggedright 0.6}\\
 Geometry & \texttt{score.th2Opt} & Optimal $\theta_2$ ($^\circ$) & \parbox[t]{5.0cm}{\raggedright 120}\\
 Geometry & \texttt{score.th2Width} & $\theta_2$ width ($^\circ$) & \parbox[t]{5.0cm}{\raggedright 40}\\
 Dynamics & \texttt{dyn.stride} & Frame stride & \parbox[t]{5.0cm}{\raggedright 1}\\
 Dynamics & \texttt{dyn.occCut} & Occupancy cut-off (\%) & \parbox[t]{5.0cm}{\raggedright 10}\\
-Dynamics & \texttt{dyn.dt} & Time per frame (ps) & \parbox[t]{5.0cm}{\raggedright 1}\\
-Dynamics & \texttt{dyn.tauScale} & Residence scale $\tau_0$ (frames) & \parbox[t]{5.0cm}{\raggedright 5}\\
-Dynamics & \texttt{dyn.dExp} & Damping exponent p & \parbox[t]{5.0cm}{\raggedright 0.25}\\
+Dynamics & \texttt{dyn.dt} & Time between saved frames (ps) & \parbox[t]{5.0cm}{\raggedright 1}\\
+Dynamics & \texttt{dyn.tauScale} & Residence scale $\tau_0$ (ps) & \parbox[t]{5.0cm}{\raggedright 100}\\
+Dynamics & \texttt{dyn.dExp} & Residence exponent p & \parbox[t]{5.0cm}{\raggedright 0.25}\\
 Geometry & \texttt{mat.images} & Periodic image shells (CIF) & \parbox[t]{5.0cm}{\raggedright 1}\\
 Geometry & \texttt{mat.minDist} & Minimum X$\cdots$Y distance (CIF) (\AA{}) & \parbox[t]{5.0cm}{\raggedright 1.6}\\
 QM model & \texttt{ff.name} & Force field (charges, protonation templates) & \parbox[t]{5.0cm}{\raggedright AMBER ff14SB + OL15/OL3}\\
@@ -53,28 +58,39 @@ QM model & \texttt{ff.foldH} & Missing hydrogens: fold charge onto parent atom &
 QM model & \texttt{ff.missing} & Missing heavy atoms & \parbox[t]{5.0cm}{\raggedright spread their charge over the residue (keeps net charge)}\\
 QM model & \texttt{qm.mode} & Acceptor residue in QM region & \parbox[t]{5.0cm}{\raggedright whole residue}\\
 QM model & \texttt{qm.shell} & Extra QM shell around X (\AA{}) & \parbox[t]{5.0cm}{\raggedright 0}\\
+QM model & \texttt{qm.keepAmide} & Keep the amide of backbone acceptors & \parbox[t]{5.0cm}{\raggedright backbone N acceptors: add the preceding residue (default)}\\
+QM model & \texttt{qm.orientPolarH} & Orient added O--H and S--H hydrogens & \parbox[t]{5.0cm}{\raggedright on}\\
+QM model & \texttt{qm.keepFileH} & Keep ligand hydrogens of the file & \parbox[t]{5.0cm}{\raggedright off}\\
 QM model & \texttt{qm.shellWater} & Shell includes waters & \parbox[t]{5.0cm}{\raggedright off}\\
 QM model & \texttt{qm.shellIons} & Shell includes ions & \parbox[t]{5.0cm}{\raggedright off}\\
 QM model & \texttt{qm.forceH} & Re-protonate files with hydrogens & \parbox[t]{5.0cm}{\raggedright off}\\
 QM model & \texttt{qm.linkScheme} & Link-atom position & \parbox[t]{5.0cm}{\raggedright fixed X--H bond length along the cut bond}\\
 QM model & \texttt{qm.xh} & X--H bond lengths (\AA{}) & \parbox[t]{5.0cm}{\raggedright C 1.09, N 1.01, O 0.96, S 1.34, P 1.42, B 1.19, SE 1.46}\\
 QM model & \texttt{qm.ligandCharge} & Ligand net charge & \parbox[t]{5.0cm}{\raggedright MOL2 total from a loaded file, otherwise the ligand structure with pH-7 rules}\\
+QM model & \texttt{qm.polarHRotamer} & H rotamer near halogens & \parbox[t]{5.0cm}{\raggedright best hydrogen bond, all acceptors alike (default)}\\
+QM model & \texttt{qm.hbShell} & Add N--H/O--H donors near X (\AA{}) & \parbox[t]{5.0cm}{\raggedright 3.6}\\
+QM model & \texttt{qm.basicAmines} & Aliphatic amines of ligands & \parbox[t]{5.0cm}{\raggedright keep neutral and warn (default)}\\
 QM model & \texttt{qm.env} & Environment & \parbox[t]{5.0cm}{\raggedright QM cluster (optionally in a dielectric)}\\
 QM model & \texttt{qm.pcm} & Cluster: implicit dielectric & \parbox[t]{5.0cm}{\raggedright on}\\
 QM model & \texttt{qm.eps} & Dielectric constant $\varepsilon$ & \parbox[t]{5.0cm}{\raggedright 4}\\
-QM model & \texttt{qm.program} & QM program (NBO job) & \parbox[t]{5.0cm}{\raggedright Gaussian 16}\\
+QM model & \texttt{qm.program} & QM program (NBO job) & \parbox[t]{5.0cm}{\raggedright Gaussian 16 (tested)}\\
+QM model & \texttt{qm.allowUntested} & Allow untested routes & \parbox[t]{5.0cm}{\raggedright off}\\
 QM model & \texttt{qm.method} & Method & \parbox[t]{5.0cm}{\raggedright wB97XD}\\
 QM model & \texttt{qm.basis} & Basis set & \parbox[t]{5.0cm}{\raggedright def2TZVP}\\
 QM model & \texttt{qm.nproc} & Cores & \parbox[t]{5.0cm}{\raggedright 16}\\
 QM model & \texttt{qm.mem} & Memory & \parbox[t]{5.0cm}{\raggedright 32GB}\\
 QM model & \texttt{qm.nbo7} & Gaussian: pop=nbo7 (licensed NBO 7; untested) & \parbox[t]{5.0cm}{\raggedright off}\\
-QM model & \texttt{mm.radius} & Embedding radius (\AA{}) & \parbox[t]{5.0cm}{\raggedright 15}\\
+QM model & \texttt{mm.radius} & Embedding radius (\AA{}) & \parbox[t]{5.0cm}{\raggedright 0}\\
 QM model & \texttt{mm.selection} & Embedding selection & \parbox[t]{5.0cm}{\raggedright whole residues (keeps residue charges integral)}\\
 QM model & \texttt{mm.boundary} & QM/MM boundary charges & \parbox[t]{5.0cm}{\raggedright RC: move q(M1) to M1--M2 bond midpoints (Lin \& Truhlar)}\\
+QM model & \texttt{mm.explicitH} & Explicit MM hydrogens within (\AA{}) & \parbox[t]{5.0cm}{\raggedright 6}\\
 QM model & \texttt{mm.neutralizeCut} & Integer charge for cut residues & \parbox[t]{5.0cm}{\raggedright on}\\
-NBO gate & \texttt{nbo.threshold} & NBO gate threshold $\Sigma$E(2) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.5}\\
-NBO gate & \texttt{nbo.includeRY} & Count n$\to$RY*(X) terms & \parbox[t]{5.0cm}{\raggedright on}\\
-NBO gate & \texttt{nbo.geomTol} & Geometry check tolerance (\AA{}) & \parbox[t]{5.0cm}{\raggedright 0.05}\\
+NBO screen & \texttt{nbo.threshold} & Nominal threshold $\Sigma$E(2) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.5}\\
+NBO screen & \texttt{nbo.hbFlagMin} & Competing H-bond flag: minimum X$\to\sigma$*(N--H/O--H) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.5}\\
+NBO screen & \texttt{nbo.greyLow} & Grey zone: lower limit (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.3}\\
+NBO screen & \texttt{nbo.greyHigh} & Grey zone: upper limit (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.8}\\
+NBO screen & \texttt{nbo.includeRY} & Count n$\to$RY*(X) terms in the decision & \parbox[t]{5.0cm}{\raggedright off}\\
+NBO screen & \texttt{nbo.geomTol} & Geometry check tolerance (\AA{}) & \parbox[t]{5.0cm}{\raggedright 0.05}\\
 ALMO-EDA & \texttt{eda.method} & EDA method & \parbox[t]{5.0cm}{\raggedright wB97X-V}\\
 ALMO-EDA & \texttt{eda.basis} & EDA basis & \parbox[t]{5.0cm}{\raggedright def2-TZVPD}\\
 ALMO-EDA & \texttt{eda.preset} & EDA2 preset & \parbox[t]{5.0cm}{\raggedright 1 $\cdot$ frozen decomposition + nMDQ-uFERF POL (standard)}\\
@@ -87,13 +103,10 @@ ALMO-EDA & \texttt{eda.chiHigh} & $\chi$\_CT for CT-driven & \parbox[t]{5.0cm}{\
 ALMO-EDA & \texttt{eda.chiLow} & $\chi$\_CT for polarization-driven & \parbox[t]{5.0cm}{\raggedright 0.4}\\
 BXQI & \texttt{bxqi.weights} & Tier weights & \parbox[t]{5.0cm}{\raggedright G 0.25, D 0.2, E 0.3, C 0.25}\\
 BXQI & \texttt{bxqi.E0} & E$_0$ (NBO saturation) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 2}\\
-BXQI & \texttt{bxqi.C0} & C$_0$ (EDA saturation) (kJ/mol) & \parbox[t]{5.0cm}{\raggedright 10}\\
-BXQI & \texttt{bxqi.gradeA} & Grade A from & \parbox[t]{5.0cm}{\raggedright 75}\\
-BXQI & \texttt{bxqi.gradeB} & Grade B from & \parbox[t]{5.0cm}{\raggedright 50}\\
-BXQI & \texttt{bxqi.gradeC} & Grade C from & \parbox[t]{5.0cm}{\raggedright 25}\\
-BXQI & \texttt{bxqi.requireGateForA} & Grade A needs a passed NBO gate & \parbox[t]{5.0cm}{\raggedright on}\\
-BXQI & \texttt{bxqi.consE2hi} & Consistency: large E(2) (kJ/mol) & \parbox[t]{5.0cm}{\raggedright 4}\\
-BXQI & \texttt{bxqi.consCTlo} & Consistency: negligible CT (kJ/mol) & \parbox[t]{5.0cm}{\raggedright 0.5}\\
-BXQI & \texttt{bxqi.consE2lo} & Consistency: small E(2) (kJ/mol) & \parbox[t]{5.0cm}{\raggedright 1}\\
-BXQI & \texttt{bxqi.consCThi} & Consistency: large CT (kJ/mol) & \parbox[t]{5.0cm}{\raggedright 4}\\
+BXQI & \texttt{bxqi.C0} & C$_0$ (EDA saturation) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 2.4}\\
+BXQI & \texttt{bxqi.useC} & Use the EDA total in the index & \parbox[t]{5.0cm}{\raggedright on}\\
+BXQI & \texttt{bxqi.consE2hi} & Consistency: large E(2) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 1}\\
+BXQI & \texttt{bxqi.consCTlo} & Consistency: negligible CT (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.1}\\
+BXQI & \texttt{bxqi.consE2lo} & Consistency: small E(2) (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 0.25}\\
+BXQI & \texttt{bxqi.consCThi} & Consistency: large CT (kcal/mol) & \parbox[t]{5.0cm}{\raggedright 1}\\
 \end{longtable}}

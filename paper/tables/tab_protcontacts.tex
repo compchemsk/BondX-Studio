@@ -1,0 +1,18 @@
+\begin{table}[!htbp]\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\caption{Electronic tiers for the protein contacts (Gaussian~16, $\omega$B97X-D/def2-TZVP; kcal\,mol$^{-1}$). $n$: number of models. Default: PCM cluster ($\varepsilon=4$). Range: all models (gas, PCM, QM size, and QM/MM variants). RY: $n\to$RY$^*$(X) part in the default model. With RY: valence plus Rydberg sum, and the decision of a rule that counts the Rydberg terms against a single threshold of 0.5~kcal\,mol$^{-1}$ (pass/fail; the rule of BondX Studio 2.0). X$\to$Y--H: summed donation from the halogen lone pairs into the N--H and O--H antibonds of the acceptor residue; X$\to$frag.~2: the same into any N--H or O--H antibond of fragment~2. H-bond flag: models in which X$\to$frag.~2 exceeds $\Sigma E^{(2)}$ (and 0.5~kcal\,mol$^{-1}$). D: decisions over all models. BXQI: from $G$ and the default $\Sigma E^{(2)}$. All models were built with BondX Studio 2.0; the 1US0 models have the template rotamer of the Thr113 hydroxyl, whose hydrogen points at the bromine (see text).}\label{tab:protcontacts}
+\resizebox{\textwidth}{!}{\begin{tabular}{llrrrlrlllrllr}\toprule PDB & Contact & $n$ & $G$ & $\Sigma E^{(2)}$ & range & RY & with RY & 0.5 rule & X$\to$Y--H & X$\to$frag.~2 & H-bond flag & D & BXQI\\\midrule
+2W0S & Br$\cdots$OD1 Asn65 (A) & 14 & 0.87 & 3.86 & 3.61--4.17 & 0.46 & 4.02--4.72 & pass & 0.00 & 10.79 & 2/14 & S & 86.2\\
+1P5E & Br11$\cdots$O Leu83 (C) & 1 & 0.97 & 3.02 & 3.02--3.02 & 0.06 & 3.08--3.08 & pass & 0.00 & 1.39 & 0/1 & S & 86.1\\
+1P5E & Br11$\cdots$O Leu83 (A) & 14 & 0.83 & 3.07 & 3.07--3.47 & 0.00 & 3.07--3.56 & pass & 0.00 & 1.15 & 0/14 & S & 80.5\\
+4AGL & I15$\cdots$O Leu145 (B) & 1 & 0.93 & 2.30 & 2.30--2.30 & 0.10 & 2.40--2.40 & pass & 0.00 & 0.00 & 0/1 & S & 78.6\\
+4AGL & I15$\cdots$O Leu145 (A) & 14 & 0.91 & 2.07 & 1.96--2.24 & 0.13 & 2.02--2.30 & pass & 0.00 & 0.44 & 0/14 & S & 75.4\\
+4GQL & Cl1$\cdots$O Pro232 (A) & 14 & 0.87 & 1.87 & 1.75--1.96 & 0.06 & 1.83--2.04 & pass & 0.00 & 0.00 & 0/14 & S & 71.5\\
+1P5E & Br12$\cdots$O Glu81 (A) & 14 & 0.76 & 2.08 & 2.08--2.33 & 0.00 & 2.08--2.33 & pass & 0.00 & 0.46 & 0/14 & S & 69.6\\
+1P5E & Br12$\cdots$O Glu81 (C) & 1 & 0.78 & 1.87 & 1.87--1.87 & 0.00 & 1.87--1.87 & pass & 0.00 & 0.28 & 0/1 & S & 68.1\\
+2W0S & Br$\cdots$OD1 Asn65 (B) & 1 & 0.72 & 2.05 & 2.05--2.05 & 0.23 & 2.28--2.28 & pass & 0.00 & 0.00 & 0/1 & S & 67.6\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (C) & 1 & 0.54 & 1.31 & 1.31--1.31 & 0.00 & 1.31--1.31 & pass & 0.00 & 0.00 & 0/1 & S & 50.7\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & 14 & 0.51 & 0.55 & 0.52--0.64 & 0.00 & 0.52--0.64 & pass & 0.00 & 0.00 & 0/14 & I & 33.8\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & 16 & 0.64 & 0.33 & 0.31--0.42 & 0.16 & 0.38--0.72 & fail/pass & 6.67 & 6.67 & 16/16 & I & 29.2\\
+1P5E & Br10$\cdots$O Ile10 (A) & 14 & 0.38 & 0.33 & 0.31--0.36 & 0.00 & 0.31--0.36 & fail & 0.00 & 0.00 & 0/14 & I & 23.1\\
+4DST & Cl2$\cdots$N Gly75 (A) & 14 & 0.12 & 0.07 & 0.00--0.07 & 0.06 & 0.00--0.13 & fail & 0.00 & 0.00 & 0/14 & N & 6.1\\
+\bottomrule\end{tabular}}\end{table}

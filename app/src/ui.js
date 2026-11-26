@@ -159,17 +159,25 @@
         s += `<text x="${m.l - 8}" y="${y + bh / 2 + 4}" text-anchor="end">${esc(r.label.length > 30 ? r.label.slice(0, 29) + '…' : r.label)}</text>`;
         o.comps.forEach(c => { const v = r.v[c.key]; if (v === undefined || v === null || v === 0) return;
           let x0, x1; if (v < 0) { x1 = X(neg); neg += v; x0 = X(neg); } else { x0 = X(pos); pos += v; x1 = X(pos); }
-          s += `<rect x="${x0 + 1}" y="${y}" width="${Math.max(0, x1 - x0 - 2)}" height="${bh}" rx="3" fill="${c.color}" data-tip="${esc(`<b>${r.label}</b><br>${c.name}: ${f2(v)} kJ/mol`)}"/>`; });
-        if (r.total !== undefined) s += `<path d="M${X(r.total)},${y - 3} l4,-5 h-8 z" fill="var(--ink)" data-tip="${esc('Total interaction: ' + f2(r.total) + ' kJ/mol')}"/>`;
+          s += `<rect x="${x0 + 1}" y="${y}" width="${Math.max(0, x1 - x0 - 2)}" height="${bh}" rx="3" fill="${c.color}" data-tip="${esc(`<b>${r.label}</b><br>${c.name}: ${f2(v)} kcal/mol`)}"/>`; });
+        if (r.total !== undefined) s += `<path d="M${X(r.total)},${y - 3} l4,-5 h-8 z" fill="var(--ink)" data-tip="${esc('Total interaction: ' + f2(r.total) + ' kcal/mol')}"/>`;
       });
       s += `<line x1="${X(0)}" x2="${X(0)}" y1="${m.t - 4}" y2="${H - m.b}" stroke="var(--ink)" stroke-width="1.2"/>`;
-      s += `<text x="${(m.l + W - m.r) / 2}" y="${H - 4}" text-anchor="middle" style="font-weight:600">${esc(o.xLabel || 'kJ/mol')}</text>`;
+      s += `<text x="${(m.l + W - m.r) / 2}" y="${H - 4}" text-anchor="middle" style="font-weight:600">${esc(o.xLabel || 'kcal/mol')}</text>`;
       el.innerHTML = `<div class="chart">${legendHTML(o.comps)}<svg viewBox="0 0 ${W} ${H}">${s}</svg></div>`;
     }
     return { scatter, hbars, line, diverging };
   })();
 
   /* ------------------------------ 3D viewer ------------------------------ */
+  // light and dark pages: the 3D viewer follows the page colour
+  const themeBg = () => document.documentElement.getAttribute('data-theme') === 'dark' ? '#151f1a' : '#ffffff';
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('bondx-theme', t); } catch (e) { /* storage may be blocked; the switch still works for this visit */ }
+    const b = $('#btnTheme'); if (b) { b.textContent = t === 'dark' ? 'Light pages' : 'Dark pages'; b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false'); }
+    if (V.viewer) { V.viewer.setBackgroundColor(themeBg()); V.viewer.render(); }
+  }
   const V = {
     viewer: null, ready: false, host: null,
     load() {
@@ -184,7 +192,7 @@
       if (!this.host) { this.host = document.createElement('div'); this.host.id = 'viewerHost'; this.host.innerHTML = '<div class="vmsg">Load a structure to view it in 3D.</div>'; }
       if (this.ready && !this.viewer) {
         this.host.innerHTML = '<div class="vtools"><button class="btn sm" id="vReset">Reset view</button><button class="btn sm" id="vPng">PNG</button></div>';
-        this.viewer = $3Dmol.createViewer(this.host, { backgroundColor: 'white', antialias: true });
+        this.viewer = $3Dmol.createViewer(this.host, { backgroundColor: themeBg(), antialias: true });
         this.host.querySelector('#vReset').onclick = () => { this.viewer.zoomTo(); this.viewer.render(); };
         this.host.querySelector('#vPng').onclick = () => { const uri = this.viewer.pngURI(); const a = document.createElement('a'); a.href = uri; a.download = (ST.name || 'BondX') + '_view.png'; a.click(); };
       }
@@ -249,7 +257,7 @@
     if (s.type === 'select') { const opts = s.optionsFn ? s.optionsFn(ST.P) : s.options; return `<select data-p="${s.path}" data-t="${typeof d === 'number' ? 'number' : 'text'}">${opts.map(([k, l]) => `<option value="${esc(k)}" ${String(k) === String(v) ? 'selected' : ''}>${esc(l)}</option>`).join('')}</select>`; }
     if (s.type === 'cutoffs') {
       const xs = ['CL', 'BR', 'I'].concat(ST.P.geom.includeF ? ['F'] : []);
-      return `<table class="mini"><tr><th>X \\ Y</th><th>N</th><th>O</th><th>S</th><th>π</th></tr>${xs.map(x => `<tr><td>${elTag(x)}</td>${['N', 'O', 'S', 'AR'].map(y => `<td><input type="number" step="0.01" data-p="geom.cutoffs.${x}.${y}" data-t="number" value="${v[x][y]}" title="default ${d[x][y]}"></td>`).join('')}</tr>`).join('')}</table>`;
+      return `<table class="mini"><tr><th>X \\ Y</th><th>N</th><th>O</th><th>S</th><th>π</th></tr>${xs.map(x => `<tr><td>${elTag(x)}</td>${['N', 'O', 'S', 'AR'].map(y => `<td><input type="number" step="0.01" data-p="geom.cutoffs.${x}.${y}" data-t="number" value="${(+v[x][y]).toFixed(2)}" title="default ${(+d[x][y]).toFixed(2)}"></td>`).join('')}</tr>`).join('')}</table>`;
     }
     if (s.type === 'vdw' || s.type === 'xh') return `<div class="row">${Object.keys(v).map(k => `<label class="f">${HN(k)}<input type="number" step="0.01" data-p="${s.path}.${k}" data-t="number" value="${v[k]}" style="width:66px" title="default ${d[k]}"></label>`).join('')}</div>`;
     if (s.type === 'weights') return `<div class="row">${['G', 'D', 'E', 'C'].map(k => `<label class="f">${k}<input type="number" step="0.05" min="0" data-p="${s.path}.${k}" data-t="number" value="${v[k]}" style="width:64px"></label>`).join('')}</div>`;
@@ -309,10 +317,10 @@
       structName: ST.name, structRef, frame, hit: h, label: `${h.donorLabel}@${h.Xname} ··· ${h.accLabel}@${h.accName}`, halogen: h.halogen, accClass: h.accClass,
       d: h.d, theta1: h.theta1, theta2: h.theta2, G: h.G }, extra || {});
   }
-  function stateBadge(c) { const m = { 'DETECTED': 'mute', 'MODELLED': 'acc', 'NBO-VERIFIED': 'ok', 'NBO-REJECTED': 'bad', 'EDA-DONE': 'ok' }; return `<span class="pill ${m[c.state] || 'mute'}">${c.state}</span>`; }
-  function score(c) { return B.computeBXQI({ G: c.G, occupancy: c.occupancy, Dscore: c.Dscore, E2: c.E2, eda: c.eda }, ST.P); }
+  function stateBadge(c) { const m = { 'DETECTED': 'mute', 'MODELLED': 'acc', 'NBO-SUPPORTED': 'ok', 'NBO-INCONCLUSIVE': 'warn', 'NBO-NOT-SUPPORTED': 'bad', 'EDA-DONE': 'ok' }; return `<span class="pill ${m[c.state] || 'mute'}">${c.state}</span>`; }
+  function score(c) { return B.computeBXQI({ G: c.G, occupancy: c.occupancy, Dscore: c.Dscore, E2: c.E2, eda: c.eda, flags: c.flags }, ST.P); }
   function registryTable(opts = {}) {
-    if (!ST.cands.length) return '<p class="muted">No candidates yet. Find halogen bonds (step 2, 3 or Materials) and press “Send to registry”.</p>';
+    if (!ST.cands.length) return '<p class="muted">No candidates yet. Find halogen bonds (step 2, 3, or Materials) and press “Send to registry”.</p>';
     return `<div class="tablewrap"><table class="t"><thead><tr>${opts.select ? '<th><input type="checkbox" class="selAll"></th>' : ''}<th>ID</th><th>Interaction</th><th>X</th><th>Source</th><th>d (Å)</th><th>θ₁</th><th>G</th><th>Occ.</th><th>Model</th><th>E(2)</th><th>E<sub>int</sub></th><th>State</th></tr></thead><tbody>${ST.cands.map(c => `
       <tr data-cid="${c.cid}">${opts.select ? `<td><input type="checkbox" class="selc" value="${c.cid}" ${opts.isChecked && opts.isChecked(c) ? 'checked' : ''}></td>` : ''}<td class="mono">${c.cid}</td><td>${esc(c.label)}</td><td>${elTag(c.halogen)}</td><td class="muted">${esc(c.source)}</td>
       <td class="n">${f2(c.d)}</td><td class="n">${f2(c.theta1, 1)}</td><td class="n">${f2(c.G)}</td><td class="n">${c.occupancy != null ? f2(c.occupancy * 100, 0) + '%' : '—'}</td>
@@ -322,13 +330,13 @@
 
   /* ------------------------------ navigation ------------------------------ */
   const PAGES = [
-    { id: 'structure', n: '1', label: 'Load structure', sub: 'PDB, PQR or RCSB ID', group: 'Workflow' },
-    { id: 'detect', n: '2', label: 'Find halogen bonds', sub: 'geometry · G', group: 'Workflow' },
-    { id: 'traj', n: '3', label: 'Dynamics', sub: 'optional · D', group: 'Workflow' },
-    { id: 'qm', n: '4', label: 'QM model & charges', sub: 'cluster or QM/MM', group: 'Workflow' },
-    { id: 'nbo', n: '5', label: 'NBO gate', sub: 'electronic check · E', group: 'Workflow' },
-    { id: 'eda', n: '6', label: 'ALMO-EDA', sub: 'POL vs CT · C', group: 'Workflow' },
-    { id: 'quality', n: '7', label: 'Score & report', sub: 'BXQI', group: 'Workflow' },
+    { id: 'structure', n: 'T0', label: 'Load structure', sub: 'PDB, PQR, or RCSB ID', group: 'Workflow' },
+    { id: 'detect', n: 'T1', label: 'Find halogen contacts', sub: 'geometry · G', group: 'Workflow' },
+    { id: 'traj', n: 'T2', label: 'Dynamics', sub: 'optional · D', group: 'Workflow' },
+    { id: 'qm', n: 'T3a', label: 'QM model & charges', sub: 'cluster or QM/MM', group: 'Workflow' },
+    { id: 'nbo', n: 'T3b', label: 'NBO screen', sub: 'orbital support · E', group: 'Workflow' },
+    { id: 'eda', n: 'T4', label: 'ALMO-EDA', sub: 'POL vs CT · C', group: 'Workflow' },
+    { id: 'quality', n: 'T5', label: 'Rank & report', sub: 'BXQI', group: 'Workflow' },
     { id: 'batch', n: 'B', label: 'Batch PDB', sub: 'many entries', group: 'Tools' },
     { id: 'material', n: 'M', label: 'Materials', sub: 'CIF / XYZ crystals', group: 'Tools' },
     { id: 'guide', n: 'T', label: 'Tutorial', sub: 'five pages · scope', group: 'Reference' },
@@ -360,102 +368,105 @@
   /* ====================== TUTORIAL (five pages) ====================== */
   const TUT = [
     { t: '1 · What BondX Studio does', b: `
-      <p>BondX Studio checks halogen bonds (XBs) in proteins, ligands and crystals. It runs in your browser. No file leaves your computer. The only network call is the download of a PDB entry from RCSB.</p>
-      <p>The analysis is split into tiers. Each tier adds one kind of evidence.</p>
-      <table class="t tut"><thead><tr><th>Tier</th><th>Step</th><th>Evidence</th></tr></thead><tbody>
-        <tr><td class="mono">T0</td><td>1 Load structure</td><td>Atoms, chains, hydrogens, charges, virtual sites</td></tr>
-        <tr><td class="mono">T1</td><td>2 Find halogen bonds</td><td>Geometry: distance, two angles, geometric score <i>G</i></td></tr>
-        <tr><td class="mono">T2</td><td>3 Dynamics</td><td>Occupancy of each contact over a trajectory</td></tr>
-        <tr><td class="mono">T3</td><td>4–5 QM model, NBO gate</td><td>Cluster or QM/MM input files; NBO donor–acceptor energy Σ<i>E</i><sup>(2)</sup></td></tr>
-        <tr><td class="mono">T4</td><td>6 ALMO-EDA</td><td>Frozen, polarisation and charge-transfer energies</td></tr>
-        <tr><td class="mono">T5</td><td>7 Score &amp; report</td><td>Quality index BXQI and grade A–D</td></tr>
+      <p>BondX Studio screens halogen bonds (XBs) in proteins, ligands, and crystals. It runs in your browser, and your structures and outputs stay on your computer. Network calls are made only to download a PDB entry from RCSB and to load the 3Dmol.js viewer; the hosted website also counts anonymous page views.</p>
+      <p>The analysis is split into tiers, and each tier adds one kind of evidence. The sidebar uses the same tier labels.</p>
+      <table class="t tut"><thead><tr><th>Tier</th><th>Page</th><th>Evidence</th></tr></thead><tbody>
+        <tr><td class="mono">T0</td><td>Load structure</td><td>Atoms, chains, hydrogens, charges, virtual sites</td></tr>
+        <tr><td class="mono">T1</td><td>Find halogen contacts</td><td>Geometry: distance, two angles, geometric score <i>G</i></td></tr>
+        <tr><td class="mono">T2</td><td>Dynamics</td><td>Occupancy and residence time of each contact over a trajectory</td></tr>
+        <tr><td class="mono">T3a</td><td>QM model &amp; charges</td><td>Cluster or QM/MM input files with force-field protonation and charges</td></tr>
+        <tr><td class="mono">T3b</td><td>NBO screen</td><td>Orbital support from the NBO donor–acceptor energy Σ<i>E</i><sup>(2)</sup></td></tr>
+        <tr><td class="mono">T4</td><td>ALMO-EDA</td><td>Frozen, polarization, and charge-transfer energies</td></tr>
+        <tr><td class="mono">T5</td><td>Rank &amp; report</td><td>Ranking index BXQI and the full run record</td></tr>
       </tbody></table>
-      <div class="note ok" style="margin-top:12px"><b>Quick start.</b> Open <b>1 Load structure</b>. Press <b>Load demo</b>. Then press the button at the bottom right of each page. The demo takes less than one minute.</div>
-      <p class="muted">You can stop after any tier. A result from T1 alone is valid. It is then marked as geometry only.</p>` },
+      <div class="note ok" style="margin-top:12px"><b>Quick start.</b> Open <b>T0 Load structure</b>, press <b>Load demo</b>, and then press the button at the bottom right of each page. The demo takes less than one minute.</div>
+      <p class="muted">You can stop after any tier. A result from T1 alone is valid, but it is marked as geometry only.</p>` },
     { t: '2 · Load a structure and find contacts', b: `
-      <h4>Step 1 · Load structure (T0)</h4>
+      <h4>T0 · Load structure</h4>
       <ul>
-        <li>Type a four-letter PDB ID and press <b>Fetch</b>. Or drop a local <span class="mono">.pdb</span>, <span class="mono">.ent</span> or <span class="mono">.pqr</span> file.</li>
-        <li>A PQR file brings its own partial charges. A PDB file uses the force-field charges of the program.</li>
-        <li>Pick the chains to keep. Check the composition table.</li>
-        <li>Extra-point atoms (EP, LP, XX) of σ-hole force fields are removed on load. The message says how many were removed.</li>
+        <li>Type a four-letter PDB ID and press <b>Fetch</b>, or drop a local <span class="mono">.pdb</span>, <span class="mono">.ent</span>, or <span class="mono">.pqr</span> file.</li>
+        <li>A PQR file brings its own partial charges (for example from PDB2PQR with PROPKA). A PDB file uses the force-field charges of the program.</li>
+        <li>Pick the chains to keep and check the composition table.</li>
+        <li>Extra-point atoms (EP, LP, XX) of σ-hole force fields are removed on load, and the message says how many were removed.</li>
       </ul>
-      <h4>Step 2 · Find halogen bonds (T1)</h4>
+      <h4>T1 · Find halogen contacts</h4>
       <ul>
-        <li>The program finds every C–X···Y contact with X = Cl, Br or I.</li>
-        <li>It measures the X···Y distance <i>d</i>, the C–X···Y angle θ<sub>1</sub> and the X···Y–R angle θ<sub>2</sub>.</li>
-        <li>It reports the score <i>G</i> between 0 and 1. A larger <i>G</i> means a better geometry.</li>
-        <li>Each acceptor is classed as a Lewis base or not. A backbone N–H has no lone pair. Such a contact is flagged as weak.</li>
-        <li>Sort or filter the table. Click a row to see the contact in the 3D viewer.</li>
+        <li>The program finds every C–X···Y contact with X = Cl, Br, or I.</li>
+        <li>It measures the X···Y distance <i>d</i>, the C–X···Y angle θ<sub>1</sub>, and the X···Y–R angle θ<sub>2</sub>, and it reports the score <i>G</i> between 0 and 1.</li>
+        <li>Poor Lewis bases are flagged: N atoms with a delocalized lone pair (backbone amide N, Asn ND2, Gln NE2, and Trp NE1) and protonated N atoms (Lys NZ, Arg). Such a contact can also be an N–H···X hydrogen bond.</li>
+        <li>Contacts with <i>d</i> below 0.80 of the van der Waals sum are flagged as short.</li>
+        <li>Sort or filter the table, and click a row to see the contact in the 3D viewer.</li>
       </ul>
-      <div class="note">All cut-offs are on the page <b>All parameters</b>. A changed value is marked in orange. It is also written to the report.</div>` },
+      <div class="note">All cut-offs are on the page <b>All parameters</b>. A changed value is marked in orange and is written to the report.</div>` },
     { t: '3 · Dynamics and the QM model', b: `
-      <h4>Step 3 · Dynamics (T2, optional)</h4>
+      <h4>T2 · Dynamics (optional)</h4>
       <ul>
-        <li>Drop a topology <span class="mono">.pdb</span>. Its atom order must match the trajectory.</li>
-        <li>Drop a <span class="mono">.dcd</span>, a multi-model <span class="mono">.pdb</span> or a multi-frame <span class="mono">.xyz</span> file.</li>
+        <li>Drop a topology <span class="mono">.pdb</span> whose atom order matches the trajectory, and then a <span class="mono">.dcd</span>, multi-model <span class="mono">.pdb</span>, or multi-frame <span class="mono">.xyz</span> file.</li>
         <li>Convert GROMACS or AMBER files once with <span class="mono">gmx trjconv</span> or <span class="mono">cpptraj</span>.</li>
-        <li>The program applies the T1 test to every frame. It reports the occupancy of each contact.</li>
+        <li>Set the time between saved frames (ps). The residence time τ and the scale τ<sub>0</sub> are in ps, so the score <i>D</i> does not depend on the saving stride. When the analysed frames are τ<sub>0</sub> or more apart, <i>D</i> is practically the occupancy, and the page says so.</li>
+        <li>Frames of biased runs (umbrella windows) are counted without reweighting.</li>
       </ul>
-      <h4>Step 4 · QM model and charges (T3)</h4>
+      <h4>T3a · QM model and charges</h4>
       <ul>
         <li>Choose a <b>cluster</b> model or a <b>QM/MM</b> model with point charges.</li>
-        <li>Cut bonds are capped with hydrogen atoms. Ligand charges can come from a <span class="mono">.mol2</span> file.</li>
-        <li>Pick the program: Gaussian, ORCA or Q-Chem. Pick the method, the basis set and the solvent model.</li>
-        <li>Download the input files. Each file carries a manifest ID. The ID links the output back to the contact.</li>
-        <li>Run the jobs on your own computer or cluster. BondX Studio does not run QM jobs.</li>
+        <li>Cut bonds are capped with hydrogen atoms. A backbone acceptor keeps its amide: the neighbouring residue is added. Residues with an N–H or O–H group within 3.6 Å of the halogen are added, so a competing hydrogen bond is inside the model. Added O–H hydrogens take their best hydrogen bond (halogens count like N and O); a near tie is reported, and the rotamer can be forced toward or away from the halogen.</li>
+        <li>Check the ligand charge. Aliphatic amines, tetrazoles, and acyl sulfonamides are flagged, because their pH-7 state is usually charged. A <span class="mono">.mol2</span> or <span class="mono">.pqr</span> file with a pKa-based state is the recommended source.</li>
+        <li>Gaussian 16 with its built-in NBO is the tested route. ORCA and Q-Chem NBO inputs are untested and are hidden unless you allow untested routes.</li>
+        <li>Download the input files. Each file carries a manifest ID that links the output back to the contact. BondX Studio does not run QM jobs.</li>
       </ul>` },
-    { t: '4 · NBO gate, ALMO-EDA and the score', b: `
-      <h4>Step 5 · NBO gate (T3)</h4>
+    { t: '4 · NBO screen, ALMO-EDA, and the ranking', b: `
+      <h4>T3b · NBO screen</h4>
       <ul>
-        <li>Drop the QM output (<span class="mono">.log</span> or <span class="mono">.out</span>). The program reads the second-order perturbation table.</li>
-        <li>It adds the terms LP(Y) → σ*(C–X) and LP(Y) → RY*(X). For a π acceptor it adds the ring bonds.</li>
-        <li>Intramolecular terms are excluded. Only the T1 acceptor counts.</li>
-        <li>A contact passes the gate if Σ<i>E</i><sup>(2)</sup> ≥ 0.5 kcal/mol.</li>
-        <li>For an ionic NBO structure the halogen has a vacant LP*. Donation into LP*(X) is then counted.</li>
+        <li>Drop the Gaussian output. The program reads the second-order perturbation table.</li>
+        <li>It adds the valence terms LP(Y) → σ*(C–X), or the ring bonds for a π acceptor. The Rydberg terms LP(Y) → RY*(X) are shown beside the sum but are not part of the decision.</li>
+        <li>Intramolecular terms are excluded; only the T1 acceptor counts.</li>
+        <li>Σ<i>E</i><sup>(2)</sup> ≥ 0.8 kcal/mol: orbital-supported. 0.3–0.8: inconclusive. Below 0.3: not supported.</li>
+        <li>Donation from the halogen into N–H or O–H antibonds of the acceptor side is shown as a sign of a competing hydrogen bond. When it exceeds ΣE(2), the contact is flagged and ranks after the unflagged supported contacts.</li>
+        <li>Ring acceptors give about a quarter of the ΣE(2) per unit binding energy of N acceptors, so an inconclusive ring contact can still be a real, weak halogen–π bond; ring contacts carry a flag.</li>
+        <li>Σ<i>E</i><sup>(2)</sup> is not a binding energy. It stays high for bent and compressed contacts, so the T1 limits remain part of the decision.</li>
       </ul>
-      <h4>Step 6 · ALMO-EDA (T4)</h4>
+      <h4>T4 · ALMO-EDA</h4>
       <ul>
-        <li>Drop the Q-Chem EDA output. The program reads FRZ, POL, CT and the total energy.</li>
-        <li>It reports χ<sub>CT</sub> = CT / (POL + CT).</li>
+        <li>Drop the Q-Chem EDA output. The program reads FRZ, POL, CT, and the total energy in kcal/mol, and it reports χ<sub>CT</sub> = CT / (POL + CT).</li>
+        <li>In a protein cluster the EDA covers every contact between the two fragments, not the halogen bond alone.</li>
       </ul>
-      <h4>Step 7 · Score and report (T5)</h4>
+      <h4>T5 · Rank and report</h4>
       <ul>
-        <li>BXQI is a weighted geometric mean of the tier scores. It runs from 0 to 100.</li>
-        <li>Grades: A ≥ 75, B ≥ 50, C ≥ 25, else D. Grade A needs a passed NBO gate.</li>
-        <li>Press <b>Report</b> for a single HTML file. It lists every input, parameter and result.</li>
+        <li>BXQI is a weighted geometric mean of the tiers that could be evaluated, from 0 to 100. It ranks candidates; it has no grades.</li>
+        <li>The ranking first follows the NBO decision and then the index.</li>
+        <li>Press <b>Report</b> for a single HTML file with every input, parameter, and result.</li>
       </ul>` },
     { t: '5 · What it can and cannot do', b: `
       <div class="grid g2e">
         <div class="card ok-card"><h2>It can</h2><ul>
-          <li>Read PDB, PQR, CIF, XYZ, DCD and multi-model PDB files.</li>
-          <li>Find Cl, Br and I halogen bonds to O, N, S and aromatic rings.</li>
+          <li>Read PDB, PQR, CIF, XYZ, DCD, and multi-model PDB files.</li>
+          <li>Find Cl, Br, and I contacts to O, N, S, protein rings, and nucleobases (ligand and cofactor rings on request).</li>
           <li>Screen many PDB entries in one batch.</li>
-          <li>Build cluster and QM/MM models with ff14SB, ff19SB or CHARMM36 charges.</li>
-          <li>Write Gaussian, ORCA and Q-Chem inputs.</li>
+          <li>Build cluster and QM/MM models with ff14SB, ff19SB, or CHARMM36 charges and the RC, RCD, or Z1–Z3 boundary schemes.</li>
+          <li>Write Gaussian inputs (tested) and Q-Chem EDA inputs (tested).</li>
           <li>Read Gaussian NBO output and Q-Chem ALMO-EDA output.</li>
-          <li>Save and reload a full session as JSON.</li>
-          <li>Write a complete HTML report and CSV tables.</li>
+          <li>Save and reload a full session as JSON, and write a complete HTML report and CSV tables.</li>
         </ul></div>
         <div class="card no-card"><h2>It cannot</h2><ul>
           <li>Run quantum-chemistry jobs. You run them yourself.</li>
           <li>Read GROMACS <span class="mono">.xtc</span> or AMBER <span class="mono">.nc</span> files directly.</li>
           <li>Give a tested result for fluorine. Fluorine is off by default.</li>
-          <li>Replace a full free-energy study of binding.</li>
-          <li>Decide on a weak contact without the NBO tier.</li>
+          <li>Predict pKa values. Use PROPKA, Epik, or a similar tool and load the result.</li>
+          <li>Prove a halogen bond. The NBO screen shows orbital support; it does not test the energy.</li>
+          <li>Replace a free-energy study of binding.</li>
         </ul></div>
       </div>
       <h4>Tested routes</h4>
       <table class="t tut"><thead><tr><th>Task</th><th>Program</th><th>Status</th></tr></thead><tbody>
-        <tr><td>NBO gate</td><td>Gaussian 16 with NBO 3.1</td><td><span class="pill ok">tested on 59 dimers and 9 protein contacts</span></td></tr>
-        <tr><td>ALMO-EDA</td><td>Q-Chem 6.2</td><td><span class="pill ok">tested</span></td></tr>
+        <tr><td>NBO screen</td><td>Gaussian 16 with its built-in NBO 3.1</td><td><span class="pill ok">tested on 59 dimers, 138 scan points, and 89 protein models</span></td></tr>
+        <tr><td>ALMO-EDA</td><td>Q-Chem 6.2.2</td><td><span class="pill ok">tested</span></td></tr>
         <tr><td>Batch screening</td><td>local PDB files or PDB IDs</td><td><span class="pill ok">tested on three test-set proteins</span></td></tr>
         <tr><td>Crystal contacts and QM model</td><td>CIF with symmetry operators</td><td><span class="pill ok">tested on a small test CIF</span></td></tr>
         <tr><td>Counterpoise binding</td><td>ORCA 5 or Gaussian 16</td><td><span class="pill mute">used in the paper; not read by the app</span></td></tr>
-        <tr><td>NBO gate</td><td>ORCA with NBO</td><td><span class="pill warn">input written; not tested</span></td></tr>
-        <tr><td>NBO gate</td><td>Q-Chem with NBO 5</td><td><span class="pill warn">input written; not tested</span></td></tr>
+        <tr><td>NBO screen</td><td>ORCA with NBO 7</td><td><span class="pill warn">untested; hidden by default</span></td></tr>
+        <tr><td>NBO screen</td><td>Q-Chem with NBO 5</td><td><span class="pill warn">untested; hidden by default</span></td></tr>
       </tbody></table>
-      <p class="muted" style="margin-top:10px">Source code, tests and paper scripts: <a href="https://github.com/compchemsk/BondX-Studio" target="_blank" rel="noopener">github.com/compchemsk/BondX-Studio</a>.</p>` }
+      <p class="muted" style="margin-top:10px">Source code, tests, and paper scripts: <a href="https://github.com/compchemsk/BondX-Studio" target="_blank" rel="noopener">github.com/compchemsk/BondX-Studio</a>.</p>` }
   ];
   R.guide = {
     html: () => `${head('Reference', 'Tutorial', 'Five short pages. Read them once before your first run.')}
@@ -475,7 +486,7 @@
 
   /* ====================== 1 STRUCTURE ====================== */
   R.structure = {
-    html: () => `${head('Step 1 · T0', 'Load a structure', 'Fetch a PDB entry from RCSB or open a local PDB/PQR file (a PQR file supplies its own partial charges). Choose chains and check the composition before you continue.')}
+    html: () => `${head('Tier T0', 'Load a structure', 'Fetch a PDB entry from RCSB or open a local PDB/PQR file (a PQR file supplies its own partial charges). Choose chains and check the composition before you continue.')}
     ${assumeBox('T0')}
     <div class="grid g2">
       <div class="grid" style="align-content:start">
@@ -535,13 +546,13 @@
     return `<table class="t"><thead><tr>${opts.select ? '<th><input type="checkbox" class="selAll"></th>' : ''}<th>#</th><th>Donor (A–X)</th><th>Acceptor</th><th>Class</th><th>d (Å)</th><th>Σr<sub>vdW</sub></th><th>R</th><th>θ₁ (°)</th><th>θ₂ / α (°)</th><th>Lewis</th><th>G</th><th>Status</th></tr></thead><tbody>${hits.map((h, k) => `
       <tr data-k="${k}">${opts.select ? `<td><input type="checkbox" class="selh" value="${k}" ${h.status === 'XB' ? 'checked' : ''}></td>` : ''}<td class="mono">${k + 1}</td><td>${elTag(h.halogen)} ${esc(h.donorLabel)} <span class="muted">${esc(h.Aname)}–${esc(h.Xname)}</span></td>
       <td>${esc(h.accLabel)} <b>${esc(h.accName)}</b></td><td class="muted">${esc(h.accClass)}</td><td class="n">${f2(h.d, 3)}</td><td class="n">${f2(h.sumVdw)}</td><td class="n">${f2(h.R, 3)}</td><td class="n">${f2(h.theta1, 1)}</td><td class="n">${f2(h.theta2, 1)}</td>
-      <td>${h.lewis === 'weak' ? '<span class="pill warn" data-tip="Delocalised or protonated lone pair: poor XB acceptor. The NBO gate will decide.">weak</span>' : '<span class="pill mute">strong</span>'}</td>
+      <td>${h.lewis === 'weak' ? `<span class="pill warn" data-tip="Poor Lewis base: ${esc(h.lewisWhy || 'delocalized or protonated lone pair')}. Check for an N–H···X hydrogen bond; the NBO screen reports both.">poor base</span>` : '<span class="pill mute">Lewis base</span>'}${h.short ? ' <span class="pill warn" data-tip="R = d/(r_X + r_Y) below 0.80: check for compression.">short</span>' : ''}</td>
       <td><div class="bar" data-tip="G = ${f2(h.G, 3)} (g_d ${f2(h.gd, 2)}, g_θ ${f2(h.gt, 2)}, g₂ ${f2(h.g2, 2)})"><i style="width:${(h.G * 100).toFixed(0)}%"></i></div></td><td>${h.status === 'XB' ? '<span class="pill ok">XB</span>' : '<span class="pill mute">near-miss</span>'}</td></tr>`).join('')}</tbody></table>`;
   }
   const GEO_MAIN = ['geom.cutoffs', 'geom.theta1Min', 'geom.theta1Max', 'geom.includePi', 'geom.acceptorScope.water', 'geom.reportNearMiss'];
   const GEO_MORE = stagePaths('T1').filter(p => !GEO_MAIN.includes(p) && !p.startsWith('mat.'));
   R.detect = {
-    html: () => `${head('Step 2 · T1', 'Find halogen bonds by geometry', 'Every C–X (X = Cl, Br, I) of ligands and modified residues is tested against protein, nucleic-acid (and optionally water or ligand) acceptors. Each contact gets a geometric score G between 0 and 1.')}
+    html: () => `${head('Tier T1', 'Find halogen contacts by geometry', 'Every C–X (X = Cl, Br, I) of ligands and modified residues is tested against protein, nucleic-acid (and optionally water or ligand) acceptors. Each contact gets a geometric score G between 0 and 1.')}
     ${assumeBox('T1')}
     <div class="grid g2">
       <div class="grid" style="align-content:start">
@@ -589,7 +600,7 @@
     html: () => `${head('Tool · T1', 'Batch screening of many PDB entries', 'Screens a list of PDB IDs (downloaded one after another from RCSB) or several local files with the criteria of step 2. For thousands of entries use the command-line batch tool.')}
     ${assumeBox('T1')}
     <div class="grid g2">
-      <div class="card" style="align-self:start"><h2>Entries</h2><p class="sub">Comma, space or newline separated.</p><textarea id="bIds" rows="5" placeholder="1US0, 3OS3, 2YNN"></textarea>
+      <div class="card" style="align-self:start"><h2>Entries</h2><p class="sub">Comma, space, or newline separated.</p><textarea id="bIds" rows="5" placeholder="1US0, 3OS3, 2YNN"></textarea>
         <div class="row" style="margin-top:8px"><div class="drop" id="dropBatch" style="flex:1">…or drop several local <b>.pdb</b> files<input type="file" accept=".pdb,.ent"></div></div>
         <div class="row" style="margin-top:10px"><button class="btn primary" id="btnBatch">Run batch</button><label class="chk"><input type="checkbox" id="bNear"> include near-misses</label></div>
         <div class="progress"><i id="bProg"></i></div><div id="bLog" class="muted mono" style="font-size:11.5px;max-height:160px;overflow:auto"></div></div>
@@ -630,7 +641,7 @@
 
   /* ====================== 3 TRAJECTORY ====================== */
   R.traj = {
-    html: () => `${head('Step 3 · T2 (optional)', 'Does the halogen bond last?', 'Re-tests the step-2 criteria in every frame of an MD trajectory and reports occupancy, residence time and the best frame, which is passed on to the QM model.')}
+    html: () => `${head('Tier T2 (optional)', 'Does the halogen bond last?', 'Re-tests the T1 criteria in every frame of an MD trajectory and reports occupancy, residence time, and the best frame, which is passed on to the QM model.')}
     ${assumeBox('T2')}
     <div class="grid g2">
       <div class="grid" style="align-content:start">
@@ -683,7 +694,7 @@
           for (let f = 0; f < frames.length; f += stride) { acc.add(frames[f], boxes ? boxes[f] : null, f); if ((f / stride) % 50 === 0) { $('#tProg').style.width = (f / frames.length * 100) + '%'; await new Promise(r => setTimeout(r, 0)); } }
           const res = acc.finish(); $('#tProg').style.width = '100%';
           ST.traj = { T, frames, boxes, name: tname, res, dt: ST.P.dyn.dt || 1, stride };
-          $('#tInfo').textContent = `${res.framesUsed} frames analysed in ${((performance.now() - t0) / 1000).toFixed(2)} s`;
+          $('#tInfo').innerHTML = `${res.framesUsed} frames analysed in ${((performance.now() - t0) / 1000).toFixed(2)} s${res.resolutionWarning ? `<div class="note warn" style="margin-top:6px">${esc(res.resolutionWarning)}</div>` : ''}`;
           log('T2.analyse', `${tname}; ${res.framesUsed} frames (stride ${stride}); ${res.results.length} persistent XB (≥${ST.P.dyn.occCut}%); dyn=${JSON.stringify(ST.P.dyn)}`); this.render(); setDone('traj');
         } catch (e) { toast('Trajectory error: ' + e.message, 5000); }
       };
@@ -699,7 +710,7 @@
       const res = ST.traj.res.results; const dt = ST.traj.dt;
       $('#btnTCsv').disabled = !res.length; $('#btnTReg').disabled = !res.length;
       $('#tTable').innerHTML = res.length ? `<table class="t"><thead><tr><th><input type="checkbox" class="selAll" checked></th><th>Interaction</th><th>Occ.</th><th>⟨d⟩ ± σ (Å)</th><th>⟨θ₁⟩ ± σ</th><th>Best frame</th><th>τ (ps)</th><th>Events</th><th>D</th></tr></thead><tbody>${res.map((r, k) => `
-        <tr data-k="${k}"><td><input type="checkbox" class="selt" value="${k}" checked></td><td>${elTag(r.halogen)} ${esc(r.donorLabel)}@${esc(r.Xname)} → ${esc(r.accLabel)} <b>${esc(r.accName)}</b></td><td class="n">${f2(r.occupancy * 100, 1)}%</td><td class="n">${f2(r.meanD)} ± ${f2(r.sdD)}</td><td class="n">${f2(r.meanT1, 1)} ± ${f2(r.sdT1, 1)}</td><td class="n">${r.bestFrame} <span class="muted">(${f2(r.bestD)} Å, ${f2(r.bestT1, 0)}°)</span></td><td class="n">${f2(r.meanResidence * dt, 1)}</td><td class="n">${r.nEvents}</td><td class="n">${f2(r.D)}</td></tr>`).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No halogen bond reaches the occupancy cut-off.</p>';
+        <tr data-k="${k}"><td><input type="checkbox" class="selt" value="${k}" checked></td><td>${elTag(r.halogen)} ${esc(r.donorLabel)}@${esc(r.Xname)} → ${esc(r.accLabel)} <b>${esc(r.accName)}</b></td><td class="n">${f2(r.occupancy * 100, 1)}%</td><td class="n">${f2(r.meanD)} ± ${f2(r.sdD)}</td><td class="n">${f2(r.meanT1, 1)} ± ${f2(r.sdT1, 1)}</td><td class="n">${r.bestFrame} <span class="muted">(${f2(r.bestD)} Å, ${f2(r.bestT1, 0)}°)</span></td><td class="n">${f2(r.meanResidencePs ?? r.meanResidence * dt, 1)}</td><td class="n">${r.nEvents}</td><td class="n">${f2(r.D)}</td></tr>`).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No halogen bond reaches the occupancy cut-off.</p>';
       bindSelectAll($('#tTable'));
       $$('#tTable tbody tr').forEach(tr => tr.addEventListener('click', e => { if (e.target.tagName === 'INPUT') return; $$('#tTable tr').forEach(t => t.classList.remove('sel')); tr.classList.add('sel'); this.series(res[+tr.dataset.k]); }));
       Charts.hbars($('#tOccChart'), { rows: res.map(r => ({ label: `${r.donorLabel.split(':')[0]}@${r.Xname}→${r.accLabel.split(':')[0]} ${r.accName}`, value: r.occupancy * 100, text: f2(r.occupancy * 100, 1) + '%', color: HCOLOR[r.halogen], tip: `<b>${esc(r.donorLabel)}@${esc(r.Xname)} → ${esc(r.accLabel)} ${esc(r.accName)}</b><br>occupancy ${f2(r.occupancy * 100, 1)}% · τ ${f2(r.meanResidence * dt, 1)} ps` })), max: 100, xLabel: 'occupancy (% of analysed frames)', fmt: v => v,
@@ -718,7 +729,7 @@
 
   /* ====================== MATERIALS ====================== */
   R.material = {
-    html: () => `${head('Tool · T1', 'Materials and crystal structures', 'Reads a CIF (expanded by its symmetry operators, with periodic images) or an XYZ cluster, finds C–X···Y halogen bonds and builds a two-molecule QM model for any contact. That model then goes through the same NBO → ALMO-EDA → BXQI steps.')}
+    html: () => `${head('Tool · T1', 'Materials and crystal structures', 'Reads a CIF (expanded by its symmetry operators, with periodic images) or an XYZ cluster, finds C–X···Y halogen bonds, and builds a two-molecule QM model for any contact. That model then goes through the same NBO → ALMO-EDA → BXQI steps.')}
     ${assumeBox('T1')}
     <div class="grid g2">
       <div class="card" style="align-self:start"><h2>Input</h2><div class="drop" id="dropCif">Drop <b>.cif</b> or <b>.xyz</b><input type="file" accept=".cif,.xyz"></div><div id="mInfo" style="margin-top:8px"></div>
@@ -751,10 +762,10 @@
   };
 
   /* ====================== 4 QM MODEL ====================== */
-  const QM_REGION = ['qm.mode', 'qm.shell', 'qm.shellWater', 'qm.shellIons', 'qm.forceH', 'qm.linkScheme', 'qm.xh'];
-  const QM_FF = ['ff.name', 'ff.water', 'ff.hisDefault', 'ff.termini', 'ff.chainBreaks', 'ff.ssCut', 'ff.chargeSource', 'ff.foldH', 'ff.missing', 'qm.ligandCharge'];
+  const QM_REGION = ['qm.mode', 'qm.keepAmide', 'qm.shell', 'qm.shellWater', 'qm.shellIons', 'qm.forceH', 'qm.hbShell', 'qm.orientPolarH', 'qm.polarHRotamer', 'qm.keepFileH', 'qm.linkScheme', 'qm.xh'];
+  const QM_FF = ['ff.name', 'ff.water', 'ff.hisDefault', 'ff.termini', 'ff.chainBreaks', 'ff.ssCut', 'ff.chargeSource', 'ff.foldH', 'ff.missing', 'qm.ligandCharge', 'qm.basicAmines'];
   const QM_CLUSTER = ['qm.pcm', 'qm.eps'];
-  const QM_MM = ['mm.radius', 'mm.selection', 'mm.boundary', 'mm.neutralizeCut'];
+  const QM_MM = ['mm.radius', 'mm.selection', 'mm.boundary', 'mm.explicitH', 'mm.neutralizeCut'];
   function progNote() {
     const q = ST.P.qm; const t = [];
     if (q.program === 'orca') t.push(B.ORCA_NBO_CAUTION);
@@ -762,10 +773,10 @@
     if (q.program === 'gaussian' && q.nbo7) t.push(B.G16_NBO7_CAUTION);
     return t.map(x => `<div class="note warn" style="margin-top:8px"><b>Caution.</b> ${esc(x)}</div>`).join('');
   }
-  const QM_PROG = ['qm.program', 'qm.method', 'qm.basis', 'qm.nproc', 'qm.mem', 'qm.nbo7'];
+  const QM_PROG = ['qm.program', 'qm.allowUntested', 'qm.method', 'qm.basis', 'qm.nproc', 'qm.mem', 'qm.nbo7'];
   const METHODS = { gaussian: { method: 'wB97XD', basis: 'def2TZVP' }, orca: { method: 'wB97X-D3', basis: 'def2-TZVP' }, qchem: { method: 'wB97X-D', basis: 'def2-TZVP' } };
   R.qm = {
-    html: () => `${head('Step 4 · T3a', 'Build the QM model with force-field protonation and charges', 'Cuts the halogenated ligand and its partners out of the structure, protonates residues from force-field templates and ligands from one Kekulé structure (checked against the PDB formula), caps cut bonds and writes Gaussian, ORCA or Q-Chem inputs. In QM/MM mode the rest of the protein enters as force-field point charges. Every QM atom is traced back to the PDB in a manifest.')}
+    html: () => `${head('Tier T3a', 'Build the QM model with force-field protonation and charges', 'Cuts the halogenated ligand and its partners out of the structure; protonates residues from force-field templates and ligands from one Kekulé structure (checked against the PDB formula); caps cut bonds; and writes Gaussian, ORCA, or Q-Chem inputs. In QM/MM mode the rest of the protein enters as force-field point charges. Every QM atom is traced back to the PDB in a manifest.')}
     ${assumeBox('T3')}
     <div class="card" style="margin-bottom:16px"><div class="row" style="justify-content:space-between"><h2>1 · Choose candidates</h2><span class="muted" style="font-size:12px">Candidates sharing one donor ligand and frame are modelled together.</span></div><div id="qmReg" style="margin-top:8px"></div></div>
     <div class="grid g2">
@@ -797,7 +808,7 @@
           <div id="qEmb"></div>
           <h3>Files</h3><div class="tabs2" id="qTabs"></div><pre class="code" id="qCode"></pre></div>
       </div>
-    </div>${nextBtn('nbo', 'Next: NBO gate')}`,
+    </div>${nextBtn('nbo', 'Next: NBO screen')}`,
     init() {
       $$('#qEnvSeg button').forEach(b => b.onclick = () => { ST.P.qm.env = b.dataset.env; onParamChanged('qm.env'); });
       $('#btnBuild').onclick = () => this.build();
@@ -821,7 +832,7 @@
       const el = $('#protTable'); if (!el) return; const S = ST.S; const sel = this.selected().filter(c => c.structRef !== 'M');
       if (!S || !sel.length) { el.innerHTML = '<p class="muted">Select candidates above to list nearby titratable residues.</p>'; return; }
       const T = sel[0].structRef === 'T' && ST.traj ? ST.traj.T : S; const frame = T.frames[0];
-      const centres = sel.map(c => B.coordOf(frame, c.hit.X)); const rad = ST.P.qm.env === 'qmmm' ? ST.P.mm.radius : 8;
+      const centres = sel.map(c => B.coordOf(frame, c.hit.X)); const rad = ST.P.qm.env === 'qmmm' ? (ST.P.mm.radius > 0 ? Math.min(ST.P.mm.radius, 12) : 12) : 8;
       const ffa = ffAssign(T); const list = B.titratableResidues(T, ST.P, ffa).filter(t => T.residues[t.idx].atoms.some(i => centres.some(p => B.dist(p, B.coordOf(frame, i)) <= rad)));
       if (!list.length) { el.innerHTML = `<p class="muted">No titratable residue within ${rad} Å.</p>`; return; }
       el.innerHTML = `<p class="sub">Residues with an atom within ${rad} Å of the selected halogens. Change a state to override the default rules (recorded in the manifest).</p><div class="tablewrap" style="max-height:240px"><table class="t"><thead><tr><th>Residue</th><th>State</th><th>Template</th><th>Charge</th><th>Why</th></tr></thead><tbody>${list.map(t => `<tr><td class="mono">${esc(t.resName)} ${esc(t.id)}</td><td>${t.choices.length > 1 ? `<select data-prot="${esc(t.id)}"><option value="">auto (${esc(t.variant)})</option>${t.choices.map(c => `<option value="${c}" ${ST.P.ff.overrides[t.id] === c ? 'selected' : ''}>${c}</option>`).join('')}</select>` : esc(t.variant)}</td><td class="mono">${esc(t.tpl || '—')}</td><td class="n">${f2(t.net, 3)}</td><td class="muted" style="font-size:11.5px">${esc(t.why)}</td></tr>`).join('')}</tbody></table></div>`;
@@ -863,10 +874,11 @@
         if (prog === 'qchem') files[`${job}_nbo.in`] = B.writeQChemNBO(model, o, pcs);
         if (prog === 'orca') mf.warnings.push(B.ORCA_NBO_CAUTION);
         if (prog === 'gaussian' && o.nbo7) mf.warnings.push(B.G16_NBO7_CAUTION);
+        { const bc = B.basisCaution(model, o.basis); if (bc) mf.warnings.push(bc); }
         files[`${job}_cluster.xyz`] = B.writeXYZ(model);
         if (pcs) files[`${job}_mm_charges.csv`] = B.chargesCSV(pcs);
         files[`${job}_manifest.json`] = JSON.stringify(mf, null, 1);
-        files['README.txt'] = `BondX job bundle ${id}\nRun ${ST.runId}\n\n1. Submit the *_nbo input (${prog}). NBO second-order perturbation output is required.\n2. Return to BondX → NBO gate, select model ${id} (or load ${job}_manifest.json) and open the output file.\n3. Only interactions passing the gate go on to ALMO-EDA (Q-Chem), whose input is written on the ALMO-EDA page.\n\nAtom order in all inputs equals manifest order. Do not re-order atoms or allow symmetry re-orientation.\n\nAssumptions\n${mf.assumptions.map(a => ' - ' + a).join('\n')}\n\nWarnings\n${mf.warnings.length ? mf.warnings.map(w => ' - ' + w).join('\n') : ' - none'}\n`;
+        files['README.txt'] = `BondX job bundle ${id}\nRun ${ST.runId}\n\n1. Submit the *_nbo input (${prog}). NBO second-order perturbation output is required.\n2. Return to BondX → NBO screen, select model ${id} (or load ${job}_manifest.json) and open the output file.\n3. Interactions with orbital support (NBO screen) go on to ALMO-EDA (Q-Chem), whose input is written on the ALMO-EDA page.\n\nAtom order in all inputs equals manifest order. Do not re-order atoms or allow symmetry re-orientation.\n\nAssumptions\n${mf.assumptions.map(a => ' - ' + a).join('\n')}\n\nWarnings\n${mf.warnings.length ? mf.warnings.map(w => ' - ' + w).join('\n') : ' - none'}\n`;
         ST.models[id] = { manifest: mf, qm: model.qm, files, candIds: cs.map(c => c.cid), created: new Date().toISOString(), pcs };
         cs.forEach(c => { c.modelId = id; if (c.state === 'DETECTED') c.state = 'MODELLED'; });
         log('T3.model', `${id}: ${mf.nAtoms} atoms (${mf.addedH} H added, ${mf.linkH} link), charges ${JSON.stringify(mf.fragCharge)}, mult ${mf.multiplicity}, ${mf.env}, ${prog} ${o.method}/${o.basis}; ff ${P.ff.name}; candidates ${cs.map(c => c.cid).join(',')}`);
@@ -888,23 +900,28 @@
     }
   };
   // program change: update method/basis defaults for that program
+  // untested NBO routes (ORCA, Q-Chem, pop=nbo7) need an explicit opt-in
+  document.addEventListener('change', e => { const p = e.target.dataset && e.target.dataset.p; if (!p || ST.P.qm.allowUntested) return;
+    if (p === 'qm.program' && e.target.value !== 'gaussian') { e.target.value = 'gaussian'; toast('ORCA and Q-Chem NBO inputs are untested. Tick “Allow untested routes” first.', 4500); }
+    if (p === 'qm.nbo7' && e.target.checked) { e.target.checked = false; toast('pop=nbo7 is untested. Tick “Allow untested routes” first.', 4500); }
+  }, true);
   document.addEventListener('change', e => { if (e.target.dataset && e.target.dataset.p === 'qm.program') { const m = METHODS[ST.P.qm.program]; ST.P.qm.method = m.method; ST.P.qm.basis = m.basis; log('param', `qm.method/basis → ${m.method}/${m.basis} (defaults for ${ST.P.qm.program})`); }
     if (e.target.dataset && /^qm\.(program|nbo7)$/.test(e.target.dataset.p || '')) setTimeout(() => { const n = $('#qProgNote'); if (n) n.innerHTML = progNote(); }, 0); });
 
   /* ====================== 5 NBO GATE ====================== */
   R.nbo = {
-    html: () => `${head('Step 5 · T3b', 'NBO gate: is there real charge transfer?', 'Reads the NBO second-order perturbation table and adds up donation into the halogen σ-hole. Contacts that reach the threshold are <b>electronically verified</b> and go on to ALMO-EDA; the rest are rejected as geometric false positives.')}
+    html: () => `${head('Tier T3b', 'NBO screen: is there orbital support?', 'Reads the NBO second-order perturbation table and adds up the valence donation from the acceptor into the halogen σ-hole. Σ<i>E</i><sup>(2)</sup> ≥ 0.8 kcal/mol means orbital-supported, 0.3–0.8 inconclusive and below 0.3 not supported. Orbital support is not a binding energy: the T1 geometry stays part of the decision.')}
     ${assumeBox('T3b')}
     <div class="grid g2">
       <div class="card" style="align-self:start"><h2>Inputs</h2>
         <label class="f">QM model<select id="nModel"></select></label>
         <div class="row" style="margin-top:6px"><div class="drop" id="dropMan" style="flex:1">…or load a <b>manifest.json</b><input type="file" accept=".json"></div></div>
         <div class="row" style="margin-top:8px"><div class="drop" id="dropNbo" style="flex:1">Drop the QM output (<b>.log / .out</b>) with NBO analysis<input type="file" accept=".log,.out,.txt,.nbo"></div></div>
-        <div style="margin-top:10px">${pblock('nbo', 'Gate settings', stagePaths('T3b'), true)}</div>
+        <div style="margin-top:10px">${pblock('nbo', 'Screen settings', stagePaths('T3b'), true)}</div>
         <div id="nMsg"></div>
-        <details style="margin-top:10px"><summary>Testing aid</summary><p class="muted" style="font-size:12px">Writes a <b>synthetic</b> Gaussian-format NBO output for the selected model so the gate can be tried without a QM job. Never use it for real conclusions.</p><button class="btn sm" id="btnFakeNbo">Download synthetic NBO output</button></details></div>
+        <details style="margin-top:10px"><summary>Testing aid</summary><p class="muted" style="font-size:12px">Writes a <b>synthetic</b> Gaussian-format NBO output for the selected model so the screen can be tried without a QM job. Never use it for real conclusions.</p><button class="btn sm" id="btnFakeNbo">Download synthetic NBO output</button></details></div>
       <div class="grid" style="align-content:start">
-        <div class="card"><h2>Gate decisions</h2><div id="nRes"><p class="muted">No NBO output analysed yet.</p></div></div>
+        <div class="card"><h2>NBO decisions</h2><div id="nRes"><p class="muted">No NBO output analysed yet.</p></div></div>
         <div class="card"><h2>ΣE(2) per interaction</h2><div id="nChart"></div></div>
         <div class="card"><h2>Contributing NBO terms</h2><div class="tablewrap" id="nRows"><p class="muted" style="padding:10px">—</p></div></div>
       </div>
@@ -919,16 +936,17 @@
       const id = $('#nModel').value; const m = ST.models[id]; if (!m) return toast('Select a QM model / manifest first');
       const txt = await readText(file); const h = await sha256(txt); const nbo = B.parseNBO(txt); const NP = ST.P.nbo;
       if (nbo.error) { $('#nMsg').innerHTML = `<div class="note bad">${esc(nbo.error)}</div>`; return; }
-      const ver = B.verifyGeometry(m.manifest, nbo.geometry, NP.geomTol); const gate = B.nboGate(m.manifest, nbo, { threshold: NP.threshold, includeRY: NP.includeRY }); const fq = B.fragmentNPA(m.manifest, nbo);
+      const ver = B.verifyGeometry(m.manifest, nbo.geometry, NP.geomTol); const gate = B.nboGate(m.manifest, nbo, { threshold: NP.threshold, includeRY: NP.includeRY, greyLow: NP.greyLow, greyHigh: NP.greyHigh, hbFlagMin: NP.hbFlagMin }); const fq = B.fragmentNPA(m.manifest, nbo);
       m.nbo = { file: file.name, sha256: h, program: nbo.program, terminated: nbo.terminated, verification: ver, gate, fragNPA: fq, nEntries: nbo.entries.length, settings: NP };
       const blocked = ver.checked && ver.ok === false && ver.elMis;
       $('#nMsg').innerHTML = `<div class="note ${blocked ? 'bad' : ver.ok ? 'ok' : 'warn'}" style="margin-top:8px">${esc(nbo.program)} output · ${nbo.entries.length} E(2) entries · ${nbo.terminated ? 'normal termination' : '<b>no normal-termination marker</b>'}${nbo.threshold != null ? ` · NBO print threshold ${nbo.threshold} kcal/mol` : ''}<br>${esc(ver.note)}</div>${nbo.program === 'ORCA' ? `<div class="note warn" style="margin-top:6px">${esc(B.ORCA_NBO_CAUTION)} Check the parsed E(2) entries against the output by hand.</div>` : ''}`;
-      if (blocked) { $('#nRes').innerHTML = '<div class="note bad">The output does not match this manifest — gate not applied.</div>'; log('T3.nbo', `${id}: ${file.name} REFUSED (${ver.note})`); return; }
-      gate.forEach(g => { const c = ST.cands.find(c => c.cid === g.id) || ST.cands.find(c => c.modelId === id && c.label === g.label); if (!c) return; c.E2 = g.E2_core; c.nbo = { contrib: g.contrib, npaX: g.npaX }; c.verified = g.verified; c.state = g.verified ? 'NBO-VERIFIED' : 'NBO-REJECTED'; });
-      log('T3.nbo', `${id}: ${file.name} (${nbo.program}, sha256=${h}); ${ver.note}; threshold ${NP.threshold}, RY* ${NP.includeRY}; ${gate.map(g => `${g.id}=${g.E2_core.toFixed(2)} ${g.verified ? 'PASS' : 'FAIL'}`).join(', ')}`);
-      $('#nRes').innerHTML = `<table class="t"><thead><tr><th>ID</th><th>Interaction</th><th>n→σ*</th><th>n→RY*</th><th>π→σ*</th><th>ΣE(2)</th><th>q<sub>NPA</sub>(X)</th><th>Decision</th></tr></thead><tbody>${gate.map(g => `<tr><td class="mono">${esc(g.id)}</td><td>${esc(g.label)}</td><td class="n">${f2(g.contrib.lp_sigma)}</td><td class="n">${f2(g.contrib.lp_ry)}${g.includeRY ? '' : ' <span class="muted">(not counted)</span>'}</td><td class="n">${f2(g.contrib.pi_sigma)}</td><td class="n"><b>${f2(g.E2_core)}</b></td><td class="n">${f2(g.npaX, 3)}</td><td>${g.verified ? '<span class="pill ok">VERIFIED → EDA</span>' : '<span class="pill bad">REJECTED</span>'}</td></tr>`).join('')}</tbody></table>
-        ${fq ? `<div class="note" style="margin-top:8px">NPA inter-fragment charge transfer: the donor fragment gains <b>${f2(fq.ct, 4)} e</b> relative to its formal charge (fragment charges ${f2(fq.frag1, 3)} / ${f2(fq.frag2, 3)}).</div>` : ''}`;
-      Charts.hbars($('#nChart'), { rows: gate.map(g => ({ label: g.id + ' ' + (g.label.split('···')[1] || ''), value: g.E2_core, color: g.verified ? 'var(--s1)' : 'var(--neutral)', tip: `<b>${esc(g.label)}</b><br>ΣE(2) ${f2(g.E2_core)} kcal/mol · ${g.verified ? 'verified' : 'rejected'}` })), threshold: NP.threshold, thresholdLabel: `gate ${NP.threshold} kcal/mol`, xLabel: 'ΣE(2) (kcal/mol)', fmt: v => v });
+      if (blocked) { $('#nRes').innerHTML = '<div class="note bad">The output does not match this manifest — screen not applied.</div>'; log('T3.nbo', `${id}: ${file.name} REFUSED (${ver.note})`); return; }
+      gate.forEach(g => { const c = ST.cands.find(c => c.cid === g.id) || ST.cands.find(c => c.modelId === id && c.label === g.label); if (!c) return; c.E2 = g.E2_core; c.nbo = { contrib: g.contrib, npaX: g.npaX, valence: g.E2_valence, ry: g.E2_RY, hbY: g.hbY, hbFrag2: g.hbFrag2, lpOnY: g.lpOnY, verdict: g.verdict, flags: g.flags }; c.flags = g.flags; c.verified = g.supported; c.verdict = g.verdict; c.state = { supported: 'NBO-SUPPORTED', inconclusive: 'NBO-INCONCLUSIVE', 'not supported': 'NBO-NOT-SUPPORTED' }[g.verdict]; });
+      log('T3.nbo', `${id}: ${file.name} (${nbo.program}, sha256=${h}); ${ver.note}; grey zone ${NP.greyLow}–${NP.greyHigh}, RY* in decision ${NP.includeRY}; ${gate.map(g => `${g.id}=${g.E2_core.toFixed(2)} ${g.verdict}`).join(', ')}`);
+      const vPill = v => v === 'supported' ? '<span class="pill ok">orbital-supported</span>' : v === 'inconclusive' ? '<span class="pill warn">inconclusive</span>' : '<span class="pill bad">not supported</span>';
+      $('#nRes').innerHTML = `<div style="overflow-x:auto"><table class="t"><thead><tr><th>ID</th><th>Interaction</th><th data-tip="Valence decision value: n(Y)→σ*(A–X), or π(ring)→σ*(A–X) for rings">ΣE(2)</th><th data-tip="n(Y)→RY*(X), reported beside the decision value">RY*</th><th data-tip="Largest donation from the halogen lone pairs into N–H/O–H antibonds of the acceptor side (fragment 2): a large value points to an N–H···X or O–H···X hydrogen bond.">X→σ*(N–H/O–H)</th><th data-tip="Does NBO give the acceptor atom a lone pair?">LP(Y)</th><th>Decision</th></tr></thead><tbody>${gate.map(g => `<tr><td class="mono">${esc(g.id)}</td><td style="min-width:120px;font-size:12.5px">${esc(g.label).replace(' ··· ', '<br>··· ')}</td><td class="n"><b>${f2(g.E2_core)}</b></td><td class="n">${f2(g.E2_RY)}${g.includeRY ? ' <span class="muted">(counted)</span>' : ''}</td><td class="n">${f2(g.hbMax)}${g.hbMax > 0.3 ? ' <span class="pill warn">H-bond</span>' : ''}</td><td>${g.lpOnY === null ? '—' : g.lpOnY ? 'yes' : 'no'}</td><td>${vPill(g.verdict)}${g.flagText.length ? `<div class="muted" style="font-size:11.5px;margin-top:3px">${g.flagText.map(esc).join('; ')}</div>` : ''}</td></tr>`).join('')}</tbody></table></div>
+        ${gate.map(g => g.npaX != null ? `<span class="muted" style="font-size:12px">${esc(g.id)}: q<sub>NPA</sub>(X) = ${f2(g.npaX, 3)} e. </span>` : '').join('')}${fq ? `<div class="note" style="margin-top:8px">NPA inter-fragment charge transfer: the halogen-donor fragment ${fq.ct >= 0 ? 'gains' : 'loses'} <b>${f2(Math.abs(fq.ct), 4)} e</b> relative to its formal charge (fragment charges ${f2(fq.frag1, 3)} / ${f2(fq.frag2, 3)}).</div>` : ''}`;
+      Charts.hbars($('#nChart'), { rows: gate.map(g => ({ label: g.id + ' ' + (g.label.split('···')[1] || ''), value: g.E2_core, color: g.verdict === 'supported' ? 'var(--s1)' : g.verdict === 'inconclusive' ? 'var(--s4)' : 'var(--neutral)', tip: `<b>${esc(g.label)}</b><br>ΣE(2) ${f2(g.E2_core)} kcal/mol · ${g.verdict}` })), threshold: NP.greyHigh, thresholdLabel: `supported ≥ ${NP.greyHigh} kcal/mol`, xLabel: 'ΣE(2) (kcal/mol)', fmt: v => v });
       const rows = gate.flatMap(g => g.rows.map(r => Object.assign({ id: g.id }, r)));
       const side = s => `${s.type}(${s.idx}) ${s.atoms.map(a => a.el[0] + a.el.slice(1).toLowerCase() + a.n).join('–')}`;
       $('#nRows').innerHTML = rows.length ? `<table class="t"><thead><tr><th>XB</th><th>Donor NBO</th><th>Acceptor NBO</th><th>Term</th><th>E(2)</th><th>ΔE (a.u.)</th><th>F(i,j)</th><th>Spin</th></tr></thead><tbody>${rows.map(r => `<tr><td class="mono">${esc(r.id)}</td><td class="mono">${esc(side(r.donor))}</td><td class="mono">${esc(side(r.acceptor))}</td><td>${esc(r.tag)}</td><td class="n">${f2(r.e2)}</td><td class="n">${f2(r.dE)}</td><td class="n">${f2(r.F, 3)}</td><td>${esc(r.spin)}</td></tr>`).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No NBO term couples the acceptor into the halogen σ-hole above the print threshold.</p>';
@@ -939,19 +957,19 @@
   /* ====================== 6 ALMO-EDA ====================== */
   const EDA_COMPS = [{ key: 'elec', name: 'Electrostatics', color: 'var(--s1)' }, { key: 'pauli', name: 'Pauli repulsion', color: 'var(--neutral)' }, { key: 'disp', name: 'Dispersion', color: 'var(--s3)' }, { key: 'pol', name: 'Polarization', color: 'var(--s2)' }, { key: 'ct', name: 'Charge transfer', color: 'var(--s7)' }];
   R.eda = {
-    html: () => `${head('Step 6 · T4', 'ALMO-EDA: polarization or charge transfer?', 'Writes a Q-Chem EDA2 input only for models that passed the NBO gate (fragment 1 = halogenated ligand, fragment 2 = acceptor environment) and reads the energy decomposition.')}
+    html: () => `${head('Tier T4', 'ALMO-EDA: polarization or charge transfer?', 'Writes a Q-Chem EDA2 input for models with orbital support (fragment 1 = halogenated ligand, fragment 2 = acceptor environment) and reads the energy decomposition in kcal/mol. In a protein cluster the terms cover every contact between the two fragments.')}
     ${assumeBox('T4')}
     <div class="grid g2">
       <div class="card" style="align-self:start"><h2>Q-Chem EDA2 input</h2>
         <label class="f">Model<select id="eModel"></select></label>
         <div style="margin-top:10px">${pblock('eda', 'EDA settings', stagePaths('T4'), true)}</div>
-        <div class="row" style="margin-top:8px"><label class="chk"><input type="checkbox" id="eOverride"> allow EDA for NBO-rejected/unverified models (logged as gate override)</label></div>
+        <div class="row" style="margin-top:8px"><label class="chk"><input type="checkbox" id="eOverride"> allow EDA for models without orbital support (logged as an override)</label></div>
         <div class="row" style="margin-top:10px"><button class="btn primary" id="btnEdaIn">Generate EDA input</button></div>
         <div id="eGateMsg" style="margin-top:8px"></div>
         <pre class="code" id="eCode" style="display:none;margin-top:10px"></pre>
         <h3>Results</h3>
         <div class="drop" id="dropEda">Drop the Q-Chem EDA output (.out) for the selected model<input type="file" accept=".out,.log,.txt"></div>
-        <details style="margin-top:8px"><summary>…or type the terms (kJ/mol)</summary>
+        <details style="margin-top:8px"><summary>…or type the terms (kcal/mol)</summary>
           <div class="row" style="margin-top:8px">${['frz', 'elec', 'pauli', 'disp', 'pol', 'ct', 'total'].map(k => `<label class="f">${k.toUpperCase()}<input type="number" step="any" id="em_${k}"></label>`).join('')}</div>
           <div class="row" style="margin-top:6px"><button class="btn sm" id="btnEdaManual">Use these values</button></div></details>
         <div id="eMsg" style="margin-top:8px"></div>
@@ -966,30 +984,30 @@
       $('#btnEdaIn').onclick = () => {
         const id = $('#eModel').value; const m = ST.models[id]; if (!m) return toast('Select a model');
         const verified = ST.cands.filter(c => c.modelId === id).some(c => c.verified);
-        if (!verified && !$('#eOverride').checked) { $('#eGateMsg').innerHTML = `<div class="note warn">Model ${id} has no NBO-verified interaction. Run the NBO gate first, or tick the override (it will be recorded).</div>`; return; }
-        if (!verified) log('T4.gate-override', `${id}: EDA input generated without NBO verification`);
+        if (!verified && !$('#eOverride').checked) { $('#eGateMsg').innerHTML = `<div class="note warn">Model ${id} has no orbital-supported interaction. Run the NBO screen first, or tick the override (it will be recorded).</div>`; return; }
+        if (!verified) log('T4.gate-override', `${id}: EDA input generated without orbital support`);
         const E = ST.P.eda;
         const txt = B.writeQChemEDA({ qm: m.qm, manifest: m.manifest }, { method: E.method, basis: E.basis, eda2: +E.preset, bsse: E.bsse, covp: E.covp, solvent: E.pcm, eps: E.eps, memMB: E.memMB });
         const name = id.replace('BX-', 'bx_') + '_eda.in'; m.files[name] = txt; $('#eCode').style.display = ''; $('#eCode').textContent = txt; download(name, txt);
-        $('#eGateMsg').innerHTML = `<div class="note">${verified ? 'Gate passed' : '<b>Gate overridden</b>'} — ${esc(name)} written (also added to the model bundle).</div>`; log('T4.input', `${name}: ${E.method}/${E.basis}, EDA2=${E.preset}, BSSE=${E.bsse}`);
+        $('#eGateMsg').innerHTML = `<div class="note">${verified ? 'Orbital support present' : '<b>NBO screen overridden</b>'} — ${esc(name)} written (also added to the model bundle).</div>`; log('T4.input', `${name}: ${E.method}/${E.basis}, EDA2=${E.preset}, BSSE=${E.bsse}`);
       };
       dropZone($('#dropEda'), async f => { const txt = await readText(f[0]); const r = B.parseEDA(txt); if (r.error) { $('#eMsg').innerHTML = `<div class="note bad">${esc(r.error)}</div>`; return; } this.apply(r, f[0].name, await sha256(txt)); });
       $('#btnFakeEda').onclick = () => { const m = ST.models[$('#eModel').value]; if (!m) return toast('Select a model'); download(m.manifest.id + '_SYNTHETIC_eda.out', syntheticEDA(m.manifest)); };
-      $('#btnEdaManual').onclick = () => { const r = { units: 'kJ/mol' }; ['frz', 'elec', 'pauli', 'disp', 'pol', 'ct', 'total'].forEach(k => { const v = $('#em_' + k).value; if (v !== '') r[k] = parseFloat(v); }); if (r.total === undefined) r.total = (r.frz || 0) + (r.pol || 0) + (r.ct || 0); this.apply(r, 'manual entry', '-'); };
+      $('#btnEdaManual').onclick = () => { const r = { units: 'kcal/mol' }; ['frz', 'elec', 'pauli', 'disp', 'pol', 'ct', 'total'].forEach(k => { const v = $('#em_' + k).value; if (v !== '') r[k] = parseFloat(v); }); if (r.total === undefined) r.total = (r.frz || 0) + (r.pol || 0) + (r.ct || 0); this.apply(r, 'manual entry', '-'); };
     },
     onShow() { const ids = Object.keys(ST.models); $('#eModel').innerHTML = ids.length ? ids.map(id => { const v = ST.cands.some(c => c.modelId === id && c.verified); return `<option value="${id}">${v ? '✔ ' : '✖ '}${id} — ${esc(ST.models[id].manifest.xbs.map(x => x.label).join(' ; ').slice(0, 60))}</option>`; }).join('') : '<option value="">(no models)</option>'; this.render(); },
     apply(r, fname, hash) {
       const id = $('#eModel').value; const m = ST.models[id]; if (!m) return toast('Select the model this output belongs to');
       m.eda = Object.assign({ file: fname, sha256: hash }, r); const d = B.edaDescriptors(r, ST.P);
-      ST.cands.filter(c => c.modelId === id).forEach(c => { c.eda = r; if (c.state !== 'NBO-REJECTED' || $('#eOverride').checked) c.state = 'EDA-DONE'; });
-      log('T4.eda', `${id}: ${fname} sha256=${hash}; FRZ=${f2(r.frz)} POL=${f2(r.pol)} CT=${f2(r.ct)} TOTAL=${f2(r.total)} kJ/mol; ${d.mechanism}`);
+      ST.cands.filter(c => c.modelId === id).forEach(c => { c.eda = r; if (c.state !== 'NBO-NOT-SUPPORTED' || $('#eOverride').checked) c.state = 'EDA-DONE'; });
+      log('T4.eda', `${id}: ${fname} sha256=${hash}; FRZ=${f2(r.frz)} POL=${f2(r.pol)} CT=${f2(r.ct)} TOTAL=${f2(r.total)} kcal/mol; ${d.mechanism}`);
       $('#eMsg').innerHTML = `<div class="note">${esc(fname)} → ${esc(d.mechanism)}${d.character ? '; dominant attraction: ' + esc(d.character) : ''}.${r.terminated === false ? ' <b>No normal-termination marker found.</b>' : ''}</div>`;
       this.render(); setDone('eda');
     },
     render() {
       const done = Object.entries(ST.models).filter(([, m]) => m.eda); if (!done.length) return;
       const rows = done.map(([id, m]) => ({ label: id + ' ' + (m.manifest.xbs[0] ? m.manifest.xbs[0].label.split('···')[0].trim() : ''), v: m.eda, total: m.eda.total }));
-      Charts.diverging($('#eChart'), { rows, comps: EDA_COMPS.filter(c => rows.some(r => r.v[c.key] !== undefined)).concat(rows.some(r => r.v.elec === undefined && r.v.frz !== undefined) ? [{ key: 'frz', name: 'Frozen (undecomposed)', color: 'var(--s5)' }] : []), xLabel: 'energy (kJ/mol)' });
+      Charts.diverging($('#eChart'), { rows, comps: EDA_COMPS.filter(c => rows.some(r => r.v[c.key] !== undefined)).concat(rows.some(r => r.v.elec === undefined && r.v.frz !== undefined) ? [{ key: 'frz', name: 'Frozen (undecomposed)', color: 'var(--s5)' }] : []), xLabel: 'energy (kcal/mol)' });
       const chis = done.map(([id, m]) => ({ id, d: B.edaDescriptors(m.eda, ST.P) })); const E = ST.P.eda;
       Charts.hbars($('#eChi'), { rows: chis.map(c => ({ label: c.id, value: c.d.chiCT ?? 0, text: f2(c.d.chiCT, 2), color: (c.d.chiCT ?? 0) >= E.chiHigh ? 'var(--s7)' : (c.d.chiCT ?? 0) <= E.chiLow ? 'var(--s2)' : 'var(--s1)', tip: `<b>${c.id}</b><br>χ_CT ${f2(c.d.chiCT, 3)} · ${esc(c.d.mechanism)}` })), max: 1, threshold: E.chiHigh, thresholdLabel: `CT-driven ≥ ${E.chiHigh}`, xLabel: 'χ_CT', fmt: v => v.toFixed(1), labelWidth: 130 });
       $('#eTable').innerHTML = `<table class="t"><thead><tr><th>Model</th><th>FRZ</th><th>ELEC</th><th>PAULI</th><th>DISP</th><th>POL</th><th>CT</th><th>TOTAL</th><th>CT/POL</th><th>Mechanism</th></tr></thead><tbody>${done.map(([id, m]) => { const e = m.eda, d = B.edaDescriptors(e, ST.P); return `<tr><td class="mono">${id}</td>${['frz', 'elec', 'pauli', 'disp', 'pol', 'ct', 'total'].map(k => `<td class="n">${f2(e[k])}</td>`).join('')}<td class="n">${f2(d.ctPolRatio)}</td><td>${esc(d.mechanism)}</td></tr>`; }).join('')}</tbody></table>`;
@@ -998,7 +1016,7 @@
 
   /* ====================== 7 QUALITY ====================== */
   R.quality = {
-    html: () => `${head('Step 7 · T5', 'Score and report', 'Combines every tier that was run for a candidate into one 0–100 index (a weighted geometric mean, so one weak tier cannot be hidden) and states which evidence it rests on (G·D·E·C).')}
+    html: () => `${head('Tier T5', 'Rank and report', 'Ranks the candidates first by the NBO decision and then by BXQI, a 0–100 weighted geometric mean of the tiers that could be evaluated (G·D·E·C). BXQI has no grades and is not a binding energy.')}
     ${assumeBox('T5')}
     <div class="grid g2">
       <div class="card" style="align-self:start"><h2>Index settings</h2>${pblock('bxqi', 'BXQI settings', stagePaths('T5'), true)}
@@ -1015,28 +1033,29 @@
     init() {
       $('#btnRep').onclick = () => { download(`BondX_report_${ST.runId}.html`, buildReport(), 'text/html'); log('report', 'HTML report generated'); };
       $('#btnRunJson').onclick = () => download(`BondX_run_${ST.runId}.json`, JSON.stringify(runRecord(), null, 1), 'application/json');
-      $('#btnQCsv').onclick = () => download(`BondX_scores_${ST.runId}.csv`, B.toCSV(ST.cands.map(c => Object.assign({}, c, { s: score(c) })), [{ h: 'id', k: 'cid' }, { h: 'interaction', k: 'label' }, { h: 'halogen', k: 'halogen' }, { h: 'source', k: 'source' }, { h: 'd', k: 'd' }, { h: 'theta1', k: 'theta1' }, { h: 'G', k: 'G' }, { h: 'occupancy', k: 'occupancy' }, { h: 'D', k: 'Dscore' }, { h: 'E2_kcal', k: 'E2' }, { h: 'Eint_kJ', k: c => c.eda && c.eda.total }, { h: 'Epol_kJ', k: c => c.eda && c.eda.pol }, { h: 'Ect_kJ', k: c => c.eda && c.eda.ct }, { h: 'chi_CT', k: c => c.eda && B.edaDescriptors(c.eda, ST.P).chiCT }, { h: 'BXQI', k: c => c.s && c.s.score }, { h: 'grade', k: c => c.s && c.s.grade }, { h: 'provenance', k: c => c.s && c.s.provenance }, { h: 'state', k: 'state' }]));
+      $('#btnQCsv').onclick = () => download(`BondX_scores_${ST.runId}.csv`, B.toCSV(ST.cands.map(c => Object.assign({}, c, { s: score(c) })), [{ h: 'id', k: 'cid' }, { h: 'interaction', k: 'label' }, { h: 'halogen', k: 'halogen' }, { h: 'source', k: 'source' }, { h: 'd', k: 'd' }, { h: 'theta1', k: 'theta1' }, { h: 'G', k: 'G' }, { h: 'occupancy', k: 'occupancy' }, { h: 'D', k: 'Dscore' }, { h: 'E2_kcal', k: 'E2' }, { h: 'NBO_decision', k: c => c.verdict || '' }, { h: 'E2_RY_kcal', k: c => c.nbo && c.nbo.ry }, { h: 'LPX_to_YH_kcal', k: c => c.nbo && c.nbo.hbY }, { h: 'Eint_kcal', k: c => c.eda && c.eda.total }, { h: 'Epol_kcal', k: c => c.eda && c.eda.pol }, { h: 'Ect_kcal', k: c => c.eda && c.eda.ct }, { h: 'chi_CT', k: c => c.eda && B.edaDescriptors(c.eda, ST.P).chiCT }, { h: 'BXQI', k: c => c.s && c.s.score }, { h: 'NBO_rank_class', k: c => c.s ? c.s.verdict : '' }, { h: 'provenance', k: c => c.s && c.s.provenance }, { h: 'state', k: 'state' }]));
     },
     onShow() { this.render(); },
     render() {
-      const sc = ST.cands.map(c => ({ c, s: score(c) })).filter(x => x.s).sort((a, b) => b.s.score - a.s.score);
-      if (sc.length) Charts.hbars($('#qRank'), { rows: sc.map(({ c, s }) => ({ label: `${c.cid} ${c.label.split('···')[1] || ''}`, value: s.score, text: `${s.score.toFixed(0)} · ${s.provenance}`, color: c.state === 'NBO-REJECTED' ? 'var(--neutral)' : HCOLOR[c.halogen], tip: `<b>${c.cid}</b> ${esc(c.label)}<br>BXQI ${s.score.toFixed(1)} — ${esc(s.grade)}<br>tiers: ${Object.entries(s.tiers).map(([k, v]) => k + ' ' + v.toFixed(2)).join(', ')}` })), max: 100, xLabel: 'BXQI (0–100)', fmt: v => v, labelWidth: 230,
-        legend: ['I', 'BR', 'CL'].filter(x => sc.some(e => e.c.halogen === x)).map(x => ({ name: HN(x), color: HCOLOR[x] })).concat(sc.some(e => e.c.state === 'NBO-REJECTED') ? [{ name: 'NBO-rejected', color: 'var(--neutral)' }] : []) });
+      const sc = B.rankCandidates(ST.cands.map(c => ({ c, s: score(c) })).filter(x => x.s));
+      const VCOL = { supported: null, inconclusive: 'var(--s4)', 'not supported': 'var(--neutral)', 'not run': null };
+      if (sc.length) Charts.hbars($('#qRank'), { rows: sc.map(({ c, s }) => ({ label: `${c.cid} ${c.label.split('···')[1] || ''}`, value: s.score, text: `${s.score.toFixed(0)} · ${s.provenance} · ${s.verdict}`, color: VCOL[s.verdict] || HCOLOR[c.halogen], tip: `<b>${c.cid}</b> ${esc(c.label)}<br>BXQI ${s.score.toFixed(1)} · NBO: ${esc(s.verdict)}<br>tiers: ${Object.entries(s.tiers).map(([k, v]) => k + ' ' + v.toFixed(2)).join(', ')}${s.skipped.length ? '<br>not evaluated: ' + s.skipped.join(', ') : ''}` })), max: 100, xLabel: 'BXQI (0–100), ordered by NBO decision', fmt: v => v, labelWidth: 230,
+        legend: ['I', 'BR', 'CL'].filter(x => sc.some(e => e.c.halogen === x)).map(x => ({ name: HN(x), color: HCOLOR[x] })).concat(sc.some(e => e.s.verdict === 'inconclusive') ? [{ name: 'NBO inconclusive', color: 'var(--s4)' }] : []).concat(sc.some(e => e.s.verdict === 'not supported') ? [{ name: 'not supported by NBO', color: 'var(--neutral)' }] : []) });
       const both = ST.cands.filter(c => c.E2 != null && c.eda && c.eda.ct != null);
-      Charts.scatter($('#qScatter'), { points: both.map(c => ({ x: c.E2, y: -c.eda.ct, group: c.halogen, tip: `<b>${c.cid}</b> ${esc(c.label)}<br>ΣE(2) ${f2(c.E2)} kcal/mol · −E_CT ${f2(-c.eda.ct)} kJ/mol` })), groups: ['I', 'BR', 'CL'].filter(x => both.some(c => c.halogen === x)).map(x => ({ key: x, name: HN(x), color: HCOLOR[x], shape: HSHAPE[x] })), xLabel: 'NBO ΣE(2) (kcal/mol)', yLabel: '−E_CT ALMO (kJ/mol)', height: 260 });
-      $('#qTable').innerHTML = ST.cands.length ? `<table class="t"><thead><tr><th>ID</th><th>Interaction</th><th>G</th><th>D</th><th>E</th><th>C</th><th>BXQI</th><th>Grade</th><th>Evidence</th><th>Mechanism</th><th>Consistency</th></tr></thead><tbody>${ST.cands.map(c => { const s = score(c); const d = c.eda ? B.edaDescriptors(c.eda, ST.P) : null; const t = s ? s.tiers : {};
+      Charts.scatter($('#qScatter'), { points: both.map(c => ({ x: c.E2, y: -c.eda.ct, group: c.halogen, tip: `<b>${c.cid}</b> ${esc(c.label)}<br>ΣE(2) ${f2(c.E2)} kcal/mol · −E_CT ${f2(-c.eda.ct)} kcal/mol` })), groups: ['I', 'BR', 'CL'].filter(x => both.some(c => c.halogen === x)).map(x => ({ key: x, name: HN(x), color: HCOLOR[x], shape: HSHAPE[x] })), xLabel: 'NBO ΣE(2) (kcal/mol)', yLabel: '−E_CT ALMO (kcal/mol)', height: 260 });
+      $('#qTable').innerHTML = ST.cands.length ? `<table class="t"><thead><tr><th>ID</th><th>Interaction</th><th>G</th><th>D</th><th>E</th><th>C</th><th>BXQI</th><th>NBO</th><th>Evidence</th><th>Mechanism</th><th>Consistency</th></tr></thead><tbody>${ST.cands.map(c => { const s = score(c); const d = c.eda ? B.edaDescriptors(c.eda, ST.P) : null; const t = s ? s.tiers : {};
         const tb = k => t[k] !== undefined ? `<div class="bar" data-tip="${k} = ${t[k].toFixed(3)}"><i style="width:${(t[k] * 100).toFixed(0)}%"></i></div>` : '<span class="muted">—</span>';
         const B_ = ST.P.bxqi;
-        return `<tr><td class="mono">${c.cid}</td><td>${elTag(c.halogen)} ${esc(c.label)}</td><td>${tb('G')}</td><td>${tb('D')}</td><td>${tb('E')}</td><td>${tb('C')}</td><td class="n"><b>${s ? s.score.toFixed(1) : '—'}</b></td><td>${s ? `<span class="pill ${s.score >= B_.gradeA ? 'ok' : s.score >= B_.gradeB ? 'acc' : s.score >= B_.gradeC ? 'warn' : 'bad'}">${esc(s.grade.split(' · ')[0])}</span>` : ''}</td><td class="mono">${s ? s.provenance : ''}</td><td style="font-size:12px">${d ? esc(d.mechanism) : (c.state === 'NBO-REJECTED' ? '<span class="pill bad">rejected at NBO gate</span>' : '<span class="muted">—</span>')}</td><td style="font-size:11.5px" class="muted">${s && s.consistency ? esc(s.consistency) : ''}</td></tr>`; }).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No candidates.</p>';
+        return `<tr><td class="mono">${c.cid}</td><td>${elTag(c.halogen)} ${esc(c.label)}</td><td>${tb('G')}</td><td>${tb('D')}</td><td>${tb('E')}</td><td>${tb('C')}</td><td class="n"><b>${s ? s.score.toFixed(1) : '—'}</b></td><td>${s ? `<span class="pill ${s.verdict === 'supported' ? 'ok' : s.verdict === 'inconclusive' ? 'warn' : s.verdict === 'not supported' ? 'bad' : 'mute'}">${esc(s.verdict)}</span>` : ''}</td><td class="mono">${s ? s.provenance : ''}</td><td style="font-size:12px">${d ? esc(d.mechanism) : (c.state === 'NBO-NOT-SUPPORTED' ? '<span class="pill bad">not supported by NBO</span>' : '<span class="muted">—</span>')}</td><td style="font-size:11.5px" class="muted">${s && s.consistency ? esc(s.consistency) : ''}</td></tr>`; }).join('')}</tbody></table>` : '<p class="muted" style="padding:10px">No candidates.</p>';
       $('#qAudit').innerHTML = `<table class="t"><thead><tr><th>Time (UTC)</th><th>Action</th><th>Detail</th></tr></thead><tbody>${ST.audit.slice().reverse().map(a => `<tr><td class="mono" style="white-space:nowrap">${a.t.slice(11, 19)}</td><td class="mono">${esc(a.action)}</td><td style="font-size:11.5px">${esc(a.detail)}</td></tr>`).join('')}</tbody></table>`;
       if (sc.length) setDone('quality');
     }
   };
 
   /* ====================== PARAMETERS ====================== */
-  const STAGE_NAMES = { T0: 'Step 1 · Structure input', T1: 'Step 2 · Geometric detection (and Batch / Materials)', T2: 'Step 3 · Dynamics', T3: 'Step 4 · QM model, protonation & charges', T3b: 'Step 5 · NBO gate', T4: 'Step 6 · ALMO-EDA', T5: 'Step 7 · Quality index' };
+  const STAGE_NAMES = { T0: 'T0 · Structure input', T1: 'T1 · Geometric detection (and Batch / Materials)', T2: 'T2 · Dynamics', T3: 'T3a · QM model, protonation & charges', T3b: 'T3b · NBO screen', T4: 'T4 · ALMO-EDA', T5: 'T5 · Ranking index' };
   R.params = {
-    html: () => `${head('Reference', 'All parameters', 'Every number BondX uses, with its default. Changed values are highlighted and recorded in the audit trail, manifests and the report. Save them to reuse the same settings later.')}
+    html: () => `${head('Reference', 'All parameters', 'Every number BondX uses, with its default. Changed values are highlighted and recorded in the audit trail, the manifests, and the report. Save them to reuse the same settings later.')}
     <div class="card"><div class="row" style="justify-content:space-between"><div class="row"><input type="text" class="search" id="pSearch" placeholder="Search parameters…"><span id="pCount" class="muted" style="font-size:12px"></span></div>
       <div class="row"><button class="btn sm" id="pExport">Export parameters (JSON)</button><label class="btn sm" style="margin:0">Import…<input type="file" id="pImport" accept=".json" hidden></label><button class="btn sm" id="pResetAll">Reset all to defaults</button></div></div>
       <div id="pList" style="margin-top:10px"></div></div>`,
@@ -1064,24 +1083,24 @@
         <div class="box"><b>T1 · Geometry</b><span>σ-hole criteria → G</span></div>
         <div class="box"><b>T2 · Dynamics</b><span>occupancy, residence, best frame → D</span></div>
         <div class="box"><b>T3a · QM model</b><span>force-field protonation & charges, link atoms, manifest</span></div>
-        <div class="box gate"><b>T3b · NBO gate</b><span>ΣE(2) n/π→σ*(A–X) ≥ threshold → E</span></div>
+        <div class="box gate"><b>T3b · NBO screen</b><span>valence ΣE(2) n/π→σ*(A–X): ≥ 0.8 supported, 0.3–0.8 inconclusive → E</span></div>
         <div class="box"><b>T4 · ALMO-EDA</b><span>FRZ/POL/CT, χ<sub>CT</sub> → C</span></div>
-        <div class="box"><b>T5 · BXQI</b><span>weighted geometric fusion</span></div>
+        <div class="box"><b>T5 · BXQI</b><span>ranking: NBO decision, then index</span></div>
       </div>
       <h4>T1 — geometric score</h4>
       <div class="eq">R = d(X···Y) / (r<sub>vdW</sub>(X) + r<sub>vdW</sub>(Y)),  g<sub>d</sub> = clip[(R<sub>cut</sub> − R) / (R<sub>cut</sub> − R<sub>best</sub>)],  g<sub>θ</sub> = clip[(θ₁ − θ<sub>min</sub>) / (180° − θ<sub>min</sub>)]<br>g₂ = exp[−((θ₂ − θ₂<sub>opt</sub>)/w)²] for lone-pair acceptors;  g₂ = 1 − α/α<sub>max</sub> for π acceptors<br>G = [g<sub>d</sub> · g<sub>θ</sub> · (½ + ½ g₂)]<sup>1/3</sup>; G = 0 when a criterion fails.</div>
       <h4>T2 — persistence</h4>
-      <div class="eq">f = N<sub>frames with XB</sub> / N<sub>frames</sub>;  τ = mean run length;  D = f · (1 − e<sup>−τ/τ₀</sup>)<sup>p</sup>;  best frame = argmin d, then max θ₁</div>
+      <div class="eq">f = N<sub>frames with XB</sub> / N<sub>frames</sub>;  τ = mean run length × Δt (ps);  D = f · [1 − exp(−τ/τ₀)]<sup>p</sup> with τ₀ in ps;  best frame = argmin d, then max θ₁</div>
       <h4>T3a — force-field protonation and charges</h4>
-      <p>Residue templates and partial charges are taken from the OpenMM distributions of ${esc(F.ff14SB.label)}, ${esc(F.ff19SB.label)} and ${esc(F.charmm36.label)} (CHARMM patches NTER, GLYP, PROP, CTER, ASPP, GLUP, LSN and DISU applied when the data were built). Waters: ${esc(Object.keys(F.ff14SB.waters).join(', '))} (AMBER), TIP3P (CHARMM). Ions: Joung–Cheatham / Li–Merz (AMBER) and CHARMM ion parameters; other ions take their formal charge. The tables were checked against the independent PDB2PQR AMBER and CHARMM data files (all atoms identical except the CHARMM36 tryptophan update).</p>
-      <div class="eq">Hydrogen count per atom = number of H in the residue template (variant chosen from protonation state and termini).<br>Missing H: q(heavy) ← q(heavy) + Σ q(H bonded to it) (residue charge unchanged).<br>QM/MM boundary (M1 bonded to QM): RC — q(M1) → q(M1)/n at each M1–M2 midpoint; Z1/Z2/Z3 — delete q of M1 / M1–M2 / M1–M3.<br>Cut residue: MM atoms shifted equally so that Σq(MM part) = q(residue) − q(QM part).</div>
+      <p>Residue templates and partial charges are taken from the OpenMM distributions of ${esc(F.ff14SB.label)}, ${esc(F.ff19SB.label)} and ${esc(F.charmm36.label)} (CHARMM patches NTER, GLYP, PROP, CTER, ASPP, GLUP, LSN, and DISU applied when the data were built). Waters: ${esc(Object.keys(F.ff14SB.waters).join(', '))} (AMBER), TIP3P (CHARMM). Ions: Joung–Cheatham / Li–Merz (AMBER) and CHARMM ion parameters; other ions take their formal charge. The tables were checked against the independent PDB2PQR AMBER and CHARMM data files (all atoms identical except the CHARMM36 tryptophan update).</p>
+      <div class="eq">Hydrogen count per atom = number of H in the residue template (variant chosen from protonation state and termini).<br>Missing H: q(heavy) ← q(heavy) + Σ q(H bonded to it) (residue charge unchanged).<br>QM/MM boundary (M1 bonded to QM): RC — q(M1) → q(M1)/n at each M1–M2 midpoint; RCD — 2q(M1)/n at each midpoint and −q(M1)/n on each M2; Z1/Z2/Z3 — delete q of M1 / M1–M2 / M1–M3.<br>Cut residue: MM atoms shifted equally so that Σq(MM part) = q(residue) − q(QM part).</div>
       <p><b>References:</b> ff14SB — ${esc(F.ff14SB.ref)} · ff19SB — ${esc(F.ff19SB.ref)} · CHARMM36 — ${esc(F.charmm36.ref)} · RC boundary — Lin & Truhlar, J. Phys. Chem. A 2005, 109, 3991.</p>
-      <h4>T3b — electronic gate</h4>
-      <div class="eq">ΣE(2) = Σ E(2)[n(Y) → σ*(A–X)] (+ Σ E(2)[n(Y) → RY*(X)] if enabled);  aromatic: Σ E(2)[π(ring) → σ*(A–X)];  verified ⇔ ΣE(2) ≥ E<sub>gate</sub></div>
+      <h4>T3b — NBO screen</h4>
+      <div class="eq">ΣE(2) = Σ E(2)[n(Y) → σ*(A–X)] (valence; + Σ E(2)[n(Y) → RY*(X)] only if enabled);  aromatic: Σ E(2)[π(ring) → σ*(A–X)]<br>ΣE(2) ≥ 0.8 kcal/mol: orbital-supported;  0.3 ≤ ΣE(2) &lt; 0.8: inconclusive;  ΣE(2) &lt; 0.3: not supported</div>
       <h4>T4 — ALMO-EDA descriptors</h4>
       <div class="eq">ΔE<sub>int</sub> = ΔE<sub>FRZ</sub> + ΔE<sub>POL</sub> + ΔE<sub>CT</sub>;  χ<sub>CT</sub> = ΔE<sub>CT</sub> / (ΔE<sub>POL</sub> + ΔE<sub>CT</sub>)</div>
       <h4>T5 — fusion</h4>
-      <div class="eq">BXQI = 100 · exp[ Σ<sub>k</sub> (w<sub>k</sub>/Σw) ln s<sub>k</sub> ],  s<sub>G</sub> = G, s<sub>D</sub> = D, s<sub>E</sub> = 1 − e<sup>−ΣE(2)/E₀</sup>, s<sub>C</sub> = 1 − e<sup>−|ΔE<sub>int</sub>|/C₀</sup></div>
+      <div class="eq">BXQI = 100 · exp[ Σ<sub>k</sub> (w<sub>k</sub>/Σw) ln s<sub>k</sub> ],  s<sub>G</sub> = G, s<sub>D</sub> = D, s<sub>E</sub> = 1 − e<sup>−ΣE(2)/E₀</sup>, s<sub>C</sub> = 1 − e<sup>−max(0, −ΔE<sub>int</sub>)/C₀</sup>; tiers that cannot be evaluated are left out; ranking: NBO decision first, then BXQI (no grades)</div>
       <h4>Key references</h4>
       <p style="font-size:12.5px">Desiraju et al., <i>Pure Appl. Chem.</i> 85, 1711 (2013) · Bondi, <i>J. Phys. Chem.</i> 68, 441 (1964) · Reed, Curtiss & Weinhold, <i>Chem. Rev.</i> 88, 899 (1988) · Horn, Mao & Head-Gordon, <i>Phys. Chem. Chem. Phys.</i> 18, 23067 (2016) · Karmakar & Mishra, <i>J. Chem. Inf. Model.</i> (2026).</p>
     </div>`; },
@@ -1137,12 +1156,12 @@
   function buildReport() {
     const rr = runRecord(); const styles = document.querySelector('style').textContent;
     const charts = ['#qRank', '#qScatter', '#eChart', '#eChi', '#nChart', '#dScatter', '#tOccChart'].map(s => $(s)).filter(e => e && e.querySelector('svg')).map(e => `<div class="card" style="margin-bottom:12px">${e.closest('.card').querySelector('h2').outerHTML}${e.innerHTML}</div>`).join('');
-    const candRows = rr.candidates.map(c => `<tr><td class="mono">${c.id}</td><td>${esc(c.label)}</td><td>${esc(c.source)}</td><td class="n">${f2(c.d, 3)}</td><td class="n">${f2(c.theta1, 1)}</td><td class="n">${f2(c.G)}</td><td class="n">${c.occupancy != null ? f2(c.occupancy * 100, 1) + '%' : '—'}</td><td class="n">${f2(c.E2)}</td><td class="n">${c.eda ? f2(c.eda.pol) : '—'}</td><td class="n">${c.eda ? f2(c.eda.ct) : '—'}</td><td class="n">${c.eda ? f2(c.eda.total) : '—'}</td><td>${c.edaDescriptors ? esc(c.edaDescriptors.mechanism) : ''}</td><td class="n"><b>${c.bxqi ? c.bxqi.score.toFixed(1) : '—'}</b></td><td>${c.bxqi ? esc(c.bxqi.grade) + ' [' + c.bxqi.provenance + ']' : ''}</td><td>${esc(c.state)}</td></tr>`).join('');
+    const candRows = rr.candidates.map(c => `<tr><td class="mono">${c.id}</td><td>${esc(c.label)}</td><td>${esc(c.source)}</td><td class="n">${f2(c.d, 3)}</td><td class="n">${f2(c.theta1, 1)}</td><td class="n">${f2(c.G)}</td><td class="n">${c.occupancy != null ? f2(c.occupancy * 100, 1) + '%' : '—'}</td><td class="n">${f2(c.E2)}</td><td class="n">${c.eda ? f2(c.eda.pol) : '—'}</td><td class="n">${c.eda ? f2(c.eda.ct) : '—'}</td><td class="n">${c.eda ? f2(c.eda.total) : '—'}</td><td>${c.edaDescriptors ? esc(c.edaDescriptors.mechanism) : ''}</td><td class="n"><b>${c.bxqi ? c.bxqi.score.toFixed(1) : '—'}</b></td><td>${c.bxqi ? esc(c.bxqi.verdict) + ' [' + c.bxqi.provenance + ']' : ''}</td><td>${esc(c.state)}</td></tr>`).join('');
     const models = Object.entries(rr.models).map(([id, m]) => `<tr><td class="mono">${id}</td><td>${m.manifest.nAtoms}</td><td>${esc(m.manifest.env || '')}</td><td>${esc(m.manifest.level || '')}</td><td>${esc(m.manifest.forceField || '')}</td><td>${JSON.stringify(m.manifest.fragCharge)} / ${m.manifest.multiplicity}</td><td>${m.nbo ? esc(m.nbo.file) + ' · ' + esc(m.nbo.verification.note) : '—'}</td><td>${m.eda ? esc(m.eda.file) : '—'}</td></tr>`).join('');
     const ch = rr.changedParameters; const asm = Object.entries(rr.assumptions).map(([st, a]) => `<h3>${esc(STAGE_NAMES[st])}</h3><ul>${a.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`).join('');
     return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>BondX report ${rr.runId}</title><style>${styles} body{background:#fff} main{max-width:1150px;margin:0 auto} @media print{.card{break-inside:avoid}}</style></head><body><main>
       <h1 style="margin:0">BondX halogen-bond characterisation report</h1><p class="muted">Run ${rr.runId} · generated ${rr.exported} · BondX Studio${rr.structure ? ` · structure ${esc(rr.structure.name)} (SHA-256 ${esc((rr.structure.sha256 || '').slice(0, 24))}…)` : ''}</p>
-      <div class="card" style="margin:12px 0"><h2>Candidate scorecard</h2><table class="t"><thead><tr><th>ID</th><th>Interaction</th><th>Source</th><th>d</th><th>θ₁</th><th>G</th><th>Occ.</th><th>ΣE(2)</th><th>E<sub>POL</sub></th><th>E<sub>CT</sub></th><th>E<sub>int</sub></th><th>Mechanism</th><th>BXQI</th><th>Grade</th><th>State</th></tr></thead><tbody>${candRows}</tbody></table><p class="muted" style="font-size:11.5px">Distances Å, angles °, E(2) kcal/mol, EDA kJ/mol.</p></div>
+      <div class="card" style="margin:12px 0"><h2>Candidate scorecard</h2><table class="t"><thead><tr><th>ID</th><th>Interaction</th><th>Source</th><th>d</th><th>θ₁</th><th>G</th><th>Occ.</th><th>ΣE(2)</th><th>E<sub>POL</sub></th><th>E<sub>CT</sub></th><th>E<sub>int</sub></th><th>Mechanism</th><th>BXQI</th><th>NBO</th><th>State</th></tr></thead><tbody>${candRows}</tbody></table><p class="muted" style="font-size:11.5px">Distances in Å, angles in °, and E(2) and EDA energies in kcal/mol.</p></div>
       ${charts}
       <div class="card" style="margin-bottom:12px"><h2>QM models</h2><table class="t"><thead><tr><th>Model</th><th>Atoms</th><th>Environment</th><th>Level</th><th>Force field</th><th>Charges / mult.</th><th>NBO output</th><th>EDA output</th></tr></thead><tbody>${models}</tbody></table></div>
       <div class="card" style="margin-bottom:12px"><h2>Changed parameters</h2>${ch.length ? `<table class="t"><thead><tr><th>Parameter</th><th>Value</th><th>Default</th></tr></thead><tbody>${ch.map(c => `<tr><td class="mono">${esc(c.path)}</td><td class="mono">${esc(JSON.stringify(c.value))}</td><td class="mono">${esc(JSON.stringify(c.default))}</td></tr>`).join('')}</tbody></table>` : '<p>All parameters at their defaults.</p>'}</div>
@@ -1154,8 +1173,8 @@
 
   /* ------------------------------ visitor counter ------------------------------ */
   // Anonymous page-view counter (GoatCounter). Active only when the page is served from the web (https) AND a
-  // counter address is set in <meta name="bondx-counter">. It sends the page address, browser type and screen size;
-  // never any structure, file or result. Opening the HTML file from disk (file://) never counts.
+  // counter address is set in <meta name="bondx-counter">. It sends the page address, browser type, and screen size;
+  // never any structure, file, or result. Opening the HTML file from disk (file://) never counts.
   function startVisitorCounter() {
     const m = document.querySelector('meta[name="bondx-counter"]'); const url = m && m.content.trim();
     if (!url || location.protocol !== 'https:') return;
@@ -1171,6 +1190,8 @@
     $('#btnReport').onclick = () => { download(`BondX_report_${ST.runId}.html`, buildReport(), 'text/html'); log('report', 'HTML report generated'); };
     $('#btnParams').onclick = () => go('params');
     $('#btnTutorial').onclick = () => go('guide');
+    $('#btnTheme').onclick = () => setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
     log('session.start', `BondX Studio; ${navigator.userAgent}`);
     startVisitorCounter();
     go('structure');

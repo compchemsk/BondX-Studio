@@ -1,5 +1,5 @@
 /* =====================================================================
- * BondX Engine v2.0  —  Tiered halogen-bond (XB) characterisation core
+ * BondX Engine v3.0  —  Tiered halogen-bond (XB) characterisation core
  * Authors: Soumyajit Karmakar and Sabyashachi Mishra (IIT Kharagpur)
  * Pure functions, no DOM. Runs in the browser and in Node (for testing).
  *
@@ -8,7 +8,7 @@
  *   T1  Geometric detection (static PDB / batch / CIF)             -> G
  *   T2  Dynamic persistence over MD trajectories                  -> D
  *   T3a QM model: force-field protonation + charges, QM cluster or QM/MM
- *   T3b NBO E(2) n->sigma* gate                                     -> E
+ *   T3b NBO E(2) n->sigma* screen (orbital support, grey zone)      -> E
  *   T4  ALMO-EDA (Q-Chem EDA2) POL vs CT decomposition             -> C
  *   T5  Fusion: BondX Quality Index (BXQI) + mechanistic class
  *
@@ -23,11 +23,11 @@
   else root.BondX = factory(root.BondXFF);
 })(typeof self !== 'undefined' ? self : this, function (FFDATA) {
   'use strict';
-  const VERSION = '2.0.0';
+  const VERSION = '3.0.0';
   const QCHEM_G_BASIS = /QZV|cc-pVQZ|cc-pV5Z/i;
   const QCHEM_NBO_G_CAUTION = 'CAUTION: the built-in NBO 5 of Q-Chem stops for basis sets with pure g functions (e.g. def2-QZVP). Use def2-TZVP(D) or Gaussian for the NBO job.';
-  const ORCA_NBO_CAUTION = 'ORCA has no built-in NBO. The ORCA NBO job needs NBO 7, a licensed program, set through the NBOEXE variable. Users with NBO 7 can use this route. This route is not tested in this version of BondX. Gaussian (pop=nbo) is recommended.';
-  const QCHEM_NBO_CAUTION = 'In our tests, Q-Chem 6.2 with NBO 1 printed the natural bond orbitals without a second-order perturbation table. The NBO gate needs this table. BondX now adds a $nbo section with E2PERT. This addition is not yet tested. Gaussian (pop=nbo) is the tested NBO route. Q-Chem remains the program for ALMO-EDA.';
+  const ORCA_NBO_CAUTION = 'ORCA has no built-in NBO. The ORCA NBO job needs NBO 7, a licensed program, set through the NBOEXE variable. Users with NBO 7 can use this route. This route is not tested in this version of BondX and is hidden unless untested routes are allowed. Gaussian (pop=nbo) is the tested route.';
+  const QCHEM_NBO_CAUTION = 'In our tests, Q-Chem 6.2 with NBO 1 printed the natural bond orbitals without a second-order perturbation table. The NBO screen needs this table. BondX adds a $nbo section with E2PERT, but this route is not tested and is hidden unless untested routes are allowed. Gaussian (pop=nbo) is the tested NBO route. Q-Chem remains the program for ALMO-EDA.';
   const G16_NBO7_CAUTION = 'pop=nbo7 needs NBO 7, a licensed program linked to Gaussian. This option is not tested in this version of BondX. The default pop=nbo uses the NBO program built into Gaussian.';
 
   /* ------------------------------------------------------------------ */
@@ -54,26 +54,27 @@
   const DEFAULTS = {
     struct: { altloc: 'first', bondTol: 0.45 },
     geom: {
-      // calibrated cut-offs (Å) from Karmakar & Mishra, JCIM 2026; F only used when includeF is on
-      cutoffs: { I: { N: 3.97, O: 3.82, S: 4.15, AR: 4.00 }, BR: { N: 3.844, O: 3.6812, S: 4.02, AR: 3.87 }, CL: { N: 3.772, O: 3.6092, S: 3.948, AR: 3.798 }, F: { N: 3.32, O: 3.29, S: 3.57, AR: 3.40 } },
+      // cut-offs (Å): iodine values of Karmakar & Mishra, JCIM 2026; Br and Cl follow from them by the radius shift
+      // (I -> Br about 0.13 Å, Br -> Cl 0.07 Å), rounded to 0.01 Å; F only used when includeF is on
+      cutoffs: { I: { N: 3.97, O: 3.82, S: 4.15, AR: 4.00 }, BR: { N: 3.84, O: 3.68, S: 4.02, AR: 3.87 }, CL: { N: 3.77, O: 3.61, S: 3.95, AR: 3.80 }, F: { N: 3.32, O: 3.29, S: 3.57, AR: 3.40 } },
       theta1Min: 140, theta1Max: 180, theta2Use: false, theta2Min: 90, theta2Max: 150, piNormalMax: 60,
-      includeF: false, includePi: true, includeHisPi: false,
+      includeF: false, includePi: true, includeHisPi: false, includeNucleicPi: true, includeLigandPi: false,
       acceptorScope: { protein: true, nucleic: true, water: false, otherLigand: false },
       excludeNonLewis: false, reportNearMiss: false, selectedChains: null
     },
-    score: { vdw: { H: 1.20, C: 1.70, N: 1.55, O: 1.52, F: 1.47, P: 1.80, S: 1.80, CL: 1.75, BR: 1.85, I: 1.98, SE: 1.90, B: 1.92, SI: 2.10 }, ringRadius: 1.77, Rbest: 0.85, th2Opt: 120, th2Width: 40 },
-    dyn: { stride: 1, occCut: 10, dt: 1, tauScale: 5, dExp: 0.25 },
+    score: { vdw: { H: 1.20, C: 1.70, N: 1.55, O: 1.52, F: 1.47, P: 1.80, S: 1.80, CL: 1.75, BR: 1.85, I: 1.98, SE: 1.90, B: 1.92, SI: 2.10 }, ringRadius: 1.77, Rbest: 0.85, th2Opt: 120, th2Width: 40, Rflag: 0.80, Rshort: 0, Rmin: 0.60 },
+    dyn: { stride: 1, occCut: 10, dt: 1, tauScale: 100, dExp: 0.25 },
     mat: { images: 1, minDist: 1.6 },
     ff: { name: 'ff14SB', water: 'TIP3P', hisDefault: 'HIE', termini: 'charged', chainBreaks: 'internal', ssCut: 2.5,
       chargeSource: 'auto', foldH: true, missing: 'redistribute', overrides: {} },
     qm: { mode: 'full', shell: 0, shellWater: false, shellIons: false, forceH: false, linkScheme: 'fixed',
-      xh: { C: 1.09, N: 1.01, O: 0.96, S: 1.34, P: 1.42, B: 1.19, SE: 1.46 }, ligandCharge: 'auto',
+      xh: { C: 1.09, N: 1.01, O: 0.96, S: 1.34, P: 1.42, B: 1.19, SE: 1.46 }, ligandCharge: 'auto', basicAmines: 'flag', allowUntested: false, keepAmide: 'N', keepFileH: false, orientPolarH: true, polarHRotamer: 'best', hbShell: 3.6,
       env: 'cluster', pcm: true, eps: 4, program: 'gaussian', method: 'wB97XD', basis: 'def2TZVP', nproc: 16, mem: '32GB', nbo7: false },
-    mm: { radius: 15, selection: 'residue', boundary: 'RC', neutralizeCut: true },
-    nbo: { threshold: 0.5, geomTol: 0.05, includeRY: true },
+    mm: { radius: 0, selection: 'residue', boundary: 'RC', neutralizeCut: true, explicitH: 6 },
+    nbo: { threshold: 0.5, greyLow: 0.3, greyHigh: 0.8, hbFlagMin: 0.5, geomTol: 0.05, includeRY: false },
     eda: { method: 'wB97X-V', basis: 'def2-TZVPD', preset: 1, bsse: true, covp: false, pcm: false, eps: 4, memMB: 32000, chiHigh: 0.6, chiLow: 0.4 },
-    bxqi: { weights: { G: 0.25, D: 0.20, E: 0.30, C: 0.25 }, E0: 2.0, C0: 10.0, gradeA: 75, gradeB: 50, gradeC: 25, requireGateForA: true,
-      consE2hi: 4, consCTlo: 0.5, consE2lo: 1, consCThi: 4 }
+    bxqi: { weights: { G: 0.25, D: 0.20, E: 0.30, C: 0.25 }, E0: 2.0, C0: 2.4, useC: true,
+      consE2hi: 1.0, consCTlo: 0.1, consE2lo: 0.25, consCThi: 1.0 }
   };
   const clone = o => JSON.parse(JSON.stringify(o));
   function mergeParams(base, over) { // deep merge, arrays and null replaced
@@ -97,19 +98,24 @@
     S_('geom.theta2Min', 'T1', 'θ₂ minimum', '°', 'number', ''), S_('geom.theta2Max', 'T1', 'θ₂ maximum', '°', 'number', ''),
     S_('geom.piNormalMax', 'T1', 'π acceptor: max angle to ring normal', '°', 'number', 'Largest angle α between X→centroid and the ring normal.'),
     S_('geom.includePi', 'T1', 'Aromatic π acceptors (Phe/Tyr/Trp)', '', 'bool', ''), S_('geom.includeHisPi', 'T1', 'His ring as π acceptor', '', 'bool', ''),
+    S_('geom.includeNucleicPi', 'T1', 'Nucleobase rings as π acceptors', '', 'bool', 'Purine and pyrimidine rings of DNA and RNA (needs nucleic-acid acceptors).'),
+    S_('geom.includeLigandPi', 'T1', 'Ligand and cofactor rings as π acceptors', '', 'bool', 'Planar 5- and 6-membered rings of other ligands and cofactors (e.g. the FMN isoalloxazine); needs “Other ligands / cofactors as acceptors”.'),
     S_('geom.acceptorScope.protein', 'T1', 'Protein N/O/S acceptors', '', 'bool', ''), S_('geom.acceptorScope.nucleic', 'T1', 'Nucleic-acid acceptors', '', 'bool', ''),
     S_('geom.acceptorScope.water', 'T1', 'Water O acceptors', '', 'bool', ''), S_('geom.acceptorScope.otherLigand', 'T1', 'Other ligands / cofactors as acceptors', '', 'bool', ''),
-    S_('geom.excludeNonLewis', 'T1', 'Exclude poor Lewis bases', '', 'bool', 'Drop amide N–H, Lys NZ, Arg N, Trp NE1 instead of only flagging them.'),
+    S_('geom.excludeNonLewis', 'T1', 'Exclude poor Lewis bases', '', 'bool', 'Drop poor Lewis bases (delocalized lone pair: amide N, Asn ND2, Gln NE2, Trp NE1; protonated N: Lys NZ, Arg N) instead of only flagging them.'),
     S_('geom.reportNearMiss', 'T1', 'Report near-misses', '', 'bool', 'Also list contacts that pass the distance but fail the angle test.'),
     S_('geom.includeF', 'T1', 'Include C–F donors', '', 'bool', 'Fluorine rarely has a σ-hole; off by default.'),
     S_('score.vdw', 'T1', 'van der Waals radii (Bondi)', 'Å', 'vdw', 'Used for R = d / (r_X + r_Y).'),
     S_('score.ringRadius', 'T1', 'Ring pseudo-radius', 'Å', 'number', 'Radius used for an aromatic centroid in R.', { step: 0.01 }),
     S_('score.Rbest', 'T1', 'R for full distance score', '', 'number', 'g_d = 1 at R ≤ this value.', { step: 0.01 }),
+    S_('score.Rflag', 'T1', 'Flag short contacts below R', '', 'number', 'Contacts with R below this value are flagged as short (possible compression).', { step: 0.01 }),
+    S_('score.Rshort', 'T1', 'Short-contact penalty starts at R', '', 'number', '0 = off (default). Below this R, g_d falls linearly to 0 at R_min. The strongest benchmark halogen bonds have R ≈ 0.69 at equilibrium.', { step: 0.01 }),
+    S_('score.Rmin', 'T1', 'Short-contact penalty: g_d = 0 at R', '', 'number', 'Used only when the penalty is on.', { step: 0.01 }),
     S_('score.th2Opt', 'T1', 'Optimal θ₂', '°', 'number', 'Centre of the θ₂ Gaussian (sp² lone pair ≈ 120°).'),
     S_('score.th2Width', 'T1', 'θ₂ width', '°', 'number', 'Width of the θ₂ Gaussian.'),
     S_('dyn.stride', 'T2', 'Frame stride', '', 'number', 'Analyse every n-th frame.'), S_('dyn.occCut', 'T2', 'Occupancy cut-off', '%', 'number', 'Report contacts present in at least this share of analysed frames.'),
-    S_('dyn.dt', 'T2', 'Time per frame', 'ps', 'number', 'Only used to convert frames to time.', { step: 'any' }),
-    S_('dyn.tauScale', 'T2', 'Residence scale τ₀', 'frames', 'number', 'D = f (1 − e^(−τ/τ₀))^p.'), S_('dyn.dExp', 'T2', 'Damping exponent p', '', 'number', '', { step: 0.05 }),
+    S_('dyn.dt', 'T2', 'Time between saved frames', 'ps', 'number', 'Converts runs of frames into residence times. Set it to the saving interval of the trajectory.', { step: 'any' }),
+    S_('dyn.tauScale', 'T2', 'Residence scale τ₀', 'ps', 'number', 'D = f · [1 − exp(−τ/τ₀)]^p with τ in ps.'), S_('dyn.dExp', 'T2', 'Residence exponent p', '', 'number', 'p < 1 makes the residence factor saturate early, so occupancy f dominates D.', { step: 0.05 }),
     S_('mat.images', 'T1', 'Periodic image shells (CIF)', '', 'number', 'Neighbour cells searched in each direction.'), S_('mat.minDist', 'T1', 'Minimum X···Y distance (CIF)', 'Å', 'number', 'Shorter contacts are treated as bonds or disorder.', { step: 0.1 }),
     S_('ff.name', 'T3', 'Force field (charges, protonation templates)', '', 'select', 'Source of residue templates and partial charges.', { options: [['ff14SB', 'AMBER ff14SB + OL15/OL3'], ['ff19SB', 'AMBER ff19SB + OL15/OL3'], ['charmm36', 'CHARMM36']] }),
     S_('ff.water', 'T3', 'Water model', '', 'select', 'Charges of water molecules in the MM region.', { optionsFn: P => Object.keys((FFDATA[P.ff.name] || {}).waters || {}).map(k => [k, k]) }),
@@ -122,24 +128,33 @@
     S_('ff.missing', 'T3', 'Missing heavy atoms', '', 'select', '', { options: [['redistribute', 'spread their charge over the residue (keeps net charge)'], ['ignore', 'ignore (net charge changes)']] }),
     S_('qm.mode', 'T3', 'Acceptor residue in QM region', '', 'select', '', { options: [['full', 'whole residue'], ['sidechain', 'side chain + Cα (backbone N, C, O removed; Cα capped with H)']] }),
     S_('qm.shell', 'T3', 'Extra QM shell around X', 'Å', 'number', 'Whole residues with any atom this close to a halogen join fragment 2 (0 = off).', { step: 0.5 }),
+    S_('qm.keepAmide', 'T3', 'Keep the amide of backbone acceptors', '', 'select', 'A cut next to a backbone acceptor would turn its amide into an amine (N) or an aldehyde (O). The neighbouring residue is then added to fragment 2.', { options: [['N', 'backbone N acceptors: add the preceding residue (default)'], ['both', 'backbone N and O acceptors: add the preceding or following residue'], ['off', 'off (cap the cut bond with H)']] }),
+    S_('qm.orientPolarH', 'T3', 'Orient added O–H and S–H hydrogens', '', 'bool', 'Rotate each added hydroxyl or thiol hydrogen to its best hydrogen bond; N, O, and C-bound halogen acceptors count alike. A hydrogen that points to a halogen, and an ambiguous choice, are reported. A PQR file from PDB2PQR or Reduce gives optimized hydrogen networks.'),
+    S_('qm.keepFileH', 'T3', 'Keep ligand hydrogens of the file', '', 'bool', 'Use the hydrogens of an MD or modelled file as given, even when their number differs from the pH-7 rules. Set the ligand charge explicitly.'),
     S_('qm.shellWater', 'T3', 'Shell includes waters', '', 'bool', ''), S_('qm.shellIons', 'T3', 'Shell includes ions', '', 'bool', ''),
     S_('qm.forceH', 'T3', 'Re-protonate files with hydrogens', '', 'bool', ''),
     S_('qm.linkScheme', 'T3', 'Link-atom position', '', 'select', '', { options: [['fixed', 'fixed X–H bond length along the cut bond'], ['scaled', 'scaled: r_H = r_Q + g (r_M − r_Q), g = r₀(Q–H)/r₀(Q–M)']] }),
     S_('qm.xh', 'T3', 'X–H bond lengths', 'Å', 'xh', 'Used for added and link hydrogens.'),
-    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', '', { options: [['auto', 'MOL2 total from a loaded file, otherwise the ligand structure with pH-7 rules'], ['rules', 'heavy-atom structure + pH-7 group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'], ['zero', 'zero']] }),
+    S_('qm.ligandCharge', 'T3', 'Ligand net charge', '', 'select', 'A MOL2 file (e.g. from Epik or a PROPKA-based tool) or a PQR file gives the recommended ligand state.', { options: [['auto', 'MOL2 total from a loaded file, otherwise the ligand structure with pH-7 rules'], ['rules', 'heavy-atom structure + pH-7 group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)'], ['zero', 'zero']] }),
+    S_('qm.polarHRotamer', 'T3', 'H rotamer near halogens', '', 'select', 'Which rotamer an added O–H or S–H hydrogen takes when one rotamer points to a halogen. An ambiguous case is reported with the default.', { options: [['best', 'best hydrogen bond, all acceptors alike (default)'], ['toHalogen', 'toward the halogen (O–H···X)'], ['awayFromHalogen', 'toward the best other acceptor']] }),
+    S_('qm.hbShell', 'T3', 'Add N–H/O–H donors near X', 'Å', 'number', 'Whole residues with an N or O atom that carries (or will carry) a hydrogen within this distance of a halogen join fragment 2, so that a competing N–H···X or O–H···X hydrogen bond is inside the QM region (0 = off).', { step: 0.1 }),
+    S_('qm.basicAmines', 'T3', 'Aliphatic amines of ligands', '', 'select', 'Aliphatic amines have pKa ≈ 9–11 and are usually protonated at pH 7.', { options: [['flag', 'keep neutral and warn (default)'], ['protonate', 'protonate (+1 each)']] }),
     S_('qm.env', 'T3', 'Environment', '', 'select', 'How the protein around the QM region is represented.', { options: [['cluster', 'QM cluster (optionally in a dielectric)'], ['qmmm', 'QM/MM single point (electrostatic embedding)']] }),
     S_('qm.pcm', 'T3', 'Cluster: implicit dielectric', '', 'bool', 'CPCM (Gaussian/ORCA) or PCM (Q-Chem) around the cluster.'),
     S_('qm.eps', 'T3', 'Dielectric constant ε', '', 'number', 'Typical protein interior: 4.', { step: 0.5 }),
-    S_('qm.program', 'T3', 'QM program (NBO job)', '', 'select', '', { options: [['gaussian', 'Gaussian 16'], ['orca', 'ORCA 5/6 (needs licensed NBO 7; untested)'], ['qchem', 'Q-Chem 6']] }),
+    S_('qm.program', 'T3', 'QM program (NBO job)', '', 'select', 'Gaussian 16 with its built-in NBO is the tested route. ORCA and Q-Chem NBO jobs are untested and need “Allow untested routes”.', { options: [['gaussian', 'Gaussian 16 (tested)'], ['orca', 'ORCA 5/6 (needs licensed NBO 7; untested)'], ['qchem', 'Q-Chem 6 (untested for NBO)']] }),
+    S_('qm.allowUntested', 'T3', 'Allow untested routes', '', 'bool', 'Unlocks the ORCA and Q-Chem NBO inputs and pop=nbo7. Their outputs have not been tested with BondX.'),
     S_('qm.method', 'T3', 'Method', '', 'text', 'Exactly as the program expects it.'), S_('qm.basis', 'T3', 'Basis set', '', 'text', 'def2 bases add def2-ECP for I automatically in Q-Chem; Gaussian/ORCA handle it internally.'),
     S_('qm.nproc', 'T3', 'Cores', '', 'number', ''), S_('qm.mem', 'T3', 'Memory', '', 'text', 'e.g. 32GB'),
     S_('qm.nbo7', 'T3', 'Gaussian: pop=nbo7 (licensed NBO 7; untested)', '', 'bool', 'Off (default): Gaussian uses its built-in NBO (pop=nbo). On: Gaussian calls NBO 7, a licensed program that must be linked to Gaussian. This option is not tested in this version of BondX.'),
-    S_('mm.radius', 'T3', 'Embedding radius', 'Å', 'number', 'MM point charges within this distance of any QM atom.'),
+    S_('mm.radius', 'T3', 'Embedding radius', 'Å', 'number', '0 (default) = the whole structure. Otherwise MM point charges within this distance of any QM atom. The field at the halogen converged only beyond 25–40 Å in our tests.'),
     S_('mm.selection', 'T3', 'Embedding selection', '', 'select', '', { options: [['residue', 'whole residues (keeps residue charges integral)'], ['atom', 'individual atoms']] }),
-    S_('mm.boundary', 'T3', 'QM/MM boundary charges', '', 'select', 'M1 = MM atom bonded to the QM region.', { options: [['RC', 'RC: move q(M1) to M1–M2 bond midpoints (Lin & Truhlar)'], ['Z1', 'Z1: delete q(M1)'], ['Z2', 'Z2: delete q(M1), q(M2)'], ['Z3', 'Z3: delete q(M1)–q(M3)'], ['none', 'keep all charges']] }),
+    S_('mm.boundary', 'T3', 'QM/MM boundary charges', '', 'select', 'M1 = MM atom bonded to the QM region.', { options: [['RC', 'RC: move q(M1) to M1–M2 bond midpoints (Lin & Truhlar)'], ['RCD', 'RCD: as RC with 2q₀/n at the midpoints and −q₀/n on each M2 (keeps the M1–M2 dipoles)'], ['Z1', 'Z1: delete q(M1)'], ['Z2', 'Z2: delete q(M1), q(M2)'], ['Z3', 'Z3: delete q(M1)–q(M3)'], ['none', 'keep all charges']] }),
+    S_('mm.explicitH', 'T3', 'Explicit MM hydrogens within', 'Å', 'number', 'MM residues with an atom this close to a halogen get explicit hydrogens with their own template charges, so N–H and O–H dipoles near X stay intact (0 = fold every H charge onto its heavy atom).', { step: 0.5 }),
     S_('mm.neutralizeCut', 'T3', 'Integer charge for cut residues', '', 'bool', 'When a residue is split between QM and MM, shift its MM atoms so the MM part carries an integer charge.'),
-    S_('nbo.threshold', 'T3b', 'NBO gate threshold ΣE(2)', 'kcal/mol', 'number', 'Verified if ΣE(2) ≥ threshold.', { step: 0.05 }),
-    S_('nbo.includeRY', 'T3b', 'Count n→RY*(X) terms', '', 'bool', 'Include donation into halogen Rydberg orbitals.'),
+    S_('nbo.threshold', 'T3b', 'Nominal threshold ΣE(2)', 'kcal/mol', 'number', 'Equals the NBO print threshold within one unit. Reported for orientation inside the grey zone.', { step: 0.05 }),
+    S_('nbo.hbFlagMin', 'T3b', 'Competing H-bond flag: minimum X→σ*(N–H/O–H)', 'kcal/mol', 'number', 'A contact is flagged when the halogen donates more into N–H or O–H antibonds than the acceptor donates into σ*(A–X), and at least this much.', { step: 0.1 }), S_('nbo.greyLow', 'T3b', 'Grey zone: lower limit', 'kcal/mol', 'number', 'Below: not supported by NBO.', { step: 0.05 }), S_('nbo.greyHigh', 'T3b', 'Grey zone: upper limit', 'kcal/mol', 'number', 'At or above: orbital-supported. In between: inconclusive.', { step: 0.05 }),
+    S_('nbo.includeRY', 'T3b', 'Count n→RY*(X) terms in the decision', '', 'bool', 'Off (default): the decision uses the valence n→σ* (or LP*) terms; the Rydberg part is reported beside it. Rydberg terms grow with the basis set.'),
     S_('nbo.geomTol', 'T3b', 'Geometry check tolerance', 'Å', 'number', 'Largest allowed atom displacement between output and manifest.', { step: 0.01 }),
     S_('eda.method', 'T4', 'EDA method', '', 'text', 'Q-Chem METHOD keyword.'), S_('eda.basis', 'T4', 'EDA basis', '', 'text', ''),
     S_('eda.preset', 'T4', 'EDA2 preset', '', 'select', '', { options: [['1', '1 · frozen decomposition + nMDQ-uFERF POL (standard)'], ['2', '2 · frozen decomposition + AO-block ALMO POL']] }),
@@ -147,11 +162,10 @@
     S_('eda.pcm', 'T4', 'PCM solvent', '', 'bool', ''), S_('eda.eps', 'T4', 'PCM ε', '', 'number', '', { step: 0.5 }), S_('eda.memMB', 'T4', 'MEM_TOTAL', 'MB', 'number', ''),
     S_('eda.chiHigh', 'T4', 'χ_CT for CT-driven', '', 'number', '', { step: 0.05 }), S_('eda.chiLow', 'T4', 'χ_CT for polarization-driven', '', 'number', '', { step: 0.05 }),
     S_('bxqi.weights', 'T5', 'Tier weights', '', 'weights', 'Weights of G, D, E, C in the geometric mean.'),
-    S_('bxqi.E0', 'T5', 'E₀ (NBO saturation)', 'kcal/mol', 'number', 's_E = 1 − e^(−ΣE(2)/E₀)', { step: 0.5 }), S_('bxqi.C0', 'T5', 'C₀ (EDA saturation)', 'kJ/mol', 'number', 's_C = 1 − e^(−|ΔE_int|/C₀)'),
-    S_('bxqi.gradeA', 'T5', 'Grade A from', '', 'number', ''), S_('bxqi.gradeB', 'T5', 'Grade B from', '', 'number', ''), S_('bxqi.gradeC', 'T5', 'Grade C from', '', 'number', ''),
-    S_('bxqi.requireGateForA', 'T5', 'Grade A needs a passed NBO gate', '', 'bool', ''),
-    S_('bxqi.consE2hi', 'T5', 'Consistency: large E(2)', 'kJ/mol', 'number', 'NBO E(2) is converted from kcal/mol (×4.184) before comparison.'), S_('bxqi.consCTlo', 'T5', 'Consistency: negligible CT', 'kJ/mol', 'number', '', { step: 0.1 }),
-    S_('bxqi.consE2lo', 'T5', 'Consistency: small E(2)', 'kJ/mol', 'number', 'NBO E(2) converted to kJ/mol.'), S_('bxqi.consCThi', 'T5', 'Consistency: large CT', 'kJ/mol', 'number', '')
+    S_('bxqi.E0', 'T5', 'E₀ (NBO saturation)', 'kcal/mol', 'number', 's_E = 1 − e^(−ΣE(2)/E₀)', { step: 0.5 }), S_('bxqi.C0', 'T5', 'C₀ (EDA saturation)', 'kcal/mol', 'number', 's_C = 1 − e^(−max(0, −ΔE_int)/C₀); a repulsive ΔE_int gives s_C = 0', { step: 0.1 }),
+    S_('bxqi.useC', 'T5', 'Use the EDA total in the index', '', 'bool', 'A cluster interaction energy covers every ligand–fragment contact; switch off when fragment 2 holds more than the acceptor.'),
+    S_('bxqi.consE2hi', 'T5', 'Consistency: large E(2)', 'kcal/mol', 'number', '', { step: 0.05 }), S_('bxqi.consCTlo', 'T5', 'Consistency: negligible CT', 'kcal/mol', 'number', '', { step: 0.05 }),
+    S_('bxqi.consE2lo', 'T5', 'Consistency: small E(2)', 'kcal/mol', 'number', '', { step: 0.05 }), S_('bxqi.consCThi', 'T5', 'Consistency: large CT', 'kcal/mol', 'number', '', { step: 0.05 })
   ];
 
   /* ------------------------------------------------------------------ */
@@ -161,56 +175,67 @@
     P = P || DEFAULTS; const g = P.geom, sc = P.score, f = P.ff, q = P.qm, m = P.mm; const ffl = (FFDATA[f.name] || {}).label || f.name; const A = [];
     if (stage === 'T0') {
       A.push('The first MODEL of a multi-model file defines the atoms. Later models serve as trajectory frames.');
-      A.push(P.struct.altloc === 'occupancy' ? 'For alternate locations, the conformer with the highest total occupancy is kept.' : 'For alternate locations, the first conformer (A, 1 or blank) is kept.');
-      A.push('Virtual sites are removed on reading. Examples are the σ-hole extra point (EP) of a halogen, LP sites and TIP4P M sites. DCD and XYZ frames with these sites are mapped onto the remaining atoms.');
-      A.push(`Bonds come from distances: d < r_cov(1) + r_cov(2) + ${P.struct.bondTol} Å. Links between residues are limited to peptide, disulfide and phosphodiester bonds.`);
+      A.push(P.struct.altloc === 'occupancy' ? 'For alternate locations, the conformer with the highest total occupancy is kept.' : 'For alternate locations, the first conformer (A, 1, or blank) is kept.');
+      A.push('Virtual sites are removed on reading. Examples are the σ-hole extra point (EP) of a halogen, LP sites, and TIP4P M sites. DCD and XYZ frames with these sites are mapped onto the remaining atoms.');
+      A.push(`Bonds come from distances: d < r_cov(1) + r_cov(2) + ${P.struct.bondTol} Å. Links between residues are limited to peptide, disulfide, and phosphodiester bonds.`);
       A.push('Element symbols come from columns 77–78. Atom names supply missing element symbols.');
-      A.push('Residues are classed as protein, nucleic acid, water, ion (single atom) or ligand (all other residues).');
+      A.push('Residues are classed as protein, nucleic acid, water, ion (single atom), or ligand (all other residues).');
     } else if (stage === 'T1') {
-      A.push(`Donors: C-bound ${g.includeF ? 'F, ' : ''}Cl, Br and I atoms of ligands and modified residues.`);
+      A.push(`Donors: C-bound ${g.includeF ? 'F, ' : ''}Cl, Br, and I atoms of ligands and modified residues.`);
       A.push(`A halogen bond needs d(X···Y) ≤ the pair cut-off and ${g.theta1Min}° ≤ θ₁ ≤ ${g.theta1Max}°${g.theta2Use ? ` and ${g.theta2Min}° ≤ θ₂ ≤ ${g.theta2Max}°` : ''}.`);
-      A.push(`Acceptors: ${[g.acceptorScope.protein && 'protein N/O/S', g.acceptorScope.nucleic && 'nucleic-acid N/O', g.acceptorScope.water && 'water O', g.acceptorScope.otherLigand && 'other ligands', g.includePi && `aromatic rings (Phe, Tyr, Trp${g.includeHisPi ? ', His' : ''}) with α ≤ ${g.piNormalMax}°`].filter(Boolean).join(', ')}.`);
+      { const oxj = a => a.length < 3 ? a.join(' and ') : a.slice(0, -1).join(', ') + ', and ' + a[a.length - 1];
+        const rings = ['Phe', 'Tyr', 'Trp', g.includeHisPi && 'His', g.includeNucleicPi && g.acceptorScope.nucleic && 'nucleobases', g.includeLigandPi && g.acceptorScope.otherLigand && 'ligand and cofactor rings'].filter(Boolean);
+        A.push(`Acceptors: ${oxj([g.acceptorScope.protein && 'protein N/O/S', g.acceptorScope.nucleic && 'nucleic-acid N/O', g.acceptorScope.water && 'water O', g.acceptorScope.otherLigand && 'other ligands and cofactors', g.includePi && `aromatic rings (${oxj(rings)}) with α ≤ ${g.piNormalMax}°`].filter(Boolean))}.`); }
       A.push(`R = d / (r_X + r_Y) with Bondi radii. An aromatic centroid has r = ${sc.ringRadius} Å.`);
-      A.push(`G = [g_d · g_θ · (½ + ½ g₂)]^⅓. g_d = 1 at R ≤ ${sc.Rbest}. g₂ is a Gaussian around θ₂ = ${sc.th2Opt}° (width ${sc.th2Width}°).`);
-      A.push(g.excludeNonLewis ? 'Poor Lewis bases (amide N–H, Lys NZ, Arg N, Trp NE1) are excluded.' : 'Poor Lewis bases are kept with the flag “weak”. The NBO gate decides their fate.');
+      A.push(`G = [g_d · g_θ · (½ + ½ g₂)]^⅓. g_d = 1 at R ≤ ${sc.Rbest}${sc.Rshort > 0 ? ` down to R = ${sc.Rshort}; below it g_d falls linearly to 0 at R = ${sc.Rmin}` : ''}. g₂ is a Gaussian around θ₂ = ${sc.th2Opt}° (width ${sc.th2Width}°). Contacts with R < ${sc.Rflag} are flagged as short.`);
+      A.push(g.excludeNonLewis ? 'Poor Lewis bases are excluded: N atoms with a delocalized lone pair (backbone amide N, Asn ND2, Gln NE2, and Trp NE1) and protonated N atoms (Lys NZ, Arg NE/NH1/NH2).' : 'Poor Lewis bases are kept with a flag: N atoms with a delocalized lone pair (backbone amide N, Asn ND2, Gln NE2, and Trp NE1) and protonated N atoms (Lys NZ, Arg NE/NH1/NH2). Such contacts need the NBO step and a check for N–H···X hydrogen bonds.');
+      A.push('The distance cut-offs of iodine come from an earlier hIYD study. The Br and Cl values follow from them by the shift in halogen radius. All cut-offs are editable.');
       A.push('Hydrogens are not required. Periodic images apply only to MD boxes (orthorhombic, edges ≥ 10 Å).');
     } else if (stage === 'T2') {
       A.push('Frames must have the atoms of the topology in the same order.');
       A.push(`The T1 test runs on every ${P.dyn.stride === 1 ? '' : P.dyn.stride + '-th '}frame. Contacts in fewer than ${P.dyn.occCut}% of the frames are not reported.`);
-      A.push(`Residence time τ = mean length of unbroken runs. D = f·(1 − e^(−τ/${P.dyn.tauScale}))^${P.dyn.dExp}.`);
+      A.push(`Residence time τ = mean length of unbroken runs × ${P.dyn.dt} ps per saved frame. D = f · [1 − exp(−τ/${P.dyn.tauScale} ps)]^${P.dyn.dExp}. When the analysed frames are τ0 or more apart, D is practically equal to f, and the program says so.`);
+      A.push('Frames of biased simulations (e.g. umbrella windows) are counted without reweighting. Occupancies then describe each window, not the unbiased ensemble.');
       A.push('The representative frame has the shortest d. Ties go to the largest θ₁.');
       A.push('Orthorhombic boxes (DCD unit cell or CRYST1) use the minimum-image convention. The ligand should be imaged and centred.');
     } else if (stage === 'T3') {
       A.push(`Protonation states and partial charges come from ${ffl}. ASP and GLU are anionic. LYS and ARG are cationic. CYS and TYR are neutral. HIS is ${f.hisDefault} by default. A tautomer name in the file (HID/HIE/HIP, HSD/HSE/HSP) or its hydrogens override this default. Changes for single residues override everything.`);
       A.push(`Cys pairs with S–S < ${f.ssCut} Å are disulfides (CYX). Chain termini are ${f.termini === 'charged' ? 'charged (NH₃⁺, COO⁻)' : 'uncharged'}. Residues next to a chain break are ${f.chainBreaks === 'charged' ? 'charged termini' : 'treated as internal'}.`);
-      A.push('Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds ' + (q.mode === 'sidechain' ? 'the acceptor side chains with Cα. Backbone N, C and O atoms leave fragment 2 except as acceptors' : 'the whole acceptor residues') + `.${q.shell > 0 ? ` Residues within ${q.shell} Å of the halogen are added.` : ''}`);
+      A.push('Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds ' + (q.mode === 'sidechain' ? 'the acceptor side chains with Cα. Backbone N, C, and O atoms leave fragment 2 except as acceptors' : 'the whole acceptor residues') + `.${q.shell > 0 ? ` Residues within ${q.shell} Å of the halogen are added.` : ''}`);
+      A.push(`${q.hbShell > 0 ? `Residues with an N–H or O–H group within ${q.hbShell} Å of a halogen join fragment 2, so a competing hydrogen bond to X is inside the QM region. ` : ''}${q.orientPolarH ? `Added O–H and S–H hydrogens take the rotamer with the best hydrogen bond (N, O, and halogen acceptors alike${q.polarHRotamer === 'best' ? '' : '; forced: ' + (q.polarHRotamer === 'toHalogen' ? 'toward the halogen' : 'away from the halogen')}); a near tie between a halogen-directed and another rotamer is reported.` : 'Added O–H and S–H hydrogens keep the template rotamer.'}`);
       A.push(`Missing hydrogens follow the force-field template of each residue (number of H per atom) with VSEPR geometry. Cut bonds get H caps (${q.linkScheme === 'scaled' ? 'scaled link-atom position' : 'fixed X–H length'}).`);
-      A.push(`Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp² carbon gets one double bond. The keto form is preferred. An sp² ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. ${q.ligandCharge === 'zero' ? 'All acids stay neutral.' : 'At pH 7, COOH, phosphate, phosphonate, sulfonate and sulfate groups lose their O–H hydrogen. Amines stay neutral.'} Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count.`);
+      A.push(`Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp² carbon gets one double bond. The keto form is preferred. An sp² ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. ${q.ligandCharge === 'zero' ? 'All acids stay neutral.' : `At pH 7, COOH, phosphate, phosphonate, sulfonate, and sulfate groups lose their O–H hydrogen. ${q.basicAmines === 'protonate' ? 'Aliphatic amines are protonated (+1).' : 'Aliphatic amines stay neutral and are flagged, because most of them are protonated at pH 7.'} Tetrazoles and acyl sulfonamides stay neutral and are flagged, because most of them are anionic at pH 7.`} Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count. A MOL2 or PQR file with a pKa-based state (e.g. from Epik or PROPKA) is the recommended source of the ligand charge.`);
       A.push('Fragment charges: residue formal charges come from the force-field template. The ligand charge comes from ' + (q.ligandCharge === 'zero' ? 'zero' : q.ligandCharge === 'rules' ? 'the ligand structure above' : 'a loaded MOL2 file or from the ligand structure above') + '. Every value can be overridden.');
       if (q.env === 'qmmm') {
-        A.push(`QM/MM: MM point charges within ${m.radius} Å (${m.selection === 'residue' ? 'whole residues' : 'single atoms'}) come from ${f.chargeSource === 'pqr' ? 'the PQR file' : f.chargeSource === 'ff' ? ffl : 'a loaded PQR file or from ' + ffl}. Water model: ${f.water}.`);
-        A.push(f.foldH ? 'For atoms without hydrogens in the file, each hydrogen charge moves onto its heavy atom. Residue charges stay exact. Local dipoles are approximate.' : 'Hydrogen charges apply only to hydrogens in the file.');
-        A.push({ RC: 'Boundary: the charge of each M1 atom moves to the midpoints of its M1–M2 bonds (redistributed charge, RC).', Z1: 'Boundary: the charges of the M1 atoms are deleted (Z1).', Z2: 'Boundary: the charges of the M1 and M2 atoms are deleted (Z2).', Z3: 'Boundary: the charges of the M1–M3 atoms are deleted (Z3).', none: 'Boundary: all MM charges are kept (no correction).' }[m.boundary]);
-        A.push('The embedding is electrostatic only. QM–MM van der Waals terms are not included. They do not enter the NBO analysis of a single point.');
+        A.push(`QM/MM: MM point charges ${m.radius > 0 ? `within ${m.radius} Å (${m.selection === 'residue' ? 'whole residues' : 'single atoms'})` : 'of the whole structure'} come from ${f.chargeSource === 'pqr' ? 'the PQR file' : f.chargeSource === 'ff' ? ffl : 'a loaded PQR file or from ' + ffl}. Water model: ${f.water}.`);
+        A.push(f.foldH ? (m.explicitH > 0 ? `MM residues with an atom within ${m.explicitH} Å of a halogen receive explicit hydrogens with their template charges. Farther away, each hydrogen charge moves onto its heavy atom. Residue charges stay exact.` : 'For atoms without hydrogens in the file, each hydrogen charge moves onto its heavy atom. Residue charges stay exact. Local N–H and O–H dipoles are approximate.') : 'Hydrogen charges apply only to hydrogens in the file.');
+        A.push({ RC: 'Boundary: the charge of each M1 atom moves to the midpoints of its M1–M2 bonds (redistributed charge, RC).', RCD: 'Boundary: RCD. The midpoints of the M1–M2 bonds carry 2q(M1)/n and each M2 atom loses q(M1)/n, so the M1–M2 bond dipoles are kept (redistributed charge and dipole).', Z1: 'Boundary: the charges of the M1 atoms are deleted (Z1).', Z2: 'Boundary: the charges of the M1 and M2 atoms are deleted (Z2).', Z3: 'Boundary: the charges of the M1–M3 atoms are deleted (Z3).', none: 'Boundary: all MM charges are kept (no correction).' }[m.boundary]);
+        A.push('The embedding is electrostatic only. QM–MM van der Waals terms are not included. They do not enter the NBO analysis of a single point. The MM region is not neutralized and has no solvent; its net charge is reported.');
         A.push('Ligands and cofactors in the MM region carry MOL2 charges from a loaded file. Without a MOL2 file, a charged group (carboxylate, phosphate, sulfate, R₄N⁺) carries its formal charge on its heavy atoms. Neutral groups get zero charges. Both cases are flagged.');
       } else A.push(q.pcm ? `The QM cluster sits in an implicit dielectric ε = ${q.eps} (CPCM/PCM). The dielectric represents the protein.` : 'The QM cluster is in the gas phase.');
+      A.push('Histidine without hydrogens in the file is ' + f.hisDefault + '. BondX lists every His near the halogen. Its state should be checked with a pKa tool (e.g. PROPKA through PDB2PQR).');
+      A.push('Anionic fragments need diffuse functions for reliable energies (e.g. def2-TZVPD or ma-def2-TZVP). BondX warns when an anionic model is written with a basis set without them.');
       if (q.program === 'orca') A.push(ORCA_NBO_CAUTION);
       if (q.program === 'qchem') A.push(QCHEM_NBO_CAUTION);
       if (q.program === 'gaussian' && q.nbo7) A.push(G16_NBO7_CAUTION);
     } else if (stage === 'T3b') {
-      A.push(`A contact is verified at ΣE(2) ≥ ${P.nbo.threshold} kcal/mol. The sum covers n(Y)→σ*(A–X)${P.nbo.includeRY ? ' and n(Y)→RY*(X)' : ''} for lone-pair acceptors. It covers π(ring)→σ*(A–X) for aromatic acceptors.`);
-      A.push(`The output geometry must match the manifest atom by atom (same elements, deviation < ${P.nbo.geomTol} Å). A mismatch blocks the gate.`);
-      A.push('NBO prints only couplings above its own print threshold (0.50 kcal/mol by default). Open-shell α and β tables are summed.');
+      A.push(`ΣE(2) sums n(Y)→σ*(A–X)${P.nbo.includeRY ? ' and n(Y)→RY*(X)' : ' (valence part; n(Y)→RY*(X) is reported beside it)'} for lone-pair acceptors and π(ring)→σ*(A–X) for aromatic acceptors. ΣE(2) ≥ ${P.nbo.greyHigh} kcal/mol: orbital-supported. ${P.nbo.greyLow}–${P.nbo.greyHigh} kcal/mol: inconclusive. Below ${P.nbo.greyLow} kcal/mol: not supported.`);
+      A.push('ΣE(2) is a second-order estimate for one localization scheme and level of theory, not an observable or a binding energy. It does not detect bent geometries that are repulsive or compressed contacts that are losing binding, so the T1 limits stay part of the decision.');
+      A.push(`Donation from the halogen lone pairs into N–H or O–H antibonds of the acceptor side is reported beside ΣE(2). When it exceeds ΣE(2) (and is at least ${P.nbo.hbFlagMin} kcal/mol), the contact is flagged: a competing N–H···X or O–H···X hydrogen bond dominates, and such a contact ranks after the unflagged supported contacts.`);
+      A.push('Ring acceptors give about a quarter of the ΣE(2) per unit binding energy of N acceptors in HAL59 (O acceptors about two thirds), so an inconclusive ring contact can be a real, weak halogen–π bond; ring contacts carry a flag. Poor Lewis bases keep their T1 flag, because NBO can place a lone pair on them in its Lewis structure.');
+      A.push(`The output geometry must match the manifest atom by atom (same elements, deviation < ${P.nbo.geomTol} Å). A mismatch blocks the NBO screen.`);
+      A.push('NBO prints couplings between two units (here the ligand and a protein residue) above 0.05 kcal/mol and couplings within one unit above 0.50 kcal/mol. Open-shell α and β tables are summed.');
     } else if (stage === 'T4') {
       A.push('Fragment 1 is the halogenated ligand. Fragment 2 is the acceptor environment. Both keep the charges and multiplicities of the QM model.');
       A.push(`χ_CT = E_CT / (E_POL + E_CT). Values ≥ ${P.eda.chiHigh} mean charge-transfer driven. Values ≤ ${P.eda.chiLow} mean polarization driven. Values in between mean mixed.`);
-      A.push('Energies are given in kJ/mol (1 kcal = 4.184 kJ).');
+      A.push('Energies are given in kcal/mol (1 kcal = 4.184 kJ).');
+      A.push('In a protein cluster the EDA terms cover every contact between the two fragments, not the halogen bond alone. COVP analysis or a minimal acceptor fragment isolates the n→σ* channel.');
     } else if (stage === 'T5') {
       const w = P.bxqi.weights;
-      A.push(`BXQI = 100 · Π s_k^(w_k/Σw) over all completed tiers. Weights: G ${w.G}, D ${w.D}, E ${w.E}, C ${w.C}.`);
-      A.push(`s_E = 1 − e^(−ΣE(2)/${P.bxqi.E0}). s_C = 1 − e^(−|ΔE_int|/${P.bxqi.C0}). Grades: A ≥ ${P.bxqi.gradeA}, B ≥ ${P.bxqi.gradeB}, C ≥ ${P.bxqi.gradeC}, else D.`);
-      if (P.bxqi.requireGateForA) A.push('Grade A requires a passed NBO gate. A contact with a failed gate receives grade C or D.');
-      A.push(`An NBO/ALMO inconsistency is flagged in two cases: E(2) > ${P.bxqi.consE2hi} kJ/mol with −E_CT < ${P.bxqi.consCTlo} kJ/mol, and E(2) < ${P.bxqi.consE2lo} kJ/mol with −E_CT > ${P.bxqi.consCThi} kJ/mol.`);
+      A.push(`BXQI = 100 · Π s_k^(w_k/Σw) over the tiers that could be evaluated. A tier that cannot be evaluated (e.g. G for an acceptor without a cut-off) is left out, not set to zero. Weights: G ${w.G}, D ${w.D}, E ${w.E}, C ${w.C}.`);
+      A.push(`s_E = 1 − exp(−ΣE(2)/${P.bxqi.E0} kcal/mol). s_C = 1 − exp(−max(0, −ΔE_int)/${P.bxqi.C0} kcal/mol), so a repulsive interaction gives s_C = 0${P.bxqi.useC ? '' : ' (the EDA tier is switched off)'}.`);
+      A.push('BXQI ranks candidates; it has no grades and is not a binding energy. The ranking first follows the NBO decision (orbital-supported, inconclusive, not supported, or not run) and then the index.');
+      A.push(`An NBO/ALMO inconsistency is flagged in two cases: ΣE(2) > ${P.bxqi.consE2hi} kcal/mol with −E_CT < ${P.bxqi.consCTlo} kcal/mol, and ΣE(2) < ${P.bxqi.consE2lo} kcal/mol with −E_CT > ${P.bxqi.consCThi} kcal/mol.`);
     }
     return A;
   }
@@ -450,6 +475,17 @@
     ASN: { ND2: 'weak', OD1: 'strong' }, GLN: { NE2: 'weak', OE1: 'strong' }, HIS: { ND1: 'strong', NE2: 'strong' }, PRO: { N: 'weak' } };
   const RINGS = { PHE: [['CG', 'CD1', 'CE1', 'CZ', 'CE2', 'CD2']], TYR: [['CG', 'CD1', 'CE1', 'CZ', 'CE2', 'CD2']],
     TRP: [['CD2', 'CE2', 'CZ2', 'CH2', 'CZ3', 'CE3'], ['CG', 'CD1', 'NE1', 'CE2', 'CD2']], HIS: [['CG', 'ND1', 'CE1', 'NE2', 'CD2']] };
+  const PUR = [['N1', 'C2', 'N3', 'C4', 'C5', 'C6'], ['C4', 'C5', 'N7', 'C8', 'N9']], PYR = [['N1', 'C2', 'N3', 'C4', 'C5', 'C6']];
+  const NUC_RINGS = { DA: PUR, DG: PUR, A: PUR, G: PUR, RA: PUR, RG: PUR, DC: PYR, DT: PYR, DU: PYR, C: PYR, U: PYR, RC: PYR, RU: PYR };
+  // planar 5- and 6-membered rings of a ligand or cofactor (for the optional ligand-ring acceptors)
+  function ligandRings(S, R) {
+    const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H'); const inR = new Set(heavy); const adj = i => S.bonds[i].filter(j => inR.has(j));
+    const rings = []; const seen = new Set();
+    for (const s0 of heavy) { const st = [[s0, [s0]]]; while (st.length) { const [v, path] = st.pop(); if (path.length > 6) continue;
+      for (const w of adj(v)) { if (w === s0 && path.length >= 5) { const k = [...path].sort((a, b) => a - b).join(','); if (!seen.has(k)) { seen.add(k); rings.push([...path]); } } else if (!path.includes(w) && w > s0) st.push([w, path.concat(w)]); } } }
+    return rings.filter(rg => { if (!rg.every(i => ['C', 'N', 'O', 'S'].includes(S.atoms[i].el))) return false; const P0 = rg.map(i => coordOf(S.frames[0], i)); const n = planeNormal(P0); const c = centroid(P0);
+      return Math.max(...P0.map(p => Math.abs(dot(sub(p, c), n)))) < 0.10; }).map(ids => ({ ids, label: `π(${ids.length}-ring)` }));
+  }
   function resLabel(S, r) { const R = S.residues[r]; return `${R.resName}${R.resSeq}${R.iCode || ''}:${R.chain}`; }
   function atomLabel(S, i) { const a = S.atoms[i]; return `${resLabel(S, a.res)}@${a.name}`; }
   function halogenPartner(S, xi) {
@@ -460,6 +496,15 @@
     const R = S.residues[S.atoms[xi].res]; let best = -1, bd = 1e9;
     for (const j of R.atoms) { if (j === xi) continue; const d = dist(px0, coordOf(S.frames[0], j)); if (d < bd) { bd = d; best = j; } }
     return best;
+  }
+  // why an acceptor is a poor Lewis base: delocalized lone pair (amide, indole) or protonated N (Lys, Arg)
+  function lewisWhy(S, yi) {
+    const a = S.atoms[yi]; const rn = AA_ALIAS[a.resName] || a.resName;
+    if (S.residues[a.res].cls !== 'protein') return a.el === 'N' ? 'N with three heavy neighbours' : '';
+    if (rn === 'LYS' && a.name === 'NZ') return 'protonated (ammonium)'; if (rn === 'ARG' && ['NE', 'NH1', 'NH2'].includes(a.name)) return 'protonated (guanidinium)';
+    if (a.name === 'N') return 'delocalized (backbone amide)'; if (rn === 'TRP' && a.name === 'NE1') return 'delocalized (indole)';
+    if ((rn === 'ASN' && a.name === 'ND2') || (rn === 'GLN' && a.name === 'NE2')) return 'delocalized (side-chain amide)';
+    return '';
   }
   function lewisClass(S, yi) {
     const a = S.atoms[yi]; const rn = AA_ALIAS[a.resName] || a.resName; const R = S.residues[a.res];
@@ -489,12 +534,13 @@
     const sum = (sc.vdw[el] || 1.9) + (isPi ? sc.ringRadius : (sc.vdw[accEl] || 1.6));
     const cut = (g.cutoffs[el] || {})[isPi ? 'AR' : accEl] || sum;
     const R = d / sum, Rcut = cut / sum, Rbest = sc.Rbest;
-    const gd = Math.max(0, Math.min(1, (Rcut - R) / Math.max(1e-6, Rcut - Rbest)));
+    let gd = Math.max(0, Math.min(1, (Rcut - R) / Math.max(1e-6, Rcut - Rbest)));
+    if (sc.Rshort > 0 && R < sc.Rshort) gd = Math.min(gd, Math.max(0, Math.min(1, (R - sc.Rmin) / Math.max(1e-6, sc.Rshort - sc.Rmin))));
     const gt = Math.max(0, Math.min(1, (th1 - g.theta1Min) / Math.max(1e-6, 180 - g.theta1Min)));
     let g2 = 1;
     if (isPi && piAng != null) g2 = Math.max(0, Math.min(1, 1 - piAng / g.piNormalMax));
     else if (th2 != null) g2 = Math.exp(-Math.pow((th2 - sc.th2Opt) / sc.th2Width, 2));
-    return { R, Rcut, sumVdw: sum, gd, gt, g2, G: (gd > 0 && gt > 0) ? Math.pow(gd * gt * (0.5 + 0.5 * g2), 1 / 3) : 0 };
+    return { R, Rcut, sumVdw: sum, gd, gt, g2, short: R < (sc.Rflag || 0), G: (gd > 0 && gt > 0) ? Math.pow(gd * gt * (0.5 + 0.5 * g2), 1 / 3) : 0 };
   }
   function fullParams(P) { return mergeParams(DEFAULTS, P || {}); }
   function prepareDetection(S, P) {
@@ -511,11 +557,13 @@
       if (!chainOK(a)) continue; const R = S.residues[a.res];
       const okCls = (R.cls === 'protein' && scope.protein) || (R.cls === 'nucleic' && scope.nucleic) || (R.cls === 'water' && scope.water) || (R.cls === 'ligand' && scope.otherLigand);
       if (!okCls) continue;
-      if (['N', 'O', 'S', 'SE'].includes(a.el)) { const lw = lewisClass(S, a.i); if (g.excludeNonLewis && lw === 'weak') continue; accAtoms.push({ Y: a.i, res: a.res, lewis: lw }); }
+      if (['N', 'O', 'S', 'SE'].includes(a.el)) { const lw = lewisClass(S, a.i); if (g.excludeNonLewis && lw === 'weak') continue; accAtoms.push({ Y: a.i, res: a.res, lewis: lw, lewisWhy: lw === 'weak' ? lewisWhy(S, a.i) : '' }); }
     }
-    if (g.includePi && scope.protein) for (const R of S.residues) {
-      if (R.cls !== 'protein') continue; if (g.selectedChains && !g.selectedChains.includes(R.chain)) continue;
-      ringsOf(S, R.idx, g.includeHisPi).forEach(rg => accRings.push({ res: R.idx, ids: rg.ids, label: rg.label }));
+    if (g.includePi) for (const R of S.residues) {
+      if (g.selectedChains && !g.selectedChains.includes(R.chain)) continue;
+      if (R.cls === 'protein' && scope.protein) ringsOf(S, R.idx, g.includeHisPi).forEach(rg => accRings.push({ res: R.idx, ids: rg.ids, label: rg.label }));
+      else if (R.cls === 'nucleic' && scope.nucleic && g.includeNucleicPi) (NUC_RINGS[R.resName] || []).forEach((names, k) => { const ids = names.map(n => R.byName[n]).filter(i => i !== undefined); if (ids.length === names.length) accRings.push({ res: R.idx, ids, label: names.length === 6 ? 'π(6-ring)' : 'π(5-ring)' }); });
+      else if (R.cls === 'ligand' && scope.otherLigand && g.includeLigandPi) ligandRings(S, R).forEach(rg => accRings.push({ res: R.idx, ids: rg.ids, label: rg.label }));
     }
     let maxCut = 0; Object.values(g.cutoffs).forEach(c => Object.values(c).forEach(v => { if (v > maxCut) maxCut = v; }));
     return { P, donors, accAtoms, accRings, maxCut };
@@ -540,7 +588,7 @@
         if (!(ok1 && ok2) && !g.reportNearMiss) continue;
         const gs = geometricScore(el, accEl === 'SE' ? 'S' : accEl, d, th1, th2, P, false);
         out.push(Object.assign({ key: `${dn.X}>${ac.Y}`, type: 'atom', X: dn.X, A: dn.A, Y: ac.Y, donorRes: dn.res, accRes: ac.res, halogen: el, accEl, d, theta1: th1, theta2: th2,
-          lewis: ac.lewis, status: ok1 && ok2 ? 'XB' : 'near-miss' }, gs, ok1 && ok2 ? {} : { G: 0 }));
+          lewis: ac.lewis, lewisWhy: ac.lewisWhy, status: ok1 && ok2 ? 'XB' : 'near-miss' }, gs, ok1 && ok2 ? {} : { G: 0 }));
       }
       for (const rg of accRings) {
         if (rg.res === dn.res) continue;
@@ -634,16 +682,21 @@
           const mean = a => a.reduce((x, y) => x + y, 0) / a.length; const sd = a => { const m = mean(a); return Math.sqrt(mean(a.map(v => (v - m) * (v - m)))); };
           const p = decorate(S, Object.assign({}, s.proto));
           const tauFrames = mean(runs) * stride; // in frames of the original trajectory
+          const tauPs = tauFrames * P.dyn.dt;
           res.push(Object.assign(p, { key, occupancy: occ, nFrames: s.frames.length, framesUsed: used, meanD: mean(s.d), sdD: sd(s.d), meanT1: mean(s.t1), sdT1: sd(s.t1),
-            bestFrame: s.frames[best], bestD: s.d[best], bestT1: s.t1[best], meanResidence: tauFrames, maxResidence: Math.max(...runs) * stride, nEvents: runs.length,
-            series: { frames: s.frames, d: s.d, t1: s.t1 }, D: Dscore(occ, tauFrames, P) }));
+            bestFrame: s.frames[best], bestD: s.d[best], bestT1: s.t1[best], meanResidence: tauFrames, meanResidencePs: tauPs, maxResidence: Math.max(...runs) * stride, maxResidencePs: Math.max(...runs) * stride * P.dyn.dt, nEvents: runs.length,
+            series: { frames: s.frames, d: s.d, t1: s.t1, t2: s.t2 }, bestT2: s.t2[best], D: Dscore(occ, tauPs, P) }));
         }
         res.sort((a, b) => b.occupancy - a.occupancy);
-        return { results: res, framesUsed: used };
+        // resolution check: when the saved-frame spacing is not shorter than tau0, the residence factor is close to 1 and D is close to f
+        const spacing = stride * P.dyn.dt; const resFactorMin = Math.pow(1 - Math.exp(-spacing / P.dyn.tauScale), P.dyn.dExp);
+        const resolutionWarning = spacing >= P.dyn.tauScale ? `The analysed frames are ${+spacing.toFixed(1)} ps apart, which is not shorter than τ0 = ${P.dyn.tauScale} ps: every run lasts at least one frame spacing, the residence factor is at least ${resFactorMin.toFixed(2)}, and D is practically equal to the occupancy. Residence times are given at the resolution of the saved frames.` : null;
+        return { results: res, framesUsed: used, frameSpacingPs: spacing, resolutionWarning };
       }
     };
   }
-  function Dscore(occ, tauFrames, P) { const d = (P || DEFAULTS).dyn; return occ * Math.pow(1 - Math.exp(-tauFrames / d.tauScale), d.dExp); }
+  // persistence score: D = f * [1 - exp(-tau/tau0)]^p with tau and tau0 in ps
+  function Dscore(occ, tauPs, P) { const d = (P || DEFAULTS).dyn; return occ * Math.pow(1 - Math.exp(-tauPs / d.tauScale), d.dExp); }
   function analyzeTrajectory(S, frames, boxes, P, opts = {}) {
     P = fullParams(P); const acc = trajAccumulator(S, P, opts); const stride = opts.stride || P.dyn.stride || 1;
     for (let f = 0; f < frames.length; f += stride) acc.add(frames[f], boxes ? boxes[f] : null, f);
@@ -981,7 +1034,7 @@
   // 4. P keeps one =O, S keeps up to two =O (the shortest bonds); other terminal O are acid OH.
   // 5. pH-7 group rules (mode 'rules'): COOH -> COO-, phosphate/phosphonate/phosphinate -1 or -2,
   //    sulfonate -1, sulfate -2 (the matching O-H are removed); R4N+ +1. Mode 'zero': neutral.
-  function ligandProtonation(S, frame, R, mode) {
+  function ligandProtonation(S, frame, R, mode, lopt = {}) {
     const heavy = R.atoms.filter(i => S.atoms[i].el !== 'H'); const inR = new Set(heavy);
     const EL = i => S.atoms[i].el; const pos = i => coordOf(frame, i);
     const metal = heavy.find(i => !['C', 'N', 'O', 'S', 'P', 'F', 'CL', 'BR', 'I', 'B', 'SE', 'SI', 'AS'].includes(EL(i)));
@@ -990,7 +1043,7 @@
     const bl = (i, j) => dist(pos(i), pos(j));
     const term = j => nbOf(j).length === 1;
     // planar unsaturated rings (5-7 atoms) inside the residue
-    const ringSp2 = new Set();
+    const ringSp2 = new Set(); const aroRings = [];
     const adj = i => nbOf(i).filter(j => inR.has(j));
     const rings = []; const seen = new Set();
     for (const s0 of heavy) {
@@ -1010,8 +1063,10 @@
       if (norm(nrm) < 1e-6) continue; nrm = unit(nrm);
       const dev = Math.max(...P0.map(p => Math.abs(dot(sub(p, c), nrm))));
       let lsum = 0; for (let k = 0; k < rg.length; k++) lsum += bl(rg[k], rg[(k + 1) % rg.length]);
-      if (dev < 0.12 && lsum / rg.length < 1.46) rg.forEach(i => ringSp2.add(i));
+      if (dev < 0.12 && lsum / rg.length < 1.46) { rg.forEach(i => ringSp2.add(i)); aroRings.push(rg); }
     }
+    // pyridinium-type N: three heavy neighbours in a planar six-membered ring that holds no other N (NAD(P)+, N-alkylpyridinium)
+    const pyN = new Set(aroRings.filter(rg => rg.length === 6 && rg.filter(i => EL(i) === 'N').length === 1).map(rg => rg.find(i => EL(i) === 'N')).filter(i => nbOf(i).length === 3));
     const cand = new Set(); const sp = new Set();
     // chain C with two heavy neighbours and trigonal angles (> 114 deg); used in pairs (C=C with poor deposited bond length)
     const trig2 = new Set(heavy.filter(i => EL(i) === 'C' && nbOf(i).length === 2 && !ringSp2.has(i) && angle(pos(nbOf(i)[0]), pos(i), pos(nbOf(i)[1])) > 114 && angle(pos(nbOf(i)[0]), pos(i), pos(nbOf(i)[1])) < 165));
@@ -1025,7 +1080,7 @@
         const pair = trig2.has(i) && nb.some(j => trig2.has(j));
         if (ringSp2.has(i) || (n === 3 && hyb === 'sp2') || (n === 2 && hyb === 'sp2' && (dmin < 1.40 || pair)) || (n === 1 && hyb === 'sp2')) cand.add(i);
       }
-      else if (e === 'N') { if (n === 2 && (ringSp2.has(i) || hyb === 'sp2')) cand.add(i); else if (n === 1 && EL(nb[0]) === 'C' && bl(i, nb[0]) < 1.32) cand.add(i); }
+      else if (e === 'N') { if (n === 2 && (ringSp2.has(i) || hyb === 'sp2')) cand.add(i); else if (n === 1 && EL(nb[0]) === 'C' && bl(i, nb[0]) < 1.32) cand.add(i); else if (pyN.has(i)) cand.add(i); }
       else if ((e === 'O' || e === 'S') && n === 1 && EL(nb[0]) === 'C') { if (bl(i, nb[0]) < (e === 'O' ? 1.32 : 1.72)) cand.add(i); }
     }
     // Kekule structure by depth-first search over the sp2 carbons, one conjugated block at a time
@@ -1093,12 +1148,27 @@
           for (let k = 0; k < Math.min(want, ohs.length); k++) { nH.set(ohs[k], 0); charge -= 1; deprot.push(ohs[k]); }
         }
         if (e === 'N' && nb.length === 4 && !nb.some(j => EL(j) === 'O' && term(j))) charge += 1;
+        if (e === 'N' && nb.length === 3 && M.has(i) && EL(M.get(i)) === 'C') { charge += 1; notes.push('pyridinium-type N with three neighbours carries +1'); }
       }
     }
+    // pKa flags: aliphatic amines (usually protonated at pH 7), tetrazoles and acyl sulfonamides (usually anionic at pH 7)
+    const flags = [];
+    const satC = j => EL(j) === 'C' && !cand.has(j) && !sp.has(j) && !ringSp2.has(j);
+    for (const i of heavy) {
+      if (EL(i) !== 'N' || cand.has(i) || sp.has(i) || ringSp2.has(i)) continue; const nb = nbOf(i);
+      if (nb.length >= 1 && nb.length <= 3 && nb.every(satC)) {
+        if (mode !== 'zero' && lopt.basicAmines === 'protonate') { nH.set(i, (nH.get(i) || 0) + 1); charge += 1; flags.push(`aliphatic amine ${S.atoms[i].name} protonated (+1)`); }
+        else flags.push(`aliphatic amine ${S.atoms[i].name} kept neutral, but it is usually protonated at pH 7 (pKa ≈ 9–11): load a MOL2/PQR file with the pKa-based state or set “Aliphatic amines” to protonate`);
+      }
+    }
+    for (const rg of rings) if (rg.length === 5 && rg.filter(i => EL(i) === 'N').length === 4) flags.push('tetrazole kept neutral, but it is usually anionic at pH 7 (pKa ≈ 4–5): load a MOL2/PQR file or adjust the charge');
+    for (const i of heavy) if (EL(i) === 'N') { const nb = nbOf(i); const sO = nb.some(j => EL(j) === 'S' && nbOf(j).filter(k => EL(k) === 'O' && term(k)).length >= 2); const cO = nb.some(j => EL(j) === 'C' && nbOf(j).some(k => EL(k) === 'O' && term(k)));
+      if (sO && cO && (nH.get(i) || 0) > 0) flags.push('acyl sulfonamide kept neutral, but it is usually anionic at pH 7 (pKa ≈ 4–5): load a MOL2/PQR file or adjust the charge'); }
+    flags.forEach(f => notes.push(f));
     if (unmatchedC) notes.push(`${unmatchedC} sp2 carbon(s) without a double-bond partner (unusual valence; check the ligand)`);
     if (nodes > nodeCap) notes.push('Kekule search stopped at the node limit');
     const total = [...nH.values()].reduce((a, b) => a + b, 0);
-    return { nH, charge, nHtotal: total, deprot, notes, doubleBonds: [...M].filter(([i, j]) => i < j), sp2: new Set([...M.keys(), ...[...ringSp2].filter(i => cand.has(i))]) };
+    return { nH, charge, nHtotal: total, deprot, notes, flags, doubleBonds: [...M].filter(([i, j]) => i < j), sp2: new Set([...M.keys(), ...[...ringSp2].filter(i => cand.has(i))]) };
   }
   // FORMUL check: heavy-atom completeness and H count (expected H = FORMUL H + model charge - FORMUL charge)
   function formulCheck(S, R, nHmodel, charge) {
@@ -1127,6 +1197,28 @@
     }
     return q;
   }
+  // rotamer of a polar hydrogen: H-bond score with N/O acceptors (weight 1) and C-bound halogens (weight 0.3), clash penalty
+  // Rotatable O-H / S-H hydrogens: every rotamer is scored by its best hydrogen bond. N, O, and C-bound halogen acceptors
+  // are treated alike (no preference for or against the halogen); the rotamer choice can be forced, and an ambiguous
+  // choice between a halogen-directed and another rotamer is reported so that both models can be built and compared.
+  function orientPolarH(S, frame, iO, iC, h0, hyb, targets, mode = 'best') {
+    const pO = coordOf(frame, iO), pC = coordOf(frame, iC); const axis = unit(sub(pO, pC)); const v0 = sub(h0, pO);
+    const bonded = new Set([iO, iC, ...S.bonds[iO]]); const steps = hyb === 'sp2' ? [0, 180] : Array.from({ length: 12 }, (_, k) => k * 30);
+    const all = [];
+    for (const deg_ of steps) {
+      const h = add(pO, rotAround(v0, axis, deg_ * Math.PI / 180)); let sc = 0, toX = null;
+      for (const t of targets) { if (bonded.has(t.i)) continue; const d = dist(h, t.p); const dO = dist(pO, t.p);
+        if (XB_HALOGENS.has(t.el)) { if (dO < 3.8 && d < dO) { sc += Math.max(0, Math.min(1, (3.1 - d) / 0.5)); if (d < 2.9 && (toX === null || d < toX)) toX = d; } }
+        else if (dO < 3.5 && d < dO) sc += Math.max(0, Math.min(1, (2.7 - d) / 0.5));
+        if (d < 1.7) sc -= 3; }
+      all.push({ h, sc, toX });
+    }
+    const pick = arr => arr.reduce((b, r) => (!b || r.sc > b.sc + 1e-9) ? r : b, null);
+    const best = pick(all), bestX = pick(all.filter(r => r.toX !== null)), bestNX = pick(all.filter(r => r.toX === null));
+    const chosen = mode === 'toHalogen' ? (bestX || best) : mode === 'awayFromHalogen' ? (bestNX || best) : best;
+    const ambiguous = !!(bestX && bestNX && bestX.sc > 0 && bestNX.sc > 0 && Math.abs(bestX.sc - bestNX.sc) <= 0.5);
+    return Object.assign({}, chosen, { ambiguous, toXalt: bestX ? bestX.toX : null });
+  }
   function linkPosition(pQ, pM, elQ, elM, P) {
     const xh = P.qm.xh[elQ] || 1.09; const dir = unit(sub(pM, pQ));
     if (P.qm.linkScheme === 'scaled') { const g = xh / ((COV[elQ] || 0.77) + (COV[elM] || 0.77)); return add(pQ, scl(sub(pM, pQ), g)); }
@@ -1151,12 +1243,35 @@
       const needsBB = xbList.some(h => h.accRes === r && h.type === 'atom' && ['O', 'N', 'OXT'].includes(S.atoms[h.Y].name));
       R.atoms.forEach(i => { const nm = S.atoms[i].name; if (sc && !needsBB && BB.includes(nm)) { partial.add(r); return; } include.add(i); if (!fragOf.has(i)) fragOf.set(i, 2); });
     });
+    // keep the amide of backbone acceptors: add the residue on the other side of the peptide bond
+    const amideAdded = [];
+    if (P.qm.keepAmide !== 'off') xbList.forEach(h => {
+      if (h.type !== 'atom') return; const y = S.atoms[h.Y]; if (S.residues[y.res].cls !== 'protein') return;
+      let partner = null;
+      if (y.name === 'N') partner = S.bonds[h.Y].find(j => S.atoms[j].name === 'C' && S.atoms[j].res !== y.res);
+      else if (y.name === 'O' && P.qm.keepAmide === 'both') { const c = S.bonds[h.Y].find(j => S.atoms[j].name === 'C'); if (c !== undefined) partner = S.bonds[c].find(j => S.atoms[j].name === 'N' && S.atoms[j].res !== y.res); }
+      if (partner === undefined || partner === null) return; const r0 = S.atoms[partner].res; if (donorResSet.has(r0)) return;
+      if (S.residues[r0].atoms.some(i => !include.has(i))) { S.residues[r0].atoms.forEach(i => { include.add(i); if (!fragOf.has(i)) fragOf.set(i, 2); }); amideAdded.push(resId(S.residues[r0])); accResSet.add(r0); }
+    });
     if (P.qm.shell > 0) {
       const xs = xbList.map(h => coordOf(frame, h.X));
       for (const R of S.residues) {
         if (donorResSet.has(R.idx) || accResSet.has(R.idx)) continue;
         if (R.cls === 'ion' && !P.qm.shellIons) continue; if (R.cls === 'water' && !P.qm.shellWater) continue;
         if (R.atoms.some(i => xs.some(p => dist(p, coordOf(frame, i)) <= P.qm.shell))) R.atoms.forEach(i => { include.add(i); fragOf.set(i, 2); });
+      }
+    }
+    // residues that can donate a hydrogen bond to a halogen: N or O atoms that carry (or will carry) H within qm.hbShell of X
+    const hbAdded = [];
+    if (P.qm.hbShell > 0) {
+      const FFh = ffSet(P.ff.name); const xs = xbList.map(h => coordOf(frame, h.X));
+      for (const R of S.residues) {
+        if (donorResSet.has(R.idx) || accResSet.has(R.idx) || R.atoms.every(i => include.has(i))) continue;
+        if (!['protein', 'nucleic', 'water'].includes(R.cls)) continue;
+        const info = ffa.residues[R.idx]; const tp = info && info.tpl ? FFh.residues[info.tpl] : null;
+        const donorAtom = i => { const a = S.atoms[i]; if (a.el !== 'N' && a.el !== 'O') return false; if (R.cls === 'water') return true;
+          if (S.bonds[i].some(j => S.atoms[j].el === 'H')) return true; const t = tp && tp.atoms[a.name]; return !!(t && t[2] && t[2].length); };
+        if (R.atoms.some(i => donorAtom(i) && xs.some(p => dist(p, coordOf(frame, i)) <= P.qm.hbShell))) { R.atoms.forEach(i => { include.add(i); if (!fragOf.has(i)) fragOf.set(i, 2); }); hbAdded.push(resId(R)); }
       }
     }
     const qm = []; const indexOf = new Map(); const qmRes = new Set([...include].map(i => S.atoms[i].res)); const warnings = ffa.warnings.filter(w => [...qmRes].some(r => w.includes(' ' + resId(S.residues[r]) + ':')));
@@ -1167,11 +1282,11 @@
     const ligInfo = {}; const ligRebuild = new Set();
     [...new Set([...include].map(i => S.atoms[i].res))].forEach(r => {
       const R = S.residues[r]; if (R.cls !== 'ligand') return;
-      const lp = ligandProtonation(S, frame, R, P.qm.ligandCharge === 'zero' ? 'zero' : 'rules');
+      const lp = ligandProtonation(S, frame, R, P.qm.ligandCharge === 'zero' ? 'zero' : 'rules', { basicAmines: P.qm.basicAmines });
       const fileH = R.atoms.filter(i => S.atoms[i].el === 'H').length; const id = `${R.resName} ${resId(R)}`;
       const L = { res: resId(R), resName: R.resName, fileH, rebuilt: false, notes: lp.notes.slice() };
       if (lp.metal) { L.notes.forEach(n => warnings.push(`${id}: ${n}; old per-atom rules used.`)); ligInfo[r] = { lp: null, L }; return; }
-      if (fileH && !P.qm.forceH && fileH !== lp.nHtotal) {
+      if (fileH && !P.qm.forceH && !P.qm.keepFileH && fileH !== lp.nHtotal) {
         R.atoms.forEach(i => { if (S.atoms[i].el === 'H') { include.delete(i); fragOf.delete(i); droppedH.add(i); } }); ligRebuild.add(r); L.rebuilt = true;
         warnings.push(`${id}: the file has ${fileH} H, but its heavy-atom structure needs ${lp.nHtotal} H at charge ${lp.charge}; its hydrogens were rebuilt.`);
       }
@@ -1183,6 +1298,9 @@
       ligInfo[r] = { lp, L };
     });
     const order = [...include].sort((a, b) => (fragOf.get(a) - fragOf.get(b)) || a - b);
+    // hydrogen-bond partners for rotatable O-H / S-H hydrogens: N and O atoms near the QM region (and C-bound halogens, weakly)
+    const polarTargets = []; { const qpos = [...include].map(i => coordOf(frame, i)); const lo = [0, 1, 2].map(k => Math.min(...qpos.map(p => p[k])) - 4), hi = [0, 1, 2].map(k => Math.max(...qpos.map(p => p[k])) + 4);
+      S.atoms.forEach(b => { if (!['N', 'O', 'CL', 'BR', 'I'].includes(b.el)) return; const p = coordOf(frame, b.i); if (p.some((v, k) => v < lo[k] || v > hi[k])) return; polarTargets.push({ i: b.i, el: b.el, p }); }); }
     for (const i of order) { indexOf.set(i, qm.length); const a = S.atoms[i]; const p = coordOf(frame, i);
       qm.push({ el: a.el, x: p[0], y: p[1], z: p[2], frag: fragOf.get(i), src: { i, chain: a.chain, resName: a.resName, resSeq: a.resSeq, iCode: a.iCode, name: a.name, serial: a.serial } }); }
     let addedH = 0, linkH = 0, completedH = 0; const keptH = [];
@@ -1217,7 +1335,10 @@
         if (nH > 0) {
           const nbPos = nbAll.map(j => coordOf(frame, j)).concat(protonate ? [] : existingH.filter(j => include.has(j)).map(j => coordOf(frame, j)));
           let ref = null; if (nbPos.length === 1 && nbAll.length === 1) { const k = S.bonds[nbAll[0]].find(j => j !== i && S.atoms[j].el !== 'H'); if (k !== undefined) ref = coordOf(frame, k); }
-          placeH(pc, nbPos, nH, hyb, ref, P.qm.xh[a.el] || 1.0).forEach(h => { qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), added: true, parent: indexOf.get(i) }); addedH++; if (!protonate) completedH++; });
+          let hpos = placeH(pc, nbPos, nH, hyb, ref, P.qm.xh[a.el] || 1.0);
+          // rotatable polar hydrogen (O-H, S-H with one heavy neighbour): choose the rotamer with the best hydrogen bond
+          if (nH === 1 && (a.el === 'O' || a.el === 'S') && nbAll.length === 1 && P.qm.orientPolarH) { const r = orientPolarH(S, frame, i, nbAll[0], hpos[0], hyb, polarTargets, P.qm.polarHRotamer); hpos = [r.h]; if (r.toX) warnings.push(`${atomLabel(S, i)}: its hydrogen points to a halogen (H···X ${r.toX.toFixed(2)} Å), so an ${a.el}–H···X hydrogen bond competes with the halogen bond.`); if (r.ambiguous && P.qm.polarHRotamer === 'best') warnings.push(`${atomLabel(S, i)}: a rotamer toward the halogen (H···X ${r.toXalt.toFixed(2)} Å) and one toward another acceptor fit about equally well. Build the model twice (H rotamer near halogens: toward / away from the halogen) and compare the NBO decisions.`); }
+          hpos.forEach(h => { qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), added: true, parent: indexOf.get(i) }); addedH++; if (!protonate) completedH++; });
         }
       }
       for (const j of nbAll) if (!include.has(j)) {
@@ -1225,6 +1346,10 @@
         qm.push({ el: 'H', x: h[0], y: h[1], z: h[2], frag: fragOf.get(i), link: true, parent: indexOf.get(i), replaces: { i: j, label: atomLabel(S, j) } }); linkH++;
       }
     }
+    { const xs = xbList.map(h => coordOf(frame, h.X)); const his = S.residues.filter(R => R.cls === 'protein' && (AA_ALIAS[R.resName] || R.resName) === 'HIS' && !R.atoms.some(i => S.atoms[i].el === 'H') && R.atoms.some(i => xs.some(p => dist(p, coordOf(frame, i)) <= 8)));
+      if (his.length) warnings.push(`His within 8 Å of the halogen without hydrogens in the file: ${his.map(R => R.resName + ' ' + resId(R) + ' → ' + ffVariant(S, R, P).base).join(', ')}. Check their state with a pKa tool (e.g. PROPKA) and override if needed.`); }
+    if (amideAdded.length) warnings.push(`Residue(s) ${amideAdded.join(', ')} added to fragment 2 so that the backbone acceptor keeps its amide.`);
+    if (hbAdded.length) warnings.push(`Residue(s) ${hbAdded.join(', ')} added to fragment 2 because an N–H or O–H group lies within ${P.qm.hbShell} Å of a halogen (possible competing hydrogen bond).`);
     if (keptH.length) warnings.push(`${keptH.length} residue(s) already contain hydrogens (${keptH.slice(0, 5).map(r => S.residues[r].resName + ' ' + resId(S.residues[r])).join(', ')}${keptH.length > 5 ? '…' : ''}): their N/O/S hydrogens are kept as given${completedH ? `; ${completedH} missing C–H hydrogen(s) were added` : ' and no H is added'}.`);
     // ---- fragment charges from force-field formal charges
     const fragCharge = { 1: 0, 2: 0 }; const chargeLog = []; const qmResCharge = {};
@@ -1256,7 +1381,7 @@
     [1, 2].forEach(f => { const e = fragElectrons(f); if (e % 2 !== 0) warnings.push(`Fragment ${f} has an odd electron count (${e}); adjust its charge before ALMO-EDA.`); });
     const xbs = xbList.map((h, k) => ({ id: h.cid || ('XB' + (k + 1)), type: h.type, X: indexOf.get(h.X) + 1, A: indexOf.get(h.A) + 1,
       Y: h.type === 'atom' ? indexOf.get(h.Y) + 1 : null, ring: h.type === 'pi' ? h.ring.map(i => indexOf.get(i) + 1) : null,
-      label: `${h.donorLabel}@${h.Xname} ··· ${h.accLabel}@${h.accName}`, d: h.d, theta1: h.theta1, halogen: h.halogen }));
+      label: `${h.donorLabel}@${h.Xname} ··· ${h.accLabel}@${h.accName}`, d: h.d, theta1: h.theta1, halogen: h.halogen, lewis: h.lewis || null, lewisWhy: h.lewisWhy || '' }));
     const manifest = { tool: 'BondX', version: VERSION, created: new Date().toISOString(), source: S.header.idCode || opts.sourceName || '', frame: frameIdx || 0, mode,
       shell: P.qm.shell, nAtoms: qm.length, addedH, linkH, forceField: P.ff.name, fragCharge, totalCharge: totalQ, multiplicity: opts.multiplicity || (electrons % 2 ? 2 : 1),
       residueCharges: chargeLog, ligands: Object.values(ligInfo).map(x => x.L), xbs,
@@ -1271,9 +1396,9 @@
 
   /* ---------------- Embedding point charges (QM/MM) ------------------ */
   function embeddingCharges(S, frameIdx, include, opts = {}) {
-    const P = fullParams(opts.P); const frame = S.frames[frameIdx || 0]; const R = P.mm.radius; const ffa = opts.ffa || assignForceField(S, P, { mol2: opts.mol2 });
-    const qmIdx = [...include]; const grid = makeGrid(frame, qmIdx, Math.max(4, R / 2));
-    const near = i => { const p = coordOf(frame, i); let hit = false; gridQuery(grid, p, R, j => { if (!hit && dist(p, coordOf(frame, j)) <= R) hit = true; }); return hit; };
+    const P = fullParams(opts.P); const frame = S.frames[frameIdx || 0]; const whole = !(P.mm.radius > 0); const R = whole ? Infinity : P.mm.radius; const ffa = opts.ffa || assignForceField(S, P, { mol2: opts.mol2 });
+    const qmIdx = [...include]; const grid = whole ? null : makeGrid(frame, qmIdx, Math.max(4, R / 2));
+    const near = whole ? () => true : i => { const p = coordOf(frame, i); let hit = false; gridQuery(grid, p, R, j => { if (!hit && dist(p, coordOf(frame, j)) <= R) hit = true; }); return hit; };
     // MM atoms
     const mmSet = new Set();
     if (P.mm.selection === 'residue') S.residues.forEach(Rs => { if (Rs.atoms.some(i => !include.has(i) && near(i))) Rs.atoms.forEach(i => { if (!include.has(i)) mmSet.add(i); }); });
@@ -1297,10 +1422,38 @@
     if (sch === 'Z1' || sch === 'Z2' || sch === 'Z3') { const del = [...M1, ...(sch !== 'Z1' ? M2 : []), ...(sch === 'Z3' ? M3 : [])].reduce((t, i) => t + q.get(i), 0);
       if (Math.abs(del) > 1e-6) notes.push(`${sch} boundary deleted ${del.toFixed(4)} e of MM charge near the QM region, so the net MM charge is no longer an integer (inherent to ${sch}; RC conserves it).`);
       M1.forEach(i => q.set(i, 0)); if (sch !== 'Z1') M2.forEach(i => q.set(i, 0)); if (sch === 'Z3') M3.forEach(i => q.set(i, 0)); }
-    else if (sch === 'RC') {
+    else if (sch === 'RC' || sch === 'RCD') {
+      // RC: q(M1) -> q0/n at each M1-M2 midpoint. RCD: 2q0/n at each midpoint and -q0/n on each M2 (keeps the M1-M2 bond dipoles)
       M1.forEach(i => { const qi = q.get(i); const m2 = S.bonds[i].filter(j => mmSet.has(j) && !M1.has(j)); q.set(i, 0); if (!m2.length) { if (qi) notes.push(`${atomLabel(S, i)}: M1 atom without M2 neighbours, its charge (${qi.toFixed(3)}) was deleted.`); return; }
-        const pi = coordOf(frame, i); m2.forEach(j => { const pm = scl(add(pi, coordOf(frame, j)), 0.5); extraPts.push({ x: pm[0], y: pm[1], z: pm[2], q: qi / m2.length, label: `RC ${atomLabel(S, i)}–${S.atoms[j].name}` }); }); });
+        const pi = coordOf(frame, i); const n = m2.length;
+        m2.forEach(j => { const pm = scl(add(pi, coordOf(frame, j)), 0.5); extraPts.push({ x: pm[0], y: pm[1], z: pm[2], q: (sch === 'RCD' ? 2 : 1) * qi / n, label: `${sch} ${atomLabel(S, i)}–${S.atoms[j].name}` });
+          if (sch === 'RCD') q.set(j, q.get(j) - qi / n); }); });
     }
+    // explicit hydrogens for MM residues near a halogen: unfold the template H charges so N-H and O-H dipoles stay intact
+    let nExplicitH = 0; const explicitRes = [];
+    if (P.mm.explicitH > 0 && P.ff.foldH && !ffa.usedPQR) {
+      const FF = ffSet(P.ff.name); const xs = [...include].filter(i => XB_HALOGENS.has(S.atoms[i].el) && S.residues[S.atoms[i].res].cls !== 'protein').map(i => coordOf(frame, i));
+      const nearX = Rs => Rs.atoms.some(i => xs.some(p => dist(p, coordOf(frame, i)) <= P.mm.explicitH));
+      S.residues.forEach(Rs => {
+        if (!(Rs.cls === 'protein' || Rs.cls === 'nucleic')) return; const info = ffa.residues[Rs.idx]; if (!info || !info.tpl || info.source !== P.ff.name) return;
+        if (Rs.atoms.some(i => S.atoms[i].el === 'H')) return; if (!Rs.atoms.some(i => mmSet.has(i))) return; if (!nearX(Rs)) return;
+        const tpl = FF.residues[info.tpl]; if (!tpl) return; const rn = AA_ALIAS[Rs.resName] || Rs.resName; let added = 0;
+        Rs.atoms.forEach(i => {
+          if (!mmSet.has(i) || M1.has(i)) return; const a = S.atoms[i]; let nm = a.name; if (!tpl.atoms[nm] && HEAVY_ALIAS[nm]) nm = HEAVY_ALIAS[nm]; if (!tpl.atoms[nm] && Rs.resName === 'ILE' && nm === 'CD') nm = 'CD1';
+          const t = tpl.atoms[nm]; if (!t || !t[2].length) return;
+          const nbAll = S.bonds[i].filter(j => S.atoms[j].el !== 'H'); const pc = coordOf(frame, i);
+          const sp2 = SP2_ATOMS._BB.includes(a.name) || (SP2_ATOMS[rn] || []).includes(a.name);
+          let hyb = Rs.cls === 'nucleic' ? guessHyb(a.el, pc, nbAll.map(j => coordOf(frame, j)), nbAll.map(j => S.atoms[j].el)) : (sp2 ? 'sp2' : 'sp3'); if (a.name === 'N' && t[2].length >= 2) hyb = 'sp3';
+          let ref = null; if (nbAll.length === 1) { const k = S.bonds[nbAll[0]].find(j => j !== i && S.atoms[j].el !== 'H'); if (k !== undefined) ref = coordOf(frame, k); }
+          const hs = placeH(pc, nbAll.map(j => coordOf(frame, j)), t[2].length, hyb, ref, P.qm.xh[a.el] || 1.0);
+          let qh = 0; hs.forEach((h, k) => { const c = t[2][k] ? t[2][k][1] : 0; qh += c; extraPts.push({ x: h[0], y: h[1], z: h[2], q: c, label: `H(${atomLabel(S, i)})` }); added++; });
+          q.set(i, q.get(i) - qh);
+        });
+        if (added) { nExplicitH += added; explicitRes.push(resId(Rs)); }
+      });
+      if (nExplicitH) notes.push(`${nExplicitH} explicit MM hydrogens built for ${explicitRes.length} residue(s) within ${P.mm.explicitH} Å of a halogen.`);
+    }
+    let nZero = 0; mmSet.forEach(i => { if (Math.abs(q.get(i)) <= 1e-8) nZero++; });
     const out = []; mmSet.forEach(i => { const v = q.get(i); if (Math.abs(v) > 1e-8) { const p = coordOf(frame, i); const a = S.atoms[i]; out.push({ x: p[0], y: p[1], z: p[2], q: v, i, label: atomLabel(S, i), type: ffa.type[i] || '', src: ffa.residues[a.res].source }); } });
     extraPts.forEach(e => out.push(e));
     const unknown = [...new Set([...mmSet].map(i => S.atoms[i].res))].map(r => ffa.residues[r]).filter(x => x && x.source === 'none');
@@ -1309,7 +1462,7 @@
     if (formal.length) notes.push(`${formal.length} MM residue(s) without template or MOL2 carry their formal charge spread over heavy atoms: ${[...new Set(formal.map(u => u.resName + ' ' + (u.formal > 0 ? '+' : '') + u.formal))].join(', ')}. Load a MOL2 file for proper partial charges.`);
     const missingH = P.ff.foldH && !ffa.usedPQR && [...mmSet].some(i => (ffa.residues[S.atoms[i].res] || {}).foldedH > 0);
     return { charges: out, source: ffa.usedPQR ? 'PQR' : ffa.ff, water: ffa.water, net: out.reduce((s, c) => s + c.q, 0), nMM: mmSet.size, M1: M1.size, M2: M2.size, cut: cut.length,
-      boundary: sch, radius: R, selection: P.mm.selection, notes, foldedH: missingH };
+      boundary: sch, radius: whole ? 0 : R, selection: P.mm.selection, notes, foldedH: missingH, nZero, nExplicitH };
   }
 
   /* ---------------- QM input writers ---------------------------------- */
@@ -1329,7 +1482,7 @@
     const solv = (!pcs && o.solvent) ? ' scrf=(cpcm,solvent=water,read)' : '';
     const L = [`%nprocshared=${o.nproc}`, `%mem=${o.mem}`, `%chk=${o.job}.chk`,
       `#p ${o.method}/${o.basis}${disp} pop=(nbo${o.nbo7 ? '7' : ''}) nosymm scf=(tight,xqc) int=ultrafine${pcs ? ' charge' : ''}${solv}`, '',
-      asc(`BondX ${m.id} | NBO XB gate | ${m.xbs.map(x => x.label).join(' ; ')}`).slice(0, 78), '', `${q} ${mult}`];
+      asc(`BondX ${m.id} | NBO XB screen | ${m.xbs.map(x => x.label).join(' ; ')}`).slice(0, 78), '', `${q} ${mult}`];
     model.qm.forEach(a => L.push(fmtXYZ(a))); L.push('');
     if (pcs) { pcs.charges.forEach(c => L.push(`${c.x.toFixed(6).padStart(13)}${c.y.toFixed(6).padStart(13)}${c.z.toFixed(6).padStart(13)}${c.q.toFixed(6).padStart(12)}`)); L.push(''); }
     if (solv) L.push(`Eps=${o.eps}`, '');
@@ -1337,7 +1490,7 @@
     return L.join('\n');
   }
   function writeORCA(model, o, pcs) {
-    const m = model.manifest; const L = [`# BondX ${m.id} - NBO XB gate`, asc(`# ${m.xbs.map(x => x.label).join(' ; ')}`),
+    const m = model.manifest; const L = [`# BondX ${m.id} - NBO XB screen`, asc(`# ${m.xbs.map(x => x.label).join(' ; ')}`),
       '# CAUTION: ORCA has no built-in NBO. The NBO keyword calls NBO 7, a licensed program.',
       '# Set the NBOEXE environment variable to the NBO 7 executable before running ORCA.',
       '# Without NBO 7 the SCF runs but no NBO analysis is printed.',
@@ -1360,7 +1513,7 @@
     return r.concat(extra);
   }
   function writeQChemNBO(model, o, pcs) {
-    const m = model.manifest; const L = [`! BondX ${m.id} - NBO XB gate`, asc(`! ${m.xbs.map(x => x.label).join(' ; ')}`)];
+    const m = model.manifest; const L = [`! BondX ${m.id} - NBO XB screen`, asc(`! ${m.xbs.map(x => x.label).join(' ; ')}`)];
     if (QCHEM_G_BASIS.test(o.basis)) L.push('! ' + QCHEM_NBO_G_CAUTION);
     L.push('$molecule', `${m.totalCharge} ${m.multiplicity}`);
     model.qm.forEach(a => L.push(fmtXYZ(a))); L.push('$end', '');
@@ -1387,6 +1540,12 @@
     L.push('$rem', '   JOBTYPE         eda', ...qchemRem(o, extra, model.qm), '$end');
     if (o.solvent) L.push('', '$solvent', `   SolventDielectric ${o.eps}`, '$end');
     return L.join('\n') + '\n';
+  }
+  // caution for anionic models written without diffuse functions
+  function basisCaution(model, basis) {
+    const neg = [1, 2].filter(f => (model.manifest.fragCharge[f] || 0) < 0); if (!neg.length) return null;
+    if (/TZVPD|SVPD|QZVPD|aug-|ma-def2|\+/i.test(basis)) return null;
+    return `Fragment ${neg.join(' and ')} is anionic (charge ${neg.map(f => model.manifest.fragCharge[f]).join(', ')}), but ${basis} has no diffuse functions. Interaction energies of anions need diffuse functions (e.g. def2-TZVPD or ma-def2-TZVP); NBO values change less, but compare with a diffuse basis for marginal contacts.`;
   }
   function writeXYZ(model) { return `${model.qm.length}\nBondX ${model.manifest.id}\n` + model.qm.map(fmtXYZ).join('\n') + '\n'; }
   function chargesCSV(pcs) { return 'x,y,z,q,atom,type,source\n' + pcs.charges.map(c => [c.x.toFixed(4), c.y.toFixed(4), c.z.toFixed(4), c.q.toFixed(6), JSON.stringify(c.label || ''), c.type || '', c.src || 'RC'].join(',')).join('\n') + '\n'; }
@@ -1441,8 +1600,15 @@
     manifest.atoms.forEach((a, k) => { const g = geo[k]; if (g.el !== a.el) elMis++; maxDev = Math.max(maxDev, dist([a.x, a.y, a.z], [g.x, g.y, g.z])); });
     return { checked: true, ok: elMis === 0 && maxDev < tol, maxDev, elMis, note: elMis ? `${elMis} element mismatches — output does not belong to this manifest.` : (maxDev < tol ? `Atom order verified (max deviation ${maxDev.toFixed(4)} Å).` : `Coordinates differ by up to ${maxDev.toFixed(3)} Å (> ${tol} Å; re-oriented or optimised?). Element order matches.`) };
   }
+  // NBO decision for one contact: orbital-supported / inconclusive / not supported (grey zone around the nominal threshold)
+  function gateVerdict(e2, o = {}) {
+    const lo = o.greyLow ?? DEFAULTS.nbo.greyLow, hi = o.greyHigh ?? DEFAULTS.nbo.greyHigh;
+    return e2 >= hi ? 'supported' : e2 >= lo ? 'inconclusive' : 'not supported';
+  }
   function nboGate(manifest, nbo, opts = {}) {
     const thr = opts.threshold ?? DEFAULTS.nbo.threshold; const useRY = opts.includeRY ?? DEFAULTS.nbo.includeRY;
+    const lo = opts.greyLow ?? DEFAULTS.nbo.greyLow, hi = opts.greyHigh ?? DEFAULTS.nbo.greyHigh;
+    const MA = manifest.atoms || []; const atomEl = n => (MA[n - 1] || {}).el; const fragOfAtom = n => (MA[n - 1] || {}).frag;
     return manifest.xbs.map(xb => {
       const isA = s => s.atoms.length === 2 && s.atoms.some(a => a.n === xb.X) && s.atoms.some(a => a.n === xb.A);
       const ringSet = new Set(xb.ring || []);
@@ -1451,8 +1617,14 @@
       // Then the donation into LP*(X) takes the role of the n -> sigma* term.
       const hasSigmaStar = nbo.entries.some(e => e.acceptor.type === 'BD*' && isA(e.acceptor));
       const isLPstarX = s => !hasSigmaStar && s.type === 'LP*' && s.atoms.length === 1 && s.atoms[0].n === xb.X;
+      // competing interaction: halogen lone pairs -> N-H / O-H antibonds of fragment 2 (N-H...X or O-H...X hydrogen bond)
+      let hbY = 0, hbFrag2 = 0; const hbRows = [];
       for (const e of nbo.entries) {
         const d = e.donor, a = e.acceptor;
+        if (d.type === 'LP' && d.atoms.length === 1 && d.atoms[0].n === xb.X && a.type === 'BD*' && a.atoms.length === 2) {
+          const hAt = a.atoms.find(t => t.el === 'H'), heavy = a.atoms.find(t => t.el === 'N' || t.el === 'O');
+          if (hAt && heavy && fragOfAtom(heavy.n) !== 1) { hbFrag2 += e.e2; if (xb.Y && heavy.n === xb.Y) hbY += e.e2; hbRows.push(Object.assign({ tag: 'hb' }, e)); }
+        }
         const toSigma = (a.type === 'BD*' && isA(a)) || isLPstarX(a); const toRyX = a.type.startsWith('RY') && a.atoms.length === 1 && a.atoms[0].n === xb.X;
         if (!toSigma && !toRyX) continue;
         let tag = null;
@@ -1462,8 +1634,23 @@
         if (!tag) continue;
         contrib[tag] += e.e2; rows.push(Object.assign({ tag }, e));
       }
-      const core = xb.type === 'atom' ? contrib.lp_sigma + (useRY ? contrib.lp_ry : 0) : contrib.pi_sigma;
-      return { id: xb.id, label: xb.label, ionicX: !hasSigmaStar && rows.some(r => r.acceptor.type === 'LP*'), E2_core: core, E2_total: core + contrib.other + (useRY ? 0 : contrib.lp_ry), contrib, rows, verified: core >= thr, threshold: thr, includeRY: useRY,
+      const valence = xb.type === 'atom' ? contrib.lp_sigma : contrib.pi_sigma;
+      const core = valence + (xb.type === 'atom' && useRY ? contrib.lp_ry : 0);
+      // does NBO give the acceptor atom a lone pair at all? (amide N often keeps an LP(N) in the NBO Lewis structure)
+      const lpY = xb.Y ? nbo.entries.some(e => e.donor.type === 'LP' && e.donor.atoms.length === 1 && e.donor.atoms[0].n === xb.Y) : null;
+      const verdict = e2 => (e2 >= hi ? 'supported' : e2 >= lo ? 'inconclusive' : 'not supported');
+      // flags that qualify the decision (they never change the class itself):
+      //  hbond  - the halogen donates more into N-H/O-H antibonds of fragment 2 than the acceptor donates into sigma*(A-X)
+      //  ring   - ring acceptors give about a quarter of the Sigma E(2) per unit binding energy of N acceptors (HAL59)
+      //  poorBase - the acceptor is a poor Lewis base (delocalized or protonated); NBO can still place a lone pair on it
+      const hbMax = Math.max(hbY, hbFrag2); const flags = [];
+      if (hbMax >= (opts.hbFlagMin ?? DEFAULTS.nbo.hbFlagMin) && hbMax > core) flags.push('hbond');
+      if (xb.type === 'pi') flags.push('ring');
+      if (xb.lewis === 'weak') flags.push('poorBase');
+      const FLAGTEXT = { hbond: 'competing H-bond to X dominates', ring: 'ring acceptor: under-scored relative to N and O', poorBase: 'poor Lewis base' };
+      return { id: xb.id, flags, flagText: flags.map(f => FLAGTEXT[f]), hbMax, hbDominates: flags.includes('hbond'), label: xb.label, ionicX: !hasSigmaStar && rows.some(r => r.acceptor.type === 'LP*'), E2_core: core, E2_valence: valence, E2_RY: xb.type === 'atom' ? contrib.lp_ry : 0,
+        E2_total: valence + contrib.lp_ry + contrib.other, contrib, rows, verdict: verdict(core), supported: core >= hi, aboveNominal: core >= thr, verified: core >= hi,
+        threshold: thr, greyLow: lo, greyHigh: hi, includeRY: useRY, hbY, hbFrag2, hbRows, lpOnY: lpY, acceptorEl: xb.Y ? atomEl(xb.Y) : null,
         npaX: nbo.npa && nbo.npa[xb.X] !== undefined ? nbo.npa[xb.X] : null, npaY: xb.Y && nbo.npa ? nbo.npa[xb.Y] ?? null : null };
     });
   }
@@ -1477,7 +1664,7 @@
   /*  T4: Q-Chem ALMO-EDA (EDA2) output parsing                          */
   /* ------------------------------------------------------------------ */
   function parseEDA(text) {
-    const res = { units: 'kJ/mol' }; const lines = text.split(/\r?\n/);
+    /* Q-Chem prints kJ/mol; converted to kcal/mol at the end */ const res = { units: 'kJ/mol' }; const lines = text.split(/\r?\n/);
     let iS = -1; lines.forEach((l, i) => { if (/Simplified EDA Summary/i.test(l)) iS = i; });
     const put = (k, v) => { if (!isNaN(v)) res[k] = v; };
     if (iS >= 0) {
@@ -1498,9 +1685,10 @@
     if (res.elecPauli === undefined && res.elec !== undefined && res.pauli !== undefined) res.elecPauli = res.elec + res.pauli;
     if (res.total === undefined) res.total = (res.prep || 0) + (res.sol || 0) + (res.frz || 0) + (res.pol || 0) + (res.ct || 0);
     res.terminated = /Thank you very much for using Q-Chem/.test(text);
-    return toKJ(res);
+    return toKcal(res);
   }
-  function toKJ(r) { if (r.units === 'kcal/mol') { ['prep', 'sol', 'frz', 'pauli', 'elec', 'elecPauli', 'disp', 'pol', 'ct', 'total'].forEach(k => { if (r[k] !== undefined) r[k] *= 4.184; }); r.units = 'kJ/mol'; } return r; }
+  const EDA_KEYS = ['prep', 'sol', 'frz', 'pauli', 'elec', 'elecPauli', 'disp', 'pol', 'ct', 'total'];
+  function toKcal(r) { if (r.units === 'kJ/mol') { EDA_KEYS.forEach(k => { if (r[k] !== undefined) r[k] /= 4.184; }); r.units = 'kcal/mol'; } return r; }
 
   /* ------------------------------------------------------------------ */
   /*  T5: BondX Quality Index (BXQI) and mechanistic classification      */
@@ -1517,30 +1705,34 @@
     if (shares) { const top = Object.entries(shares).sort((a, b) => b[1] - a[1])[0]; character = { elec: 'electrostatic σ-hole', disp: 'dispersion-stabilised', pol: 'polarization', ct: 'charge-transfer' }[top[0]] + ` (${(top[1] * 100).toFixed(0)}% of attraction)`; }
     return { chiCT, ctPolRatio: pol !== 0 ? ct / pol : null, shares, mechanism: mech, character };
   }
+  // BXQI: weighted geometric mean of the tiers that could be evaluated (no floor, no grades).
+  // c: { G (null when T1 has no cut-off for the pair), occupancy, Dscore, E2 (decision value), eda {total, ct} in kcal/mol }
+  const RANK_ORDER = { supported: 0, inconclusive: 1, 'not supported': 2, 'not run': 3 };
   function computeBXQI(c, P) {
-    const b = fullParams(P).bxqi; const w = b.weights; const gate = fullParams(P).nbo.threshold;
-    const tiers = {};
-    if (c.G != null) tiers.G = Math.max(0, Math.min(1, c.G));
+    const FP = fullParams(P); const b = FP.bxqi; const w = b.weights; const n = FP.nbo;
+    const tiers = {}; const skipped = [];
+    if (c.G != null && isFinite(c.G)) tiers.G = Math.max(0, Math.min(1, c.G)); else skipped.push('G');
     if (c.occupancy != null) tiers.D = Math.max(0, Math.min(1, c.Dscore != null ? c.Dscore : c.occupancy));
     if (c.E2 != null) tiers.E = 1 - Math.exp(-Math.max(0, c.E2) / b.E0);
-    if (c.eda && c.eda.total != null) tiers.C = 1 - Math.exp(-Math.max(0, -c.eda.total) / b.C0);
+    if (b.useC && c.eda && c.eda.total != null) tiers.C = 1 - Math.exp(-Math.max(0, -c.eda.total) / b.C0);
     const keys = Object.keys(tiers).filter(k => w[k] > 0); if (!keys.length) return null;
     const wsum = keys.reduce((s, k) => s + w[k], 0);
-    const score = 100 * Math.exp(keys.reduce((s, k) => s + (w[k] / wsum) * Math.log(Math.max(1e-4, tiers[k])), 0));
-    let grade = score >= b.gradeA ? 'A · strong, high-confidence XB' : score >= b.gradeB ? 'B · moderate XB' : score >= b.gradeC ? 'C · weak XB' : 'D · contact only / doubtful';
-    const electronicallyVerified = 'E' in tiers && c.E2 >= gate;
-    if (b.requireGateForA) {
-      if (!electronicallyVerified && score >= b.gradeA) grade = 'B · strong geometry, not electronically verified';
-      if ('E' in tiers && !electronicallyVerified) grade = (score >= b.gradeC ? 'C' : 'D') + ' · rejected at NBO gate';
-    }
+    const score = keys.some(k => tiers[k] <= 0) ? 0 : 100 * Math.exp(keys.reduce((s, k) => s + (w[k] / wsum) * Math.log(tiers[k]), 0));
+    const verdict = c.E2 != null ? gateVerdict(c.E2, n) : 'not run';
     let consistency = null;
     if (c.E2 != null && c.eda && c.eda.ct != null) {
-      const e2kJ = c.E2 * 4.184; const ct = -c.eda.ct;
-      consistency = (e2kJ > b.consE2hi && ct < b.consCTlo) ? 'Inconsistent: large NBO E(2) but negligible ALMO CT — check basis-set superposition (enable EDA_BSSE) or NBO delocalisation artefact.'
-        : (e2kJ < b.consE2lo && ct > b.consCThi) ? 'Inconsistent: ALMO CT large but NBO E(2) small — CT likely into Rydberg/diffuse space; inspect COVPs.' : 'Consistent orbital (NBO) and variational (ALMO) charge-transfer pictures.';
+      const ct = -c.eda.ct;
+      consistency = (c.E2 > b.consE2hi && ct < b.consCTlo) ? 'Inconsistent: large NBO E(2) but negligible ALMO CT — check basis-set superposition (enable EDA_BSSE) or an NBO delocalisation artefact.'
+        : (c.E2 < b.consE2lo && ct > b.consCThi) ? 'Inconsistent: ALMO CT large but NBO E(2) small — CT likely into Rydberg/diffuse space or into other contacts; inspect COVPs.' : 'Consistent orbital (NBO) and variational (ALMO) charge-transfer pictures.';
     }
-    return { score, grade, tiers, electronicallyVerified, provenance: ['G', 'D', 'E', 'C'].filter(k => k in tiers).join('·'), consistency, weights: w };
+    const repulsive = !!(b.useC && c.eda && c.eda.total != null && c.eda.total >= 0);
+    // a supported contact whose competing hydrogen bond to X dominates ranks after the clean supported contacts
+    const flags = Array.isArray(c.flags) ? c.flags : []; const hbDom = flags.includes('hbond');
+    return { score, verdict, flags, rankKey: [RANK_ORDER[verdict] + (hbDom ? 0.5 : 0), -score], tiers, skipped, repulsiveEDA: repulsive, electronicallySupported: verdict === 'supported',
+      provenance: ['G', 'D', 'E', 'C'].filter(k => k in tiers).join('·'), consistency, weights: w };
   }
+  // ranking: NBO decision first, index second
+  function rankCandidates(list) { return list.slice().sort((a, b) => (a.s.rankKey[0] - b.s.rankKey[0]) || (a.s.rankKey[1] - b.s.rankKey[1])); }
 
   /* ------------------------------------------------------------------ */
   /*  Utilities                                                          */
@@ -1556,8 +1748,8 @@
     detectXB, prepareDetection, detectFrame, decorate, geometricScore, parseXYZFrames, parseDCD, dropVsites, analyzeTrajectory, trajAccumulator, Dscore,
     parseCIF, parseXYZ, detectMaterialXB, buildMaterialQM,
     ffVariant, assignForceField, titratableResidues, parseMOL2, mol2ForStructure,
-    ligandProtonation, formulCheck, ORCA_NBO_CAUTION, QCHEM_NBO_CAUTION, QCHEM_NBO_G_CAUTION, G16_NBO7_CAUTION, buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV,
-    parseNBO, nboGate, verifyGeometry, fragmentNPA, parseEDA, edaDescriptors, computeBXQI,
+    ligandProtonation, formulCheck, ORCA_NBO_CAUTION, QCHEM_NBO_CAUTION, QCHEM_NBO_G_CAUTION, G16_NBO7_CAUTION, buildQMModel, embeddingCharges, writeGaussian, writeORCA, writeQChemNBO, writeQChemEDA, writeXYZ, chargesCSV, basisCaution,
+    parseNBO, nboGate, gateVerdict, verifyGeometry, fragmentNPA, parseEDA, edaDescriptors, computeBXQI, rankCandidates, lewisWhy,
     hashString, toCSV, angle, dist
   };
 });

@@ -1,11 +1,11 @@
 \begin{table}[!htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
-\caption{Force-field charges of \BX{} compared with the PDB2PQR reference files. Hydrogen charges are added to their heavy atoms on both sides.}\label{tab:ffref}
-\resizebox{\textwidth}{!}{\begin{tabular}{llrrlp{5.2cm}}\toprule PDB & Force field (BondX vs. reference) & Residues & Heavy atoms & max $|\Delta q|$ (e) & Note\\\midrule
-1AFS & ff14SB vs. AMBER (PDB2PQR) & 663 & 5140 & 0 & \\
-1AJJ & ff14SB vs. AMBER (PDB2PQR) pH 7 & 36 & 274 & 0 & \\
-1BX8 & ff14SB vs. AMBER (PDB2PQR) pH 7 & 46 & 334 & 0 & \\
-1A1P & ff14SB vs. AMBER (PDB2PQR) & 13 & 107 & 0 & \\
-1AFS & CHARMM36 vs CHARMM22 reference & 663 & 5102 & 0.13 & differences outside Trp: 0; Trp atoms differing as expected for C36: 42\\
-1AJJ & CHARMM36 vs CHARMM22 reference & 30 & 237 & 0.13 & differences outside Trp: 0; Trp atoms differing as expected for C36: 7\\
-1BX8 & CHARMM36 vs CHARMM22 reference & 35 & 266 & 0 & differences outside Trp: 0; Trp atoms differing as expected for C36: 0\\
+\caption{Force-field charges of \BX{} compared with the PDB2PQR reference files.\cite{Jurrus2018} Heavy atoms: charge of each heavy atom plus its hydrogens on both sides. Hydrogens: every hydrogen of the reference file against the template charge of the same hydrogen name, without folding. Both programs read the same AMBER parameter files, so the AMBER rows test the template matching, termini, and protonation handling of \BX{}, not the charges themselves. PDB2PQR ships CHARMM22 charges; the CHARMM36 rows only show that \BX{} differs from CHARMM22 where CHARMM36 changed the parameters (tryptophan).}\label{tab:ffref}
+\resizebox{\textwidth}{!}{\begin{tabular}{llrrrrrl}\toprule PDB & Force field (BondX vs.\ reference) & Residues & Heavy atoms & max $|\Delta q|$ (e) & Hydrogens & max $|\Delta q_\mathrm{H}|$ (e) & Differences\\\midrule
+1AFS & ff14SB vs.\ AMBER (PDB2PQR) & 663 & 5140 & 0 & 5168 & 0 & \\
+1AJJ & ff14SB vs.\ AMBER (PDB2PQR) & 36 & 274 & 0 & 228 & 0 & \\
+1BX8 & ff14SB vs.\ AMBER (PDB2PQR) & 46 & 334 & 0 & 314 & 0 & \\
+1A1P & ff14SB vs.\ AMBER (PDB2PQR) & 13 & 107 & 0 & 97 & 0 & \\
+1AFS & CHARMM36 vs.\ CHARMM22 (PDB2PQR) & 663 & 5102 & 0.13 & 5168 & 0.1 & Trp only (C36 update)\\
+1AJJ & CHARMM36 vs.\ CHARMM22 (PDB2PQR) & 30 & 237 & 0.13 & 204 & 0.1 & Trp only (C36 update)\\
+1BX8 & CHARMM36 vs.\ CHARMM22 (PDB2PQR) & 35 & 266 & 0 & 270 & 0 & \\
 \bottomrule\end{tabular}}\end{table}
