@@ -1,0 +1,9 @@
+class,contacts_A,contacts_B,contacts_C,total,kept_by_strict_filter
+backbone C=O,55,78,69,202,202
+backbone N-H,53,67,34,154,0
+side-chain O,29,21,8,58,58
+aromatic ring,31,2,12,45,45
+side-chain N-H (no lone pair),16,3,19,38,0
+side-chain N (lone pair),1,9,0,10,10
+FMN N,1,0,0,1,1
+thioether S,0,0,1,1,1

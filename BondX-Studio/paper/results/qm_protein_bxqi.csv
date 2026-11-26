@@ -1,0 +1,15 @@
+contact,sys,G,E2,BXQI,grade,provenance
+LDT320:A@BR8···THR113:A@OG1,1us0_idd594,0.641,0.49,35.543,C · rejected at NBO gate,G·E
+BVP1207:A@BR···ASN65:A@OD1,2w0s,0.872,4.32,87.898,"A · strong, high-confidence XB",G·E
+TBS301:A@BR11···LEU83:A@O,1p5e,0.826,3.07,80.29,"A · strong, high-confidence XB",G·E
+TBS301:A@BR12···GLU81:A@O,1p5e,0.756,2.08,69.426,B · moderate XB,G·E
+TBS301:A@BR13···PHE80:A@π(ring),1p5e,0.511,0.55,33.882,C · weak XB,G·E
+TBS301:A@BR10···ILE10:A@O,1p5e,0.377,0.33,22.982,D · rejected at NBO gate,G·E
+P84400:A@I15···LEU145:A@O,4agl,0.911,2.2,76.851,"A · strong, high-confidence XB",G·E
+R47306:A@CL1···PRO232:A@O,4gql,0.874,1.93,72.417,B · moderate XB,G·E
+9LI201:A@CL2···GLY75:A@N,4dst,0.124,0.13,8.572,D · rejected at NBO gate,G·E
+BVP1207:B@BR···ASN65:B@OD1,2w0s,0.724,2.28,69.954,B · moderate XB,G·E
+TBS302:C@BR11···LEU83:C@O,1p5e,0.969,3.08,86.431,"A · strong, high-confidence XB",G·E
+TBS302:C@BR12···GLU81:C@O,1p5e,0.779,1.87,68.026,B · moderate XB,G·E
+TBS302:C@BR13···PHE80:C@π(ring),1p5e,0.538,1.31,50.591,B · moderate XB,G·E
+P84400:B@I15···LEU145:B@O,4agl,0.926,2.4,79.431,"A · strong, high-confidence XB",G·E

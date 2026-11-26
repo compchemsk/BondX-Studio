@@ -1,0 +1,131 @@
+{
+ "tool": "BondX",
+ "version": "2.0.0",
+ "created": "2026-11-25T15:16:06.920Z",
+ "source": "MeI_OPH3.xyz",
+ "frame": 0,
+ "mode": "crystal-dimer",
+ "shell": 0,
+ "nAtoms": 10,
+ "addedH": 0,
+ "linkH": 0,
+ "fragCharge": {
+  "1": 0,
+  "2": 0
+ },
+ "totalCharge": 0,
+ "multiplicity": 1,
+ "xbs": [
+  {
+   "id": "XB1",
+   "type": "atom",
+   "X": 1,
+   "A": 2,
+   "Y": 6,
+   "ring": null,
+   "label": "I2 ··· O6' [0 0 0]",
+   "d": 3.1453522915602976,
+   "theta1": 169.81202096447407,
+   "halogen": "I"
+  }
+ ],
+ "atoms": [
+  {
+   "n": 1,
+   "el": "I",
+   "frag": 1,
+   "x": -0.81525,
+   "y": 0.17313,
+   "z": -0.00189,
+   "src": "I2"
+  },
+  {
+   "n": 2,
+   "el": "C",
+   "frag": 1,
+   "x": -2.76216,
+   "y": -0.69297,
+   "z": 0.00617,
+   "src": "C1"
+  },
+  {
+   "n": 3,
+   "el": "H",
+   "frag": 1,
+   "x": -3.25707,
+   "y": -0.41049,
+   "z": 0.92856,
+   "src": "H3"
+  },
+  {
+   "n": 4,
+   "el": "H",
+   "frag": 1,
+   "x": -2.66064,
+   "y": -1.7706,
+   "z": -0.05591,
+   "src": "H4"
+  },
+  {
+   "n": 5,
+   "el": "H",
+   "frag": 1,
+   "x": -3.30787,
+   "y": -0.31316,
+   "z": -0.85024,
+   "src": "H5"
+  },
+  {
+   "n": 6,
+   "el": "O",
+   "frag": 2,
+   "x": 2.23927,
+   "y": 0.92349,
+   "z": 0.00739,
+   "src": "O6'"
+  },
+  {
+   "n": 7,
+   "el": "P",
+   "frag": 2,
+   "x": 2.79864,
+   "y": -0.45415,
+   "z": -0.00045,
+   "src": "P7'"
+  },
+  {
+   "n": 8,
+   "el": "H",
+   "frag": 2,
+   "x": 2.53557,
+   "y": -1.2354,
+   "z": -1.14588,
+   "src": "H8'"
+  },
+  {
+   "n": 9,
+   "el": "H",
+   "frag": 2,
+   "x": 2.3744,
+   "y": -1.31346,
+   "z": 1.03514,
+   "src": "H9'"
+  },
+  {
+   "n": 10,
+   "el": "H",
+   "frag": 2,
+   "x": 4.20321,
+   "y": -0.55076,
+   "z": 0.09932,
+   "src": "H10'"
+  }
+ ],
+ "warnings": [],
+ "assumptions": [
+  "Crystal dimer: the two molecules forming the contact are grown from covalent connectivity across periodic images.",
+  "Both fragments are neutral unless overridden."
+ ],
+ "id": "BX-be64168532",
+ "level": "wB97X-D/def2-TZVP"
+}

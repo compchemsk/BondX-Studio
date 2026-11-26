@@ -1,0 +1,12 @@
+# BondX BX-5700431df4 - counterpoise job AB (E_int = E_AB - E_A(AB basis) - E_B(AB basis))
+! wB97X-V def2-TZVPD RIJCOSX def2/J TightSCF
+%pal nprocs 40 end
+%maxcore 937
+
+* xyz 0 1
+I                  0.000000     0.000000     0.370328
+F                  0.000000     0.000000     2.315880
+N                  0.000000     0.000000    -2.244670
+C                  0.000000     0.000000    -3.384198
+H                  0.000000     0.000000    -4.452430
+*

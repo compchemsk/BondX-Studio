@@ -1,0 +1,597 @@
+{
+ "tool": "BondX",
+ "version": "2.0.0",
+ "created": "2026-11-25T15:16:34.571Z",
+ "source": "1us0_idd594.pdb",
+ "frame": 0,
+ "mode": "full",
+ "shell": 0,
+ "nAtoms": 51,
+ "addedH": 7,
+ "linkH": 2,
+ "forceField": "ff14SB",
+ "fragCharge": {
+  "1": -1,
+  "2": 0
+ },
+ "totalCharge": -1,
+ "multiplicity": 1,
+ "residueCharges": [
+  {
+   "res": "A:320",
+   "resName": "LDT",
+   "frag": 1,
+   "tpl": null,
+   "charge": -1,
+   "how": "heavy-atom structure + group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)"
+  },
+  {
+   "res": "A:113",
+   "resName": "THR",
+   "frag": 2,
+   "tpl": "THR",
+   "charge": 0,
+   "how": "THR template"
+  }
+ ],
+ "ligands": [
+  {
+   "res": "A:320",
+   "resName": "LDT",
+   "fileH": 11,
+   "rebuilt": false,
+   "notes": [],
+   "modelH": 11,
+   "charge": -1,
+   "formul": null
+  }
+ ],
+ "xbs": [
+  {
+   "id": "XB1",
+   "type": "atom",
+   "X": 7,
+   "A": 17,
+   "Y": 42,
+   "ring": null,
+   "label": "LDT320:A@BR8 ··· THR113:A@OG1",
+   "d": 2.973271190758647,
+   "theta1": 152.75773913874733,
+   "halogen": "BR"
+  }
+ ],
+ "atoms": [
+  {
+   "n": 1,
+   "el": "C",
+   "frag": 1,
+   "x": 15.64,
+   "y": -9.411,
+   "z": 18.12,
+   "src": "LDT320:A@C2"
+  },
+  {
+   "n": 2,
+   "el": "C",
+   "frag": 1,
+   "x": 15.972,
+   "y": -10.323,
+   "z": 15.523,
+   "src": "LDT320:A@C3"
+  },
+  {
+   "n": 3,
+   "el": "C",
+   "frag": 1,
+   "x": 16.525,
+   "y": -8.763,
+   "z": 17.266,
+   "src": "LDT320:A@C4"
+  },
+  {
+   "n": 4,
+   "el": "C",
+   "frag": 1,
+   "x": 14.952,
+   "y": -10.5,
+   "z": 17.637,
+   "src": "LDT320:A@C5"
+  },
+  {
+   "n": 5,
+   "el": "C",
+   "frag": 1,
+   "x": 15.09,
+   "y": -10.989,
+   "z": 16.346,
+   "src": "LDT320:A@C6"
+  },
+  {
+   "n": 6,
+   "el": "C",
+   "frag": 1,
+   "x": 16.686,
+   "y": -9.21,
+   "z": 15.939,
+   "src": "LDT320:A@C7"
+  },
+  {
+   "n": 7,
+   "el": "BR",
+   "frag": 1,
+   "x": 14.879,
+   "y": -3.746,
+   "z": 9.686,
+   "src": "LDT320:A@BR8"
+  },
+  {
+   "n": 8,
+   "el": "F",
+   "frag": 1,
+   "x": 14.112,
+   "y": -11.135,
+   "z": 18.484,
+   "src": "LDT320:A@F9"
+  },
+  {
+   "n": 9,
+   "el": "C",
+   "frag": 1,
+   "x": 17.561,
+   "y": -8.503,
+   "z": 14.974,
+   "src": "LDT320:A@C11"
+  },
+  {
+   "n": 10,
+   "el": "C",
+   "frag": 1,
+   "x": 18.249,
+   "y": -6.321,
+   "z": 14.151,
+   "src": "LDT320:A@C13"
+  },
+  {
+   "n": 11,
+   "el": "F",
+   "frag": 1,
+   "x": 19.199,
+   "y": -4.357,
+   "z": 12.463,
+   "src": "LDT320:A@F14"
+  },
+  {
+   "n": 12,
+   "el": "O",
+   "frag": 1,
+   "x": 17.338,
+   "y": -7.755,
+   "z": 17.675,
+   "src": "LDT320:A@O15"
+  },
+  {
+   "n": 13,
+   "el": "S",
+   "frag": 1,
+   "x": 18.513,
+   "y": -9.364,
+   "z": 13.888,
+   "src": "LDT320:A@S16"
+  },
+  {
+   "n": 14,
+   "el": "N",
+   "frag": 1,
+   "x": 17.489,
+   "y": -7.187,
+   "z": 15.019,
+   "src": "LDT320:A@N17"
+  },
+  {
+   "n": 15,
+   "el": "C",
+   "frag": 1,
+   "x": 16.82,
+   "y": -6.874,
+   "z": 18.668,
+   "src": "LDT320:A@C20"
+  },
+  {
+   "n": 16,
+   "el": "C",
+   "frag": 1,
+   "x": 17.42,
+   "y": -5.773,
+   "z": 13.023,
+   "src": "LDT320:A@C24"
+  },
+  {
+   "n": 17,
+   "el": "C",
+   "frag": 1,
+   "x": 15.948,
+   "y": -4.598,
+   "z": 10.974,
+   "src": "LDT320:A@C25"
+  },
+  {
+   "n": 18,
+   "el": "C",
+   "frag": 1,
+   "x": 16.12,
+   "y": -6.179,
+   "z": 12.758,
+   "src": "LDT320:A@C26"
+  },
+  {
+   "n": 19,
+   "el": "C",
+   "frag": 1,
+   "x": 17.932,
+   "y": -4.782,
+   "z": 12.21,
+   "src": "LDT320:A@C27"
+  },
+  {
+   "n": 20,
+   "el": "C",
+   "frag": 1,
+   "x": 17.236,
+   "y": -4.176,
+   "z": 11.19,
+   "src": "LDT320:A@C28"
+  },
+  {
+   "n": 21,
+   "el": "C",
+   "frag": 1,
+   "x": 15.366,
+   "y": -5.601,
+   "z": 11.74,
+   "src": "LDT320:A@C29"
+  },
+  {
+   "n": 22,
+   "el": "C",
+   "frag": 1,
+   "x": 15.672,
+   "y": -6.014,
+   "z": 18.132,
+   "src": "LDT320:A@C32"
+  },
+  {
+   "n": 23,
+   "el": "O",
+   "frag": 1,
+   "x": 14.955,
+   "y": -5.494,
+   "z": 19.032,
+   "src": "LDT320:A@O33"
+  },
+  {
+   "n": 24,
+   "el": "O",
+   "frag": 1,
+   "x": 15.553,
+   "y": -5.882,
+   "z": 16.906,
+   "src": "LDT320:A@O34"
+  },
+  {
+   "n": 25,
+   "el": "H",
+   "frag": 1,
+   "x": 15.496,
+   "y": -9.068,
+   "z": 19.138,
+   "src": "LDT320:A@H1"
+  },
+  {
+   "n": 26,
+   "el": "H",
+   "frag": 1,
+   "x": 16.113,
+   "y": -10.684,
+   "z": 14.511,
+   "src": "LDT320:A@H2"
+  },
+  {
+   "n": 27,
+   "el": "H",
+   "frag": 1,
+   "x": 14.532,
+   "y": -11.852,
+   "z": 16.002,
+   "src": "LDT320:A@H3"
+  },
+  {
+   "n": 28,
+   "el": "H",
+   "frag": 1,
+   "x": 18.635,
+   "y": -5.473,
+   "z": 14.736,
+   "src": "LDT320:A@H4"
+  },
+  {
+   "n": 29,
+   "el": "H",
+   "frag": 1,
+   "x": 19.085,
+   "y": -6.889,
+   "z": 13.717,
+   "src": "LDT320:A@H5"
+  },
+  {
+   "n": 30,
+   "el": "H",
+   "frag": 1,
+   "x": 16.858,
+   "y": -6.755,
+   "z": 15.709,
+   "src": "LDT320:A@H6"
+  },
+  {
+   "n": 31,
+   "el": "H",
+   "frag": 1,
+   "x": 16.441,
+   "y": -7.466,
+   "z": 19.514,
+   "src": "LDT320:A@H7"
+  },
+  {
+   "n": 32,
+   "el": "H",
+   "frag": 1,
+   "x": 17.622,
+   "y": -6.203,
+   "z": 19.01,
+   "src": "LDT320:A@H8"
+  },
+  {
+   "n": 33,
+   "el": "H",
+   "frag": 1,
+   "x": 15.68,
+   "y": -6.966,
+   "z": 13.359,
+   "src": "LDT320:A@H9"
+  },
+  {
+   "n": 34,
+   "el": "H",
+   "frag": 1,
+   "x": 17.686,
+   "y": -3.398,
+   "z": 10.583,
+   "src": "LDT320:A@H10"
+  },
+  {
+   "n": 35,
+   "el": "H",
+   "frag": 1,
+   "x": 14.349,
+   "y": -5.926,
+   "z": 11.55,
+   "src": "LDT320:A@H11"
+  },
+  {
+   "n": 36,
+   "el": "N",
+   "frag": 2,
+   "x": 10.848,
+   "y": -0.442,
+   "z": 8.785,
+   "src": "THR113:A@N"
+  },
+  {
+   "n": 37,
+   "el": "C",
+   "frag": 2,
+   "x": 10.622,
+   "y": -1.289,
+   "z": 7.644,
+   "src": "THR113:A@CA"
+  },
+  {
+   "n": 38,
+   "el": "C",
+   "frag": 2,
+   "x": 9.485,
+   "y": -2.28,
+   "z": 7.855,
+   "src": "THR113:A@C"
+  },
+  {
+   "n": 39,
+   "el": "O",
+   "frag": 2,
+   "x": 9.498,
+   "y": -3.061,
+   "z": 8.801,
+   "src": "THR113:A@O"
+  },
+  {
+   "n": 40,
+   "el": "C",
+   "frag": 2,
+   "x": 11.911,
+   "y": -2.12,
+   "z": 7.432,
+   "src": "THR113:A@CB"
+  },
+  {
+   "n": 41,
+   "el": "C",
+   "frag": 2,
+   "x": 13.11,
+   "y": -1.281,
+   "z": 7.018,
+   "src": "THR113:A@CG2"
+  },
+  {
+   "n": 42,
+   "el": "O",
+   "frag": 2,
+   "x": 12.275,
+   "y": -2.755,
+   "z": 8.648,
+   "src": "THR113:A@OG1"
+  },
+  {
+   "n": 43,
+   "el": "H",
+   "frag": 2,
+   "x": 11.58028,
+   "y": -0.71037,
+   "z": 9.42675,
+   "src": "H(36)"
+  },
+  {
+   "n": 44,
+   "el": "H",
+   "frag": 2,
+   "x": 10.331,
+   "y": 0.40015,
+   "z": 8.9938,
+   "src": "link-H(36)→PRO112:A@C"
+  },
+  {
+   "n": 45,
+   "el": "H",
+   "frag": 2,
+   "x": 10.36334,
+   "y": -0.65174,
+   "z": 6.79837,
+   "src": "H(37)"
+  },
+  {
+   "n": 46,
+   "el": "H",
+   "frag": 2,
+   "x": 8.7131,
+   "y": -2.29383,
+   "z": 7.08554,
+   "src": "link-H(38)→GLY114:A@N"
+  },
+  {
+   "n": 47,
+   "el": "H",
+   "frag": 2,
+   "x": 11.67683,
+   "y": -2.82706,
+   "z": 6.63618,
+   "src": "H(40)"
+  },
+  {
+   "n": 48,
+   "el": "H",
+   "frag": 2,
+   "x": 13.97817,
+   "y": -1.92689,
+   "z": 6.88681,
+   "src": "H(41)"
+  },
+  {
+   "n": 49,
+   "el": "H",
+   "frag": 2,
+   "x": 12.89125,
+   "y": -0.77206,
+   "z": 6.07926,
+   "src": "H(41)"
+  },
+  {
+   "n": 50,
+   "el": "H",
+   "frag": 2,
+   "x": 13.32114,
+   "y": -0.54187,
+   "z": 7.79079,
+   "src": "H(41)"
+  },
+  {
+   "n": 51,
+   "el": "H",
+   "frag": 2,
+   "x": 13.07432,
+   "y": -3.26954,
+   "z": 8.51406,
+   "src": "H(42)"
+  }
+ ],
+ "warnings": [
+  "1 residue(s) already contain hydrogens (LDT A:320): their N/O/S hydrogens are kept as given and no H is added."
+ ],
+ "parameters": {
+  "qm": {
+   "mode": "full",
+   "shell": 0,
+   "shellWater": false,
+   "shellIons": false,
+   "forceH": false,
+   "linkScheme": "fixed",
+   "xh": {
+    "C": 1.09,
+    "N": 1.01,
+    "O": 0.96,
+    "S": 1.34,
+    "P": 1.42,
+    "B": 1.19,
+    "SE": 1.46
+   },
+   "ligandCharge": "auto",
+   "env": "qmmm",
+   "pcm": true,
+   "eps": 4,
+   "program": "gaussian",
+   "method": "wB97XD",
+   "basis": "def2TZVP",
+   "nproc": 16,
+   "mem": "32GB",
+   "nbo7": false
+  },
+  "mm": {
+   "radius": 200,
+   "selection": "residue",
+   "boundary": "RC",
+   "neutralizeCut": true
+  },
+  "ff": {
+   "name": "ff14SB",
+   "water": "TIP3P",
+   "hisDefault": "HIE",
+   "termini": "charged",
+   "chainBreaks": "internal",
+   "ssCut": 2.5,
+   "chargeSource": "auto",
+   "foldH": true,
+   "missing": "redistribute",
+   "overrides": {}
+  }
+ },
+ "assumptions": [
+  "Protonation states and partial charges come from AMBER ff14SB (+ OL15 DNA, OL3 RNA). ASP and GLU are anionic. LYS and ARG are cationic. CYS and TYR are neutral. HIS is HIE by default. A tautomer name in the file (HID/HIE/HIP, HSD/HSE/HSP) or its hydrogens override this default. Changes for single residues override everything.",
+  "Cys pairs with S–S < 2.5 Å are disulfides (CYX). Chain termini are charged (NH₃⁺, COO⁻). Residues next to a chain break are treated as internal.",
+  "Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds the whole acceptor residues.",
+  "Missing hydrogens follow the force-field template of each residue (number of H per atom) with VSEPR geometry. Cut bonds get H caps (fixed X–H length).",
+  "Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp² carbon gets one double bond. The keto form is preferred. An sp² ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. At pH 7, COOH, phosphate, phosphonate, sulfonate and sulfate groups lose their O–H hydrogen. Amines stay neutral. Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count.",
+  "Fragment charges: residue formal charges come from the force-field template. The ligand charge comes from a loaded MOL2 file or from the ligand structure above. Every value can be overridden.",
+  "The QM cluster sits in an implicit dielectric ε = 4 (CPCM/PCM). The dielectric represents the protein."
+ ],
+ "id": "BX-a9c0e89f31",
+ "embedding": {
+  "source": "ff14SB",
+  "water": "TIP3P",
+  "n": 2485,
+  "net": 6.661338147750939e-15,
+  "radius": 200,
+  "boundary": "RC",
+  "M1": 2,
+  "M2": 3,
+  "cut": 0,
+  "notes": []
+ },
+ "level": "wB97X-D/def2-TZVP"
+}

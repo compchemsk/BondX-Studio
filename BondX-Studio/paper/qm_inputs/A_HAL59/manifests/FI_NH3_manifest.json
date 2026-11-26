@@ -1,0 +1,95 @@
+{
+ "tool": "BondX",
+ "version": "2.0.0",
+ "created": "2026-11-25T15:16:06.548Z",
+ "source": "FI_NH3.xyz",
+ "frame": 0,
+ "mode": "crystal-dimer",
+ "shell": 0,
+ "nAtoms": 6,
+ "addedH": 0,
+ "linkH": 0,
+ "fragCharge": {
+  "1": 0,
+  "2": 0
+ },
+ "totalCharge": 0,
+ "multiplicity": 1,
+ "xbs": [
+  {
+   "id": "XB1",
+   "type": "atom",
+   "X": 1,
+   "A": 2,
+   "Y": 3,
+   "ring": null,
+   "label": "I2 ··· N3' [0 0 0]",
+   "d": 2.509011760354042,
+   "theta1": 180,
+   "halogen": "I"
+  }
+ ],
+ "atoms": [
+  {
+   "n": 1,
+   "el": "I",
+   "frag": 1,
+   "x": 0,
+   "y": 0,
+   "z": 0.1168,
+   "src": "I2"
+  },
+  {
+   "n": 2,
+   "el": "F",
+   "frag": 1,
+   "x": 0,
+   "y": 0,
+   "z": 2.08852,
+   "src": "F1"
+  },
+  {
+   "n": 3,
+   "el": "N",
+   "frag": 2,
+   "x": 0,
+   "y": 0,
+   "z": -2.39221,
+   "src": "N3'"
+  },
+  {
+   "n": 4,
+   "el": "H",
+   "frag": 2,
+   "x": 0,
+   "y": 0.94687,
+   "z": -2.74724,
+   "src": "H4'"
+  },
+  {
+   "n": 5,
+   "el": "H",
+   "frag": 2,
+   "x": -0.82001,
+   "y": -0.47343,
+   "z": -2.74724,
+   "src": "H5'"
+  },
+  {
+   "n": 6,
+   "el": "H",
+   "frag": 2,
+   "x": 0.82001,
+   "y": -0.47343,
+   "z": -2.74724,
+   "src": "H6'"
+  }
+ ],
+ "warnings": [],
+ "assumptions": [
+  "Crystal dimer: the two molecules forming the contact are grown from covalent connectivity across periodic images.",
+  "Both fragments are neutral unless overridden."
+ ],
+ "id": "BX-d054e6ca5d",
+ "level": "wB97X-D/def2-TZVP"
+}

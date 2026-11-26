@@ -1,0 +1,26 @@
+%nprocshared=40
+%mem=50GB
+%chk=28_CH3I-ben_d105_cp.chk
+#p wB97XD/def2TZVP counterpoise=2 nosymm scf=(tight,xqc) int=ultrafine
+
+BondX BX-42ceda59d6 | counterpoise interaction energy (pairs with Q-Chem ALMO-EDA)
+
+0 1 0 1 0 1
+I(Fragment=1)     -0.205324    -3.368518     1.883769
+C(Fragment=1)      0.069197    -5.471929     1.872749
+H(Fragment=1)      0.073601    -5.805636     0.839826
+H(Fragment=1)      1.018049    -5.689861     2.352917
+H(Fragment=1)     -0.752874    -5.922025     2.420413
+C(Fragment=2)     -1.161063     0.344384     1.857360
+C(Fragment=2)      0.038836     0.477627     1.159638
+C(Fragment=2)     -1.154303     0.287584     3.250474
+H(Fragment=2)     -2.098786     0.282075     1.316455
+H(Fragment=2)      0.034024     0.518190     0.076151
+C(Fragment=2)      1.244337     0.554756     1.855052
+C(Fragment=2)      0.051365     0.365011     3.945100
+H(Fragment=2)     -2.086945     0.179907     3.792792
+C(Fragment=2)      1.250422     0.498774     3.247481
+H(Fragment=2)      2.177449     0.654786     1.312155
+H(Fragment=2)      0.056634     0.317511     5.028226
+H(Fragment=2)      2.188546     0.555601     3.788020
+

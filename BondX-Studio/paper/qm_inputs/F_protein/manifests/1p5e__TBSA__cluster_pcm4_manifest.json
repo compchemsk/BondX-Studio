@@ -1,0 +1,1035 @@
+{
+ "tool": "BondX",
+ "version": "2.0.0",
+ "created": "2026-11-25T15:16:38.893Z",
+ "source": "1P5E",
+ "frame": 0,
+ "mode": "full",
+ "shell": 0,
+ "nAtoms": 93,
+ "addedH": 38,
+ "linkH": 6,
+ "forceField": "ff14SB",
+ "fragCharge": {
+  "1": 0,
+  "2": -1
+ },
+ "totalCharge": -1,
+ "multiplicity": 1,
+ "residueCharges": [
+  {
+   "res": "A:301",
+   "resName": "TBS",
+   "frag": 1,
+   "tpl": null,
+   "charge": 0,
+   "how": "heavy-atom structure + group rules (COO⁻, phosphate, sulfonate/sulfate, R₄N⁺)"
+  },
+  {
+   "res": "A:10",
+   "resName": "ILE",
+   "frag": 2,
+   "tpl": "ILE",
+   "charge": 0,
+   "how": "ILE template"
+  },
+  {
+   "res": "A:80",
+   "resName": "PHE",
+   "frag": 2,
+   "tpl": "PHE",
+   "charge": 0,
+   "how": "PHE template"
+  },
+  {
+   "res": "A:81",
+   "resName": "GLU",
+   "frag": 2,
+   "tpl": "GLU",
+   "charge": -1,
+   "how": "GLU template"
+  },
+  {
+   "res": "A:83",
+   "resName": "LEU",
+   "frag": 2,
+   "tpl": "LEU",
+   "charge": 0,
+   "how": "LEU template"
+  }
+ ],
+ "ligands": [
+  {
+   "res": "A:301",
+   "resName": "TBS",
+   "fileH": 0,
+   "rebuilt": false,
+   "notes": [],
+   "modelH": 1,
+   "charge": 0,
+   "formul": {
+    "heavyF": 13,
+    "heavyM": 13,
+    "complete": true,
+    "links": 0,
+    "expH": 1,
+    "hOK": true
+   }
+  }
+ ],
+ "xbs": [
+  {
+   "id": "XB1",
+   "type": "atom",
+   "X": 11,
+   "A": 1,
+   "Y": 45,
+   "ring": null,
+   "label": "TBS301:A@BR11 ··· LEU83:A@O",
+   "d": 2.9035742432655263,
+   "theta1": 164.6960557716568,
+   "halogen": "BR"
+  },
+  {
+   "id": "XB2",
+   "type": "atom",
+   "X": 12,
+   "A": 2,
+   "Y": 36,
+   "ring": null,
+   "label": "TBS301:A@BR12 ··· GLU81:A@O",
+   "d": 3.0068870872754516,
+   "theta1": 168.54582306089975,
+   "halogen": "BR"
+  },
+  {
+   "id": "XB3",
+   "type": "pi",
+   "X": 13,
+   "A": 3,
+   "Y": null,
+   "ring": [
+    27,
+    28,
+    30,
+    32,
+    31,
+    29
+   ],
+   "label": "TBS301:A@BR13 ··· PHE80:A@π(ring)",
+   "d": 3.4909532717361116,
+   "theta1": 153.784995502736,
+   "halogen": "BR"
+  },
+  {
+   "id": "XB4",
+   "type": "atom",
+   "X": 10,
+   "A": 4,
+   "Y": 17,
+   "ring": null,
+   "label": "TBS301:A@BR10 ··· ILE10:A@O",
+   "d": 3.238318168821263,
+   "theta1": 144.07776911739444,
+   "halogen": "BR"
+  }
+ ],
+ "atoms": [
+  {
+   "n": 1,
+   "el": "C",
+   "frag": 1,
+   "x": 7.536,
+   "y": 44.823,
+   "z": 50.568,
+   "src": "TBS301:A@C1"
+  },
+  {
+   "n": 2,
+   "el": "C",
+   "frag": 1,
+   "x": 8.541,
+   "y": 45.52,
+   "z": 51.172,
+   "src": "TBS301:A@C2"
+  },
+  {
+   "n": 3,
+   "el": "C",
+   "frag": 1,
+   "x": 8.205,
+   "y": 46.462,
+   "z": 52.106,
+   "src": "TBS301:A@C3"
+  },
+  {
+   "n": 4,
+   "el": "C",
+   "frag": 1,
+   "x": 6.21,
+   "y": 45.057,
+   "z": 50.882,
+   "src": "TBS301:A@C4"
+  },
+  {
+   "n": 5,
+   "el": "N",
+   "frag": 1,
+   "x": 4.619,
+   "y": 46.415,
+   "z": 52.292,
+   "src": "TBS301:A@N5"
+  },
+  {
+   "n": 6,
+   "el": "C",
+   "frag": 1,
+   "x": 5.849,
+   "y": 46.004,
+   "z": 51.817,
+   "src": "TBS301:A@C6"
+  },
+  {
+   "n": 7,
+   "el": "C",
+   "frag": 1,
+   "x": 6.905,
+   "y": 46.744,
+   "z": 52.464,
+   "src": "TBS301:A@C7"
+  },
+  {
+   "n": 8,
+   "el": "N",
+   "frag": 1,
+   "x": 6.371,
+   "y": 47.648,
+   "z": 53.362,
+   "src": "TBS301:A@N8"
+  },
+  {
+   "n": 9,
+   "el": "N",
+   "frag": 1,
+   "x": 4.962,
+   "y": 47.431,
+   "z": 53.241,
+   "src": "TBS301:A@N9"
+  },
+  {
+   "n": 10,
+   "el": "BR",
+   "frag": 1,
+   "x": 4.858,
+   "y": 44.086,
+   "z": 50.03,
+   "src": "TBS301:A@BR10"
+  },
+  {
+   "n": 11,
+   "el": "BR",
+   "frag": 1,
+   "x": 8.072,
+   "y": 43.545,
+   "z": 49.311,
+   "src": "TBS301:A@BR11"
+  },
+  {
+   "n": 12,
+   "el": "BR",
+   "frag": 1,
+   "x": 10.349,
+   "y": 45.157,
+   "z": 50.717,
+   "src": "TBS301:A@BR12"
+  },
+  {
+   "n": 13,
+   "el": "BR",
+   "frag": 1,
+   "x": 9.598,
+   "y": 47.386,
+   "z": 52.901,
+   "src": "TBS301:A@BR13"
+  },
+  {
+   "n": 14,
+   "el": "N",
+   "frag": 2,
+   "x": 2.326,
+   "y": 46.573,
+   "z": 45.446,
+   "src": "ILE10:A@N"
+  },
+  {
+   "n": 15,
+   "el": "C",
+   "frag": 2,
+   "x": 2.563,
+   "y": 45.335,
+   "z": 46.21,
+   "src": "ILE10:A@CA"
+  },
+  {
+   "n": 16,
+   "el": "C",
+   "frag": 2,
+   "x": 2.109,
+   "y": 45.375,
+   "z": 47.675,
+   "src": "ILE10:A@C"
+  },
+  {
+   "n": 17,
+   "el": "O",
+   "frag": 2,
+   "x": 2.094,
+   "y": 44.347,
+   "z": 48.363,
+   "src": "ILE10:A@O"
+  },
+  {
+   "n": 18,
+   "el": "C",
+   "frag": 2,
+   "x": 4.05,
+   "y": 44.88,
+   "z": 46.124,
+   "src": "ILE10:A@CB"
+  },
+  {
+   "n": 19,
+   "el": "C",
+   "frag": 2,
+   "x": 5.002,
+   "y": 46.002,
+   "z": 46.547,
+   "src": "ILE10:A@CG1"
+  },
+  {
+   "n": 20,
+   "el": "C",
+   "frag": 2,
+   "x": 4.39,
+   "y": 44.358,
+   "z": 44.718,
+   "src": "ILE10:A@CG2"
+  },
+  {
+   "n": 21,
+   "el": "C",
+   "frag": 2,
+   "x": 6.421,
+   "y": 45.511,
+   "z": 46.868,
+   "src": "ILE10:A@CD1"
+  },
+  {
+   "n": 22,
+   "el": "N",
+   "frag": 2,
+   "x": 13.488,
+   "y": 50.363,
+   "z": 49.494,
+   "src": "PHE80:A@N"
+  },
+  {
+   "n": 23,
+   "el": "C",
+   "frag": 2,
+   "x": 13.809,
+   "y": 49.14,
+   "z": 50.22,
+   "src": "PHE80:A@CA"
+  },
+  {
+   "n": 24,
+   "el": "C",
+   "frag": 2,
+   "x": 14.267,
+   "y": 48.047,
+   "z": 49.25,
+   "src": "PHE80:A@C"
+  },
+  {
+   "n": 25,
+   "el": "O",
+   "frag": 2,
+   "x": 13.882,
+   "y": 48.053,
+   "z": 48.089,
+   "src": "PHE80:A@O"
+  },
+  {
+   "n": 26,
+   "el": "C",
+   "frag": 2,
+   "x": 12.557,
+   "y": 48.627,
+   "z": 50.928,
+   "src": "PHE80:A@CB"
+  },
+  {
+   "n": 27,
+   "el": "C",
+   "frag": 2,
+   "x": 12.152,
+   "y": 49.419,
+   "z": 52.13,
+   "src": "PHE80:A@CG"
+  },
+  {
+   "n": 28,
+   "el": "C",
+   "frag": 2,
+   "x": 12.859,
+   "y": 49.318,
+   "z": 53.33,
+   "src": "PHE80:A@CD1"
+  },
+  {
+   "n": 29,
+   "el": "C",
+   "frag": 2,
+   "x": 11.012,
+   "y": 50.212,
+   "z": 52.096,
+   "src": "PHE80:A@CD2"
+  },
+  {
+   "n": 30,
+   "el": "C",
+   "frag": 2,
+   "x": 12.452,
+   "y": 50.031,
+   "z": 54.453,
+   "src": "PHE80:A@CE1"
+  },
+  {
+   "n": 31,
+   "el": "C",
+   "frag": 2,
+   "x": 10.601,
+   "y": 50.921,
+   "z": 53.221,
+   "src": "PHE80:A@CE2"
+  },
+  {
+   "n": 32,
+   "el": "C",
+   "frag": 2,
+   "x": 11.323,
+   "y": 50.837,
+   "z": 54.394,
+   "src": "PHE80:A@CZ"
+  },
+  {
+   "n": 33,
+   "el": "N",
+   "frag": 2,
+   "x": 15.073,
+   "y": 47.109,
+   "z": 49.733,
+   "src": "GLU81:A@N"
+  },
+  {
+   "n": 34,
+   "el": "C",
+   "frag": 2,
+   "x": 15.34,
+   "y": 45.86,
+   "z": 49.016,
+   "src": "GLU81:A@CA"
+  },
+  {
+   "n": 35,
+   "el": "C",
+   "frag": 2,
+   "x": 14.023,
+   "y": 45.129,
+   "z": 48.757,
+   "src": "GLU81:A@C"
+  },
+  {
+   "n": 36,
+   "el": "O",
+   "frag": 2,
+   "x": 13.156,
+   "y": 45.064,
+   "z": 49.643,
+   "src": "GLU81:A@O"
+  },
+  {
+   "n": 37,
+   "el": "C",
+   "frag": 2,
+   "x": 16.26,
+   "y": 44.96,
+   "z": 49.845,
+   "src": "GLU81:A@CB"
+  },
+  {
+   "n": 38,
+   "el": "C",
+   "frag": 2,
+   "x": 15.595,
+   "y": 44.309,
+   "z": 51.067,
+   "src": "GLU81:A@CG"
+  },
+  {
+   "n": 39,
+   "el": "C",
+   "frag": 2,
+   "x": 16.439,
+   "y": 43.209,
+   "z": 51.688,
+   "src": "GLU81:A@CD"
+  },
+  {
+   "n": 40,
+   "el": "O",
+   "frag": 2,
+   "x": 16.812,
+   "y": 42.251,
+   "z": 50.978,
+   "src": "GLU81:A@OE1"
+  },
+  {
+   "n": 41,
+   "el": "O",
+   "frag": 2,
+   "x": 16.748,
+   "y": 43.304,
+   "z": 52.892,
+   "src": "GLU81:A@OE2"
+  },
+  {
+   "n": 42,
+   "el": "N",
+   "frag": 2,
+   "x": 11.506,
+   "y": 42.16,
+   "z": 48.437,
+   "src": "LEU83:A@N"
+  },
+  {
+   "n": 43,
+   "el": "C",
+   "frag": 2,
+   "x": 11.239,
+   "y": 40.826,
+   "z": 48.952,
+   "src": "LEU83:A@CA"
+  },
+  {
+   "n": 44,
+   "el": "C",
+   "frag": 2,
+   "x": 9.936,
+   "y": 40.349,
+   "z": 48.324,
+   "src": "LEU83:A@C"
+  },
+  {
+   "n": 45,
+   "el": "O",
+   "frag": 2,
+   "x": 9.087,
+   "y": 41.163,
+   "z": 47.997,
+   "src": "LEU83:A@O"
+  },
+  {
+   "n": 46,
+   "el": "C",
+   "frag": 2,
+   "x": 11.149,
+   "y": 40.878,
+   "z": 50.484,
+   "src": "LEU83:A@CB"
+  },
+  {
+   "n": 47,
+   "el": "C",
+   "frag": 2,
+   "x": 12.507,
+   "y": 41.249,
+   "z": 51.109,
+   "src": "LEU83:A@CG"
+  },
+  {
+   "n": 48,
+   "el": "C",
+   "frag": 2,
+   "x": 12.379,
+   "y": 41.846,
+   "z": 52.49,
+   "src": "LEU83:A@CD1"
+  },
+  {
+   "n": 49,
+   "el": "C",
+   "frag": 2,
+   "x": 13.339,
+   "y": 40.003,
+   "z": 51.165,
+   "src": "LEU83:A@CD2"
+  },
+  {
+   "n": 50,
+   "el": "H",
+   "frag": 1,
+   "x": 4.27511,
+   "y": 47.94514,
+   "z": 53.77386,
+   "src": "H(9)"
+  },
+  {
+   "n": 51,
+   "el": "H",
+   "frag": 2,
+   "x": 2.66533,
+   "y": 47.4502,
+   "z": 45.81408,
+   "src": "H(14)"
+  },
+  {
+   "n": 52,
+   "el": "H",
+   "frag": 2,
+   "x": 1.83339,
+   "y": 46.56771,
+   "z": 44.56429,
+   "src": "link-H(14)→LYS9:A@C"
+  },
+  {
+   "n": 53,
+   "el": "H",
+   "frag": 2,
+   "x": 1.92441,
+   "y": 44.59926,
+   "z": 45.72112,
+   "src": "H(15)"
+  },
+  {
+   "n": 54,
+   "el": "H",
+   "frag": 2,
+   "x": 1.81458,
+   "y": 46.34874,
+   "z": 48.06647,
+   "src": "link-H(16)→GLY11:A@N"
+  },
+  {
+   "n": 55,
+   "el": "H",
+   "frag": 2,
+   "x": 4.18451,
+   "y": 44.05588,
+   "z": 46.82459,
+   "src": "H(18)"
+  },
+  {
+   "n": 56,
+   "el": "H",
+   "frag": 2,
+   "x": 4.59427,
+   "y": 46.48389,
+   "z": 47.43562,
+   "src": "H(19)"
+  },
+  {
+   "n": 57,
+   "el": "H",
+   "frag": 2,
+   "x": 5.06303,
+   "y": 46.72712,
+   "z": 45.73547,
+   "src": "H(19)"
+  },
+  {
+   "n": 58,
+   "el": "H",
+   "frag": 2,
+   "x": 5.43442,
+   "y": 44.04755,
+   "z": 44.68786,
+   "src": "H(20)"
+  },
+  {
+   "n": 59,
+   "el": "H",
+   "frag": 2,
+   "x": 3.7515,
+   "y": 43.50679,
+   "z": 44.48166,
+   "src": "H(20)"
+  },
+  {
+   "n": 60,
+   "el": "H",
+   "frag": 2,
+   "x": 4.22541,
+   "y": 45.14916,
+   "z": 43.9865,
+   "src": "H(20)"
+  },
+  {
+   "n": 61,
+   "el": "H",
+   "frag": 2,
+   "x": 7.04167,
+   "y": 46.35801,
+   "z": 47.16031,
+   "src": "H(21)"
+  },
+  {
+   "n": 62,
+   "el": "H",
+   "frag": 2,
+   "x": 6.38074,
+   "y": 44.7914,
+   "z": 47.68571,
+   "src": "H(21)"
+  },
+  {
+   "n": 63,
+   "el": "H",
+   "frag": 2,
+   "x": 6.84934,
+   "y": 45.03455,
+   "z": 45.98617,
+   "src": "H(21)"
+  },
+  {
+   "n": 64,
+   "el": "H",
+   "frag": 2,
+   "x": 12.6732,
+   "y": 50.36887,
+   "z": 48.8972,
+   "src": "H(22)"
+  },
+  {
+   "n": 65,
+   "el": "H",
+   "frag": 2,
+   "x": 14.04248,
+   "y": 51.2046,
+   "z": 49.56008,
+   "src": "link-H(22)→VAL79:A@C"
+  },
+  {
+   "n": 66,
+   "el": "H",
+   "frag": 2,
+   "x": 14.60124,
+   "y": 49.36543,
+   "z": 50.93389,
+   "src": "H(23)"
+  },
+  {
+   "n": 67,
+   "el": "H",
+   "frag": 2,
+   "x": 12.74209,
+   "y": 47.60041,
+   "z": 51.24417,
+   "src": "H(26)"
+  },
+  {
+   "n": 68,
+   "el": "H",
+   "frag": 2,
+   "x": 11.7323,
+   "y": 48.6452,
+   "z": 50.21552,
+   "src": "H(26)"
+  },
+  {
+   "n": 69,
+   "el": "H",
+   "frag": 2,
+   "x": 13.73727,
+   "y": 48.67499,
+   "z": 53.38723,
+   "src": "H(28)"
+  },
+  {
+   "n": 70,
+   "el": "H",
+   "frag": 2,
+   "x": 10.43153,
+   "y": 50.27993,
+   "z": 51.17592,
+   "src": "H(29)"
+  },
+  {
+   "n": 71,
+   "el": "H",
+   "frag": 2,
+   "x": 13.02007,
+   "y": 49.95683,
+   "z": 55.38031,
+   "src": "H(30)"
+  },
+  {
+   "n": 72,
+   "el": "H",
+   "frag": 2,
+   "x": 9.70744,
+   "y": 51.54356,
+   "z": 53.17542,
+   "src": "H(31)"
+  },
+  {
+   "n": 73,
+   "el": "H",
+   "frag": 2,
+   "x": 11.00794,
+   "y": 51.40166,
+   "z": 55.2715,
+   "src": "H(32)"
+  },
+  {
+   "n": 74,
+   "el": "H",
+   "frag": 2,
+   "x": 15.51789,
+   "y": 47.26216,
+   "z": 50.62671,
+   "src": "H(33)"
+  },
+  {
+   "n": 75,
+   "el": "H",
+   "frag": 2,
+   "x": 15.82678,
+   "y": 46.09453,
+   "z": 48.06935,
+   "src": "H(34)"
+  },
+  {
+   "n": 76,
+   "el": "H",
+   "frag": 2,
+   "x": 13.8869,
+   "y": 44.69282,
+   "z": 47.76739,
+   "src": "link-H(35)→PHE82:A@N"
+  },
+  {
+   "n": 77,
+   "el": "H",
+   "frag": 2,
+   "x": 17.0974,
+   "y": 45.56301,
+   "z": 50.19605,
+   "src": "H(37)"
+  },
+  {
+   "n": 78,
+   "el": "H",
+   "frag": 2,
+   "x": 16.63017,
+   "y": 44.16536,
+   "z": 49.19722,
+   "src": "H(37)"
+  },
+  {
+   "n": 79,
+   "el": "H",
+   "frag": 2,
+   "x": 14.64162,
+   "y": 43.88145,
+   "z": 50.75656,
+   "src": "H(38)"
+  },
+  {
+   "n": 80,
+   "el": "H",
+   "frag": 2,
+   "x": 15.42094,
+   "y": 45.07898,
+   "z": 51.81862,
+   "src": "H(38)"
+  },
+  {
+   "n": 81,
+   "el": "H",
+   "frag": 2,
+   "x": 10.81884,
+   "y": 42.88165,
+   "z": 48.60171,
+   "src": "H(42)"
+  },
+  {
+   "n": 82,
+   "el": "H",
+   "frag": 2,
+   "x": 12.34091,
+   "y": 42.40409,
+   "z": 47.92373,
+   "src": "link-H(42)→PHE82:A@C"
+  },
+  {
+   "n": 83,
+   "el": "H",
+   "frag": 2,
+   "x": 12.03775,
+   "y": 40.12877,
+   "z": 48.69906,
+   "src": "H(43)"
+  },
+  {
+   "n": 84,
+   "el": "H",
+   "frag": 2,
+   "x": 9.80615,
+   "y": 39.27488,
+   "z": 48.19169,
+   "src": "link-H(44)→HIS84:A@N"
+  },
+  {
+   "n": 85,
+   "el": "H",
+   "frag": 2,
+   "x": 10.84192,
+   "y": 39.90034,
+   "z": 50.85546,
+   "src": "H(46)"
+  },
+  {
+   "n": 86,
+   "el": "H",
+   "frag": 2,
+   "x": 10.40933,
+   "y": 41.62522,
+   "z": 50.7715,
+   "src": "H(46)"
+  },
+  {
+   "n": 87,
+   "el": "H",
+   "frag": 2,
+   "x": 12.97328,
+   "y": 42.0156,
+   "z": 50.49013,
+   "src": "H(47)"
+  },
+  {
+   "n": 88,
+   "el": "H",
+   "frag": 2,
+   "x": 13.36975,
+   "y": 42.08593,
+   "z": 52.87594,
+   "src": "H(48)"
+  },
+  {
+   "n": 89,
+   "el": "H",
+   "frag": 2,
+   "x": 11.77946,
+   "y": 42.7549,
+   "z": 52.43935,
+   "src": "H(48)"
+  },
+  {
+   "n": 90,
+   "el": "H",
+   "frag": 2,
+   "x": 11.89525,
+   "y": 41.12875,
+   "z": 53.15305,
+   "src": "H(48)"
+  },
+  {
+   "n": 91,
+   "el": "H",
+   "frag": 2,
+   "x": 14.30978,
+   "y": 40.23314,
+   "z": 51.60401,
+   "src": "H(49)"
+  },
+  {
+   "n": 92,
+   "el": "H",
+   "frag": 2,
+   "x": 12.83307,
+   "y": 39.25478,
+   "z": 51.77517,
+   "src": "H(49)"
+  },
+  {
+   "n": 93,
+   "el": "H",
+   "frag": 2,
+   "x": 13.47988,
+   "y": 39.61393,
+   "z": 50.1566,
+   "src": "H(49)"
+  }
+ ],
+ "warnings": [],
+ "parameters": {
+  "qm": {
+   "mode": "full",
+   "shell": 0,
+   "shellWater": false,
+   "shellIons": false,
+   "forceH": false,
+   "linkScheme": "fixed",
+   "xh": {
+    "C": 1.09,
+    "N": 1.01,
+    "O": 0.96,
+    "S": 1.34,
+    "P": 1.42,
+    "B": 1.19,
+    "SE": 1.46
+   },
+   "ligandCharge": "auto",
+   "env": "cluster",
+   "pcm": true,
+   "eps": 4,
+   "program": "gaussian",
+   "method": "wB97XD",
+   "basis": "def2TZVP",
+   "nproc": 16,
+   "mem": "32GB",
+   "nbo7": false
+  },
+  "mm": {
+   "radius": 15,
+   "selection": "residue",
+   "boundary": "RC",
+   "neutralizeCut": true
+  },
+  "ff": {
+   "name": "ff14SB",
+   "water": "TIP3P",
+   "hisDefault": "HIE",
+   "termini": "charged",
+   "chainBreaks": "internal",
+   "ssCut": 2.5,
+   "chargeSource": "auto",
+   "foldH": true,
+   "missing": "redistribute",
+   "overrides": {}
+  }
+ },
+ "assumptions": [
+  "Protonation states and partial charges come from AMBER ff14SB (+ OL15 DNA, OL3 RNA). ASP and GLU are anionic. LYS and ARG are cationic. CYS and TYR are neutral. HIS is HIE by default. A tautomer name in the file (HID/HIE/HIP, HSD/HSE/HSP) or its hydrogens override this default. Changes for single residues override everything.",
+  "Cys pairs with S–S < 2.5 Å are disulfides (CYX). Chain termini are charged (NH₃⁺, COO⁻). Residues next to a chain break are treated as internal.",
+  "Fragment 1 of the QM region is the whole halogenated ligand. Fragment 2 holds the whole acceptor residues.",
+  "Missing hydrogens follow the force-field template of each residue (number of H per atom) with VSEPR geometry. Cut bonds get H caps (fixed X–H length).",
+  "Ligands: one heavy-atom structure fixes the hydrogens and the charge. Every sp² carbon gets one double bond. The keto form is preferred. An sp² ring N without a double bond carries one H. P keeps one P=O bond. S keeps up to two S=O bonds. At pH 7, COOH, phosphate, phosphonate, sulfonate and sulfate groups lose their O–H hydrogen. Amines stay neutral. Hydrogens of the file stay only with a matching number. The PDB formula (FORMUL) checks the count.",
+  "Fragment charges: residue formal charges come from the force-field template. The ligand charge comes from a loaded MOL2 file or from the ligand structure above. Every value can be overridden.",
+  "The QM cluster sits in an implicit dielectric ε = 4 (CPCM/PCM). The dielectric represents the protein."
+ ],
+ "id": "BX-0bd4db48e5",
+ "level": "wB97X-D/def2-TZVP"
+}

@@ -1,0 +1,15 @@
+%nprocshared=40
+%mem=50GB
+%chk=FI_FCCH.chk
+#p wB97XD/def2TZVP pop=(nbo) nosymm scf=(tight,xqc) int=ultrafine
+
+BondX BX-830697b0f1 | NBO XB gate | I2 ... F3' [0 0 0]
+
+0 1
+I       0.000000     0.000000     1.810414
+F       0.000000     0.000000    -0.109530
+F       0.000000     0.000000    -3.137054
+C       0.000000     0.000000    -4.411353
+C       0.000000     0.000000    -5.600430
+H       0.000000     0.000000    -6.661969
+

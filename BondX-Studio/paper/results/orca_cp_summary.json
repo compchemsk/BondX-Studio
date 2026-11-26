@@ -1,0 +1,415 @@
+{
+ "level": "wB97X-V/def2-TZVPD (ORCA 5.0.1, RIJCOSX def2/J, TightSCF, gas phase), counterpoise corrected",
+ "n_systems": 205,
+ "hal59_all": {
+  "n": 59,
+  "MSE": -0.06964406779661016,
+  "MAE": 0.39588135593220336,
+  "RMSD": 0.5421434077587509,
+  "MaxAE": 1.6210000000000022,
+  "pearson_r": 0.9964159498958644,
+  "spearman_rho": 0.9949002729849286,
+  "MRAE_pct": 11.870994804488706
+ },
+ "hal59_XB51": {
+  "n": 45,
+  "MSE": 0.0020222222222222464,
+  "MAE": 0.4257111111111112,
+  "RMSD": 0.5868777082531288,
+  "MaxAE": 1.6210000000000022,
+  "pearson_r": 0.9966012850438879,
+  "spearman_rho": 0.9954867537451901,
+  "MRAE_pct": 12.193608874521384
+ },
+ "hal59_X40": {
+  "n": 14,
+  "MSE": -0.29999999999999993,
+  "MAE": 0.29999999999999993,
+  "RMSD": 0.3627380006876273,
+  "MaxAE": 0.8289999999999997,
+  "pearson_r": 0.9894872518161257,
+  "spearman_rho": 0.9912087912087912,
+  "MRAE_pct": 10.83402100795509
+ },
+ "hal59_Cl": {
+  "n": 5,
+  "MSE": 0.08120000000000031,
+  "MAE": 0.4208,
+  "RMSD": 0.5976835282990492,
+  "MaxAE": 1.2550000000000008,
+  "pearson_r": 0.9990971545254071,
+  "spearman_rho": 0.9999999999999999,
+  "MRAE_pct": 12.516238842896765
+ },
+ "hal59_Br": {
+  "n": 22,
+  "MSE": -0.44604545454545463,
+  "MAE": 0.4981363636363636,
+  "RMSD": 0.5316129401941022,
+  "MaxAE": 1.1240000000000006,
+  "pearson_r": 0.996844530381111,
+  "spearman_rho": 0.9954827780914738,
+  "MRAE_pct": 18.68760787163481
+ },
+ "hal59_I": {
+  "n": 30,
+  "MSE": 0.1797666666666667,
+  "MAE": 0.3399666666666667,
+  "RMSD": 0.5577671258389713,
+  "MaxAE": 1.6210000000000022,
+  "pearson_r": 0.9992012399908137,
+  "spearman_rho": 0.9981088058202632,
+  "MRAE_pct": 7.493615610679111
+ },
+ "hal59_XB_dimers": {
+  "n": 56,
+  "MSE": -0.07099999999999997,
+  "MAE": 0.4147142857142857,
+  "RMSD": 0.556379880503035,
+  "MaxAE": 1.6210000000000022,
+  "pearson_r": 0.996431598106527,
+  "spearman_rho": 0.9946509478335089,
+  "MRAE_pct": 12.239528347052874
+ },
+ "hal59_controls": {
+  "n": 3,
+  "MSE": -0.04433333333333354,
+  "MAE": 0.04433333333333354,
+  "RMSD": 0.04460567975792643,
+  "MaxAE": 0.05000000000000071,
+  "pearson_r": 0.9999991193767167,
+  "spearman_rho": 1.0,
+  "MRAE_pct": 4.991702009957591
+ },
+ "hal59_covered": {
+  "n": 43,
+  "MSE": -0.02490697674418603,
+  "MAE": 0.45202325581395353,
+  "RMSD": 0.6106293550938454,
+  "MaxAE": 1.6210000000000022,
+  "pearson_r": 0.9960567164132919,
+  "spearman_rho": 0.9922972473849272,
+  "MRAE_pct": 8.738311030611651
+ },
+ "hal59_subsets": {
+  "X40": 14,
+  "XB51": 45
+ },
+ "hal59_roles": {
+  "control: F-arene stacking, no sigma-hole donor": 2,
+  "control: halogen points away from the acceptor": 1,
+  "halogen bond": 56
+ },
+ "hal59_largest_errors": [
+  [
+   "FI_NH3",
+   17.11,
+   18.731,
+   1.621
+  ],
+  [
+   "FI_OPH3",
+   13.36,
+   14.882,
+   1.522
+  ],
+  [
+   "FI_pyr",
+   20.34,
+   21.685,
+   1.345
+  ],
+  [
+   "NH3_FCl",
+   10.54,
+   11.795,
+   1.255
+  ],
+  [
+   "BrBr_pyr",
+   9.07,
+   7.946,
+   -1.124
+  ]
+ ],
+ "G_vs_BE_spearman_covered": 0.6265931804094539,
+ "G_vs_ref_spearman_covered": 0.6282002848568902,
+ "n_covered": 43,
+ "controls": [
+  [
+   "FI_FCCH",
+   0.29,
+   0.252,
+   "False"
+  ],
+  [
+   "11_benF3-ben",
+   4.4,
+   4.35,
+   "False"
+  ],
+  [
+   "12_benF6-ben",
+   6.12,
+   6.075,
+   "False"
+  ]
+ ],
+ "scan_s100_vs_hal59_maxdiff_kcal": 0.0,
+ "distance_scans": {
+  "19_benCl-acetone": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 1.268,
+   "BE_s100": 1.268,
+   "BE_s090": 0.452,
+   "BE_s150": 0.177,
+   "frac_s120": 0.6562,
+   "frac_s150": 0.1396,
+   "G_zero_from_s": 1.2
+  },
+  "20_benBr-acetone": {
+   "s_at_max_BE": 1.05,
+   "BE_max": 1.999,
+   "BE_s100": 1.985,
+   "BE_s090": 0.783,
+   "BE_s150": 0.402,
+   "frac_s120": 0.7083,
+   "frac_s150": 0.2025,
+   "G_zero_from_s": 1.35
+  },
+  "21_benI-acetone": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 3.402,
+   "BE_s100": 3.402,
+   "BE_s090": 2.315,
+   "BE_s150": 0.739,
+   "frac_s120": 0.662,
+   "frac_s150": 0.2172,
+   "G_zero_from_s": 1.35
+  },
+  "22_benCl-Nm3": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 1.779,
+   "BE_s100": 1.779,
+   "BE_s090": 0.707,
+   "BE_s150": 0.323,
+   "frac_s120": 0.6847,
+   "frac_s150": 0.1816,
+   "G_zero_from_s": 1.35
+  },
+  "23_benBr-Nm3": {
+   "s_at_max_BE": 1.05,
+   "BE_max": 3.011,
+   "BE_s100": 2.951,
+   "BE_s090": 1.169,
+   "BE_s150": 0.724,
+   "frac_s120": 0.7496,
+   "frac_s150": 0.2453,
+   "G_zero_from_s": 1.35
+  },
+  "24_benI-Nm3": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 5.365,
+   "BE_s100": 5.365,
+   "BE_s090": 3.504,
+   "BE_s150": 1.334,
+   "frac_s120": 0.702,
+   "frac_s150": 0.2486,
+   "G_zero_from_s": 1.35
+  },
+  "26_benI-mSH": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 2.854,
+   "BE_s100": 2.854,
+   "BE_s090": 1.404,
+   "BE_s150": 0.527,
+   "frac_s120": 0.6398,
+   "frac_s150": 0.1847,
+   "G_zero_from_s": 1.2
+  },
+  "28_CH3I-ben": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 2.315,
+   "BE_s100": 2.315,
+   "BE_s090": 0.846,
+   "BE_s150": 0.38,
+   "frac_s120": 0.6315,
+   "frac_s150": 0.1641,
+   "G_zero_from_s": 1.1
+  },
+  "FI_pyr": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 21.685,
+   "BE_s100": 21.685,
+   "BE_s090": 18.31,
+   "BE_s150": 6.719,
+   "frac_s120": 0.7151,
+   "frac_s150": 0.3098,
+   "G_zero_from_s": null
+  },
+  "MeI_pyr": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 3.421,
+   "BE_s100": 3.421,
+   "BE_s090": 2.288,
+   "BE_s150": 0.631,
+   "frac_s120": 0.641,
+   "frac_s150": 0.1844,
+   "G_zero_from_s": 1.35
+  },
+  "NH3_FBr": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 15.873,
+   "BE_s100": 15.873,
+   "BE_s090": 12.734,
+   "BE_s150": 5.226,
+   "frac_s120": 0.7392,
+   "frac_s150": 0.3292,
+   "G_zero_from_s": null
+  },
+  "NH3_PhI": {
+   "s_at_max_BE": 1.0,
+   "BE_max": 3.354,
+   "BE_s100": 3.354,
+   "BE_s090": 2.353,
+   "BE_s150": 0.656,
+   "frac_s120": 0.6401,
+   "frac_s150": 0.1956,
+   "G_zero_from_s": 1.35
+  }
+ },
+ "angle_scans": {
+  "19_benCl-acetone": {
+   "BE_180": 1.267,
+   "frac_180": 1.0,
+   "frac_170": 0.9448,
+   "frac_160": 0.7506,
+   "frac_150": 0.4522,
+   "frac_140": 0.1073,
+   "frac_130": -0.2115,
+   "frac_120": -0.438,
+   "monotonic": true
+  },
+  "20_benBr-acetone": {
+   "BE_180": 1.983,
+   "frac_180": 1.0,
+   "frac_170": 0.9375,
+   "frac_160": 0.7211,
+   "frac_150": 0.3853,
+   "frac_140": -0.0151,
+   "frac_130": -0.4095,
+   "frac_120": -0.7262,
+   "monotonic": true
+  },
+  "21_benI-acetone": {
+   "BE_180": 3.402,
+   "frac_180": 1.0,
+   "frac_170": 0.933,
+   "frac_160": 0.731,
+   "frac_150": 0.4221,
+   "frac_140": 0.0514,
+   "frac_130": -0.3216,
+   "frac_120": -0.6343,
+   "monotonic": true
+  },
+  "22_benCl-Nm3": {
+   "BE_180": 1.779,
+   "frac_180": 1.0,
+   "frac_170": 0.9162,
+   "frac_160": 0.6712,
+   "frac_150": 0.3086,
+   "frac_140": -0.104,
+   "frac_130": -0.4851,
+   "frac_120": -0.7437,
+   "monotonic": true
+  },
+  "23_benBr-Nm3": {
+   "BE_180": 2.95,
+   "frac_180": 1.0,
+   "frac_170": 0.9119,
+   "frac_160": 0.6451,
+   "frac_150": 0.2437,
+   "frac_140": -0.2285,
+   "frac_130": -0.6875,
+   "frac_120": -1.0417,
+   "monotonic": true
+  },
+  "24_benI-Nm3": {
+   "BE_180": 5.365,
+   "frac_180": 1.0,
+   "frac_170": 0.9219,
+   "frac_160": 0.6917,
+   "frac_150": 0.3396,
+   "frac_140": -0.0852,
+   "frac_130": -0.5169,
+   "frac_120": -0.8772,
+   "monotonic": true
+  }
+ },
+ "angle_frac140_range": [
+  -0.2285,
+  0.1073
+ ],
+ "angle_frac120_range": [
+  -1.0417,
+  -0.438
+ ],
+ "distance_scan_G_BE_spearman_range": [
+  0.31138282809744733,
+  0.7637626158259735
+ ],
+ "protein": {
+  "1p5e__TBSA__cluster_pcm4": -11.42,
+  "1p5e__TBSC__cluster_pcm4": -10.46,
+  "1us0_idd594__LDTA__cluster_pcm4": 3.38,
+  "2w0s__BVPA__cluster_pcm4": 3.4,
+  "2w0s__BVPB__cluster_pcm4": 3.07,
+  "4agl__P84A__cluster_pcm4": -3.33,
+  "4agl__P84B__cluster_pcm4": -3.15,
+  "4dst__9LIA__cluster_pcm4": -0.32
+ },
+ "protein_replica_absdiff_kcal": {
+  "1p5e": 0.96,
+  "2w0s": 0.33,
+  "4agl": 0.18
+ },
+ "runtime": {
+  "jobs": 615,
+  "wall_hours": 22.6,
+  "core_hours_40": 904.0,
+  "by_set": {
+   "A_HAL59": {
+    "jobs": 177,
+    "wall_h": 2.84,
+    "median_s": 53.5,
+    "max_s": 178.9
+   },
+   "B_scan_distance": {
+    "jobs": 288,
+    "wall_h": 6.78,
+    "median_s": 77.2,
+    "max_s": 310.8
+   },
+   "C_scan_angle": {
+    "jobs": 126,
+    "wall_h": 4.73,
+    "median_s": 115.95,
+    "max_s": 326.0
+   },
+   "F_protein": {
+    "jobs": 24,
+    "wall_h": 8.26,
+    "median_s": 856.5999999999999,
+    "max_s": 4995.1
+   }
+  },
+  "atoms_range": [
+   5,
+   93
+  ],
+  "nbf_range": [
+   150,
+   2307
+  ]
+ }
+}

@@ -1,0 +1,814 @@
+{
+ "status": {
+  "A_HAL59|gaussian": {
+   "n": 59,
+   "ok": 59
+  },
+  "A_HAL59|gaussian_cp": {
+   "n": 59,
+   "ok": 59
+  },
+  "A_HAL59|qchem": {
+   "n": 59,
+   "ok": 0
+  },
+  "A_HAL59|qchem_eda": {
+   "n": 59,
+   "ok": 59
+  },
+  "B_scan_distance|gaussian": {
+   "n": 96,
+   "ok": 96
+  },
+  "B_scan_distance|gaussian_cp": {
+   "n": 96,
+   "ok": 96
+  },
+  "B_scan_distance|qchem": {
+   "n": 96,
+   "ok": 0
+  },
+  "B_scan_distance|qchem_eda": {
+   "n": 96,
+   "ok": 96
+  },
+  "C_scan_angle|gaussian": {
+   "n": 42,
+   "ok": 42
+  },
+  "C_scan_angle|gaussian_cp": {
+   "n": 42,
+   "ok": 42
+  },
+  "C_scan_angle|qchem": {
+   "n": 42,
+   "ok": 0
+  },
+  "C_scan_angle|qchem_eda": {
+   "n": 42,
+   "ok": 42
+  },
+  "D_method_basis|gaussian": {
+   "n": 84,
+   "ok": 84
+  },
+  "D_method_basis|qchem": {
+   "n": 96,
+   "ok": 0
+  },
+  "E_eda_settings|qchem_eda": {
+   "n": 36,
+   "ok": 36
+  },
+  "F_protein|gaussian": {
+   "n": 89,
+   "ok": 89
+  },
+  "F_protein|gaussian_cp": {
+   "n": 9,
+   "ok": 9
+  },
+  "F_protein|qchem": {
+   "n": 89,
+   "ok": 0
+  },
+  "F_protein|qchem_eda": {
+   "n": 9,
+   "ok": 6
+  }
+ },
+ "qchem_nbo_no_E2_table": 382,
+ "hal59": {
+  "n": 59,
+  "n_xb": 56,
+  "n_covered": 41,
+  "controls": [
+   [
+    "FI_FCCH",
+    0.0,
+    false
+   ],
+   [
+    "11_benF3-ben",
+    0.0,
+    false
+   ],
+   [
+    "12_benF6-ben",
+    0.05,
+    false
+   ]
+  ],
+  "controls_all_rejected": true,
+  "covered_all_verified": true,
+  "xb_verified": 54,
+  "xb_rejected": [
+   [
+    "MeI_FCCH",
+    "F",
+    0.41,
+    0.5
+   ],
+   [
+    "BrBr_FCCH",
+    "F",
+    0.48,
+    0.74
+   ]
+  ],
+  "rho_E2_ref_covered": 0.932,
+  "rho_E2_ref_all_xb": 0.874,
+  "rho_E2_ref_covered_without_ionic": 0.926,
+  "rho_E2_negCT": 0.976,
+  "rho_G_E2_covered": 0.786,
+  "E2_min_covered": 0.73,
+  "E2_max_covered": 80.36,
+  "E2_over_BE_median_covered": 1.805,
+  "ionic": [
+   [
+    "FI_pyr",
+    80.36,
+    72.2,
+    8.16
+   ]
+  ],
+  "ry_share_median": 0.072,
+  "ry_share_max": 0.193,
+  "npa_ct_max": 0.173,
+  "rho_E2_npaCT": 0.965,
+  "err_eda_vs_ref": {
+   "MAE": 0.393,
+   "RMSD": 0.544,
+   "MSE": -0.059,
+   "MaxAE": 1.645,
+   "r": 0.996
+  },
+  "err_g16cp_vs_ref": {
+   "MAE": 0.581,
+   "RMSD": 0.658,
+   "MSE": -0.4,
+   "MaxAE": 1.381,
+   "r": 0.995
+  },
+  "err_orca_vs_ref": {
+   "MAE": 0.396,
+   "RMSD": 0.542,
+   "MSE": -0.07,
+   "MaxAE": 1.621,
+   "r": 0.996
+  },
+  "eda_minus_orca_maxabs_kcal": 0.052,
+  "eda_minus_orca_mean_kcal": -0.011,
+  "chi_ct_range_xb": [
+   0.475,
+   0.815
+  ],
+  "chi_ct_median_xb": 0.634,
+  "mechanism_counts_xb": {
+   "Charge-transfer driven (n\u2192\u03c3* dominant)": 36,
+   "Mixed polarization / charge transfer": 20
+  },
+  "ct_share_of_attraction_median": 0.26,
+  "frz_positive_xb": 23,
+  "halogen_series": {
+   "acetone Cl/Br/I": [
+    1.18,
+    2.64,
+    4.39
+   ],
+   "NMe3 Cl/Br/I": [
+    2.36,
+    5.42,
+    9.25
+   ]
+  },
+  "bxqi_covered_min_max": [
+   43.125,
+   99.996
+  ],
+  "grades_covered": {
+   "A": 28,
+   "B": 11,
+   "C": 2
+  }
+ },
+ "scans": {
+  "dist_E2_rel_1_2": [
+   0.134,
+   0.291
+  ],
+  "dist_E2_rel_1_5": [
+   0.0,
+   0.052
+  ],
+  "dist_CT_rel_1_2": [
+   0.106,
+   0.315
+  ],
+  "dist_CT_rel_1_5": [
+   0.008,
+   0.046
+  ],
+  "dist_BE_rel_1_2": [
+   0.632,
+   0.75
+  ],
+  "dist_E2_rel_0_9": [
+   1.859,
+   2.72
+  ],
+  "dist_E2_monotonic_all": true,
+  "dist_gate_first_fail": {
+   "19_benCl-acetone": 1.1,
+   "20_benBr-acetone": 1.2,
+   "21_benI-acetone": 1.35,
+   "22_benCl-Nm3": 1.35,
+   "23_benBr-Nm3": 1.5,
+   "24_benI-Nm3": 1.5,
+   "26_benI-mSH": 1.35,
+   "28_CH3I-ben": 1.1,
+   "FI_pyr": null,
+   "MeI_pyr": 1.35,
+   "NH3_FBr": null,
+   "NH3_PhI": 1.5
+  },
+  "dist_gate_fail_count_at_1_5": 10,
+  "dist_n_dimers": 12,
+  "dist_G0_but_verified": 4,
+  "dist_G0_points": 24,
+  "ang_E2_rel_150": [
+   0.701,
+   0.805
+  ],
+  "ang_E2_rel_140": [
+   0.551,
+   0.668
+  ],
+  "ang_E2_rel_130": [
+   0.373,
+   0.538
+  ],
+  "ang_E2_rel_120": [
+   0.212,
+   0.39
+  ],
+  "ang_CT_rel_150": [
+   0.807,
+   0.902
+  ],
+  "ang_CT_rel_120": [
+   0.506,
+   0.702
+  ],
+  "ang_gate_largest_failing_theta": {
+   "19_benCl-acetone": 130,
+   "20_benBr-acetone": null,
+   "21_benI-acetone": null,
+   "22_benCl-Nm3": null,
+   "23_benBr-Nm3": null,
+   "24_benI-Nm3": null
+  },
+  "ang_verified_at_130": 5,
+  "ang_verified_at_120": 5,
+  "ang_n_dimers": 6,
+  "ang_E2_monotonic_all": true,
+  "ang_ct_attractive_at_120": 6,
+  "ang_orca_repulsive_at_130": 6
+ },
+ "method_basis": {
+  "n_dimers": 12,
+  "levels": [
+   "B3LYP-D3BJ__def2-TZVP",
+   "HF__def2-TZVP",
+   "M06-2X__def2-TZVP",
+   "PBE0-D3BJ__def2-TZVP",
+   "wB97X-D__def2-QZVP",
+   "wB97X-D__def2-SVP",
+   "wB97X-D__def2-TZVP"
+  ],
+  "dft_rel_range": [
+   0.729,
+   1.0
+  ],
+  "hf_rel_range": [
+   0.777,
+   1.004
+  ],
+  "svp_rel_range": [
+   0.757,
+   1.196
+  ],
+  "qzvp_rel_range": [
+   1.003,
+   2.703
+  ],
+  "gate_changes": 0,
+  "qzvp_rel_sigma_only": [
+   0.839,
+   1.17
+  ],
+  "svp_rel_sigma_only": [
+   0.678,
+   1.154
+  ],
+  "ry_qzvp_max": 5.76,
+  "ry_tzvp_max_nonionic": 6.45,
+  "rank_rho_min_vs_wb97xd_tzvp": 0.895
+ },
+ "eda_settings": {
+  "def2-QZVP": {
+   "dTotal_kJ_range": [
+    -0.782,
+    0.026
+   ],
+   "dCT_kJ_range": [
+    -8.668,
+    0.1
+   ],
+   "CT_ratio_range": [
+    0.974,
+    1.147
+   ],
+   "n": 12
+  },
+  "def2-SVPD": {
+   "dTotal_kJ_range": [
+    -3.128,
+    0.175
+   ],
+   "dCT_kJ_range": [
+    -0.544,
+    8.492
+   ],
+   "CT_ratio_range": [
+    0.608,
+    1.208
+   ],
+   "n": 12
+  },
+  "noBSSE": {
+   "dTotal_kJ_range": [
+    -1.514,
+    -0.304
+   ],
+   "dCT_kJ_range": [
+    -1.514,
+    -0.304
+   ],
+   "CT_ratio_range": [
+    1.01,
+    1.209
+   ],
+   "n": 12
+  }
+ },
+ "protein": {
+  "models": 89,
+  "contacts": 14,
+  "rows": 133,
+  "default_cluster": {
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": [
+    0.49,
+    false
+   ],
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": [
+    4.32,
+    true
+   ],
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": [
+    3.07,
+    true
+   ],
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": [
+    2.08,
+    true
+   ],
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": [
+    0.55,
+    true
+   ],
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": [
+    0.33,
+    false
+   ],
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": [
+    2.2,
+    true
+   ],
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": [
+    1.93,
+    true
+   ],
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": [
+    0.13,
+    false
+   ],
+   "BVP1207:B@BR\u00b7\u00b7\u00b7ASN65:B@OD1": [
+    2.28,
+    true
+   ],
+   "TBS302:C@BR11\u00b7\u00b7\u00b7LEU83:C@O": [
+    3.08,
+    true
+   ],
+   "TBS302:C@BR12\u00b7\u00b7\u00b7GLU81:C@O": [
+    1.87,
+    true
+   ],
+   "TBS302:C@BR13\u00b7\u00b7\u00b7PHE80:C@\u03c0(ring)": [
+    1.31,
+    true
+   ],
+   "P84400:B@I15\u00b7\u00b7\u00b7LEU145:B@O": [
+    2.4,
+    true
+   ]
+  },
+  "range_over_variants": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": [
+    0.0,
+    0.13,
+    14
+   ],
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": [
+    4.02,
+    4.72,
+    14
+   ],
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": [
+    0.38,
+    0.72,
+    16
+   ],
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": [
+    2.02,
+    2.3,
+    14
+   ],
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": [
+    1.83,
+    2.04,
+    14
+   ],
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": [
+    0.31,
+    0.36,
+    14
+   ],
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": [
+    3.07,
+    3.56,
+    14
+   ],
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": [
+    2.08,
+    2.33,
+    14
+   ],
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": [
+    0.52,
+    0.64,
+    14
+   ]
+  },
+  "gate_flips": [
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1"
+  ],
+  "pcm_minus_gas": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": 0.01,
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": 0.3,
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": 0.03,
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": 0.07,
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": 0.09,
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": 0.01,
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": 0.0,
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": -0.03,
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": 0.02
+  },
+  "qmmm_vs_pcm": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": -0.07,
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": 0.3,
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": 0.14,
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": -0.08,
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": 0.02,
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": -0.02,
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": 0.24,
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": 0.16,
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": 0.03
+  },
+  "ff_charmm_minus_ff14": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": 0.0,
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": 0.0,
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": 0.0,
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": 0.0,
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": -0.01,
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": 0.01,
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": -0.13,
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": 0.01,
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": 0.01
+  },
+  "boundary_range": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": [
+    0.06,
+    0.06
+   ],
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": [
+    4.62,
+    4.72
+   ],
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": [
+    0.62,
+    0.72
+   ],
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": [
+    2.1,
+    2.19
+   ],
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": [
+    1.83,
+    1.95
+   ],
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": [
+    0.31,
+    0.32
+   ],
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": [
+    3.14,
+    3.56
+   ],
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": [
+    2.09,
+    2.28
+   ],
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": [
+    0.52,
+    0.64
+   ]
+  },
+  "radius_range": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": [
+    0.06,
+    0.06
+   ],
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": [
+    4.47,
+    4.62
+   ],
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": [
+    0.62,
+    0.65
+   ],
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": [
+    2.02,
+    2.12
+   ],
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": [
+    1.94,
+    1.97
+   ],
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": [
+    0.31,
+    0.32
+   ],
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": [
+    3.08,
+    3.31
+   ],
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": [
+    2.15,
+    2.24
+   ],
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": [
+    0.57,
+    0.59
+   ]
+  },
+  "shell_range": {
+   "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N": [
+    0.0,
+    0.13
+   ],
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1": [
+    4.32,
+    4.52
+   ],
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1": [
+    0.38,
+    0.49
+   ],
+   "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O": [
+    2.2,
+    2.3
+   ],
+   "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O": [
+    1.93,
+    2.04
+   ],
+   "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O": [
+    0.33,
+    0.36
+   ],
+   "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O": [
+    3.07,
+    3.18
+   ],
+   "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O": [
+    2.08,
+    2.33
+   ],
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)": [
+    0.55,
+    0.58
+   ]
+  },
+  "his110": {
+   "qmmm_HIS110_HID": 0.61,
+   "qmmm_ff14SB": 0.63,
+   "qmmm_HIS110_HIP": 0.64
+  },
+  "replica_pairs": {
+   "1p5e|BR11|O": [
+    3.07,
+    3.08
+   ],
+   "1p5e|BR12|O": [
+    2.08,
+    1.87
+   ],
+   "1p5e|BR13|\u03c0(ring)": [
+    0.55,
+    1.31
+   ],
+   "2w0s|BR|OD1": [
+    4.32,
+    2.28
+   ],
+   "4agl|I15|O": [
+    2.2,
+    2.4
+   ]
+  },
+  "eda": {
+   "1us0_idd594__LDTA__cluster_pcm4": {
+    "frz": 29.195,
+    "pol": -5.328,
+    "ct": -9.862,
+    "total": 14.005,
+    "chi": 0.649,
+    "orca_cp": 14.122,
+    "g16_cp": 16.099
+   },
+   "4agl__P84A__cluster_pcm4": {
+    "frz": -4.909,
+    "pol": -4.954,
+    "ct": -4.166,
+    "total": -14.029,
+    "chi": 0.457,
+    "orca_cp": -13.936,
+    "g16_cp": -12.375
+   },
+   "4dst__9LIA__cluster_pcm4": {
+    "frz": 1.749,
+    "pol": -0.733,
+    "ct": -2.403,
+    "total": -1.387,
+    "chi": 0.766,
+    "orca_cp": -1.34,
+    "g16_cp": 0.261
+   },
+   "2w0s__BVPB__cluster_pcm4": {
+    "frz": 21.725,
+    "pol": -5.2,
+    "ct": -3.794,
+    "total": 12.731,
+    "chi": 0.422,
+    "orca_cp": 12.85,
+    "g16_cp": 32.446
+   },
+   "1p5e__TBSC__cluster_pcm4": {
+    "frz": -21.679,
+    "pol": -11.748,
+    "ct": -10.795,
+    "total": -44.222,
+    "chi": 0.479,
+    "orca_cp": -43.745,
+    "g16_cp": -37.538
+   },
+   "4agl__P84B__cluster_pcm4": {
+    "frz": -3.466,
+    "pol": -5.273,
+    "ct": -4.533,
+    "total": -13.271,
+    "chi": 0.462,
+    "orca_cp": -13.18,
+    "g16_cp": -11.558
+   }
+  },
+  "eda_minus_orca_kJ": 0.477,
+  "g16cp": {
+   "1us0_idd594__LDTA": 16.099,
+   "2w0s__BVPA": 35.733,
+   "1p5e__TBSA": -40.139,
+   "4agl__P84A": -12.375,
+   "4gql__R47A": 15.83,
+   "4dst__9LIA": 0.261,
+   "2w0s__BVPB": 32.446,
+   "1p5e__TBSC": -37.538,
+   "4agl__P84B": -11.558
+  },
+  "bxqi": [
+   [
+    "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1",
+    35.543,
+    "C \u00b7 rejected at NBO gate"
+   ],
+   [
+    "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1",
+    87.898,
+    "A \u00b7 strong, high-confidence XB"
+   ],
+   [
+    "TBS301:A@BR11\u00b7\u00b7\u00b7LEU83:A@O",
+    80.29,
+    "A \u00b7 strong, high-confidence XB"
+   ],
+   [
+    "TBS301:A@BR12\u00b7\u00b7\u00b7GLU81:A@O",
+    69.426,
+    "B \u00b7 moderate XB"
+   ],
+   [
+    "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)",
+    33.882,
+    "C \u00b7 weak XB"
+   ],
+   [
+    "TBS301:A@BR10\u00b7\u00b7\u00b7ILE10:A@O",
+    22.982,
+    "D \u00b7 rejected at NBO gate"
+   ],
+   [
+    "P84400:A@I15\u00b7\u00b7\u00b7LEU145:A@O",
+    76.851,
+    "A \u00b7 strong, high-confidence XB"
+   ],
+   [
+    "R47306:A@CL1\u00b7\u00b7\u00b7PRO232:A@O",
+    72.417,
+    "B \u00b7 moderate XB"
+   ],
+   [
+    "9LI201:A@CL2\u00b7\u00b7\u00b7GLY75:A@N",
+    8.572,
+    "D \u00b7 rejected at NBO gate"
+   ],
+   [
+    "BVP1207:B@BR\u00b7\u00b7\u00b7ASN65:B@OD1",
+    69.954,
+    "B \u00b7 moderate XB"
+   ],
+   [
+    "TBS302:C@BR11\u00b7\u00b7\u00b7LEU83:C@O",
+    86.431,
+    "A \u00b7 strong, high-confidence XB"
+   ],
+   [
+    "TBS302:C@BR12\u00b7\u00b7\u00b7GLU81:C@O",
+    68.026,
+    "B \u00b7 moderate XB"
+   ],
+   [
+    "TBS302:C@BR13\u00b7\u00b7\u00b7PHE80:C@\u03c0(ring)",
+    50.591,
+    "B \u00b7 moderate XB"
+   ],
+   [
+    "P84400:B@I15\u00b7\u00b7\u00b7LEU145:B@O",
+    79.431,
+    "A \u00b7 strong, high-confidence XB"
+   ]
+  ]
+ },
+ "timing": {
+  "gaussian": {
+   "n": 370,
+   "hours": 71.942
+  },
+  "gaussian_cp": {
+   "n": 206,
+   "hours": 21.79
+  },
+  "qchem_eda": {
+   "n": 239,
+   "hours": 58.804
+  },
+  "protein_eda_hours": 23.007,
+  "protein_eda_n": 6,
+  "protein_clusters_all_rejected": [
+   "1us0_idd594__LDTA",
+   "4dst__9LIA"
+  ],
+  "protein_eda_hours_rejected_clusters": 4.887,
+  "protein_gaussian_nbo_hours": 42.602
+ }
+}

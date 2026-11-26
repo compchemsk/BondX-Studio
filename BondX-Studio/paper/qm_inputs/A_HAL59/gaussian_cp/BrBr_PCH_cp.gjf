@@ -1,0 +1,14 @@
+%nprocshared=40
+%mem=50GB
+%chk=BrBr_PCH_cp.chk
+#p wB97XD/def2TZVP counterpoise=2 nosymm scf=(tight,xqc) int=ultrafine
+
+BondX BX-bb68b87238 | counterpoise interaction energy (pairs with Q-Chem ALMO-EDA)
+
+0 1 0 1 0 1
+Br(Fragment=1)     0.000000     0.000000     0.083551
+Br(Fragment=1)     0.000000     0.000000     2.363436
+P(Fragment=2)      0.000000     0.000000    -3.359217
+C(Fragment=2)      0.000000     0.000000    -4.883524
+H(Fragment=2)      0.000000     0.000000    -5.955139
+

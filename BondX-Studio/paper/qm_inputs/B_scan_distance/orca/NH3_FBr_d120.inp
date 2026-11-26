@@ -1,0 +1,18 @@
+# BondX BX-7b37e9cf59 - NBO XB gate
+# BR5 ... N1' [0 0 0]
+# CAUTION: ORCA has no built-in NBO. The NBO keyword calls NBO 7, a licensed program.
+# Set the NBOEXE environment variable to the NBO 7 executable before running ORCA.
+# Without NBO 7 the SCF runs but no NBO analysis is printed.
+# The ORCA + NBO 7 route is not tested in this version of BondX.
+! wB97X-D3 def2-TZVP RIJCOSX def2/J TightSCF NBO
+%pal nprocs 40 end
+%maxcore 937
+
+* xyz 0 1
+Br      0.000000     0.000000     0.152975
+F       0.000000     0.000000     1.970104
+N       0.000000     0.000000    -2.675322
+H       0.000000     0.948700    -3.023874
+H       0.821598    -0.474350    -3.023874
+H      -0.821598    -0.474350    -3.023874
+*
