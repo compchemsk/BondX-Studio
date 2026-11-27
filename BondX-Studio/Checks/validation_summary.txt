@@ -1,0 +1,4 @@
+Engine tests: 123 passed, 0 failed
+Independent force-field reference comparisons: PASS
+Manuscript syntax compilation: Output written on Manuscript_V3.pdf (16 pages, 1057408 bytes).
+ESI syntax compilation: Output written on ESI_V3.pdf (38 pages, 807363 bytes).

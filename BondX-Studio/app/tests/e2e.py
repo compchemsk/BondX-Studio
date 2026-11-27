@@ -79,7 +79,7 @@ async def main():
         # NBO
         await nav('nbo'); await pg.click('details:has(#btnFakeNbo) > summary')
         f = await dl('#btnFakeNbo', 'nbo.log'); await pg.set_input_files('#dropNbo input', f); await pg.wait_for_timeout(300)
-        res = await pg.inner_text('#nRes'); check('VERIFIED' in res, 'NBO gate verifies synthetic output')
+        res = await pg.inner_text('#nRes'); check('orbital-supported' in res and 'not supported' not in res.split('Decision')[0], 'NBO screen supports the synthetic output')
         await shot('05_nbo')
         # EDA
         await nav('eda'); f = await dl('#btnEdaIn', 'eda.in')
@@ -114,6 +114,9 @@ async def main():
         await pg.wait_for_timeout(600)
         check(await pg.locator('#protTable select[data-prot]').count() >= 1, 'protonation table with choices')
         await pg.select_option('#pg-qm select[data-p="mm.boundary"]', 'Z1'); await pg.wait_for_timeout(100)
+        await pg.select_option('#pg-qm select[data-p="qm.program"]', 'orca'); await pg.wait_for_timeout(100)
+        check(await pg.input_value('#pg-qm select[data-p="qm.program"]') == 'gaussian', 'untested ORCA NBO route is locked by default')
+        await pg.check('#pg-qm input[data-p="qm.allowUntested"]'); await pg.wait_for_timeout(100)
         await pg.select_option('#pg-qm select[data-p="qm.program"]', 'orca'); await pg.wait_for_timeout(100)
         check(await pg.input_value('#pg-qm input[data-p="qm.method"]') == 'wB97X-D3', 'program change resets method default')
         check('licensed program' in await pg.inner_text('#qProgNote'), 'ORCA NBO 7 caution shown under program')

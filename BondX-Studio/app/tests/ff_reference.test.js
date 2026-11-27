@@ -49,6 +49,16 @@ function compare(pdb, pqr, ff, label) {
       const d = Math.abs(rq - my); maxDev = Math.max(maxDev, d); if (d > 2e-4) bad.push(`${r.resName}${r.resSeq}@${a.name}: BondX ${my.toFixed(4)} ref ${rq.toFixed(4)} (${info.tpl})`); }
     if (Math.abs(qnet - qref) > 2e-3) resDiff.push(`${r.resName}${r.resSeq} (${info.tpl}): ${qnet.toFixed(3)} vs ${qref.toFixed(3)}`);
   }
+  // hydrogen charges: each reference H against the template charge of the same H name (no folding)
+  let nH = 0, maxH = 0; const badH = []; const FFt = B.FF[ff];
+  for (const r of S.residues) {
+    if (r.cls !== 'protein') continue; const ref = qres.get(r.chain + r.resSeq + (r.iCode || '')); if (!ref) continue;
+    const info = A.residues[r.idx]; if (!info || !info.tpl || info.missing.length) continue; const tp = FFt.residues[info.tpl]; if (!tp) continue;
+    const hq = {}; Object.values(tp.atoms).forEach(t => (t[2] || []).forEach(h => { hq[h[0]] = h[1]; }));
+    for (const i of ref.atoms) { const a = Q.atoms[i]; if (a.el !== 'H') continue; let nm = a.name; if (hq[nm] === undefined && /^H\d$/.test(nm) && hq[nm.replace(/^H/, 'H')] === undefined) continue; if (hq[nm] === undefined) continue;
+      nH++; const d = Math.abs(hq[nm] - a.q); maxH = Math.max(maxH, d); if (d > 2e-4) badH.push(`${r.resName}${r.resSeq}@${nm}: ${hq[nm].toFixed(4)} vs ${a.q.toFixed(4)}`); }
+  }
+  out.hstat = out.hstat || []; out.hstat.push(`${label}: ${nH} hydrogens compared one by one, max |Δq| = ${maxH.toExponential(2)} e${badH.length ? ' (' + badH.length + ' differ, e.g. ' + badH.slice(0, 3).join('; ') + ')' : ''}`);
   const ok = bad.length === 0 && resDiff.length === 0 && nAtoms >= 50;
   out.push(`${ok ? 'PASS' : 'FAIL'}  ${label}: ${nRes} residues, ${nAtoms} heavy atoms compared, max |Δq| = ${maxDev.toExponential(2)} e` + (ok ? '' : `\n      ${bad.slice(0, 8).join('\n      ')}\n      residue nets: ${resDiff.slice(0, 8).join('; ')}`));
   return { ok, bad, resDiff };
@@ -68,4 +78,5 @@ for (const [pdb, pqr, lab] of [['1AFS.pdb', '1AFS_whitespace_ff=CHARMM.pqr', '1A
   if (nonTrp.length) fails++;
 }
 console.log(out.join('\n'));
+console.log('\nHydrogen charges (not folded):\n' + out.hstat.map(x => '  ' + x).join('\n'));
 if (fails) { console.log(`\n${fails} reference comparison(s) failed`); process.exit(1); } else console.log('\nAll reference comparisons passed.');

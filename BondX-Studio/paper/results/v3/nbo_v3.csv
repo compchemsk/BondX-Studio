@@ -1,0 +1,415 @@
+set,name,xb,label,type,E2_valence,E2_RY,E2_with_RY,verdict,verdict_with_RY,hbY,hbFrag2,lpOnY,ct_NPA,geometry_ok
+A_HAL59,PCH_PhBr,XB1,BR4 ··· P1' [0 0 0],atom,1.33,0,1.33,supported,supported,0,0,true,0.0012,true
+A_HAL59,NCH_PhBr,XB1,BR4 ··· N1' [0 0 0],atom,1.71,0,1.71,supported,supported,0,0,true,0.0035,true
+A_HAL59,NH3_PhBr,XB1,BR5 ··· N1' [0 0 0],atom,4.03,0.1,4.13,supported,supported,0.07,0.07,true,0.0136,true
+A_HAL59,MeI_PCH,XB1,I2 ··· P6' [0 0 0],atom,1.67,0.08,1.75,supported,supported,0,0,true,0.0008,true
+A_HAL59,MeI_NCH,XB1,I2 ··· N6' [0 0 0],atom,2.32,0,2.32,supported,supported,0,0,true,0.0031,true
+A_HAL59,MeI_NH3,XB1,I2 ··· N9' [0 0 0],atom,5.57,0.43,6,supported,supported,0.23,0.23,true,0.0192,true
+A_HAL59,PCH_PhI,XB1,I4 ··· P1' [0 0 0],atom,1.8,0,1.8,supported,supported,0,0,true,0.0023,true
+A_HAL59,NCH_PhI,XB1,I4 ··· N1' [0 0 0],atom,2.61,0.06,2.67,supported,supported,0,0,true,0.0058,true
+A_HAL59,NH3_PhI,XB1,I5 ··· N1' [0 0 0],atom,6.11,0.35,6.46,supported,supported,0.26,0.26,true,0.0229,true
+A_HAL59,PCH_F3CI,XB1,I4 ··· P1' [0 0 0],atom,2.18,0.09,2.27,supported,supported,0,0,true,0.0046,true
+A_HAL59,NCH_F3CI,XB1,I4 ··· N1' [0 0 0],atom,4.57,0.13,4.7,supported,supported,0,0,true,0.009,true
+A_HAL59,NH3_F3CI,XB1,I5 ··· N1' [0 0 0],atom,11.17,0.68,11.85,supported,supported,0.43,0.43,true,0.0388,true
+A_HAL59,BrBr_PCH,XB1,BR2 ··· P3' [0 0 0],atom,2.93,0.23,3.16,supported,supported,0,0,true,0.0104,true
+A_HAL59,BrBr_NCH,XB1,BR2 ··· N3' [0 0 0],atom,6.14,0.32,6.46,supported,supported,0,0,true,0.0186,true
+A_HAL59,BrBr_NH3,XB1,BR2 ··· N3' [0 0 0],atom,21.34,1.84,23.18,supported,supported,0.87,0.87,true,0.0899,true
+A_HAL59,PCH_NBS,XB1,BR13 ··· P1' [0 0 0],atom,3.37,0.11,3.48,supported,supported,0,0,true,0.0097,true
+A_HAL59,NCH_NBS,XB1,BR13 ··· N1' [0 0 0],atom,7.3,0.38,7.68,supported,supported,0,0,true,0.0193,true
+A_HAL59,NH3_NBS,XB1,BR5 ··· N1' [0 0 0],atom,20.09,1.43,21.52,supported,supported,0.92,0.92,true,0.0746,true
+A_HAL59,PCH_FCl,XB1,CL4 ··· P1' [0 0 0],atom,4.12,0.43,4.55,supported,supported,0,0,true,0.0169,true
+A_HAL59,NCH_FCl,XB1,CL4 ··· N1' [0 0 0],atom,8.64,0.96,9.6,supported,supported,0,0,true,0.0274,true
+A_HAL59,NH3_FCl,XB1,CL5 ··· N1' [0 0 0],atom,37.11,5.4,42.51,supported,supported,1.89,1.89,true,0.1547,true
+A_HAL59,PCH_NIS,XB1,I13 ··· P1' [0 0 0],atom,5.14,0.33,5.47,supported,supported,0,0,true,0.0148,true
+A_HAL59,NCH_NIS,XB1,I13 ··· N1' [0 0 0],atom,11.16,0.96,12.12,supported,supported,0,0,true,0.0281,true
+A_HAL59,NH3_NIS,XB1,I5 ··· N1' [0 0 0],atom,27.71,3.41,31.12,supported,supported,1.35,1.35,true,0.0992,true
+A_HAL59,PCH_FBr,XB1,BR4 ··· P1' [0 0 0],atom,9.29,0.71,10,supported,supported,0,0,true,0.032,true
+A_HAL59,NCH_FBr,XB1,BR4 ··· N1' [0 0 0],atom,18.24,1.93,20.17,supported,supported,0,0,true,0.0475,true
+A_HAL59,NH3_FBr,XB1,BR5 ··· N1' [0 0 0],atom,49.98,6.45,56.43,supported,supported,2.82,2.82,true,0.1733,true
+A_HAL59,FI_PCH,XB1,I2 ··· P3' [0 0 0],atom,12.65,1.04,13.69,supported,supported,0,0,true,0.0347,true
+A_HAL59,FI_NCH,XB1,I2 ··· N3' [0 0 0],atom,22.09,2.56,24.65,supported,supported,0,0,true,0.0476,true
+A_HAL59,FI_NH3,XB1,I2 ··· N3' [0 0 0],atom,43.15,7.05,50.2,supported,supported,2.64,2.64,true,0.1498,true
+A_HAL59,MeI_FCCH,XB1,I1 ··· F6' [0 0 0],atom,0.41,0,0.41,inconclusive,inconclusive,0,0,true,-0.0007,true
+A_HAL59,BrBr_FCCH,XB1,BR1 ··· F3' [0 0 0],atom,0.48,0,0.48,inconclusive,inconclusive,0,0,true,-0.0011,true
+A_HAL59,FI_FCCH,XB1,I2 ··· F3' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,-0.0014,true
+A_HAL59,MeI_FMe,XB1,I2 ··· F8' [0 0 0],atom,1.74,0.11,1.85,supported,supported,0,0,true,0.002,true
+A_HAL59,BrBr_FMe,XB1,BR2 ··· F3' [0 0 0],atom,4.17,0.51,4.68,supported,supported,0,0,true,0.0094,true
+A_HAL59,FI_FMe,XB1,I2 ··· F3' [0 0 0],atom,11.37,1.25,12.62,supported,supported,0,0,true,0.0285,true
+A_HAL59,MeI_OCH2,XB1,I2 ··· O6' [0 0 0],atom,2.68,0.4,3.08,supported,supported,0,0,true,0.0062,true
+A_HAL59,BrBr_OCH2,XB1,BR2 ··· O3' [0 0 0],atom,8.7,0.87,9.57,supported,supported,0,0,true,0.0312,true
+A_HAL59,FI_OCH2,XB1,I2 ··· O3' [0 0 0],atom,23.08,2.87,25.95,supported,supported,0,0,true,0.0654,true
+A_HAL59,MeI_OPH3,XB1,I2 ··· O6' [0 0 0],atom,2.92,0.7,3.62,supported,supported,0,0,true,0.0032,true
+A_HAL59,BrBr_OPH3,XB1,BR2 ··· O3' [0 0 0],atom,11.5,1.5,13,supported,supported,0,0,true,0.0381,true
+A_HAL59,FI_OPH3,XB1,I2 ··· O3' [0 0 0],atom,28.69,4.85,33.54,supported,supported,0,0,true,0.0771,true
+A_HAL59,MeI_pyr,XB1,I2 ··· N8' [0 0 0],atom,5.58,0.48,6.06,supported,supported,0,0,true,0.017,true
+A_HAL59,BrBr_pyr,XB1,BR2 ··· N8' [0 0 0],atom,23.89,3.04,26.93,supported,supported,0,0,true,0.0978,true
+A_HAL59,FI_pyr,XB1,I2 ··· N8' [0 0 0],atom,72.2,8.16,80.36,supported,supported,0,0,true,0.149,true
+A_HAL59,11_benF3-ben,XB1,"F1 ··· ring(C17,C16,C15,C20,C19,C18)",pi,0,0,0,not supported,not supported,0,0,,0.0006,true
+A_HAL59,12_benF6-ben,XB1,"F10 ··· ring(C19,C18,C17,C16,C15,C20)",pi,0.05,0,0.05,not supported,not supported,0,0,,-0.0012,true
+A_HAL59,19_benCl-acetone,XB1,CL12 ··· O13' [0 0 0],atom,1.18,0,1.18,supported,supported,0,0,true,0.0039,true
+A_HAL59,20_benBr-acetone,XB1,BR12 ··· O13' [0 0 0],atom,2.54,0.1,2.64,supported,supported,0,0,true,0.0078,true
+A_HAL59,21_benI-acetone,XB1,I12 ··· O13' [0 0 0],atom,4.08,0.31,4.39,supported,supported,0,0,true,0.013,true
+A_HAL59,22_benCl-Nm3,XB1,CL7 ··· N13' [0 0 0],atom,1.97,0.39,2.36,supported,supported,0,0,true,0.0099,true
+A_HAL59,23_benBr-Nm3,XB1,BR7 ··· N13' [0 0 0],atom,4.65,0.77,5.42,supported,supported,0,0,true,0.0202,true
+A_HAL59,24_benI-Nm3,XB1,I7 ··· N13' [0 0 0],atom,7.48,1.77,9.25,supported,supported,0,0,true,0.0349,true
+A_HAL59,25_benBr-mSH,XB1,BR7 ··· S13' [0 0 0],atom,2.82,0.24,3.06,supported,supported,0,0,true,0.0116,true
+A_HAL59,26_benI-mSH,XB1,I7 ··· S13' [0 0 0],atom,5.16,0.4,5.56,supported,supported,0,0,true,0.022,true
+A_HAL59,27_CH3Br-ben,XB1,"BR13 ··· ring(C2,C3,C4,C5,C6,C7)",pi,0.73,0,0.73,inconclusive,inconclusive,0,0,,0.0039,true
+A_HAL59,28_CH3I-ben,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.12,0,1.12,supported,supported,0,0,,0.0033,true
+A_HAL59,29_CF3Br-ben,XB1,"BR13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.43,0,1.43,supported,supported,0,0,,0.0054,true
+A_HAL59,30_CF3I-ben,XB1,"I13 ··· ring(C2,C3,C4,C5,C6,C7)",pi,2.27,0,2.27,supported,supported,0,0,,0.0088,true
+B_scan_distance,19_benCl-acetone_d090,XB1,CL12 ··· O13' [0 0 0],atom,3.13,0.08,3.21,supported,supported,0,0,true,0.0083,true
+B_scan_distance,19_benCl-acetone_d095,XB1,CL12 ··· O13' [0 0 0],atom,1.93,0.05,1.98,supported,supported,0,0,true,0.0056,true
+B_scan_distance,19_benCl-acetone_d100,XB1,CL12 ··· O13' [0 0 0],atom,1.18,0,1.18,supported,supported,0,0,true,0.0039,true
+B_scan_distance,19_benCl-acetone_d105,XB1,CL12 ··· O13' [0 0 0],atom,0.72,0,0.72,inconclusive,inconclusive,0,0,true,0.0027,true
+B_scan_distance,19_benCl-acetone_d110,XB1,CL12 ··· O13' [0 0 0],atom,0.43,0,0.43,inconclusive,inconclusive,0,0,true,0.002,true
+B_scan_distance,19_benCl-acetone_d120,XB1,CL12 ··· O13' [0 0 0],atom,0.12,0.05,0.17,not supported,not supported,0,0,true,0.0011,true
+B_scan_distance,19_benCl-acetone_d135,XB1,CL12 ··· O13' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,0.0005,true
+B_scan_distance,19_benCl-acetone_d150,XB1,CL12 ··· O13' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,0.0002,true
+B_scan_distance,20_benBr-acetone_d090,XB1,BR12 ··· O13' [0 0 0],atom,6.26,0.51,6.77,supported,supported,0,0,true,0.0153,true
+B_scan_distance,20_benBr-acetone_d095,XB1,BR12 ··· O13' [0 0 0],atom,3.99,0.23,4.22,supported,supported,0,0,true,0.0109,true
+B_scan_distance,20_benBr-acetone_d100,XB1,BR12 ··· O13' [0 0 0],atom,2.54,0.1,2.64,supported,supported,0,0,true,0.0078,true
+B_scan_distance,20_benBr-acetone_d105,XB1,BR12 ··· O13' [0 0 0],atom,1.62,0,1.62,supported,supported,0,0,true,0.0058,true
+B_scan_distance,20_benBr-acetone_d110,XB1,BR12 ··· O13' [0 0 0],atom,1.03,0,1.03,supported,supported,0,0,true,0.0043,true
+B_scan_distance,20_benBr-acetone_d120,XB1,BR12 ··· O13' [0 0 0],atom,0.39,0,0.39,inconclusive,inconclusive,0,0,true,0.0025,true
+B_scan_distance,20_benBr-acetone_d135,XB1,BR12 ··· O13' [0 0 0],atom,0.07,0,0.07,not supported,not supported,0,0,true,0.0012,true
+B_scan_distance,20_benBr-acetone_d150,XB1,BR12 ··· O13' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,0.0006,true
+B_scan_distance,21_benI-acetone_d090,XB1,I12 ··· O13' [0 0 0],atom,9.64,1.16,10.8,supported,supported,0,0,true,0.0239,true
+B_scan_distance,21_benI-acetone_d095,XB1,I12 ··· O13' [0 0 0],atom,6.26,0.67,6.93,supported,supported,0,0,true,0.0175,true
+B_scan_distance,21_benI-acetone_d100,XB1,I12 ··· O13' [0 0 0],atom,4.08,0.31,4.39,supported,supported,0,0,true,0.013,true
+B_scan_distance,21_benI-acetone_d105,XB1,I12 ··· O13' [0 0 0],atom,2.65,0.16,2.81,supported,supported,0,0,true,0.0096,true
+B_scan_distance,21_benI-acetone_d110,XB1,I12 ··· O13' [0 0 0],atom,1.72,0.1,1.82,supported,supported,0,0,true,0.0072,true
+B_scan_distance,21_benI-acetone_d120,XB1,I12 ··· O13' [0 0 0],atom,0.71,0,0.71,inconclusive,inconclusive,0,0,true,0.0041,true
+B_scan_distance,21_benI-acetone_d135,XB1,I12 ··· O13' [0 0 0],atom,0.18,0,0.18,not supported,not supported,0,0,true,0.0019,true
+B_scan_distance,21_benI-acetone_d150,XB1,I12 ··· O13' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,0.001,true
+B_scan_distance,22_benCl-Nm3_d090,XB1,CL7 ··· N13' [0 0 0],atom,5.03,0.64,5.67,supported,supported,0,0,true,0.0208,true
+B_scan_distance,22_benCl-Nm3_d095,XB1,CL7 ··· N13' [0 0 0],atom,3.18,0.44,3.62,supported,supported,0,0,true,0.0141,true
+B_scan_distance,22_benCl-Nm3_d100,XB1,CL7 ··· N13' [0 0 0],atom,1.97,0.39,2.36,supported,supported,0,0,true,0.0099,true
+B_scan_distance,22_benCl-Nm3_d105,XB1,CL7 ··· N13' [0 0 0],atom,1.21,0.4,1.61,supported,supported,0,0,true,0.0071,true
+B_scan_distance,22_benCl-Nm3_d110,XB1,CL7 ··· N13' [0 0 0],atom,0.73,0.41,1.14,inconclusive,supported,0,0,true,0.0052,true
+B_scan_distance,22_benCl-Nm3_d120,XB1,CL7 ··· N13' [0 0 0],atom,0.25,0.4,0.65,not supported,inconclusive,0,0,true,0.0029,true
+B_scan_distance,22_benCl-Nm3_d135,XB1,CL7 ··· N13' [0 0 0],atom,0,0.26,0.26,not supported,not supported,0,0,true,0.0013,true
+B_scan_distance,22_benCl-Nm3_d150,XB1,CL7 ··· N13' [0 0 0],atom,0,0.11,0.11,not supported,not supported,0,0,true,0.0005,true
+B_scan_distance,23_benBr-Nm3_d090,XB1,BR7 ··· N13' [0 0 0],atom,10.41,1.64,12.05,supported,supported,0,0,true,0.0392,true
+B_scan_distance,23_benBr-Nm3_d095,XB1,BR7 ··· N13' [0 0 0],atom,6.98,1.07,8.05,supported,supported,0,0,true,0.0279,true
+B_scan_distance,23_benBr-Nm3_d100,XB1,BR7 ··· N13' [0 0 0],atom,4.65,0.77,5.42,supported,supported,0,0,true,0.0202,true
+B_scan_distance,23_benBr-Nm3_d105,XB1,BR7 ··· N13' [0 0 0],atom,3.06,0.61,3.67,supported,supported,0,0,true,0.0148,true
+B_scan_distance,23_benBr-Nm3_d110,XB1,BR7 ··· N13' [0 0 0],atom,1.99,0.57,2.56,supported,supported,0,0,true,0.0111,true
+B_scan_distance,23_benBr-Nm3_d120,XB1,BR7 ··· N13' [0 0 0],atom,0.8,0.44,1.24,supported,supported,0,0,true,0.0065,true
+B_scan_distance,23_benBr-Nm3_d135,XB1,BR7 ··· N13' [0 0 0],atom,0.18,0.37,0.55,not supported,inconclusive,0,0,true,0.0031,true
+B_scan_distance,23_benBr-Nm3_d150,XB1,BR7 ··· N13' [0 0 0],atom,0,0.22,0.22,not supported,not supported,0,0,true,0.0015,true
+B_scan_distance,24_benI-Nm3_d090,XB1,I7 ··· N13' [0 0 0],atom,15.11,5.86,20.97,supported,supported,0,0,true,0.0604,true
+B_scan_distance,24_benI-Nm3_d095,XB1,I7 ··· N13' [0 0 0],atom,10.62,3.47,14.09,supported,supported,0,0,true,0.046,true
+B_scan_distance,24_benI-Nm3_d100,XB1,I7 ··· N13' [0 0 0],atom,7.48,1.77,9.25,supported,supported,0,0,true,0.0349,true
+B_scan_distance,24_benI-Nm3_d105,XB1,I7 ··· N13' [0 0 0],atom,5.19,1.19,6.38,supported,supported,0,0,true,0.0266,true
+B_scan_distance,24_benI-Nm3_d110,XB1,I7 ··· N13' [0 0 0],atom,3.59,0.79,4.38,supported,supported,0,0,true,0.0201,true
+B_scan_distance,24_benI-Nm3_d120,XB1,I7 ··· N13' [0 0 0],atom,1.62,0.54,2.16,supported,supported,0,0,true,0.0118,true
+B_scan_distance,24_benI-Nm3_d135,XB1,I7 ··· N13' [0 0 0],atom,0.43,0.32,0.75,inconclusive,inconclusive,0,0,true,0.0056,true
+B_scan_distance,24_benI-Nm3_d150,XB1,I7 ··· N13' [0 0 0],atom,0.1,0.18,0.28,not supported,not supported,0,0,true,0.0028,true
+B_scan_distance,26_benI-mSH_d090,XB1,I7 ··· S13' [0 0 0],atom,12.12,1.17,13.29,supported,supported,0,0,true,0.0452,true
+B_scan_distance,26_benI-mSH_d095,XB1,I7 ··· S13' [0 0 0],atom,7.94,0.66,8.6,supported,supported,0,0,true,0.0316,true
+B_scan_distance,26_benI-mSH_d100,XB1,I7 ··· S13' [0 0 0],atom,5.16,0.4,5.56,supported,supported,0,0,true,0.022,true
+B_scan_distance,26_benI-mSH_d105,XB1,I7 ··· S13' [0 0 0],atom,3.31,0.25,3.56,supported,supported,0,0,true,0.0153,true
+B_scan_distance,26_benI-mSH_d110,XB1,I7 ··· S13' [0 0 0],atom,2.09,0.14,2.23,supported,supported,0,0,true,0.0107,true
+B_scan_distance,26_benI-mSH_d120,XB1,I7 ··· S13' [0 0 0],atom,0.8,0.13,0.93,supported,supported,0,0,true,0.0052,true
+B_scan_distance,26_benI-mSH_d135,XB1,I7 ··· S13' [0 0 0],atom,0.16,0.07,0.23,not supported,not supported,0,0,true,0.0018,true
+B_scan_distance,26_benI-mSH_d150,XB1,I7 ··· S13' [0 0 0],atom,0,0,0,not supported,not supported,0,0,true,0.0007,true
+B_scan_distance,28_CH3I-ben_d090,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,2.7,0,2.7,supported,supported,0,0,,0.01,true
+B_scan_distance,28_CH3I-ben_d095,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.78,0,1.78,supported,supported,0,0,,0.0052,true
+B_scan_distance,28_CH3I-ben_d100,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.12,0,1.12,supported,supported,0,0,,0.0033,true
+B_scan_distance,28_CH3I-ben_d105,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.72,0,0.72,inconclusive,inconclusive,0,0,,0.0021,true
+B_scan_distance,28_CH3I-ben_d110,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.45,0,0.45,inconclusive,inconclusive,0,0,,0.0014,true
+B_scan_distance,28_CH3I-ben_d120,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.15,0,0.15,not supported,not supported,0,0,,0.0005,true
+B_scan_distance,28_CH3I-ben_d135,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0,0,0,not supported,not supported,0,0,,0.0002,true
+B_scan_distance,28_CH3I-ben_d150,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0,0,0,not supported,not supported,0,0,,0.0001,true
+B_scan_distance,NH3_PhI_d090,XB1,I5 ··· N1' [0 0 0],atom,12.74,1.51,14.25,supported,supported,0.81,0.81,true,0.0433,true
+B_scan_distance,NH3_PhI_d095,XB1,I5 ··· N1' [0 0 0],atom,8.79,0.66,9.45,supported,supported,0.41,0.41,true,0.0315,true
+B_scan_distance,NH3_PhI_d100,XB1,I5 ··· N1' [0 0 0],atom,6.11,0.35,6.46,supported,supported,0.26,0.26,true,0.0229,true
+B_scan_distance,NH3_PhI_d105,XB1,I5 ··· N1' [0 0 0],atom,4.19,0.2,4.39,supported,supported,0.06,0.06,true,0.0166,true
+B_scan_distance,NH3_PhI_d110,XB1,I5 ··· N1' [0 0 0],atom,2.85,0.16,3.01,supported,supported,0,0,true,0.0121,true
+B_scan_distance,NH3_PhI_d120,XB1,I5 ··· N1' [0 0 0],atom,1.27,0.19,1.46,supported,supported,0,0,true,0.0065,true
+B_scan_distance,NH3_PhI_d135,XB1,I5 ··· N1' [0 0 0],atom,0.34,0.19,0.53,inconclusive,inconclusive,0,0,true,0.0027,true
+B_scan_distance,NH3_PhI_d150,XB1,I5 ··· N1' [0 0 0],atom,0.08,0.16,0.24,not supported,not supported,0,0,true,0.0013,true
+B_scan_distance,MeI_pyr_d090,XB1,I2 ··· N8' [0 0 0],atom,11.91,2.18,14.09,supported,supported,0,0,true,0.0373,true
+B_scan_distance,MeI_pyr_d095,XB1,I2 ··· N8' [0 0 0],atom,8.25,1.01,9.26,supported,supported,0,0,true,0.0242,true
+B_scan_distance,MeI_pyr_d100,XB1,I2 ··· N8' [0 0 0],atom,5.58,0.48,6.06,supported,supported,0,0,true,0.017,true
+B_scan_distance,MeI_pyr_d105,XB1,I2 ··· N8' [0 0 0],atom,3.73,0.28,4.01,supported,supported,0,0,true,0.0117,true
+B_scan_distance,MeI_pyr_d110,XB1,I2 ··· N8' [0 0 0],atom,2.49,0.17,2.66,supported,supported,0,0,true,0.0082,true
+B_scan_distance,MeI_pyr_d120,XB1,I2 ··· N8' [0 0 0],atom,1.07,0,1.07,supported,supported,0,0,true,0.004,true
+B_scan_distance,MeI_pyr_d135,XB1,I2 ··· N8' [0 0 0],atom,0.27,0,0.27,not supported,not supported,0,0,true,0.0016,true
+B_scan_distance,MeI_pyr_d150,XB1,I2 ··· N8' [0 0 0],atom,0.07,0,0.07,not supported,not supported,0,0,true,0.0007,true
+B_scan_distance,FI_pyr_d090,XB1,I2 ··· N8' [0 0 0],atom,135.29,15.58,150.87,supported,supported,0,0,true,0.1794,true
+B_scan_distance,FI_pyr_d095,XB1,I2 ··· N8' [0 0 0],atom,98.87,11.71,110.58,supported,supported,0,0,true,0.167,true
+B_scan_distance,FI_pyr_d100,XB1,I2 ··· N8' [0 0 0],atom,72.2,8.16,80.36,supported,supported,0,0,true,0.149,true
+B_scan_distance,FI_pyr_d105,XB1,I2 ··· N8' [0 0 0],atom,52.76,4.89,57.65,supported,supported,0,0,true,0.129,true
+B_scan_distance,FI_pyr_d110,XB1,I2 ··· N8' [0 0 0],atom,38.6,2.9,41.5,supported,supported,0,0,true,0.1082,true
+B_scan_distance,FI_pyr_d120,XB1,I2 ··· N8' [0 0 0],atom,15.77,1.65,17.42,supported,supported,0,0,true,0.0753,true
+B_scan_distance,FI_pyr_d135,XB1,I2 ··· N8' [0 0 0],atom,6.5,0.46,6.96,supported,supported,0,0,true,0.0391,true
+B_scan_distance,FI_pyr_d150,XB1,I2 ··· N8' [0 0 0],atom,2.47,0.14,2.61,supported,supported,0,0,true,0.0182,true
+B_scan_distance,NH3_FBr_d090,XB1,BR5 ··· N1' [0 0 0],atom,88.92,15.97,104.89,supported,supported,5.67,5.67,true,0.2433,true
+B_scan_distance,NH3_FBr_d095,XB1,BR5 ··· N1' [0 0 0],atom,66.63,10.17,76.8,supported,supported,3.96,3.96,true,0.2069,true
+B_scan_distance,NH3_FBr_d100,XB1,BR5 ··· N1' [0 0 0],atom,49.98,6.45,56.43,supported,supported,2.82,2.82,true,0.1733,true
+B_scan_distance,NH3_FBr_d105,XB1,BR5 ··· N1' [0 0 0],atom,35.78,3.98,39.76,supported,supported,1.88,1.88,true,0.141,true
+B_scan_distance,NH3_FBr_d110,XB1,BR5 ··· N1' [0 0 0],atom,27.06,2.34,29.4,supported,supported,1.29,1.29,true,0.1162,true
+B_scan_distance,NH3_FBr_d120,XB1,BR5 ··· N1' [0 0 0],atom,15.28,1.15,16.43,supported,supported,0.6,0.6,true,0.0758,true
+B_scan_distance,NH3_FBr_d135,XB1,BR5 ··· N1' [0 0 0],atom,6.35,0.55,6.9,supported,supported,0.06,0.06,true,0.0378,true
+B_scan_distance,NH3_FBr_d150,XB1,BR5 ··· N1' [0 0 0],atom,2.46,0.49,2.95,supported,supported,0,0,true,0.0176,true
+C_scan_angle,19_benCl-acetone_a180,XB1,CL12 ··· O13' [0 0 0],atom,1.18,0,1.18,supported,supported,0,0,true,0.0039,true
+C_scan_angle,19_benCl-acetone_a170,XB1,CL12 ··· O13' [0 0 0],atom,1.15,0,1.15,supported,supported,0,0,true,0.0037,true
+C_scan_angle,19_benCl-acetone_a160,XB1,CL12 ··· O13' [0 0 0],atom,1.03,0,1.03,supported,supported,0,0,true,0.0033,true
+C_scan_angle,19_benCl-acetone_a150,XB1,CL12 ··· O13' [0 0 0],atom,0.85,0,0.85,supported,supported,0,0,true,0.0026,true
+C_scan_angle,19_benCl-acetone_a140,XB1,CL12 ··· O13' [0 0 0],atom,0.65,0,0.65,inconclusive,inconclusive,0,0,true,0.0018,true
+C_scan_angle,19_benCl-acetone_a130,XB1,CL12 ··· O13' [0 0 0],atom,0.44,0,0.44,inconclusive,inconclusive,0,0,true,0.001,true
+C_scan_angle,19_benCl-acetone_a120,XB1,CL12 ··· O13' [0 0 0],atom,0.25,0,0.25,not supported,not supported,0,0,true,0.0003,true
+C_scan_angle,20_benBr-acetone_a180,XB1,BR12 ··· O13' [0 0 0],atom,2.54,0.1,2.64,supported,supported,0,0,true,0.0078,true
+C_scan_angle,20_benBr-acetone_a170,XB1,BR12 ··· O13' [0 0 0],atom,2.47,0.05,2.52,supported,supported,0,0,true,0.0076,true
+C_scan_angle,20_benBr-acetone_a160,XB1,BR12 ··· O13' [0 0 0],atom,2.23,0,2.23,supported,supported,0,0,true,0.0068,true
+C_scan_angle,20_benBr-acetone_a150,XB1,BR12 ··· O13' [0 0 0],atom,1.85,0,1.85,supported,supported,0,0,true,0.0055,true
+C_scan_angle,20_benBr-acetone_a140,XB1,BR12 ··· O13' [0 0 0],atom,1.38,0.12,1.5,supported,supported,0,0,true,0.0039,true
+C_scan_angle,20_benBr-acetone_a130,XB1,BR12 ··· O13' [0 0 0],atom,0.93,0.16,1.09,supported,supported,0,0,true,0.0022,true
+C_scan_angle,20_benBr-acetone_a120,XB1,BR12 ··· O13' [0 0 0],atom,0.52,0.09,0.61,inconclusive,inconclusive,0,0,true,0.0006,true
+C_scan_angle,21_benI-acetone_a180,XB1,I12 ··· O13' [0 0 0],atom,4.08,0.32,4.4,supported,supported,0,0,true,0.013,true
+C_scan_angle,21_benI-acetone_a170,XB1,I12 ··· O13' [0 0 0],atom,3.95,0.32,4.27,supported,supported,0,0,true,0.0125,true
+C_scan_angle,21_benI-acetone_a160,XB1,I12 ··· O13' [0 0 0],atom,3.54,0.32,3.86,supported,supported,0,0,true,0.0112,true
+C_scan_angle,21_benI-acetone_a150,XB1,I12 ··· O13' [0 0 0],atom,2.91,0.35,3.26,supported,supported,0,0,true,0.009,true
+C_scan_angle,21_benI-acetone_a140,XB1,I12 ··· O13' [0 0 0],atom,2.15,0.36,2.51,supported,supported,0,0,true,0.0063,true
+C_scan_angle,21_benI-acetone_a130,XB1,I12 ··· O13' [0 0 0],atom,1.38,0.33,1.71,supported,supported,0,0,true,0.0035,true
+C_scan_angle,21_benI-acetone_a120,XB1,I12 ··· O13' [0 0 0],atom,0.72,0.4,1.12,inconclusive,supported,0,0,true,0.0008,true
+C_scan_angle,22_benCl-Nm3_a180,XB1,CL7 ··· N13' [0 0 0],atom,1.97,0.39,2.36,supported,supported,0,0,true,0.0099,true
+C_scan_angle,22_benCl-Nm3_a170,XB1,CL7 ··· N13' [0 0 0],atom,1.91,0.36,2.27,supported,supported,0,0,true,0.0095,true
+C_scan_angle,22_benCl-Nm3_a160,XB1,CL7 ··· N13' [0 0 0],atom,1.7,0.4,2.1,supported,supported,0,0,true,0.0085,true
+C_scan_angle,22_benCl-Nm3_a150,XB1,CL7 ··· N13' [0 0 0],atom,1.4,0.41,1.81,supported,supported,0,0,true,0.0069,true
+C_scan_angle,22_benCl-Nm3_a140,XB1,CL7 ··· N13' [0 0 0],atom,1.03,0.5,1.53,supported,supported,0,0,true,0.0051,true
+C_scan_angle,22_benCl-Nm3_a130,XB1,CL7 ··· N13' [0 0 0],atom,0.66,0.61,1.27,inconclusive,supported,0,0,true,0.0033,true
+C_scan_angle,22_benCl-Nm3_a120,XB1,CL7 ··· N13' [0 0 0],atom,0.35,0.57,0.92,inconclusive,supported,0,0,true,0.0017,true
+C_scan_angle,23_benBr-Nm3_a180,XB1,BR7 ··· N13' [0 0 0],atom,4.65,0.76,5.41,supported,supported,0,0,true,0.0202,true
+C_scan_angle,23_benBr-Nm3_a170,XB1,BR7 ··· N13' [0 0 0],atom,4.5,0.75,5.25,supported,supported,0,0,true,0.0195,true
+C_scan_angle,23_benBr-Nm3_a160,XB1,BR7 ··· N13' [0 0 0],atom,4.04,0.78,4.82,supported,supported,0,0,true,0.0176,true
+C_scan_angle,23_benBr-Nm3_a150,XB1,BR7 ··· N13' [0 0 0],atom,3.33,0.84,4.17,supported,supported,0,0,true,0.0146,true
+C_scan_angle,23_benBr-Nm3_a140,XB1,BR7 ··· N13' [0 0 0],atom,2.47,0.93,3.4,supported,supported,0,0,true,0.0108,true
+C_scan_angle,23_benBr-Nm3_a130,XB1,BR7 ··· N13' [0 0 0],atom,1.57,1.08,2.65,supported,supported,0,0,true,0.0069,true
+C_scan_angle,23_benBr-Nm3_a120,XB1,BR7 ··· N13' [0 0 0],atom,0.8,1.2,2,supported,supported,0,0,true,0.0034,true
+C_scan_angle,24_benI-Nm3_a180,XB1,I7 ··· N13' [0 0 0],atom,7.48,1.77,9.25,supported,supported,0,0,true,0.0349,true
+C_scan_angle,24_benI-Nm3_a170,XB1,I7 ··· N13' [0 0 0],atom,7.27,1.79,9.06,supported,supported,0,0,true,0.034,true
+C_scan_angle,24_benI-Nm3_a160,XB1,I7 ··· N13' [0 0 0],atom,6.62,1.88,8.5,supported,supported,0,0,true,0.0312,true
+C_scan_angle,24_benI-Nm3_a150,XB1,I7 ··· N13' [0 0 0],atom,5.58,1.87,7.45,supported,supported,0,0,true,0.0266,true
+C_scan_angle,24_benI-Nm3_a140,XB1,I7 ··· N13' [0 0 0],atom,4.23,1.95,6.18,supported,supported,0,0,true,0.0203,true
+C_scan_angle,24_benI-Nm3_a130,XB1,I7 ··· N13' [0 0 0],atom,2.74,2.09,4.83,supported,supported,0,0,true,0.0131,true
+C_scan_angle,24_benI-Nm3_a120,XB1,I7 ··· N13' [0 0 0],atom,1.36,2.12,3.48,supported,supported,0,0,true,0.0062,true
+D_method_basis,19_benCl-acetone__wB97X-D__def2-TZVP,XB1,CL12 ··· O13' [0 0 0],atom,1.18,0,1.18,supported,supported,0,0,true,0.0039,true
+D_method_basis,19_benCl-acetone__M06-2X__def2-TZVP,XB1,CL12 ··· O13' [0 0 0],atom,1.03,0,1.03,supported,supported,0,0,true,0.0034,true
+D_method_basis,19_benCl-acetone__B3LYP-D3BJ__def2-TZVP,XB1,CL12 ··· O13' [0 0 0],atom,0.95,0,0.95,supported,supported,0,0,true,0.0046,true
+D_method_basis,19_benCl-acetone__PBE0-D3BJ__def2-TZVP,XB1,CL12 ··· O13' [0 0 0],atom,0.95,0,0.95,supported,supported,0,0,true,0.0044,true
+D_method_basis,19_benCl-acetone__HF__def2-TZVP,XB1,CL12 ··· O13' [0 0 0],atom,0.96,0,0.96,supported,supported,0,0,true,0.0016,true
+D_method_basis,19_benCl-acetone__wB97X-D__def2-SVP,XB1,CL12 ··· O13' [0 0 0],atom,0.8,0.25,1.05,supported,supported,0,0,true,0.0022,true
+D_method_basis,19_benCl-acetone__wB97X-D__def2-QZVP,XB1,CL12 ··· O13' [0 0 0],atom,0.99,0.22,1.21,supported,supported,0,0,true,0.0035,true
+D_method_basis,20_benBr-acetone__wB97X-D__def2-TZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.54,0.1,2.64,supported,supported,0,0,true,0.0078,true
+D_method_basis,20_benBr-acetone__M06-2X__def2-TZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.14,0,2.14,supported,supported,0,0,true,0.0065,true
+D_method_basis,20_benBr-acetone__B3LYP-D3BJ__def2-TZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.09,0,2.09,supported,supported,0,0,true,0.0094,true
+D_method_basis,20_benBr-acetone__PBE0-D3BJ__def2-TZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.05,0,2.05,supported,supported,0,0,true,0.0088,true
+D_method_basis,20_benBr-acetone__HF__def2-TZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.05,0,2.05,supported,supported,0,0,true,0.0034,true
+D_method_basis,20_benBr-acetone__wB97X-D__def2-SVP,XB1,BR12 ··· O13' [0 0 0],atom,2.33,0.44,2.77,supported,supported,0,0,true,0.0096,true
+D_method_basis,20_benBr-acetone__wB97X-D__def2-QZVP,XB1,BR12 ··· O13' [0 0 0],atom,2.38,0.27,2.65,supported,supported,0,0,true,0.0076,true
+D_method_basis,21_benI-acetone__wB97X-D__def2-TZVP,XB1,I12 ··· O13' [0 0 0],atom,4.08,0.31,4.39,supported,supported,0,0,true,0.013,true
+D_method_basis,21_benI-acetone__M06-2X__def2-TZVP,XB1,I12 ··· O13' [0 0 0],atom,3.27,0.18,3.45,supported,supported,0,0,true,0.0104,true
+D_method_basis,21_benI-acetone__B3LYP-D3BJ__def2-TZVP,XB1,I12 ··· O13' [0 0 0],atom,3.27,0.26,3.53,supported,supported,0,0,true,0.0152,true
+D_method_basis,21_benI-acetone__PBE0-D3BJ__def2-TZVP,XB1,I12 ··· O13' [0 0 0],atom,3.22,0.28,3.5,supported,supported,0,0,true,0.0147,true
+D_method_basis,21_benI-acetone__HF__def2-TZVP,XB1,I12 ··· O13' [0 0 0],atom,3.36,0.27,3.63,supported,supported,0,0,true,0.0061,true
+D_method_basis,21_benI-acetone__wB97X-D__def2-SVP,XB1,I12 ··· O13' [0 0 0],atom,4.71,0.54,5.25,supported,supported,0,0,true,0.0191,true
+D_method_basis,21_benI-acetone__wB97X-D__def2-QZVP,XB1,I12 ··· O13' [0 0 0],atom,4.06,0.55,4.61,supported,supported,0,0,true,0.0137,true
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-TZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.97,0.39,2.36,supported,supported,0,0,true,0.0099,true
+D_method_basis,22_benCl-Nm3__M06-2X__def2-TZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.64,0.26,1.9,supported,supported,0,0,true,0.0087,true
+D_method_basis,22_benCl-Nm3__B3LYP-D3BJ__def2-TZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.47,0.25,1.72,supported,supported,0,0,true,0.0125,true
+D_method_basis,22_benCl-Nm3__PBE0-D3BJ__def2-TZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.47,0.27,1.74,supported,supported,0,0,true,0.0117,true
+D_method_basis,22_benCl-Nm3__HF__def2-TZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.52,0.85,2.37,supported,supported,0,0,true,0.0052,true
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-SVP,XB1,CL7 ··· N13' [0 0 0],atom,1.6,0.3,1.9,supported,supported,0,0,true,0.0071,true
+D_method_basis,22_benCl-Nm3__wB97X-D__def2-QZVP,XB1,CL7 ··· N13' [0 0 0],atom,1.73,4.65,6.38,supported,supported,0,0,true,0.0189,true
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-TZVP,XB1,BR7 ··· N13' [0 0 0],atom,4.65,0.77,5.42,supported,supported,0,0,true,0.0202,true
+D_method_basis,23_benBr-Nm3__M06-2X__def2-TZVP,XB1,BR7 ··· N13' [0 0 0],atom,3.76,0.44,4.2,supported,supported,0,0,true,0.0176,true
+D_method_basis,23_benBr-Nm3__B3LYP-D3BJ__def2-TZVP,XB1,BR7 ··· N13' [0 0 0],atom,3.56,0.63,4.19,supported,supported,0,0,true,0.0257,true
+D_method_basis,23_benBr-Nm3__PBE0-D3BJ__def2-TZVP,XB1,BR7 ··· N13' [0 0 0],atom,3.61,0.63,4.24,supported,supported,0,0,true,0.0245,true
+D_method_basis,23_benBr-Nm3__HF__def2-TZVP,XB1,BR7 ··· N13' [0 0 0],atom,3.78,1.38,5.16,supported,supported,0,0,true,0.011,true
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-SVP,XB1,BR7 ··· N13' [0 0 0],atom,4.36,0.55,4.91,supported,supported,0,0,true,0.0217,true
+D_method_basis,23_benBr-Nm3__wB97X-D__def2-QZVP,XB1,BR7 ··· N13' [0 0 0],atom,4.49,4.41,8.9,supported,supported,0,0,true,0.0299,true
+D_method_basis,24_benI-Nm3__wB97X-D__def2-TZVP,XB1,I7 ··· N13' [0 0 0],atom,7.48,1.77,9.25,supported,supported,0,0,true,0.0349,true
+D_method_basis,24_benI-Nm3__M06-2X__def2-TZVP,XB1,I7 ··· N13' [0 0 0],atom,5.9,1.25,7.15,supported,supported,0,0,true,0.0304,true
+D_method_basis,24_benI-Nm3__B3LYP-D3BJ__def2-TZVP,XB1,I7 ··· N13' [0 0 0],atom,5.56,1.43,6.99,supported,supported,0,0,true,0.0436,true
+D_method_basis,24_benI-Nm3__PBE0-D3BJ__def2-TZVP,XB1,I7 ··· N13' [0 0 0],atom,5.71,1.6,7.31,supported,supported,0,0,true,0.0423,true
+D_method_basis,24_benI-Nm3__HF__def2-TZVP,XB1,I7 ··· N13' [0 0 0],atom,6.5,2.56,9.06,supported,supported,0,0,true,0.0208,true
+D_method_basis,24_benI-Nm3__wB97X-D__def2-SVP,XB1,I7 ··· N13' [0 0 0],atom,8.11,1.06,9.17,supported,supported,0,0,true,0.0412,true
+D_method_basis,24_benI-Nm3__wB97X-D__def2-QZVP,XB1,I7 ··· N13' [0 0 0],atom,8.02,4.57,12.59,supported,supported,0,0,true,0.0479,true
+D_method_basis,26_benI-mSH__wB97X-D__def2-TZVP,XB1,I7 ··· S13' [0 0 0],atom,5.16,0.4,5.56,supported,supported,0,0,true,0.022,true
+D_method_basis,26_benI-mSH__M06-2X__def2-TZVP,XB1,I7 ··· S13' [0 0 0],atom,4.15,0.28,4.43,supported,supported,0,0,true,0.0205,true
+D_method_basis,26_benI-mSH__B3LYP-D3BJ__def2-TZVP,XB1,I7 ··· S13' [0 0 0],atom,4.04,0.27,4.31,supported,supported,0,0,true,0.028,true
+D_method_basis,26_benI-mSH__PBE0-D3BJ__def2-TZVP,XB1,I7 ··· S13' [0 0 0],atom,4.06,0.32,4.38,supported,supported,0,0,true,0.0269,true
+D_method_basis,26_benI-mSH__HF__def2-TZVP,XB1,I7 ··· S13' [0 0 0],atom,4.61,0.3,4.91,supported,supported,0,0,true,0.015,true
+D_method_basis,26_benI-mSH__wB97X-D__def2-SVP,XB1,I7 ··· S13' [0 0 0],atom,5.11,0.33,5.44,supported,supported,0,0,true,0.0243,true
+D_method_basis,26_benI-mSH__wB97X-D__def2-QZVP,XB1,I7 ··· S13' [0 0 0],atom,5.24,0.53,5.77,supported,supported,0,0,true,0.0237,true
+D_method_basis,28_CH3I-ben__wB97X-D__def2-TZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.12,0,1.12,supported,supported,0,0,,0.0033,true
+D_method_basis,28_CH3I-ben__M06-2X__def2-TZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.99,0,0.99,supported,supported,0,0,,0.0032,true
+D_method_basis,28_CH3I-ben__B3LYP-D3BJ__def2-TZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.95,0,0.95,supported,supported,0,0,,0.0042,true
+D_method_basis,28_CH3I-ben__PBE0-D3BJ__def2-TZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,0.96,0,0.96,supported,supported,0,0,,0.0041,true
+D_method_basis,28_CH3I-ben__HF__def2-TZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.11,0,1.11,supported,supported,0,0,,0.0023,true
+D_method_basis,28_CH3I-ben__wB97X-D__def2-SVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.04,0,1.04,supported,supported,0,0,,0.0033,true
+D_method_basis,28_CH3I-ben__wB97X-D__def2-QZVP,XB1,"I13 ··· ring(C7,C2,C3,C4,C5,C6)",pi,1.31,0,1.31,supported,supported,0,0,,0.0031,true
+D_method_basis,NH3_PhI__wB97X-D__def2-TZVP,XB1,I5 ··· N1' [0 0 0],atom,6.11,0.35,6.46,supported,supported,0.26,0.26,true,0.0229,true
+D_method_basis,NH3_PhI__M06-2X__def2-TZVP,XB1,I5 ··· N1' [0 0 0],atom,4.77,0.24,5.01,supported,supported,0.24,0.24,true,0.0192,true
+D_method_basis,NH3_PhI__B3LYP-D3BJ__def2-TZVP,XB1,I5 ··· N1' [0 0 0],atom,4.65,0.24,4.89,supported,supported,0.21,0.21,true,0.0275,true
+D_method_basis,NH3_PhI__PBE0-D3BJ__def2-TZVP,XB1,I5 ··· N1' [0 0 0],atom,4.71,0.26,4.97,supported,supported,0.21,0.21,true,0.0265,true
+D_method_basis,NH3_PhI__HF__def2-TZVP,XB1,I5 ··· N1' [0 0 0],atom,5.18,0.31,5.49,supported,supported,0.3,0.3,true,0.0128,true
+D_method_basis,NH3_PhI__wB97X-D__def2-SVP,XB1,I5 ··· N1' [0 0 0],atom,6.53,0.53,7.06,supported,supported,0,0,true,0.0295,true
+D_method_basis,NH3_PhI__wB97X-D__def2-QZVP,XB1,I5 ··· N1' [0 0 0],atom,6.13,0.36,6.49,supported,supported,0.27,0.27,true,0.0234,true
+D_method_basis,MeI_pyr__wB97X-D__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,5.58,0.48,6.06,supported,supported,0,0,true,0.017,true
+D_method_basis,MeI_pyr__M06-2X__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,4.38,0.29,4.67,supported,supported,0,0,true,0.0138,true
+D_method_basis,MeI_pyr__B3LYP-D3BJ__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,4.33,0.36,4.69,supported,supported,0,0,true,0.022,true
+D_method_basis,MeI_pyr__PBE0-D3BJ__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,4.35,0.4,4.75,supported,supported,0,0,true,0.0208,true
+D_method_basis,MeI_pyr__HF__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,4.53,0.41,4.94,supported,supported,0,0,true,0.0073,true
+D_method_basis,MeI_pyr__wB97X-D__def2-SVP,XB1,I2 ··· N8' [0 0 0],atom,6.05,0.83,6.88,supported,supported,0,0,true,0.0254,true
+D_method_basis,MeI_pyr__wB97X-D__def2-QZVP,XB1,I2 ··· N8' [0 0 0],atom,5.96,0.63,6.59,supported,supported,0,0,true,0.0185,true
+D_method_basis,FI_pyr__wB97X-D__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,72.2,8.16,80.36,supported,supported,0,0,true,0.149,true
+D_method_basis,FI_pyr__M06-2X__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,63.96,7.67,71.63,supported,supported,0,0,true,0.1398,true
+D_method_basis,FI_pyr__B3LYP-D3BJ__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,59.49,6.18,65.67,supported,supported,0,0,true,0.1585,true
+D_method_basis,FI_pyr__PBE0-D3BJ__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,61.61,7.5,69.11,supported,supported,0,0,true,0.1583,true
+D_method_basis,FI_pyr__HF__def2-TZVP,XB1,I2 ··· N8' [0 0 0],atom,68.67,7.9,76.57,supported,supported,0,0,true,0.1174,true
+D_method_basis,FI_pyr__wB97X-D__def2-SVP,XB1,I2 ··· N8' [0 0 0],atom,54.02,6.83,60.85,supported,supported,0,0,true,0.1478,true
+D_method_basis,FI_pyr__wB97X-D__def2-QZVP,XB1,I2 ··· N8' [0 0 0],atom,75,5.59,80.59,supported,supported,0,0,true,0.1541,true
+D_method_basis,NH3_FBr__wB97X-D__def2-TZVP,XB1,BR5 ··· N1' [0 0 0],atom,49.98,6.45,56.43,supported,supported,2.82,2.82,true,0.1733,true
+D_method_basis,NH3_FBr__M06-2X__def2-TZVP,XB1,BR5 ··· N1' [0 0 0],atom,43.39,6.61,50,supported,supported,2.66,2.66,true,0.1666,true
+D_method_basis,NH3_FBr__B3LYP-D3BJ__def2-TZVP,XB1,BR5 ··· N1' [0 0 0],atom,36.82,4.8,41.62,supported,supported,2.36,2.36,true,0.1885,true
+D_method_basis,NH3_FBr__PBE0-D3BJ__def2-TZVP,XB1,BR5 ··· N1' [0 0 0],atom,38.43,5.12,43.55,supported,supported,2.38,2.38,true,0.1872,true
+D_method_basis,NH3_FBr__HF__def2-TZVP,XB1,BR5 ··· N1' [0 0 0],atom,47.59,8.21,55.8,supported,supported,3.19,3.19,true,0.1271,true
+D_method_basis,NH3_FBr__wB97X-D__def2-SVP,XB1,BR5 ··· N1' [0 0 0],atom,55.05,4.15,59.2,supported,supported,1.77,1.77,true,0.1724,true
+D_method_basis,NH3_FBr__wB97X-D__def2-QZVP,XB1,BR5 ··· N1' [0 0 0],atom,51.5,5.76,57.26,supported,supported,2.28,2.28,true,0.1756,true
+F_protein,1us0_idd594__LDTA__cluster_pcm4,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.33,0.16,0.49,inconclusive,inconclusive,5.89,5.89,true,-0.0067,true
+F_protein,1us0_idd594__LDTA__cluster_gas,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.31,0.15,0.46,inconclusive,inconclusive,6.19,6.19,true,-0.0086,true
+F_protein,1us0_idd594__LDTA__qmmm_ff14SB,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.37,0.26,0.63,inconclusive,inconclusive,5.38,5.38,true,-0.0025,true
+F_protein,1us0_idd594__LDTA__qmmm_charmm36,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.37,0.26,0.63,inconclusive,inconclusive,5.38,5.38,true,-0.0021,true
+F_protein,1us0_idd594__LDTA__qmmm_Z1,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.41,0.3,0.71,inconclusive,inconclusive,4.95,4.95,true,0.0016,true
+F_protein,1us0_idd594__LDTA__qmmm_Z2,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.37,0.25,0.62,inconclusive,inconclusive,5.34,5.34,true,-0.0021,true
+F_protein,1us0_idd594__LDTA__qmmm_Z3,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.42,0.3,0.72,inconclusive,inconclusive,5.02,5.02,true,0.0005,true
+F_protein,1us0_idd594__LDTA__qmmm_r10,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.37,0.25,0.62,inconclusive,inconclusive,5.42,5.42,true,-0.0026,true
+F_protein,1us0_idd594__LDTA__qmmm_r20,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.38,0.26,0.64,inconclusive,inconclusive,5.32,5.32,true,-0.0021,true
+F_protein,1us0_idd594__LDTA__qmmm_r25,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.38,0.27,0.65,inconclusive,inconclusive,5.31,5.31,true,-0.002,true
+F_protein,1us0_idd594__LDTA__qmmm_full,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.38,0.26,0.64,inconclusive,inconclusive,5.31,5.31,true,-0.0021,true
+F_protein,1us0_idd594__LDTA__shell3,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.33,0.16,0.49,inconclusive,inconclusive,5.89,5.89,true,-0.0067,true
+F_protein,1us0_idd594__LDTA__shell4,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.32,0.06,0.38,inconclusive,inconclusive,6.67,6.67,true,-0.0187,true
+F_protein,1us0_idd594__LDTA__shell5,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.32,0.06,0.38,inconclusive,inconclusive,6.64,6.64,true,-0.0179,true
+F_protein,2w0s__BVPA__cluster_pcm4,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,3.86,0.46,4.32,supported,supported,0,0,true,0.0084,true
+F_protein,2w0s__BVPA__cluster_gas,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,3.61,0.41,4.02,supported,supported,0,0,true,0.004,true
+F_protein,2w0s__BVPA__qmmm_ff14SB,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.11,0.51,4.62,supported,supported,0,0,true,0.011,true
+F_protein,2w0s__BVPA__qmmm_charmm36,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.11,0.51,4.62,supported,supported,0,0,true,0.0109,true
+F_protein,2w0s__BVPA__qmmm_Z1,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.17,0.55,4.72,supported,supported,0,0,true,0.0124,true
+F_protein,2w0s__BVPA__qmmm_Z2,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.13,0.52,4.65,supported,supported,0,0,true,0.0114,true
+F_protein,2w0s__BVPA__qmmm_Z3,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.17,0.54,4.71,supported,supported,0,0,true,0.0125,true
+F_protein,2w0s__BVPA__qmmm_r10,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,3.98,0.49,4.47,supported,supported,0,0,true,0.009,true
+F_protein,2w0s__BVPA__qmmm_r20,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.07,0.5,4.57,supported,supported,0,0,true,0.0103,true
+F_protein,2w0s__BVPA__qmmm_r25,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4,0.49,4.49,supported,supported,0,0,true,0.0091,true
+F_protein,2w0s__BVPA__qmmm_full,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,3.99,0.49,4.48,supported,supported,0,0,true,0.009,true
+F_protein,2w0s__BVPA__shell3,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,3.86,0.46,4.32,supported,supported,0,0,true,0.0084,true
+F_protein,2w0s__BVPA__shell4,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.09,0.43,4.52,supported,supported,0,10.79,true,-0.0308,true
+F_protein,2w0s__BVPA__shell5,XB1,BVP1207:A@BR ··· ASN65:A@OD1,atom,4.11,0.38,4.49,supported,supported,0,10.61,true,-0.0266,true
+F_protein,1p5e__TBSA__cluster_pcm4,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.07,0,3.07,supported,supported,0,0.81,true,0.0038,true
+F_protein,1p5e__TBSA__cluster_pcm4,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.08,0,2.08,supported,supported,0,0.26,true,0.0038,true
+F_protein,1p5e__TBSA__cluster_pcm4,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.55,0,0.55,inconclusive,inconclusive,0,0,,0.0038,true
+F_protein,1p5e__TBSA__cluster_pcm4,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.33,0,0.33,inconclusive,inconclusive,0,0,true,0.0038,true
+F_protein,1p5e__TBSA__cluster_gas,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.07,0,3.07,supported,supported,0,0.79,true,0.0025,true
+F_protein,1p5e__TBSA__cluster_gas,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.11,0,2.11,supported,supported,0,0.26,true,0.0025,true
+F_protein,1p5e__TBSA__cluster_gas,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.53,0,0.53,inconclusive,inconclusive,0,0,,0.0025,true
+F_protein,1p5e__TBSA__cluster_gas,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.32,0,0.32,inconclusive,inconclusive,0,0,true,0.0025,true
+F_protein,1p5e__TBSA__qmmm_ff14SB,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.24,0.07,3.31,supported,supported,0,0.83,true,0.001,true
+F_protein,1p5e__TBSA__qmmm_ff14SB,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.24,0,2.24,supported,supported,0,0.28,true,0.001,true
+F_protein,1p5e__TBSA__qmmm_ff14SB,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.58,0,0.58,inconclusive,inconclusive,0,0,,0.001,true
+F_protein,1p5e__TBSA__qmmm_ff14SB,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.31,0,0.31,inconclusive,inconclusive,0,0,true,0.001,true
+F_protein,1p5e__TBSA__qmmm_charmm36,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.18,0,3.18,supported,supported,0,0.84,true,0.0024,true
+F_protein,1p5e__TBSA__qmmm_charmm36,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.25,0,2.25,supported,supported,0,0.28,true,0.0024,true
+F_protein,1p5e__TBSA__qmmm_charmm36,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.59,0,0.59,inconclusive,inconclusive,0,0,,0.0024,true
+F_protein,1p5e__TBSA__qmmm_charmm36,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.32,0,0.32,inconclusive,inconclusive,0,0,true,0.0024,true
+F_protein,1p5e__TBSA__qmmm_Z1,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.14,0,3.14,supported,supported,0,0.72,true,0.008,true
+F_protein,1p5e__TBSA__qmmm_Z1,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.28,0,2.28,supported,supported,0,0.24,true,0.008,true
+F_protein,1p5e__TBSA__qmmm_Z1,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.64,0,0.64,inconclusive,inconclusive,0,0,,0.008,true
+F_protein,1p5e__TBSA__qmmm_Z1,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.32,0,0.32,inconclusive,inconclusive,0,0,true,0.008,true
+F_protein,1p5e__TBSA__qmmm_Z2,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.1,0.06,3.16,supported,supported,0,0.8,true,0.0006,true
+F_protein,1p5e__TBSA__qmmm_Z2,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.18,0,2.18,supported,supported,0,0.26,true,0.0006,true
+F_protein,1p5e__TBSA__qmmm_Z2,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.58,0,0.58,inconclusive,inconclusive,0,0,,0.0006,true
+F_protein,1p5e__TBSA__qmmm_Z2,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.31,0,0.31,inconclusive,inconclusive,0,0,true,0.0006,true
+F_protein,1p5e__TBSA__qmmm_Z3,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.47,0.09,3.56,supported,supported,0,0.81,true,0.0018,true
+F_protein,1p5e__TBSA__qmmm_Z3,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.09,0,2.09,supported,supported,0,0.25,true,0.0018,true
+F_protein,1p5e__TBSA__qmmm_Z3,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.52,0,0.52,inconclusive,inconclusive,0,0,,0.0018,true
+F_protein,1p5e__TBSA__qmmm_Z3,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.32,0,0.32,inconclusive,inconclusive,0,0,true,0.0018,true
+F_protein,1p5e__TBSA__qmmm_r10,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.08,0,3.08,supported,supported,0,0.87,true,0.0015,true
+F_protein,1p5e__TBSA__qmmm_r10,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.21,0,2.21,supported,supported,0,0.29,true,0.0015,true
+F_protein,1p5e__TBSA__qmmm_r10,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.59,0,0.59,inconclusive,inconclusive,0,0,,0.0015,true
+F_protein,1p5e__TBSA__qmmm_r10,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.32,0,0.32,inconclusive,inconclusive,0,0,true,0.0015,true
+F_protein,1p5e__TBSA__qmmm_r20,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.11,0,3.11,supported,supported,0,0.86,true,-0.0009,true
+F_protein,1p5e__TBSA__qmmm_r20,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.17,0,2.17,supported,supported,0,0.29,true,-0.0009,true
+F_protein,1p5e__TBSA__qmmm_r20,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.57,0,0.57,inconclusive,inconclusive,0,0,,-0.0009,true
+F_protein,1p5e__TBSA__qmmm_r20,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.31,0,0.31,inconclusive,inconclusive,0,0,true,-0.0009,true
+F_protein,1p5e__TBSA__qmmm_r25,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.1,0,3.1,supported,supported,0,0.86,true,-0.0019,true
+F_protein,1p5e__TBSA__qmmm_r25,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.15,0,2.15,supported,supported,0,0.3,true,-0.0019,true
+F_protein,1p5e__TBSA__qmmm_r25,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.57,0,0.57,inconclusive,inconclusive,0,0,,-0.0019,true
+F_protein,1p5e__TBSA__qmmm_r25,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.31,0,0.31,inconclusive,inconclusive,0,0,true,-0.0019,true
+F_protein,1p5e__TBSA__qmmm_full,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.11,0.06,3.17,supported,supported,0,0.86,true,-0.0028,true
+F_protein,1p5e__TBSA__qmmm_full,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.16,0,2.16,supported,supported,0,0.29,true,-0.0028,true
+F_protein,1p5e__TBSA__qmmm_full,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.57,0,0.57,inconclusive,inconclusive,0,0,,-0.0028,true
+F_protein,1p5e__TBSA__qmmm_full,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.31,0,0.31,inconclusive,inconclusive,0,0,true,-0.0028,true
+F_protein,1p5e__TBSA__shell3,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.07,0,3.07,supported,supported,0,0.81,true,0.0038,true
+F_protein,1p5e__TBSA__shell3,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.08,0,2.08,supported,supported,0,0.26,true,0.0038,true
+F_protein,1p5e__TBSA__shell3,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.55,0,0.55,inconclusive,inconclusive,0,0,,0.0038,true
+F_protein,1p5e__TBSA__shell3,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.33,0,0.33,inconclusive,inconclusive,0,0,true,0.0038,true
+F_protein,1p5e__TBSA__shell4,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.1,0.06,3.16,supported,supported,0,0.81,true,-0.0034,true
+F_protein,1p5e__TBSA__shell4,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.14,0,2.14,supported,supported,0,0.26,true,-0.0034,true
+F_protein,1p5e__TBSA__shell4,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.57,0,0.57,inconclusive,inconclusive,0,0,,-0.0034,true
+F_protein,1p5e__TBSA__shell4,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.33,0,0.33,inconclusive,inconclusive,0,0,true,-0.0034,true
+F_protein,1p5e__TBSA__shell5,XB1,TBS301:A@BR11 ··· LEU83:A@O,atom,3.11,0.07,3.18,supported,supported,0,1.15,true,-0.0046,true
+F_protein,1p5e__TBSA__shell5,XB2,TBS301:A@BR12 ··· GLU81:A@O,atom,2.33,0,2.33,supported,supported,0,0.46,true,-0.0046,true
+F_protein,1p5e__TBSA__shell5,XB3,TBS301:A@BR13 ··· PHE80:A@π(ring),pi,0.58,0,0.58,inconclusive,inconclusive,0,0,,-0.0046,true
+F_protein,1p5e__TBSA__shell5,XB4,TBS301:A@BR10 ··· ILE10:A@O,atom,0.36,0,0.36,inconclusive,inconclusive,0,0,true,-0.0046,true
+F_protein,4agl__P84A__cluster_pcm4,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.07,0.13,2.2,supported,supported,0,0,true,0.0103,true
+F_protein,4agl__P84A__cluster_gas,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.05,0.08,2.13,supported,supported,0,0,true,0.0094,true
+F_protein,4agl__P84A__qmmm_ff14SB,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.05,0.07,2.12,supported,supported,0,0,true,0.0088,true
+F_protein,4agl__P84A__qmmm_charmm36,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.05,0.07,2.12,supported,supported,0,0,true,0.0091,true
+F_protein,4agl__P84A__qmmm_Z1,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.11,0.08,2.19,supported,supported,0,0,true,0.0118,true
+F_protein,4agl__P84A__qmmm_Z2,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.03,0.07,2.1,supported,supported,0,0,true,0.009,true
+F_protein,4agl__P84A__qmmm_Z3,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.09,0.08,2.17,supported,supported,0,0,true,0.0103,true
+F_protein,4agl__P84A__qmmm_r10,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.03,0.07,2.1,supported,supported,0,0,true,0.0085,true
+F_protein,4agl__P84A__qmmm_r20,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.01,0.07,2.08,supported,supported,0,0,true,0.0079,true
+F_protein,4agl__P84A__qmmm_r25,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.01,0.07,2.08,supported,supported,0,0,true,0.0079,true
+F_protein,4agl__P84A__qmmm_full,XB1,P84400:A@I15 ··· LEU145:A@O,atom,1.96,0.06,2.02,supported,supported,0,0,true,0.0064,true
+F_protein,4agl__P84A__shell3,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.07,0.13,2.2,supported,supported,0,0,true,0.0103,true
+F_protein,4agl__P84A__shell4,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.13,0.15,2.28,supported,supported,0,0.25,true,-0.0078,true
+F_protein,4agl__P84A__shell5,XB1,P84400:A@I15 ··· LEU145:A@O,atom,2.24,0.06,2.3,supported,supported,0,0.44,true,-0.0106,true
+F_protein,4gql__R47A__cluster_pcm4,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.87,0.06,1.93,supported,supported,0,0,true,0.0046,true
+F_protein,4gql__R47A__cluster_gas,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.77,0.07,1.84,supported,supported,0,0,true,0.0032,true
+F_protein,4gql__R47A__qmmm_ff14SB,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.87,0.08,1.95,supported,supported,0,0,true,0.0043,true
+F_protein,4gql__R47A__qmmm_charmm36,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.86,0.08,1.94,supported,supported,0,0,true,0.0041,true
+F_protein,4gql__R47A__qmmm_Z1,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.82,0.07,1.89,supported,supported,0,0,true,0.0038,true
+F_protein,4gql__R47A__qmmm_Z2,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.8,0.07,1.87,supported,supported,0,0,true,0.0024,true
+F_protein,4gql__R47A__qmmm_Z3,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.75,0.08,1.83,supported,supported,0,0,true,0.0031,true
+F_protein,4gql__R47A__qmmm_r10,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.86,0.08,1.94,supported,supported,0,0,true,0.0041,true
+F_protein,4gql__R47A__qmmm_r20,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.89,0.07,1.96,supported,supported,0,0,true,0.0044,true
+F_protein,4gql__R47A__qmmm_r25,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.9,0.07,1.97,supported,supported,0,0,true,0.0047,true
+F_protein,4gql__R47A__qmmm_full,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.9,0.07,1.97,supported,supported,0,0,true,0.0047,true
+F_protein,4gql__R47A__shell3,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.95,0.07,2.02,supported,supported,0,0,true,0.0027,true
+F_protein,4gql__R47A__shell4,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.96,0.08,2.04,supported,supported,0,0,true,0.0105,true
+F_protein,4gql__R47A__shell5,XB1,R47306:A@CL1 ··· PRO232:A@O,atom,1.96,0.08,2.04,supported,supported,0,0,true,0.0135,true
+F_protein,4dst__9LIA__cluster_pcm4,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.07,0.06,0.13,not supported,not supported,0,0,true,0.0039,true
+F_protein,4dst__9LIA__cluster_gas,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.07,0.05,0.12,not supported,not supported,0,0,true,0.0037,true
+F_protein,4dst__9LIA__qmmm_ff14SB,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0012,true
+F_protein,4dst__9LIA__qmmm_charmm36,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0007,true
+F_protein,4dst__9LIA__qmmm_Z1,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0028,true
+F_protein,4dst__9LIA__qmmm_Z2,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0009,true
+F_protein,4dst__9LIA__qmmm_Z3,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0023,true
+F_protein,4dst__9LIA__qmmm_r10,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0005,true
+F_protein,4dst__9LIA__qmmm_r20,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0012,true
+F_protein,4dst__9LIA__qmmm_r25,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0003,true
+F_protein,4dst__9LIA__qmmm_full,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.06,0,0.06,not supported,not supported,0,0,true,0.0003,true
+F_protein,4dst__9LIA__shell3,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0.07,0.06,0.13,not supported,not supported,0,0,true,0.0039,true
+F_protein,4dst__9LIA__shell4,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0,0,0,not supported,not supported,0,0,true,-0.0057,true
+F_protein,4dst__9LIA__shell5,XB1,9LI201:A@CL2 ··· GLY75:A@N,atom,0,0,0,not supported,not supported,0,0,true,-0.0076,true
+F_protein,2w0s__BVPB__cluster_pcm4,XB1,BVP1207:B@BR ··· ASN65:B@OD1,atom,2.05,0.23,2.28,supported,supported,0,0,true,0.0052,true
+F_protein,1p5e__TBSC__cluster_pcm4,XB1,TBS302:C@BR11 ··· LEU83:C@O,atom,3.02,0.06,3.08,supported,supported,0,1.39,true,0.0166,true
+F_protein,1p5e__TBSC__cluster_pcm4,XB2,TBS302:C@BR12 ··· GLU81:C@O,atom,1.87,0,1.87,supported,supported,0,0.28,true,0.0166,true
+F_protein,1p5e__TBSC__cluster_pcm4,XB3,TBS302:C@BR13 ··· PHE80:C@π(ring),pi,1.31,0,1.31,supported,supported,0,0,,0.0166,true
+F_protein,4agl__P84B__cluster_pcm4,XB1,P84400:B@I15 ··· LEU145:B@O,atom,2.3,0.1,2.4,supported,supported,0,0,true,0.0107,true
+F_protein,1us0_idd594__LDTA__qmmm_HIS110_HID,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.37,0.24,0.61,inconclusive,inconclusive,5.45,5.45,true,-0.0028,true
+F_protein,1us0_idd594__LDTA__qmmm_HIS110_HIP,XB1,LDT320:A@BR8 ··· THR113:A@OG1,atom,0.38,0.26,0.64,inconclusive,inconclusive,5.26,5.26,true,-0.0014,true

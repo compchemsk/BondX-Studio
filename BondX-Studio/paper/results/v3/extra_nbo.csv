@@ -1,0 +1,54 @@
+set,name,role,contact,frame,d,theta1,G,lewis,terminated,nbo_complete,geometry_ok,E2_valence,E2_RY,verdict,hbY,hbFrag2,flags,lpOnY,intra_O_sigmaCI,E_pub_gate
+G_hard_negatives,hiyd_C1_10.8_ASN172_ND2_f96,"negative: Asn amide ND2 (Asn242)","MIA442:_@I1 ··· ASN172:_@ND2",96,3.833,152.6,0.337,weak,true,true,true,0.140,0.140,not supported,0.120,0.120,,true,0.740,
+G_hard_negatives,hiyd_C1_12.8_ASN90_OD1_f13,"control: Asn amide O (Asn160)","MIA442:_@I1 ··· ASN90:_@OD1",13,3.449,166.9,0.643,strong,true,true,true,0.910,0.000,supported,0.000,0.000,,true,0.710,
+G_hard_negatives,hiyd_C1_16.8_LEU189_N_f44,"negative: backbone amide N (Leu259)","MIA442:_@I1 ··· LEU189:_@N",44,3.49,172.1,0.724,weak,true,true,true,0.500,0.100,inconclusive,1.990,1.990,hbond,true,0.720,
+G_hard_negatives,hiyd_C1_16.8_LEU189_O_f95,"control: backbone C=O (Leu259)","MIA442:_@I1 ··· LEU189:_@O",95,3.42,176.4,0.745,strong,true,true,true,1.370,0.000,supported,0.000,0.120,,true,0.700,
+G_hard_negatives,hiyd_C1_17.8_ASN363_ND2_f36,"negative: Asn amide ND2 (Asn213*)","MIA442:_@I1 ··· ASN363:_@ND2",36,3.593,153.6,0.456,weak,true,true,true,0.280,0.080,not supported,0.280,0.280,,true,0.740,
+G_hard_negatives,hiyd_C1_17.8_TRP99_NE1_f96,"negative: Trp indole NE1 (Trp169)","MIA442:_@I1 ··· TRP99:_@NE1",96,3.892,169.5,0.323,weak,true,true,true,0.080,0.000,not supported,0.000,0.000,,true,0.730,
+G_hard_negatives,hiyd_C2_14.8_LYS104_NZ_f83,"negative: Lys ammonium NZ (Lys174)","MIA442:_@I1 ··· LYS104:_@NZ",83,3.944,144.3,0.139,weak,true,true,true,0.000,0.000,not supported,0.000,0.000,,false,0.820,
+G_hard_negatives,hiyd_C2_14.8_LYS358_NZ_f1,"negative: Lys ammonium NZ (Lys208*)","MIA442:_@I1 ··· LYS358:_@NZ",1,3.897,152.6,0.242,weak,true,true,true,0.000,0.000,not supported,0.060,0.060,,false,0.650,
+G_hard_negatives,hiyd_C2_16.8_TYR361_OH_f9,"control: Tyr hydroxyl O (Tyr211*)","MIA442:_@I1 ··· TYR361:_@OH",9,3.412,170,0.694,strong,true,true,true,1.080,0.000,supported,0.000,0.000,,true,0.870,
+G_hard_negatives,hiyd_C2_17.8_GLY96_N_f9,"negative: backbone amide N (Gly166)","MIA442:_@I1 ··· GLY96:_@N",9,3.454,169.6,0.642,weak,true,true,true,0.070,0.000,not supported,0.500,0.500,hbond,true,0.740,
+G_hard_negatives,hiyd_C2_8.8_ALA280_N_f97,"negative: backbone amide N (Ala130*)","MIA442:_@I1 ··· ALA280:_@N",97,3.455,168,0.7,weak,true,true,true,0.630,0.190,inconclusive,1.380,1.380,hbond,true,0.790,
+G_hard_negatives,hiyd_C3_11.8_ARG94_NE_f92,"negative: Arg guanidinium NE (Arg164)","MIA442:_@I1 ··· ARG94:_@NE",92,3.606,169.8,0.556,weak,true,true,true,0.100,0.000,not supported,0.000,0.000,,true,0.770,
+G_hard_negatives,hiyd_C3_11.8_ARG94_NH1_f91,"negative: Arg guanidinium NH1 (Arg164)","MIA442:_@I1 ··· ARG94:_@NH1",91,3.315,173.8,0.766,weak,true,true,true,1.470,0.300,supported,0.000,0.000,,true,0.840,
+G_hard_negatives,hiyd_C3_15.8_THR108_N_f49,"negative: backbone amide N (Thr178)","MIA442:_@I1 ··· THR108:_@N",49,3.531,178.1,0.701,weak,true,true,true,0.940,0.130,supported,0.000,0.000,,true,0.730,
+G_hard_negatives,hiyd_C3_15.8_THR108_O_f98,"control: backbone C=O (Thr178)","MIA442:_@I1 ··· THR108:_@O",98,3.181,166.1,0.737,strong,true,true,true,0.690,0.000,inconclusive,0.000,0.000,,true,0.680,
+G_hard_negatives,hiyd_C3_17.8_MET95_SD_f46,"control: Met thioether S (Met165)","MIA442:_@I1 ··· MET95:_@SD",46,3.895,142.6,0.236,strong,true,true,true,1.150,0.230,supported,0.000,0.000,,true,0.790,
+G_hard_negatives,hiyd_C3_18.8_ARG107_NH2_f85,"negative: Arg guanidinium NH2 (Arg177)","MIA442:_@I1 ··· ARG107:_@NH2",85,3.437,168.5,0.723,weak,true,true,true,0.580,0.190,inconclusive,3.470,3.470,hbond,true,0.790,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__B3LYP__def2TZVP,"level test of marginal contacts","1p5e__TBSA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__M062X__def2TZVP,"level test of marginal contacts","1p5e__TBSA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__PBE1PBE__def2TZVP,"level test of marginal contacts","1p5e__TBSA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2QZVP,"level test of marginal contacts","1p5e__TBSA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2SVP,"level test of marginal contacts","1p5e__TBSA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__B3LYP__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__M062X__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__PBE1PBE__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2QZVP,"level test of marginal contacts","1us0_idd594__LDTA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2SVP,"level test of marginal contacts","1us0_idd594__LDTA__cluster_pcm4",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__B3LYP__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__qmmm_ff14SB",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__M062X__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__qmmm_ff14SB",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__PBE1PBE__def2TZVP,"level test of marginal contacts","1us0_idd594__LDTA__qmmm_ff14SB",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2QZVP,"level test of marginal contacts","1us0_idd594__LDTA__qmmm_ff14SB",,,,,,false,false
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2SVP,"level test of marginal contacts","1us0_idd594__LDTA__qmmm_ff14SB",,,,,,false,false
+J_4dst_amide,4dst__9LIA__cluster_gas__amide,"hard negative with intact amide","9LI201:A@CL2 ··· GLY75:A@N",,,,,,true,true,true,0.000,0.000,not supported,0.000,0.000,,true,0.000,
+J_4dst_amide,4dst__9LIA__cluster_pcm4__amide,"hard negative with intact amide","9LI201:A@CL2 ··· GLY75:A@N",,,,,,true,true,true,0.000,0.000,not supported,0.000,0.000,,true,0.000,
+J_4dst_amide,4dst__9LIA__qmmm_ff14SB__amide,"hard negative with intact amide","9LI201:A@CL2 ··· GLY75:A@N",,,,,,true,true,true,0.000,0.000,not supported,0.000,0.000,,true,0.000,
+K_hiyd_amide,hiyd_pub_C1_ARG97_amide,"published pose R168 N (pathway A, xi 17.8); cap H -> C(=O)CH3","R168 N (pathway A, xi 17.8)",,,,,,true,true,no manifest,0.370,0.000,inconclusive,4.600,4.600,hbond|poorBase,true,0.580,0.49
+K_hiyd_amide,hiyd_pub_C1_GLU363_amide,"published pose E214* N (pathway A, xi 17.8); cap H -> C(=O)CH3","E214* N (pathway A, xi 17.8)",,,,,,true,true,no manifest,0.090,0.000,not supported,1.660,1.660,hbond|poorBase,true,0.740,0.08
+K_hiyd_amide,hiyd_pub_C1_GLY173_amide,"published pose G244 N (pathway A, xi 16.8); cap H -> C(=O)CH3","G244 N (pathway A, xi 16.8)",,,,,,true,true,no manifest,0.000,0.000,not supported,4.200,4.200,hbond|poorBase,true,0.640,0
+K_hiyd_amide,hiyd_pub_C1_GLY95_amide,"published pose G166 N (pathway A, xi 13.8); cap H -> C(=O)CH3","G166 N (pathway A, xi 13.8)",,,,,,true,true,no manifest,0.240,0.000,not supported,2.280,2.280,hbond|poorBase,true,0.610,0.33
+K_hiyd_amide,hiyd_pub_C1_LYS357_amide,"published pose K208* N (pathway A, xi 18.8); cap H -> C(=O)CH3","K208* N (pathway A, xi 18.8)",,,,,,true,true,no manifest,0.060,0.000,not supported,0.000,0.000,poorBase,true,0.630,0.37
+K_hiyd_amide,hiyd_pub_C1_MET94_amide,"published pose M165 N (pathway A, xi 15.8); cap H -> C(=O)CH3","M165 N (pathway A, xi 15.8)",,,,,,true,true,no manifest,0.090,0.000,not supported,0.000,0.000,poorBase,true,0.730,0.5
+K_hiyd_amide,hiyd_pub_C1_TRP98_amide,"published pose W169 N (pathway A, xi 17.8); cap H -> C(=O)CH3","W169 N (pathway A, xi 17.8)",,,,,,true,true,no manifest,0.000,0.070,not supported,0.240,0.330,poorBase,true,0.000,1.63
+K_hiyd_amide,hiyd_pub_C1_TYR361_amide,"published pose Y212* N (pathway A, xi 17.8); cap H -> C(=O)CH3","Y212* N (pathway A, xi 17.8)",,,,,,true,true,no manifest,0.220,0.000,not supported,2.680,2.680,hbond|poorBase,true,0.600,0.34
+K_hiyd_amide,hiyd_pub_C1_VAL358_amide,"published pose V209* N (pathway A, xi 18.8); cap H -> C(=O)CH3","V209* N (pathway A, xi 18.8)",,,,,,true,true,no manifest,0.000,0.000,not supported,1.750,1.750,hbond|poorBase,true,0.620,0
+K_hiyd_amide,hiyd_pub_C2_ALA279_amide,"published pose A130* N (pathway B, xi 9.8); cap H -> C(=O)CH3","A130* N (pathway B, xi 9.8)",,,,,,true,true,no manifest,0.240,0.060,not supported,0.000,0.000,poorBase,true,0.630,0.39
+K_hiyd_amide,hiyd_pub_C2_ALA352_amide,"published pose A203* N (pathway B, xi 16.8); cap H -> C(=O)CH3","A203* N (pathway B, xi 16.8)",,,,,,true,true,no manifest,0.000,0.000,not supported,4.160,4.160,hbond|poorBase,true,0.650,0.05
+K_hiyd_amide,hiyd_pub_C2_GLY95_amide,"published pose G166 N (pathway B, xi 17.8); cap H -> C(=O)CH3","G166 N (pathway B, xi 17.8)",,,,,,true,true,no manifest,0.140,0.000,not supported,0.150,0.150,poorBase,true,0.620,0.15
+K_hiyd_amide,hiyd_pub_C2_HIS96_amide,"published pose H167 N (pathway B, xi 17.8); cap H -> C(=O)CH3","H167 N (pathway B, xi 17.8)",,,,,,true,true,no manifest,0.490,0.000,inconclusive,0.080,0.080,poorBase,true,0.690,0.92
+K_hiyd_amide,hiyd_pub_C2_LEU102_amide,"published pose L173 N (pathway B, xi 10.8); cap H -> C(=O)CH3","L173 N (pathway B, xi 10.8)",,,,,,true,true,no manifest,0.000,0.000,not supported,0.000,0.000,poorBase,false,0.590,0.51
+K_hiyd_amide,hiyd_pub_C2_LYS357_amide,"published pose K208* N (pathway B, xi 16.8); cap H -> C(=O)CH3","K208* N (pathway B, xi 16.8)",,,,,,true,true,no manifest,0.000,0.000,not supported,0.000,0.000,poorBase,true,0.620,0.14
+K_hiyd_amide,hiyd_pub_C2_PHE350_amide,"published pose F201* N (pathway B, xi 13.8); cap H -> C(=O)CH3","F201* N (pathway B, xi 13.8)",,,,,,true,true,no manifest,0.330,0.060,inconclusive,0.000,0.000,poorBase,true,0.600,0.81
+K_hiyd_amide,hiyd_pub_C3_ALA279_amide,"published pose A130* N (pathway C, xi 8.8); cap H -> C(=O)CH3","A130* N (pathway C, xi 8.8)",,,,,,false,true,no manifest,0.720,0.070,inconclusive,0.970,0.970,hbond|poorBase,true,0.750,1.02
+K_hiyd_amide,hiyd_pub_C3_THR107_amide,"published pose T178 N (pathway C, xi 15.8); cap H -> C(=O)CH3","T178 N (pathway C, xi 15.8)",,,,,,true,true,no manifest,0.790,0.060,inconclusive,0.000,0.000,poorBase,true,0.670,1.55

@@ -59,7 +59,7 @@ for (const C of ['C1', 'C2', 'C3']) {
       xbs.push({ id: 'R' + ids.map(i => i + 1).join('-'), type: 'pi', X: iI + 1, A: iC + 1, ring: ids.map(i => i + 1) });
       geo.push({ id: 'R' + ids.map(i => i + 1).join('-'), el: 'AR', n: null, size: ids.length, d, t1, t1ok: t1 >= 140 && t1 <= 180, dok: d <= cut.AR });
     }
-    const gate = B.nboGate({ xbs }, nbo, { threshold: 0.5, includeRY: false });
+    const gate = B.nboGate({ xbs, atoms: g.map((a, k) => ({ n: k + 1, el: a.el, frag: frag[k] })) }, nbo, { threshold: 0.5, includeRY: false });
     // all LP -> sigma*(C-I) entries, split by donor fragment
     let intra = 0, inter = 0; const lpRows = [];
     const hops = Array(n).fill(-1); { hops[iC] = 0; const qu = [iC]; while (qu.length) { const a = qu.shift(); for (const b of bonded[a]) if (hops[b] < 0) { hops[b] = hops[a] + 1; qu.push(b); } } }
@@ -71,7 +71,7 @@ for (const C of ['C1', 'C2', 'C3']) {
       lpRows.push({ donor: d.atoms[0].el + d.atoms[0].n, frag: fr, e2: e.e2, bondsToC: hops[d.atoms[0].n - 1], dToC: +B.dist(xyz[d.atoms[0].n - 1], xyz[iC]).toFixed(3) });
     }
     res.push({ C, residue: f.replace('-nbo.log', ''), terminated: nbo.terminated, nAtoms: n, nFrag1: frag.filter(x => x === 1).length, I: iI + 1, Cx: iC + 1,
-      geo, gate: gate.map(x => ({ id: x.id, E2_core: x.E2_core, E2_total: x.E2_total, contrib: x.contrib })), lpIntra: intra, lpInter: inter, lpRows });
+      geo, gate: gate.map(x => ({ id: x.id, E2_core: x.E2_core, E2_total: x.E2_total, E2_RY: x.E2_RY, hbY: x.hbY, lpOnY: x.lpOnY, verdict: x.verdict, contrib: x.contrib })), lpIntra: intra, lpInter: inter, lpRows });
   }
 }
 fs.writeFileSync(outFile, JSON.stringify(res, null, 1));

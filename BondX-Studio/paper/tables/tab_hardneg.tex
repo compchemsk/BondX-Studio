@@ -1,0 +1,25 @@
+\begin{table}[!htbp]\centering\scriptsize\setlength{\tabcolsep}{2.6pt}
+\caption{Contacts that pass T1 but involve poor Lewis bases (hard negatives), with Lewis-base controls from the same simulations (kcal\,mol$^{-1}$). hIYD rows: one frame of a release window each, cluster models built with the current BondX Studio model rules (intact amides, oriented hydroxyl hydrogens), I-Tyr phenolate charge $-1$, CPCM $\varepsilon=4$, $\omega$B97X-D/def2-TZVP (Gaussian~16, NBO~3.1); every output matched its manifest. 4DST rows: the Cl$\cdots$N Gly75 contact with the amide of Gly75 intact (gas cluster, PCM cluster, QM/MM). Base: Lewis base or poor Lewis base. X$\to$H: summed donation from the iodine lone pairs into the N--H and O--H antibonds of fragment~2. D: decision; $^\dagger$: the competing hydrogen bond exceeds $\Sigma E^{(2)}$.}\label{tab:hardneg}
+\resizebox{\textwidth}{!}{\begin{tabular}{lllcrrrrrrrrll}\toprule Residue & Acceptor & Base & Path & $\xi$ & Frame & $d$ & $\theta_1$ & $G$ & $\Sigma E^{(2)}$ & RY & X$\to$H & LP(Y) & D\\\midrule
+Lys174 & Lys ammonium NZ & poor & B & 14.8 & 83 & 3.94 & 144.3 & 0.14 & 0.00 & 0.00 & 0.00 & no & N\\
+Lys208* & Lys ammonium NZ & poor & B & 14.8 & 1 & 3.90 & 152.6 & 0.24 & 0.00 & 0.00 & 0.06 & no & N\\
+Gly166 & backbone amide N & poor & B & 17.8 & 9 & 3.45 & 169.6 & 0.64 & 0.07 & 0.00 & 0.50 & yes & N$^\dagger$\\
+Trp169 & Trp indole NE1 & poor & A & 17.8 & 96 & 3.89 & 169.5 & 0.32 & 0.08 & 0.00 & 0.00 & yes & N\\
+Arg164 & Arg guanidinium NE & poor & C & 11.8 & 92 & 3.61 & 169.8 & 0.56 & 0.10 & 0.00 & 0.00 & yes & N\\
+Asn242 & Asn amide ND2 & poor & A & 10.8 & 96 & 3.83 & 152.6 & 0.34 & 0.14 & 0.14 & 0.12 & yes & N\\
+Asn213* & Asn amide ND2 & poor & A & 17.8 & 36 & 3.59 & 153.6 & 0.46 & 0.28 & 0.08 & 0.28 & yes & N\\
+Leu259 & backbone amide N & poor & A & 16.8 & 44 & 3.49 & 172.1 & 0.72 & 0.50 & 0.10 & 1.99 & yes & I$^\dagger$\\
+Arg177 & Arg guanidinium NH2 & poor & C & 18.8 & 85 & 3.44 & 168.5 & 0.72 & 0.58 & 0.19 & 3.47 & yes & I$^\dagger$\\
+Ala130* & backbone amide N & poor & B & 8.8 & 97 & 3.46 & 168.0 & 0.70 & 0.63 & 0.19 & 1.38 & yes & I$^\dagger$\\
+Thr178 & backbone amide N & poor & C & 15.8 & 49 & 3.53 & 178.1 & 0.70 & 0.94 & 0.13 & 0.00 & yes & S\\
+Arg164 & Arg guanidinium NH1 & poor & C & 11.8 & 91 & 3.31 & 173.8 & 0.77 & 1.47 & 0.30 & 0.00 & yes & S\\
+Thr178 & backbone C=O & base & C & 15.8 & 98 & 3.18 & 166.1 & 0.74 & 0.69 & 0.00 & 0.00 & yes & I\\
+Asn160 & Asn amide O & base & A & 12.8 & 13 & 3.45 & 166.9 & 0.64 & 0.91 & 0.00 & 0.00 & yes & S\\
+Tyr211* & Tyr hydroxyl O & base & B & 16.8 & 9 & 3.41 & 170.0 & 0.69 & 1.08 & 0.00 & 0.00 & yes & S\\
+Met165 & Met thioether S & base & C & 17.8 & 46 & 3.90 & 142.6 & 0.24 & 1.15 & 0.23 & 0.00 & yes & S\\
+Leu259 & backbone C=O & base & A & 16.8 & 95 & 3.42 & 176.4 & 0.74 & 1.37 & 0.00 & 0.12 & yes & S\\
+\midrule
+Gly75 (4DST, gas) & backbone amide N & poor & -- & -- & -- & 3.52 & 140.5 & 0.12 & 0.00 & 0.00 & 0.00 & yes & N\\
+Gly75 (4DST, PCM) & backbone amide N & poor & -- & -- & -- & 3.52 & 140.5 & 0.12 & 0.00 & 0.00 & 0.00 & yes & N\\
+Gly75 (4DST, QM/MM) & backbone amide N & poor & -- & -- & -- & 3.52 & 140.5 & 0.12 & 0.00 & 0.00 & 0.00 & yes & N\\
+\bottomrule\end{tabular}}\end{table}

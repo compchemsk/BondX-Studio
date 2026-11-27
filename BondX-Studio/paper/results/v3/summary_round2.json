@@ -1,0 +1,477 @@
+{
+ "class_ratio": {
+  "P": {
+   "n": 10,
+   "median": 2.66,
+   "min": 1.56,
+   "max": 4.62
+  },
+  "N": {
+   "n": 26,
+   "median": 1.89,
+   "min": 0.93,
+   "max": 3.55
+  },
+  "S": {
+   "n": 2,
+   "median": 1.45,
+   "min": 1.22,
+   "max": 1.68
+  },
+  "O": {
+   "n": 9,
+   "median": 1.18,
+   "min": 0.79,
+   "max": 2.32
+  },
+  "F": {
+   "n": 5,
+   "median": 1.02,
+   "min": 0.65,
+   "max": 1.9
+  },
+  "ring": {
+   "n": 4,
+   "median": 0.46,
+   "min": 0.4,
+   "max": 0.58
+  }
+ },
+ "class_ratio_note": {
+  "N_over_ring": 4.16,
+  "O_over_N": 0.62,
+  "BE_at_08_N": 0.42,
+  "BE_at_08_O": 0.68,
+  "BE_at_08_ring": 1.76
+ },
+ "supported_min": [
+  "28_CH3I-ben",
+  1.12
+ ],
+ "supported_max": [
+  "FI_pyr",
+  72.2
+ ],
+ "ring_dimers": [
+  [
+   "27_CH3Br-ben",
+   1.81,
+   0.73,
+   "inconclusive"
+  ],
+  [
+   "28_CH3I-ben",
+   2.48,
+   1.12,
+   "supported"
+  ],
+  [
+   "29_CF3Br-ben",
+   3.11,
+   1.43,
+   "supported"
+  ],
+  [
+   "30_CF3I-ben",
+   3.91,
+   2.27,
+   "supported"
+  ]
+ ],
+ "level_extremes": {
+  "min": [
+   "19_benCl-acetone",
+   "wB97X-D__def2-SVP",
+   0.68
+  ],
+  "max": [
+   "28_CH3I-ben",
+   "wB97X-D__def2-QZVP",
+   1.17
+  ]
+ },
+ "greyzone_all": {
+  "model": [
+   0.94,
+   1.27
+  ],
+  "combined": [
+   0.63,
+   1.49
+  ],
+  "zone": [
+   0.34,
+   0.79
+  ]
+ },
+ "greyzone_without_Thr113": {
+  "model": [
+   0.94,
+   1.16
+  ],
+  "combined": [
+   0.63,
+   1.36
+  ],
+  "zone": [
+   0.37,
+   0.79
+  ]
+ },
+ "model_extremes": {
+  "min": [
+   "BVP1207:A@BR\u00b7\u00b7\u00b7ASN65:A@OD1",
+   "cluster_gas",
+   0.94
+  ],
+  "max": [
+   "LDT320:A@BR8\u00b7\u00b7\u00b7THR113:A@OG1",
+   "qmmm_Z3",
+   1.27
+  ]
+ },
+ "model_extremes_without_Thr113": {
+  "max": [
+   "TBS301:A@BR13\u00b7\u00b7\u00b7PHE80:A@\u03c0(ring)",
+   "qmmm_Z1",
+   1.16
+  ]
+ },
+ "protein_hbflag_models": {
+  "BVP1207:A@BR \u00b7\u00b7\u00b7 ASN65:A@OD1": [
+   "shell4",
+   "shell5"
+  ],
+  "LDT320:A@BR8 \u00b7\u00b7\u00b7 THR113:A@OG1": [
+   "cluster_gas",
+   "cluster_pcm4",
+   "qmmm_HIS110_HID",
+   "qmmm_HIS110_HIP",
+   "qmmm_Z1",
+   "qmmm_Z2",
+   "qmmm_Z3",
+   "qmmm_charmm36",
+   "qmmm_ff14SB",
+   "qmmm_full",
+   "qmmm_r10",
+   "qmmm_r20",
+   "qmmm_r25",
+   "shell3",
+   "shell4",
+   "shell5"
+  ]
+ },
+ "protein_hbflag_counts": {
+  "BVP1207:A@BR \u00b7\u00b7\u00b7 ASN65:A@OD1": [
+   2,
+   14
+  ],
+  "LDT320:A@BR8 \u00b7\u00b7\u00b7 THR113:A@OG1": [
+   16,
+   16
+  ]
+ },
+ "setG": {
+  "Lewis base": {
+   "n": 5,
+   "verdicts": {
+    "supported": 4,
+    "inconclusive": 1
+   },
+   "hbflag": 0,
+   "supported": [
+    [
+     "control: Asn amide O (Asn160)",
+     0.91
+    ],
+    [
+     "control: backbone C=O (Leu259)",
+     1.37
+    ],
+    [
+     "control: Tyr hydroxyl O (Tyr211*)",
+     1.08
+    ],
+    [
+     "control: Met thioether S (Met165)",
+     1.15
+    ]
+   ]
+  },
+  "poor Lewis base": {
+   "n": 12,
+   "verdicts": {
+    "not supported": 7,
+    "inconclusive": 3,
+    "supported": 2
+   },
+   "hbflag": 4,
+   "supported": [
+    [
+     "negative: Arg guanidinium NH1 (Arg164)",
+     1.47
+    ],
+    [
+     "negative: backbone amide N (Thr178)",
+     0.94
+    ]
+   ]
+  }
+ },
+ "setG_all_geometry_ok": true,
+ "setJ": {
+  "n": 3,
+  "max_valence": 0.0,
+  "max_hb": 0.0,
+  "lp": [
+   "True",
+   "True",
+   "True"
+  ]
+ },
+ "setK": {
+  "n": 18,
+  "verdicts": {
+   "not supported": 13,
+   "inconclusive": 5
+  },
+  "max_valence": [
+   "T178 N (pathway C, xi 15.8)",
+   0.79
+  ],
+  "hbflag": 8,
+  "hb_range": [
+   0.97,
+   4.6
+  ],
+  "amine_supported_before": [
+   [
+    "W169 N (pathway A, xi 17.8)",
+    1.63,
+    0.0
+   ],
+   [
+    "H167 N (pathway B, xi 17.8)",
+    0.92,
+    0.49
+   ],
+   [
+    "F201* N (pathway B, xi 13.8)",
+    0.81,
+    0.33
+   ],
+   [
+    "A130* N (pathway C, xi 8.8)",
+    1.02,
+    0.72
+   ],
+   [
+    "T178 N (pathway C, xi 15.8)",
+    1.55,
+    0.79
+   ]
+  ],
+  "incomplete_job": [
+   "hiyd_pub_C3_ALA279_amide"
+  ]
+ },
+ "setH": {
+  "n": 15,
+  "finished": 0
+ },
+ "setG_ranges": {
+  "intra": [
+   0.65,
+   0.87
+  ]
+ },
+ "hiyd_published_counts": {
+  "not supported": 22,
+  "inconclusive": 21,
+  "supported": 13
+ },
+ "hiyd_updated_counts": {
+  "not supported": 29,
+  "inconclusive": 19,
+  "supported": 8
+ },
+ "hiyd_updated_supported": [
+  [
+   "A",
+   "N160",
+   "OD1",
+   1.18,
+   0.0,
+   false
+  ],
+  [
+   "A",
+   "FMN",
+   "N5",
+   1.95,
+   5.65,
+   true
+  ],
+  [
+   "A",
+   "L259",
+   "O",
+   0.94,
+   0.0,
+   false
+  ],
+  [
+   "A",
+   "Y211*",
+   "OH",
+   0.97,
+   0.0,
+   false
+  ],
+  [
+   "B",
+   "K207*",
+   "O",
+   1.27,
+   0.0,
+   false
+  ],
+  [
+   "B",
+   "Y211*",
+   "OH",
+   2.63,
+   0.0,
+   false
+  ],
+  [
+   "B",
+   "V209*",
+   "O",
+   1.14,
+   0.0,
+   false
+  ],
+  [
+   "C",
+   "M165",
+   "SD",
+   1.05,
+   0.0,
+   false
+  ]
+ ],
+ "hiyd_updated_hbflag": [
+  [
+   "A",
+   "R168",
+   "N",
+   0.37,
+   4.6,
+   "inconclusive"
+  ],
+  [
+   "A",
+   "FMN",
+   "N5",
+   1.95,
+   5.65,
+   "supported"
+  ],
+  [
+   "A",
+   "E214*",
+   "N",
+   0.09,
+   1.66,
+   "not supported"
+  ],
+  [
+   "A",
+   "G244",
+   "N",
+   0.0,
+   4.2,
+   "not supported"
+  ],
+  [
+   "A",
+   "G166",
+   "N",
+   0.24,
+   2.28,
+   "not supported"
+  ],
+  [
+   "A",
+   "Y212*",
+   "N",
+   0.22,
+   2.68,
+   "not supported"
+  ],
+  [
+   "A",
+   "V209*",
+   "N",
+   0.0,
+   1.75,
+   "not supported"
+  ],
+  [
+   "B",
+   "A203*",
+   "N",
+   0.0,
+   4.16,
+   "not supported"
+  ],
+  [
+   "C",
+   "A130*",
+   "N",
+   0.72,
+   0.97,
+   "inconclusive"
+  ],
+  [
+   "C",
+   "Y212*",
+   "OH",
+   0.25,
+   1.97,
+   "not supported"
+  ]
+ ],
+ "hiyd_backbone_updated": {
+  "not supported": 13,
+  "inconclusive": 5
+ },
+ "hiyd_backbone_before": {
+  "inconclusive": 7,
+  "not supported": 6,
+  "supported": 5
+ },
+ "hiyd_dt_with_contacts": [
+  160,
+  220,
+  240
+ ],
+ "residence_factor": {
+  "100": 0.89,
+  "160": 0.95,
+  "220": 0.97,
+  "240": 0.98
+ },
+ "hiyd_tau": {
+  "single_frame_share": 0.75,
+  "n": 144,
+  "median": 240.0,
+  "range": [
+   160.0,
+   960.0
+  ],
+  "max_run": 1440.0,
+  "D_over_f_min": 0.95
+ }
+}

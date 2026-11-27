@@ -239,7 +239,7 @@ for r in clusters:
     nbo_rows.append({'pathway': PATH[C], 'residue_amber': resid, 'residue': label(rn, num), 'xi': ro['xi'], 'frame': ro['frame'],
                      'acceptor_atom': atom, 'acceptor_type': typ, 'acceptor_class': acc_class(rn, atom, typ), 'lewis': lw,
                      'd_A': round(p[4], 2), 'theta1': round(p[5], 2), 'E_pub': ro['E_pub'], 'E_max_line': round(emax, 2), 'E_pub_source': '+'.join(src),
-                     'E2_intra_LP': round(node_intra, 2), 'E2_intra_phenolateO': round(sum(x['e2'] for x in r['lpRows'] if x['frag'] == 1 and x['donor'][0] == 'O'), 2), 'E2_inter_LP': round(node_inter, 2), 'E2_bondx_pair': round(ga['E2_core'], 2),
+                     'E2_intra_LP': round(node_intra, 2), 'E2_intra_phenolateO': round(sum(x['e2'] for x in r['lpRows'] if x['frag'] == 1 and x['donor'][0] == 'O'), 2), 'E2_inter_LP': round(node_inter, 2), 'E2_bondx_pair': round(ga['E2_core'], 2), 'E2_RY_pair': round(ga.get('E2_RY') or 0, 2), 'hb_LPI_to_YH': round(ga.get('hbY') or 0, 2), 'LP_on_acceptor': ga.get('lpOnY'), 'verdict_v3': ga.get('verdict'),
                      'bondx_verified': ga['E2_core'] >= 0.5, 'bondx_verified_lewis': ga['E2_core'] >= 0.5 and lw == 'strong', 'nAtoms': r['nAtoms']})
 with open(os.path.join(OUT, 'hiyd_nbo_reanalysis.csv'), 'w', newline='') as fh:
     wr = csv.DictWriter(fh, fieldnames=list(nbo_rows[0])); wr.writeheader(); wr.writerows(nbo_rows)

@@ -1,0 +1,54 @@
+set,name,atoms,charge,mult,level,env,role,contact,frame,d,theta1,G,lewis,min_cap_contact_A,E_pub_gate,warnings
+G_hard_negatives,hiyd_C2_8.8_ALA280_N_f97,42,-1,1,wB97XD/def2TZVP,CPCM eps=4,negative: backbone amide N (Ala130*),MIA442:_@I1 ··· ALA280:_@N,97,3.455,168,0.7,weak,,,2
+G_hard_negatives,hiyd_C1_16.8_LEU189_N_f44,66,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: backbone amide N (Leu259),MIA442:_@I1 ··· LEU189:_@N,44,3.49,172.1,0.724,weak,,,2
+G_hard_negatives,hiyd_C2_17.8_GLY96_N_f9,49,-1,1,wB97XD/def2TZVP,CPCM eps=4,negative: backbone amide N (Gly166),MIA442:_@I1 ··· GLY96:_@N,9,3.454,169.6,0.642,weak,,,2
+G_hard_negatives,hiyd_C3_15.8_THR108_N_f49,63,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: backbone amide N (Thr178),MIA442:_@I1 ··· THR108:_@N,49,3.531,178.1,0.701,weak,,,2
+G_hard_negatives,hiyd_C3_11.8_ARG94_NE_f92,49,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: Arg guanidinium NE (Arg164),MIA442:_@I1 ··· ARG94:_@NE,92,3.606,169.8,0.556,weak,,,1
+G_hard_negatives,hiyd_C3_11.8_ARG94_NH1_f91,49,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: Arg guanidinium NH1 (Arg164),MIA442:_@I1 ··· ARG94:_@NH1,91,3.315,173.8,0.766,weak,,,1
+G_hard_negatives,hiyd_C3_18.8_ARG107_NH2_f85,49,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: Arg guanidinium NH2 (Arg177),MIA442:_@I1 ··· ARG107:_@NH2,85,3.437,168.5,0.723,weak,,,1
+G_hard_negatives,hiyd_C2_14.8_LYS358_NZ_f1,47,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: Lys ammonium NZ (Lys208*),MIA442:_@I1 ··· LYS358:_@NZ,1,3.897,152.6,0.242,weak,,,1
+G_hard_negatives,hiyd_C2_14.8_LYS104_NZ_f83,47,0,1,wB97XD/def2TZVP,CPCM eps=4,negative: Lys ammonium NZ (Lys174),MIA442:_@I1 ··· LYS104:_@NZ,83,3.944,144.3,0.139,weak,,,1
+G_hard_negatives,hiyd_C1_17.8_TRP99_NE1_f96,49,-1,1,wB97XD/def2TZVP,CPCM eps=4,negative: Trp indole NE1 (Trp169),MIA442:_@I1 ··· TRP99:_@NE1,96,3.892,169.5,0.323,weak,,,1
+G_hard_negatives,hiyd_C1_17.8_ASN363_ND2_f36,39,-1,1,wB97XD/def2TZVP,CPCM eps=4,negative: Asn amide ND2 (Asn213*),MIA442:_@I1 ··· ASN363:_@ND2,36,3.593,153.6,0.456,weak,,,1
+G_hard_negatives,hiyd_C1_10.8_ASN172_ND2_f96,39,-1,1,wB97XD/def2TZVP,CPCM eps=4,negative: Asn amide ND2 (Asn242),MIA442:_@I1 ··· ASN172:_@ND2,96,3.833,152.6,0.337,weak,,,1
+G_hard_negatives,hiyd_C2_16.8_TYR361_OH_f9,46,-1,1,wB97XD/def2TZVP,CPCM eps=4,control: Tyr hydroxyl O (Tyr211*),MIA442:_@I1 ··· TYR361:_@OH,9,3.412,170,0.694,strong,,,1
+G_hard_negatives,hiyd_C3_15.8_THR108_O_f98,53,-1,1,wB97XD/def2TZVP,CPCM eps=4,control: backbone C=O (Thr178),MIA442:_@I1 ··· THR108:_@O,98,3.181,166.1,0.737,strong,,,2
+G_hard_negatives,hiyd_C1_16.8_LEU189_O_f95,63,-1,1,wB97XD/def2TZVP,CPCM eps=4,control: backbone C=O (Leu259),MIA442:_@I1 ··· LEU189:_@O,95,3.42,176.4,0.745,strong,,,2
+G_hard_negatives,hiyd_C3_17.8_MET95_SD_f46,42,-1,1,wB97XD/def2TZVP,CPCM eps=4,control: Met thioether S (Met165),MIA442:_@I1 ··· MET95:_@SD,46,3.895,142.6,0.236,strong,,,1
+G_hard_negatives,hiyd_C1_12.8_ASN90_OD1_f13,39,-1,1,wB97XD/def2TZVP,CPCM eps=4,control: Asn amide O (Asn160),MIA442:_@I1 ··· ASN90:_@OD1,13,3.449,166.9,0.643,strong,,,1
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__B3LYP__def2TZVP,,,,B3LYP/def2TZVP,CPCM eps=4,level test of marginal contacts,1us0_idd594__LDTA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__M062X__def2TZVP,,,,M062X/def2TZVP,CPCM eps=4,level test of marginal contacts,1us0_idd594__LDTA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__PBE1PBE__def2TZVP,,,,PBE1PBE/def2TZVP,CPCM eps=4,level test of marginal contacts,1us0_idd594__LDTA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2SVP,,,,wB97XD/def2SVP,CPCM eps=4,level test of marginal contacts,1us0_idd594__LDTA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2QZVP,,,,wB97XD/def2QZVP,CPCM eps=4,level test of marginal contacts,1us0_idd594__LDTA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__B3LYP__def2TZVP,,,,B3LYP/def2TZVP,QM/MM ff14SB,level test of marginal contacts,1us0_idd594__LDTA__qmmm_ff14SB,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__M062X__def2TZVP,,,,M062X/def2TZVP,QM/MM ff14SB,level test of marginal contacts,1us0_idd594__LDTA__qmmm_ff14SB,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__PBE1PBE__def2TZVP,,,,PBE1PBE/def2TZVP,QM/MM ff14SB,level test of marginal contacts,1us0_idd594__LDTA__qmmm_ff14SB,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2SVP,,,,wB97XD/def2SVP,QM/MM ff14SB,level test of marginal contacts,1us0_idd594__LDTA__qmmm_ff14SB,,,,,,,,
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2QZVP,,,,wB97XD/def2QZVP,QM/MM ff14SB,level test of marginal contacts,1us0_idd594__LDTA__qmmm_ff14SB,,,,,,,,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__B3LYP__def2TZVP,,,,B3LYP/def2TZVP,CPCM eps=4,level test of marginal contacts,1p5e__TBSA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__M062X__def2TZVP,,,,M062X/def2TZVP,CPCM eps=4,level test of marginal contacts,1p5e__TBSA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__PBE1PBE__def2TZVP,,,,PBE1PBE/def2TZVP,CPCM eps=4,level test of marginal contacts,1p5e__TBSA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2SVP,,,,wB97XD/def2SVP,CPCM eps=4,level test of marginal contacts,1p5e__TBSA__cluster_pcm4,,,,,,,,
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2QZVP,,,,wB97XD/def2QZVP,CPCM eps=4,level test of marginal contacts,1p5e__TBSA__cluster_pcm4,,,,,,,,
+J_4dst_amide,4dst__9LIA__cluster_pcm4__amide,50,0,1,wB97XD/def2TZVP,CPCM eps=4,hard negative with intact amide,9LI201:A@CL2 ··· GLY75:A@N,,,,,,,,1
+J_4dst_amide,4dst__9LIA__cluster_gas__amide,50,0,1,wB97XD/def2TZVP,gas,hard negative with intact amide,9LI201:A@CL2 ··· GLY75:A@N,,,,,,,,1
+J_4dst_amide,4dst__9LIA__qmmm_ff14SB__amide,50,0,1,wB97XD/def2TZVP,QM/MM,hard negative with intact amide,9LI201:A@CL2 ··· GLY75:A@N,,,,,,,,1
+K_hiyd_amide,hiyd_pub_C1_ARG97_amide,54,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose R168 N (pathway A, xi 17.8); cap H -> C(=O)CH3","R168 N (pathway A, xi 17.8)",,,,,,2.54,0.49,
+K_hiyd_amide,hiyd_pub_C1_GLU363_amide,45,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose E214* N (pathway A, xi 17.8); cap H -> C(=O)CH3","E214* N (pathway A, xi 17.8)",,,,,,2.49,0.08,
+K_hiyd_amide,hiyd_pub_C1_GLY173_amide,37,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose G244 N (pathway A, xi 16.8); cap H -> C(=O)CH3","G244 N (pathway A, xi 16.8)",,,,,,2.47,0,
+K_hiyd_amide,hiyd_pub_C1_GLY95_amide,37,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose G166 N (pathway A, xi 13.8); cap H -> C(=O)CH3","G166 N (pathway A, xi 13.8)",,,,,,2.55,0.33,
+K_hiyd_amide,hiyd_pub_C1_LYS357_amide,52,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose K208* N (pathway A, xi 18.8); cap H -> C(=O)CH3","K208* N (pathway A, xi 18.8)",,,,,,2.48,0.37,
+K_hiyd_amide,hiyd_pub_C1_MET94_amide,47,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose M165 N (pathway A, xi 15.8); cap H -> C(=O)CH3","M165 N (pathway A, xi 15.8)",,,,,,2.44,0.5,
+K_hiyd_amide,hiyd_pub_C1_TRP98_amide,54,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose W169 N (pathway A, xi 17.8); cap H -> C(=O)CH3","W169 N (pathway A, xi 17.8)",,,,,,2.44,1.63,
+K_hiyd_amide,hiyd_pub_C1_TYR361_amide,51,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose Y212* N (pathway A, xi 17.8); cap H -> C(=O)CH3","Y212* N (pathway A, xi 17.8)",,,,,,2.46,0.34,
+K_hiyd_amide,hiyd_pub_C1_VAL358_amide,46,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose V209* N (pathway A, xi 18.8); cap H -> C(=O)CH3","V209* N (pathway A, xi 18.8)",,,,,,2.47,0,
+K_hiyd_amide,hiyd_pub_C2_ALA279_amide,40,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose A130* N (pathway B, xi 9.8); cap H -> C(=O)CH3","A130* N (pathway B, xi 9.8)",,,,,,2.43,0.39,
+K_hiyd_amide,hiyd_pub_C2_ALA352_amide,40,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose A203* N (pathway B, xi 16.8); cap H -> C(=O)CH3","A203* N (pathway B, xi 16.8)",,,,,,2.46,0.05,
+K_hiyd_amide,hiyd_pub_C2_GLY95_amide,37,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose G166 N (pathway B, xi 17.8); cap H -> C(=O)CH3","G166 N (pathway B, xi 17.8)",,,,,,2.47,0.15,
+K_hiyd_amide,hiyd_pub_C2_HIS96_amide,47,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose H167 N (pathway B, xi 17.8); cap H -> C(=O)CH3","H167 N (pathway B, xi 17.8)",,,,,,2.46,0.92,
+K_hiyd_amide,hiyd_pub_C2_LEU102_amide,49,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose L173 N (pathway B, xi 10.8); cap H -> C(=O)CH3","L173 N (pathway B, xi 10.8)",,,,,,2.44,0.51,
+K_hiyd_amide,hiyd_pub_C2_LYS357_amide,52,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose K208* N (pathway B, xi 16.8); cap H -> C(=O)CH3","K208* N (pathway B, xi 16.8)",,,,,,2.4,0.14,
+K_hiyd_amide,hiyd_pub_C2_PHE350_amide,50,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose F201* N (pathway B, xi 13.8); cap H -> C(=O)CH3","F201* N (pathway B, xi 13.8)",,,,,,2.54,0.81,
+K_hiyd_amide,hiyd_pub_C3_ALA279_amide,40,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose A130* N (pathway C, xi 8.8); cap H -> C(=O)CH3","A130* N (pathway C, xi 8.8)",,,,,,2.42,1.02,
+K_hiyd_amide,hiyd_pub_C3_THR107_amide,44,,,"B3LYP-D3/6-311++G(d,p)/LANL2DZdp (published)",CPCM eps=4,"published pose T178 N (pathway C, xi 15.8); cap H -> C(=O)CH3","T178 N (pathway C, xi 15.8)",,,,,,2.39,1.55,

@@ -1,0 +1,39 @@
+normal,nNBOrows,E2_valence,E2_RY,hb_Y,hb_any,LP_on_Y,d,theta1,Y_el,Y_heavy_nb,Y_H,natoms,set,name,contact,charge
+True,432,0.14,0.14,0.12,0.12,True,3.833,152.6,N,1,2,39,G_hard_negatives,hiyd_C1_10.8_ASN172_ND2_f96,MIA442:_@I1 ··· ASN172:_@ND2,-1.0
+True,428,0.91,0.0,0.0,0.0,True,3.449,166.9,O,1,0,39,G_hard_negatives,hiyd_C1_12.8_ASN90_OD1_f13,MIA442:_@I1 ··· ASN90:_@OD1,-1.0
+True,559,0.5,0.1,1.99,1.99,True,3.49,172.1,N,2,1,66,G_hard_negatives,hiyd_C1_16.8_LEU189_N_f44,MIA442:_@I1 ··· LEU189:_@N,0.0
+True,552,1.37,0.0,0.0,0.12,True,3.42,176.4,O,1,0,63,G_hard_negatives,hiyd_C1_16.8_LEU189_O_f95,MIA442:_@I1 ··· LEU189:_@O,-1.0
+True,432,0.28,0.08,0.28,0.28,True,3.593,153.6,N,1,2,39,G_hard_negatives,hiyd_C1_17.8_ASN363_ND2_f36,MIA442:_@I1 ··· ASN363:_@ND2,-1.0
+True,629,0.08,0.0,0.0,0.0,True,3.892,169.5,N,2,1,49,G_hard_negatives,hiyd_C1_17.8_TRP99_NE1_f96,MIA442:_@I1 ··· TRP99:_@NE1,-1.0
+True,443,0.0,0.0,0.0,0.0,False,3.944,144.3,N,1,3,47,G_hard_negatives,hiyd_C2_14.8_LYS104_NZ_f83,MIA442:_@I1 ··· LYS104:_@NZ,0.0
+True,412,0.0,0.0,0.06,0.06,False,3.897,152.6,N,1,3,47,G_hard_negatives,hiyd_C2_14.8_LYS358_NZ_f1,MIA442:_@I1 ··· LYS358:_@NZ,0.0
+True,527,1.08,0.0,0.0,0.0,True,3.412,170.0,O,1,1,46,G_hard_negatives,hiyd_C2_16.8_TYR361_OH_f9,MIA442:_@I1 ··· TYR361:_@OH,-1.0
+True,485,0.07,0.0,0.5,0.5,True,3.454,169.6,N,2,1,49,G_hard_negatives,hiyd_C2_17.8_GLY96_N_f9,MIA442:_@I1 ··· GLY96:_@N,-1.0
+True,449,0.63,0.19,1.38,1.38,True,3.455,168.0,N,2,1,42,G_hard_negatives,hiyd_C2_8.8_ALA280_N_f97,MIA442:_@I1 ··· ALA280:_@N,-1.0
+True,477,0.1,0.0,0.0,0.0,True,3.606,169.8,N,2,1,49,G_hard_negatives,hiyd_C3_11.8_ARG94_NE_f92,MIA442:_@I1 ··· ARG94:_@NE,0.0
+True,488,1.47,0.3,0.0,0.0,True,3.315,173.8,N,1,2,49,G_hard_negatives,hiyd_C3_11.8_ARG94_NH1_f91,MIA442:_@I1 ··· ARG94:_@NH1,0.0
+True,624,0.94,0.13,0.0,0.0,True,3.531,178.1,N,2,1,63,G_hard_negatives,hiyd_C3_15.8_THR108_N_f49,MIA442:_@I1 ··· THR108:_@N,0.0
+True,561,0.69,0.0,0.0,0.0,True,3.181,166.1,O,1,0,53,G_hard_negatives,hiyd_C3_15.8_THR108_O_f98,MIA442:_@I1 ··· THR108:_@O,-1.0
+True,394,1.15,0.23,0.0,0.0,True,3.895,142.6,S,2,0,42,G_hard_negatives,hiyd_C3_17.8_MET95_SD_f46,MIA442:_@I1 ··· MET95:_@SD,-1.0
+True,462,0.58,0.19,3.47,3.47,True,3.437,168.5,N,1,2,49,G_hard_negatives,hiyd_C3_18.8_ARG107_NH2_f85,MIA442:_@I1 ··· ARG107:_@NH2,0.0
+True,506,0.0,0.0,0.0,0.0,True,3.52,140.5,N,2,1,50,J_4dst_amide,4dst__9LIA__cluster_gas__amide,9LI201:A@CL2 ··· GLY75:A@N,0.0
+True,509,0.0,0.0,0.0,0.0,True,3.52,140.5,N,2,1,50,J_4dst_amide,4dst__9LIA__cluster_pcm4__amide,9LI201:A@CL2 ··· GLY75:A@N,0.0
+True,492,0.0,0.0,0.0,0.0,True,3.52,140.5,N,2,1,50,J_4dst_amide,4dst__9LIA__qmmm_ff14SB__amide,9LI201:A@CL2 ··· GLY75:A@N,0.0
+True,617,0.37,0.0,4.6,4.6,True,3.488,161.5,N,2,1,54,K_hiyd_amide,hiyd_pub_C1_ARG97_amide,I···N (nearest backbone N),
+True,579,0.09,0.0,1.66,1.66,True,3.838,161.9,N,2,1,45,K_hiyd_amide,hiyd_pub_C1_GLU363_amide,I···N (nearest backbone N),
+True,454,0.0,0.0,4.2,4.2,True,3.471,164.8,N,2,1,37,K_hiyd_amide,hiyd_pub_C1_GLY173_amide,I···N (nearest backbone N),
+True,438,0.24,0.0,2.28,2.28,True,3.622,169.9,N,2,1,37,K_hiyd_amide,hiyd_pub_C1_GLY95_amide,I···N (nearest backbone N),
+True,539,0.06,0.0,0.0,0.0,True,3.816,150.1,N,2,1,52,K_hiyd_amide,hiyd_pub_C1_LYS357_amide,I···N (nearest backbone N),
+True,526,0.09,0.0,0.0,0.0,True,3.845,177.6,N,2,1,47,K_hiyd_amide,hiyd_pub_C1_MET94_amide,I···N (nearest backbone N),
+True,13077,0.0,0.07,0.24,0.33,True,3.339,171.4,N,2,1,54,K_hiyd_amide,hiyd_pub_C1_TRP98_amide,I···N (nearest backbone N),
+True,687,0.22,0.0,2.68,2.68,True,3.653,160.9,N,2,1,51,K_hiyd_amide,hiyd_pub_C1_TYR361_amide,I···N (nearest backbone N),
+True,520,0.0,0.0,1.75,1.75,True,3.762,166.3,N,2,1,46,K_hiyd_amide,hiyd_pub_C1_VAL358_amide,I···N (nearest backbone N),
+True,468,0.24,0.06,0.0,0.0,True,3.934,173.2,N,2,1,40,K_hiyd_amide,hiyd_pub_C2_ALA279_amide,I···N (nearest backbone N),
+True,486,0.0,0.0,4.16,4.16,True,3.791,148.5,N,2,1,40,K_hiyd_amide,hiyd_pub_C2_ALA352_amide,I···N (nearest backbone N),
+True,491,0.14,0.0,0.15,0.15,True,3.683,178.5,N,2,1,37,K_hiyd_amide,hiyd_pub_C2_GLY95_amide,I···N (nearest backbone N),
+True,613,0.49,0.0,0.08,0.08,True,3.58,156.5,N,2,1,47,K_hiyd_amide,hiyd_pub_C2_HIS96_amide,I···N (nearest backbone N),
+True,599,0.0,0.0,0.0,0.0,False,3.693,144.1,N,2,1,49,K_hiyd_amide,hiyd_pub_C2_LEU102_amide,I···N (nearest backbone N),
+True,573,0.0,0.0,0.0,0.0,True,3.905,153.9,N,2,1,52,K_hiyd_amide,hiyd_pub_C2_LYS357_amide,I···N (nearest backbone N),
+True,609,0.33,0.06,0.0,0.0,True,3.648,159.1,N,2,1,50,K_hiyd_amide,hiyd_pub_C2_PHE350_amide,I···N (nearest backbone N),
+False,487,0.72,0.07,0.97,0.97,True,3.413,175.8,N,2,1,40,K_hiyd_amide,hiyd_pub_C3_ALA279_amide,I···N (nearest backbone N),
+True,528,0.79,0.06,0.0,0.0,True,3.531,178.1,N,2,1,44,K_hiyd_amide,hiyd_pub_C3_THR107_amide,I···N (nearest backbone N),

@@ -1,148 +1,148 @@
 {\scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{longtable}{llrrrl}
-\caption{NBO gate for the protein contacts (Gaussian~16, $\omega$B97X-D/def2-TZVP). PCM: $\varepsilon=4$. QM/MM: RC boundary and \SI{15}{\angstrom} radius by default. The model name gives any other choice. $\Sigma\ET$ and RY in kcal\,mol$^{-1}$. $\Delta q_\mathrm{CT}$: NPA charge transfer between the fragments (e).}\label{tab:qmprot}\\
+\begin{longtable}{lllrrrrlrl}
+\caption{NBO screen of every protein model (Gaussian~16, $\omega$B97X-D/def2-TZVP; kcal\,mol$^{-1}$). QM/MM models use ff14SB, the RC boundary, and \SI{15}{\angstrom} unless the model name says otherwise. LP(Y): NBO prints a lone pair on the acceptor atom. $\Delta q_\mathrm{CT}$: NPA charge moved to fragment~1 ($10^{-3}$~e); in a protein cluster it sums every ligand--environment contact and is not specific to the halogen bond. D: decision as in Table~\ref{tab:qmhal}.}\label{tab:qmprot}\\
 \toprule
-Contact & Model & $\Sigma\ET$ & RY & $\Delta q_\mathrm{CT}$ & Gate\\
+PDB & Contact & Model & $\Sigma E^{(2)}$ & RY & X$\to$Y--H & X$\to$frag.~2 & LP(Y) & $\Delta q_\mathrm{CT}$ & D\\
 \midrule
 \endfirsthead
 \toprule
-Contact & Model & $\Sigma\ET$ & RY & $\Delta q_\mathrm{CT}$ & Gate\\
+PDB & Contact & Model & $\Sigma E^{(2)}$ & RY & X$\to$Y--H & X$\to$frag.~2 & LP(Y) & $\Delta q_\mathrm{CT}$ & D\\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
-2W0S Br$\cdots$OD1 Asn65 & Cluster, gas & 4.02 & 0.41 & 0.004 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & Cluster, PCM & 4.32 & 0.46 & 0.008 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & PCM, +3 \AA{} & 4.32 & 0.46 & 0.008 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & PCM, +4 \AA{} & 4.52 & 0.43 & $-$0.031 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & PCM, +5 \AA{} & 4.49 & 0.38 & $-$0.027 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM ff14SB & 4.62 & 0.51 & 0.011 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM CHARMM36 & 4.62 & 0.51 & 0.011 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM Z1 & 4.72 & 0.55 & 0.012 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM Z2 & 4.65 & 0.52 & 0.011 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM Z3 & 4.71 & 0.54 & 0.013 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM 10 \AA{} & 4.47 & 0.49 & 0.009 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM 20 \AA{} & 4.57 & 0.50 & 0.010 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM 25 \AA{} & 4.49 & 0.49 & 0.009 & pass\\
-2W0S Br$\cdots$OD1 Asn65 & QM/MM all & 4.48 & 0.49 & 0.009 & pass\\
-1P5E Br11$\cdots$O Leu83 & Cluster, gas & 3.07 & 0.00 & 0.002 & pass\\
-1P5E Br11$\cdots$O Leu83 & Cluster, PCM & 3.07 & 0.00 & 0.004 & pass\\
-1P5E Br11$\cdots$O Leu83 & PCM, +3 \AA{} & 3.07 & 0.00 & 0.004 & pass\\
-1P5E Br11$\cdots$O Leu83 & PCM, +4 \AA{} & 3.16 & 0.06 & $-$0.003 & pass\\
-1P5E Br11$\cdots$O Leu83 & PCM, +5 \AA{} & 3.18 & 0.07 & $-$0.005 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM ff14SB & 3.31 & 0.07 & 0.001 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM CHARMM36 & 3.18 & 0.00 & 0.002 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM Z1 & 3.14 & 0.00 & 0.008 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM Z2 & 3.16 & 0.06 & 0.001 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM Z3 & 3.56 & 0.09 & 0.002 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM 10 \AA{} & 3.08 & 0.00 & 0.001 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM 20 \AA{} & 3.11 & 0.00 & $-$0.001 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM 25 \AA{} & 3.10 & 0.00 & $-$0.002 & pass\\
-1P5E Br11$\cdots$O Leu83 & QM/MM all & 3.17 & 0.06 & $-$0.003 & pass\\
-4AGL I$\cdots$O Leu145 & Cluster, gas & 2.13 & 0.08 & 0.009 & pass\\
-4AGL I$\cdots$O Leu145 & Cluster, PCM & 2.20 & 0.13 & 0.010 & pass\\
-4AGL I$\cdots$O Leu145 & PCM, +3 \AA{} & 2.20 & 0.13 & 0.010 & pass\\
-4AGL I$\cdots$O Leu145 & PCM, +4 \AA{} & 2.28 & 0.15 & $-$0.008 & pass\\
-4AGL I$\cdots$O Leu145 & PCM, +5 \AA{} & 2.30 & 0.06 & $-$0.011 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM ff14SB & 2.12 & 0.07 & 0.009 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM CHARMM36 & 2.12 & 0.07 & 0.009 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM Z1 & 2.19 & 0.08 & 0.012 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM Z2 & 2.10 & 0.07 & 0.009 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM Z3 & 2.17 & 0.08 & 0.010 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM 10 \AA{} & 2.10 & 0.07 & 0.009 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM 20 \AA{} & 2.08 & 0.07 & 0.008 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM 25 \AA{} & 2.08 & 0.07 & 0.008 & pass\\
-4AGL I$\cdots$O Leu145 & QM/MM all & 2.02 & 0.06 & 0.006 & pass\\
-1P5E Br12$\cdots$O Glu81 & Cluster, gas & 2.11 & 0.00 & 0.002 & pass\\
-1P5E Br12$\cdots$O Glu81 & Cluster, PCM & 2.08 & 0.00 & 0.004 & pass\\
-1P5E Br12$\cdots$O Glu81 & PCM, +3 \AA{} & 2.08 & 0.00 & 0.004 & pass\\
-1P5E Br12$\cdots$O Glu81 & PCM, +4 \AA{} & 2.14 & 0.00 & $-$0.003 & pass\\
-1P5E Br12$\cdots$O Glu81 & PCM, +5 \AA{} & 2.33 & 0.00 & $-$0.005 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM ff14SB & 2.24 & 0.00 & 0.001 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM CHARMM36 & 2.25 & 0.00 & 0.002 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM Z1 & 2.28 & 0.00 & 0.008 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM Z2 & 2.18 & 0.00 & 0.001 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM Z3 & 2.09 & 0.00 & 0.002 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM 10 \AA{} & 2.21 & 0.00 & 0.001 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM 20 \AA{} & 2.17 & 0.00 & $-$0.001 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM 25 \AA{} & 2.15 & 0.00 & $-$0.002 & pass\\
-1P5E Br12$\cdots$O Glu81 & QM/MM all & 2.16 & 0.00 & $-$0.003 & pass\\
-4GQL Cl$\cdots$O Pro232 & Cluster, gas & 1.84 & 0.07 & 0.003 & pass\\
-4GQL Cl$\cdots$O Pro232 & Cluster, PCM & 1.93 & 0.06 & 0.005 & pass\\
-4GQL Cl$\cdots$O Pro232 & PCM, +3 \AA{} & 2.02 & 0.07 & 0.003 & pass\\
-4GQL Cl$\cdots$O Pro232 & PCM, +4 \AA{} & 2.04 & 0.08 & 0.010 & pass\\
-4GQL Cl$\cdots$O Pro232 & PCM, +5 \AA{} & 2.04 & 0.08 & 0.014 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM ff14SB & 1.95 & 0.08 & 0.004 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM CHARMM36 & 1.94 & 0.08 & 0.004 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM Z1 & 1.89 & 0.07 & 0.004 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM Z2 & 1.87 & 0.07 & 0.002 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM Z3 & 1.83 & 0.08 & 0.003 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM 10 \AA{} & 1.94 & 0.08 & 0.004 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM 20 \AA{} & 1.96 & 0.07 & 0.004 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM 25 \AA{} & 1.97 & 0.07 & 0.005 & pass\\
-4GQL Cl$\cdots$O Pro232 & QM/MM all & 1.97 & 0.07 & 0.005 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & Cluster, gas & 0.53 & 0.00 & 0.002 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & Cluster, PCM & 0.55 & 0.00 & 0.004 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & PCM, +3 \AA{} & 0.55 & 0.00 & 0.004 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & PCM, +4 \AA{} & 0.57 & 0.00 & $-$0.003 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & PCM, +5 \AA{} & 0.58 & 0.00 & $-$0.005 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM ff14SB & 0.58 & 0.00 & 0.001 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM CHARMM36 & 0.59 & 0.00 & 0.002 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM Z1 & 0.64 & 0.00 & 0.008 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM Z2 & 0.58 & 0.00 & 0.001 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM Z3 & 0.52 & 0.00 & 0.002 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM 10 \AA{} & 0.59 & 0.00 & 0.001 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM 20 \AA{} & 0.57 & 0.00 & $-$0.001 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM 25 \AA{} & 0.57 & 0.00 & $-$0.002 & pass\\
-1P5E Br13$\cdots$$\pi$ Phe80 & QM/MM all & 0.57 & 0.00 & $-$0.003 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & Cluster, gas & 0.46 & 0.15 & $-$0.009 & fail\\
-1US0 Br$\cdots$OG1 Thr113 & Cluster, PCM & 0.49 & 0.16 & $-$0.007 & fail\\
-1US0 Br$\cdots$OG1 Thr113 & PCM, +3 \AA{} & 0.49 & 0.16 & $-$0.007 & fail\\
-1US0 Br$\cdots$OG1 Thr113 & PCM, +4 \AA{} & 0.38 & 0.06 & $-$0.019 & fail\\
-1US0 Br$\cdots$OG1 Thr113 & PCM, +5 \AA{} & 0.38 & 0.06 & $-$0.018 & fail\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM ff14SB & 0.63 & 0.26 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM CHARMM36 & 0.63 & 0.26 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM Z1 & 0.71 & 0.30 & 0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM Z2 & 0.62 & 0.25 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM Z3 & 0.72 & 0.30 & 0.001 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM 10 \AA{} & 0.62 & 0.25 & $-$0.003 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM 20 \AA{} & 0.64 & 0.26 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM 25 \AA{} & 0.65 & 0.27 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM all & 0.64 & 0.26 & $-$0.002 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM His110 HID & 0.61 & 0.24 & $-$0.003 & pass\\
-1US0 Br$\cdots$OG1 Thr113 & QM/MM His110 HIP & 0.64 & 0.26 & $-$0.001 & pass\\
-1P5E Br10$\cdots$O Ile10 & Cluster, gas & 0.32 & 0.00 & 0.002 & fail\\
-1P5E Br10$\cdots$O Ile10 & Cluster, PCM & 0.33 & 0.00 & 0.004 & fail\\
-1P5E Br10$\cdots$O Ile10 & PCM, +3 \AA{} & 0.33 & 0.00 & 0.004 & fail\\
-1P5E Br10$\cdots$O Ile10 & PCM, +4 \AA{} & 0.33 & 0.00 & $-$0.003 & fail\\
-1P5E Br10$\cdots$O Ile10 & PCM, +5 \AA{} & 0.36 & 0.00 & $-$0.005 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM ff14SB & 0.31 & 0.00 & 0.001 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM CHARMM36 & 0.32 & 0.00 & 0.002 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM Z1 & 0.32 & 0.00 & 0.008 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM Z2 & 0.31 & 0.00 & 0.001 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM Z3 & 0.32 & 0.00 & 0.002 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM 10 \AA{} & 0.32 & 0.00 & 0.001 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM 20 \AA{} & 0.31 & 0.00 & $-$0.001 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM 25 \AA{} & 0.31 & 0.00 & $-$0.002 & fail\\
-1P5E Br10$\cdots$O Ile10 & QM/MM all & 0.31 & 0.00 & $-$0.003 & fail\\
-4DST Cl$\cdots$N Gly75 & Cluster, gas & 0.12 & 0.05 & 0.004 & fail\\
-4DST Cl$\cdots$N Gly75 & Cluster, PCM & 0.13 & 0.06 & 0.004 & fail\\
-4DST Cl$\cdots$N Gly75 & PCM, +3 \AA{} & 0.13 & 0.06 & 0.004 & fail\\
-4DST Cl$\cdots$N Gly75 & PCM, +4 \AA{} & 0.00 & 0.00 & $-$0.006 & fail\\
-4DST Cl$\cdots$N Gly75 & PCM, +5 \AA{} & 0.00 & 0.00 & $-$0.008 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM ff14SB & 0.06 & 0.00 & 0.001 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM CHARMM36 & 0.06 & 0.00 & 0.001 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM Z1 & 0.06 & 0.00 & 0.003 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM Z2 & 0.06 & 0.00 & 0.001 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM Z3 & 0.06 & 0.00 & 0.002 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM 10 \AA{} & 0.06 & 0.00 & 0.000 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM 20 \AA{} & 0.06 & 0.00 & 0.001 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM 25 \AA{} & 0.06 & 0.00 & 0.000 & fail\\
-4DST Cl$\cdots$N Gly75 & QM/MM all & 0.06 & 0.00 & 0.000 & fail\\
-BVP1207:B BR$\cdots$ASN65:B OD1 & Cluster, PCM (replica) & 2.28 & 0.23 & 0.005 & pass\\
-TBS302:C BR11$\cdots$LEU83:C O & Cluster, PCM (replica) & 3.08 & 0.06 & 0.017 & pass\\
-TBS302:C BR12$\cdots$GLU81:C O & Cluster, PCM (replica) & 1.87 & 0.00 & 0.017 & pass\\
-TBS302:C BR13$\cdots$PHE80:C $\pi$(ring) & Cluster, PCM (replica) & 1.31 & 0.00 & 0.017 & pass\\
-P84400:B I15$\cdots$LEU145:B O & Cluster, PCM (replica) & 2.40 & 0.10 & 0.011 & pass\\
+1P5E & Br10$\cdots$O Ile10 (A) & cluster, gas & 0.32 & 0.00 & 0.00 & 0.00 & yes & 2.5 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & cluster, PCM & 0.33 & 0.00 & 0.00 & 0.00 & yes & 3.8 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & +3~\AA{} shell & 0.33 & 0.00 & 0.00 & 0.00 & yes & 3.8 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & +4~\AA{} shell & 0.33 & 0.00 & 0.00 & 0.00 & yes & -3.4 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & +5~\AA{} shell & 0.36 & 0.00 & 0.00 & 0.00 & yes & -4.6 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM ff14SB & 0.31 & 0.00 & 0.00 & 0.00 & yes & 1.0 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM CHARMM36 & 0.32 & 0.00 & 0.00 & 0.00 & yes & 2.4 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM Z1 & 0.32 & 0.00 & 0.00 & 0.00 & yes & 8.0 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM Z2 & 0.31 & 0.00 & 0.00 & 0.00 & yes & 0.6 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM Z3 & 0.32 & 0.00 & 0.00 & 0.00 & yes & 1.8 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM 10~\AA{} & 0.32 & 0.00 & 0.00 & 0.00 & yes & 1.5 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM 20~\AA{} & 0.31 & 0.00 & 0.00 & 0.00 & yes & -0.9 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM 25~\AA{} & 0.31 & 0.00 & 0.00 & 0.00 & yes & -1.9 & I\\
+1P5E & Br10$\cdots$O Ile10 (A) & QM/MM whole & 0.31 & 0.00 & 0.00 & 0.00 & yes & -2.8 & I\\
+1P5E & Br11$\cdots$O Leu83 (A) & cluster, gas & 3.07 & 0.00 & 0.00 & 0.79 & yes & 2.5 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & cluster, PCM & 3.07 & 0.00 & 0.00 & 0.81 & yes & 3.8 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & +3~\AA{} shell & 3.07 & 0.00 & 0.00 & 0.81 & yes & 3.8 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & +4~\AA{} shell & 3.10 & 0.06 & 0.00 & 0.81 & yes & -3.4 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & +5~\AA{} shell & 3.11 & 0.07 & 0.00 & 1.15 & yes & -4.6 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM ff14SB & 3.24 & 0.07 & 0.00 & 0.83 & yes & 1.0 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM CHARMM36 & 3.18 & 0.00 & 0.00 & 0.84 & yes & 2.4 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM Z1 & 3.14 & 0.00 & 0.00 & 0.72 & yes & 8.0 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM Z2 & 3.10 & 0.06 & 0.00 & 0.80 & yes & 0.6 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM Z3 & 3.47 & 0.09 & 0.00 & 0.81 & yes & 1.8 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM 10~\AA{} & 3.08 & 0.00 & 0.00 & 0.87 & yes & 1.5 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM 20~\AA{} & 3.11 & 0.00 & 0.00 & 0.86 & yes & -0.9 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM 25~\AA{} & 3.10 & 0.00 & 0.00 & 0.86 & yes & -1.9 & S\\
+1P5E & Br11$\cdots$O Leu83 (A) & QM/MM whole & 3.11 & 0.06 & 0.00 & 0.86 & yes & -2.8 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & cluster, gas & 2.11 & 0.00 & 0.00 & 0.26 & yes & 2.5 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & cluster, PCM & 2.08 & 0.00 & 0.00 & 0.26 & yes & 3.8 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & +3~\AA{} shell & 2.08 & 0.00 & 0.00 & 0.26 & yes & 3.8 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & +4~\AA{} shell & 2.14 & 0.00 & 0.00 & 0.26 & yes & -3.4 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & +5~\AA{} shell & 2.33 & 0.00 & 0.00 & 0.46 & yes & -4.6 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM ff14SB & 2.24 & 0.00 & 0.00 & 0.28 & yes & 1.0 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM CHARMM36 & 2.25 & 0.00 & 0.00 & 0.28 & yes & 2.4 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM Z1 & 2.28 & 0.00 & 0.00 & 0.24 & yes & 8.0 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM Z2 & 2.18 & 0.00 & 0.00 & 0.26 & yes & 0.6 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM Z3 & 2.09 & 0.00 & 0.00 & 0.25 & yes & 1.8 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM 10~\AA{} & 2.21 & 0.00 & 0.00 & 0.29 & yes & 1.5 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM 20~\AA{} & 2.17 & 0.00 & 0.00 & 0.29 & yes & -0.9 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM 25~\AA{} & 2.15 & 0.00 & 0.00 & 0.30 & yes & -1.9 & S\\
+1P5E & Br12$\cdots$O Glu81 (A) & QM/MM whole & 2.16 & 0.00 & 0.00 & 0.29 & yes & -2.8 & S\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & cluster, gas & 0.53 & 0.00 & 0.00 & 0.00 & no & 2.5 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & cluster, PCM & 0.55 & 0.00 & 0.00 & 0.00 & no & 3.8 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & +3~\AA{} shell & 0.55 & 0.00 & 0.00 & 0.00 & no & 3.8 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & +4~\AA{} shell & 0.57 & 0.00 & 0.00 & 0.00 & no & -3.4 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & +5~\AA{} shell & 0.58 & 0.00 & 0.00 & 0.00 & no & -4.6 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM ff14SB & 0.58 & 0.00 & 0.00 & 0.00 & no & 1.0 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM CHARMM36 & 0.59 & 0.00 & 0.00 & 0.00 & no & 2.4 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM Z1 & 0.64 & 0.00 & 0.00 & 0.00 & no & 8.0 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM Z2 & 0.58 & 0.00 & 0.00 & 0.00 & no & 0.6 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM Z3 & 0.52 & 0.00 & 0.00 & 0.00 & no & 1.8 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM 10~\AA{} & 0.59 & 0.00 & 0.00 & 0.00 & no & 1.5 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM 20~\AA{} & 0.57 & 0.00 & 0.00 & 0.00 & no & -0.9 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM 25~\AA{} & 0.57 & 0.00 & 0.00 & 0.00 & no & -1.9 & I\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (A) & QM/MM whole & 0.57 & 0.00 & 0.00 & 0.00 & no & -2.8 & I\\
+1P5E & Br11$\cdots$O Leu83 (C) & cluster, PCM & 3.02 & 0.06 & 0.00 & 1.39 & yes & 16.6 & S\\
+1P5E & Br12$\cdots$O Glu81 (C) & cluster, PCM & 1.87 & 0.00 & 0.00 & 0.28 & yes & 16.6 & S\\
+1P5E & Br13$\cdots$$\pi$ Phe80 (C) & cluster, PCM & 1.31 & 0.00 & 0.00 & 0.00 & no & 16.6 & S\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & cluster, gas & 0.31 & 0.15 & 6.19 & 6.19 & yes & -8.6 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & cluster, PCM & 0.33 & 0.16 & 5.89 & 5.89 & yes & -6.7 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & +3~\AA{} shell & 0.33 & 0.16 & 5.89 & 5.89 & yes & -6.7 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & +4~\AA{} shell & 0.32 & 0.06 & 6.67 & 6.67 & yes & -18.7 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & +5~\AA{} shell & 0.32 & 0.06 & 6.64 & 6.64 & yes & -17.9 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM ff14SB & 0.37 & 0.26 & 5.38 & 5.38 & yes & -2.5 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM CHARMM36 & 0.37 & 0.26 & 5.38 & 5.38 & yes & -2.1 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM Z1 & 0.41 & 0.30 & 4.95 & 4.95 & yes & 1.6 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM Z2 & 0.37 & 0.25 & 5.34 & 5.34 & yes & -2.1 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM Z3 & 0.42 & 0.30 & 5.02 & 5.02 & yes & 0.5 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM 10~\AA{} & 0.37 & 0.25 & 5.42 & 5.42 & yes & -2.6 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM 20~\AA{} & 0.38 & 0.26 & 5.32 & 5.32 & yes & -2.1 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM 25~\AA{} & 0.38 & 0.27 & 5.31 & 5.31 & yes & -2.0 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM whole & 0.38 & 0.26 & 5.31 & 5.31 & yes & -2.1 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM His110 HID & 0.37 & 0.24 & 5.45 & 5.45 & yes & -2.8 & I\\
+1US0 & Br8$\cdots$OG1 Thr113 (A) & QM/MM His110 HIP & 0.38 & 0.26 & 5.26 & 5.26 & yes & -1.4 & I\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & cluster, gas & 3.61 & 0.41 & 0.00 & 0.00 & yes & 4.0 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & cluster, PCM & 3.86 & 0.46 & 0.00 & 0.00 & yes & 8.4 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & +3~\AA{} shell & 3.86 & 0.46 & 0.00 & 0.00 & yes & 8.4 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & +4~\AA{} shell & 4.09 & 0.43 & 0.00 & 10.79 & yes & -30.8 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & +5~\AA{} shell & 4.11 & 0.38 & 0.00 & 10.61 & yes & -26.6 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM ff14SB & 4.11 & 0.51 & 0.00 & 0.00 & yes & 11.0 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM CHARMM36 & 4.11 & 0.51 & 0.00 & 0.00 & yes & 10.9 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM Z1 & 4.17 & 0.55 & 0.00 & 0.00 & yes & 12.4 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM Z2 & 4.13 & 0.52 & 0.00 & 0.00 & yes & 11.4 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM Z3 & 4.17 & 0.54 & 0.00 & 0.00 & yes & 12.5 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM 10~\AA{} & 3.98 & 0.49 & 0.00 & 0.00 & yes & 9.0 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM 20~\AA{} & 4.07 & 0.50 & 0.00 & 0.00 & yes & 10.3 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM 25~\AA{} & 4.00 & 0.49 & 0.00 & 0.00 & yes & 9.1 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (A) & QM/MM whole & 3.99 & 0.49 & 0.00 & 0.00 & yes & 9.0 & S\\
+2W0S & Br$\cdots$OD1 Asn65 (B) & cluster, PCM & 2.05 & 0.23 & 0.00 & 0.00 & yes & 5.2 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & cluster, gas & 2.05 & 0.08 & 0.00 & 0.00 & yes & 9.4 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & cluster, PCM & 2.07 & 0.13 & 0.00 & 0.00 & yes & 10.3 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & +3~\AA{} shell & 2.07 & 0.13 & 0.00 & 0.00 & yes & 10.3 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & +4~\AA{} shell & 2.13 & 0.15 & 0.00 & 0.25 & yes & -7.8 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & +5~\AA{} shell & 2.24 & 0.06 & 0.00 & 0.44 & yes & -10.6 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM ff14SB & 2.05 & 0.07 & 0.00 & 0.00 & yes & 8.8 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM CHARMM36 & 2.05 & 0.07 & 0.00 & 0.00 & yes & 9.1 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM Z1 & 2.11 & 0.08 & 0.00 & 0.00 & yes & 11.8 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM Z2 & 2.03 & 0.07 & 0.00 & 0.00 & yes & 9.0 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM Z3 & 2.09 & 0.08 & 0.00 & 0.00 & yes & 10.3 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM 10~\AA{} & 2.03 & 0.07 & 0.00 & 0.00 & yes & 8.5 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM 20~\AA{} & 2.01 & 0.07 & 0.00 & 0.00 & yes & 7.9 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM 25~\AA{} & 2.01 & 0.07 & 0.00 & 0.00 & yes & 7.9 & S\\
+4AGL & I15$\cdots$O Leu145 (A) & QM/MM whole & 1.96 & 0.06 & 0.00 & 0.00 & yes & 6.4 & S\\
+4AGL & I15$\cdots$O Leu145 (B) & cluster, PCM & 2.30 & 0.10 & 0.00 & 0.00 & yes & 10.7 & S\\
+4DST & Cl2$\cdots$N Gly75 (A) & cluster, gas & 0.07 & 0.05 & 0.00 & 0.00 & yes & 3.7 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & cluster, PCM & 0.07 & 0.06 & 0.00 & 0.00 & yes & 3.9 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & +3~\AA{} shell & 0.07 & 0.06 & 0.00 & 0.00 & yes & 3.9 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & +4~\AA{} shell & 0.00 & 0.00 & 0.00 & 0.00 & yes & -5.7 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & +5~\AA{} shell & 0.00 & 0.00 & 0.00 & 0.00 & yes & -7.6 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM ff14SB & 0.06 & 0.00 & 0.00 & 0.00 & yes & 1.2 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM CHARMM36 & 0.06 & 0.00 & 0.00 & 0.00 & yes & 0.7 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM Z1 & 0.06 & 0.00 & 0.00 & 0.00 & yes & 2.8 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM Z2 & 0.06 & 0.00 & 0.00 & 0.00 & yes & 0.9 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM Z3 & 0.06 & 0.00 & 0.00 & 0.00 & yes & 2.3 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM 10~\AA{} & 0.06 & 0.00 & 0.00 & 0.00 & yes & 0.5 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM 20~\AA{} & 0.06 & 0.00 & 0.00 & 0.00 & yes & 1.2 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM 25~\AA{} & 0.06 & 0.00 & 0.00 & 0.00 & yes & 0.3 & N\\
+4DST & Cl2$\cdots$N Gly75 (A) & QM/MM whole & 0.06 & 0.00 & 0.00 & 0.00 & yes & 0.3 & N\\
+4GQL & Cl1$\cdots$O Pro232 (A) & cluster, gas & 1.77 & 0.07 & 0.00 & 0.00 & yes & 3.2 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & cluster, PCM & 1.87 & 0.06 & 0.00 & 0.00 & yes & 4.6 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & +3~\AA{} shell & 1.95 & 0.07 & 0.00 & 0.00 & yes & 2.7 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & +4~\AA{} shell & 1.96 & 0.08 & 0.00 & 0.00 & yes & 10.5 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & +5~\AA{} shell & 1.96 & 0.08 & 0.00 & 0.00 & yes & 13.5 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM ff14SB & 1.87 & 0.08 & 0.00 & 0.00 & yes & 4.3 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM CHARMM36 & 1.86 & 0.08 & 0.00 & 0.00 & yes & 4.1 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM Z1 & 1.82 & 0.07 & 0.00 & 0.00 & yes & 3.8 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM Z2 & 1.80 & 0.07 & 0.00 & 0.00 & yes & 2.4 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM Z3 & 1.75 & 0.08 & 0.00 & 0.00 & yes & 3.1 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM 10~\AA{} & 1.86 & 0.08 & 0.00 & 0.00 & yes & 4.1 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM 20~\AA{} & 1.89 & 0.07 & 0.00 & 0.00 & yes & 4.4 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM 25~\AA{} & 1.90 & 0.07 & 0.00 & 0.00 & yes & 4.7 & S\\
+4GQL & Cl1$\cdots$O Pro232 (A) & QM/MM whole & 1.90 & 0.07 & 0.00 & 0.00 & yes & 4.7 & S\\
 \end{longtable}}

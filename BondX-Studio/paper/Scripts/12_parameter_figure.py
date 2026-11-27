@@ -15,7 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Wedge, Polygon, FancyArrowPatch, Arc, Ellipse
 
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "Figures_V2_MS")
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "MS_Figures_V3")
 
 # ---- BondX defaults (Br...O example) -------------------------------------------------------
 TH1_MIN, TH1_MAX = 140.0, 180.0
@@ -24,7 +24,7 @@ TH2_WIN = (90.0, 150.0)          # optional theta2 filter (off by default)
 ALPHA_MAX = 60.0
 R_BEST = 0.85
 R_BR, R_O, R_RING = 1.85, 1.52, 1.77
-DCUT_BR_O = 3.6812
+DCUT_BR_O = 3.68
 DCUT_BR_AR = 3.87
 RCUT = DCUT_BR_O / (R_BR + R_O)
 
@@ -34,9 +34,11 @@ BLUE, ORANGE, GREEN, AMBER, PINK, DGREEN, VIOLET, RED = (
 INK, INK2, GRID = "#1f2328", "#57606a", "#d0d7de"
 ATOM = {"C": "#8a8f96", "Br": "#a0522d", "O": "#e34948", "H": "#f4f4f4", "X": "#a0522d"}
 
+from matplotlib import font_manager as _fm
+_F = 'Arial' if any(f.name == 'Arial' for f in _fm.fontManager.ttflist) else 'Liberation Sans'
 plt.rcParams.update({
-    "font.family": "DejaVu Sans", "font.size": 10, "axes.linewidth": 0.8,
-    "mathtext.fontset": "dejavusans", "axes.edgecolor": INK2,
+    "font.family": "sans-serif", "font.sans-serif": [_F, "Arial", "Liberation Sans"], "font.size": 10, "axes.linewidth": 0.8,
+    "mathtext.fontset": "custom", "mathtext.rm": _F, "mathtext.it": _F + ":italic", "mathtext.bf": _F + ":bold", "axes.edgecolor": INK2, "legend.frameon": False, "pdf.fonttype": 42,
 })
 
 
@@ -161,9 +163,9 @@ ax.text(*(Y + unit(-35) * R_O * 0.55 + np.array([0.12, -0.30])), "r$_Y$", color=
 
 # rule box
 txt = (r"$d \leq d_\mathrm{cut}$(X,Y)" "\n"
-       r"$140^\circ \leq \theta_1 \leq 180^\circ$" "\n"
-       r"$\theta_2$: score optimum $120^\circ$" "\n"
-       r"   (filter $90$–$150^\circ$, optional)" "\n"
+       r"$140° \leq \theta_1 \leq 180°$" "\n"
+       r"$\theta_2$: score optimum $120°$" "\n"
+       r"   (filter $90$–$150°$, optional)" "\n"
        r"$R = d\,/\,(r_X + r_Y)$")
 ax.text(0.985, 0.012, txt, transform=ax.transAxes, fontsize=9.2, ha="right", va="bottom", color=INK, linespacing=1.45,
         bbox=dict(boxstyle="round,pad=0.45", fc="#f6f8fa", ec=GRID, lw=0.8))
@@ -207,8 +209,8 @@ ax.annotate("", xy=tip, xytext=Ct, arrowprops=dict(arrowstyle="-|>", color=VIOLE
 ax.text(*(Ct + np.array([-1.05, -0.95])), "r$_\\mathrm{ring}$ = 1.77 Å", color=VIOLET, fontsize=9.2, ha="center")
 
 txt = (r"$d \leq d_\mathrm{cut}$(X, ring)" "\n"
-       r"$140^\circ \leq \theta_1 \leq 180^\circ$" "\n"
-       r"$\alpha \leq 60^\circ$ (to ring normal)")
+       r"$140° \leq \theta_1 \leq 180°$" "\n"
+       r"$\alpha \leq 60°$ (to ring normal)")
 ax.text(0.03, 0.012, txt, transform=ax.transAxes, fontsize=9.2, ha="left", va="bottom", color=INK, linespacing=1.45,
         bbox=dict(boxstyle="round,pad=0.45", fc="#f6f8fa", ec=GRID, lw=0.8))
 ax.set_xlim(-2.45, 2.75); ax.set_ylim(-4.6, 3.85)
@@ -274,10 +276,10 @@ ab = fig.add_subplot(sub[0, 3]); ab.axis("off")
 bb = ab.get_position(); ab.set_position([bb.x0 + 0.01, bb.y0, bb.width * 0.92, bb.height])
 ab.add_patch(plt.Rectangle((-0.05, -0.04), 1.04, 1.14, transform=ab.transAxes, fc="#f6f8fa", ec=GRID, lw=0.8, clip_on=False))
 formulas = (
-    r"$g_d = \mathrm{clip}\left[\frac{R_\mathrm{cut}-R}{R_\mathrm{cut}-0.85}\right]$" "\n"
-    r"$g_\theta = \mathrm{clip}\left[\frac{\theta_1-140^\circ}{40^\circ}\right]$" "\n"
-    r"$g_2 = e^{-[(\theta_2-120^\circ)/40^\circ]^2}$  (atom)" "\n"
-    r"$g_2 = 1-\alpha/60^\circ$  (ring)" "\n"
+    r"$g_d = \mathrm{clip}[(R_\mathrm{cut}-R)/(R_\mathrm{cut}-0.85)]$" "\n"
+    r"$g_\theta = \mathrm{clip}[(\theta_1-140°)/40°]$" "\n"
+    r"$g_2 = e^{-[(\theta_2-120°)/40°]^2}$  (atom)" "\n"
+    r"$g_2 = 1-\alpha/60°$  (ring)" "\n"
     r"$G = [\,g_d\, g_\theta\, (\frac{1}{2}+\frac{1}{2}g_2)\,]^{1/3}$")
 ab.text(-0.02, 1.07, formulas, transform=ab.transAxes, fontsize=8.1, va="top", ha="left", color=INK, linespacing=1.55)
 table = ("Cut-off d$_\\mathrm{cut}$ (Å)\n"
@@ -286,11 +288,16 @@ table = ("Cut-off d$_\\mathrm{cut}$ (Å)\n"
          "Br 3.84  3.68  4.02  3.87\n"
          "I  3.97  3.82  4.15  4.00")
 ab.text(0.0, 0.47, table.split("\n")[0], transform=ab.transAxes, fontsize=8.5, va="bottom", ha="left", color=INK)
-ab.text(0.0, 0.45, "\n".join(table.split("\n")[1:]), transform=ab.transAxes, fontsize=7.9, va="top", ha="left",
-        color=INK, family="DejaVu Sans Mono", linespacing=1.25)
+# the cut-off table in Arial: one text item per cell, right-aligned in fixed columns
+_rows = [["", "N", "O", "S", "π"], ["Cl", "3.77", "3.61", "3.95", "3.80"], ["Br", "3.84", "3.68", "4.02", "3.87"], ["I", "3.97", "3.82", "4.15", "4.00"]]
+_xs = [0.0, 0.22, 0.40, 0.58, 0.76]
+for _i, _r in enumerate(_rows):
+    for _j, _c in enumerate(_r):
+        ab.text(_xs[_j] + (0.0 if _j == 0 else 0.12), 0.45 - _i * 0.085, _c, transform=ab.transAxes, fontsize=7.9, va="top",
+                ha="left" if _j == 0 else "right", color=INK, fontweight="bold" if (_i == 0 or _j == 0) else "normal")
 ab.text(0.96, -0.01, "all values editable", transform=ab.transAxes, fontsize=7.8, va="bottom", ha="right", color=INK2, style="italic")
 
 os.makedirs(OUT, exist_ok=True)
 for ext in ("pdf", "png"):
-    fig.savefig(os.path.join(OUT, f"Fig4_T1_model.{ext}"), dpi=400)
-print("wrote", os.path.join(OUT, "Fig4_T1_model.pdf/png"))
+    fig.savefig(os.path.join(OUT, f"Fig3_T1_model.{ext}"), dpi=400)
+print("wrote", os.path.join(OUT, "Fig3_T1_model.pdf/png"))

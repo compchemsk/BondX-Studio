@@ -1,0 +1,15 @@
+contact,G,E,verdict,BXQI
+BVP1207:A@BR···ASN65:A@OD1,0.87,3.86,supported,86.2
+TBS302:C@BR11···LEU83:C@O,0.97,3.02,supported,86.1
+TBS301:A@BR11···LEU83:A@O,0.83,3.07,supported,80.5
+P84400:B@I15···LEU145:B@O,0.93,2.3,supported,78.6
+P84400:A@I15···LEU145:A@O,0.91,2.07,supported,75.4
+R47306:A@CL1···PRO232:A@O,0.87,1.87,supported,71.5
+TBS301:A@BR12···GLU81:A@O,0.76,2.08,supported,69.6
+TBS302:C@BR12···GLU81:C@O,0.78,1.87,supported,68.1
+BVP1207:B@BR···ASN65:B@OD1,0.72,2.05,supported,67.6
+TBS302:C@BR13···PHE80:C@π(ring),0.54,1.31,supported,50.7
+TBS301:A@BR13···PHE80:A@π(ring),0.51,0.55,inconclusive,33.8
+LDT320:A@BR8···THR113:A@OG1,0.64,0.33,inconclusive,29.2
+TBS301:A@BR10···ILE10:A@O,0.38,0.33,inconclusive,23.1
+9LI201:A@CL2···GLY75:A@N,0.12,0.07,not supported,6.1

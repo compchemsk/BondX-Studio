@@ -25,7 +25,7 @@ const read = f => fs.readFileSync(f, 'utf8');
 const loadPDB = f => B.parsePDB(read(f), { pqr: /\.pqr$/i.test(f), altloc: P.struct.altloc, bondTol: P.struct.bondTol });
 const slimHit = (S, h) => ({ key: h.key, donor: h.donorLabel, donorResName: S.residues[h.donorRes].resName, donorRes: h.donorRes, X: h.Xname, A: h.Aname, halogen: h.halogen,
   acceptor: h.accLabel, accResName: S.residues[h.accRes].resName, accResSeq: S.residues[h.accRes].resSeq, accChain: S.residues[h.accRes].chain, accAtom: h.accName, accEl: h.accEl, accClass: h.accClass, type: h.type,
-  lewis: h.lewis, d: h.d, sumVdw: h.sumVdw, R: h.R, theta1: h.theta1, theta2: h.theta2, gd: h.gd, gt: h.gt, g2: h.g2, G: h.G, status: h.status });
+  lewis: h.lewis, d: h.d, sumVdw: h.sumVdw, R: h.R, theta1: h.theta1, theta2: h.theta2, theta2Hybridization: h.theta2Hybridization, theta2Opt: h.theta2Opt, gd: h.gd, gt: h.gt, g2: h.g2, G: h.G, status: h.status });
 
 // Level-of-theory names per program. [method keyword, dispersion: none | bj | zero]
 // ORCA has no wB97X-D (Chai/Head-Gordon); its nearest analogue wB97X-D3 is used and labelled as such.
@@ -91,7 +91,7 @@ if (cmd === 'detect-pdb') {
     halogenatedLigands: S.residues.filter(r => r.cls === 'ligand' && r.halogens.some(x => x !== 'F')).map(r => ({ resName: r.resName, chain: r.chain, resSeq: r.resSeq, halogens: r.halogens })),
     msParse: Number(t1 - t0) / 1e6, msDetect: Number(t2 - t1) / 1e6, hits: hits.map(h => slimHit(S, h)) });
 } else if (cmd === 'detect-xyz') {
-  const M = B.parseXYZ(read(argv[1])); out({ atoms: M.atoms.length, hits: B.detectMaterialXB(M, P).map(h => ({ X: h.X + 1, A: h.A + 1, Y: h.Y + 1, Xlabel: h.Xlabel, Ylabel: h.Ylabel, halogen: h.halogen, accEl: h.accEl, d: h.d, theta1: h.theta1, G: h.G, gd: h.gd, gt: h.gt, status: h.status })) });
+  const M = B.parseXYZ(read(argv[1])); out({ atoms: M.atoms.length, hits: B.detectMaterialXB(M, P).map(h => ({ X: h.X + 1, A: h.A + 1, Y: h.Y + 1, Xlabel: h.Xlabel, Ylabel: h.Ylabel, halogen: h.halogen, accEl: h.accEl, d: h.d, theta1: h.theta1, G: h.G, g2: h.g2, theta2: h.theta2, theta2Hybridization: h.theta2Hybridization, theta2Opt: h.theta2Opt, gd: h.gd, gt: h.gt, status: h.status })) });
 } else if (cmd === 'ligand-check') {
   const S = loadPDB(argv[1]); const rows = [];
   for (const R of S.residues) {
@@ -146,12 +146,12 @@ if (cmd === 'detect-pdb') {
 } else if (cmd === 'eda') {
   const r = B.parseEDA(read(argv[1])); out(Object.assign(r, { descriptors: r.error ? null : B.edaDescriptors(r, P) }));
 } else if (cmd === 'gscore') {
-  // geometric score for one contact: --el I --acc O|N|S|AR --d 3.1 --t1 179 [--t2 120] [--alpha 10]
+  // geometric score for one contact: --el I --acc O|N|S|AR --d 3.1 --t1 179 [--t2 120] [--hyb sp|sp2|sp3] [--alpha 10]
   const el = opt('el').toUpperCase(), acc = opt('acc').toUpperCase(), d = +opt('d'), t1 = +opt('t1');
   const isPi = acc === 'AR' || acc === 'PI'; const c = (P.geom.cutoffs[el] || {})[isPi ? 'AR' : acc];
-  const g = c ? B.geometricScore(el, isPi ? 'AR' : acc, d, t1, opt('t2') !== undefined ? +opt('t2') : null, P, isPi, opt('alpha') !== undefined ? +opt('alpha') : null) : null;
+  const g = c ? B.geometricScore(el, isPi ? 'AR' : acc, d, t1, opt('t2') !== undefined ? +opt('t2') : null, P, isPi, opt('alpha') !== undefined ? +opt('alpha') : null, opt('hyb') || 'sp2') : null;
   const pass = !!c && d <= c && t1 >= P.geom.theta1Min && t1 <= P.geom.theta1Max && (!isPi || opt('alpha') === undefined || +opt('alpha') <= P.geom.piNormalMax);
-  out({ covered: !!c, cutoff: c || null, pass, G: g && pass ? g.G : 0, gd: g ? g.gd : null, gt: g ? g.gt : null, g2: g ? g.g2 : null, R: g ? g.R : null });
+  out({ covered: !!c, cutoff: c || null, pass, G: g && pass ? g.G : 0, gd: g ? g.gd : null, gt: g ? g.gt : null, g2: g ? g.g2 : null, theta2Hybridization: g ? g.theta2Hybridization : null, theta2Opt: g ? g.theta2Opt : null, R: g ? g.R : null });
 } else if (cmd === 'bxqi') {
   out(B.computeBXQI(JSON.parse(opt('json')), P));
 } else {

@@ -1,0 +1,54 @@
+set,name,status,contact,E2_valence,E2_RY,verdict,hb_to_acceptor,hb_to_fragment2,LP_on_acceptor,ct_NPA,geometry
+G_hard_negatives,hiyd_C1_10.8_ASN172_ND2_f96,ok,"MIA442:_@I1 ··· ASN172:_@ND2",0.14,0.14,not supported,0.12,0.12,true,0.00,ok
+G_hard_negatives,hiyd_C1_12.8_ASN90_OD1_f13,ok,"MIA442:_@I1 ··· ASN90:_@OD1",0.91,0.00,supported,0.00,0.00,true,0.00,ok
+G_hard_negatives,hiyd_C1_16.8_LEU189_N_f44,ok,"MIA442:_@I1 ··· LEU189:_@N",0.50,0.10,inconclusive,1.99,1.99,true,-0.05,ok
+G_hard_negatives,hiyd_C1_16.8_LEU189_O_f95,ok,"MIA442:_@I1 ··· LEU189:_@O",1.37,0.00,supported,0.00,0.12,true,0.00,ok
+G_hard_negatives,hiyd_C1_17.8_ASN363_ND2_f36,ok,"MIA442:_@I1 ··· ASN363:_@ND2",0.28,0.08,not supported,0.28,0.28,true,0.00,ok
+G_hard_negatives,hiyd_C1_17.8_TRP99_NE1_f96,ok,"MIA442:_@I1 ··· TRP99:_@NE1",0.08,0.00,not supported,0.00,0.00,true,-0.00,ok
+G_hard_negatives,hiyd_C2_14.8_LYS104_NZ_f83,ok,"MIA442:_@I1 ··· LYS104:_@NZ",0.00,0.00,not supported,0.00,0.00,false,-0.00,ok
+G_hard_negatives,hiyd_C2_14.8_LYS358_NZ_f1,ok,"MIA442:_@I1 ··· LYS358:_@NZ",0.00,0.00,not supported,0.06,0.06,false,-0.02,ok
+G_hard_negatives,hiyd_C2_16.8_TYR361_OH_f9,ok,"MIA442:_@I1 ··· TYR361:_@OH",1.08,0.00,supported,0.00,0.00,true,-0.00,ok
+G_hard_negatives,hiyd_C2_17.8_GLY96_N_f9,ok,"MIA442:_@I1 ··· GLY96:_@N",0.07,0.00,not supported,0.50,0.50,true,-0.01,ok
+G_hard_negatives,hiyd_C2_8.8_ALA280_N_f97,ok,"MIA442:_@I1 ··· ALA280:_@N",0.63,0.19,inconclusive,1.38,1.38,true,-0.00,ok
+G_hard_negatives,hiyd_C3_11.8_ARG94_NE_f92,ok,"MIA442:_@I1 ··· ARG94:_@NE",0.10,0.00,not supported,0.00,0.00,true,-0.00,ok
+G_hard_negatives,hiyd_C3_11.8_ARG94_NH1_f91,ok,"MIA442:_@I1 ··· ARG94:_@NH1",1.47,0.30,supported,0.00,0.00,true,0.00,ok
+G_hard_negatives,hiyd_C3_15.8_THR108_N_f49,ok,"MIA442:_@I1 ··· THR108:_@N",0.94,0.13,supported,0.00,0.00,true,-0.04,ok
+G_hard_negatives,hiyd_C3_15.8_THR108_O_f98,ok,"MIA442:_@I1 ··· THR108:_@O",0.69,0.00,inconclusive,0.00,0.00,true,-0.00,ok
+G_hard_negatives,hiyd_C3_17.8_MET95_SD_f46,ok,"MIA442:_@I1 ··· MET95:_@SD",1.15,0.23,supported,0.00,0.00,true,0.01,ok
+G_hard_negatives,hiyd_C3_18.8_ARG107_NH2_f85,ok,"MIA442:_@I1 ··· ARG107:_@NH2",0.58,0.19,inconclusive,3.47,3.47,true,-0.01,ok
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__B3LYP__def2TZVP,not finished
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__M062X__def2TZVP,not finished
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__PBE1PBE__def2TZVP,not finished
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2QZVP,not finished
+H_marginal_levels,1p5e__TBSA__cluster_pcm4__wB97XD__def2SVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__B3LYP__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__M062X__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__PBE1PBE__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2QZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__cluster_pcm4__wB97XD__def2SVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__B3LYP__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__M062X__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__PBE1PBE__def2TZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2QZVP,not finished
+H_marginal_levels,1us0_idd594__LDTA__qmmm_ff14SB__wB97XD__def2SVP,not finished
+J_4dst_amide,4dst__9LIA__cluster_gas__amide,ok,"9LI201:A@CL2 ··· GLY75:A@N",0.00,0.00,not supported,0.00,0.00,true,0.01,ok
+J_4dst_amide,4dst__9LIA__cluster_pcm4__amide,ok,"9LI201:A@CL2 ··· GLY75:A@N",0.00,0.00,not supported,0.00,0.00,true,0.01,ok
+J_4dst_amide,4dst__9LIA__qmmm_ff14SB__amide,ok,"9LI201:A@CL2 ··· GLY75:A@N",0.00,0.00,not supported,0.00,0.00,true,0.00,ok
+K_hiyd_amide,hiyd_pub_C1_ARG97_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.58,0.37,0.00,inconclusive,4.60,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_GLU363_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.74,0.09,0.00,not supported,1.66,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_GLY173_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.64,0.00,0.00,not supported,4.20,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_GLY95_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.61,0.24,0.00,not supported,2.28,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_LYS357_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.63,0.06,0.00,not supported,0.00,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_MET94_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.73,0.09,0.00,not supported,0.00,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_TRP98_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.00,0.00,0.07,not supported,0.24,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_TYR361_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.60,0.22,0.00,not supported,2.68,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C1_VAL358_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.62,0.00,0.00,not supported,1.75,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_ALA279_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.63,0.24,0.06,not supported,0.00,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_ALA352_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.65,0.00,0.00,not supported,4.16,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_GLY95_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.62,0.14,0.00,not supported,0.15,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_HIS96_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.69,0.49,0.00,inconclusive,0.08,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_LEU102_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.59,0.00,0.00,not supported,0.00,,false,,no manifest
+K_hiyd_amide,hiyd_pub_C2_LYS357_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.62,0.00,0.00,not supported,0.00,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C2_PHE350_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.60,0.33,0.06,inconclusive,0.00,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C3_ALA279_amide,not finished,I...N backbone (amide cap); max O->sigma*(C-I) 0.75,0.72,0.07,inconclusive,0.97,,true,,no manifest
+K_hiyd_amide,hiyd_pub_C3_THR107_amide,ok,I...N backbone (amide cap); max O->sigma*(C-I) 0.67,0.79,0.06,inconclusive,0.00,,true,,no manifest
