@@ -25,7 +25,7 @@
 \sisetup{range-phrase=--, range-units=single}
 \newcommand{\tcr}[1]{{\textcolor{red}{#1}}}
 \newcommand{\tco}[1]{{\textcolor{orange}{#1}}}
-\newcommand{\tcb}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\tcb}[1]{{\textcolor{black}{#1}}}
 \usepackage{pifont}
 \usepackage[english]{babel}
 \IfFileExists{droidsans.sty}{\usepackage{droidsans}}{}
@@ -450,14 +450,21 @@ T1 runs in linear time (ESI Figure~\ref{S-fig:perf}): the 9212-atom structure 1P
 
 
 %% =====================================================================
-\section*{Data and Software Availability}
-% Original wording retained for reference; revised wording follows.
+% \section*{Data and Software Availability}
+% % Original wording retained for reference; revised wording follows.
 % \BX{} runs online at \url{https://compchemsk.github.io/BondX-Studio/}. The repository \url{https://github.com/compchemsk/BondX-Studio} holds the single-file application, the source code, the 120 tests, and the tutorial under the MIT license, together with the paper scripts (also collected in one Jupyter notebook), the data sets, the parsed QM results, and all QM input files. The benchmark geometries come from GMTKN55, and the protein files come from the PLIP test suite and the PDB.
-\tcb{BondX Studio runs online at \url{https://compchemsk.github.io/BondX-Studio/}. The public repository \url{https://github.com/compchemsk/BondX-Studio} is the project home and contains the application, source code, tutorial, and research materials. The donor-scope and hybridization-dependent scoring changes reported here were made in a working-tree revision based on repository commit \texttt{971f1fa3bd1adcf74b2b6b078bd7ec408d4f1bc1}; the revised engine, its 123-test suite, and regenerated T1 tables and figures are included in the accompanying source package but have not yet been committed or pushed to the public repository. Benchmark geometries derive from GMTKN55; protein structures derive from the PLIP test suite and the PDB. A Zenodo DOI has not yet been registered.}
 
+
+% \section*{Supporting Information}
+% ESI (PDF): literature counts; assumptions of every tier; equations, parameters, and distance cut-offs; force-field validation including hydrogens; geometric tier; protein QM models and MM field tests; NBO screen, acceptor classes, grey-zone derivation, contacts with poor Lewis bases, and ALMO-EDA results; ORCA counterpoise energies; hIYD case study with T2; scripts and reproducibility; user guide.
+
+\section*{Data and Software Availability}
+
+\tcb{BondX Studio is freely accessible at \url{https://compchemsk.github.io/BondX-Studio/}. The source code and associated data are available at \url{https://github.com/compchemsk/BondX-Studio}.}
 
 \section*{Supporting Information}
-ESI (PDF): literature counts; assumptions of every tier; equations, parameters, and distance cut-offs; force-field validation including hydrogens; geometric tier; protein QM models and MM field tests; NBO screen, acceptor classes, grey-zone derivation, contacts with poor Lewis bases, and ALMO-EDA results; ORCA counterpoise energies; hIYD case study with T2; scripts and reproducibility; user guide.
+
+\tcb{The Supporting Information (ESI) includes literature counts, methodological assumptions, equations and parameters, force-field data, geometric screening results, QM/QM-MM models, NBO and ALMO-EDA analyses, counterpoise energies, the hIYD case study, computational scripts, reproducibility details, and a user guide.}
 
 \section*{Author information}
 \noindent\textbf{Corresponding Authors}
